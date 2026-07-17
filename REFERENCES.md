@@ -83,6 +83,9 @@ See individual collection files for permission status and citation requirements.
 Pride History Group (n.d.) [*Pride History Group Oral History Collection*](https://www.pridehistory.org.au/oral-histories), Sydney Pride History Group website, accessed 18 July 2026.
 *[100+ recorded oral history interviews; personal and research use only; permission required before publication. Custom citation format — see `data/sydney/source-collections/pride-history-group.md`. Status: not yet contacted.]*
 
+Australian Queer Archives (AQuA) (n.d.) [*Australian Queer Archives*](https://queerarchives.org.au), AQuA website, accessed 18 July 2026.
+*[Largest LGBTIQ community archive in Australia; Melbourne-based, accessible via State Library NSW. Access conditions not yet investigated — see `data/sydney/source-collections/aqua.md`. Status: not yet contacted.]*
+
 ---
 
 ## Secondary sources
