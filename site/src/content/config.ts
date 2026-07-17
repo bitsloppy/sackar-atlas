@@ -440,6 +440,42 @@ const cases = defineCollection({
     /** How First Nations identity was determined (family, inquiry, community). */
     first_nations_source: z.string().nullable().default(null),
 
+    // --- Cultural / national background ------------------------------------
+    //
+    // Sackar Chapter 16 explicitly noted the absence of First Nations and CALD
+    // people among victims examined by the Inquiry, and called for resources
+    // to investigate whether this reflects the crimes or a gap in documentation.
+    // Capture what is known; null = not yet assessed. Never assume.
+    //
+    // CALD = Culturally and Linguistically Diverse (Australian Government
+    // definition): people from non-English-speaking backgrounds or born
+    // overseas in non-English-speaking countries.
+
+    /** Country of birth. */
+    country_of_birth: z.string().nullable().default(null),
+
+    /**
+     * Cultural or ethnic background — use the person's own words where known.
+     * e.g. "Greek-Australian", "Vietnamese-born", "British expat (PNG-raised)"
+     */
+    cultural_background: z.string().nullable().default(null),
+
+    /**
+     * First or primary language.
+     * Relevant where language barriers may have affected police investigation,
+     * family engagement, coronial proceedings, or press coverage.
+     */
+    first_language: z.string().nullable().default(null),
+
+    /**
+     * Whether this person's background was CALD.
+     * null = not assessed. Never assume.
+     */
+    cald: z.boolean().nullable().default(null),
+
+    /** How CALD background is known, and any relevance to how the case was investigated. */
+    cald_notes: z.string().optional(),
+
     // --- Death dates --------------------------------------------------------
 
     /**
@@ -597,6 +633,27 @@ const cases = defineCollection({
 
     /** True if family has made a request for limited public information. */
     family_privacy_request: z.boolean().default(false),
+
+    // --- Community and family verification (this project) ------------------
+    //
+    // Distinct from family_engaged_with_inquiry (family engagement with SCOI).
+    // These fields track this project’s own consultation with families and the
+    // LGBTIQ community about how each case is represented here.
+    // Modelled on consultation_status in the locations schema.
+
+    /**
+     * Status of this project’s consultation with the family and/or LGBTIQ
+     * community about how this case is represented.
+     */
+    community_verification_status: z.enum([
+      'not-assessed',   // haven’t yet determined if consultation is needed
+      'not-required',   // determined no specific consultation needed
+      'pending',        // needed but not yet started
+      'in-progress',    // underway
+      'completed',      // done — see notes
+    ]).default('not-assessed'),
+
+    community_verification_notes: z.string().optional(),
 
     // --- Sources ------------------------------------------------------------
 
@@ -988,6 +1045,30 @@ const people = defineCollection({
 
     first_nations: z.boolean().nullable().default(null),
     first_nations_nation: z.string().nullable().default(null),
+
+    // --- Cultural / national background ------------------------------------
+
+    country_of_birth: z.string().nullable().default(null),
+    cultural_background: z.string().nullable().default(null),
+    first_language: z.string().nullable().default(null),
+    cald: z.boolean().nullable().default(null),
+    cald_notes: z.string().optional(),
+
+    // --- Community verification (this project) -----------------------------
+    //
+    // Primarily relevant for victims and living witnesses. Tracks whether
+    // the relevant community or family has been consulted about how this
+    // person is represented here.
+
+    community_verification_status: z.enum([
+      'not-assessed',
+      'not-required',
+      'pending',
+      'in-progress',
+      'completed',
+    ]).default('not-assessed'),
+
+    community_verification_notes: z.string().optional(),
 
     // --- Role ---------------------------------------------------------------
 
