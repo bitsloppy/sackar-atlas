@@ -74,6 +74,17 @@ AIATSIS (n.d.) [*AIATSIS Code of Ethics for Aboriginal and Torres Strait Islande
 
 ---
 
+## Source collections (conditions of use)
+
+The following archives and repositories hold materials relevant to this project.
+Each has its own conditions of use tracked in `data/sydney/source-collections/`.
+See individual collection files for permission status and citation requirements.
+
+Pride History Group (n.d.) [*Pride History Group Oral History Collection*](https://www.pridehistory.org.au/oral-histories), Sydney Pride History Group website, accessed 18 July 2026.
+*[100+ recorded oral history interviews; personal and research use only; permission required before publication. Custom citation format — see `data/sydney/source-collections/pride-history-group.md`. Status: not yet contacted.]*
+
+---
+
 ## Secondary sources
 
 Wotherspoon G (2016) *Gay Sydney: A History*, New South Printing, Sydney.

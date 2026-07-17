@@ -137,6 +137,11 @@ const ArchiveSource = z.object({
   /** Date accessed — required by AGSM for online sources. ISO 8601. */
   accessed_date: z.string().optional(),
   description: z.string().optional(),
+  /**
+   * Links to a source_collections/ entry.
+   * Drives automatic display of conditions of use + correct citation format.
+   */
+  collection_id: z.string().optional(),  // e.g. 'aqua', 'pride-history-group'
 });
 
 /**
@@ -174,6 +179,11 @@ const OralHistorySource = z.object({
   interviewer: z.string().optional(),
   date_recorded: z.string().optional(),
   held_by: z.string().optional(),        // e.g. aqua, pride-history-group
+  /**
+   * Links to a source_collections/ entry.
+   * Drives automatic display of conditions of use + correct citation format.
+   */
+  collection_id: z.string().optional(),  // e.g. 'pride-history-group'
   /** Format of the held item. */
   format: z.enum(['audio', 'video', 'transcript', 'summary', 'notes']).optional(),
   url: z.string().nullable().default(null),
@@ -181,6 +191,8 @@ const OralHistorySource = z.object({
   accessed_date: z.string().optional(),
   topics: z.array(z.string()).default([]),
   accessible: z.boolean().default(false),
+  /** True when the item is held by the repository but NOT publicly available. */
+  held_only: z.boolean().default(false),
 });
 
 /**
@@ -1390,6 +1402,127 @@ const recommendations = defineCollection({
 // Export
 // ---------------------------------------------------------------------------
 
+// ---------------------------------------------------------------------------
+// Source Collections registry
+// ---------------------------------------------------------------------------
+
+/**
+ * Tracks archives, repositories, and institutional collections that hold
+ * materials relevant to this project — each with their own conditions of use,
+ * permission requirements, and citation formats.
+ *
+ * Purpose:
+ *   - Automatic display of conditions of use when a source from this collection
+ *     appears on the site
+ *   - Track our permission status per repository
+ *   - Generate a "Sources & Conditions" page at build time
+ *   - Ensure correct citation format (some override AGSM with their own style)
+ *
+ * File location: data/sydney/source-collections/<id>.md
+ * Referenced from: OralHistorySource.collection_id, ArchiveSource.collection_id
+ */
+const source_collections = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: '../data/sydney/source-collections' }),
+  schema: z.object({
+
+    /** Full institutional name. */
+    name: z.string(),
+
+    /** Short name or common abbreviation. */
+    short_name: z.string().optional(),
+
+    /** Organisation's website. */
+    url: z.string().optional(),
+
+    /** URL for conditions of use / access policy page. */
+    conditions_url: z.string().optional(),
+
+    /** URL or email for permission / contact requests. */
+    contact_url: z.string().optional(),
+
+    /**
+     * How open the collection is.
+     *
+     * open-cc-by            — Creative Commons Attribution
+     * open-cc-by-sa         — CC Attribution ShareAlike
+     * open-cc-by-nc         — CC Attribution NonCommercial
+     * open-public-domain    — Public domain / no known rights
+     * restricted-research   — Personal and research use only; publication requires permission
+     * restricted-permission — All use requires explicit permission
+     * copyright-all-rights  — Full © All Rights Reserved
+     * government-open       — Government open data (APS Open Access Policy)
+     * unknown               — Conditions unclear or not publicly stated
+     */
+    license_type: z.enum([
+      'open-cc-by',
+      'open-cc-by-sa',
+      'open-cc-by-nc',
+      'open-public-domain',
+      'restricted-research',
+      'restricted-permission',
+      'copyright-all-rights',
+      'government-open',
+      'unknown',
+    ]),
+
+    /**
+     * Plain-English summary of conditions for researchers.
+     * Rendered verbatim on the site wherever this collection is referenced.
+     */
+    conditions_summary: z.string(),
+
+    /** Full verbatim conditions of use text (from the collection's own policy). */
+    conditions_verbatim: z.string().optional(),
+
+    /** Must we seek explicit permission before publishing any quoted material? */
+    requires_permission_for_publication: z.boolean().default(false),
+
+    /** Must we notify the collection before publishing (even if no explicit approval needed)? */
+    requires_notification_before_publication: z.boolean().default(false),
+
+    /**
+     * Citation format override.
+     * When set, use this instead of AGSM author-date for items from this collection.
+     * Use placeholder tokens in brackets: [Last], [First], [Interviewer], [Date], [Institution]
+     */
+    citation_format_override: z.string().optional(),
+
+    /** Example citation using the format. */
+    citation_example: z.string().optional(),
+
+    /**
+     * Our current permission/relationship status with this collection.
+     *
+     * not-applicable    — open license, no permission needed
+     * not-sought        — haven't contacted them yet
+     * contact-made      — we've reached out, awaiting response
+     * permission-granted — they've said yes (attach notes)
+     * permission-denied  — they've said no (attach notes)
+     * under-negotiation  — in active discussion
+     */
+    our_permission_status: z.enum([
+      'not-applicable',
+      'not-sought',
+      'contact-made',
+      'permission-granted',
+      'permission-denied',
+      'under-negotiation',
+    ]).default('not-sought'),
+
+    /** Date we last made contact or received a response. ISO 8601. */
+    last_contact_date: z.string().optional(),
+
+    /** Notes on our relationship, correspondence, or agreed terms. */
+    our_notes: z.string().optional(),
+
+    /** What we plan to use from this collection. */
+    planned_use: z.string().optional(),
+
+    tags: z.array(z.string()).default([]),
+
+  }),
+});
+
 export const collections = {
   cases,
   locations,
@@ -1397,4 +1530,6 @@ export const collections = {
   people,
   media,
   recommendations,
+  // eslint-disable-next-line camelcase
+  source_collections,
 };
