@@ -22,14 +22,30 @@ import { glob } from 'astro/loaders';
 // ---------------------------------------------------------------------------
 
 /**
- * A name someone was known by — with dead name protection.
- * Dead names are stored for research integrity but never rendered publicly.
+ * A name someone was known by — with graduated sensitivity controls.
+ *
+ * Kinds:
+ *   'alias'            — informal name or nickname (display by default)
+ *   'dead-name'        — name before gender transition; NEVER render publicly;
+ *                        stored for research integrity only
+ *   'former-legal-name'— name legally changed for non-transition reasons
+ *                        (e.g. deed poll); display with care
+ *   'name-in-records'  — name as it appears in police/coronial/press records;
+ *                        may differ from preferred name due to error or bias
+ *   'nickname'         — informal short form
  */
 const AlsoKnownAs = z.object({
   name: z.string(),
-  is_deadname: z.boolean().default(false),
-  context: z.string().optional(),  // e.g. "name used in coronial records"
-  display: z.boolean().default(true),  // false = never render on public pages
+  kind: z.enum([
+    'alias',
+    'dead-name',
+    'former-legal-name',
+    'name-in-records',
+    'nickname',
+  ]).default('alias'),
+  context: z.string().optional(),  // e.g. "changed by deed poll c.1974–76", "name used in 1976 coronial record"
+  /** Whether to render this name on public pages. Dead names always false; others default true. */
+  display: z.boolean().default(true),
 });
 
 /**
@@ -48,19 +64,36 @@ const ContentWarning = z.enum([
 /**
  * A press/newspaper/periodical source.
  * Trove is the primary pipeline for historical Australian press.
+ *
+ * AGSM author-date format:
+ *   Author A (Day Month Year) 'Article title', *Publication*, page, accessed Day Month Year.
+ *   e.g. Feneley R (17 March 2013) 'The gay murders', *Sydney Morning Herald*, p. 1.
  */
 const PressSource = z.object({
   type: z.enum(['newspaper', 'community_press', 'magazine']),
+  /** Journalist byline — family name + initials (e.g. "Feneley R"). null if uncredited. */
+  author: z.string().nullable().default(null),
   title: z.string(),
   publication: z.string(),
+  /** Full publication date — ISO 8601. AGSM requires day/month/year for news sources. */
   date: z.string().optional(),
+  /** Page number(s) for print references (e.g. "1", "A3", "14–15"). */
+  page: z.string().nullable().default(null),
   trove_id: z.string().nullable().default(null),   // NLA Trove persistent ID
   trove_url: z.string().nullable().default(null),
-  held_by: z.string().optional(),                  // if not on Trove
+  /** Direct URL if available online but not on Trove. */
+  url: z.string().nullable().default(null),
+  /** Date accessed — required by AGSM for online sources. ISO 8601. */
+  accessed_date: z.string().optional(),
+  held_by: z.string().optional(),                  // if not on Trove or online
 });
 
 /**
  * An archival institution source.
+ *
+ * AGSM author-date format (NAA follows NAA's own citation guide):
+ *   Creator A (Year) *Title of item*, Institution, collection, item_id.
+ *   NAA: National Archives of Australia: [Agency]; [Series]; [Item barcode], [Item title].
  */
 const ArchiveSource = z.object({
   institution: z.enum([
@@ -74,18 +107,36 @@ const ArchiveSource = z.object({
     'nsw-state-archives',
     'other',
   ]),
+  /** Creator or author of the item — individual or corporate. */
+  creator: z.string().optional(),
+  /** Date the item was created — ISO 8601 or year. */
+  date: z.string().optional(),
+  /** Title of the specific item (document, photograph, recording, etc.). */
+  title: z.string().optional(),
   collection: z.string().optional(),
   item_id: z.string().optional(),
   url: z.string().nullable().default(null),
+  /** Date accessed — required by AGSM for online sources. ISO 8601. */
+  accessed_date: z.string().optional(),
   description: z.string().optional(),
 });
 
 /**
  * A Hansard (parliamentary record) source.
+ *
+ * AGSM author-date format:
+ *   Chamber (Year) *Debates*, volume:page.
+ *   e.g. NSW Legislative Assembly (1984) *Debates*, 132:4471.
  */
 const HansardSource = z.object({
   chamber: z.string(),           // e.g. "NSW Legislative Assembly"
+  /** Title of the debate, bill or matter (e.g. "Crimes Amendment (Homosexual Advance) Bill"). */
+  title: z.string().optional(),
   date: z.string(),
+  /** Hansard volume number — appears before the colon in citation (e.g. "132"). */
+  volume: z.string().optional(),
+  /** Page number(s) within the volume — appears after the colon (e.g. "4471"). */
+  page: z.string().optional(),
   speaker: z.string().optional(),
   context: z.string().optional(),
   url: z.string().nullable().default(null),
@@ -93,25 +144,205 @@ const HansardSource = z.object({
 
 /**
  * An oral history source.
+ *
+ * AGSM author-date format (interview transcript):
+ *   Interviewer I (Day Month Year) *Interviewer interviews Subject: Title*
+ *   [interview transcript], Publisher, accessed Day Month Year.
  */
 const OralHistorySource = z.object({
   interview_id: z.string().optional(),   // links to a people/ record
   subject: z.string().optional(),        // name of interview subject
+  /** Interviewer — family name + initials (e.g. "Watson AB"). */
+  interviewer: z.string().optional(),
   date_recorded: z.string().optional(),
   held_by: z.string().optional(),        // e.g. aqua, pride-history-group
+  /** Format of the held item. */
+  format: z.enum(['audio', 'video', 'transcript', 'summary', 'notes']).optional(),
+  url: z.string().nullable().default(null),
+  /** Date accessed — required by AGSM for online sources. ISO 8601. */
+  accessed_date: z.string().optional(),
   topics: z.array(z.string()).default([]),
   accessible: z.boolean().default(false),
 });
 
 /**
- * A coronial record source.
+ * A coronial record source — the citation entry for a coronial file.
+ *
+ * AGSM author-date format:
+ *   Inquest into the death of Surname Name (Year), Court, Coroner.
+ *   e.g. Inquest into the death of Mark Stewart (1976), NSW Coroners Court, Goldrick J.
  */
 const CoronialSource = z.object({
+  /** Name of deceased — used in AGSM citation: "Inquest into the death of [deceased]". */
+  deceased: z.string().optional(),
   finding: z.string().optional(),
   coroner: z.string().optional(),
   date: z.string().optional(),
+  /** Coronial matter/file number. */
+  inquest_number: z.string().optional(),
+  /** Court and location — e.g. "NSW Coroners Court, Glebe". */
+  court: z.string().optional(),
+  jurisdiction: z.string().default('NSW'),
   accessible: z.boolean().default(false),
   notes: z.string().optional(),
+});
+
+// ---------------------------------------------------------------------------
+// Sub-schemas: manner findings, inquest records, sexuality
+// ---------------------------------------------------------------------------
+
+/**
+ * One coronial inquest — tracks the official finding at a specific hearing.
+ * Cases may have multiple (e.g. Scott Johnson had three).
+ */
+const InquestRecord = z.object({
+  /** Sequence: 1 = original inquest, 2 = second, etc. */
+  sequence: z.number().default(1),
+
+  /** Structured finding code for filtering and map rendering. */
+  finding: z.enum([
+    'open',          // coroner could not determine manner
+    'suicide',
+    'accidental',
+    'homicide',      // unlawfully killed
+    'undetermined',  // evidence insufficient to reach any finding
+    'not-held',      // no inquest was conducted
+  ]),
+
+  /** Verbatim or close paraphrase of the finding text, for display. */
+  finding_text: z.string().optional(),
+
+  date: z.string().optional(),            // ISO 8601
+  coroner: z.string().optional(),
+  court: z.string().optional(),           // e.g. "NSW Coroners Court, Glebe"
+  inquest_number: z.string().optional(),  // coronial matter/file number
+});
+
+/**
+ * Structured manner findings — full record of all official determinations
+ * from original inquest through to the SCOI Inquiry's conclusions.
+ *
+ * Replaces the former free-text `manner_of_death` and the three single
+ * `coronial_*` fields. Tracks how the official understanding of each
+ * death evolved over decades.
+ */
+const MannerFindings = z.object({
+  /**
+   * All coronial inquests, in chronological order (sequence 1, 2, 3...).
+   * Most cases have one. Scott Johnson had three.
+   */
+  inquests: z.array(InquestRecord).default([]),
+
+  /**
+   * Strike Force Parrabell BCIF outcome (where applicable).
+   * The Inquiry found this methodology was fatally flawed —
+   * record for historical completeness, not as an authoritative finding.
+   */
+  parrabell_finding: z.enum([
+    'bias-crime',
+    'suspected-bias',
+    'insufficient-information',
+    'not-assessed',
+  ]).optional(),
+
+  /**
+   * The SCOI (Sackar) Inquiry's finding or conclusion.
+   * The most authoritative classification for this project.
+   */
+  inquiry_finding: z.enum([
+    'confirmed-homicide',          // e.g. Scott Johnson — third inquest found homicide
+    'probable-hate-crime',         // e.g. Ross Warren — Milledge finding upheld
+    'possible-hate-crime',         // e.g. Mark Stewart — "reason to suspect" but undetermined
+    'open',                        // Inquiry left it open; could not determine
+    'undetermined',                // Evidence insufficient to reach any finding
+    'not-individually-examined',   // Category A/B but not publicly examined at hearing
+  ]).optional(),
+
+  /**
+   * Working site status — drives map pin colour and filter UI.
+   * Set to the most current authoritative understanding.
+   */
+  site_status: z.enum([
+    'confirmed-homicide',
+    'probable',
+    'possible',
+    'open',
+    'undetermined',
+  ]),
+
+  /**
+   * Criminal conviction arising from this death, if any.
+   * null = no conviction (the common case for these cold cases).
+   */
+  conviction: z.object({
+    person_id: z.string().optional(),  // ref to a record in data/sydney/people/
+    offence: z.string(),               // e.g. "manslaughter", "murder"
+    verdict: z.enum(['guilty', 'manslaughter', 'acquitted']).optional(),
+    year: z.number(),
+    court: z.string().optional(),
+    sentence: z.string().optional(),
+    notes: z.string().optional(),
+  }).nullable().default(null),
+});
+
+/**
+ * Structured sexuality record — captures identity, confidence, perceived
+ * sexuality, and historical language without imposing fixed categories.
+ * Used in both the cases and people collections.
+ *
+ * These cases span 1970–2010. Language in historical records is often
+ * offensive, clinically dehumanising, or outdated ('homosexual', 'deviant').
+ * The `historical_record_language` field preserves that for research integrity
+ * without ever rendering it publicly without explicit framing.
+ */
+const SexualityRecord = z.object({
+  /**
+   * Self-identified sexuality or gender/sexual identity.
+   * Use the person's own words where known; otherwise contemporary respectful
+   * terminology. null = identity not known.
+   * e.g. "gay", "bisexual", "queer", "lesbian"
+   */
+  identity: z.string().nullable().default(null),
+
+  /**
+   * Confidence level for this information.
+   * Most victims' sexualities are unknown or uncertain — record honestly.
+   */
+  confidence: z.enum([
+    'confirmed',  // explicitly stated by the person, or confirmed by close family/community
+    'probable',   // strong circumstantial evidence (attended known gay venues, beats)
+    'possible',   // some evidence but genuinely uncertain
+    'unknown',    // no information available
+  ]).default('unknown'),
+
+  /**
+   * Basis for the confidence determination.
+   * e.g. "family evidence at inquest", "frequented known gay venues",
+   * "attending police-identified beat", "own testimony"
+   */
+  source: z.string().nullable().default(null),
+
+  /**
+   * How this person was perceived by perpetrators or by society at the time.
+   * Distinct from actual identity — hate crimes are often motivated by
+   * perceived sexuality regardless of the victim's actual identity.
+   * e.g. "perceived as gay", "targeted as homosexual by perpetrators"
+   */
+  perceived_as: z.string().nullable().default(null),
+
+  /**
+   * Language used in historical police, coronial and press records.
+   * May be offensive, clinically dehumanising, or outdated.
+   * Stored for research integrity. NEVER rendered publicly without context.
+   * e.g. "homosexual" (1976 coronial record), "sexual deviant" (police file, 1983)
+   */
+  historical_record_language: z.string().nullable().default(null),
+
+  /**
+   * Contextual note for public display.
+   * Use to explain uncertainty, note contested evidence, or provide nuance.
+   */
+  display_note: z.string().nullable().default(null),
 });
 
 // ---------------------------------------------------------------------------
@@ -135,14 +366,15 @@ const cases = defineCollection({
     /** Gender identity in their own words where known. */
     gender_identity: z.string().optional(),
 
-    /** Sexuality where known and relevant. */
-    sexuality: z.string().optional(),
+    /** Structured sexuality record — captures identity, confidence, perceived sexuality, and historical language. */
+    sexuality: SexualityRecord.optional(),
 
     /**
      * Other names this person was known by.
-     * Dead names: set is_deadname: true and display: false.
-     * They are stored for research integrity (coroner/police records use them)
-     * but never rendered on public-facing pages.
+     * Use `kind: 'dead-name'` with `display: false` for names before gender transition.
+     * Use `kind: 'former-legal-name'` for legal name changes (e.g. deed poll).
+     * Use `kind: 'name-in-records'` for names in historical police/coronial/press records.
+     * Names with `display: false` are stored for research integrity only.
      */
     also_known_as: z.array(AlsoKnownAs).default([]),
 
@@ -216,11 +448,24 @@ const cases = defineCollection({
 
     // --- Cause and manner ---------------------------------------------------
 
-    /** Medical cause of death (from post-mortem). */
+    /**
+     * Medical cause of death — the physiological mechanism.
+     * Free text from post-mortem report or forensic review.
+     * e.g. "multiple injuries sustained in a fall from a height"
+     */
     cause_of_death: z.string().optional(),
 
-    /** Manner of death (how it happened). */
-    manner_of_death: z.string().optional(),
+    /**
+     * Structured manner findings — tracks how the official determination of
+     * *how* and *why* this person died evolved from original inquest through
+     * to the SCOI Inquiry's conclusions.
+     *
+     * Replaces the former free-text `manner_of_death` and the single
+     * `coronial_finding / coronial_inquest_date / coronial_coroner` fields.
+     * Multiple inquests (e.g. Scott Johnson's three) are supported via
+     * the `inquests` array.
+     */
+    manner_findings: MannerFindings.optional(),
 
     // --- SCOI classification ------------------------------------------------
 
@@ -243,16 +488,7 @@ const cases = defineCollection({
     /** Explanation to display when historical_misgendering is true. */
     historical_misgendering_note: z.string().optional(),
 
-    // --- Original inquest ---------------------------------------------------
-
-    /** Coronial finding text. */
-    coronial_finding: z.string().optional(),
-
-    /** Date of original inquest (ISO 8601). */
-    coronial_inquest_date: z.string().optional(),
-
-    /** Name of coroner who presided. */
-    coronial_coroner: z.string().optional(),
+    // Inquest data is now captured in manner_findings.inquests[] above.
 
     // --- Perpetrators -------------------------------------------------------
 
@@ -310,9 +546,25 @@ const cases = defineCollection({
     // --- Sources ------------------------------------------------------------
 
     sources: z.object({
-      /** The Sackar Inquiry report — primary source for every case. */
+      /**
+       * The Sackar Inquiry report — primary source for every case.
+       *
+       * AGSM author-date format:
+       *   NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J) (2023)
+       *   *Report of the Special Commission of Inquiry*, vol. [volume],
+       *   NSW Government, Sydney, pp. [page_start]–[page_end].
+       *   In-text: (SCOI 2023:[page]) or (SCOI 2023, para [paragraph])
+       */
       scoi: z.object({
         volume: z.number(),
+        /** Chapter number within the volume (e.g. 5 for Chapter 5: Category A Deaths). */
+        chapter: z.number().optional(),
+        /**
+         * Paragraph reference for precise legal/report citation.
+         * String to handle decimal format (e.g. "5.279", "16.15").
+         * Preferred over page numbers for direct quotations.
+         */
+        paragraph: z.string().optional(),
         page_start: z.number().nullable().default(null),
         page_end: z.number().nullable().default(null),
         /**
@@ -501,6 +753,8 @@ const people = defineCollection({
     name: z.string(),
     pronouns: z.string().optional(),
     gender_identity: z.string().optional(),
+    /** Structured sexuality record — captures identity, confidence, perceived sexuality, and historical language. */
+    sexuality: SexualityRecord.optional(),
     also_known_as: z.array(AlsoKnownAs).default([]),
 
     // --- First Nations ------------------------------------------------------
