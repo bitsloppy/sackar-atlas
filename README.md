@@ -8,7 +8,7 @@ Built in response to Justice Sackar's 2023 findings and call for a lasting publi
 
 ## What this is
 
-This is not just a crime database. The violence is one thread in a richer story — of resistance, community, law reform, and culture. This project documents all of it, relationally, as open data anyone can use.
+This is not just a crime database. The violence sits alongside activism, law reform, and culture. This project maps what it can as open data anyone can use.
 
 **Scope:** Individual cases examined by the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar Inquiry, December 2023), plus the broader historical context: activism, legal milestones, cultural events, and significant places, from the 1960s to the present.
 
