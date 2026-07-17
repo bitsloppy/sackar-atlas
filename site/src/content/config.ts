@@ -12,6 +12,24 @@
  *   media      — archival footage, photographs, audio, documents
  *
  * Licence: MIT (site/) — see /LICENSE-code
+ *
+ * ---------------------------------------------------------------------------
+ * Normative references
+ * ---------------------------------------------------------------------------
+ *
+ * Referencing and attribution
+ *   Australian Government Style Manual — author–date system
+ *   https://www.stylemanual.gov.au/referencing-and-attribution/author-date
+ *
+ * First Nations cultural protocols
+ *   Local Contexts — TK Labels, BC Labels, and Notices for Indigenous heritage
+ *   https://localcontexts.org
+ *   AIATSIS Map of Indigenous Australia — aiatsis.gov.au/explore/map-indigenous-australia
+ *
+ * Primary source
+ *   NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023)
+ *   NSW Government landing page and full report volumes:
+ *   https://www.nsw.gov.au/departments-and-agencies/cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes
  */
 
 import { defineCollection, z } from 'astro:content';
@@ -346,6 +364,36 @@ const SexualityRecord = z.object({
 });
 
 // ---------------------------------------------------------------------------
+// Sub-schema: PhysicalMarker
+// Used in locations.physical_markers[]
+// Sackar's Chapter 16 called for physical markers at significant locations
+// via local councils. 'proposed' captures that call even where none yet exist.
+// ---------------------------------------------------------------------------
+
+const PhysicalMarker = z.object({
+  type: z.enum([
+    'memorial-plaque',   // commemorative plaque
+    'memorial-garden',   // dedicated garden or landscaped space
+    'monument',          // freestanding monument or sculpture
+    'heritage-marker',   // informational historical marker
+    'named-in-honour',   // street, park, or space named for victim(s)
+    'proposed',          // called for but not yet installed
+  ]),
+  name: z.string().optional(),
+  description: z.string().optional(),
+  /** Date installed or dedicated (ISO 8601 or year). */
+  installed: z.string().optional(),
+  /** Organisation responsible for the marker (e.g. "Waverley Council"). */
+  managed_by: z.string().optional(),
+  /** Case IDs this marker commemorates. */
+  for_cases: z.array(z.string()).default([]),
+  /** People IDs this marker commemorates. */
+  for_people: z.array(z.string()).default([]),
+  heritage_listed: z.boolean().default(false),
+  heritage_listing_ref: z.string().optional(),
+});
+
+// ---------------------------------------------------------------------------
 // COLLECTION: cases
 // Individual deaths examined by the Sackar Inquiry.
 // Each record = one person. Joint matters use joint_case_id to link records.
@@ -598,8 +646,9 @@ const cases = defineCollection({
 
 // ---------------------------------------------------------------------------
 // COLLECTION: locations
-// Significant places — death sites, last seen locations, venues, memorials.
-// Temporal-aware: pubs open and close, places get renamed.
+// Significant places — death sites, last seen locations, venues, memorials,
+// beats, march waypoints, institutional sites.
+// Temporal-aware: pubs open and close, places get renamed, beats shift.
 // ---------------------------------------------------------------------------
 
 const locations = defineCollection({
@@ -611,16 +660,53 @@ const locations = defineCollection({
     /** Former names or alternative names for this place. */
     also_known_as: z.array(z.string()).default([]),
 
+    // --- Place type ---------------------------------------------------------
+
     location_type: z.enum([
+      // Natural / outdoor
       'headland', 'cliff', 'park', 'beach', 'reserve',
-      'hotel', 'pub', 'venue', 'club', 'sauna',
-      'street', 'laneway', 'intersection',
-      'home', 'workplace',
       'waterway', 'harbour', 'river',
+      // Licensed premises
+      'hotel', 'pub', 'nightclub', 'venue', 'club', 'sauna',
+      // Public infrastructure
+      'street', 'laneway', 'intersection', 'public-toilet',
+      // Private
+      'home', 'workplace',
+      // Institutional
+      'police-station', 'court', 'hospital', 'community-space',
+      // Heritage / memorial
       'memorial', 'cemetery',
-      'public-toilet',
+      // Geographic line (march routes, walking paths)
+      'route',
       'other',
     ]),
+
+    /**
+     * Project-relevant roles this location plays.
+     * A place can have multiple roles: a headland can be both a beat and a
+     * crime scene. Drives map layer toggles and filtered search views.
+     *
+     *   beat           — known gay beat (the core missing field this fixes!)
+     *   nightlife-venue— pub, club, sauna (complements location_type)
+     *   march-route    — documented waypoint on a historical march/procession
+     *   crime-scene    — body found here, or crime occurred here
+     *   last-seen      — last confirmed location of a victim
+     *   memorial       — dedicated memorial site
+     *   institutional  — police station, court, hospital
+     *   community-hub  — meeting space, organisation HQ
+     *   burial-site    — cemetery or grave
+     */
+    location_roles: z.array(z.enum([
+      'beat',
+      'nightlife-venue',
+      'march-route',
+      'crime-scene',
+      'last-seen',
+      'memorial',
+      'institutional',
+      'community-hub',
+      'burial-site',
+    ])).default([]),
 
     suburb: z.string().optional(),
     lat: z.number().nullable().default(null),
@@ -637,17 +723,54 @@ const locations = defineCollection({
     /** True if this place still exists in some form today. */
     still_exists: z.boolean().default(true),
 
-    /** If renamed, what is it called now. */
+    /** If renamed, what it is called now. */
     current_name: z.string().optional(),
 
     // --- First Nations ------------------------------------------------------
+    //
+    // Country custodianship is the PRIMARY identity of every place.
+    // Colonial naming, contemporary use, and queer heritage layer on top —
+    // not the other way around.
+    //
+    // Key Countries across Sydney's significant sites:
+    //   Gadigal      — CBD, inner south, inner west (Oxford Street strip)
+    //   Bidjigal     — Bondi, Randwick, eastern suburbs (Marks Park)
+    //   Cadigal      — Botany Bay, south Sydney
+    //   Gayamaygal   — Manly, North Head, northern beaches (Fairy Bower)
+    //   Darug        — western Sydney
+    // Some sites sit on overlapping custodianship — use first_nations_country_additional.
+    //
+    // See also:
+    //   AIATSIS Map: aiatsis.gov.au/explore/map-indigenous-australia
+    //   Local Contexts: https://localcontexts.org
 
     /**
-     * First Nations Country this place sits on.
-     * Sydney spans multiple Countries: Gadigal (CBD), Cadigal (south),
-     * Gayamaygal (north shore/Manly), Darug (west), and others.
+     * Primary First Nations Country this place sits on.
+     * Use the community's preferred spelling.
      */
-    country: z.string().optional(),
+    first_nations_country: z.string().optional(),
+
+    /**
+     * Additional Country where custodianship overlaps or is disputed.
+     * Sydney's eastern suburbs sit on the Gadigal/Bidjigal boundary.
+     */
+    first_nations_country_additional: z.string().optional(),
+
+    /**
+     * How Country was determined.
+     * 'community-confirmed' is the gold standard.
+     * Be honest — most initial entries will be 'aiatsis-map' at best.
+     */
+    country_determination: z.enum([
+      'community-confirmed',  // confirmed by the relevant First Nations community
+      'local-land-council',   // via the relevant local land council
+      'language-centre',      // confirmed by a First Nations language centre
+      'aiatsis-map',          // based on the AIATSIS Map of Indigenous Australia
+      'researcher-assessed',  // provisional only; needs community verification
+    ]).optional(),
+
+    /** Name of the specific community, council, or source that made the determination. */
+    country_determination_detail: z.string().optional(),
 
     /** Traditional name for this place in First Nations language. */
     traditional_name: z.string().nullable().default(null),
@@ -655,23 +778,110 @@ const locations = defineCollection({
     /** Language group of the traditional name. */
     traditional_name_language: z.string().nullable().default(null),
 
-    /** Source for Country determination (e.g. "aiatsis", "local-land-council"). */
-    country_source: z.string().optional(),
+    /** Who provided this traditional name (community authority, source document). */
+    traditional_name_source: z.string().optional(),
 
-    /** Brief acknowledgement text for display on location page. */
+    /**
+     * Has the relevant First Nations community confirmed this traditional name?
+     * null = not yet verified. Never publish unconfirmed names without flagging.
+     */
+    traditional_name_confirmed: z.boolean().nullable().default(null),
+
+    /**
+     * Local Contexts TK Labels, BC Labels, or Notices applied to this location.
+     * Applied by First Nations communities via https://localcontexts.org.
+     *
+     * TK Labels: https://localcontexts.org/labels/traditional-knowledge/
+     * BC Labels: https://localcontexts.org/labels/biocultural/
+     * Notices:   https://localcontexts.org/notices/
+     *
+     * The project may add Notices (e.g. "Attribution Incomplete") before a
+     * community has applied a label, to honestly signal incomplete attribution.
+     */
+    local_contexts_labels: z.array(z.object({
+      /** Label or Notice name from localcontexts.org. */
+      label: z.string(),
+      label_type: z.enum(['TK', 'BC', 'Notice']),
+      /** First Nations community that applied this label (TK/BC labels only). */
+      community: z.string().optional(),
+      /** URL to the specific project page on localcontexts.org. */
+      url: z.string().optional(),
+      date_applied: z.string().optional(),
+    })).default([]),
+
+    /**
+     * Independent cultural significance to First Nations people beyond LGBTIQ history.
+     * If present: flag for consultation before publishing.
+     */
+    first_nations_significance: z.string().optional(),
+
+    /**
+     * Consultation status with the relevant First Nations community.
+     * This is a research ethics commitment, not decorative metadata.
+     *
+     * 'not-assessed' is the honest default for new location records.
+     * Aim to move every significant location to 'completed' over time.
+     */
+    consultation_status: z.enum([
+      'not-assessed',  // haven't yet determined if consultation is needed
+      'not-required',  // determined no specific consultation needed for this record
+      'pending',       // consultation needed but not yet started
+      'in-progress',   // consultation underway
+      'completed',     // completed — see consultation_notes
+    ]).default('not-assessed'),
+
+    consultation_notes: z.string().optional(),
+
+    /** Acknowledgement of Country text for display on the location page. */
     acknowledgement: z.string().optional(),
 
-    // --- Memorial -----------------------------------------------------------
+    // --- Physical markers ---------------------------------------------------
+    //
+    // Sackar Chapter 16 explicitly called for physical markers at significant
+    // locations via local councils and LGAs. 'proposed' records that call
+    // even where no marker exists yet — making the gap visible.
 
-    is_memorial: z.boolean().default(false),
-    memorial_established: z.string().optional(),
-    memorial_for: z.array(z.string()).default([]),  // case IDs
+    physical_markers: z.array(PhysicalMarker).default([]),
 
     // --- Relationships ------------------------------------------------------
 
     related_cases: z.array(z.string()).default([]),
     related_events: z.array(z.string()).default([]),
     related_media: z.array(z.string()).default([]),
+
+    // --- Sources ------------------------------------------------------------
+    //
+    // AGSM author-date referencing:
+    // https://www.stylemanual.gov.au/referencing-and-attribution/author-date
+
+    sources: z.object({
+      press: z.array(PressSource).default([]),
+      archives: z.array(ArchiveSource).default([]),
+      oral_history: z.array(OralHistorySource).default([]),
+      /**
+       * Reference to the SCOI report if this location is explicitly mentioned.
+       * NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023).
+       * https://www.nsw.gov.au/departments-and-agencies/cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes
+       */
+      scoi: z.object({
+        volume: z.number(),
+        chapter: z.number().optional(),
+        paragraph: z.string().optional(),
+        page_start: z.number().nullable().default(null),
+        page_end: z.number().nullable().default(null),
+      }).optional(),
+      /**
+       * Geographic/mapping authority sources.
+       * e.g. OpenStreetMap node ID, NSW State Heritage Register listing,
+       * Heritage NSW assessment, City of Sydney heritage map.
+       */
+      geographic: z.array(z.object({
+        service: z.string(),              // e.g. "OpenStreetMap", "NSW State Heritage Register"
+        reference: z.string().optional(), // e.g. OSM node/way ID, heritage listing number
+        url: z.string().optional(),
+        accessed_date: z.string().optional(),
+      })).default([]),
+    }).default({ press: [], archives: [], oral_history: [], geographic: [] }),
 
     content_warnings: z.array(ContentWarning).default([]),
 
@@ -719,6 +929,14 @@ const events = defineCollection({
     location_name: z.string().optional(),
     location_lat: z.number().nullable().default(null),
     location_lng: z.number().nullable().default(null),
+
+    /**
+     * Ordered list of location IDs for events that move through space.
+     * Use for march routes, processions, walking tours.
+     * route_waypoints[0] = start, route_waypoints[n-1] = end.
+     * The primary location_id captures the central or most significant point.
+     */
+    route_waypoints: z.array(z.string()).default([]),
 
     // --- Relationships ------------------------------------------------------
 
