@@ -37,6 +37,32 @@ All structured data is published as open data under CC-BY 4.0. On every build, t
 
 ---
 
+## Citing this project
+
+### The dataset (AGSM author–date)
+
+> Roberts A (2026) *Queer Heritage: Historical LGBTIQ Hate Crimes in Sydney* [data set], GitHub, https://github.com/bitsloppy/queer-heritage, accessed [Day Month Year].
+
+A `CITATION.cff` file is included — GitHub renders this as a **Cite this repository** button in the sidebar (look for it under "About").
+
+### An individual record
+
+> Roberts A (2026) '[Record title]', *Queer Heritage* [data set record], https://github.com/bitsloppy/queer-heritage/blob/main/data/sydney/[collection]/[slug].md, accessed [Day Month Year].
+
+Example:
+> Roberts A (2026) 'Mark Stewart', *Queer Heritage* [data set record], https://github.com/bitsloppy/queer-heritage/blob/main/data/sydney/cases/mark-stewart.md, accessed 17 July 2026.
+
+Once the site is live, use the site URL instead of the GitHub file path. Each record page will include a pre-formatted citation string.
+
+### Licence requirement
+
+All data under `data/sydney/` is published under **CC-BY 4.0**. Attribution is a licence condition — please cite as above. Original journalism under `journalism/` is © Anna Roberts, all rights reserved.
+
+→ Full licence details: [LICENSING.md](LICENSING.md)  
+→ Methodology and project bibliography: [REFERENCES.md](REFERENCES.md)
+
+---
+
 ## Status
 
 🔧 Early development — data model and first cases in progress.

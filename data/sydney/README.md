@@ -27,8 +27,31 @@ Data schema: see `../../site/src/schema/` (once built).
 
 ---
 
-## Attribution
+## Attribution and citation
 
-If you use this data, please credit:
+**Licence:** CC-BY 4.0. Attribution is a licence condition.
 
-> Queer Heritage / Anna Roberts — https://github.com/bitsloppy/queer-heritage — CC-BY 4.0
+### Citing the full dataset
+
+> Roberts A (2026) *Queer Heritage: Historical LGBTIQ Hate Crimes in Sydney* [data set], GitHub, https://github.com/bitsloppy/queer-heritage, accessed [Day Month Year].
+
+### Citing an individual record
+
+Each record file is independently citable. Use the GitHub file URL until the site is live, then use the site URL.
+
+**Format:**
+> Roberts A (2026) '[Record title]', *Queer Heritage* [data set record], https://github.com/bitsloppy/queer-heritage/blob/main/data/sydney/[collection]/[slug].md, accessed [Day Month Year].
+
+**Example — a case record:**
+> Roberts A (2026) 'Mark Stewart', *Queer Heritage* [data set record], https://github.com/bitsloppy/queer-heritage/blob/main/data/sydney/cases/mark-stewart.md, accessed 17 July 2026.
+
+**Example — a location record:**
+> Roberts A (2026) 'Fairy Bower Headland', *Queer Heritage* [data set record], https://github.com/bitsloppy/queer-heritage/blob/main/data/sydney/locations/fairy-bower-headland.md, accessed 17 July 2026.
+
+Once the site is live, the site will generate a ready-to-copy citation string on every record page.
+
+→ Full citation guidance and methodology bibliography: [REFERENCES.md](../../REFERENCES.md)
+
+### Machine-readable citation
+
+A `CITATION.cff` file in the repository root provides machine-readable citation metadata. GitHub renders this as a **Cite this repository** button in the sidebar.

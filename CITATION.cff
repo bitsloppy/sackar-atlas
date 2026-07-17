@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: >
+  If you use this dataset in your research, journalism, or creative work,
+  please cite it as below. Attribution is required under the CC-BY 4.0 licence.
+type: dataset
+title: "Queer Heritage: Historical LGBTIQ Hate Crimes in Sydney"
+abstract: >
+  An open dataset documenting individual LGBTIQ hate crime deaths examined by
+  the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar Inquiry,
+  December 2023), alongside related locations, historical events, and significant
+  people from six decades of queer Sydney history. Compiled from the SCOI report,
+  coronial records, archival press, and oral history sources. Published under
+  CC-BY 4.0 as a resource for researchers, journalists, and the community.
+authors:
+  - family-names: Roberts
+    given-names: Anna
+    alias: bitsloppy
+license: CC-BY-4.0
+repository-code: "https://github.com/bitsloppy/queer-heritage"
+url: "https://github.com/bitsloppy/queer-heritage"
+date-released: "2026-07-17"
+keywords:
+  - LGBTIQ
+  - hate crimes
+  - queer history
+  - Sydney
+  - NSW
+  - Sackar Inquiry
+  - SCOI
+  - open data
+  - digital heritage
+  - historical geography

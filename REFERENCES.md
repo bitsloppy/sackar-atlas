@@ -9,6 +9,34 @@ See: <https://www.stylemanual.gov.au/referencing-and-attribution/author-date>
 
 ---
 
+## How to cite this project
+
+### Citing the dataset as a whole
+
+Roberts A (2026) *Queer Heritage: Historical LGBTIQ Hate Crimes in Sydney* [data set], GitHub, https://github.com/bitsloppy/queer-heritage, accessed [Day Month Year].
+
+### Citing an individual record
+
+Roberts A (2026) '[Record title]', *Queer Heritage* [data set record], https://github.com/bitsloppy/queer-heritage/blob/main/data/sydney/[collection]/[slug].md, accessed [Day Month Year].
+
+**Example:**
+
+Roberts A (2026) 'Mark Stewart', *Queer Heritage* [data set record], https://github.com/bitsloppy/queer-heritage/blob/main/data/sydney/cases/mark-stewart.md, accessed 17 July 2026.
+
+### Citing original journalism
+
+Journalism pieces under `journalism/` are © Anna Roberts, all rights reserved. Cite as a standard article:
+
+Roberts A ([Day Month Year]) '[Article title]', *Queer Heritage*, https://[domain]/journalism/[slug], accessed [Day Month Year].
+
+### Licence
+
+All data under `data/sydney/` is published under **CC-BY 4.0**. Attribution is a licence condition, not optional courtesy. A machine-readable `CITATION.cff` is included in the repository root — GitHub renders this as a **Cite this repository** button.
+
+**Future:** At v1.0 release, a DOI will be minted via [Zenodo](https://zenodo.org) for permanent academic citation.
+
+---
+
 ## Primary source
 
 NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (2023) *Report of the Special Commission of Inquiry into LGBTIQ Hate Crimes* (Sackar J, Commissioner), 3 vols + annexures, NSW Government, Sydney.
