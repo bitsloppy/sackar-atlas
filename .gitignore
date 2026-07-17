@@ -1,0 +1,26 @@
+# Node / Astro
+node_modules/
+dist/
+.astro/
+.env
+.env.local
+.env.*.local
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# Build outputs / generated data exports
+# (these get regenerated at build time — don't commit them)
+site/public/cases.json
+site/public/cases.csv
+site/public/queer-sydney.db
+
+# Logs
+*.log
+npm-debug.log*
