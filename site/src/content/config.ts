@@ -1517,6 +1517,16 @@ const source_collections = defineCollection({
     /** Notes on our relationship, correspondence, or agreed terms. */
     our_notes: z.string().optional(),
 
+    /**
+     * Reciprocal obligations — what the researcher owes back to the collection.
+     * Distinct from conditions (what you're allowed to do): this is what you
+     * must provide in return for access.
+     *
+     * Examples: deposit a copy of completed work with the archive; acknowledge
+     * the collection in publications; provide transcripts or translations.
+     */
+    researcher_obligations: z.string().optional(),
+
     /** What we plan to use from this collection. */
     planned_use: z.string().optional(),
 

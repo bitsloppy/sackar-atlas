@@ -34,7 +34,7 @@ contact_url: https://... (contact or permissions page)
 license_type: # one of:
   # open-cc-by | open-cc-by-sa | open-cc-by-nc | open-public-domain
   # restricted-research | restricted-permission | copyright-all-rights
-  # government-open | unknown
+  # government-open | item-dependent | unknown
 
 conditions_summary: >
   Plain English summary for researchers. Rendered on the site.
@@ -44,6 +44,12 @@ conditions_verbatim: >
 
 requires_permission_for_publication: true/false
 requires_notification_before_publication: true/false
+
+# Reciprocal obligations: what you owe BACK to the archive in return for access.
+# e.g. deposit a copy of completed work, acknowledge in publications.
+# Leave blank if none beyond standard copyright responsibility.
+researcher_obligations: >
+  Describe any obligations here.
 
 # Only needed if they use a non-AGSM citation format:
 citation_format_override: "[tokens] showing their required format"
