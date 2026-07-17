@@ -588,13 +588,126 @@ const cases = defineCollection({
       notes: z.string().nullable().default(null),
     })).default([]),
 
-    // --- Police conduct -----------------------------------------------------
+    // --- Police conduct and accountability -----------------------------------
+    //
+    // This section documents two parallel histories:
+    //   Layer 1: What happened to this person
+    //   Layer 2: What institutions did (and failed to do) about it,
+    //            and what obligations remain outstanding
+    //
+    // The SCOI exposed a gap between official record and actual accountability.
+    // Strike Force Neiwand secretly overturned coronial homicide findings and
+    // never told families. This schema makes that gap visible and filterable.
 
     /**
-     * True when the Sackar Inquiry specifically documented police failure or
-     * misconduct in this case. Null when not specifically addressed.
+     * All police and UHT investigations of this death, in chronological order.
+     *
+     * Key type distinction: 'paper-review' vs 'reinvestigation'.
+     * Parrabell was condemned specifically for being a paper review only —
+     * no reinvestigation of the 116 POIs, no witness contact, BCIFs completed
+     * from documentary records alone. That distinction matters here.
      */
-    police_misconduct: z.boolean().nullable().default(null),
+    police_investigations: z.array(z.object({
+      name: z.string(),                       // e.g. "Manly Police (original)", "Strike Force Parrabell"
+      type: z.enum([
+        'original-investigation',             // the initial police investigation at time of death
+        'cold-case-review',                   // UHT/detective review of old file
+        'paper-review',                       // documentary review only — no active reinvestigation
+        'reinvestigation',                    // active reinvestigation: witnesses, forensics, POIs
+        'strike-force',                       // formal named strike force
+        'coronial-investigation',             // investigation by or for Coroner
+        'scoi-examination',                   // examined by the Sackar Inquiry itself
+      ]),
+      years: z.string().optional(),           // e.g. "1976", "2015–2016", "2022–2023"
+      lead_officer: z.string().optional(),    // named officer where recorded
+      outcome: z.enum([
+        'no-further-action',
+        'case-suspended',
+        'nil-priority',                       // Parrabell/UHT scoring outcome
+        'referred-to-coroner',
+        'charges-laid',
+        'convicted',
+        'insufficient-information',           // Parrabell BCIF finding
+        'contrary-finding',                   // Neiwand: internally overturned prior coronial finding
+        'ongoing',
+        'unknown',
+      ]).optional(),
+      notes: z.string().optional(),
+    })).default([]),
+
+    /**
+     * Granular police misconduct level — replaces the former boolean.
+     *
+     * Mapped to SCOI findings:
+     *   'none'                    no misconduct finding
+     *   'inadequate-investigation' fell short of standards; no individual
+     *                             criticism — systemic/era failure
+     *                             (e.g. Mark Stewart 1976)
+     *   'bias-affected'           conscious or unconscious bias found by Inquiry
+     *   'active-misconduct'       specific identified officer conduct
+     *                             (e.g. Scott Johnson — Young's Lateline interview;
+     *                              Willing found to be an "unreliable historian")
+     *   'institutional-misconduct' coordinated institutional bad faith;
+     *                             Sackar's "intellectually dishonest" finding
+     *                             (e.g. Neiwand — secret reports overturning
+     *                              coronial findings, families never told)
+     */
+    police_misconduct_level: z.enum([
+      'none',
+      'inadequate-investigation',
+      'bias-affected',
+      'active-misconduct',
+      'institutional-misconduct',
+    ]).nullable().default(null),
+
+    /** Case-specific summary of the misconduct finding for display. */
+    police_misconduct_summary: z.string().optional(),
+
+    /**
+     * Current accountability status — enables the site to surface
+     * "how many cases have no accountability at all?"
+     * That number is the figure that matters most to Sackar's framing.
+     */
+    accountability_status: z.enum([
+      'no-accountability',          // no outcome, no charges, no conviction
+      'scoi-examined',              // SCOI examined; no further criminal action
+      'recommendation-pending',     // SCOI recommendation applies; not yet actioned
+      'active-investigation',       // currently being investigated post-SCOI
+      'inquest-outstanding',        // coronial matter unresolved
+      'charges-laid',               // criminal charges before courts
+      'convicted',                  // conviction obtained — see manner_findings.conviction
+    ]).nullable().default(null),
+
+    /**
+     * Tracks Recommendation 17 compliance for cases where Strike Force Neiwand
+     * (or any UHT investigation) reached a conclusion contrary to a prior
+     * Coroner's finding — requiring the NSWPF to notify the Coroner and family.
+     *
+     * 'not-applicable' for cases not affected by a contrary UHT finding.
+     * Applies directly to Ross Warren, John Russell, and Gilles Mattaini
+     * (Neiwand's findings were never disclosed to families or the Coroner).
+     */
+    coronial_update_post_scoi: z.enum([
+      'not-applicable',       // no contrary UHT finding for this case
+      'pending',              // Rec 17 applies; NSWPF has not yet notified Coroner
+      'notified',             // Coroner notified post-SCOI
+      'new-inquest-opened',   // new coronial proceedings opened
+      'finding-updated',      // coronial finding formally updated
+    ]).default('not-applicable'),
+
+    /**
+     * Whether the NSWPF has apologised to this person's family.
+     *
+     * Sackar: "The absence of an apology from the Commissioner of Police
+     * to date was extremely difficult to understand." (Chapter 16)
+     * He stopped short of formally recommending it only because a compelled
+     * apology would carry little weight.
+     *
+     * null = not known. false = no apology given. true = apology given.
+     * Enables the site to surface: families who have never received an apology.
+     */
+    nswpf_apology_to_family: z.boolean().nullable().default(null),
+    nswpf_apology_notes: z.string().optional(),
 
     // --- Joint cases --------------------------------------------------------
 
