@@ -1,0 +1,81 @@
+# References
+
+This file is the project methodology bibliography — sources that inform *how* the project is built (referencing standards, First Nations cultural protocols, primary source, comparable projects).
+
+References for individual case, location, event, and people records live in the YAML frontmatter of the relevant data files under `data/sydney/`, not here. See `data/sydney/README.md` for the data model.
+
+All references are formatted to the Australian Government Style Manual (AGSM) author–date system.
+See: <https://www.stylemanual.gov.au/referencing-and-attribution/author-date>
+
+---
+
+## Primary source
+
+NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (2023) *Report of the Special Commission of Inquiry into LGBTIQ Hate Crimes* (Sackar J, Commissioner), 3 vols + annexures, NSW Government, Sydney.
+
+- Volume 1 (18 December 2023) — Executive summary, overview, introductory chapters
+- Volume 2 (19 December 2023) — Chapter 5: Category A deaths; Chapter 6: Category B deaths
+- Volume 3 (19 December 2023) — Chapters 7–16: investigative practices, Strike Forces, institutional failures, recommendations
+- Annexures (18 December 2023)
+
+Available: <https://www.nsw.gov.au/departments-and-agencies/cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes>
+
+### Government response
+
+NSW Government (23 October 2024) [*NSW Government supports all recommendations of Special Commission into Historical LGBTIQ+ Hate Crimes*](https://www.nsw.gov.au/media-releases/nsw-government-supports-all-recommendations-of-special-commission-into-historical-lgbtiq-hate-crimes) [media release], NSW Government, accessed 17 July 2026.
+
+---
+
+## Methodology
+
+### Referencing and attribution
+
+APSC (Australian Public Service Commission) (2026) '[Author–date](https://www.stylemanual.gov.au/referencing-and-attribution/author-date)', *Australian Government Style Manual*, Australian Government Style Manual website, accessed 17 July 2026.
+
+### First Nations cultural protocols
+
+Local Contexts (n.d.) [*Local Contexts: Indigenous cultural property, rights, and protocols*](https://localcontexts.org), Local Contexts website, accessed 17 July 2026.
+
+- TK Labels: <https://localcontexts.org/labels/traditional-knowledge/>
+- BC Labels: <https://localcontexts.org/labels/biocultural/>
+- Notices: <https://localcontexts.org/notices/>
+
+AIATSIS (Australian Institute of Aboriginal and Torres Strait Islander Studies) (n.d.) [*AIATSIS Map of Indigenous Australia*](https://aiatsis.gov.au/explore/map-indigenous-australia), AIATSIS website, accessed 17 July 2026.
+
+AIATSIS (n.d.) [*AIATSIS Code of Ethics for Aboriginal and Torres Strait Islander Research*](https://aiatsis.gov.au/research/ethical-research/code-ethics), AIATSIS website, accessed 17 July 2026.
+
+---
+
+## Secondary sources
+
+Wotherspoon G (2016) *Gay Sydney: A History*, New South Printing, Sydney.
+*[Cited in the SCOI report; key source for queer venue and beat geography.]*
+
+---
+
+## Comparable projects
+
+These projects informed the data model, methodology, and editorial approach.
+
+Regan A and Gonzaba E (n.d.) [*Mapping the Gay Guides*](https://www.mappingthegayguides.org), mappingthegayguides.org, accessed 17 July 2026.
+*[Closest parallel: temporal geographic mapping of queer life from historical records.]*
+
+Femicide Census (n.d.) [*Femicide Census*](https://www.femicidecensus.org), Femicide Census website, accessed 17 July 2026.
+*[Model for victim-centred documentation at scale; methodology transparency.]*
+
+Robertson SR (n.d.) [*Digital Harlem: Everyday Life 1915–1930*](https://digitalharlem.org), digitalharlem.org, accessed 17 July 2026.
+*[Legal/institutional records turned inside-out to document a surveilled community.]*
+
+Slave Voyages (n.d.) [*Slave Voyages*](https://www.slavevoyages.org), slavevoyages.org, accessed 17 July 2026.
+*[Gold standard for historical open data: collaborative, downloadable, built for longevity.]*
+
+Marshall Project (n.d.) [*The Marshall Project*](https://www.themarshallproject.org), themarshallproject.org, accessed 17 July 2026.
+*[Data + journalism as one project; open data gives journalism credibility and staying power.]*
+
+---
+
+## Notes
+
+**On the heritage call:** Sackar's call for a comprehensive queer heritage project (Chapter 16, paras 16.15–16.19) was a narrative recommendation, not one of the 19 formally numbered recommendations. The NSW Government has no formal accountability to implement it. This project is a direct response to that call.
+
+**On Trove:** Digitised Australian newspaper content is held by the National Library of Australia via Trove (<https://trove.nla.gov.au>). Coverage of 1970s–2000s material is uneven. Full-text search is available for pre-1955 content; later material returns headlines, snippets, and persistent URLs. The LGBTIQ community press (Campaign, SX, Star Observer) may be partially digitised — this requires investigation.

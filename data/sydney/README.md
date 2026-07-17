@@ -14,6 +14,7 @@ Structured historical data for queer heritage in Sydney.
 | `locations/` | Significant places — crime scenes, venues, meeting points, memorials |
 | `events/` | Historical events — activism, legal milestones, cultural moments |
 | `people/` | Individuals — victims, activists, witnesses, perpetrators (where named) |
+| `recommendations/` | The 19 formal Sackar Inquiry recommendations + the heritage call |
 
 ---
 

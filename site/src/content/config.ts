@@ -577,6 +577,13 @@ const cases = defineCollection({
     related_people: z.array(z.string()).default([]),
     related_events: z.array(z.string()).default([]),
     related_media: z.array(z.string()).default([]),
+    /**
+     * Sackar Inquiry recommendation slugs that apply to this case.
+     * e.g. ["rec-16"] for Recommendation 16 (FIGG DNA testing — Brennan, Cawsey, Dye).
+     * e.g. ["rec-17"] for Recommendation 17 (UHT must notify Coroner of contrary findings).
+     * Slugs are defined in data/sydney/recommendations/.
+     */
+    related_recommendations: z.array(z.string()).default([]),
 
     // --- Content sensitivity ------------------------------------------------
 
@@ -943,6 +950,8 @@ const events = defineCollection({
     related_cases: z.array(z.string()).default([]),
     related_people: z.array(z.string()).default([]),
     related_media: z.array(z.string()).default([]),
+    /** Sackar Inquiry recommendation slugs relevant to this event. */
+    related_recommendations: z.array(z.string()).default([]),
 
     // --- Sources ------------------------------------------------------------
 
@@ -1098,6 +1107,92 @@ const media = defineCollection({
 });
 
 // ---------------------------------------------------------------------------
+// COLLECTION: recommendations
+// The 19 formal recommendations of the Sackar Inquiry (Vols 1–3).
+//
+// Note: Sackar's call for a comprehensive queer heritage project (Chapter 16,
+// paras 16.15–16.19) was NOT a formally numbered recommendation. It is
+// tracked here as slug 'rec-heritage' for linkage purposes.
+//
+// Recommendations 1–7 are in Volumes 1–2 (not yet individually extracted).
+// Recommendations 8–19 are in Volume 3, Chapter 8–10.
+// ---------------------------------------------------------------------------
+
+const recommendations = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: '../data/sydney/recommendations' }),
+  schema: z.object({
+
+    /** Formal recommendation number (1–19). null for the heritage call. */
+    number: z.number().nullable().default(null),
+
+    title: z.string(),
+
+    /** Volume of the SCOI report in which this recommendation appears. */
+    volume: z.number(),
+
+    /** Chapter in which this recommendation appears. */
+    chapter: z.number(),
+
+    /** Paragraph reference (e.g. "8.1"). */
+    paragraph: z.string().optional(),
+
+    /**
+     * Thematic category.
+     * Helps group and filter recommendations by type.
+     */
+    category: z.enum([
+      'lgbtiq-training',        // Rec 8: mandatory LGBTIQ training for NSWPF
+      'state-records',          // Rec 9: State Records Act amendment
+      'cold-case-review',       // Recs 10–13, 15: systematic cold case review
+      'forensic-resources',     // Rec 14: FASS/NSWPF adequate resourcing
+      'genetic-genealogy',      // Rec 16: FIGG on specific named DNA profiles
+      'coronial-notification',  // Rec 17: UHT must notify Coroner of contrary findings
+      'bias-crimes-unit',       // Recs 18–19: EHCU/bias crimes capability
+      'heritage',               // Chapter 16 narrative call (not a formal rec)
+    ]),
+
+    /**
+     * NSW Government response (October 2024).
+     * The Government accepted all 19 formal recommendations.
+     * See REFERENCES.md for the government response document.
+     */
+    government_response: z.enum([
+      'accepted',
+      'accepted-in-principle',
+      'partially-accepted',
+      'rejected',
+      'noted',
+      'not-applicable',
+    ]).optional(),
+
+    government_response_notes: z.string().optional(),
+
+    /**
+     * Current implementation status.
+     * Track this over time as actions are taken or stall.
+     */
+    implementation_status: z.enum([
+      'not-started',
+      'in-progress',
+      'completed',
+      'not-implemented',
+      'unknown',
+    ]).default('unknown'),
+
+    implementation_notes: z.string().optional(),
+
+    /** Case IDs explicitly named in this recommendation (e.g. Rec 16 names Brennan, Cawsey, Dye). */
+    named_cases: z.array(z.string()).default([]),
+
+    /** People IDs explicitly named in this recommendation. */
+    named_people: z.array(z.string()).default([]),
+
+    tags: z.array(z.string()).default([]),
+
+  }),
+});
+
+// ---------------------------------------------------------------------------
 // Export
 // ---------------------------------------------------------------------------
 
@@ -1107,4 +1202,5 @@ export const collections = {
   events,
   people,
   media,
+  recommendations,
 };
