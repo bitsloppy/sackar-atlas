@@ -98,6 +98,63 @@ See `docs/adding-sources.md` for the full workflow on adding sources and reposit
 
 ---
 
+## Sound Recordings & Oral History Collections
+
+### Garry Wotherspoon interviews with gay men, 1980–1988 (SLNSW / Amplify)
+- **Creator:** Wotherspoon, Garry (interviewer)
+- **Held by:** State Library of NSW
+- **Type:** oral history recordings (audio)
+- **URL:** https://amplify.sl.nsw.gov.au/?sort_by=title&order=asc&collection_id=3
+- **Catalogue:** https://collection.sl.nsw.gov.au/record/9PQWBVen/xREe2WOVKoa6e
+- **collection_id:** state-library-nsw
+- **Found via:** SLNSW oral history guide, 2026-07-18
+- **Status:** to-read
+- **Copyright:** item-dependent — check catalogue record per interview
+- **Relevance:** Eight years of interviews with gay Sydney men, 1980–1988 — the heart of the project period. These formed the basis of Wotherspoon's *City of the Plain*. Some interviewees may have direct knowledge of the violence, the beats, or the community's response. **High priority.**
+
+### Gay Waves radio programmes (2SER FM), 1980–1990 (SLNSW)
+- **Creator:** 2SER FM / Gay Waves programme
+- **Held by:** State Library of NSW
+- **Type:** sound recordings (radio)
+- **URL:** https://collection.sl.nsw.gov.au/record/1Drmory9
+- **collection_id:** state-library-nsw
+- **Found via:** SLNSW oral history guide, 2026-07-18
+- **Status:** to-read
+- **Copyright:** item-dependent — check catalogue record; 1980s broadcasts likely out of copyright or donor-donated
+- **Relevance:** Weekly community radio programme covering gay and lesbian life in NSW during the peak period of the violence. May contain contemporaneous community reporting on specific deaths, police conduct, or activism. **High priority.**
+
+### Sydney Gay and Lesbian Mardi Gras sound recordings, c1985–1991 (SLNSW)
+- **Held by:** State Library of NSW
+- **Type:** sound recordings (mixed — radio, speeches, music)
+- **URL:** https://collection.sl.nsw.gov.au/record/nV2qEJZn
+- **collection_id:** state-library-nsw
+- **Found via:** SLNSW oral history guide, 2026-07-18
+- **Status:** to-read
+- **Copyright:** item-dependent
+- **Relevance:** 30+ hours including protest speeches at rallies for gay and lesbian rights. Speeches may reference specific deaths, police behaviour, or community organising. Also captures the Hordern Pavilion party scene — social context for the period.
+
+### Lesbians on the Loose magazine interviews, 1993–1998 (SLNSW)
+- **Held by:** State Library of NSW
+- **Type:** oral history recordings
+- **URL:** https://collection.sl.nsw.gov.au/record/YzObWEM9
+- **collection_id:** state-library-nsw
+- **Found via:** SLNSW oral history guide, 2026-07-18
+- **Status:** to-read
+- **Copyright:** item-dependent
+- **Relevance:** Women's community voices from the tail end of the project period. Covers lesbian, bisexual and queer women's experience in 1990s Sydney.
+
+### Pride 2023 Oral History Project (SLNSW)
+- **Held by:** State Library of NSW
+- **Type:** oral history recordings
+- **URL:** https://collection.sl.nsw.gov.au/record/9NardwbY
+- **collection_id:** state-library-nsw
+- **Found via:** SLNSW oral history guide, 2026-07-18
+- **Status:** to-read
+- **Copyright:** item-dependent (2023 — likely in copyright; check per interviewee)
+- **Relevance:** 50+ queer NSW community members interviewed in 2023. Recent; less directly relevant than 1980s material, but may contain retrospective accounts of the violence period from those who lived through it.
+
+---
+
 ## Journalism & Long-form Articles
 
 *Add articles, features, and investigations here as you find them.*

@@ -119,6 +119,7 @@ Use this when you've found a specific book, article, report, exhibition, or webs
 | `restricted-permission` | All use requires explicit permission |
 | `copyright-all-rights` | Full © All Rights Reserved |
 | `government-open` | Government open data (APS Open Access Policy) |
+| `item-dependent` | Conditions vary per item — depends on age, donor agreement, etc. Check the catalogue record for each item before use |
 | `unknown` | Conditions unclear or not publicly stated — investigate before using |
 
 ---

@@ -1451,6 +1451,7 @@ const source_collections = defineCollection({
      * restricted-permission — All use requires explicit permission
      * copyright-all-rights  — Full © All Rights Reserved
      * government-open       — Government open data (APS Open Access Policy)
+     * item-dependent        — Conditions vary per item (age, donor agreement, etc.); check each
      * unknown               — Conditions unclear or not publicly stated
      */
     license_type: z.enum([
@@ -1462,6 +1463,7 @@ const source_collections = defineCollection({
       'restricted-permission',
       'copyright-all-rights',
       'government-open',
+      'item-dependent',
       'unknown',
     ]),
 
