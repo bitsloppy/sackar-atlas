@@ -47,14 +47,17 @@ planned_use: >
   Key collections to investigate: Wotherspoon interviews (1980-1988), Gay Waves
   radio (1980-1990), Mardi Gras sound recordings (1985-1991). Cross-reference
   interview subjects and topics against cases in project scope.
+  Consider volunteering as transcript correctors on Amplify for the Wotherspoon
+  collection — gives deep content familiarity and contributes back publicly.
 
 our_notes: >
   Already listed in the project schema as an ArchiveSource institution
   (id: state-library-nsw). The LGBTIQ-specific Oral History and Sound guide at
   guides.sl.nsw.gov.au/oral-history-sound/gay_lesbian is the entry point.
-  
-  Audio items accessible via the Amplify platform: amplify.sl.nsw.gov.au
-  
+
+  Audio items are on the Amplify platform (amplify.gov.au) — see Amplify section
+  below for full details including contact info and GitHub repo.
+
   Key practical note: items from the 1980s are likely out of copyright or in
   a donor-agreement situation — check each catalogue record. The 1980-1988
   Wotherspoon interviews and 1980-1990 Gay Waves programmes fall within a window
@@ -63,6 +66,12 @@ our_notes: >
   For oral history items still in copyright: the copyright holder is typically
   the interviewee (or their estate), not the Library — so permission requests
   go to the interviewee/estate, not to SLNSW. The Library can advise on contact.
+
+contacts:
+  platform_enquiries: digital.volunteering@sl.nsw.gov.au
+  media: media.library@sl.nsw.gov.au
+  media_phone: +61 2 9273 1566
+  technical: web.development@sl.nsw.gov.au
 
 tags:
   - oral-history
@@ -135,8 +144,44 @@ Example:
 > https://amplify.sl.nsw.gov.au/?sort_by=title&order=asc&collection_id=3,
 > accessed 18 July 2026.
 
+## Amplify platform
+
+**URL:** https://amplify.gov.au  
+**Wotherspoon collection:** https://amplify.gov.au/?collections%5B%5D=Garry+Wotherspoon  
+**GitHub (MIT):** https://github.com/slnsw/amplify  
+
+Amplify is a crowdsourced speech-to-text correction platform — an open-source
+tool (based on NYPL's Transcript Editor) that delivers oral history audio paired
+with machine-generated transcripts. Digital volunteers, members of the public,
+and library staff can correct transcript errors while listening to the recordings.
+
+**Why this matters for the project:**
+
+1. **Machine transcripts exist now.** The Wotherspoon interviews (1980–1988) and
+   other SLNSW oral history collections already have machine-generated transcripts
+   on Amplify. Even at imperfect accuracy, these are searchable text — meaning
+   names (victims, locations, organisations) can be searched across the audio
+   content without listening to every interview first.
+
+2. **Volunteer transcript correction is a research entry point.** Correcting
+   transcripts for the Wotherspoon collection would provide deep familiarity with
+   the content, identify interviews with project-relevant material, and contribute
+   back to the public record. This is a legitimate way to engage with the collection
+   before making formal research arrangements.
+
+3. **The platform code is MIT licensed.** SLNSW's implementation is open source.
+   Worth understanding how it works — the data model, export format, and API may
+   be useful if transcripts need to be programmatically cross-referenced against
+   case data. Contact: web.development@sl.nsw.gov.au for technical enquiries.
+
+**Contacts:**
+- Platform / volunteering: digital.volunteering@sl.nsw.gov.au
+- Media: media.library@sl.nsw.gov.au / (02) 9273 1566
+- Technical / development: web.development@sl.nsw.gov.au
+
 ## Access
 
 Available through the State Library's physical reading room and via online
-platforms (Amplify for audio; catalogue for finding aids). Remote digital access
-available for some items. Physical access at Macquarie Street, Sydney.
+platforms (Amplify for audio with machine transcripts; catalogue for finding aids).
+Remote digital access available for some items. Physical access at Macquarie
+Street, Sydney.

@@ -103,14 +103,15 @@ See `docs/adding-sources.md` for the full workflow on adding sources and reposit
 ### Garry Wotherspoon interviews with gay men, 1980–1988 (SLNSW / Amplify)
 - **Creator:** Wotherspoon, Garry (interviewer)
 - **Held by:** State Library of NSW
-- **Type:** oral history recordings (audio)
-- **URL:** https://amplify.sl.nsw.gov.au/?sort_by=title&order=asc&collection_id=3
+- **Type:** oral history recordings (audio) + machine-generated transcripts
+- **URL:** https://amplify.gov.au/?collections%5B%5D=Garry+Wotherspoon
 - **Catalogue:** https://collection.sl.nsw.gov.au/record/9PQWBVen/xREe2WOVKoa6e
 - **collection_id:** state-library-nsw
-- **Found via:** SLNSW oral history guide, 2026-07-18
+- **Found via:** SLNSW oral history guide + Amplify platform, 2026-07-18
 - **Status:** to-read
 - **Copyright:** item-dependent — check catalogue record per interview
 - **Relevance:** Eight years of interviews with gay Sydney men, 1980–1988 — the heart of the project period. These formed the basis of Wotherspoon's *City of the Plain*. Some interviewees may have direct knowledge of the violence, the beats, or the community's response. **High priority.**
+- **Amplify note:** Machine-generated transcripts already exist on the Amplify platform and are searchable now. Even at imperfect accuracy, names, locations, and organisations can be searched across the full collection without listening to every recording first. Consider volunteering to correct transcripts — gives content familiarity and contributes back publicly. Platform contact: digital.volunteering@sl.nsw.gov.au
 
 ### Gay Waves radio programmes (2SER FM), 1980–1990 (SLNSW)
 - **Creator:** 2SER FM / Gay Waves programme
