@@ -155,6 +155,43 @@ See `docs/adding-sources.md` for the full workflow on adding sources and reposit
 
 ---
 
+## Secondary Sources & Historical Overviews
+
+### AQuA History Bites (series, 1950–present)
+- **Author:** Willett, Graham and others
+- **Publisher:** Australian Queer Archives (originally appeared in 1990s LGBTIQ community newspapers)
+- **Type:** short historical articles (online series, one per year)
+- **URL:** https://queerarchives.org.au/posts/history-bites/
+- **collection_id:** aqua
+- **Found via:** AQuA website, 2026-07-18
+- **Status:** to-read (series; read project-relevant years first)
+- **Copyright:** © Graham Willett and named authors; republished by AQuA. Reference and link freely; do not reproduce without checking.
+- **Relevance:** Year-by-year bite-sized accounts of Australian queer history, 1950 onwards. Originally written for community newspapers — contemporaneous secondary sources, grounded in primary research. Useful skeleton for building the project's `events` collection / 60-year historical timeline.
+
+  **Read these first (directly relevant to project period and scope):**
+
+  | Year | Title | Why it matters |
+  |---|---|---|
+  | 1972 | [Dr Duncan](https://queerarchives.org.au/posts/history-bites/1972-dr-duncan/) | George Duncan killed in Adelaide — first national gay campaign; precursor to Sydney violence period |
+  | 1975 | [Campaign](https://queerarchives.org.au/posts/history-bites/1975-campaign/) | Launch of *Campaign* magazine — community press that covered the deaths |
+  | 1977 | [Surging](https://queerarchives.org.au/posts/history-bites/1977-surging/) | US backlash against gay rights; context for Australian climate |
+  | 1978 | [Our Stonewall](https://queerarchives.org.au/posts/history-bites/1978-our-stonewall/) | First Mardi Gras, police confrontation; Kings Cross to Oxford St |
+  | 1979 | [The last days of disco](https://queerarchives.org.au/posts/history-bites/1979-the-last-days-of-disco/) | Growth of queer venues and nightlife; spatial context for the deaths |
+  | 1980 | [Send in the clones](https://queerarchives.org.au/posts/history-bites/1980-send-in-the-clones/) | Community identity and visibility in early 1980s |
+  | 1981 | [From before to after](https://queerarchives.org.au/posts/history-bites/1981-from-before-to-after/) | HIV/AIDS arrives; changes everything |
+  | 1982 | [Mardi Gras takes off](https://queerarchives.org.au/posts/history-bites/1982-mardi-gras-takes-off/) | Mardi Gras becomes annual; shifting political landscape |
+  | 1983 | [Outrage!](https://queerarchives.org.au/posts/history-bites/1983-outrage/) | "Sometimes the cops are our best friends" — likely police-related incident |
+  | 1984 | [Breakthrough / Breakout](https://queerarchives.org.au/posts/history-bites/1984-breakthrough-breakout/) | Period of peak violence coincides with apparent political progress |
+  | 1985 | [Monte Comes Out](https://queerarchives.org.au/posts/history-bites/1985-monte-comes-out/) | Community visibility; social context |
+
+  **Also read (context before the project period):**
+  - [1958: Our Wolfenden](https://queerarchives.org.au/posts/history-bites/1958-our-wolfenden/) — NSW government inquiry into homosexuality
+  - [1965: Tolerance](https://queerarchives.org.au/posts/history-bites/1965-tolerance/) — Police Commissioner Delaney's "Australia's greatest menace" claim
+  - [1970: Birth of our power](https://queerarchives.org.au/posts/history-bites/1970-birth-of-our-power/) — First public discussion of homosexuality in Australia
+  - [1971: Oppression and liberation](https://queerarchives.org.au/posts/history-bites/1971-oppression-and-liberation/) — Dennis Altman's foundational text
+
+---
+
 ## Journalism & Long-form Articles
 
 *Add articles, features, and investigations here as you find them.*

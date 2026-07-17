@@ -2,16 +2,16 @@
 name: Australian Queer Archives
 short_name: AQuA
 url: https://queerarchives.org.au
-conditions_url: https://queerarchives.org.au/access
+conditions_url: https://queerarchives.org.au/forms-and-policy-documents/
 contact_url: https://queerarchives.org.au/contact
 
 license_type: unknown
 
 conditions_summary: >
-  Conditions of access not yet investigated. AQuA is the largest LGBTIQ
-  historical archive in Australia. Access is via their Melbourne reading room
-  or through State Library NSW. Investigate access policy and reproduction
-  rights before using any material.
+  Access conditions are governed by AQuA's Access Agreement, available at their
+  Policy and Forms page (likely a downloadable PDF — not yet reviewed). Until
+  that document is read, treat all use as requiring permission. Contact AQuA
+  directly to establish terms before drawing on any collection material.
 
 requires_permission_for_publication: true
 requires_notification_before_publication: false
@@ -20,51 +20,101 @@ our_permission_status: not-sought
 
 planned_use: >
   Research community organisation records, publications, and ephemera relevant
-  to Sydney cases in the project scope. AQuA holds national-scope material from
-  organisations, activists, and community groups active during the 1970s–1990s.
-  May hold press releases, newsletters, event records, or correspondence related
-  to specific cases or the broader political context.
+  to Sydney cases in scope. Particular interest in: records of organisations
+  active during the 1970s–90s (CAMP Inc, Gay Solidarity Group, etc.), community
+  press (Campaign, SX, Outrage), protest and activism ephemera, oral histories
+  with witnesses or community members who have direct knowledge of the period.
+  Also: their History Bites series as a secondary source for the events timeline.
 
 our_notes: >
   Already listed in the project schema as an ArchiveSource institution (id: aqua).
-  Based in Melbourne but accessible via State Library NSW. Established 1978 —
-  predates most of the cases in scope; likely holds contemporaneous community
-  records. PHG recommends them as "the biggest repository of historical materials
-  about LGBTIQ experience in Australia."
   
-  Access policy, reproduction rights, and citation format need investigation before
-  use. Conditions URL above is a best-guess — verify when investigating.
+  Based at The Victorian Pride Centre, Melbourne. Remote and interstate access
+  options exist — check via direct contact. Accessible via State Library NSW
+  inter-library arrangements.
+  
+  IMPORTANT — Access Agreement not yet read: The Collection Policy
+  (queerarchives.org.au/collection-policy, endorsed 18 October 2025) describes
+  what AQuA collects, not researcher access conditions. The Access Agreement at
+  queerarchives.org.au/forms-and-policy-documents/ is the relevant document —
+  it was a non-rendering page when checked 2026-07-18 (likely a PDF). This must
+  be read before use. license_type set to 'unknown' until then.
+
+  FIRST NATIONS NOTE: AQuA explicitly collects items by and representations of
+  LGBTIQ+ First Nations people, and "works with First Nations individuals and
+  groups to better understand the artefacts in our care, cultural knowledges they
+  contain." Their First Nations protocols are active, not performative. When
+  investigating collection items involving First Nations people, involve AQuA's
+  community consultation process.
 
 tags:
+  - oral-history
   - archive
   - national
   - lgbtiq
   - primary-source
+  - first-nations
   - to-investigate
 ---
 
 The Australian Queer Archives (AQuA), formerly the Australian Lesbian and Gay
 Archives (ALGA), is the largest LGBTIQ community archive in Australia. Founded
-in Melbourne in 1978 as a volunteer, community-based organisation, it holds
-material spanning the full period relevant to this project.
+in Melbourne in 1978 as a volunteer organisation, it now holds material spanning
+the full period relevant to this project — and was itself founded in the same
+year the violence in scope began.
 
-## What AQuA holds (likely)
+## Country acknowledgment
 
-- Records of LGBTIQ community organisations (CAMP Inc, Gay Liberation, etc.)
-- Community press and publications (*Campaign*, *Outrage*, *SX*, etc.)
-- Ephemera: flyers, event programmes, posters
-- Correspondence and personal papers of key activists
-- Photographs and audio-visual material
+AQuA's collection is held on the lands of the Yaluk-ut Weelam and Woi-wurrung
+peoples. AQuA pays respect to Elders past and present and to all First Nations
+people across this land.
+
+## What AQuA collects (from Collection Policy, endorsed 18 Oct 2025)
+
+AQuA collects across a wide range of formats and material types relevant to
+LGBTIQ+ people, organisations, and communities in Australia:
+
+- **Archives**: personal papers and organisational records — diaries, correspondence,
+  administrative records, financial records, publicity records
+- **Audio**: cassette tapes, ¼" reels, microgroove recordings, CDs, digital recordings;
+  focus on event recordings, music, radio, DJ sets, mixtapes, podcasts
+- **Audiovisual**: VHS, beta-cam, 8mm, 16mm, DVDs, born-digital; focus on community
+  television, home movies, event footage
+- **Books**: fiction, non-fiction, rare books, sheet music, artist books
+- **Ephemera**: postcards, brochures, flyers, tickets, calendars, programmes, menus
+- **Objects**: lanyards, trophies, games, medication bottles, promotional items
+- **Oral histories**: AQuA-recorded and externally created; audio recordings,
+  transcripts, and associated documentation
+- **Periodicals**: magazines, academic journals, newsletters, zines (physical + digital)
+- **Photographs**: digital, digitised, and analogue; documentary and fine art
+- **Posters and textiles**: banners, placards, T-shirts, uniforms, costumes
+
+No geographic or date limitations — emphasis on materials by/about people in Australia.
+
+## First Nations scope
+
+AQuA collects items by, and representations of, LGBTIQ+ First Nations people across
+Australia, and works with First Nations individuals and groups to understand the
+cultural knowledges held in their artefacts. Items are "collected, catalogued,
+accessed, and displayed in consultation with community leaders."
+
+## History Bites (secondary source)
+
+AQuA publishes a series of short historical articles — bite-sized year-by-year
+accounts of queer history from 1950 onwards, originally written by Graham Willett
+and others for 1990s community newspapers. See reading-list.md for the full series
+and project-relevant years.
+
+URL: https://queerarchives.org.au/posts/history-bites/
+
+Copyright of History Bites: © Graham Willett and other named authors; originally
+published in community press; republished by AQuA with permission. Treat as
+copyright all-rights-reserved for reproduction; reference and link freely.
 
 ## Access
 
-AQuA is based at The Victorian Pride Centre, Melbourne. Remote access and
-inter-library arrangements are possible — investigate via State Library NSW
-or direct contact. Access conditions and reproduction rights not yet confirmed.
+Based at The Victorian Pride Centre, Melbourne. Remote and interstate access
+options available — investigate via direct contact. Accessible through State Library
+NSW arrangements.
 
-## Relevance to this project
-
-Given AQuA was founded in the same year the violence in this project began,
-they almost certainly hold contemporaneous records from organisations responding
-to the violence — CAMP Inc, Gay Solidarity Group, and others active in the
-late 1970s through 1990s.
+Physical visits can be arranged; contact AQuA for reading room access.

@@ -83,8 +83,11 @@ See individual collection files for permission status and citation requirements.
 Pride History Group (n.d.) [*Pride History Group Oral History Collection*](https://www.pridehistory.org.au/oral-histories), Sydney Pride History Group website, accessed 18 July 2026.
 *[100+ recorded oral history interviews; personal and research use only; permission required before publication. Custom citation format — see `data/sydney/source-collections/pride-history-group.md`. Status: not yet contacted.]*
 
-Australian Queer Archives (AQuA) (n.d.) [*Australian Queer Archives*](https://queerarchives.org.au), AQuA website, accessed 18 July 2026.
-*[Largest LGBTIQ community archive in Australia; Melbourne-based, accessible via State Library NSW. Access conditions not yet investigated — see `data/sydney/source-collections/aqua.md`. Status: not yet contacted.]*
+Australian Queer Archives (AQuA) (2025) [*Collection Policy*](https://queerarchives.org.au/collection-policy), Australian Queer Archives website, endorsed 18 October 2025, accessed 18 July 2026.
+*[Largest LGBTIQ community archive in Australia; Melbourne-based. Collection policy documents scope (personal papers, audio, oral histories, ephemera, periodicals, photographs, etc.). Researcher Access Agreement not yet reviewed — treat as permission-required until read. See `data/sydney/source-collections/aqua.md`. Status: not yet contacted.]*
+
+Willett G and others (1990s, republished n.d.) [*History Bites*](https://queerarchives.org.au/posts/history-bites/), Australian Queer Archives website, accessed 18 July 2026.
+*[Year-by-year short articles on Australian queer history, 1950 onwards; originally written for 1990s LGBTIQ community newspapers. Secondary source for historical context and events timeline. © respective authors — reference and link freely; reproduction requires permission.]*
 
 State Library of New South Wales (n.d.) [*Gay and lesbian life — Oral History and Sound Collections*](https://guides.sl.nsw.gov.au/oral-history-sound/gay_lesbian), State Library of New South Wales website, accessed 18 July 2026.
 *[Item-dependent conditions: out-of-copyright material free to use with acknowledgement; in-copyright material requires permission from copyright owner (check catalogue record per item). Key collections: Wotherspoon interviews 1980–1988, Gay Waves radio 1980–1990, Mardi Gras sound recordings 1985–1991. See `data/sydney/source-collections/state-library-nsw.md`.]*
