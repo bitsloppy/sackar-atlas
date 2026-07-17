@@ -197,6 +197,20 @@ See `docs/adding-sources.md` for the full workflow on adding sources and reposit
 
 *Add articles, features, and investigations here as you find them.*
 
+### Star Observer Archive (1979–present)
+- **Publisher:** Out Publications Pty Ltd
+- **Type:** community press archive (online, 1,652 issues / 61,373 pages)
+- **URL:** https://archive.starobserver.com.au/archive/
+- **collection_id:** star-observer
+- **Found via:** direct research, 2026-07-18
+- **Status:** to-search (use as primary source for case-level and contextual research)
+- **Copyright:** © Out Publications Pty Ltd. Research and personal use only. Reproduce only with permission: editor@starobserver.com.au
+- **Relevance:** Australia's longest-running LGBTIQ publication; founded 1979. Contemporaneous community journalism across the full violence period. The community's own record of events that mainstream media minimised. **Essential primary source — search for every case.**
+- **Access:** Online, no login required. Browse immediately.
+- **Priority search terms per case:** victim name, location, police conduct, inquest
+- **Priority contextual searches:** CAMP Inc, Gay Solidarity Group, beats, police accountability, hate crimes, Oxford Street, Marks Park, Bondi
+
+
 ---
 
 ## Academic Papers

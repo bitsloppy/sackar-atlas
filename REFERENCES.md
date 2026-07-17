@@ -89,6 +89,9 @@ Australian Queer Archives (AQuA) (2025) [*Collection Policy*](https://queerarchi
 Willett G and others (1990s, republished n.d.) [*History Bites*](https://queerarchives.org.au/posts/history-bites/), Australian Queer Archives website, accessed 18 July 2026.
 *[Year-by-year short articles on Australian queer history, 1950 onwards; originally written for 1990s LGBTIQ community newspapers. Secondary source for historical context and events timeline. © respective authors — reference and link freely; reproduction requires permission.]*
 
+Star Observer (1979–present) [*Star Observer Archive*](https://archive.starobserver.com.au/archive/), Out Publications Pty Ltd, accessed 18 July 2026.
+*[Australia's longest-running LGBTIQ publication; 1,652 issues from 1979. Research and personal use only; reproduction requires permission from Out Publications (editor@starobserver.com.au). Essential primary source for contemporaneous community reporting on violence, police conduct, and community responses. See `data/sydney/source-collections/star-observer.md`.]*
+
 State Library of New South Wales (n.d.) [*Gay and lesbian life — Oral History and Sound Collections*](https://guides.sl.nsw.gov.au/oral-history-sound/gay_lesbian), State Library of New South Wales website, accessed 18 July 2026.
 *[Item-dependent conditions: out-of-copyright material free to use with acknowledgement; in-copyright material requires permission from copyright owner (check catalogue record per item). Key collections: Wotherspoon interviews 1980–1988, Gay Waves radio 1980–1990, Mardi Gras sound recordings 1985–1991. See `data/sydney/source-collections/state-library-nsw.md`.]*
 
