@@ -26,7 +26,7 @@ SCOI text → RESEARCH → DRAFT (case + person + stubs) → QA CARD → Anna re
 Read the SCOI section for this case. For Category A cases this is always Vol 2, Chapter 5.
 
 > **Use `.txt` files, not PDFs.** The text extractions in
-> `resources/Historical Hate Crimes in Sydney/` are faster and grep-searchable.
+> `resources/queer-heritage-research/` (Obsidian vault) are faster and grep-searchable.
 > File: `SCOI-Vol2-text.txt`. Sections can run 50–150+ source lines; read in
 > multiple chunks using `offset` until you reach the next case heading.
 
