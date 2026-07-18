@@ -1,6 +1,10 @@
-# Cross-Reference Pass Workflow
+# Cross-Reference Pass
 
-After each case file is entered, run a second pass to extract named entities,
+> **This pass is now embedded in the case entry workflow.**
+> See `docs/workflow-case-entry.md` — Step 2D covers stub creation as part of drafting.
+> The checklist below still applies; use it to verify completeness after drafting.
+
+After each case file is drafted, scan for named entities,
 check for existing records, and create stubs for anything new.
 
 The goal is to build the relational graph incrementally. A well-linked dataset is
