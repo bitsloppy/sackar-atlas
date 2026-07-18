@@ -407,6 +407,7 @@ const MannerFindings = z.object({
     'open',                        // Inquiry left it open; could not determine
     'undetermined',                // Evidence insufficient to reach any finding
     'not-individually-examined',   // Category A/B but not publicly examined at hearing
+    'excluded',                    // Inquiry examined and found no LGBTIQ bias; death not connected to victim's sexual identity
   ]).optional(),
 
   /**
@@ -420,6 +421,7 @@ const MannerFindings = z.object({
     'open',
     'undetermined',
     'missing',           // person disappeared; no body found; case never reached coronial finding
+    'excluded',          // Inquiry examined; no LGBTIQ bias found; death not connected to sexual identity
   ]),
 
   /**

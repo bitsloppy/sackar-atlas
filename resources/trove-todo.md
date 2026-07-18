@@ -42,6 +42,15 @@ held_by: "Mitchell Library / State Library NSW / ..."
 
 ## Outstanding stubs
 
+### cases/david-lloyd-williams.md
+
+| Status | Publication | Date | Title | Page | Notes |
+|--------|------------|------|-------|------|-------|
+| ☐ | The Manly Daily | 1978-08-25 | "Cliff Death Fall" | 1 | First report; describes cliff as south-eastern point of North Head, ~300ft; white VW with keys in ignition; Robert Steele found body while looking for fishing spot |
+| ☐ | The Manly Daily | 1978-08-26 | "Victim named" | 1 | Second report; identifies the deceased |
+
+---
+
 ### cases/paul-rath.md
 
 | Status | Publication | Date | Title | Page | Notes |
