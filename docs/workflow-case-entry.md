@@ -139,10 +139,24 @@ git commit -m "data: add {Name} — SCOI Category {A/B}, {year}
 git push
 ```
 
-Then update the project status:
-- Move the case from "Next" to "Done" in `_project-status.md`
-- Add any new research gaps flagged during the case to the ‘Research gaps’ section
-- The priority list should reflect what’s actually been entered
+Then update two files:
+
+**`CHANGELOG.md`** (repo root) — add an entry under today's date:
+```markdown
+**[Name]** (SCOI Category [A/B])
+- Born [date], [place]. Died [date], age [N].
+- Location: [location name].
+- Sackar finding: *"[verbatim]"*
+- Sexuality: [confidence + brief reason].
+- [Any recommendations].
+- Source: SCOI Vol 2, Ch 5, paras [x–y], pp [start]–[end].
+```
+Also note any new location records, people stubs, or schema changes.
+
+**`_project-status.md`** (Obsidian vault) — project-level tracking:
+- Move the case from "Next" to "Done"
+- Add any new research gaps to the ‘Research gaps’ section
+- Keep the priority list current
 
 ---
 
