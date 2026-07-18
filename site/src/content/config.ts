@@ -196,6 +196,41 @@ const OralHistorySource = z.object({
 });
 
 /**
+ * A report or formal publication source.
+ * For community reports (ACON), government reports (Parrabell), parliamentary
+ * committee reports (Report 58), and academic research reports.
+ *
+ * AGSM author-date format:
+ *   Organisation (Year) *Title*, Publisher, place.
+ *   e.g. ACON (2018) *In Pursuit of Truth & Justice*, ACON, Sydney.
+ */
+const ReportSource = z.object({
+  type: z.enum([
+    'government-report',        // government agency reports (Parrabell final report, etc.)
+    'community-report',         // NGO/community reports (ACON In Pursuit of Truth & Justice)
+    'academic-report',          // academic/research reports
+    'inquiry-report',           // formal inquiry reports (SCOI)
+    'parliamentary-committee',  // parliamentary committee reports (Report 58, etc.)
+  ]),
+  /** Author or lead author — family name + initials. null if corporate authorship only. */
+  author: z.string().nullable().default(null),
+  organisation: z.string(),
+  title: z.string(),
+  /** Year of publication (e.g. "2018", "2021"). */
+  year: z.string(),
+  isbn: z.string().optional(),
+  /** Report number — for parliamentary committee reports (e.g. "Report 58"). */
+  report_number: z.string().optional(),
+  url: z.string().nullable().default(null),
+  /** Date accessed — required by AGSM for online sources. ISO 8601. */
+  accessed_date: z.string().optional(),
+  /** Page number(s) for print references (e.g. "14", "p 14", "pp 14–15"). */
+  page: z.string().optional(),
+  /** Paragraph or section reference (e.g. "2.81", "Chapter 2"). */
+  paragraph: z.string().optional(),
+});
+
+/**
  * A coronial record source — the citation entry for a coronial file.
  *
  * AGSM author-date format:
@@ -298,6 +333,7 @@ const MannerFindings = z.object({
     'possible',
     'open',
     'undetermined',
+    'missing',           // person disappeared; no body found; case never reached coronial finding
   ]),
 
   /**
@@ -312,6 +348,37 @@ const MannerFindings = z.object({
     court: z.string().optional(),
     sentence: z.string().optional(),
     notes: z.string().optional(),
+    /**
+     * Legal defence raised by the perpetrator.
+     * The Homosexual Advance Defence (gay panic) was repealed in NSW in 2014.
+     * It allowed murder to be reduced to manslaughter on grounds of a same-sex
+     * advance — explicitly homophobic law used in multiple cases here.
+     */
+    defense_raised: z.enum([
+      'gay-panic',    // Homosexual Advance Defence / gay panic
+      'self-defence',
+      'provocation',
+      'accident',
+      'none',
+      'unknown',
+    ]).optional(),
+    /**
+     * Charge originally laid — before any reduction via defence.
+     * Captures cases where murder was reduced to manslaughter via gay panic.
+     */
+    charge_originally_laid: z.enum([
+      'murder',
+      'manslaughter',
+      'grievous-bodily-harm',
+      'other',
+      'none',
+      'unknown',
+    ]).optional(),
+    /**
+     * True if a murder charge was downgraded to manslaughter via the defence.
+     * Critical for filtering: how many cases had gay panic applied?
+     */
+    charge_reduced_from_murder: z.boolean().default(false),
   }).nullable().default(null),
 });
 
@@ -488,14 +555,43 @@ const cases = defineCollection({
     /** How CALD background is known, and any relevance to how the case was investigated. */
     cald_notes: z.string().optional(),
 
+    // --- Case outcome -------------------------------------------------------
+    //
+    // The cases collection covers deaths (the primary scope), missing persons
+    // (body never found), and non-fatal assaults (survivors who are named in
+    // formal inquiries and whose cases are part of the documented history).
+    // Fields specific to deaths (date_of_death, manner_findings) are optional
+    // when case_outcome is 'missing' or 'assault-survived'.
+
+    /**
+     * Whether this case resulted in a death, a missing person, or a non-fatal assault.
+     *
+     * Scope note: the SCOI focused on deaths. The ACON report covers 88 deaths.
+     * Report 58 (NSW Parliamentary Committee) explicitly includes non-fatal
+     * cases (Alan Rosendale) and missing persons (Simon Knight) as named cases
+     * in its terms of reference.
+     */
+    case_outcome: z.enum([
+      'death',             // victim died; the primary scope
+      'missing',           // person disappeared; body never found; fate unknown
+      'assault-survived',  // victim survived; case documented as part of the history
+    ]).default('death'),
+
+    /**
+     * Date the person was reported missing or last seen (ISO 8601).
+     * For case_outcome='missing' only.
+     */
+    missing_since: z.string().optional(),
+
     // --- Death dates --------------------------------------------------------
 
     /**
      * Date of death in ISO 8601 format (YYYY-MM-DD).
      * Use the earliest date when uncertain (e.g. "10 or 11 May" → 1976-05-10).
      * Used for sorting and map timeline.
+     * Optional when case_outcome is 'missing' or 'assault-survived'.
      */
-    date_of_death: z.string(),
+    date_of_death: z.string().optional(),
 
     /**
      * End of date range if death date is uncertain across multiple days.
@@ -509,8 +605,9 @@ const cases = defineCollection({
     /**
      * Human-readable date string for display.
      * e.g. "10 or 11 May 1976", "circa 1978", "December 1979"
+     * Optional when case_outcome is 'missing' or 'assault-survived'.
      */
-    date_of_death_display: z.string(),
+    date_of_death_display: z.string().optional(),
 
     /** Age at time of death. */
     age_at_death: z.number().nullable().default(null),
@@ -569,8 +666,24 @@ const cases = defineCollection({
      * Sackar Inquiry category.
      * A = confirmed hate crime death.
      * B = probable or possible hate crime death.
+     * Optional: cases on the ACON 88 list that were NOT examined by SCOI,
+     * or non-fatal cases (assault survivors, missing persons), will not have
+     * a SCOI category.
      */
-    scoi_category: z.enum(['A', 'B']),
+    scoi_category: z.enum(['A', 'B']).optional(),
+
+    /**
+     * Which source lists this case appears on.
+     * Distinct lists: ACON's 88 suspected homicides (1990–2015, compiled by
+     * Sue Thompson and Stephen Tomsen), and the SCOI's Category A/B deaths.
+     * A case can appear on ACON's list but not in SCOI (the inquiry examined
+     * a subset), and vice versa.
+     */
+    source_lists: z.array(z.enum([
+      'scoi-category-a',  // SCOI Volume 2, Chapter 5: confirmed hate crime deaths
+      'scoi-category-b',  // SCOI Volume 2, Chapter 6: probable/possible hate crime deaths
+      'acon-88',          // ACON / Thompson / Tomsen list of 88 (1990–2015)
+    ])).default([]),
 
     /** The inquiry's own finding/conclusion for this death (1–2 sentences). */
     scoi_finding: z.string().optional(),
@@ -584,7 +697,116 @@ const cases = defineCollection({
     /** Explanation to display when historical_misgendering is true. */
     historical_misgendering_note: z.string().optional(),
 
+    /**
+     * True when ACON, SCOI, or other reviewed sources document specific
+     * judicial homophobia or bias in this case — e.g. a judge's remarks at
+     * sentencing describing the victim as a 'predator', calling a sexual
+     * advance 'grossly offensive', or similar.
+     *
+     * Distinct from police_misconduct_level (policing failures).
+     * Enables filtering: 'show cases where judicial bias was documented'.
+     *
+     * ACON documented specific judge quotes across multiple cases.
+     */
+    judicial_bias_noted: z.boolean().default(false),
+
+    /** Summary of the documented judicial bias for display. */
+    judicial_bias_notes: z.string().optional(),
+
     // Inquest data is now captured in manner_findings.inquests[] above.
+
+    // --- Motive and attack characterisation --------------------------------
+    //
+    // These fields support the analytical questions at the heart of the project:
+    //   - Was bias the motive? (ACON: ~50% of 88 cases had evidence of homophobia)
+    //   - What factors were at play? (homophobia, HIV stigma, pack mentality, robbery)
+    //   - Where did the attack happen? (home/beat/social space — ACON's typology)
+    //   - Solo or group? (shapes both the crime and the accountability picture)
+    //
+    // ACON: "In Pursuit of Truth & Justice" (2018), pp 13–19.
+    // Report 58: NSW Legislative Council Standing Committee on Social Issues (2021), pp 11–19.
+
+    /**
+     * Confidence that bias (homophobia/transphobia) was the motive.
+     *
+     * ACON found homophobia was 'likely involved in approximately 50%' of cases.
+     * Distinct from police_misconduct_level (institutional behaviour)
+     * and sexuality.confidence (victim's identity).
+     */
+    motive_bias_assessment: z.enum([
+      'confirmed-bias',            // unequivocally established (e.g. perpetrator confession, testimony)
+      'probable-bias',             // strong circumstantial evidence
+      'possible-bias',             // some evidence but genuinely uncertain
+      'bias-not-apparent',         // evidence suggests non-bias motive predominant
+      'insufficient-information',  // not enough information to assess
+      'not-assessed',              // not yet reviewed for this project
+    ]).optional(),
+
+    /**
+     * Motive factors documented for this case.
+     * Multiple factors can apply — e.g. homophobia + pack-mentality + alcohol.
+     * Based on available evidence from coronial records, court judgments, ACON, SCOI.
+     */
+    motive_factors: z.array(z.enum([
+      'homophobia',
+      'transphobia',
+      'hiv-aids-stigma',          // HIV/AIDS stigma documented as contributing factor
+      'robbery',                  // robbery as primary or co-motive
+      'pack-mentality',           // gang/group dynamic as amplifier
+      'internalised-homophobia',  // perpetrator's own repressed sexuality implicated
+      'sexual-advance',           // victim made sexual advance; perpetrator responded violently
+      'opportunistic',            // random; victim incidentally perceived as gay
+      'unknown',
+    ])).default([]),
+
+    /**
+     * ACON's threefold location typology for the attack.
+     * Denormalised from location_id for direct filtering without joining.
+     *
+     * ACON found this typology analytically significant:
+     *   - Private home: individual attacker; often 'gay panic' defense used
+     *   - Beat: group attacks; premeditation; luring tactics
+     *   - Gay social space: targeted gay precincts, bars, saunas
+     */
+    killing_location_context: z.enum([
+      'private-home',
+      'beat',
+      'gay-social-space',  // pub, club, sauna, street in gay precinct
+      'public-space',      // non-gay-identified public area
+      'unknown',
+    ]).optional(),
+
+    /** True when more than one perpetrator was involved in the attack. */
+    group_attack: z.boolean().nullable().default(null),
+
+    /**
+     * Approximate number of perpetrators where documented.
+     * ACON: group attacks (typically beats/social spaces) vs individual attacks (homes).
+     */
+    estimated_perpetrator_count: z.number().nullable().default(null),
+
+    /**
+     * Named perpetrator groups (gangs) linked to this case.
+     * ACON names: Bondi Boys, Alexandria Eight, North Narra Boys, Tamarama Three,
+     * eastern suburbs baseball bat gang. Multiple cases share perpetrator groups.
+     */
+    perpetrator_groups: z.array(z.object({
+      /** Name as documented in court records, ACON report, or SCOI. */
+      name: z.string(),
+      notes: z.string().optional(),
+    })).default([]),
+
+    // --- Rewards ------------------------------------------------------------
+    //
+    // Police rewards signal cases where information is actively sought.
+    // Scott Johnson: $2M combined ($1M NSWPF + $1M personal, Steve Johnson).
+    // Simon Knight: $250K (increased from $100K in 2008, announced 2020).
+
+    /** True if a police reward has been offered for information in this case. */
+    reward_offered: z.boolean().default(false),
+    /** Current reward amount (e.g. "$2,000,000", "$250,000"). */
+    reward_amount: z.string().optional(),
+    reward_notes: z.string().optional(),
 
     // --- Perpetrators -------------------------------------------------------
 
@@ -823,6 +1045,12 @@ const cases = defineCollection({
       oral_history: z.array(OralHistorySource).default([]),
       /** Coronial record sources. */
       coronial: z.array(CoronialSource).default([]),
+      /**
+       * Report and formal publication sources.
+       * For community reports (ACON), government reports (Parrabell),
+       * parliamentary committee reports (Report 58), academic research.
+       */
+      reports: z.array(ReportSource).default([]),
     }),
 
     // --- Filtering / taxonomy -----------------------------------------------
@@ -898,6 +1126,26 @@ const locations = defineCollection({
     ])).default([]),
 
     suburb: z.string().optional(),
+
+    /**
+     * Broad geographic region within NSW.
+     * Useful for filtering and for surfacing the reach of violence beyond inner Sydney.
+     * Report 58 documents attacks in Penrith, Collaroy, Northern Beaches, Newcastle,
+     * Wollongong — the violence was not confined to the Oxford Street precinct.
+     */
+    location_region: z.enum([
+      'inner-sydney',     // CBD, Darlinghurst, Surry Hills, Woolloomooloo, Kings Cross
+      'eastern-suburbs',  // Bondi, Paddington, Randwick, Coogee, Marks Park area
+      'inner-west',       // Newtown, Glebe, Leichhardt, Alexandria, Erskineville
+      'western-sydney',   // Parramatta, Penrith and west
+      'northern-beaches', // Manly, North Head, Fairy Bower, Dee Why, Collaroy
+      'north-shore',      // North Sydney, Mosman, Chatswood
+      'south-sydney',     // Wollongong, south of Sydney
+      'greater-sydney',   // outer suburbs not otherwise categorised
+      'regional-nsw',     // outside Sydney metro area
+      'other-state',      // cross-border cases
+    ]).optional(),
+
     lat: z.number().nullable().default(null),
     lng: z.number().nullable().default(null),
 
@@ -1070,7 +1318,8 @@ const locations = defineCollection({
         url: z.string().optional(),
         accessed_date: z.string().optional(),
       })).default([]),
-    }).default({ press: [], archives: [], oral_history: [], geographic: [] }),
+      reports: z.array(ReportSource).default([]),
+    }).default({ press: [], archives: [], oral_history: [], geographic: [], reports: [] }),
 
     content_warnings: z.array(ContentWarning).default([]),
 
@@ -1142,7 +1391,8 @@ const events = defineCollection({
       archives: z.array(ArchiveSource).default([]),
       hansard: z.array(HansardSource).default([]),
       oral_history: z.array(OralHistorySource).default([]),
-    }).default({ press: [], archives: [], hansard: [], oral_history: [] }),
+      reports: z.array(ReportSource).default([]),
+    }).default({ press: [], archives: [], hansard: [], oral_history: [], reports: [] }),
 
     content_warnings: z.array(ContentWarning).default([]),
     tags: z.array(z.string()).default([]),
