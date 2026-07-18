@@ -1563,6 +1563,205 @@ const media = defineCollection({
 });
 
 // ---------------------------------------------------------------------------
+// COLLECTION: testimonies
+// Survivor accounts, family witness statements, and community testimony
+// formally entered into the public record through parliamentary inquiries,
+// the SCOI, oral history programs, and media interviews.
+//
+// Key distinction from the cases collection:
+//   - cases = individual incidents (primarily deaths, some missing/assault-survived)
+//   - testimonies = a person's full account, which may document multiple incidents
+//     across years, institutional responses, and ongoing impact
+//
+// Provenance matters here: these are formally cited public records with
+// submission numbers, hearing transcripts, or archive accession numbers.
+// Attribution to the source document is required on every testimony.
+//
+// First testimonies extracted from:
+//   NSW Legislative Council Standing Committee on Social Issues (2021)
+//   Gay and transgender hate crimes between 1970 and 2010, Report 58.
+//   Submissions 30, 31, 34.
+// ---------------------------------------------------------------------------
+
+const testimonies = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: '../data/sydney/testimonies' }),
+  schema: z.object({
+
+    // --- Identity -----------------------------------------------------------
+
+    /**
+     * Display name for this person — as they appear in the source document.
+     * For anonymous submissions, use the identifier the inquiry used:
+     *   e.g. "Witness A", "Name suppressed", "Submission 27"
+     * Never invent a name or guess.
+     */
+    person_display: z.string(),
+
+    /** Reference to a record in data/sydney/people/ — null if anonymous. */
+    person_id: z.string().nullable().default(null),
+
+    /** True if the person chose to remain anonymous in the source document. */
+    anonymous: z.boolean().default(false),
+
+    // --- Testimony type -----------------------------------------------------
+
+    /**
+     * Role in which this person gave testimony.
+     *
+     * survivor         — directly experienced violence or discrimination
+     * family-member    — family of a victim (death, missing, assault survivor)
+     * community-witness — witnessed events; community context
+     * activist         — gave evidence in their role as an advocate
+     */
+    testimony_type: z.enum([
+      'survivor',
+      'family-member',
+      'community-witness',
+      'activist',
+    ]),
+
+    // --- Approximate period -------------------------------------------------
+
+    /**
+     * Overall period covered by this testimony.
+     * Human-readable — may span decades.
+     * e.g. "late 1970s to mid-1990s", "2005–2019", "early 1990s"
+     */
+    period_display: z.string().optional(),
+
+    /** ISO 8601 year/date for the earliest documented incident — for sorting. */
+    period_start: z.string().optional(),
+
+    /** ISO 8601 year/date for the latest documented incident or event. */
+    period_end: z.string().optional(),
+
+    // --- Incidents ----------------------------------------------------------
+    //
+    // A testimony may document multiple separate incidents — e.g. Stewart South
+    // describes three distinct attacks across 20 years. Each incident has its
+    // own location, period, and police response record.
+
+    incidents: z.array(z.object({
+
+      /** Human-readable period for this incident — e.g. "late 1970s", "1992". */
+      period_display: z.string(),
+
+      /** ISO 8601 start of period range (for map timeline). */
+      period_start: z.string().optional(),
+
+      /** ISO 8601 end of period range (where a range is given). */
+      period_end: z.string().optional(),
+
+      /** Brief description of the incident for structured display. */
+      description: z.string(),
+
+      /** Location name as given in testimony — may be vague ("North Sydney park"). */
+      location_name: z.string().optional(),
+
+      /** Reference to a record in data/sydney/locations/ — null if not yet linked. */
+      location_id: z.string().nullable().default(null),
+
+      location_lat: z.number().nullable().default(null),
+      location_lng: z.number().nullable().default(null),
+
+      /**
+       * Location region — for map layer filtering.
+       * Uses same enum as locations.location_region.
+       */
+      location_region: z.enum([
+        'inner-sydney', 'eastern-suburbs', 'inner-west', 'western-sydney',
+        'northern-beaches', 'north-shore', 'south-sydney', 'greater-sydney',
+        'regional-nsw', 'other-state',
+      ]).optional(),
+
+      /** Was this incident reported to police? */
+      reported_to_police: z.boolean().nullable().default(null),
+
+      /**
+       * How police responded to the report.
+       * 'hostile' = police were actively hostile or dismissive.
+       * 'not-reported' = victim chose not to report (fear, distrust, prior experience).
+       */
+      police_response: z.enum([
+        'investigated',
+        'dismissed',     // taken but not followed up
+        'hostile',       // actively hostile, laughed at, or turned away
+        'not-reported',  // victim did not report
+        'unknown',
+      ]).optional(),
+
+      /** Any other institutional response documented (hospital, employer, etc.). */
+      institutional_response: z.string().optional(),
+
+    })).default([]),
+
+    // --- Ongoing impact -----------------------------------------------------
+
+    /**
+     * Documented ongoing impacts — for display and to contextualise the
+     * long-tail of hate crime beyond the moment of violence.
+     * Free text summary drawn from the testimony itself.
+     */
+    ongoing_impact: z.string().optional(),
+
+    // --- Source and provenance ---------------------------------------------
+    //
+    // Attribution to the source document is required. These testimonies are
+    // public record; we cite them precisely so readers can verify the source.
+
+    /**
+     * Where and how this testimony was given.
+     *
+     * parliamentary-submission — written submission to a parliamentary inquiry
+     * parliamentary-evidence  — oral evidence at a parliamentary hearing
+     * scoi-submission         — written submission to the Sackar Inquiry
+     * scoi-evidence           — oral evidence at a Sackar Inquiry hearing
+     * oral-history            — recorded oral history (PHG, AQuA, etc.)
+     * media-interview         — journalist interview (press, broadcast)
+     * other                   — other formally documented source
+     */
+    source_type: z.enum([
+      'parliamentary-submission',
+      'parliamentary-evidence',
+      'scoi-submission',
+      'scoi-evidence',
+      'oral-history',
+      'media-interview',
+      'other',
+    ]),
+
+    /**
+     * Precise source reference — cited in AGSM author-date format.
+     * e.g. "Submission 31, NSW Legislative Council Standing Committee on
+     * Social Issues 2021, Gay and Transgender hate crimes between 1970 and
+     * 2010, Report 58, May 2021."
+     */
+    source_reference: z.string(),
+
+    /** Direct URL to the source document or submission portal. */
+    source_url: z.string().optional(),
+
+    // --- Relationships -----------------------------------------------------
+
+    /** Case IDs this testimony relates to. */
+    related_cases: z.array(z.string()).default([]),
+
+    /** People IDs mentioned or relevant. */
+    related_people: z.array(z.string()).default([]),
+
+    /** Event IDs (e.g. the parliamentary inquiry itself as an event). */
+    related_events: z.array(z.string()).default([]),
+
+    // --- Content sensitivity -----------------------------------------------
+
+    content_warnings: z.array(ContentWarning).default([]),
+
+    tags: z.array(z.string()).default([]),
+
+  }),
+});
+
+// ---------------------------------------------------------------------------
 // COLLECTION: recommendations
 // The 19 formal recommendations of the Sackar Inquiry (Vols 1–3).
 //
@@ -1791,6 +1990,7 @@ export const collections = {
   events,
   people,
   media,
+  testimonies,
   recommendations,
   // eslint-disable-next-line camelcase
   source_collections,
