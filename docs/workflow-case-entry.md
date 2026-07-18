@@ -25,13 +25,21 @@ SCOI text → RESEARCH → DRAFT (case + person + stubs) → QA CARD → Anna re
 
 Read the SCOI section for this case. For Category A cases this is always Vol 2, Chapter 5.
 
+> **Use `.txt` files, not PDFs.** The text extractions in
+> `resources/Historical Hate Crimes in Sydney/` are faster and grep-searchable.
+> File: `SCOI-Vol2-text.txt`. Sections can run 50–150+ source lines; read in
+> multiple chunks using `offset` until you reach the next case heading.
+
 ```bash
 grep -n "[Name]" SCOI-Vol2-text.txt   # find paragraph numbers
 # then: read with offset to pull the full section
 ```
 
 Extract:
-- Key biographical facts (born, age, nationality, background)
+- Key biographical facts (born, age, nationality, cultural background)
+- **First Nations identity** — does the SCOI mention it? Did the victim have
+  First Nations heritage? Sackar explicitly flagged this as an under-documented
+  gap. Check; if nothing, record `first_nations: null` (not yet assessed).
 - Movements prior to death (last seen, where, when)
 - Death location (precise description + beat/location context)
 - Post-mortem / cause of death
@@ -43,6 +51,7 @@ Extract:
 - Named people: OIC, coroner, expert witnesses, family, witnesses
 - Named places: death site, last seen, venues, beats, police station
 - Press sources cited in footnotes
+- Recommendations made (if any) — note the number (Rec 1, Rec 2, etc.)
 
 ### Step 2 — Draft (all in one turn)
 
@@ -61,6 +70,9 @@ Core fields to get right — these are the analytical decisions:
 | `accountability_status` | What is the current state, not the historical state |
 | `scoi_finding` | Verbatim or close paraphrase of Sackar's formal finding |
 | `manner_findings.inquiry_finding` | One of: confirmed-homicide / probable-hate-crime / possible-hate-crime / open / undetermined |
+| `source_lists` | Always `['scoi-category-a']` or `['scoi-category-b']` for SCOI cases |
+| `content_warnings` | Always includes `'deceased-person'` for death cases. Add `'graphic-violence'` where post-mortem detail is included. |
+| `first_nations` | Explicitly set to `null` (not yet assessed) unless evidence exists. Never omit. |
 
 #### B. `data/sydney/people/{slug}.md` — always
 
@@ -177,6 +189,12 @@ These apply to every case, without exception:
 | Expert witnesses | if recurring | create stub | add to related_cases[] |
 | Named perpetrators/groups | if documented | create stub | add to related_cases[] |
 | Private residential addresses | never | — note in prose only | — |
+| Recommendations (SCOI) | if case has one | forward ref OK (`rec-01` etc.) | — until recommendations/ populated |
+
+**Case slug convention:** `{firstname}-{lastname}` lowercase, hyphens.
+For one name only: use that name as slug. For aliases: use the name Sackar used as primary.
+For very common names (John Smith): append year (`john-smith-1983`). When uncertain, match
+how Sackar refers to them in his formal finding.
 
 ### Entity threshold question
 
@@ -235,6 +253,9 @@ When reviewing the QA card, check:
 - [ ] `scoi_finding` — verbatim or close paraphrase? No editorialising?
 - [ ] Death site location record exists and is linked
 - [ ] Victim people record exists
+- [ ] `content_warnings` includes `'deceased-person'` (mandatory for all death cases)
+- [ ] `source_lists` is non-empty — `['scoi-category-a']` or `['scoi-category-b']`
+- [ ] `first_nations` is explicitly set (even as `null`) — never omit
 - [ ] `born_date` populated if known — if SCOI text contains an apparent transcription
   error (e.g. a birth year that makes no sense given age at death), use the corrected value
   but add an inline YAML comment explaining the discrepancy and **flag it as a research gap**

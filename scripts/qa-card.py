@@ -340,6 +340,21 @@ def main():
         warnings.append("⚠️  `police_misconduct_level` is null")
     if not accountability:
         warnings.append("⚠️  `accountability_status` is null")
+    # content_warnings must include 'deceased-person' for any death case
+    if case_outcome == 'death' and 'deceased-person' not in fm:
+        warnings.append("⚠️  `content_warnings` is missing 'deceased-person' — required for all death cases")
+    # source_lists must be non-empty for SCOI cases
+    if scoi_cat and not source_lists:
+        warnings.append(f"⚠️  `source_lists` is empty for a SCOI Category {scoi_cat} case — add 'scoi-category-{scoi_cat.lower()}'")
+    # first_nations must be explicitly present (even as null) — prompt a conscious decision
+    # Distinguish 'field missing entirely' from 'field: null' (both return None from get_scalar)
+    fn_present = bool(re.search(r'^first_nations:', fm, re.MULTILINE))
+    fn_raw = re.search(r'^first_nations:\s*(.+)$', fm, re.MULTILINE)
+    fn_val = fn_raw.group(1).strip() if fn_raw else None
+    if not fn_present:
+        warnings.append("⚠️  `first_nations` field missing — add explicitly (null = not yet assessed)")
+    elif fn_val in ('null', '~', None):
+        warnings.append("ℹ️  `first_nations: null` — not yet assessed; note if research has confirmed no FN identity")
     if trove_nulls > 0:
         warnings.append(f"ℹ️  {trove_nulls} press source(s) need Trove IDs — check resources/trove-todo.md")
 
