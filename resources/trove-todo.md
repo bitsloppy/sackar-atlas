@@ -42,6 +42,14 @@ held_by: "Mitchell Library / State Library NSW / ..."
 
 ## Outstanding stubs
 
+### cases/paul-rath.md
+
+| Status | Publication | Date | Title | Page | Notes |
+|--------|------------|------|-------|------|-------|
+| ☐ | The Manly Daily | 1977-06-17 | "Man, 27, Dies in Cliff Plunge" | 1 | First report; same Fairy Bower location as Mark Stewart |
+
+---
+
 ### cases/mark-stewart.md
 
 | Status | Publication | Date | Title | Page | Notes |

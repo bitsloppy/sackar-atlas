@@ -121,6 +121,7 @@ related_locations:
   - "northern-beaches-pac"
   - "chevron-hotel"          # possible connection — contested; see case notes
   - "hilton-hotel-sydney"    # last seen / staying here 9 May 1976
+  - "city-morgue-glebe"      # post-mortem + identification
 related_people:
   - "mark-stewart"
   - "keith-thoms"            # OIC original investigation

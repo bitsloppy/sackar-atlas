@@ -64,6 +64,7 @@ physical_markers:
     managed_by: "Northern Beaches Council (proposed)"
     for_cases:
       - mark-stewart
+      - paul-rath
 
 # --- Relationships ----------------------------------------------------------
 
