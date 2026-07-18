@@ -166,6 +166,19 @@ ABC News (2 November 2022) 'Special commission of Inquiry into 40 years of \'lon
 
 ---
 
+## Academic and Expert Commentary
+
+[Author not extracted — check URL] (November 2023) 'Shining a light on injustice: how an inquiry fought for LGBTIQ recognition', *The Conversation*, accessed 18 July 2026.
+*[Written at/after the SCOI\'s final public sitting. Sackar closing remarks: "Many voiceless people have been given a voice." Key statistics: **32 deaths examined**; 17 public + 48 private hearings; 150,000+ documents compelled; 130+ public submissions. Mentions Strike Forces Parrabell, **Macnamir** (undocumented), and Neiwand. Two forensic breakthroughs named: (1) **Crispin Dye** (died Christmas Day 1993 after assault 23 Dec; DNA match to 2002 crime scene from never-tested clothing); (2) **Ernest Head** (Summer Hill, 1976; naked, stabbed 35 times; palmprint re-analysis identified previously unknown POI). Both are undocumented cases needing files. Links to further ABC reporting on Dye and Neiwand reversals.]*
+<https://theconversation.com/shining-a-light-on-injustice-how-an-inquiry-fought-for-lgbtiq-recognition-217537>
+
+**Further ABC articles linked from this piece (not yet added to REFERENCES):**
+- Neiwand Strike Force reversals: <https://www.abc.net.au/news/2023-02-21/nsw-gay-hate-crime-inquiry-police-reverse-findings-in-murders/102003372>
+- Crispin Dye new POI: <https://www.abc.net.au/news/2023-08-22/nsw-gay-hate-inquiry-crispin-dye-new-person-of-interest/102758744>
+- SCOI lack of investigation: <https://www.abc.net.au/news/2023-06-28/gay-hate-inquiry-nsw-police-refused-investigate-bondi-homicides/102537192>
+
+---
+
 ## ABC News — Scott Johnson (2019–2020)
 
 ABC News (3 May 2019) 'Hate crime laws rarely used by Australian authorities, police figures reveal' [online news], ABC News.
