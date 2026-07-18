@@ -166,6 +166,26 @@ ABC News (2 November 2022) 'Special commission of Inquiry into 40 years of \'lon
 
 ---
 
+## ABC News — Scott Johnson (2019–2020)
+
+ABC News (3 May 2019) 'Hate crime laws rarely used by Australian authorities, police figures reveal' [online news], ABC News.
+*[Only 21 convictions under hate crime laws in Australia ever; zero convictions in NSW since records began 1994; Victorian police flagged 4,257 incidents over four years with only 3 convictions under Racial and Religious Tolerance Act. US expert Matt Browning: Australian police had "heads in the sand". Key framing for the accountability layer.]*
+<https://www.abc.net.au/news/2019-05-03/hate-crimes-rarely-prosecuted-in-australia/11055938>
+
+ABC News (13 May 2020) 'How informant sparked arrest in Scott Johnson\'s gay hate murder cold case' [online news], ABC News.
+*[Informant led to arrest of **Scott White**, 49, charged with Scott Johnson\'s murder. White alleged to have met Johnson in a Manly hotel the night of the killing. Steve Johnson\'s 32-year campaign; three coronial inquests (1989, 2012, 2017). Key source for Scott Johnson case file.]*
+<https://www.abc.net.au/news/2020-05-13/scott-johnson-murder-man-charged-after-brothers-crusade/12238728>
+
+ABC News (16 May 2020) 'Four other gay-hate crimes being investigated by NSW Police after Scott Johnson murder charge' [online news], ABC News.
+*[Covers Warren, Russell, Rattanjurathaporn, and Mattaini in detail following Johnson charge. NSW Police Minister David Elliott: "it was a time where people were slightly dismissive of hate crimes." Key source for multiple case files.]*
+<https://www.abc.net.au/news/2020-05-16/scott-johnson-charge-four-other-sydney-gay-hate-murders/12247922>
+
+ABC News (17 May 2020) 'Former NSW Police prosecutor says hate crime reforms "a matter of life and death" after Scott Johnson arrest' [online news], ABC News.
+*[Australian Hate Crime Network (ACHN) 29 recommendations; only one reference to hate crimes in NSW Crimes Act; not a single successful prosecution under that provision; former GLLO and former police prosecutor quoted. Mahmud Hawila (ACHN): arrest was "haphazard kind of justice." Key source for recommendations and events collections.]*
+<https://www.abc.net.au/news/2020-05-17/scott-johnson-arrest-prompts-calls-for-police-hate-crime-reform/12241878>
+
+---
+
 ## ABC News — Cases and Locations
 
 ABC News (28 May 2018) 'Sydney\'s gay hate crimes still unsolved 30 years on as report calls for more investigations' [online news], ABC News.
@@ -175,6 +195,14 @@ ABC News (28 May 2018) 'Sydney\'s gay hate crimes still unsolved 30 years on as 
 ABC News (17 March 2025) 'Sydney gay bars Oxford Hotel, Palms and Universal proposed for heritage listing' [online news], ABC News.
 *[City of Sydney Council proposes heritage listing for Oxford Hotel, Palms, and Universal (formerly Midnight Shift). Clover Moore and Garry Wotherspoon quoted. Wotherspoon: Oxford Street as "the ghetto"; important through HIV/AIDS era. Key source for location records for these venues and for the Oxford Street events collection.]*
 <https://www.abc.net.au/news/2025-03-17/oxford-street-gay-bars-heritage-listing-sydney/105047728>
+
+ABC News (19 August 2021) 'Elderly Victorian man arrested over murder of Raymond Keam in Randwick 30 years ago' [online news], ABC News.
+*[⚠️ **New case — not yet in project data.** Raymond Keam, 43, found dead at Alison Park, Randwick, January 1987; severe head injuries; **Stan Early, 75**, from Clayton VIC, charged August 2021 (extradited). Keam identified as heterosexual but targeted for **perceived** sexuality — key framing for the project. Location: Alison Park, Randwick → Eastern Beaches PAC jurisdiction. Examined by Strike Force Parrabell. One of the very few cases where a charge was laid. ACON: "a step closer to justice for other victims."]*
+<https://www.abc.net.au/news/2021-08-19/elderly-victorian-man-charged-with-murder-of-raymond-keam/100389816>
+
+ABC News (22 October 2021) 'Bondi Rise memorial honours victims of Sydney gay hate crimes during 1970s to 1990s' [online news], ABC News.
+*[Unveiling of the **Rise** memorial at Marks Park, Tamarama; designed by Urban Arts Projects; six-level stone terrace representing six bands of the pride flag. Waverley Council. Ross Warren\'s name engraved. Garry Wotherspoon: "it could\'ve been me, rather than the people I know." Key source for Marks Park location record and Eastern Suburbs PAC.]*
+<https://www.abc.net.au/news/2021-10-22/bondi-rise-memorial-honours-gay-hate-crime-victims-70s-to-90s/100559240>
 
 ABC News (19 October 2025) 'Mural of Sydney\'s queer history removed from Surry Hills Police Station days after going up' [online news], ABC News.
 *["Queer Sydney: A History" by Jeremy Smith — depicting Magda Szubanski, Courtney Act, Michael Kirby, first Mardi Gras, HIV/AIDS era, same-sex marriage — hung on office wall at Surry Hills Police Station metres from Oxford Street, then removed after an officer complained. NSW Police: "we need to ensure all officers are able to work in a professional and inclusive office." Wotherspoon quoted. Key source for Surry Hills PAC location record and a contemporary accountability event.]*
