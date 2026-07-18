@@ -231,6 +231,86 @@ const ReportSource = z.object({
 });
 
 /**
+ * An audio-visual media source — podcasts, documentaries, TV journalism, news segments.
+ *
+ * Covers both episodic audio (podcasts) and screen works (documentaries, TV).
+ * These are secondary journalistic or documentary sources, distinct from:
+ *   - PressSource (print/online articles)
+ *   - OralHistorySource (recorded oral history interviews in archives)
+ *   - ArchiveSource (archival footage held by institutions)
+ *
+ * AGSM author-date format:
+ *   Documentary:
+ *     Blue A (dir.) (2016) *Deep Water: The Real Story* [documentary], Blackfella Films/SBS.
+ *   Podcast episode:
+ *     Callaghan G (4 October 2021) 'Ross Warren', *Bondi Badlands* [podcast],
+ *     The Sydney Morning Herald and The Age, accessed 18 July 2026,
+ *     <https://open.spotify.com/show/5aEiYdw9FjLPNr9XOJZPdh>.
+ */
+const MediaSource = z.object({
+  type: z.enum([
+    'podcast',       // episodic audio journalism/documentary
+    'documentary',   // feature or TV documentary film
+    'tv-series',     // dramatic TV series (e.g. Deep Water drama)
+    'news-segment',  // TV/radio news or current affairs segment
+    'film',          // dramatic feature film
+    'other-av',      // other audio-visual work
+  ]),
+
+  /** Title of the show, series, or film. */
+  title: z.string(),
+
+  /** Episode or segment title within a series. */
+  episode_title: z.string().optional(),
+
+  /** Episode number within a series. */
+  episode_number: z.number().optional(),
+
+  /** Season number (for multi-season series). */
+  season: z.number().optional(),
+
+  /**
+   * Director, journalist, or creator. AGSM format: family name + initials.
+   * e.g. "Blue A" (director), "Callaghan G" (journalist/creator).
+   * null if corporate authorship only.
+   */
+  creator: z.string().nullable().default(null),
+
+  /** Broadcaster, publisher, production company, or network. */
+  publisher: z.string().optional(),
+
+  /** Year of broadcast/release (e.g. "2016", "2021"). */
+  year: z.string().optional(),
+
+  /** Specific air/release date — ISO 8601. Required for AGSM podcast citations. */
+  date: z.string().optional(),
+
+  /** Total runtime (e.g. "1h 27m"). For documentary/film citations. */
+  runtime: z.string().optional(),
+
+  /**
+   * Timestamp for a specific moment being cited.
+   * e.g. "14:32" or "1:05:10" — for quotes, key statements, significant moments.
+   */
+  timestamp: z.string().optional(),
+
+  /** Primary URL — SBS On Demand, YouTube, etc. */
+  url: z.string().nullable().default(null),
+
+  /** Spotify podcast show or episode URL. */
+  spotify_url: z.string().nullable().default(null),
+
+  /** Apple Podcasts show or episode URL. */
+  apple_podcasts_url: z.string().nullable().default(null),
+
+  /** Date accessed — required by AGSM for online sources. ISO 8601. */
+  accessed_date: z.string().optional(),
+
+  /** Brief description of the content and its relevance to this record. */
+  notes: z.string().optional(),
+});
+
+/**
  * A coronial record source — the citation entry for a coronial file.
  *
  * AGSM author-date format:
@@ -1058,6 +1138,12 @@ const cases = defineCollection({
        * parliamentary committee reports (Report 58), academic research.
        */
       reports: z.array(ReportSource).default([]),
+      /**
+       * Audio-visual media sources — podcasts, documentaries, TV journalism.
+       * e.g. Bondi Badlands (SMH/The Age podcast, 2021),
+       *      Deep Water: The Real Story (SBS documentary, 2016).
+       */
+      media_sources: z.array(MediaSource).default([]),
     }),
 
     // --- Filtering / taxonomy -----------------------------------------------
@@ -1374,7 +1460,9 @@ const locations = defineCollection({
         accessed_date: z.string().optional(),
       })).default([]),
       reports: z.array(ReportSource).default([]),
-    }).default({ press: [], archives: [], oral_history: [], geographic: [], reports: [] }),
+      /** Audio-visual media sources — podcasts, documentaries, TV journalism. */
+      media_sources: z.array(MediaSource).default([]),
+    }).default({ press: [], archives: [], oral_history: [], geographic: [], reports: [], media_sources: [] }),
 
     content_warnings: z.array(ContentWarning).default([]),
 
@@ -1447,7 +1535,9 @@ const events = defineCollection({
       hansard: z.array(HansardSource).default([]),
       oral_history: z.array(OralHistorySource).default([]),
       reports: z.array(ReportSource).default([]),
-    }).default({ press: [], archives: [], hansard: [], oral_history: [], reports: [] }),
+      /** Audio-visual media sources — podcasts, documentaries, TV journalism. */
+      media_sources: z.array(MediaSource).default([]),
+    }).default({ press: [], archives: [], hansard: [], oral_history: [], reports: [], media_sources: [] }),
 
     content_warnings: z.array(ContentWarning).default([]),
     tags: z.array(z.string()).default([]),
