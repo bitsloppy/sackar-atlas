@@ -11,7 +11,20 @@ location_roles:
 suburb: "Kings Cross"
 location_region: inner-sydney
 
+street_address: "Corner of Elizabeth Bay Road and Barncleuth Square, Kings Cross NSW 2011"
+phone: "02 8356 0099"
+lat: -33.8731095
+lng: 151.2255593
+
 still_exists: true
+
+# Historical command structure — research needed
+# Kings Cross has had dedicated policing for decades; the exact predecessor
+# command names and reorganisation dates are not yet documented.
+historical_commands:
+  - name: "Kings Cross Police Area Command"
+    slug: "kings-cross-pac-historical"
+    notes: "Historical command structure needs research. The Kings Cross policing area has been reorganised multiple times; predecessor names are not yet confirmed."
 
 first_nations_country: "Gadigal"
 country_determination: aiatsis-map
@@ -57,4 +70,14 @@ Kings Cross features in the documented geography of anti-gay violence in multipl
 
 Kings Cross PAC became directly involved in the investigation of the disappearance of Simon Knight (missing since July 2005, Newtown area) following a transfer from Redfern Police Area Command. In Report 58 (2021), Simon's parents Robert Knight and Robyn Conlan documented their experience of seeking an independent review: after a 2019 meeting at Redfern Police Station, they were told that Simon's case file would be transferred to Kings Cross PAC for review. After four months without contact, they had to follow up themselves. The review report was eventually discussed with them in September 2019, but they were not permitted to take a copy.
 
-*Jurisdictional information sourced from NSW Police Force operational structure documentation, Wikipedia: New South Wales Police Force, and Report 58 (NSW Legislative Council, 2021).*
+**Police stations in this PAC (current):**
+
+| Station | Address | Phone | Hours |
+|---|---|---|---|
+| Kings Cross (PAC HQ) | Corner of Elizabeth Bay Road and Barncleuth Square, Kings Cross 2011 | 02 8356 0099 | 24 hours |
+| Woolloomooloo | Shop 10/164 Cathedral Street, Woolloomooloo 2011 | 02 9380 2189 | Not 24 hours |
+
+**Suburbs covered:**
+Darlinghurst, Elizabeth Bay, Potts Point, Rushcutters Bay, Woolloomooloo.
+
+*Address and station data sourced from NSW Police Force website (accessed 18 July 2026). Jurisdictional information also from NSW Police Force operational structure documentation, Wikipedia: New South Wales Police Force, and Report 58 (NSW Legislative Council, 2021).*

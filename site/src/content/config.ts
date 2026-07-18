@@ -1173,6 +1173,51 @@ const locations = defineCollection({
     /** If renamed, what it is called now. */
     current_name: z.string().optional(),
 
+    // --- Address / contact (for institutional locations) -------------------
+    //
+    // Machine-readable address for police stations, courts, hospitals, etc.
+    // Use for the primary/current office address.
+    // Historical address changes go in the markdown body.
+
+    /** Physical street address (e.g. "136 Maroubra Road, Maroubra NSW 2035"). */
+    street_address: z.string().optional(),
+
+    /** Contact phone number (e.g. "02 9349 9299"). */
+    phone: z.string().optional(),
+
+    // --- Police jurisdiction history ----------------------------------------
+    //
+    // NSW Police PAC boundaries and names have been reorganised multiple times.
+    // This field maps historical predecessor commands to the current PAC record.
+    //
+    // Use case: a case investigation in 1988 lists command_id: "manly-pac".
+    // The site resolves "manly-pac" → northern-beaches-pac.md via this lookup,
+    // and displays: "Manly Police Area Command (now Northern Beaches PAC)".
+    //
+    // Design (Option A): one record per jurisdiction; historical names tracked here.
+    // Applies only to location_type: 'police-jurisdiction' records.
+
+    /**
+     * Historical predecessor commands now encompassed by this PAC.
+     * Enables resolution of historical command_id references in case
+     * police_investigations records to the current PAC location record.
+     */
+    historical_commands: z.array(z.object({
+      /** Display name of the historical command. */
+      name: z.string(),
+      /**
+       * Slug used in police_investigations[].command_id to reference this predecessor.
+       * e.g. "manly-pac", "redfern-pac"
+       */
+      slug: z.string(),
+      /** When this command name was in use — ISO 8601 or year. */
+      active_from: z.string().optional(),
+      /** When this command was reorganised or renamed — ISO 8601 or year. */
+      active_to: z.string().optional(),
+      /** Note on the reorganisation or why this name was used. */
+      notes: z.string().optional(),
+    })).default([]),
+
     // --- First Nations ------------------------------------------------------
     //
     // Country custodianship is the PRIMARY identity of every place.

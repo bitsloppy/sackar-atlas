@@ -9,10 +9,27 @@ location_type: police-jurisdiction
 location_roles:
   - institutional
 
-suburb: "Newtown"
+suburb: "Marrickville"
 location_region: inner-west
 
+street_address: "89-101 Despointes Street, Marrickville NSW 2204"
+phone: "02 9568 9299"
+lat: -33.9094111
+lng: 151.1559508
+
 still_exists: true
+
+# Historical command structure
+# Redfern Police Area Command is documented in this file's body text;
+# it covered Redfern, Waterloo, and parts of the inner west before reorganisation.
+# Marrickville PAC may also be a predecessor; further research needed.
+historical_commands:
+  - name: "Redfern Police Area Command"
+    slug: "redfern-pac"
+    notes: "Covered Redfern, Waterloo, and surrounding areas. Referenced in Report 58 (2021) in relation to the Simon Knight case."
+  - name: "Marrickville Police Area Command"
+    slug: "marrickville-pac"
+    notes: "Historical command structure needs research. Provisional slug only."
 
 first_nations_country: "Gadigal"
 first_nations_country_additional: "Wangal"
@@ -63,4 +80,14 @@ Simon Knight, a gay man from the Newtown area, went missing in July 2005. His ca
 
 The Inner West — including Newtown, Glebe, and the inner-western suburbs — was also one of the areas where gay and lesbian communities lived and socialised in significant numbers throughout the 1970s–1990s, with Newtown in particular emerging as a significant lesbian community hub. ACON's research notes that violence against gay and transgender people occurred across the full range of Sydney's gay social geography, not only in the Oxford Street precinct.
 
-*Jurisdictional information sourced from NSW Police Force operational structure documentation, Wikipedia: New South Wales Police Force, and Report 58 (NSW Legislative Council, 2021).*
+**Police stations in this PAC (current):**
+
+| Station | Address | Phone | Hours |
+|---|---|---|---|
+| Marrickville (PAC HQ) | 89-101 Despointes Street, Marrickville 2204 | 02 9568 9299 | 24 hours |
+| Newtown | 222 Australia Street, Newtown 2042 | 02 9550 8199 | 24 hours |
+
+**Suburbs covered:**
+Camperdown, Darlington, Dulwich Hill, Enmore, Erskineville, Lewisham, Marrickville, Newtown, and surrounding areas.
+
+*Address and station data sourced from NSW Police Force website (accessed 18 July 2026). Jurisdictional information also from NSW Police Force operational structure documentation, Wikipedia: New South Wales Police Force, and Report 58 (NSW Legislative Council, 2021).*

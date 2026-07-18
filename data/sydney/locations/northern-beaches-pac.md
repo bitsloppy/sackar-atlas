@@ -12,7 +12,25 @@ location_roles:
 suburb: "Manly"
 location_region: northern-beaches
 
+# street_address and phone not yet confirmed from official source
+# (Northern Beaches PAC PDF not available; research needed)
+
 still_exists: true
+
+# Historical command structure
+# Manly Police Area Command is the most significant predecessor.
+# The reorganisation into "Northern Beaches PAC" occurred as part of broader
+# NSW Police restructuring; exact date needs research.
+historical_commands:
+  - name: "Manly Police Area Command"
+    slug: "manly-pac"
+    notes: "Primary predecessor command. Responsible for the original Scott Johnson investigation (1988). Reorganised into Northern Beaches PAC; exact date needs research."
+  - name: "Pittwater Police Area Command"
+    slug: "pittwater-pac"
+    notes: "Covered the northern beaches area (Narrabeen, Newport, Palm Beach). Merged into Northern Beaches PAC; research needed."
+  - name: "Dee Why Police Area Command"
+    slug: "dee-why-pac"
+    notes: "Historical command structure needs research. Provisional slug only."
 
 first_nations_country: "Gayamaygal"
 country_determination: aiatsis-map
@@ -64,4 +82,8 @@ The most prominent case in this jurisdiction is that of Scott Johnson, whose nak
 
 ACON's analysis notes that suburban commands near beats were generally less responsive to reports of anti-gay violence than inner-city commands like Surry Hills. The northern beaches commands — where beats at North Head, Fairy Bower, and coastal parks were targeted by perpetrators — appear in multiple documented cases as having conducted inadequate initial investigations, often classifying deaths as accidental or suicidal without thorough inquiry.
 
-*Jurisdictional information sourced from NSW Police Force operational structure documentation and Wikipedia: New South Wales Police Force. Scott Johnson case details from SCOI (Sackar J, 2023) Vol. 2 and Report 58 (NSW Legislative Council, 2021).*
+**Police stations in this PAC (current):**
+
+Station address and phone data not yet confirmed from official source (Northern Beaches PAC PDF not available). Known stations include Manly, Dee Why, Mona Vale, and others. Research needed.
+
+*Jurisdictional information sourced from NSW Police Force operational structure documentation and Wikipedia: New South Wales Police Force. Scott Johnson case details from SCOI (Sackar J, 2023) Vol. 2 and Report 58 (NSW Legislative Council, 2021). Station data pending.*

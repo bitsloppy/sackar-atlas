@@ -11,7 +11,18 @@ location_roles:
 suburb: "Surry Hills"
 location_region: inner-sydney
 
+street_address: "Level 3, Sydney Police Centre, 151-241 Goulburn Street, Surry Hills NSW 2010"
+phone: "02 9265 4144"
+
 still_exists: true
+
+# Historical command structure — research needed
+# Surry Hills has been a named policing command for decades; the exact predecessor
+# names and reorganisation dates are not yet documented.
+historical_commands:
+  - name: "Surry Hills Police Area Command"
+    slug: "surry-hills-pac-historical"
+    notes: "Historical command structure needs research. The Surry Hills policing area and its boundaries relative to adjacent commands (Kings Cross, Sydney City) have been reorganised; predecessor names not yet confirmed."
 
 # First Nations
 first_nations_country: "Gadigal"
@@ -60,4 +71,13 @@ The Surry Hills command is also the jurisdiction in which much of the documented
 
 In June 2026, police conducted drug raids on Oxford Street gay venues — Universal, Kinselas, and Palms — within or near Surry Hills PAC's jurisdiction, during Pride Month. Sydney MP Alex Greenwich and Lord Mayor Clover Moore filed a complaint with the LECC; historian and 78er Garry Wotherspoon resigned from the NSW Police LGBTQIA+ Consultative Committee in response, saying the raids sent a "chill." The LECC compelled Police Commissioner Mal Lanyon to investigate.
 
-*Jurisdictional information sourced from NSW Police Force operational structure documentation and Wikipedia: New South Wales Police Force.*
+**Police stations in this PAC (current):**
+
+| Station | Address | Phone | Hours |
+|---|---|---|---|
+| Surry Hills (PAC HQ) | Level 3, Sydney Police Centre, 151-241 Goulburn Street, Surry Hills 2010 | 02 9265 4144 | 24 hours |
+
+**Suburbs covered:**
+Centennial Park, Darlinghurst, Moore Park, Paddington, Surry Hills, Sydney 2000.
+
+*Address and station data sourced from NSW Police Force website (accessed 18 July 2026). Jurisdictional information also from NSW Police Force operational structure documentation and Wikipedia: New South Wales Police Force.*
