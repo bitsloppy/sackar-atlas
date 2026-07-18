@@ -698,6 +698,22 @@ const cases = defineCollection({
     /** Age at time of death. */
     age_at_death: z.number().nullable().default(null),
 
+    // --- Birth details ------------------------------------------------------
+
+    /**
+     * Date of birth in ISO 8601 format (YYYY-MM-DD).
+     * Source: coronial record, SCOI statement, family evidence.
+     * Enables precise age-at-death calculation and contextual display.
+     */
+    born_date: z.string().optional(),
+
+    /**
+     * Place of birth — city/town and country.
+     * e.g. "Port Moresby, Papua New Guinea", "Sydney, Australia"
+     * Distinct from country_of_birth (which is machine-readable for filtering).
+     */
+    born_place: z.string().optional(),
+
     // --- Death location -----------------------------------------------------
 
     /** Name of location where body was found. */
@@ -1699,8 +1715,30 @@ const people = defineCollection({
 
     // --- Dates --------------------------------------------------------------
 
+    /**
+     * Full date of birth in ISO 8601 format (YYYY-MM-DD).
+     * More precise than birth_year — use when known from coronial, family,
+     * or official records. Enables "died aged X years and Y days" display
+     * and "birthday" contextual notes.
+     */
+    born_date: z.string().optional(),
+
+    /** Birth year — retained for backwards compatibility and for cases where
+     * only the year is known (institutional figures, historical activists). */
     birth_year: z.number().nullable().default(null),
+
+    /**
+     * Full date of death in ISO 8601 format (YYYY-MM-DD).
+     * For victims: use the same value as cases.date_of_death.
+     * For uncertain dates: use the earliest known date; set died_date_uncertain.
+     */
+    died_date: z.string().optional(),
+
+    /** Death year — retained alongside died_date for quick range filtering. */
     death_year: z.number().nullable().default(null),
+
+    /** True when exact death date is not known (parallel to cases.date_of_death_uncertain). */
+    died_date_uncertain: z.boolean().default(false),
 
     /**
      * Whether this person is believed to be living.

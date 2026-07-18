@@ -34,11 +34,14 @@ date_of_death_uncertain: true
 date_of_death_display: "10 or 11 May 1976"
 age_at_death: 18
 
+born_date: "1957-07-18"
+born_place: "Port Moresby, Papua New Guinea"
+
 location_name: "Fairy Bower headland (south of Shelley Beach), Manly"
 location_suburb: "Manly"
-location_lat: -33.8005
-location_lng: 151.2890
-location_id: null
+location_lat: -33.7995
+location_lng: 151.2882
+location_id: "shelley-headland"
 
 last_seen_location: "Hilton Hotel, George Street, Sydney CBD (9:30pm, 9 May 1976)"
 last_seen_date: "1976-05-09"
@@ -114,8 +117,10 @@ family_engaged_with_inquiry: true
 community_verification_status: "not-assessed"
 
 related_locations:
+  - "shelley-headland"
   - "northern-beaches-pac"
-related_people: []
+related_people:
+  - "mark-stewart"
 related_events: []
 related_media: []
 related_recommendations: []
