@@ -119,8 +119,12 @@ community_verification_status: "not-assessed"
 related_locations:
   - "shelley-headland"
   - "northern-beaches-pac"
+  - "chevron-hotel"          # possible connection — contested; see case notes
+  - "hilton-hotel-sydney"    # last seen / staying here 9 May 1976
 related_people:
   - "mark-stewart"
+  - "keith-thoms"            # OIC original investigation
+  - "john-goldrick"          # City Coroner, inquest 16 July 1976
 related_events: []
 related_media: []
 related_recommendations: []

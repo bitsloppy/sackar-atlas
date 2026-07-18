@@ -54,6 +54,15 @@ held_by: "Mitchell Library / State Library NSW / ..."
 
 **Priority:** The 1976-05-18 Manly Daily article is significant — it records police telling the press that Mark was "staying at a Kings Cross hotel" (i.e., the Chevron, in Potts Point / Kings Cross), which is a key piece of the Hilton/Chevron evidentiary question. Worth finding first.
 
+### locations/chevron-hotel.md
+
+| Status | Publication | Date | Title | Page | Notes |
+|--------|------------|------|-------|------|-------|
+| ☐ | The Bulletin | 1965-02-20 | "Chevron Hotel advertisement" | — | Documents change from 'Chevron Hilton' to 'Chevron Hotel' branding |
+| ☐ | The Bulletin | 1965-09-11 | "Chevron Hotel advertisement" | — | Second ad confirming rebrand |
+
+---
+
 ### locations/shelley-headland.md
 
 | Status | Publication | Date | Title | Page | Notes |

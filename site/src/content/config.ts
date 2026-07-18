@@ -1173,6 +1173,17 @@ const cases = defineCollection({
     tags: z.array(z.string()).default([]),
     decade: z.string().optional(),  // e.g. "1970s"
 
+    /**
+     * True when this record is a stub — a placeholder created during the
+     * cross-reference pass to capture a named entity for future research.
+     * Stubs have enough data to be linkable (slug, name, type) but their
+     * body content and sources are incomplete.
+     *
+     * The site renders stub records with a visible 'research needed' indicator.
+     * Filter: show all stubs = show the research backlog.
+     */
+    stub: z.boolean().default(false),
+
   }),
 });
 
@@ -1490,6 +1501,9 @@ const locations = defineCollection({
 
     tags: z.array(z.string()).default([]),
 
+    /** True when this is a stub record — placeholder for future research. */
+    stub: z.boolean().default(false),
+
   }),
 });
 
@@ -1563,6 +1577,9 @@ const events = defineCollection({
 
     content_warnings: z.array(ContentWarning).default([]),
     tags: z.array(z.string()).default([]),
+
+    /** True when this is a stub record — placeholder for future research. */
+    stub: z.boolean().default(false),
 
   }),
 });
@@ -1754,6 +1771,9 @@ const people = defineCollection({
 
     content_warnings: z.array(ContentWarning).default([]),
     tags: z.array(z.string()).default([]),
+
+    /** True when this is a stub record — placeholder for future research. */
+    stub: z.boolean().default(false),
 
   }),
 });

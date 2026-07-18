@@ -69,6 +69,7 @@ physical_markers:
 
 related_cases:
   - mark-stewart
+  - paul-rath       # died at or near this location June 1977; case not yet entered
 related_events: []
 related_media: []
 
