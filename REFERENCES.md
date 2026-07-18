@@ -125,101 +125,77 @@ Marshall Project (n.d.) [*The Marshall Project*](https://www.themarshallproject.
 
 ---
 
-## Audio-Visual and Radio Sources
+## Audio-Visual, Radio, and Journalism Sources
 
-Blue A (dir.) (2016) *Deep Water: The Real Story* [documentary], Blackfella Films/SBS, Australia, 1h 27m, premiered 16 October 2016.
-*[Feature documentary on the Bondi cliffs gay hate crimes; interviews Deputy State Coroner Milledge, survivor David McMahon, ex-police, journalists, and families. See source_collections/deep-water-documentary.md.]*
-<https://www.sbs.com.au/ondemand/tv-program/deep-water-the-real-story/777718339683>
+Individual source records are now maintained as first-class data files in `data/sydney/sources/`.
+Each record includes full citation metadata, significance assessment, and cross-references to cases, locations, and people.
 
-Callaghan G (2021) *Bondi Badlands* [podcast series, 5 episodes], The Sydney Morning Herald and The Age, released October 2021.
-*[5-episode podcast on the Marks Park/Bondi cliffs killings: Warren, Russell, Rattanjurathaporn, Mattaini, Johnson. Key interview: Det. Sgt. Stephen Page (Operation Taradale). See source_collections/bondi-badlands.md.]*
-<https://open.spotify.com/show/5aEiYdw9FjLPNr9XOJZPdh>
+See: [`data/sydney/sources/`](data/sydney/sources/)
 
-Marnie S (presenter) (3 March 2024) 'Sunday Brunch: Garry Wotherspoon' [radio segment], *Sydney Weekend Mornings*, ABC Radio Sydney.
-*[Historian and 78er Garry Wotherspoon interviewed at his Oxford Street home the morning after Mardi Gras 2024. Primary-quality oral source on the history of gay Sydney and the Oxford Street precinct.]*
-<https://www.abc.net.au/listen/programs/sydney-weekendmornings/sunday-brunch-garry-wotherspoon/103548436>
+### Podcast episodes — Bondi Badlands (Callaghan G, SMH/The Age, 2021)
 
-ABC Radio National Sunday Extra (2026) 'Preserving LGBTQIA+ history at the State Library of NSW' [radio segment], ABC Radio National, 2026.
-Guest: Sam Cooling, Librarian ('Queerbrarian'), State Library of NSW.
-*[Covers the State Library NSW LGBTQI+ collections and AQuA (queerarchives.org.au). Points to two key source collections for this project. See source_collections/state-library-nsw.md and source_collections/aqua.md.]*
-<https://www.abc.net.au/listen/programs/sundayextra/sam-cooling-state-library-nsw-queer-lgbtq-history-culture-sydney/106396878>
+| Slug | Episode | Cases |
+|---|---|---|
+| [`bondi-badlands-ep1-ross-warren`](data/sydney/sources/bondi-badlands-ep1-ross-warren.md) | Ep 1: Ross Warren | ross-warren |
+| [`bondi-badlands-ep2-john-russell`](data/sydney/sources/bondi-badlands-ep2-john-russell.md) | Ep 2: John Russell | john-russell |
+| [`bondi-badlands-ep3-kritchikorn-rattanjurathaporn`](data/sydney/sources/bondi-badlands-ep3-kritchikorn-rattanjurathaporn.md) | Ep 3: Kritchikorn Rattanjurathaporn | kritchikorn-rattanjurathaporn |
+| [`bondi-badlands-ep4-the-inquest`](data/sydney/sources/bondi-badlands-ep4-the-inquest.md) | Ep 4: The Inquest ⭐ | warren, russell, rattanjurathaporn, mattaini |
+| [`bondi-badlands-ep5-scott-johnson`](data/sydney/sources/bondi-badlands-ep5-scott-johnson.md) | Ep 5: Scott Johnson | scott-johnson |
 
-ABC News (12 April 2023) 'From Yellow Socks to a Special Commission, the importance of LGBTQIA+ stories in correcting the past' [online news], ABC News.
-*[Covers the Yellow Socks Affair (Newcastle, 1952), Hunter Rainbow History Group, oral history preservation, and the SCOI. Background on queer history methodology.]*
-<https://www.abc.net.au/news/2023-04-12/yellow-socks-to-special-commission-into-lgbtiq-hate-crimes/102204814>
+⭐ Ep 4 rated primary-source-quality (Det. Sgt. Page + David McMahon interviews). Series notes: `source-collections/bondi-badlands.md`.
 
----
+### Documentary
 
-## ABC News — SCOI Coverage
+| Slug | Work |
+|---|---|
+| [`deep-water-documentary-2016`](data/sydney/sources/deep-water-documentary-2016.md) | *Deep Water: The Real Story* (Blue A, dir., SBS/Blackfella Films, 2016) ⭐ |
 
-ABC News (4 November 2021) 'NSW government announces inquiry into Sydney's unsolved gay and transgender hate crimes, murders' [online news], ABC News.
-*[Perrottet government announces the SCOI. Shayne Mallard (Committee Chair) quoted: "at least 88 gay and transgender murders, though the number was likely higher"; notes lesbian victims often recorded as domestic violence. Ross Warren case described.]*
-<https://www.abc.net.au/news/2021-11-04/nsw-government-announces-gay-hate-crime-inquiry/100593044>
+⭐ Primary-source-quality (Milledge + David McMahon interviews). Series notes: `source-collections/deep-water-documentary.md`.
 
-ABC News (16 April 2022) 'NSW inquiry to investigate 40 years of unsolved Sydney gay hate deaths' [online news], ABC News.
-*[Justice John Sackar formally appointed; 88 cases confirmed; Scott Johnson and Ross Warren cases described. Perrottet: "close a dark chapter of our state's history." Sackar's powers: hearings, summons, inspect documents.]*
-<https://www.abc.net.au/news/2022-04-16/nsw-inquiry-into-sydney-gay-hate-deaths/100995158>
+### Radio segments
 
-ABC News (2 November 2022) 'Special commission of Inquiry into 40 years of \'lonely and terrifying\' gay hate deaths begins' [online news], ABC News.
-*[SCOI hearings open. Senior Counsel Assisting Peter Gray SC opening address: deaths were "lonely and terrifying"; "all these lives mattered"; commission will "shine a light on everything that is known". ACON CEO Nicholas Parkhill: Sydney was "a very, very scary place" in the 1980s.]*
-<https://www.abc.net.au/news/2022-11-02/inquiry-into-sydney-lgbt-deaths-begins/101605590>
+| Slug | Segment |
+|---|---|
+| [`wotherspoon-abc-radio-sunday-brunch-2024`](data/sydney/sources/wotherspoon-abc-radio-sunday-brunch-2024.md) | Garry Wotherspoon, *Sydney Weekend Mornings*, ABC Radio Sydney, 3 March 2024 ⭐ |
+| [`sam-cooling-abc-rn-sunday-extra-2026`](data/sydney/sources/sam-cooling-abc-rn-sunday-extra-2026.md) | Sam Cooling ('Queerbrarian'), *Sunday Extra*, ABC Radio National, 2026 |
 
----
+⭐ Primary-source-quality (Wotherspoon is a 78er and leading queer historian).
 
-## Academic and Expert Commentary
+### ABC News articles
 
-[Author not extracted — check URL] (November 2023) 'Shining a light on injustice: how an inquiry fought for LGBTIQ recognition', *The Conversation*, accessed 18 July 2026.
-*[Written at/after the SCOI\'s final public sitting. Sackar closing remarks: "Many voiceless people have been given a voice." Key statistics: **32 deaths examined**; 17 public + 48 private hearings; 150,000+ documents compelled; 130+ public submissions. Mentions Strike Forces Parrabell, **Macnamir** (undocumented), and Neiwand. Two forensic breakthroughs named: (1) **Crispin Dye** (died Christmas Day 1993 after assault 23 Dec; DNA match to 2002 crime scene from never-tested clothing); (2) **Ernest Head** (Summer Hill, 1976; naked, stabbed 35 times; palmprint re-analysis identified previously unknown POI). Both are undocumented cases needing files. Links to further ABC reporting on Dye and Neiwand reversals.]*
-<https://theconversation.com/shining-a-light-on-injustice-how-an-inquiry-fought-for-lgbtiq-recognition-217537>
+| Slug | Date | Subject |
+|---|---|---|
+| [`abc-news-2018-05-28-rosendale-acon`](data/sydney/sources/abc-news-2018-05-28-rosendale-acon.md) | 28 May 2018 | Rosendale + Simes; unmarked police car allegation ⭐ |
+| [`abc-news-2019-05-03-hate-crime-laws`](data/sydney/sources/abc-news-2019-05-03-hate-crime-laws.md) | 3 May 2019 | Hate crime laws rarely used; zero NSW convictions |
+| [`abc-news-2020-05-13-scott-johnson-arrest`](data/sydney/sources/abc-news-2020-05-13-scott-johnson-arrest.md) | 13 May 2020 | Scott White charged; Steve Johnson's 32-year campaign |
+| [`abc-news-2020-05-16-four-other-cases`](data/sydney/sources/abc-news-2020-05-16-four-other-cases.md) | 16 May 2020 | Warren, Russell, Rattanjurathaporn, Mattaini in detail |
+| [`abc-news-2020-05-17-hate-crime-reform`](data/sydney/sources/abc-news-2020-05-17-hate-crime-reform.md) | 17 May 2020 | ACHN 29 recommendations; zero NSW prosecutions |
+| [`abc-news-2021-08-19-raymond-keam`](data/sydney/sources/abc-news-2021-08-19-raymond-keam.md) | 19 Aug 2021 | ⚠️ Raymond Keam (Stan Early charged); perceived sexuality |
+| [`abc-news-2021-10-22-rise-memorial`](data/sydney/sources/abc-news-2021-10-22-rise-memorial.md) | 22 Oct 2021 | Rise memorial unveiled at Marks Park |
+| [`abc-news-2021-11-04-nsw-announces-inquiry`](data/sydney/sources/abc-news-2021-11-04-nsw-announces-inquiry.md) | 4 Nov 2021 | Perrottet announces SCOI |
+| [`abc-news-2022-04-16-sackar-appointed`](data/sydney/sources/abc-news-2022-04-16-sackar-appointed.md) | 16 Apr 2022 | Sackar formally appointed |
+| [`abc-news-2022-11-02-scoi-hearings-open`](data/sydney/sources/abc-news-2022-11-02-scoi-hearings-open.md) | 2 Nov 2022 | SCOI public hearings open |
+| [`abc-news-2023-02-21-neiwand-reversals`](data/sydney/sources/abc-news-2023-02-21-neiwand-reversals.md) | 21 Feb 2023 | Neiwand: police reversed coronial findings, never told families |
+| [`abc-news-2023-04-12-yellow-socks`](data/sydney/sources/abc-news-2023-04-12-yellow-socks.md) | 12 Apr 2023 | Yellow Socks Affair; oral history methodology |
+| [`abc-news-2023-06-28-lack-of-investigation`](data/sydney/sources/abc-news-2023-06-28-lack-of-investigation.md) | 28 Jun 2023 | NSW Police refused to investigate Bondi homicides |
+| [`abc-news-2023-08-22-crispin-dye`](data/sydney/sources/abc-news-2023-08-22-crispin-dye.md) | 22 Aug 2023 | ⚠️ Crispin Dye: DNA breakthrough; deceased POI identified |
+| [`abc-news-2025-03-17-oxford-street-heritage`](data/sydney/sources/abc-news-2025-03-17-oxford-street-heritage.md) | 17 Mar 2025 | Oxford Hotel, Palms, Universal proposed for heritage listing |
+| [`abc-news-2025-10-19-surry-hills-mural`](data/sydney/sources/abc-news-2025-10-19-surry-hills-mural.md) | 19 Oct 2025 | Queer history mural removed from Surry Hills Police Station |
 
-**Further ABC articles linked from this piece (not yet added to REFERENCES):**
-- Neiwand Strike Force reversals: <https://www.abc.net.au/news/2023-02-21/nsw-gay-hate-crime-inquiry-police-reverse-findings-in-murders/102003372>
-- Crispin Dye new POI: <https://www.abc.net.au/news/2023-08-22/nsw-gay-hate-inquiry-crispin-dye-new-person-of-interest/102758744>
-- SCOI lack of investigation: <https://www.abc.net.au/news/2023-06-28/gay-hate-inquiry-nsw-police-refused-investigate-bondi-homicides/102537192>
+### Academic commentary
 
----
+| Slug | Source |
+|---|---|
+| [`the-conversation-2023-shining-light-injustice`](data/sydney/sources/the-conversation-2023-shining-light-injustice.md) | *The Conversation*, Nov 2023 — SCOI overview; forensic breakthroughs; Strike Force Macnamir flagged ⚠️ |
 
-## ABC News — Scott Johnson (2019–2020)
-
-ABC News (3 May 2019) 'Hate crime laws rarely used by Australian authorities, police figures reveal' [online news], ABC News.
-*[Only 21 convictions under hate crime laws in Australia ever; zero convictions in NSW since records began 1994; Victorian police flagged 4,257 incidents over four years with only 3 convictions under Racial and Religious Tolerance Act. US expert Matt Browning: Australian police had "heads in the sand". Key framing for the accountability layer.]*
-<https://www.abc.net.au/news/2019-05-03/hate-crimes-rarely-prosecuted-in-australia/11055938>
-
-ABC News (13 May 2020) 'How informant sparked arrest in Scott Johnson\'s gay hate murder cold case' [online news], ABC News.
-*[Informant led to arrest of **Scott White**, 49, charged with Scott Johnson\'s murder. White alleged to have met Johnson in a Manly hotel the night of the killing. Steve Johnson\'s 32-year campaign; three coronial inquests (1989, 2012, 2017). Key source for Scott Johnson case file.]*
-<https://www.abc.net.au/news/2020-05-13/scott-johnson-murder-man-charged-after-brothers-crusade/12238728>
-
-ABC News (16 May 2020) 'Four other gay-hate crimes being investigated by NSW Police after Scott Johnson murder charge' [online news], ABC News.
-*[Covers Warren, Russell, Rattanjurathaporn, and Mattaini in detail following Johnson charge. NSW Police Minister David Elliott: "it was a time where people were slightly dismissive of hate crimes." Key source for multiple case files.]*
-<https://www.abc.net.au/news/2020-05-16/scott-johnson-charge-four-other-sydney-gay-hate-murders/12247922>
-
-ABC News (17 May 2020) 'Former NSW Police prosecutor says hate crime reforms "a matter of life and death" after Scott Johnson arrest' [online news], ABC News.
-*[Australian Hate Crime Network (ACHN) 29 recommendations; only one reference to hate crimes in NSW Crimes Act; not a single successful prosecution under that provision; former GLLO and former police prosecutor quoted. Mahmud Hawila (ACHN): arrest was "haphazard kind of justice." Key source for recommendations and events collections.]*
-<https://www.abc.net.au/news/2020-05-17/scott-johnson-arrest-prompts-calls-for-police-hate-crime-reform/12241878>
+⚠️ = undocumented cases flagged in that source record
 
 ---
 
-## ABC News — Cases and Locations
+## ABC News — SCOI Coverage, Cases, and Locations
 
-ABC News (28 May 2018) 'Sydney\'s gay hate crimes still unsolved 30 years on as report calls for more investigations' [online news], ABC News.
-*[⚠️ Primary-source quality. Alan Rosendale's testimony on his 1989 attack at Moore Park, and Paul Simes (eyewitness) who wrote down the attackers' number plate — later told by police it matched an **unmarked police car**. Rosendale and Simes met for the first time in 2013 after Simes published his account. Key source for the Rosendale case file. Covers ACON 2018 report.]*
-<https://www.abc.net.au/news/2018-05-28/sydney-gay-hate-crimes-still-unsolved/9800046>
-
-ABC News (17 March 2025) 'Sydney gay bars Oxford Hotel, Palms and Universal proposed for heritage listing' [online news], ABC News.
-*[City of Sydney Council proposes heritage listing for Oxford Hotel, Palms, and Universal (formerly Midnight Shift). Clover Moore and Garry Wotherspoon quoted. Wotherspoon: Oxford Street as "the ghetto"; important through HIV/AIDS era. Key source for location records for these venues and for the Oxford Street events collection.]*
-<https://www.abc.net.au/news/2025-03-17/oxford-street-gay-bars-heritage-listing-sydney/105047728>
-
-ABC News (19 August 2021) 'Elderly Victorian man arrested over murder of Raymond Keam in Randwick 30 years ago' [online news], ABC News.
-*[⚠️ **New case — not yet in project data.** Raymond Keam, 43, found dead at Alison Park, Randwick, January 1987; severe head injuries; **Stan Early, 75**, from Clayton VIC, charged August 2021 (extradited). Keam identified as heterosexual but targeted for **perceived** sexuality — key framing for the project. Location: Alison Park, Randwick → Eastern Beaches PAC jurisdiction. Examined by Strike Force Parrabell. One of the very few cases where a charge was laid. ACON: "a step closer to justice for other victims."]*
-<https://www.abc.net.au/news/2021-08-19/elderly-victorian-man-charged-with-murder-of-raymond-keam/100389816>
-
-ABC News (22 October 2021) 'Bondi Rise memorial honours victims of Sydney gay hate crimes during 1970s to 1990s' [online news], ABC News.
-*[Unveiling of the **Rise** memorial at Marks Park, Tamarama; designed by Urban Arts Projects; six-level stone terrace representing six bands of the pride flag. Waverley Council. Ross Warren\'s name engraved. Garry Wotherspoon: "it could\'ve been me, rather than the people I know." Key source for Marks Park location record and Eastern Suburbs PAC.]*
-<https://www.abc.net.au/news/2021-10-22/bondi-rise-memorial-honours-gay-hate-crime-victims-70s-to-90s/100559240>
-
-ABC News (19 October 2025) 'Mural of Sydney\'s queer history removed from Surry Hills Police Station days after going up' [online news], ABC News.
-*["Queer Sydney: A History" by Jeremy Smith — depicting Magda Szubanski, Courtney Act, Michael Kirby, first Mardi Gras, HIV/AIDS era, same-sex marriage — hung on office wall at Surry Hills Police Station metres from Oxford Street, then removed after an officer complained. NSW Police: "we need to ensure all officers are able to work in a professional and inclusive office." Wotherspoon quoted. Key source for Surry Hills PAC location record and a contemporary accountability event.]*
-<https://www.abc.net.au/news/2025-10-19/queer-sydney-history-mural-removed-surry-hills-police-station/105906396>
+All individual articles are now maintained as source records in `data/sydney/sources/`.
+See the consolidated table in **Audio-Visual, Radio, and Journalism Sources** above.
 
 ---
 

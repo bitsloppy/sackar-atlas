@@ -2327,6 +2327,147 @@ const source_collections = defineCollection({
   }),
 });
 
+// ---------------------------------------------------------------------------
+// COLLECTION: sources
+// Individual citable items — online news articles, podcast episodes, radio
+// segments, documentaries, academic commentary.
+//
+// Design intent: each item gets a slug and can be cross-referenced from
+// cases, locations, people, and events. The cross-references live here
+// (related_cases[], related_locations[], etc.) enabling the site to answer:
+//   "What has been published about Scott Johnson?"
+//   "Which sources document Marks Park?"
+//   "All episodes of Bondi Badlands, by case"
+//
+// Distinct from source_collections/ (repositories and series-level records).
+// Individual episodes of a podcast series live here; the series itself is
+// in source_collections/ and linked via series_id.
+// ---------------------------------------------------------------------------
+
+const sources = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: '../data/sydney/sources' }),
+  schema: z.object({
+
+    title: z.string(),
+
+    source_type: z.enum([
+      'online-news',       // abc.net.au, guardian, theconversation — digital-first news
+      'newspaper',         // print newspaper article (may also be on Trove)
+      'community-press',   // Star Observer, Campaign, SX — LGBTIQ community press
+      'magazine-feature',  // longform magazine / Good Weekend etc.
+      'podcast-episode',   // individual episode of a podcast series
+      'radio-segment',     // radio program, interview, or documentary segment
+      'documentary',       // feature documentary film (full work)
+      'tv-segment',        // TV news or current affairs segment
+      'book',              // whole book
+      'book-chapter',      // specific chapter in a book
+      'academic-article',  // journal article or academic commentary
+    ]),
+
+    // --- Publication info (articles) ----------------------------------------
+
+    /** Outlet name — e.g. "ABC News", "The Conversation", "Sydney Morning Herald". */
+    publication: z.string().optional(),
+
+    /**
+     * Journalist byline — family name + initials (e.g. "Feneley R").
+     * null if uncredited or corporate byline.
+     */
+    author: z.string().nullable().default(null),
+
+    // --- Show / series info (AV) --------------------------------------------
+
+    /** Show or series title — e.g. "Bondi Badlands", "Sydney Weekend Mornings". */
+    show_title: z.string().optional(),
+
+    /** Presenter, director, or creator — family name + initials (e.g. "Callaghan G"). */
+    creator: z.string().nullable().default(null),
+
+    // --- Episode info -------------------------------------------------------
+
+    /** Episode title within a series. */
+    episode_title: z.string().optional(),
+
+    /** Episode number within the series. */
+    episode_number: z.number().optional(),
+
+    /** Season number (for multi-season series). */
+    season: z.number().optional(),
+
+    /**
+     * Links to a source_collections/ entry for the series, archive, or outlet.
+     * e.g. 'bondi-badlands' for individual podcast episodes.
+     * Drives automatic display of conditions of use and correct citation format.
+     */
+    series_id: z.string().optional(),
+
+    // --- Dates --------------------------------------------------------------
+
+    /** Publication or broadcast date — ISO 8601 (YYYY-MM-DD). */
+    date: z.string().optional(),
+
+    /** Date accessed — required by AGSM for online sources. ISO 8601. */
+    accessed_date: z.string().optional(),
+
+    // --- URLs ---------------------------------------------------------------
+
+    url: z.string().nullable().default(null),
+    spotify_url: z.string().nullable().default(null),
+    apple_podcasts_url: z.string().nullable().default(null),
+    trove_id: z.string().nullable().default(null),
+    trove_url: z.string().nullable().default(null),
+
+    // --- AV-specific --------------------------------------------------------
+
+    /** Total runtime — e.g. "1h 27m", "42m", "18:30". */
+    runtime: z.string().optional(),
+
+    /**
+     * Timestamp for a specific cited moment.
+     * e.g. "14:32" or "1:05:10" — for quotes, key statements, significant moments.
+     */
+    timestamp: z.string().optional(),
+
+    // --- Significance -------------------------------------------------------
+
+    /**
+     * Source significance for this project.
+     *
+     * primary-source-quality — eyewitness testimony, primary documents,
+     *                          key first-hand interviews (e.g. Rosendale + Simes;
+     *                          David McMahon; Det. Sgt. Page)
+     * secondary              — journalism, documentary, or commentary about the events
+     * tertiary               — overview, aggregation, background context
+     */
+    significance: z.enum([
+      'primary-source-quality',
+      'secondary',
+      'tertiary',
+    ]).default('secondary'),
+
+    // --- Cross-references ---------------------------------------------------
+    //
+    // These fields power the bidirectional querying at the heart of this design:
+    //   "All sources that cover scott-johnson" — filter sources by related_cases
+    //   "All sources about Marks Park"          — filter by related_locations
+    //   "All episodes featuring garry-wotherspoon" — filter by related_people
+    //
+    // Slugs must resolve to existing records in the respective collections.
+
+    related_cases: z.array(z.string()).default([]),
+    related_locations: z.array(z.string()).default([]),
+    related_people: z.array(z.string()).default([]),
+    related_events: z.array(z.string()).default([]),
+    related_recommendations: z.array(z.string()).default([]),
+
+    /** Other source records closely related to this one (e.g. ABC articles linked from The Conversation piece). */
+    related_sources: z.array(z.string()).default([]),
+
+    tags: z.array(z.string()).default([]),
+
+  }),
+});
+
 export const collections = {
   cases,
   locations,
@@ -2337,4 +2478,5 @@ export const collections = {
   recommendations,
   // eslint-disable-next-line camelcase
   source_collections,
+  sources,
 };
