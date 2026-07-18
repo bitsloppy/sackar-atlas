@@ -1,0 +1,63 @@
+---
+name: "Surry Hills Police Area Command"
+also_known_as:
+  - "Surry Hills Police Station"
+  - "Surry Hills PAC"
+
+location_type: police-jurisdiction
+location_roles:
+  - institutional
+
+suburb: "Surry Hills"
+location_region: inner-sydney
+
+still_exists: true
+
+# First Nations
+first_nations_country: "Gadigal"
+country_determination: aiatsis-map
+consultation_status: not-assessed
+
+related_cases: []
+related_events: []
+related_media: []
+
+sources:
+  press: []
+  archives: []
+  oral_history: []
+  geographic:
+    - service: "NSW Police Force"
+      url: "https://www.police.nsw.gov.au"
+  reports:
+    - type: community-report
+      organisation: "ACON"
+      title: "In Pursuit of Truth and Justice"
+      year: "2018"
+      page: "20"
+
+content_warnings: []
+tags:
+  - police-area-command
+  - nswpf
+  - inner-sydney
+  - oxford-street
+  - surry-hills
+  - institutional-accountability
+---
+
+The Surry Hills Police Area Command (PAC) is the policing jurisdiction covering Surry Hills, Darlinghurst, and the Oxford Street precinct — the geographic heart of Sydney's gay and transgender community throughout the period documented by this project (1970s–2000s). The PAC headquarters is Surry Hills Police Station on Goulburn Street.
+
+**Historical significance for LGBTIQ policing:**
+
+Surry Hills PAC sits at the intersection of two histories: it is both the policing jurisdiction most associated with gay and transgender hate crimes in the inner city, and — according to ACON's *In Pursuit of Truth and Justice* (2018) — "probably the most supportive" of NSW police commands in responding to reports of anti-gay violence. ACON and Garry Wotherspoon's historical analysis note that the quality of investigation was heavily dependent on the individual station and officer; "Surry Hills station was probably the most supportive, [while] others, like those suburban ones in whose areas the beats were, were much less so" (Wotherspoon 2017, cited in ACON 2018, p. 20).
+
+The Oxford Street and Flinders Street area — within Surry Hills PAC's jurisdiction — was the site of a special taskforce established by the police in the early 1990s to address the escalating violence in the precinct. This followed the community's establishment of the Lesbian and Gay Anti-Violence Project and Dykes on Bikes street patrols in the same area, after the police response was deemed inadequate.
+
+The Surry Hills command is also the jurisdiction in which much of the documented gay social space violence occurred — attacks on men leaving bars and venues in the Oxford Street precinct — and in which many of the original gay hate crime reports were received, investigated, and in many cases inadequately pursued.
+
+**Contemporary events:**
+
+In June 2026, police conducted drug raids on Oxford Street gay venues — Universal, Kinselas, and Palms — within or near Surry Hills PAC's jurisdiction, during Pride Month. Sydney MP Alex Greenwich and Lord Mayor Clover Moore filed a complaint with the LECC; historian and 78er Garry Wotherspoon resigned from the NSW Police LGBTQIA+ Consultative Committee in response, saying the raids sent a "chill." The LECC compelled Police Commissioner Mal Lanyon to investigate.
+
+*Jurisdictional information sourced from NSW Police Force operational structure documentation and Wikipedia: New South Wales Police Force.*

@@ -843,6 +843,13 @@ const cases = defineCollection({
      */
     police_investigations: z.array(z.object({
       name: z.string(),                       // e.g. "Manly Police (original)", "Strike Force Parrabell"
+      /**
+       * Reference to the Police Area Command or Police District responsible.
+       * Links to a record in data/sydney/locations/ with location_type='police-jurisdiction'.
+       * Enables: filter all cases investigated by Surry Hills PAC; map jurisdiction
+       * vs outcome; identify which commands had the worst investigative records.
+       */
+      command_id: z.string().optional(),      // e.g. 'surry-hills-pac', 'northern-beaches-pac'
       type: z.enum([
         'original-investigation',             // the initial police investigation at time of death
         'cold-case-review',                   // UHT/detective review of old file
@@ -1090,7 +1097,10 @@ const locations = defineCollection({
       // Private
       'home', 'workplace',
       // Institutional
-      'police-station', 'court', 'hospital', 'community-space',
+      'police-station',      // individual police station building
+      'police-jurisdiction', // Police Area Command (PAC) or Police District (PD)
+                             // — geographic jurisdiction, not a single building
+      'court', 'hospital', 'community-space',
       // Heritage / memorial
       'memorial', 'cemetery',
       // Geographic line (march routes, walking paths)
