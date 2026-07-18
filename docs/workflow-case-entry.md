@@ -82,9 +82,13 @@ If not: create it. Minimum: name, location_type, location_roles, suburb, Country
 For each named entity extracted in Step 1:
 
 **Locations** (create if absent):
-- Last-seen location (hotel, venue, home)
+- Last-seen location — but **only if not a private residential address**.
+  Hotels, boarding houses, shared venues → stub. Private homes → note in narrative only.
 - Significant venues (bars, beats distinct from death site)
 - Police station (check if PAC record covers it)
+- **Institutional/procedural locations** — morgue, hospital, court. These recur across
+  nearly every case and are high-value stubs. If `city-morgue-glebe` doesn't exist, create
+  it; if it does, add the new case to `related_cases[]`.
 
 **People** (create if absent, only if likely to recur):
 - OIC of original investigation → always stub (officers appear in multiple cases)
@@ -135,6 +139,11 @@ git commit -m "data: add {Name} — SCOI Category {A/B}, {year}
 git push
 ```
 
+Then update the project status:
+- Move the case from "Next" to "Done" in `_project-status.md`
+- Add any new research gaps flagged during the case to the ‘Research gaps’ section
+- The priority list should reflect what’s actually been entered
+
 ---
 
 ## Network-building rules
@@ -150,8 +159,10 @@ These apply to every case, without exception:
 | Coroner people record | ✅ | create stub | add to related_cases[] |
 | Press sources | ✅ | add to trove-todo.md | — |
 | Named venues (beat context) | if significant | create stub | add to related_cases[] |
+| Institutional locations (morgue, hospital, court) | always | create stub | add to related_cases[] |
 | Expert witnesses | if recurring | create stub | add to related_cases[] |
 | Named perpetrators/groups | if documented | create stub | add to related_cases[] |
+| Private residential addresses | never | — note in prose only | — |
 
 ### Entity threshold question
 
@@ -160,13 +171,20 @@ These apply to every case, without exception:
 Yes → always create a record or stub.
 No → skip (one-off hotel receptionist, single fisherman who found a body).
 
+**Special cases:**
+- Private residential addresses → never a location record, even if significant to the case.
+  Capture the address in case narrative prose only.
+- Institutional procedural locations (morgue, hospital, coroner's court) → always stub,
+  even if they appear in only one case so far — they will recur.
+
 ### Sexuality assessment rules
 
 The sexuality fields are the most sensitive analytical decisions. Apply consistently:
 
 | Evidence level | `confidence` value |
 |---|---|
-| Self-identified publicly, or confirmed by close family/community | `confirmed` |
+| Self-identified publicly, or confirmed by close family/community (recent, direct) | `confirmed` |
+| Self-identified to family, relayed via statement with significant time elapsed — use Sackar's own framing | `probable` |
 | Frequented known gay venues; found at beat; coroner/SCOI notes probable | `probable` |
 | Present at beat OR one ambiguous factor | `possible` |
 | Nothing | `unknown` |
@@ -174,6 +192,11 @@ The sexuality fields are the most sensitive analytical decisions. Apply consiste
 Never infer sexuality from gender nonconformity, body type, occupation, or family estrangement alone.
 If Sackar said "cannot be determined" → `unknown`.
 If Sackar said "reason to suspect" without establishing it → `possible` at most.
+
+**Third-party recall with time elapsed:** Where a family member relays a person's self-identification
+but the statement was made decades later (e.g. Rath: Gregory's 2023 recall of a c.1976 conversation),
+follow Sackar's own framing. If he used cautious language ("raises the possibility"), use `probable`
+not `confirmed`, and capture the nuance in `display_note`.
 
 ### Police misconduct levels — apply Sackar's own tiering
 
@@ -198,9 +221,15 @@ When reviewing the QA card, check:
 - [ ] `scoi_finding` — verbatim or close paraphrase? No editorialising?
 - [ ] Death site location record exists and is linked
 - [ ] Victim people record exists
-- [ ] `born_date` populated if known
+- [ ] `born_date` populated if known — if SCOI text contains an apparent transcription
+  error (e.g. a birth year that makes no sense given age at death), use the corrected value
+  but add an inline YAML comment explaining the discrepancy and **flag it as a research gap**
+  in `_project-status.md` for verification against the primary source (death certificate, BDM record)
 - [ ] First Nations fields on all new location records are honest (`null` if unknown)
 - [ ] No speculation presented as fact anywhere
+- [ ] Any sensitive representation issues (sexuality, mental health, family privacy) flagged
+  as `community_verification_status: not-assessed` on the relevant records, and added as
+  a research gap in `_project-status.md` if verification is needed before publication
 
 ---
 
@@ -208,11 +237,15 @@ When reviewing the QA card, check:
 
 Entered so far:
 - [x] Mark Stewart (1976, Shelley Headland, Manly)
+- [x] Paul Rath (1977, Shelley Headland, Manly) — Recommendation 1 (fresh inquest)
 
 Recommended next (based on source readiness and cross-reference density):
-1. **Paul Rath** (1977) — same location as Mark Stewart; shelley-headland.md already exists
-2. **Ross Warren** (1989) — most-referenced case in sources; 5+ sources waiting
-3. **Scott Johnson** (1988) — most prominent case; Bondi Badlands ep. 5 + Deep Water waiting
+1. **David Lloyd-Williams** (1978) — North Head; next in SCOI Ch 5 sequence; connects
+   Manly cluster geographically
+2. **Ross Warren** (1989) — most-referenced case in sources; 5+ sources waiting;
+   marks-park.md already exists
+3. **Scott Johnson** (1988) — most prominent case; Bondi Badlands ep. 5 + Deep Water;
+   north-head.md already exists
 4. **John Russell** (1989) — linked to Warren; same Marks Park geography
 5. **Raymond Keam** (1987) — one of the few with a subsequent arrest (Stan Early, 2021)
 6. **Crispin Dye** (1993) — forensic breakthrough (DNA match 30 years later)

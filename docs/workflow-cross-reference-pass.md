@@ -15,8 +15,12 @@ appear across multiple cases become visibly significant.
 
 ## When to run it
 
-After committing a new case file (or a batch of case files). Takes 15–30 minutes
-per case for a thorough pass; can be done as a subagent task.
+During Step 2 of case entry — in the same turn as drafting, not afterwards.
+The checklist below is a verification tool: use it to confirm the pass was
+thorough before presenting the QA card.
+
+For subagent-driven bulk entry, this pass can run as a separate step after
+the case files are drafted. Allow 15–30 minutes per case.
 
 ---
 
@@ -33,7 +37,7 @@ Scan the case file and SCOI section for every named place:
 | Possible connection | Chevron Hotel, Macleay Street → **STUB NEEDED** |
 | Beat (if distinct from death site) | — |
 | Police station | Manly Police → `northern-beaches-pac.md` ✅ |
-| Court / morgue | City Morgue, Glebe → **STUB NEEDED** (appears across many cases) |
+| Court / morgue | City Morgue, Glebe → `city-morgue-glebe.md` ✅ (created during Paul Rath pass) |
 
 For each: check `data/sydney/locations/` → create stub if absent.
 
@@ -117,14 +121,19 @@ If the case references a known published source not yet in `source-collections/`
 
 ```
 [ ] Death site → location record exists or stub created
-[ ] Last seen location → location record exists or stub created
+[ ] Last seen location → stub created (hotels/venues only — not private addresses)
+[ ] Institutional locations (morgue, hospital, coroner's court) → stubs created / updated
 [ ] Named venues / connecting places → stubs created
 [ ] OIC → people record exists or stub created
 [ ] Coroner → people record exists or stub created
 [ ] Expert witnesses (if recurring) → people record exists or stub created
+[ ] Key family witnesses (publicly named, testified at Inquiry) → stub if they gave
+    significant evidence likely to be referenced across multiple matters
 [ ] Press sources → added to trove-todo.md
 [ ] Cross-case links checked → existing records updated if applicable
 [ ] Source collections → any new sources flagged
+[ ] Research gaps (data discrepancies, community verification needs) → flagged in
+    _project-status.md under Research gaps section
 ```
 
 ---
