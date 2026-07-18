@@ -88,7 +88,12 @@ const ContentWarning = z.enum([
  *   e.g. Feneley R (17 March 2013) 'The gay murders', *Sydney Morning Herald*, p. 1.
  */
 const PressSource = z.object({
-  type: z.enum(['newspaper', 'community_press', 'magazine']),
+  type: z.enum([
+    'newspaper',      // print or online newspaper
+    'online-news',    // online-only news article (e.g. abc.net.au/news, Guardian Australia)
+    'community_press',// community/LGBTIQ press (e.g. Sydney Star Observer, Campaign, SX)
+    'magazine',       // magazine or longform periodical
+  ]),
   /** Journalist byline — family name + initials (e.g. "Feneley R"). null if uncredited. */
   author: z.string().nullable().default(null),
   title: z.string(),
@@ -249,12 +254,13 @@ const ReportSource = z.object({
  */
 const MediaSource = z.object({
   type: z.enum([
-    'podcast',       // episodic audio journalism/documentary
-    'documentary',   // feature or TV documentary film
-    'tv-series',     // dramatic TV series (e.g. Deep Water drama)
-    'news-segment',  // TV/radio news or current affairs segment
-    'film',          // dramatic feature film
-    'other-av',      // other audio-visual work
+    'podcast',         // episodic audio journalism/documentary
+    'documentary',     // feature or TV documentary film
+    'tv-series',       // dramatic TV series (e.g. Deep Water drama)
+    'radio-segment',   // radio program or interview segment (e.g. ABC Radio National)
+    'news-segment',    // TV news or current affairs segment
+    'film',            // dramatic feature film
+    'other-av',        // other audio-visual work
   ]),
 
   /** Title of the show, series, or film. */

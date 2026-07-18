@@ -125,6 +125,31 @@ Marshall Project (n.d.) [*The Marshall Project*](https://www.themarshallproject.
 
 ---
 
+## Audio-Visual and Radio Sources
+
+Blue A (dir.) (2016) *Deep Water: The Real Story* [documentary], Blackfella Films/SBS, Australia, 1h 27m, premiered 16 October 2016.
+*[Feature documentary on the Bondi cliffs gay hate crimes; interviews Deputy State Coroner Milledge, survivor David McMahon, ex-police, journalists, and families. See source_collections/deep-water-documentary.md.]*
+<https://www.sbs.com.au/ondemand/tv-program/deep-water-the-real-story/777718339683>
+
+Callaghan G (2021) *Bondi Badlands* [podcast series, 5 episodes], The Sydney Morning Herald and The Age, released October 2021.
+*[5-episode podcast on the Marks Park/Bondi cliffs killings: Warren, Russell, Rattanjurathaporn, Mattaini, Johnson. Key interview: Det. Sgt. Stephen Page (Operation Taradale). See source_collections/bondi-badlands.md.]*
+<https://open.spotify.com/show/5aEiYdw9FjLPNr9XOJZPdh>
+
+Marnie S (presenter) (3 March 2024) 'Sunday Brunch: Garry Wotherspoon' [radio segment], *Sydney Weekend Mornings*, ABC Radio Sydney.
+*[Historian and 78er Garry Wotherspoon interviewed at his Oxford Street home the morning after Mardi Gras 2024. Primary-quality oral source on the history of gay Sydney and the Oxford Street precinct.]*
+<https://www.abc.net.au/listen/programs/sydney-weekendmornings/sunday-brunch-garry-wotherspoon/103548436>
+
+ABC Radio National Sunday Extra (2026) 'Preserving LGBTQIA+ history at the State Library of NSW' [radio segment], ABC Radio National, 2026.
+Guest: Sam Cooling, Librarian ('Queerbrarian'), State Library of NSW.
+*[Covers the State Library NSW LGBTQI+ collections and AQuA (queerarchives.org.au). Points to two key source collections for this project. See source_collections/state-library-nsw.md and source_collections/aqua.md.]*
+<https://www.abc.net.au/listen/programs/sundayextra/sam-cooling-state-library-nsw-queer-lgbtq-history-culture-sydney/106396878>
+
+ABC News (12 April 2023) 'From Yellow Socks to a Special Commission, the importance of LGBTQIA+ stories in correcting the past' [online news], ABC News.
+*[Covers the Yellow Socks Affair (Newcastle, 1952), Hunter Rainbow History Group, oral history preservation, and the SCOI. Background on queer history methodology.]*
+<https://www.abc.net.au/news/2023-04-12/yellow-socks-to-special-commission-into-lgbtiq-hate-crimes/102204814>
+
+---
+
 ## Notes
 
 **On the heritage call:** Sackar's call for a comprehensive queer heritage project (Chapter 16, paras 16.15–16.19) was a narrative recommendation, not one of the 19 formally numbered recommendations. The NSW Government has no formal accountability to implement it. This project is a direct response to that call.

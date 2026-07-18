@@ -1,187 +1,72 @@
 ---
-name: State Library of New South Wales — Oral History and Sound Collections
-short_name: State Library NSW
-url: https://www.sl.nsw.gov.au
-conditions_url: https://guides.sl.nsw.gov.au/oral-history-sound/gay_lesbian
-contact_url: https://www.sl.nsw.gov.au/about-us/contact-us
+name: "State Library of New South Wales — LGBTQI+ Collections"
+also_known_as:
+  - "State Library NSW"
+  - "Mitchell Library"
+  - "State Library of NSW"
+collection_id: state-library-nsw
+slug: state-library-nsw
 
-license_type: item-dependent
+institution_type: public-library-archive
+url: "https://www.sl.nsw.gov.au/research-and-collections/significant-collections/lgbtqi-collections"
+location: "Macquarie Street, Sydney NSW (on Gadigal Country)"
 
-conditions_summary: >
-  Conditions vary per item — depending on material type, age, and whether a
-  donor rights agreement is in place. Material that is not in copyright may be
-  used freely for any purpose; simply acknowledge "State Library of NSW."
-  For in-copyright material, check the catalogue record and seek permission from
-  the copyright owner. It is the researcher's responsibility to check the
-  copyright status of each item before use.
+# ArchiveSource institution slugs:
+#   'state-library-nsw'  — general collections
+#   'mitchell-library'   — Mitchell Library (manuscripts, rare books, pictures)
+# Use collection_id: 'state-library-nsw' on ArchiveSource records.
 
-conditions_verbatim: >
-  Various copying and publishing conditions apply to content in the Library's
-  collections, depending on material type, age and whether a donor rights
-  agreement is in place.
+contact_name: "Sam Cooling (Librarian / 'Queerbrarian')"
+contact_url: "https://www.sl.nsw.gov.au/research-and-collections/significant-collections/lgbtqi-collections"
+access_conditions: >
+  Free and open to the public for research. Materials in the reading room accessible
+  on-site. Some digitised items available online via catalogue. Unpublished manuscripts
+  and oral histories may require written application.
+permission_required_for_publication: true
 
-  Material in the Manuscripts, oral history and pictures catalogue that is not in
-  copyright may be used freely and for any purpose such as a school project or
-  thesis, in a presentation to your local history society, on blogs, or for
-  commercial purposes. Please acknowledge that the material is from the
-  collections of the State Library of NSW.
+licence: "Varied by item — some Crown copyright, some community-donated. Check with library for specific items."
 
-  For the copyright status of individual items, please refer to the catalogue
-  record. It's your responsibility to check the copyright status of material and
-  if the material is in copyright you will need to seek permission from the
-  copyright owner.
-
-requires_permission_for_publication: false
-requires_notification_before_publication: false
-
-# No custom citation format — AGSM author-date applies.
-# For oral history recordings, format is:
-#   Creator (Year) *Title* [oral history recording], collection name,
-#   State Library of New South Wales, URL, accessed Day Month Year.
-
-our_permission_status: not-applicable
-
-planned_use: >
-  Check copyright status of specific items before use. Out-of-copyright material
-  (particularly 1980s recordings) is likely free to use with acknowledgement.
-  Key collections to investigate: Wotherspoon interviews (1980-1988), Gay Waves
-  radio (1980-1990), Mardi Gras sound recordings (1985-1991). Cross-reference
-  interview subjects and topics against cases in project scope.
-  Consider volunteering as transcript correctors on Amplify for the Wotherspoon
-  collection — gives deep content familiarity and contributes back publicly.
-
-our_notes: >
-  Already listed in the project schema as an ArchiveSource institution
-  (id: state-library-nsw). The LGBTIQ-specific Oral History and Sound guide at
-  guides.sl.nsw.gov.au/oral-history-sound/gay_lesbian is the entry point.
-
-  Audio items are on the Amplify platform (amplify.gov.au) — see Amplify section
-  below for full details including contact info and GitHub repo.
-
-  Key practical note: items from the 1980s are likely out of copyright or in
-  a donor-agreement situation — check each catalogue record. The 1980-1988
-  Wotherspoon interviews and 1980-1990 Gay Waves programmes fall within a window
-  where copyright may have lapsed or been donated freely.
-
-  For oral history items still in copyright: the copyright holder is typically
-  the interviewee (or their estate), not the Library — so permission requests
-  go to the interviewee/estate, not to SLNSW. The Library can advise on contact.
-
-contacts:
-  platform_enquiries: digital.volunteering@sl.nsw.gov.au
-  media: media.library@sl.nsw.gov.au
-  media_phone: +61 2 9273 1566
-  technical: web.development@sl.nsw.gov.au
-
-tags:
-  - oral-history
-  - archive
-  - sound-recordings
-  - sydney
-  - lgbtiq
-  - state-library
-  - primary-source
+# AGSM citation format:
+# State Library of New South Wales (Year) *Title of item* [format], SLNSW, Sydney,
+# accessed Day Month Year, <URL>.
+# OR for manuscript/personal papers:
+# Creator A (Year) *Title*, [manuscript/papers], State Library of New South Wales, MLMSS XXXX.
 ---
 
-The State Library of New South Wales holds a significant collection of LGBTIQ
-oral history recordings and sound material, concentrated in the 1980s–1990s.
-The LGBTIQ-specific guide at `guides.sl.nsw.gov.au/oral-history-sound/gay_lesbian`
-is the entry point to the relevant collections.
+The **State Library of New South Wales** holds one of the most significant collections of LGBTQI+ materials in Australia, spanning manuscripts, photographs, oral histories, and ephemera documenting Sydney's queer community from the mid-twentieth century onward.
 
-## Key collections (LGBTIQ, oral history / sound)
+The collection is curated by **Sam Cooling**, the Library's dedicated LGBTQI+ librarian, known in the community as the "Queerbrarian." Collections are free and accessible to the public.
 
-### Garry Wotherspoon interviews, 1980–1988 [Amplify]
-Wotherspoon interviewed gay men in Sydney over eight years. These recordings
-formed the primary research basis for his book *City of the Plain: History of a
-Gay Sub-culture*. Given the project period (1970s–1990s), some interviewees may
-have direct knowledge of, or proximity to, the deaths documented in this project.
-Accessible via the Amplify platform.
+## Key holdings (known or likely)
 
-Catalogue: https://collection.sl.nsw.gov.au/record/9PQWBVen/xREe2WOVKoa6e  
-Amplify collection: https://amplify.sl.nsw.gov.au/?sort_by=title&order=asc&collection_id=3
+- **CAMP NSW records** — Campaign Against Moral Persecution, Australia's first major gay rights organisation (est. 1970). Records and correspondence document the early movement.
+- **Garry Wotherspoon papers** — Wotherspoon is the leading historian of gay Sydney and a 78er. His papers are held at the Mitchell Library.
+- **Sydney Star Observer and community press archive** — coverage of the Oxford Street scene, anti-gay violence, and community responses through the 1980s–2000s
+- **Oral histories** — recorded interviews with community members, activists, survivors
+- **Photographs and ephemera** — visual record of LGBTIQ+ life in Sydney
 
-### Gay Waves radio programmes (2SER FM), 1980–1990
-Community radio's weekly Thursday night programme on 2SER FM. Covers "a period
-of rapid change in the lives of gay men and lesbians in NSW." Contemporaneous
-reporting on community life, activism, politics, and very possibly violence and
-police conduct. May include coverage of specific deaths or the community's
-response to the wave of violence.
+## Relevance to this project
 
-Catalogue: https://collection.sl.nsw.gov.au/record/1Drmory9
+The State Library NSW LGBTQI+ collections are a primary archival resource for:
+- Community response to the anti-gay violence era (1970s–2000s)
+- Wotherspoon's primary research and papers on gay Sydney
+- CAMP NSW and early activist records (context for law reform timeline)
+- Press coverage from the community press (Sydney Star Observer, Campaign, SX)
+- Oral histories by people present during the documented period
 
-### Sydney Gay and Lesbian Mardi Gras sound recordings, c1985–1991
-Over 30 hours of audio: community radio programmes, speeches at protest rallies,
-music from Hordern Pavilion events. Protest speeches may reference specific
-crimes, police conduct, or community responses to the violence.
+## AQuA access via State Library
 
-Catalogue: https://collection.sl.nsw.gov.au/record/nV2qEJZn
+AQuA (Australian Queer Archives) materials are also accessible via the State Library of NSW for NSW-based researchers, per Sam Cooling (ABC Radio Sunday Extra, 2026).
 
-### Lesbians on the Loose magazine interviews, 1993–1998
-Interviews with women featured in Australia's only lesbian/bisexual/queer
-women's magazine. Covers the tail end of the project period.
+## First Nations
 
-Catalogue: https://collection.sl.nsw.gov.au/record/YzObWEM9
+The State Library stands on Gadigal Country. The acknowledgement of country on their website explicitly notes: *"The sandstone that was mined from below now forms the Library's walls, but it was once the soft sand on which ancestors walked."*
 
-### Pride 2023 Oral History Project
-50+ queer people in NSW interviewed in 2023, building on the Library's 1980s–90s
-oral history work. More recent; less directly relevant to historical cases but
-may include retrospective accounts of the violence period.
+## Research priority
 
-Catalogue: https://collection.sl.nsw.gov.au/record/9NardwbY
+The State Library NSW LGBTQI+ collections should be contacted early in the research process to:
+1. Identify relevant oral history holdings for the cases in this project
+2. Access community press archives (Sydney Star Observer coverage of specific cases)
+3. Access Wotherspoon papers for primary research on gay Sydney geography
 
-## Citation format (AGSM)
-
-No custom format — use AGSM author-date. For oral history recordings:
-
-> Creator Initials (Year) *Title of recording* [oral history recording],
-> Collection name, State Library of New South Wales, URL,
-> accessed Day Month Year.
-
-Example:
-> Wotherspoon G (interviewer) (1980–1988) *Interview with [subject name]*
-> [oral history recording], Garry Wotherspoon interview collection,
-> State Library of New South Wales,
-> https://amplify.sl.nsw.gov.au/?sort_by=title&order=asc&collection_id=3,
-> accessed 18 July 2026.
-
-## Amplify platform
-
-**URL:** https://amplify.gov.au  
-**Wotherspoon collection:** https://amplify.gov.au/?collections%5B%5D=Garry+Wotherspoon  
-**GitHub (MIT):** https://github.com/slnsw/amplify  
-
-Amplify is a crowdsourced speech-to-text correction platform — an open-source
-tool (based on NYPL's Transcript Editor) that delivers oral history audio paired
-with machine-generated transcripts. Digital volunteers, members of the public,
-and library staff can correct transcript errors while listening to the recordings.
-
-**Why this matters for the project:**
-
-1. **Machine transcripts exist now.** The Wotherspoon interviews (1980–1988) and
-   other SLNSW oral history collections already have machine-generated transcripts
-   on Amplify. Even at imperfect accuracy, these are searchable text — meaning
-   names (victims, locations, organisations) can be searched across the audio
-   content without listening to every interview first.
-
-2. **Volunteer transcript correction is a research entry point.** Correcting
-   transcripts for the Wotherspoon collection would provide deep familiarity with
-   the content, identify interviews with project-relevant material, and contribute
-   back to the public record. This is a legitimate way to engage with the collection
-   before making formal research arrangements.
-
-3. **The platform code is MIT licensed.** SLNSW's implementation is open source.
-   Worth understanding how it works — the data model, export format, and API may
-   be useful if transcripts need to be programmatically cross-referenced against
-   case data. Contact: web.development@sl.nsw.gov.au for technical enquiries.
-
-**Contacts:**
-- Platform / volunteering: digital.volunteering@sl.nsw.gov.au
-- Media: media.library@sl.nsw.gov.au / (02) 9273 1566
-- Technical / development: web.development@sl.nsw.gov.au
-
-## Access
-
-Available through the State Library's physical reading room and via online
-platforms (Amplify for audio with machine transcripts; catalogue for finding aids).
-Remote digital access available for some items. Physical access at Macquarie
-Street, Sydney.
+*Source: sl.nsw.gov.au/research-and-collections/significant-collections/lgbtqi-collections (accessed 18 July 2026); Sam Cooling, ABC Radio Sunday Extra (2026).*
