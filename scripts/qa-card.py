@@ -330,6 +330,14 @@ def main():
 
     # Check for any missing that should exist
     warnings = []
+    # Sanity: check no other case file shares the same name (catches near-duplicates)
+    same_name = [
+        f.stem for f in CASES.glob('*.md')
+        if f.stem != slug and
+        get_scalar(extract_fm(read_file(f) or ''), 'name') == name
+    ]
+    if same_name:
+        warnings.append(f"⚠️  Another case has the same name '{name}': {', '.join(same_name)} — check for duplicate")
     if not location_id:
         warnings.append("⚠️  `location_id` is null — death site has no location record")
     if not check_ref(PEOPLE, slug):

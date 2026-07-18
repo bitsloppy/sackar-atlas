@@ -26,6 +26,10 @@ the case files are drafted. Allow 15–30 minutes per case.
 
 ## What to look for
 
+> **Check before creating.** For every entity below, search existing records first.
+> Update `related_cases[]` on an existing record rather than creating a duplicate.
+> `ls data/sydney/{locations,people,sources}/` + `grep` are enough.
+
 ### 1. Locations
 
 Scan the case file and SCOI section for every named place:

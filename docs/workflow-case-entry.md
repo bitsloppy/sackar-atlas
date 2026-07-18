@@ -91,6 +91,27 @@ If not: create it. Minimum: name, location_type, location_roles, suburb, Country
 
 #### D. Stubs — as needed, same turn
 
+**Check before creating anything new.** Run a quick existence check before drafting
+any stub or adding any source. Duplicates are harder to clean up than they are to prevent.
+
+```bash
+# Before creating a location stub:
+ls data/sydney/locations/ | grep {slug}
+
+# Before creating a people stub:
+ls data/sydney/people/ | grep {slug}
+
+# Before adding to sources/:
+ls data/sydney/sources/ | grep {keyword}
+
+# Before adding to trove-todo.md:
+grep "{title}" resources/trove-todo.md
+```
+
+If it already exists: update `related_cases[]` on the existing record instead.
+If it exists as a stub: add the case and flesh out any fields you now have data for.
+Only create a new file if nothing matching is found.
+
 For each named entity extracted in Step 1:
 
 **Locations** (create if absent):
