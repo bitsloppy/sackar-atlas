@@ -203,6 +203,7 @@ tags:
   - british
   - manly-police
   - parrabell
+published: true
 ---
 
 David Lloyd-Williams was a 32-year-old Concert Manager with the ABC who died on 24 August 1978 at North Head in Manly. Born in Barnhurst, England on 20 June 1946, he had been living in Australia for approximately seven years at the time of his death.

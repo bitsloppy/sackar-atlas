@@ -214,6 +214,7 @@ tags:
   - "semen-evidence"
 
 decade: "1970s"
+published: false
 ---
 
 Paul Edward Rath was twenty-seven years old when his body was found wedged between rocks at the base of the Shelley Headland cliffs in Manly on the morning of 16 June 1977 — barely twelve months after Mark Stewart died at the same location.

@@ -1186,6 +1186,23 @@ const cases = defineCollection({
      */
     stub: z.boolean().default(false),
 
+    /**
+     * Publication gate — controls whether this case appears on the live site
+     * and in open data exports.
+     *
+     * Default: false. Cases sit in the repo (for version control and research
+     * continuity) but are not rendered or exported until explicitly approved.
+     *
+     * Flip to true only after:
+     *   1. community_verification_status is 'completed' or 'not-required'
+     *   2. Sensitive content has been reviewed
+     *   3. Anna has approved publication
+     *
+     * Note: once published, data may be crawled and cached externally.
+     * Use the hold-back process (not post-publish removal) where possible.
+     */
+    published: z.boolean().default(false),
+
   }),
 });
 

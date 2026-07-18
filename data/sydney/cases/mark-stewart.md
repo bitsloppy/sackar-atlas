@@ -241,6 +241,7 @@ tags:
   - "first-case"
 
 decade: "1970s"
+published: true
 ---
 
 Mark Stewart was eighteen years old when his body was found on the rocks at the base of a cliff south of Fairy Bower headland in Manly, on the morning of 11 May 1976. He was lying face down, about twenty feet from the cliff face. He had been dead for several hours. No one has ever been charged.
