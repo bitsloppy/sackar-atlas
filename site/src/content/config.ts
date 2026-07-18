@@ -1512,6 +1512,33 @@ const people = defineCollection({
     role_ordinal: z.number().optional(),
 
     /**
+     * Political party affiliation — at the time most relevant to this project.
+     * Free text to accommodate minor parties, independents, and historical party names.
+     * e.g. "Australian Labor Party", "Liberal Party of Australia",
+     *       "Christian Democratic Party", "Independent"
+     */
+    political_party: z.string().optional(),
+
+    /**
+     * Level of government this person operated within.
+     *
+     * federal          — Commonwealth of Australia (federal MPs, senators, ministers)
+     * nsw-state        — NSW state government (MLAs, MLCs, ministers, Premier)
+     * local-government — local council (City of Sydney, Waverley Council etc.)
+     * other            — other jurisdiction or cross-jurisdictional role
+     *
+     * Note: some people held roles at multiple levels over time (e.g. Clover Moore
+     * as state MP and then Lord Mayor). Use the level most relevant to this project.
+     * Document additional roles in the markdown body.
+     */
+    government_level: z.enum([
+      'federal',
+      'nsw-state',
+      'local-government',
+      'other',
+    ]).optional(),
+
+    /**
      * Wikipedia URL for this person.
      * Useful for cross-referencing biographical details and verifying tenure dates.
      * Wikipedia is NOT a primary source — use only for reference and date verification.
