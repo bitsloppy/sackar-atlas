@@ -25,6 +25,23 @@ Routine additions of optional fields are not.
 
 ### Cases added
 
+**David Lloyd-Williams** (SCOI Category A)
+- Born 20 June 1946, Barnhurst, England. Died 24 August 1978, age 32.
+- Location: North Head, Manly (south-eastern point, Scenic Drive area — not the beat area).
+- Sackar finding: *"On the evidence available to the Inquiry, there is objectively no reason to
+  suspect that LGBTIQ bias was a factor in the death of Mr Lloyd-Williams."* Confirmed suicide.
+- Sexuality: unknown. No evidence of LGBTIQ membership.
+- No recommendations. `inquiry_finding: excluded` (new schema value).
+- Source: SCOI Vol 2, Ch 5, paras 5.462–5.549, pp 283–297.
+- **Note:** Case reached the Inquiry via Sue Thompson's spreadsheet after a hearsay account
+  (naked body, folded clothes) was confused with the Scott Johnson case. Parrabell searched
+  under 'David Williams', found nothing, and left it 'unsolved and not reviewed'. Sackar
+  found Parrabell's treatment 'not adequate or satisfactory'.
+
+---
+
+### Cases added (earlier this session)
+
 **Mark Stewart** (SCOI Category A)
 - Born 18 July 1957, Port Moresby PNG. Died 10 or 11 May 1976, age 18.
 - Location: Shelley Headland (Fairy Bower), Manly.
