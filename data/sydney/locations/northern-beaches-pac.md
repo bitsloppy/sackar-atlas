@@ -3,17 +3,19 @@ name: "Northern Beaches Police Area Command"
 also_known_as:
   - "Northern Beaches PAC"
   - "Manly Police Station"
-  - "Manly Police Area Command"
+  - "Dee Why Police Station"
 
 location_type: police-jurisdiction
 location_roles:
   - institutional
 
-suburb: "Manly"
+suburb: "Dee Why"
 location_region: northern-beaches
 
-# street_address and phone not yet confirmed from official source
-# (Northern Beaches PAC PDF not available; research needed)
+# Note: Northern Beaches PAC is in North West Metro Region,
+# unlike the other PACs in this project (all Central Metro Region).
+street_address: "1 Saint David Avenue, Dee Why NSW 2099"
+phone: "02 9971 3399"
 
 still_exists: true
 
@@ -30,7 +32,7 @@ historical_commands:
     notes: "Covered the northern beaches area (Narrabeen, Newport, Palm Beach). Merged into Northern Beaches PAC; research needed."
   - name: "Dee Why Police Area Command"
     slug: "dee-why-pac"
-    notes: "Historical command structure needs research. Provisional slug only."
+    notes: "Current PAC HQ is at 1 St David Avenue, Dee Why. A predecessor Dee Why command may have existed prior to amalgamation; research needed."
 
 first_nations_country: "Gayamaygal"
 country_determination: aiatsis-map
@@ -46,7 +48,9 @@ sources:
   oral_history: []
   geographic:
     - service: "NSW Police Force"
-      url: "https://www.police.nsw.gov.au"
+      reference: "Northern Beaches PAC page, North West Metro Region"
+      url: "https://www.police.nsw.gov.au/about_us/regions_commands_districts/north_west_metro_region/northern_beaches"
+      accessed_date: "2026-07-18"
   reports:
     - type: community-report
       organisation: "ACON"
@@ -84,6 +88,14 @@ ACON's analysis notes that suburban commands near beats were generally less resp
 
 **Police stations in this PAC (current):**
 
-Station address and phone data not yet confirmed from official source (Northern Beaches PAC PDF not available). Known stations include Manly, Dee Why, Mona Vale, and others. Research needed.
+| Station | Address | Phone | Hours |
+|---|---|---|---|
+| Dee Why (PAC HQ) | 1 Saint David Avenue, Dee Why 2099 | 02 9971 3399 | 24 hours |
+| Manly | 3 Belgrave Street, Manly 2095 | 02 9976 8099 | 24 hours |
+| Frenchs Forest | 137-139 Frenchs Forest Road West, Frenchs Forest 2086 | 02 9452 9599 | 24 hours |
+| Mona Vale | 1705-1707 Pittwater Road, Mona Vale 2103 | 02 9998 0699 | 24 hours |
 
-*Jurisdictional information sourced from NSW Police Force operational structure documentation and Wikipedia: New South Wales Police Force. Scott Johnson case details from SCOI (Sackar J, 2023) Vol. 2 and Report 58 (NSW Legislative Council, 2021). Station data pending.*
+**Suburbs covered:**
+Allambie Heights, Avalon, Balgowlah, Balgowlah Heights, Bayview, Beacon Hill, Belrose, Bilgola, Brookvale, Church Point, Clontarf, Collaroy, Cottage Point, Cromer, Curl Curl, Davidson, Dee Why, Duffys Forest, Elanora Heights, Fairlight, Forestville, Frenchs Forest, Freshwater, Ingleside, Killarney Heights, Ku-Ring-Gai Chase, Manly, Manly Vale, Mona Vale, Narrabeen, Narraweena, Newport, North Balgowlah, North Curl Curl, North Manly, North Narrabeen, Oxford Falls, Palm Beach, Queenscliff, Seaforth, Terrey Hills, Warriewood, and surrounding areas.
+
+*Address and station data sourced from NSW Police Force website (accessed 18 July 2026). Jurisdictional information also from NSW Police Force operational structure documentation and Wikipedia: New South Wales Police Force. Scott Johnson case details from SCOI (Sackar J, 2023) Vol. 2 and Report 58 (NSW Legislative Council, 2021).*
