@@ -1,0 +1,162 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const cases = await getCollection('cases', ({ data }) => data.published === true);
+
+// Build map points — only cases with lat/lng
+const points = cases
+  .filter(e => e.data.location_lat != null && e.data.location_lng != null)
+  .map(e => {
+    const d = e.data;
+    const slug = e.id.replace(/\.md$/, '');
+    const status = d.manner_findings?.site_status ?? 'open';
+    return {
+      slug,
+      name: d.name,
+      lat: d.location_lat,
+      lng: d.location_lng,
+      location: d.location_name,
+      date: d.date_of_death_display ?? d.date_of_death ?? null,
+      status,
+      scoi: d.scoi_category ?? null,
+    };
+  });
+
+const pointsJson = JSON.stringify(points);
+---
+
+<Base title="Map" description="Map of significant sites in the Queer Heritage Sydney research project.">
+  <h1>Map</h1>
+  <p class="text-muted text-ui" style="font-size:0.88rem; margin:0.5rem 0 1.25rem">
+    Death sites and significant locations from published case records.
+    Click a pin for case details.
+  </p>
+
+  <!-- Legend -->
+  <div class="legend text-ui" style="font-size:0.8rem; display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1rem">
+    <span><span class="dot dot-homicide"></span> Confirmed homicide</span>
+    <span><span class="dot dot-probable"></span> Probable hate crime</span>
+    <span><span class="dot dot-possible"></span> Possible hate crime</span>
+    <span><span class="dot dot-open"></span> Open / undetermined</span>
+    <span><span class="dot dot-excluded"></span> Excluded</span>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- Leaflet from CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" is:inline></script>
+
+  <script define:vars={{ pointsJson }}>
+    const points = JSON.parse(pointsJson);
+
+    // Status → colour
+    const colours = {
+      'confirmed-homicide': '#c94444',
+      'probable':           '#c97444',
+      'possible':           '#c49a5a',
+      'open':               '#7878a0',
+      'undetermined':       '#7878a0',
+      'excluded':           '#4a4a60',
+      'missing':            '#7878a0',
+    };
+
+    function pinColour(status) {
+      return colours[status] ?? '#7878a0';
+    }
+
+    function circleIcon(colour) {
+      const size = 14;
+      return L.divIcon({
+        html: `<div style="
+          width:${size}px; height:${size}px;
+          border-radius:50%;
+          background:${colour};
+          border:2px solid rgba(255,255,255,0.5);
+          box-shadow:0 1px 4px rgba(0,0,0,0.6);
+        "></div>`,
+        className: '',
+        iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2],
+        popupAnchor: [0, -(size / 2 + 4)],
+      });
+    }
+
+    // Dark tile layer (CartoDB Dark Matter)
+    const map = L.map('map', {
+      center: [-33.87, 151.21],
+      zoom: 11,
+    });
+
+    L.tileLayer(
+      'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+      {
+        attribution:
+          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors ' +
+          '© <a href="https://carto.com/attributions">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19,
+      }
+    ).addTo(map);
+
+    // Add pins
+    points.forEach(pt => {
+      const colour = pinColour(pt.status);
+      const marker = L.marker([pt.lat, pt.lng], { icon: circleIcon(colour) }).addTo(map);
+
+      const scoi = pt.scoi ? `<span style="font-size:0.78rem;color:#7eb8f8">SCOI Cat. ${pt.scoi}</span><br>` : '';
+      const date = pt.date ? `<span style="color:#7878a0;font-size:0.82rem">${pt.date}</span><br>` : '';
+
+      marker.bindPopup(`
+        <div style="font-family:system-ui,sans-serif; min-width:180px">
+          <strong style="font-size:1rem">${pt.name}</strong><br>
+          ${date}
+          <span style="font-size:0.82rem;color:#aaa">${pt.location ?? ''}</span><br>
+          ${scoi}
+          <a href="/cases/${pt.slug}/"
+             style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;color:#7eb8f8">
+            View case →
+          </a>
+        </div>
+      `, { maxWidth: 250 });
+    });
+
+    // Fit bounds to markers if any
+    if (points.length > 0) {
+      const latlngs = points.map(pt => [pt.lat, pt.lng]);
+      map.fitBounds(latlngs, { padding: [40, 40] });
+    }
+  </script>
+</Base>
+
+<style>
+  .dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .dot-homicide { background: #c94444; }
+  .dot-probable { background: #c97444; }
+  .dot-possible { background: #c49a5a; }
+  .dot-open     { background: #7878a0; }
+  .dot-excluded { background: #4a4a60; }
+
+  /* Override Leaflet popup for dark theme */
+  :global(.leaflet-popup-content-wrapper) {
+    background: #1c1c2a;
+    color: #dcdcf0;
+    border: 1px solid #2a2a40;
+    border-radius: 5px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.6);
+  }
+  :global(.leaflet-popup-tip) {
+    background: #1c1c2a;
+  }
+  :global(.leaflet-popup-close-button) {
+    color: #7878a0 !important;
+  }
+</style>

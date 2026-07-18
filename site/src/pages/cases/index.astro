@@ -1,0 +1,83 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const cases = await getCollection('cases', ({ data }) => data.published === true);
+
+// Sort by date_of_death ascending (earliest first); undated go last
+const sorted = cases.sort((a, b) => {
+  const da = a.data.date_of_death ?? '9999';
+  const db = b.data.date_of_death ?? '9999';
+  return da.localeCompare(db);
+});
+
+// Human-readable label for site_status
+function statusLabel(status: string | undefined): string {
+  const labels: Record<string, string> = {
+    'confirmed-homicide': 'Confirmed homicide',
+    'probable': 'Probable hate crime',
+    'possible': 'Possible hate crime',
+    'open': 'Open finding',
+    'undetermined': 'Undetermined',
+    'excluded': 'Excluded',
+    'missing': 'Missing person',
+  };
+  return labels[status ?? ''] ?? status ?? '—';
+}
+
+function statusBadgeClass(status: string | undefined): string {
+  const classes: Record<string, string> = {
+    'confirmed-homicide': 'badge badge-homicide',
+    'probable': 'badge badge-probable',
+    'possible': 'badge badge-possible',
+    'open': 'badge badge-open',
+    'undetermined': 'badge badge-open',
+    'excluded': 'badge badge-excluded',
+    'missing': 'badge badge-open',
+  };
+  return classes[status ?? ''] ?? 'badge badge-open';
+}
+---
+
+<Base title="Cases" description="Published case records from the Queer Heritage Sydney research project.">
+  <h1>Cases</h1>
+  <p class="text-muted text-ui" style="font-size:0.9rem; margin: 0.5rem 0 2rem;">
+    {sorted.length} published {sorted.length === 1 ? 'record' : 'records'} —
+    chronological order. Cases under community review are not shown.
+  </p>
+
+  <div class="card-grid">
+    {sorted.map(entry => {
+      const d = entry.data;
+      const slug = entry.id.replace(/\.md$/, '');
+      const siteStatus = d.manner_findings?.site_status;
+      return (
+        <article class="card">
+          <div class="card-badges">
+            {d.scoi_category && (
+              <span class={`badge badge-scoi-${d.scoi_category.toLowerCase()}`}>
+                SCOI Cat. {d.scoi_category}
+              </span>
+            )}
+            {siteStatus && (
+              <span class={statusBadgeClass(siteStatus)}>
+                {statusLabel(siteStatus)}
+              </span>
+            )}
+          </div>
+
+          <a href={`/cases/${slug}/`} class="card-name">{d.name}</a>
+
+          <div class="card-meta">
+            {d.date_of_death_display ?? d.date_of_death ?? 'Date unknown'}
+            {d.age_at_death != null && ` · aged ${d.age_at_death}`}
+          </div>
+
+          <div class="card-meta">
+            {d.location_name}
+          </div>
+        </article>
+      );
+    })}
+  </div>
+</Base>

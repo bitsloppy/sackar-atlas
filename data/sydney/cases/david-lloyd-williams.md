@@ -20,7 +20,11 @@ born_place: "Barnhurst, England"
 
 age_at_death: 32
 
+location_name: "North Head, Manly"
+location_suburb: "Manly"
 location_id: "north-head"
+location_lat: -33.8069
+location_lng: 151.2916
 killing_location_context: "public-space"
 
 first_nations: false
@@ -83,17 +87,17 @@ judicial_bias_notes: null
 # --- Police investigations ---------------------------------------------------
 
 police_investigations:
-  - label: "Original investigation"
-    agency: "Manly Police"
-    oic: "Constable John Charles Mortimer"
-    year: 1978
-    outcome: "Suicide finding; no persons of interest identified."
+  - name: "Original investigation (Manly Police, 1978)"
+    type: "original-investigation"
+    years: "1978"
+    lead_officer: "Constable John Charles Mortimer"
+    outcome: "no-further-action"
     notes: "Constable Mortimer arrived at the scene at 3:30pm; other police and the Police Rescue Squad were already present and had recovered the body. Statements were obtained from family members, colleagues, and the treating psychiatrist. No police investigation file has since been located — the NSWPF acknowledged this and expressed regret."
 
-  - label: "Strike Force Parrabell review"
-    agency: "NSW Police Force"
-    year: 2017
-    outcome: "Categorised as 'unsolved' and 'not reviewed' — Parrabell unable to locate any records."
+  - name: "Strike Force Parrabell"
+    type: "paper-review"
+    years: "2017"
+    outcome: "insufficient-information"
     notes: "Parrabell incorrectly treated 'Lloyd' as a middle name, searching under 'David Williams' and 'David Lloyd WILLIAMS'. Searches of COPS, Ryerson Index, media archives, GRR, coronial records, Police and State Archives all returned no result. Justice Sackar found Parrabell's treatment 'not adequate or satisfactory': available leads (Sue Thompson's source 'Dave Davies', DCI Pamela Young's statement in the Scott Johnson matter which also referenced a 'David Davies', and Manly Daily press articles) were not followed up."
 
 police_misconduct_level: "inadequate-investigation"

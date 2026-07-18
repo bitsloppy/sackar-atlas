@@ -1,0 +1,54 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'A public record of LGBTIQ lives examined by the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar, 2023).',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title === 'Home' ? 'Queer Heritage Sydney' : `${title} — Queer Heritage Sydney`}</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" class="site-name">Queer Heritage Sydney</a>
+        <ul>
+          <li><a href="/cases/">Cases</a></li>
+          <li><a href="/map/">Map</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="inner">
+        <p>
+          A research project by <a href="https://bitsloppy.com">Anna Roberts</a>.
+          Data and code on <a href="https://github.com/bitsloppy/queer-heritage">GitHub</a>.
+          Data: <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>.
+        </p>
+        <p>
+          Based on the <a href="https://www.nsw.gov.au/departments-and-agencies/cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes">NSW Special Commission of Inquiry into LGBTIQ Hate Crimes</a> (Sackar J, 2023).
+        </p>
+        <p class="country">
+          This project documents events across Gadigal, Bidjigal, Gayamaygal, and other Countries.
+          We acknowledge the Traditional Custodians of Country throughout this work and pay our respects to Elders past, present, and emerging.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

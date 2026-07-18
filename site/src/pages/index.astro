@@ -1,0 +1,155 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const allCases = await getCollection('cases', ({ data }) => data.published === true);
+const publishedCount = allCases.length;
+---
+
+<Base title="Home">
+  <div class="hero">
+    <h1>Queer Heritage Sydney</h1>
+    <p class="subtitle">
+      A public record of LGBTIQ lives examined by the
+      NSW Special Commission of Inquiry into LGBTIQ Hate Crimes.
+    </p>
+  </div>
+
+  <hr />
+
+  <div class="about">
+    <p>
+      Between 1970 and 2010, dozens of gay and transgender people were killed in and around
+      Sydney in what are now recognised as hate crime deaths. Many of these deaths were
+      dismissed at the time — by police, by courts, by the press — as accidents, suicides,
+      or robberies.
+    </p>
+    <p>
+      In December 2023, Justice John Sackar delivered a landmark report documenting 30 of these
+      deaths as Category A or B hate crimes. He called the pattern "a profound stain on the
+      history of this State" and noted the ongoing absence of accountability.
+    </p>
+    <p>
+      This project builds an open, public record of those lives — the people behind the cases,
+      the places where they died, the investigations that failed them, and the recommendations
+      that must now be fulfilled.
+    </p>
+    <p>
+      <strong>This is a live research project.</strong> Records are added and corrected as research
+      progresses. Every case you see here has been verified against primary sources.
+    </p>
+  </div>
+
+  <div class="home-nav">
+    <a href="/cases/" class="nav-card">
+      <span class="nav-card-label">Cases</span>
+      <span class="nav-card-count">{publishedCount} published</span>
+      <span class="nav-card-desc">Individual records for each person examined by the Inquiry</span>
+    </a>
+    <a href="/map/" class="nav-card">
+      <span class="nav-card-label">Map</span>
+      <span class="nav-card-count">Sydney &amp; surrounds</span>
+      <span class="nav-card-desc">Death sites, known beats, venues, and police jurisdictions</span>
+    </a>
+  </div>
+
+  <hr />
+
+  <div class="source-note">
+    <h2 class="mt-0">Source and methodology</h2>
+    <p>
+      All case records are drawn primarily from the SCOI report volumes and cross-referenced
+      against coronial records, Trove newspaper archives, parliamentary Hansard, and community
+      sources. Referencing follows the
+      <a href="https://www.stylemanual.gov.au/referencing-and-attribution/author-date">Australian Government Style Manual</a>
+      (author–date system).
+    </p>
+    <p>
+      Cases where families have requested limited information, or where community verification
+      is incomplete, may be held back from public display even if research is complete.
+      Paul Rath (1977) is one such case — included in the SCOI Category A list but not yet
+      published here.
+    </p>
+    <p>
+      Data is published under
+      <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>.
+      Journalism is copyright Anna Roberts. Code is MIT.
+      See <a href="https://github.com/bitsloppy/queer-heritage/blob/main/LICENSING.md">LICENSING.md</a>
+      for the full licence map.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .hero {
+    margin-bottom: 2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitle {
+    font-family: var(--font-ui);
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 60ch;
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .about {
+    margin: 2rem 0;
+    max-width: 70ch;
+  }
+
+  .home-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .nav-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    transition: border-color 0.15s;
+  }
+  .nav-card:hover { border-color: var(--accent); }
+
+  .nav-card-label {
+    font-family: var(--font-ui);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  .nav-card-count {
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .nav-card-desc {
+    font-size: 0.92rem;
+    color: var(--text);
+    margin-top: 0.25rem;
+    line-height: 1.4;
+  }
+
+  .source-note {
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2rem; }
+    .home-nav { grid-template-columns: 1fr; }
+  }
+</style>

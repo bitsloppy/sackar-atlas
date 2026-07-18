@@ -61,7 +61,7 @@ const AlsoKnownAs = z.object({
     'name-in-records',
     'nickname',
   ]).default('alias'),
-  context: z.string().optional(),  // e.g. "changed by deed poll c.1974–76", "name used in 1976 coronial record"
+  context: z.string().nullable().optional(),  // e.g. "changed by deed poll c.1974–76", "name used in 1976 coronial record"
   /** Whether to render this name on public pages. Dead names always false; others default true. */
   display: z.boolean().default(true),
 });
@@ -77,6 +77,8 @@ const ContentWarning = z.enum([
   'misgendering-in-sources',  // historical records used wrong pronouns/name
   'family-privacy',           // family has asked for limited information
   'living-perpetrator',       // named suspect is still living
+  'suicide',                  // death by suicide; may distress readers
+  'mental-health',            // detailed mental health content
 ]);
 
 /**
@@ -99,7 +101,7 @@ const PressSource = z.object({
   title: z.string(),
   publication: z.string(),
   /** Full publication date — ISO 8601. AGSM requires day/month/year for news sources. */
-  date: z.string().optional(),
+  date: z.string().nullable().optional(),
   /** Page number(s) for print references (e.g. "1", "A3", "14–15"). */
   page: z.string().nullable().default(null),
   trove_id: z.string().nullable().default(null),   // NLA Trove persistent ID
@@ -107,8 +109,8 @@ const PressSource = z.object({
   /** Direct URL if available online but not on Trove. */
   url: z.string().nullable().default(null),
   /** Date accessed — required by AGSM for online sources. ISO 8601. */
-  accessed_date: z.string().optional(),
-  held_by: z.string().optional(),                  // if not on Trove or online
+  accessed_date: z.string().nullable().optional(),
+  held_by: z.string().nullable().optional(),                  // if not on Trove or online
 });
 
 /**
@@ -131,22 +133,22 @@ const ArchiveSource = z.object({
     'other',
   ]),
   /** Creator or author of the item — individual or corporate. */
-  creator: z.string().optional(),
+  creator: z.string().nullable().optional(),
   /** Date the item was created — ISO 8601 or year. */
-  date: z.string().optional(),
+  date: z.string().nullable().optional(),
   /** Title of the specific item (document, photograph, recording, etc.). */
-  title: z.string().optional(),
-  collection: z.string().optional(),
-  item_id: z.string().optional(),
+  title: z.string().nullable().optional(),
+  collection: z.string().nullable().optional(),
+  item_id: z.string().nullable().optional(),
   url: z.string().nullable().default(null),
   /** Date accessed — required by AGSM for online sources. ISO 8601. */
-  accessed_date: z.string().optional(),
-  description: z.string().optional(),
+  accessed_date: z.string().nullable().optional(),
+  description: z.string().nullable().optional(),
   /**
    * Links to a source_collections/ entry.
    * Drives automatic display of conditions of use + correct citation format.
    */
-  collection_id: z.string().optional(),  // e.g. 'aqua', 'pride-history-group'
+  collection_id: z.string().nullable().optional(),  // e.g. 'aqua', 'pride-history-group'
 });
 
 /**
@@ -159,14 +161,14 @@ const ArchiveSource = z.object({
 const HansardSource = z.object({
   chamber: z.string(),           // e.g. "NSW Legislative Assembly"
   /** Title of the debate, bill or matter (e.g. "Crimes Amendment (Homosexual Advance) Bill"). */
-  title: z.string().optional(),
+  title: z.string().nullable().optional(),
   date: z.string(),
   /** Hansard volume number — appears before the colon in citation (e.g. "132"). */
-  volume: z.string().optional(),
+  volume: z.string().nullable().optional(),
   /** Page number(s) within the volume — appears after the colon (e.g. "4471"). */
-  page: z.string().optional(),
-  speaker: z.string().optional(),
-  context: z.string().optional(),
+  page: z.string().nullable().optional(),
+  speaker: z.string().nullable().optional(),
+  context: z.string().nullable().optional(),
   url: z.string().nullable().default(null),
 });
 
@@ -178,22 +180,22 @@ const HansardSource = z.object({
  *   [interview transcript], Publisher, accessed Day Month Year.
  */
 const OralHistorySource = z.object({
-  interview_id: z.string().optional(),   // links to a people/ record
-  subject: z.string().optional(),        // name of interview subject
+  interview_id: z.string().nullable().optional(),   // links to a people/ record
+  subject: z.string().nullable().optional(),        // name of interview subject
   /** Interviewer — family name + initials (e.g. "Watson AB"). */
-  interviewer: z.string().optional(),
-  date_recorded: z.string().optional(),
-  held_by: z.string().optional(),        // e.g. aqua, pride-history-group
+  interviewer: z.string().nullable().optional(),
+  date_recorded: z.string().nullable().optional(),
+  held_by: z.string().nullable().optional(),        // e.g. aqua, pride-history-group
   /**
    * Links to a source_collections/ entry.
    * Drives automatic display of conditions of use + correct citation format.
    */
-  collection_id: z.string().optional(),  // e.g. 'pride-history-group'
+  collection_id: z.string().nullable().optional(),  // e.g. 'pride-history-group'
   /** Format of the held item. */
   format: z.enum(['audio', 'video', 'transcript', 'summary', 'notes']).optional(),
   url: z.string().nullable().default(null),
   /** Date accessed — required by AGSM for online sources. ISO 8601. */
-  accessed_date: z.string().optional(),
+  accessed_date: z.string().nullable().optional(),
   topics: z.array(z.string()).default([]),
   accessible: z.boolean().default(false),
   /** True when the item is held by the repository but NOT publicly available. */
@@ -223,16 +225,16 @@ const ReportSource = z.object({
   title: z.string(),
   /** Year of publication (e.g. "2018", "2021"). */
   year: z.string(),
-  isbn: z.string().optional(),
+  isbn: z.string().nullable().optional(),
   /** Report number — for parliamentary committee reports (e.g. "Report 58"). */
-  report_number: z.string().optional(),
+  report_number: z.string().nullable().optional(),
   url: z.string().nullable().default(null),
   /** Date accessed — required by AGSM for online sources. ISO 8601. */
-  accessed_date: z.string().optional(),
+  accessed_date: z.string().nullable().optional(),
   /** Page number(s) for print references (e.g. "14", "p 14", "pp 14–15"). */
-  page: z.string().optional(),
+  page: z.string().nullable().optional(),
   /** Paragraph or section reference (e.g. "2.81", "Chapter 2"). */
-  paragraph: z.string().optional(),
+  paragraph: z.string().nullable().optional(),
 });
 
 /**
@@ -267,7 +269,7 @@ const MediaSource = z.object({
   title: z.string(),
 
   /** Episode or segment title within a series. */
-  episode_title: z.string().optional(),
+  episode_title: z.string().nullable().optional(),
 
   /** Episode number within a series. */
   episode_number: z.number().optional(),
@@ -283,22 +285,22 @@ const MediaSource = z.object({
   creator: z.string().nullable().default(null),
 
   /** Broadcaster, publisher, production company, or network. */
-  publisher: z.string().optional(),
+  publisher: z.string().nullable().optional(),
 
   /** Year of broadcast/release (e.g. "2016", "2021"). */
-  year: z.string().optional(),
+  year: z.string().nullable().optional(),
 
   /** Specific air/release date — ISO 8601. Required for AGSM podcast citations. */
-  date: z.string().optional(),
+  date: z.string().nullable().optional(),
 
   /** Total runtime (e.g. "1h 27m"). For documentary/film citations. */
-  runtime: z.string().optional(),
+  runtime: z.string().nullable().optional(),
 
   /**
    * Timestamp for a specific moment being cited.
    * e.g. "14:32" or "1:05:10" — for quotes, key statements, significant moments.
    */
-  timestamp: z.string().optional(),
+  timestamp: z.string().nullable().optional(),
 
   /** Primary URL — SBS On Demand, YouTube, etc. */
   url: z.string().nullable().default(null),
@@ -310,10 +312,10 @@ const MediaSource = z.object({
   apple_podcasts_url: z.string().nullable().default(null),
 
   /** Date accessed — required by AGSM for online sources. ISO 8601. */
-  accessed_date: z.string().optional(),
+  accessed_date: z.string().nullable().optional(),
 
   /** Brief description of the content and its relevance to this record. */
-  notes: z.string().optional(),
+  notes: z.string().nullable().optional(),
 });
 
 /**
@@ -325,17 +327,17 @@ const MediaSource = z.object({
  */
 const CoronialSource = z.object({
   /** Name of deceased — used in AGSM citation: "Inquest into the death of [deceased]". */
-  deceased: z.string().optional(),
-  finding: z.string().optional(),
-  coroner: z.string().optional(),
-  date: z.string().optional(),
+  deceased: z.string().nullable().optional(),
+  finding: z.string().nullable().optional(),
+  coroner: z.string().nullable().optional(),
+  date: z.string().nullable().optional(),
   /** Coronial matter/file number. */
-  inquest_number: z.string().optional(),
+  inquest_number: z.string().nullable().optional(),
   /** Court and location — e.g. "NSW Coroners Court, Glebe". */
-  court: z.string().optional(),
+  court: z.string().nullable().optional(),
   jurisdiction: z.string().default('NSW'),
   accessible: z.boolean().default(false),
-  notes: z.string().optional(),
+  notes: z.string().nullable().optional(),
 });
 
 // ---------------------------------------------------------------------------
@@ -361,12 +363,12 @@ const InquestRecord = z.object({
   ]),
 
   /** Verbatim or close paraphrase of the finding text, for display. */
-  finding_text: z.string().optional(),
+  finding_text: z.string().nullable().optional(),
 
-  date: z.string().optional(),            // ISO 8601
-  coroner: z.string().optional(),
-  court: z.string().optional(),           // e.g. "NSW Coroners Court, Glebe"
-  inquest_number: z.string().optional(),  // coronial matter/file number
+  date: z.string().nullable().optional(),            // ISO 8601
+  coroner: z.string().nullable().optional(),
+  court: z.string().nullable().optional(),           // e.g. "NSW Coroners Court, Glebe"
+  inquest_number: z.string().nullable().optional(),  // coronial matter/file number
 });
 
 /**
@@ -429,13 +431,13 @@ const MannerFindings = z.object({
    * null = no conviction (the common case for these cold cases).
    */
   conviction: z.object({
-    person_id: z.string().optional(),  // ref to a record in data/sydney/people/
+    person_id: z.string().nullable().optional(),  // ref to a record in data/sydney/people/
     offence: z.string(),               // e.g. "manslaughter", "murder"
     verdict: z.enum(['guilty', 'manslaughter', 'acquitted']).optional(),
     year: z.number(),
-    court: z.string().optional(),
-    sentence: z.string().optional(),
-    notes: z.string().optional(),
+    court: z.string().nullable().optional(),
+    sentence: z.string().nullable().optional(),
+    notes: z.string().nullable().optional(),
     /**
      * Legal defence raised by the perpetrator.
      * The Homosexual Advance Defence (gay panic) was repealed in NSW in 2014.
@@ -546,18 +548,18 @@ const PhysicalMarker = z.object({
     'named-in-honour',   // street, park, or space named for victim(s)
     'proposed',          // called for but not yet installed
   ]),
-  name: z.string().optional(),
-  description: z.string().optional(),
+  name: z.string().nullable().optional(),
+  description: z.string().nullable().optional(),
   /** Date installed or dedicated (ISO 8601 or year). */
-  installed: z.string().optional(),
+  installed: z.string().nullable().optional(),
   /** Organisation responsible for the marker (e.g. "Waverley Council"). */
-  managed_by: z.string().optional(),
+  managed_by: z.string().nullable().optional(),
   /** Case IDs this marker commemorates. */
   for_cases: z.array(z.string()).default([]),
   /** People IDs this marker commemorates. */
   for_people: z.array(z.string()).default([]),
   heritage_listed: z.boolean().default(false),
-  heritage_listing_ref: z.string().optional(),
+  heritage_listing_ref: z.string().nullable().optional(),
 });
 
 // ---------------------------------------------------------------------------
@@ -567,7 +569,7 @@ const PhysicalMarker = z.object({
 // ---------------------------------------------------------------------------
 
 const cases = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: '../data/sydney/cases' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/cases' }),
   schema: z.object({
 
     // --- Identity -----------------------------------------------------------
@@ -576,10 +578,10 @@ const cases = defineCollection({
     name: z.string(),
 
     /** Preferred pronouns. */
-    pronouns: z.string().optional(),
+    pronouns: z.string().nullable().optional(),
 
     /** Gender identity in their own words where known. */
-    gender_identity: z.string().optional(),
+    gender_identity: z.string().nullable().optional(),
 
     /** Structured sexuality record — captures identity, confidence, perceived sexuality, and historical language. */
     sexuality: SexualityRecord.optional(),
@@ -641,7 +643,7 @@ const cases = defineCollection({
     cald: z.boolean().nullable().default(null),
 
     /** How CALD background is known, and any relevance to how the case was investigated. */
-    cald_notes: z.string().optional(),
+    cald_notes: z.string().nullable().optional(),
 
     // --- Case outcome -------------------------------------------------------
     //
@@ -669,7 +671,7 @@ const cases = defineCollection({
      * Date the person was reported missing or last seen (ISO 8601).
      * For case_outcome='missing' only.
      */
-    missing_since: z.string().optional(),
+    missing_since: z.string().nullable().optional(),
 
     // --- Death dates --------------------------------------------------------
 
@@ -679,13 +681,13 @@ const cases = defineCollection({
      * Used for sorting and map timeline.
      * Optional when case_outcome is 'missing' or 'assault-survived'.
      */
-    date_of_death: z.string().optional(),
+    date_of_death: z.string().nullable().optional(),
 
     /**
      * End of date range if death date is uncertain across multiple days.
      * e.g. "1976-05-11" when death was "10 or 11 May 1976".
      */
-    date_of_death_end: z.string().optional(),
+    date_of_death_end: z.string().nullable().optional(),
 
     /** True when exact date is not known. */
     date_of_death_uncertain: z.boolean().default(false),
@@ -695,7 +697,7 @@ const cases = defineCollection({
      * e.g. "10 or 11 May 1976", "circa 1978", "December 1979"
      * Optional when case_outcome is 'missing' or 'assault-survived'.
      */
-    date_of_death_display: z.string().optional(),
+    date_of_death_display: z.string().nullable().optional(),
 
     /** Age at time of death. */
     age_at_death: z.number().nullable().default(null),
@@ -707,22 +709,25 @@ const cases = defineCollection({
      * Source: coronial record, SCOI statement, family evidence.
      * Enables precise age-at-death calculation and contextual display.
      */
-    born_date: z.string().optional(),
+    born_date: z.string().nullable().optional(),
 
     /**
      * Place of birth — city/town and country.
      * e.g. "Port Moresby, Papua New Guinea", "Sydney, Australia"
      * Distinct from country_of_birth (which is machine-readable for filtering).
      */
-    born_place: z.string().optional(),
+    born_place: z.string().nullable().optional(),
 
     // --- Death location -----------------------------------------------------
 
-    /** Name of location where body was found. */
-    location_name: z.string(),
+    /**
+     * Name of location where body was found.
+     * Optional when location_id is set and the location record holds the name.
+     */
+    location_name: z.string().nullable().optional(),
 
     /** Suburb. */
-    location_suburb: z.string().optional(),
+    location_suburb: z.string().nullable().optional(),
 
     /** Latitude for map pin. */
     location_lat: z.number().nullable().default(null),
@@ -736,9 +741,9 @@ const cases = defineCollection({
     // --- Last known location ------------------------------------------------
 
     /** Description of where this person was last seen alive. */
-    last_seen_location: z.string().optional(),
+    last_seen_location: z.string().nullable().optional(),
 
-    last_seen_date: z.string().optional(),
+    last_seen_date: z.string().nullable().optional(),
 
     /** Reference to a record in data/sydney/locations/ */
     last_seen_location_id: z.string().nullable().default(null),
@@ -750,7 +755,7 @@ const cases = defineCollection({
      * Free text from post-mortem report or forensic review.
      * e.g. "multiple injuries sustained in a fall from a height"
      */
-    cause_of_death: z.string().optional(),
+    cause_of_death: z.string().nullable().optional(),
 
     /**
      * Structured manner findings — tracks how the official determination of
@@ -790,7 +795,7 @@ const cases = defineCollection({
     ])).default([]),
 
     /** The inquiry's own finding/conclusion for this death (1–2 sentences). */
-    scoi_finding: z.string().optional(),
+    scoi_finding: z.string().nullable().optional(),
 
     /**
      * True when historical documents (police, coronial, press) used incorrect
@@ -799,7 +804,7 @@ const cases = defineCollection({
     historical_misgendering: z.boolean().default(false),
 
     /** Explanation to display when historical_misgendering is true. */
-    historical_misgendering_note: z.string().optional(),
+    historical_misgendering_note: z.string().nullable().optional(),
 
     /**
      * True when ACON, SCOI, or other reviewed sources document specific
@@ -815,7 +820,7 @@ const cases = defineCollection({
     judicial_bias_noted: z.boolean().default(false),
 
     /** Summary of the documented judicial bias for display. */
-    judicial_bias_notes: z.string().optional(),
+    judicial_bias_notes: z.string().nullable().optional(),
 
     // Inquest data is now captured in manner_findings.inquests[] above.
 
@@ -897,7 +902,7 @@ const cases = defineCollection({
     perpetrator_groups: z.array(z.object({
       /** Name as documented in court records, ACON report, or SCOI. */
       name: z.string(),
-      notes: z.string().optional(),
+      notes: z.string().nullable().optional(),
     })).default([]),
 
     // --- Rewards ------------------------------------------------------------
@@ -909,8 +914,8 @@ const cases = defineCollection({
     /** True if a police reward has been offered for information in this case. */
     reward_offered: z.boolean().default(false),
     /** Current reward amount (e.g. "$2,000,000", "$250,000"). */
-    reward_amount: z.string().optional(),
-    reward_notes: z.string().optional(),
+    reward_amount: z.string().nullable().optional(),
+    reward_notes: z.string().nullable().optional(),
 
     // --- Perpetrators -------------------------------------------------------
 
@@ -953,7 +958,7 @@ const cases = defineCollection({
        * Enables: filter all cases investigated by Surry Hills PAC; map jurisdiction
        * vs outcome; identify which commands had the worst investigative records.
        */
-      command_id: z.string().optional(),      // e.g. 'surry-hills-pac', 'northern-beaches-pac'
+      command_id: z.string().nullable().optional(),  // e.g. 'surry-hills-pac', 'northern-beaches-pac'
       type: z.enum([
         'original-investigation',             // the initial police investigation at time of death
         'cold-case-review',                   // UHT/detective review of old file
@@ -963,8 +968,8 @@ const cases = defineCollection({
         'coronial-investigation',             // investigation by or for Coroner
         'scoi-examination',                   // examined by the Sackar Inquiry itself
       ]),
-      years: z.string().optional(),           // e.g. "1976", "2015–2016", "2022–2023"
-      lead_officer: z.string().optional(),    // named officer where recorded
+      years: z.string().nullable().optional(),       // e.g. "1976", "2015–2016", "2022–2023"
+      lead_officer: z.string().nullable().optional(), // named officer where recorded
       outcome: z.enum([
         'no-further-action',
         'case-suspended',
@@ -977,7 +982,7 @@ const cases = defineCollection({
         'ongoing',
         'unknown',
       ]).optional(),
-      notes: z.string().optional(),
+      notes: z.string().nullable().optional(),
     })).default([]),
 
     /**
@@ -1006,7 +1011,7 @@ const cases = defineCollection({
     ]).nullable().default(null),
 
     /** Case-specific summary of the misconduct finding for display. */
-    police_misconduct_summary: z.string().optional(),
+    police_misconduct_summary: z.string().nullable().optional(),
 
     /**
      * Current accountability status — enables the site to surface
@@ -1052,7 +1057,7 @@ const cases = defineCollection({
      * Enables the site to surface: families who have never received an apology.
      */
     nswpf_apology_to_family: z.boolean().nullable().default(null),
-    nswpf_apology_notes: z.string().optional(),
+    nswpf_apology_notes: z.string().nullable().optional(),
 
     // --- Joint cases --------------------------------------------------------
 
@@ -1111,7 +1116,7 @@ const cases = defineCollection({
       'completed',      // done — see notes
     ]).default('not-assessed'),
 
-    community_verification_notes: z.string().optional(),
+    community_verification_notes: z.string().nullable().optional(),
 
     // --- Sources ------------------------------------------------------------
 
@@ -1134,7 +1139,7 @@ const cases = defineCollection({
          * String to handle decimal format (e.g. "5.279", "16.15").
          * Preferred over page numbers for direct quotations.
          */
-        paragraph: z.string().optional(),
+        paragraph: z.string().nullable().optional(),
         page_start: z.number().nullable().default(null),
         page_end: z.number().nullable().default(null),
         /**
@@ -1172,8 +1177,8 @@ const cases = defineCollection({
 
     // --- Filtering / taxonomy -----------------------------------------------
 
-    tags: z.array(z.string()).default([]),
-    decade: z.string().optional(),  // e.g. "1970s"
+    tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
+    decade: z.string().nullable().optional(),  // e.g. "1970s"
 
     /**
      * True when this record is a stub — a placeholder created during the
@@ -1214,7 +1219,7 @@ const cases = defineCollection({
 // ---------------------------------------------------------------------------
 
 const locations = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: '../data/sydney/locations' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/locations' }),
   schema: z.object({
 
     name: z.string(),
@@ -1235,6 +1240,7 @@ const locations = defineCollection({
       // Private
       'home', 'workplace',
       // Institutional
+      'institution',         // generic institutional (hospital, psychiatric centre, etc.)
       'police-station',      // individual police station building
       'police-jurisdiction', // Police Area Command (PAC) or Police District (PD)
                              // — geographic jurisdiction, not a single building
@@ -1268,12 +1274,13 @@ const locations = defineCollection({
       'crime-scene',
       'last-seen',
       'memorial',
+      'institution',    // generic institutional role (alias for 'institutional')
       'institutional',
       'community-hub',
       'burial-site',
     ])).default([]),
 
-    suburb: z.string().optional(),
+    suburb: z.string().nullable().optional(),
 
     /**
      * Broad geographic region within NSW.
@@ -1288,6 +1295,7 @@ const locations = defineCollection({
       'western-sydney',   // Parramatta, Penrith and west
       'northern-beaches', // Manly, North Head, Fairy Bower, Dee Why, Collaroy
       'north-shore',      // North Sydney, Mosman, Chatswood
+      'northern-sydney',  // North Ryde, Ryde, Macquarie Park area (distinct from northern-beaches)
       'south-sydney',     // Wollongong, south of Sydney
       'greater-sydney',   // outer suburbs not otherwise categorised
       'regional-nsw',     // outside Sydney metro area
@@ -1300,16 +1308,16 @@ const locations = defineCollection({
     // --- Temporal -----------------------------------------------------------
 
     /** Year/date this place opened or became significant (ISO 8601 or year). */
-    active_from: z.string().optional(),
+    active_from: z.string().nullable().optional(),
 
     /** Year/date this place closed, demolished, or was renamed. */
-    active_to: z.string().optional(),
+    active_to: z.string().nullable().optional(),
 
     /** True if this place still exists in some form today. */
     still_exists: z.boolean().default(true),
 
     /** If renamed, what it is called now. */
-    current_name: z.string().optional(),
+    current_name: z.string().nullable().optional(),
 
     // --- Address / contact (for institutional locations) -------------------
     //
@@ -1318,10 +1326,10 @@ const locations = defineCollection({
     // Historical address changes go in the markdown body.
 
     /** Physical street address (e.g. "136 Maroubra Road, Maroubra NSW 2035"). */
-    street_address: z.string().optional(),
+    street_address: z.string().nullable().optional(),
 
     /** Contact phone number (e.g. "02 9349 9299"). */
-    phone: z.string().optional(),
+    phone: z.string().nullable().optional(),
 
     // --- Police jurisdiction history ----------------------------------------
     //
@@ -1349,11 +1357,11 @@ const locations = defineCollection({
        */
       slug: z.string(),
       /** When this command name was in use — ISO 8601 or year. */
-      active_from: z.string().optional(),
+      active_from: z.string().nullable().optional(),
       /** When this command was reorganised or renamed — ISO 8601 or year. */
-      active_to: z.string().optional(),
+      active_to: z.string().nullable().optional(),
       /** Note on the reorganisation or why this name was used. */
-      notes: z.string().optional(),
+      notes: z.string().nullable().optional(),
     })).default([]),
 
     // --- First Nations ------------------------------------------------------
@@ -1378,13 +1386,13 @@ const locations = defineCollection({
      * Primary First Nations Country this place sits on.
      * Use the community's preferred spelling.
      */
-    first_nations_country: z.string().optional(),
+    first_nations_country: z.string().nullable().optional(),
 
     /**
      * Additional Country where custodianship overlaps or is disputed.
      * Sydney's eastern suburbs sit on the Gadigal/Bidjigal boundary.
      */
-    first_nations_country_additional: z.string().optional(),
+    first_nations_country_additional: z.string().nullable().optional(),
 
     /**
      * How Country was determined.
@@ -1397,10 +1405,11 @@ const locations = defineCollection({
       'language-centre',      // confirmed by a First Nations language centre
       'aiatsis-map',          // based on the AIATSIS Map of Indigenous Australia
       'researcher-assessed',  // provisional only; needs community verification
+      'not-assessed',         // determination not yet undertaken for this location
     ]).optional(),
 
     /** Name of the specific community, council, or source that made the determination. */
-    country_determination_detail: z.string().optional(),
+    country_determination_detail: z.string().nullable().optional(),
 
     /** Traditional name for this place in First Nations language. */
     traditional_name: z.string().nullable().default(null),
@@ -1409,7 +1418,7 @@ const locations = defineCollection({
     traditional_name_language: z.string().nullable().default(null),
 
     /** Who provided this traditional name (community authority, source document). */
-    traditional_name_source: z.string().optional(),
+    traditional_name_source: z.string().nullable().optional(),
 
     /**
      * Has the relevant First Nations community confirmed this traditional name?
@@ -1433,17 +1442,17 @@ const locations = defineCollection({
       label: z.string(),
       label_type: z.enum(['TK', 'BC', 'Notice']),
       /** First Nations community that applied this label (TK/BC labels only). */
-      community: z.string().optional(),
+      community: z.string().nullable().optional(),
       /** URL to the specific project page on localcontexts.org. */
-      url: z.string().optional(),
-      date_applied: z.string().optional(),
+      url: z.string().nullable().optional(),
+      date_applied: z.string().nullable().optional(),
     })).default([]),
 
     /**
      * Independent cultural significance to First Nations people beyond LGBTIQ history.
      * If present: flag for consultation before publishing.
      */
-    first_nations_significance: z.string().optional(),
+    first_nations_significance: z.string().nullable().optional(),
 
     /**
      * Consultation status with the relevant First Nations community.
@@ -1460,10 +1469,10 @@ const locations = defineCollection({
       'completed',     // completed — see consultation_notes
     ]).default('not-assessed'),
 
-    consultation_notes: z.string().optional(),
+    consultation_notes: z.string().nullable().optional(),
 
     /** Acknowledgement of Country text for display on the location page. */
-    acknowledgement: z.string().optional(),
+    acknowledgement: z.string().nullable().optional(),
 
     // --- Physical markers ---------------------------------------------------
     //
@@ -1496,7 +1505,7 @@ const locations = defineCollection({
       scoi: z.object({
         volume: z.number(),
         chapter: z.number().optional(),
-        paragraph: z.string().optional(),
+        paragraph: z.string().nullable().optional(),
         page_start: z.number().nullable().default(null),
         page_end: z.number().nullable().default(null),
       }).optional(),
@@ -1507,9 +1516,9 @@ const locations = defineCollection({
        */
       geographic: z.array(z.object({
         service: z.string(),              // e.g. "OpenStreetMap", "NSW State Heritage Register"
-        reference: z.string().optional(), // e.g. OSM node/way ID, heritage listing number
-        url: z.string().optional(),
-        accessed_date: z.string().optional(),
+        reference: z.string().nullable().optional(), // e.g. OSM node/way ID, heritage listing number
+        url: z.string().nullable().optional(),
+        accessed_date: z.string().nullable().optional(),
       })).default([]),
       reports: z.array(ReportSource).default([]),
       /** Audio-visual media sources — podcasts, documentaries, TV journalism. */
@@ -1518,7 +1527,7 @@ const locations = defineCollection({
 
     content_warnings: z.array(ContentWarning).default([]),
 
-    tags: z.array(z.string()).default([]),
+    tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
 
     /** True when this is a stub record — placeholder for future research. */
     stub: z.boolean().default(false),
@@ -1533,7 +1542,7 @@ const locations = defineCollection({
 // ---------------------------------------------------------------------------
 
 const events = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: '../data/sydney/events' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/events' }),
   schema: z.object({
 
     title: z.string(),
@@ -1554,15 +1563,15 @@ const events = defineCollection({
     // --- Dates --------------------------------------------------------------
 
     date: z.string(),
-    date_end: z.string().optional(),
+    date_end: z.string().nullable().optional(),
     date_uncertain: z.boolean().default(false),
-    date_display: z.string().optional(),
-    decade: z.string().optional(),
+    date_display: z.string().nullable().optional(),
+    decade: z.string().nullable().optional(),
 
     // --- Location -----------------------------------------------------------
 
     location_id: z.string().nullable().default(null),
-    location_name: z.string().optional(),
+    location_name: z.string().nullable().optional(),
     location_lat: z.number().nullable().default(null),
     location_lng: z.number().nullable().default(null),
 
@@ -1595,7 +1604,7 @@ const events = defineCollection({
     }).default({ press: [], archives: [], hansard: [], oral_history: [], reports: [], media_sources: [] }),
 
     content_warnings: z.array(ContentWarning).default([]),
-    tags: z.array(z.string()).default([]),
+    tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
 
     /** True when this is a stub record — placeholder for future research. */
     stub: z.boolean().default(false),
@@ -1609,12 +1618,12 @@ const events = defineCollection({
 // ---------------------------------------------------------------------------
 
 const people = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: '../data/sydney/people' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/people' }),
   schema: z.object({
 
     name: z.string(),
-    pronouns: z.string().optional(),
-    gender_identity: z.string().optional(),
+    pronouns: z.string().nullable().optional(),
+    gender_identity: z.string().nullable().optional(),
     /** Structured sexuality record — captures identity, confidence, perceived sexuality, and historical language. */
     sexuality: SexualityRecord.optional(),
     also_known_as: z.array(AlsoKnownAs).default([]),
@@ -1630,7 +1639,7 @@ const people = defineCollection({
     cultural_background: z.string().nullable().default(null),
     first_language: z.string().nullable().default(null),
     cald: z.boolean().nullable().default(null),
-    cald_notes: z.string().optional(),
+    cald_notes: z.string().nullable().optional(),
 
     // --- Community verification (this project) -----------------------------
     //
@@ -1646,7 +1655,7 @@ const people = defineCollection({
       'completed',
     ]).default('not-assessed'),
 
-    community_verification_notes: z.string().optional(),
+    community_verification_notes: z.string().nullable().optional(),
 
     // --- Role ---------------------------------------------------------------
 
@@ -1659,11 +1668,16 @@ const people = defineCollection({
       'victim',
       'activist',
       'witness',
+      'expert-witness',  // forensic experts, pathologists, etc.
+      'pathologist',     // medical examiner / forensic pathologist
+      'coroner',         // presiding coroner
       'perpetrator',
       'police',
-      'legal',        // lawyers, judges, coroners
-      'political',    // politicians, officials
-      'community',    // community figures, journalists, organisers
+      'police-officer',  // alias for police
+      'legal',           // lawyers, judges, coroners
+      'political',       // politicians, officials
+      'community',       // community figures, journalists, organisers
+      'journalist',      // journalist or author
       'other',
     ]),
 
@@ -1687,25 +1701,25 @@ const people = defineCollection({
      * Formal institutional title held.
      * e.g. "Commissioner of Police", "Attorney-General", "State Coroner"
      */
-    institutional_role: z.string().optional(),
+    institutional_role: z.string().nullable().optional(),
 
     /**
      * Institution within which this role was held.
      * e.g. "NSW Police Force", "NSW Government", "NSW Coroners Court"
      */
-    institution: z.string().optional(),
+    institution: z.string().nullable().optional(),
 
     /**
      * Date they began this role — ISO 8601 or year.
      * e.g. "1984-08-07" or "1984" for John Avery as Commissioner.
      */
-    tenure_start: z.string().optional(),
+    tenure_start: z.string().nullable().optional(),
 
     /**
      * Date they left this role — ISO 8601 or year.
      * Omit or null if this is a current role holder.
      */
-    tenure_end: z.string().optional(),
+    tenure_end: z.string().nullable().optional(),
 
     /**
      * Sequential ordinal among all holders of this role.
@@ -1720,7 +1734,7 @@ const people = defineCollection({
      * e.g. "Australian Labor Party", "Liberal Party of Australia",
      *       "Christian Democratic Party", "Independent"
      */
-    political_party: z.string().optional(),
+    political_party: z.string().nullable().optional(),
 
     /**
      * Level of government this person operated within.
@@ -1747,7 +1761,7 @@ const people = defineCollection({
      * Wikipedia is NOT a primary source — use only for reference and date verification.
      * All substantive claims should be sourced to primary/reliable secondary sources.
      */
-    wikipedia_url: z.string().optional(),
+    wikipedia_url: z.string().nullable().optional(),
 
     // --- Dates --------------------------------------------------------------
 
@@ -1757,7 +1771,7 @@ const people = defineCollection({
      * or official records. Enables "died aged X years and Y days" display
      * and "birthday" contextual notes.
      */
-    born_date: z.string().optional(),
+    born_date: z.string().nullable().optional(),
 
     /** Birth year — retained for backwards compatibility and for cases where
      * only the year is known (institutional figures, historical activists). */
@@ -1768,7 +1782,7 @@ const people = defineCollection({
      * For victims: use the same value as cases.date_of_death.
      * For uncertain dates: use the earliest known date; set died_date_uncertain.
      */
-    died_date: z.string().optional(),
+    died_date: z.string().nullable().optional(),
 
     /** Death year — retained alongside died_date for quick range filtering. */
     death_year: z.number().nullable().default(null),
@@ -1789,7 +1803,7 @@ const people = defineCollection({
     related_events: z.array(z.string()).default([]),
 
     content_warnings: z.array(ContentWarning).default([]),
-    tags: z.array(z.string()).default([]),
+    tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
 
     /** True when this is a stub record — placeholder for future research. */
     stub: z.boolean().default(false),
@@ -1804,7 +1818,7 @@ const people = defineCollection({
 // ---------------------------------------------------------------------------
 
 const media = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: '../data/sydney/media' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/media' }),
   schema: z.object({
 
     type: z.enum(['video', 'photo', 'audio', 'document']),
@@ -1812,10 +1826,10 @@ const media = defineCollection({
 
     // --- Period -------------------------------------------------------------
 
-    period_start: z.string().optional(),  // ISO 8601
-    period_end: z.string().optional(),
+    period_start: z.string().nullable().optional(),  // ISO 8601
+    period_end: z.string().nullable().optional(),
     /** Human-readable: "circa 1978", "early 1980s", "July 1983" */
-    period_display: z.string().optional(),
+    period_display: z.string().nullable().optional(),
 
     // --- Source -------------------------------------------------------------
 
@@ -1832,8 +1846,8 @@ const media = defineCollection({
       'other',
     ]),
     source_url: z.string().nullable().default(null),
-    source_id: z.string().optional(),
-    rights: z.string().optional(),    // copyright/usage rights statement
+    source_id: z.string().nullable().optional(),
+    rights: z.string().nullable().optional(),    // copyright/usage rights statement
 
     // --- What it shows ------------------------------------------------------
 
@@ -1844,7 +1858,7 @@ const media = defineCollection({
 
     // --- Format -------------------------------------------------------------
 
-    format: z.string().optional(),           // e.g. "16mm film", "35mm slide"
+    format: z.string().nullable().optional(),           // e.g. "16mm film", "35mm slide"
     duration_seconds: z.number().optional(), // for video/audio
 
     // --- Cultural sensitivity -----------------------------------------------
@@ -1867,7 +1881,7 @@ const media = defineCollection({
      */
     local_contexts_label: z.string().nullable().default(null),
 
-    tags: z.array(z.string()).default([]),
+    tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
 
   }),
 });
@@ -1894,7 +1908,7 @@ const media = defineCollection({
 // ---------------------------------------------------------------------------
 
 const testimonies = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: '../data/sydney/testimonies' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/testimonies' }),
   schema: z.object({
 
     // --- Identity -----------------------------------------------------------
@@ -1937,13 +1951,13 @@ const testimonies = defineCollection({
      * Human-readable — may span decades.
      * e.g. "late 1970s to mid-1990s", "2005–2019", "early 1990s"
      */
-    period_display: z.string().optional(),
+    period_display: z.string().nullable().optional(),
 
     /** ISO 8601 year/date for the earliest documented incident — for sorting. */
-    period_start: z.string().optional(),
+    period_start: z.string().nullable().optional(),
 
     /** ISO 8601 year/date for the latest documented incident or event. */
-    period_end: z.string().optional(),
+    period_end: z.string().nullable().optional(),
 
     // --- Incidents ----------------------------------------------------------
     //
@@ -1957,16 +1971,16 @@ const testimonies = defineCollection({
       period_display: z.string(),
 
       /** ISO 8601 start of period range (for map timeline). */
-      period_start: z.string().optional(),
+      period_start: z.string().nullable().optional(),
 
       /** ISO 8601 end of period range (where a range is given). */
-      period_end: z.string().optional(),
+      period_end: z.string().nullable().optional(),
 
       /** Brief description of the incident for structured display. */
       description: z.string(),
 
       /** Location name as given in testimony — may be vague ("North Sydney park"). */
-      location_name: z.string().optional(),
+      location_name: z.string().nullable().optional(),
 
       /** Reference to a record in data/sydney/locations/ — null if not yet linked. */
       location_id: z.string().nullable().default(null),
@@ -2001,7 +2015,7 @@ const testimonies = defineCollection({
       ]).optional(),
 
       /** Any other institutional response documented (hospital, employer, etc.). */
-      institutional_response: z.string().optional(),
+      institutional_response: z.string().nullable().optional(),
 
     })).default([]),
 
@@ -2012,7 +2026,7 @@ const testimonies = defineCollection({
      * long-tail of hate crime beyond the moment of violence.
      * Free text summary drawn from the testimony itself.
      */
-    ongoing_impact: z.string().optional(),
+    ongoing_impact: z.string().nullable().optional(),
 
     // --- Source and provenance ---------------------------------------------
     //
@@ -2077,10 +2091,10 @@ const testimonies = defineCollection({
      * Committee on Social Issues, Gay and Transgender hate crimes between 1970
      * and 2010, Report 58, NSW Parliament, Sydney, May 2021, pp 12–13."
      */
-    source_reference: z.string().optional(),
+    source_reference: z.string().nullable().optional(),
 
     /** Direct URL to the source document, if publicly accessible. */
-    source_url: z.string().optional(),
+    source_url: z.string().nullable().optional(),
 
     // --- Interview / oral history fields ------------------------------------
     //
@@ -2089,10 +2103,10 @@ const testimonies = defineCollection({
     // Optional on written submissions where they don't apply.
 
     /** Date the interview or recording was made — ISO 8601 or year. */
-    interview_date: z.string().optional(),
+    interview_date: z.string().nullable().optional(),
 
     /** Name of the interviewer or hearing officer. */
-    interviewer: z.string().optional(),
+    interviewer: z.string().nullable().optional(),
 
     /** Length of the recording in minutes — for audio/video testimony. */
     duration_minutes: z.number().optional(),
@@ -2144,10 +2158,10 @@ const testimonies = defineCollection({
      * e.g. 'pride-history-group', 'aqua', 'state-library-nsw'
      * Drives automatic display of conditions of use and contact info on the site.
      */
-    collection_id: z.string().optional(),
+    collection_id: z.string().nullable().optional(),
 
     /** Human-readable name of the holding institution (for display). */
-    held_by: z.string().optional(),
+    held_by: z.string().nullable().optional(),
 
     /**
      * URL or path to the audio file — when publicly accessible.
@@ -2176,7 +2190,7 @@ const testimonies = defineCollection({
 
     content_warnings: z.array(ContentWarning).default([]),
 
-    tags: z.array(z.string()).default([]),
+    tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
 
   }),
 });
@@ -2194,7 +2208,7 @@ const testimonies = defineCollection({
 // ---------------------------------------------------------------------------
 
 const recommendations = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: '../data/sydney/recommendations' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/recommendations' }),
   schema: z.object({
 
     /** Formal recommendation number (1–19). null for the heritage call. */
@@ -2209,7 +2223,7 @@ const recommendations = defineCollection({
     chapter: z.number(),
 
     /** Paragraph reference (e.g. "8.1"). */
-    paragraph: z.string().optional(),
+    paragraph: z.string().nullable().optional(),
 
     /**
      * Thematic category.
@@ -2240,7 +2254,7 @@ const recommendations = defineCollection({
       'not-applicable',
     ]).optional(),
 
-    government_response_notes: z.string().optional(),
+    government_response_notes: z.string().nullable().optional(),
 
     /**
      * Current implementation status.
@@ -2254,7 +2268,7 @@ const recommendations = defineCollection({
       'unknown',
     ]).default('unknown'),
 
-    implementation_notes: z.string().optional(),
+    implementation_notes: z.string().nullable().optional(),
 
     /** Case IDs explicitly named in this recommendation (e.g. Rec 16 names Brennan, Cawsey, Dye). */
     named_cases: z.array(z.string()).default([]),
@@ -2262,7 +2276,7 @@ const recommendations = defineCollection({
     /** People IDs explicitly named in this recommendation. */
     named_people: z.array(z.string()).default([]),
 
-    tags: z.array(z.string()).default([]),
+    tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
 
   }),
 });
@@ -2291,23 +2305,23 @@ const recommendations = defineCollection({
  * Referenced from: OralHistorySource.collection_id, ArchiveSource.collection_id
  */
 const source_collections = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: '../data/sydney/source-collections' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/source-collections' }),
   schema: z.object({
 
     /** Full institutional name. */
     name: z.string(),
 
     /** Short name or common abbreviation. */
-    short_name: z.string().optional(),
+    short_name: z.string().nullable().optional(),
 
     /** Organisation's website. */
-    url: z.string().optional(),
+    url: z.string().nullable().optional(),
 
     /** URL for conditions of use / access policy page. */
-    conditions_url: z.string().optional(),
+    conditions_url: z.string().nullable().optional(),
 
     /** URL or email for permission / contact requests. */
-    contact_url: z.string().optional(),
+    contact_url: z.string().nullable().optional(),
 
     /**
      * How open the collection is.
@@ -2334,16 +2348,16 @@ const source_collections = defineCollection({
       'government-open',
       'item-dependent',
       'unknown',
-    ]),
+    ]).default('unknown'),
 
     /**
      * Plain-English summary of conditions for researchers.
      * Rendered verbatim on the site wherever this collection is referenced.
      */
-    conditions_summary: z.string(),
+    conditions_summary: z.string().nullable().optional(),
 
     /** Full verbatim conditions of use text (from the collection's own policy). */
-    conditions_verbatim: z.string().optional(),
+    conditions_verbatim: z.string().nullable().optional(),
 
     /** Must we seek explicit permission before publishing any quoted material? */
     requires_permission_for_publication: z.boolean().default(false),
@@ -2356,10 +2370,10 @@ const source_collections = defineCollection({
      * When set, use this instead of AGSM author-date for items from this collection.
      * Use placeholder tokens in brackets: [Last], [First], [Interviewer], [Date], [Institution]
      */
-    citation_format_override: z.string().optional(),
+    citation_format_override: z.string().nullable().optional(),
 
     /** Example citation using the format. */
-    citation_example: z.string().optional(),
+    citation_example: z.string().nullable().optional(),
 
     /**
      * Our current permission/relationship status with this collection.
@@ -2381,10 +2395,10 @@ const source_collections = defineCollection({
     ]).default('not-sought'),
 
     /** Date we last made contact or received a response. ISO 8601. */
-    last_contact_date: z.string().optional(),
+    last_contact_date: z.string().nullable().optional(),
 
     /** Notes on our relationship, correspondence, or agreed terms. */
-    our_notes: z.string().optional(),
+    our_notes: z.string().nullable().optional(),
 
     /**
      * Reciprocal obligations — what the researcher owes back to the collection.
@@ -2394,12 +2408,12 @@ const source_collections = defineCollection({
      * Examples: deposit a copy of completed work with the archive; acknowledge
      * the collection in publications; provide transcripts or translations.
      */
-    researcher_obligations: z.string().optional(),
+    researcher_obligations: z.string().nullable().optional(),
 
     /** What we plan to use from this collection. */
-    planned_use: z.string().optional(),
+    planned_use: z.string().nullable().optional(),
 
-    tags: z.array(z.string()).default([]),
+    tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
 
   }),
 });
@@ -2422,7 +2436,7 @@ const source_collections = defineCollection({
 // ---------------------------------------------------------------------------
 
 const sources = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: '../data/sydney/sources' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/sources' }),
   schema: z.object({
 
     title: z.string(),
@@ -2444,7 +2458,7 @@ const sources = defineCollection({
     // --- Publication info (articles) ----------------------------------------
 
     /** Outlet name — e.g. "ABC News", "The Conversation", "Sydney Morning Herald". */
-    publication: z.string().optional(),
+    publication: z.string().nullable().optional(),
 
     /**
      * Journalist byline — family name + initials (e.g. "Feneley R").
@@ -2455,7 +2469,7 @@ const sources = defineCollection({
     // --- Show / series info (AV) --------------------------------------------
 
     /** Show or series title — e.g. "Bondi Badlands", "Sydney Weekend Mornings". */
-    show_title: z.string().optional(),
+    show_title: z.string().nullable().optional(),
 
     /** Presenter, director, or creator — family name + initials (e.g. "Callaghan G"). */
     creator: z.string().nullable().default(null),
@@ -2463,7 +2477,7 @@ const sources = defineCollection({
     // --- Episode info -------------------------------------------------------
 
     /** Episode title within a series. */
-    episode_title: z.string().optional(),
+    episode_title: z.string().nullable().optional(),
 
     /** Episode number within the series. */
     episode_number: z.number().optional(),
@@ -2476,15 +2490,15 @@ const sources = defineCollection({
      * e.g. 'bondi-badlands' for individual podcast episodes.
      * Drives automatic display of conditions of use and correct citation format.
      */
-    series_id: z.string().optional(),
+    series_id: z.string().nullable().optional(),
 
     // --- Dates --------------------------------------------------------------
 
     /** Publication or broadcast date — ISO 8601 (YYYY-MM-DD). */
-    date: z.string().optional(),
+    date: z.string().nullable().optional(),
 
     /** Date accessed — required by AGSM for online sources. ISO 8601. */
-    accessed_date: z.string().optional(),
+    accessed_date: z.string().nullable().optional(),
 
     // --- URLs ---------------------------------------------------------------
 
@@ -2497,13 +2511,13 @@ const sources = defineCollection({
     // --- AV-specific --------------------------------------------------------
 
     /** Total runtime — e.g. "1h 27m", "42m", "18:30". */
-    runtime: z.string().optional(),
+    runtime: z.string().nullable().optional(),
 
     /**
      * Timestamp for a specific cited moment.
      * e.g. "14:32" or "1:05:10" — for quotes, key statements, significant moments.
      */
-    timestamp: z.string().optional(),
+    timestamp: z.string().nullable().optional(),
 
     // --- Significance -------------------------------------------------------
 
@@ -2540,7 +2554,7 @@ const sources = defineCollection({
     /** Other source records closely related to this one (e.g. ABC articles linked from The Conversation piece). */
     related_sources: z.array(z.string()).default([]),
 
-    tags: z.array(z.string()).default([]),
+    tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
 
   }),
 });

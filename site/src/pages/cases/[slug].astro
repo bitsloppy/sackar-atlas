@@ -1,0 +1,313 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const cases = await getCollection('cases', ({ data }) => data.published === true);
+  return cases.map(entry => ({
+    params: { slug: entry.id.replace(/\.md$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+
+function siteStatusLabel(s: string | undefined) {
+  const m: Record<string, string> = {
+    'confirmed-homicide': 'Confirmed homicide',
+    'probable': 'Probable hate crime',
+    'possible': 'Possible hate crime',
+    'open': 'Open finding',
+    'undetermined': 'Undetermined',
+    'excluded': 'Excluded — no LGBTIQ connection found',
+    'missing': 'Missing person',
+  };
+  return m[s ?? ''] ?? s ?? '—';
+}
+
+function siteStatusClass(s: string | undefined) {
+  const m: Record<string, string> = {
+    'confirmed-homicide': 'badge badge-homicide',
+    'probable':           'badge badge-probable',
+    'possible':           'badge badge-possible',
+    'open':               'badge badge-open',
+    'undetermined':       'badge badge-open',
+    'excluded':           'badge badge-excluded',
+    'missing':            'badge badge-open',
+  };
+  return m[s ?? ''] ?? 'badge badge-open';
+}
+
+function inquiryFindingLabel(s: string | undefined) {
+  const m: Record<string, string> = {
+    'confirmed-homicide':         'Confirmed homicide',
+    'probable-hate-crime':        'Probable hate crime',
+    'possible-hate-crime':        'Possible hate crime',
+    'open':                       'Open — could not determine',
+    'undetermined':               'Undetermined',
+    'not-individually-examined':  'Not individually examined',
+    'excluded':                   'Excluded — no LGBTIQ connection',
+  };
+  return m[s ?? ''] ?? s ?? '—';
+}
+
+function coronialFindingLabel(s: string | undefined) {
+  const m: Record<string, string> = {
+    'open': 'Open finding',
+    'suicide': 'Suicide',
+    'accidental': 'Accidental death',
+    'homicide': 'Unlawfully killed (homicide)',
+    'undetermined': 'Undetermined',
+    'not-held': 'No inquest held',
+  };
+  return m[s ?? ''] ?? s ?? '—';
+}
+
+function misconductLabel(s: string | null | undefined) {
+  const m: Record<string, string> = {
+    'none': 'No finding',
+    'inadequate-investigation': 'Inadequate investigation (systemic/era)',
+    'bias-affected': 'Bias-affected investigation',
+    'active-misconduct': 'Active misconduct identified',
+    'institutional-misconduct': 'Institutional misconduct',
+  };
+  return m[s ?? ''] ?? s ?? '—';
+}
+
+function accountabilityLabel(s: string | null | undefined) {
+  const m: Record<string, string> = {
+    'no-accountability': 'No accountability',
+    'scoi-examined': 'SCOI examined; no further action',
+    'recommendation-pending': 'Recommendation pending',
+    'active-investigation': 'Active investigation',
+    'inquest-outstanding': 'Coronial inquest outstanding',
+    'charges-laid': 'Charges laid',
+    'convicted': 'Conviction obtained',
+  };
+  return m[s ?? ''] ?? s ?? '—';
+}
+
+const mf = d.manner_findings;
+---
+
+<Base title={d.name} description={`Case record: ${d.name}. ${d.scoi_finding ?? ''}`}>
+
+  <!-- Content warnings -->
+  <div class="content-warning">
+    <strong>Content warning:</strong> This record documents a death and contains details of police
+    investigations, inquest findings, and forensic information.
+    {d.historical_misgendering && (
+      <span> Historical records for this person contain misgendering — this record uses correct pronouns and name.</span>
+    )}
+  </div>
+
+  <!-- Header -->
+  <div class="detail-header">
+    <h1>{d.name}</h1>
+    {d.pronouns && <p class="text-muted text-ui" style="font-size:0.85rem; margin-bottom:0.5rem">{d.pronouns}</p>}
+
+    <div class="detail-meta">
+      {(d.date_of_death_display ?? d.date_of_death) && (
+        <span>🗓 {d.date_of_death_display ?? d.date_of_death}</span>
+      )}
+      {d.age_at_death != null && <span>Aged {d.age_at_death}</span>}
+      {d.location_name && <span>📍 {d.location_name}</span>}
+      {d.location_suburb && d.location_name !== d.location_suburb && (
+        <span>{d.location_suburb}</span>
+      )}
+    </div>
+
+    <div class="detail-badges">
+      {d.scoi_category && (
+        <span class={`badge badge-scoi-${d.scoi_category.toLowerCase()}`}>
+          SCOI Category {d.scoi_category}
+        </span>
+      )}
+      {mf?.site_status && (
+        <span class={siteStatusClass(mf.site_status)}>
+          {siteStatusLabel(mf.site_status)}
+        </span>
+      )}
+      {d.stub && <span class="badge badge-excluded">Stub — research incomplete</span>}
+    </div>
+  </div>
+
+  <!-- Key facts -->
+  <div class="fact-grid">
+    <div class="fact">
+      <span class="fact-label">Born</span>
+      <span class="fact-value">
+        {d.born_date ?? '—'}
+        {d.born_place && <><br/><span class="text-muted" style="font-size:0.85rem">{d.born_place}</span></>}
+      </span>
+    </div>
+
+    <div class="fact">
+      <span class="fact-label">Sexuality</span>
+      <span class="fact-value">
+        {d.sexuality?.identity ?? 'Unknown'}
+        {d.sexuality?.confidence && d.sexuality.confidence !== 'unknown' && (
+          <span class="text-muted" style="font-size:0.85rem"> ({d.sexuality.confidence})</span>
+        )}
+      </span>
+    </div>
+
+    <div class="fact">
+      <span class="fact-label">SCOI finding</span>
+      <span class="fact-value">{inquiryFindingLabel(mf?.inquiry_finding)}</span>
+    </div>
+
+    <div class="fact">
+      <span class="fact-label">Accountability</span>
+      <span class="fact-value">{accountabilityLabel(d.accountability_status)}</span>
+    </div>
+
+    {d.police_misconduct_level && d.police_misconduct_level !== 'none' && (
+      <div class="fact">
+        <span class="fact-label">Police conduct</span>
+        <span class="fact-value">{misconductLabel(d.police_misconduct_level)}</span>
+      </div>
+    )}
+
+    {d.reward_offered && (
+      <div class="fact">
+        <span class="fact-label">Police reward</span>
+        <span class="fact-value">{d.reward_amount ?? 'Reward offered'}</span>
+      </div>
+    )}
+  </div>
+
+  <!-- SCOI finding text -->
+  {d.scoi_finding && (
+    <div style="margin-bottom:2rem">
+      <p class="section-heading">Sackar Inquiry finding</p>
+      <div class="finding-box">
+        <blockquote>{d.scoi_finding}</blockquote>
+      </div>
+    </div>
+  )}
+
+  <!-- Narrative body -->
+  <div class="narrative">
+    <Content />
+  </div>
+
+  <hr />
+
+  <!-- Manner findings -->
+  {mf && (
+    <section style="margin:2rem 0">
+      <p class="section-heading">Official determinations</p>
+
+      {mf.inquests.length > 0 && mf.inquests.map(inq => (
+        <div class="finding-box" style="margin-bottom:0.75rem">
+          <div class="label">
+            Coronial inquest {mf.inquests.length > 1 ? `(${inq.sequence})` : ''} —
+            {inq.date ?? 'date unknown'}
+            {inq.coroner && ` · ${inq.coroner}`}
+          </div>
+          <div class="value">{coronialFindingLabel(inq.finding)}</div>
+          {inq.finding_text && (
+            <blockquote>{inq.finding_text}</blockquote>
+          )}
+        </div>
+      ))}
+
+      {mf.parrabell_finding && (
+        <div class="finding-box">
+          <div class="label">Strike Force Parrabell (BCIF)</div>
+          <div class="value">{mf.parrabell_finding.replace(/-/g, ' ')}</div>
+          <div class="text-muted text-ui" style="font-size:0.8rem; margin-top:0.3rem">
+            Note: the Sackar Inquiry found the Parrabell methodology was fundamentally flawed
+            and its findings are not authoritative.
+          </div>
+        </div>
+      )}
+    </section>
+  )}
+
+  <!-- Sources -->
+  <section style="margin:2rem 0">
+    <p class="section-heading">Primary sources</p>
+
+    {d.sources.scoi && (
+      <div class="finding-box">
+        <div class="label">SCOI Report — Volume {d.sources.scoi.volume}
+          {d.sources.scoi.chapter && `, Chapter ${d.sources.scoi.chapter}`}
+          {d.sources.scoi.paragraph && `, para ${d.sources.scoi.paragraph}`}
+          {d.sources.scoi.page_start && `, pp. ${d.sources.scoi.page_start}${d.sources.scoi.page_end ? `–${d.sources.scoi.page_end}` : ''}`}
+        </div>
+        <div class="value text-ui" style="font-size:0.85rem">
+          NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J) (2023)
+          <em>Report of the Special Commission of Inquiry</em>, vol. {d.sources.scoi.volume},
+          NSW Government, Sydney.
+        </div>
+      </div>
+    )}
+
+    {d.sources.press.length > 0 && (
+      <div style="margin-top:1rem">
+        <h4 style="margin-bottom:0.5rem">Press sources</h4>
+        <ul class="text-ui" style="font-size:0.85rem; list-style:none; display:flex; flex-direction:column; gap:0.5rem">
+          {d.sources.press.map(p => (
+            <li>
+              {p.author && <>{p.author} </>}
+              {p.date && <>({p.date}) </>}
+              '{p.title}',
+              <em> {p.publication}</em>
+              {p.page && <>, p. {p.page}</>}
+              {p.trove_url && (
+                <> · <a href={p.trove_url}>Trove</a></>
+              )}
+              {!p.trove_url && p.url && (
+                <> · <a href={p.url}>{p.url}</a></>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {d.sources.coronial.length > 0 && (
+      <div style="margin-top:1rem">
+        <h4 style="margin-bottom:0.5rem">Coronial records</h4>
+        <ul class="text-ui" style="font-size:0.85rem; list-style:none; display:flex; flex-direction:column; gap:0.5rem">
+          {d.sources.coronial.map(c => (
+            <li>
+              Inquest into the death of {c.deceased ?? d.name}
+              {c.date && <> ({c.date})</>}
+              {c.court && <>, {c.court}</>}
+              {c.coroner && <>, {c.coroner}</>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {d.sources.archives.length > 0 && (
+      <div style="margin-top:1rem">
+        <h4 style="margin-bottom:0.5rem">Archival records</h4>
+        <ul class="text-ui" style="font-size:0.85rem; list-style:none; display:flex; flex-direction:column; gap:0.5rem">
+          {d.sources.archives.map(a => (
+            <li>
+              {a.institution.replace(/-/g, ' ')}
+              {a.collection && <>, {a.collection}</>}
+              {a.item_id && <>, item {a.item_id}</>}
+              {a.description && <> — {a.description}</>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </section>
+
+  <!-- Back link -->
+  <div style="margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border)">
+    <a href="/cases/" class="text-ui" style="font-size:0.88rem">← All cases</a>
+  </div>
+
+</Base>
