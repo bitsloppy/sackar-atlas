@@ -64,6 +64,14 @@ ongoing_impact: >
   of gay men and women."
 
 source_type: parliamentary-submission
+access_status: public
+
+topics:
+  - police-failure
+  - survivor-testimony
+  - north-sydney
+  - oxford-street
+  - 1970s-1990s
 source_reference: >
   South S (2021) Submission 31, in NSW Legislative Council Standing Committee
   on Social Issues, Gay and Transgender hate crimes between 1970 and 2010,

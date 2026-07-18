@@ -48,6 +48,16 @@ ongoing_impact: >
   that his attack happened in 1992 but it is still being talked about in 2020."
 
 source_type: parliamentary-evidence
+access_status: public
+interview_date: "2020-11-30"
+
+topics:
+  - police-failure
+  - institutional-failure
+  - survivor-testimony
+  - inner-sydney
+  - 1990s
+  - gaslighting
 source_reference: >
   Witness A (2021) Submission 30 (name suppressed) and oral evidence,
   30 November 2020, in NSW Legislative Council Standing Committee on Social

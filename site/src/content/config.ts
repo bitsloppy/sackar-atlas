@@ -1709,37 +1709,147 @@ const testimonies = defineCollection({
     // Attribution to the source document is required. These testimonies are
     // public record; we cite them precisely so readers can verify the source.
 
+    // --- Source and provenance ---------------------------------------------
+    //
+    // Testimonies is a catch-all for any primary source content: any record
+    // where a real person speaks in their own voice, formally documented,
+    // with a traceable provenance chain.
+    //
+    // Examples:
+    //   parliamentary-submission  — Report 58 case studies (Stewart South etc.)
+    //   oral-history             — PHG / AQuA recordings
+    //   coronial-testimony       — sworn inquest evidence (families of Warren, Russell)
+    //   documentary-interview    — Deep Water (SBS), Four Corners
+    //   letter                   — letter to the editor, public correspondence
+    //   memoir                   — published autobiography or memoir passage
+    //
+    // The access_status + collection_id fields support stub records: we can
+    // document that an oral history EXISTS and WHERE it is held even before
+    // we have permission to quote from it. This maps the evidence landscape
+    // and gives us a concrete agenda for institutional contact (PHG, AQuA etc.).
+
     /**
-     * Where and how this testimony was given.
+     * How and where this testimony was captured.
      *
-     * parliamentary-submission — written submission to a parliamentary inquiry
-     * parliamentary-evidence  — oral evidence at a parliamentary hearing
-     * scoi-submission         — written submission to the Sackar Inquiry
-     * scoi-evidence           — oral evidence at a Sackar Inquiry hearing
-     * oral-history            — recorded oral history (PHG, AQuA, etc.)
-     * media-interview         — journalist interview (press, broadcast)
-     * other                   — other formally documented source
+     * parliamentary-submission  — written submission to a parliamentary inquiry
+     * parliamentary-evidence   — oral evidence at a parliamentary hearing
+     * scoi-submission          — written submission to the Sackar Inquiry
+     * scoi-evidence            — oral evidence at a Sackar Inquiry hearing
+     * coronial-testimony       — sworn evidence at a coronial inquest
+     * oral-history             — recorded oral history (PHG, AQuA, City of Sydney etc.)
+     * documentary-interview    — on-camera for a documentary or TV program
+     * media-interview          — print/broadcast journalist interview
+     * memoir                   — published memoir, autobiography, or personal essay
+     * letter                   — letter to the editor, open letter, public correspondence
+     * other                    — other formally documented primary source
      */
     source_type: z.enum([
       'parliamentary-submission',
       'parliamentary-evidence',
       'scoi-submission',
       'scoi-evidence',
+      'coronial-testimony',
       'oral-history',
+      'documentary-interview',
       'media-interview',
+      'memoir',
+      'letter',
       'other',
     ]),
 
     /**
-     * Precise source reference — cited in AGSM author-date format.
-     * e.g. "Submission 31, NSW Legislative Council Standing Committee on
-     * Social Issues 2021, Gay and Transgender hate crimes between 1970 and
-     * 2010, Report 58, May 2021."
+     * Precise source reference in AGSM author-date format.
+     * Required for any testimony that is published or publicly cited.
+     * Optional for stub records where the item is known but not yet accessed
+     * (use access_status + collection_id to document location instead).
+     *
+     * e.g. "South S (2021) Submission 31, in NSW Legislative Council Standing
+     * Committee on Social Issues, Gay and Transgender hate crimes between 1970
+     * and 2010, Report 58, NSW Parliament, Sydney, May 2021, pp 12–13."
      */
-    source_reference: z.string(),
+    source_reference: z.string().optional(),
 
-    /** Direct URL to the source document or submission portal. */
+    /** Direct URL to the source document, if publicly accessible. */
     source_url: z.string().optional(),
+
+    // --- Interview / oral history fields ------------------------------------
+    //
+    // These fields apply when source_type is 'oral-history', 'documentary-interview',
+    // 'parliamentary-evidence', 'coronial-testimony', or any recorded format.
+    // Optional on written submissions where they don't apply.
+
+    /** Date the interview or recording was made — ISO 8601 or year. */
+    interview_date: z.string().optional(),
+
+    /** Name of the interviewer or hearing officer. */
+    interviewer: z.string().optional(),
+
+    /** Length of the recording in minutes — for audio/video testimony. */
+    duration_minutes: z.number().optional(),
+
+    /**
+     * Subject topics covered in this testimony — structured for filtering.
+     * Use slug-style values: e.g. 'marks-park', 'beats-era', '1980s-violence',
+     * 'police-response', 'scott-johnson', 'oxford-street'.
+     * Distinct from tags (which are display labels): topics drive faceted search.
+     */
+    topics: z.array(z.string()).default([]),
+
+    // --- Access and holdings -----------------------------------------------
+    //
+    // The access model supports three scenarios:
+    //
+    //   FULL ACCESS: audio_url + transcript_url populated; access_status 'public'
+    //   STUB RECORD: audio_url null; access_status 'held-restricted'; collection_id
+    //                set to the holding institution — documents that it EXISTS
+    //                and WHERE it is held, pending permission
+    //   KNOWN GAP:   access_status 'unknown' or 'inaccessible' — we know testimony
+    //                was given somewhere but cannot locate it
+    //
+    // Stub records are genuinely useful: they map the oral evidence landscape,
+    // connect cases to testimony that EXISTS but is not yet accessible, and
+    // give us a concrete list to bring to PHG/AQuA contact conversations.
+
+    /**
+     * Access status for this testimony.
+     *
+     * public            — freely accessible online or in person
+     * held-public       — held by an institution; accessible on-site or by request
+     * held-restricted   — held but requires permission from institution to access
+     * permission-required — accessible but explicit permission needed to cite/publish
+     * inaccessible      — known to exist; currently not accessible by any route
+     * unknown           — access status not yet determined
+     */
+    access_status: z.enum([
+      'public',
+      'held-public',
+      'held-restricted',
+      'permission-required',
+      'inaccessible',
+      'unknown',
+    ]).default('public'),
+
+    /**
+     * ID of the holding institution — links to a source_collections/ entry.
+     * e.g. 'pride-history-group', 'aqua', 'state-library-nsw'
+     * Drives automatic display of conditions of use and contact info on the site.
+     */
+    collection_id: z.string().optional(),
+
+    /** Human-readable name of the holding institution (for display). */
+    held_by: z.string().optional(),
+
+    /**
+     * URL or path to the audio file — when publicly accessible.
+     * null for stub records or held-restricted items.
+     */
+    audio_url: z.string().nullable().default(null),
+
+    /**
+     * URL or path to the interview transcript — when accessible.
+     * null for stub records or items where no transcript exists.
+     */
+    transcript_url: z.string().nullable().default(null),
 
     // --- Relationships -----------------------------------------------------
 

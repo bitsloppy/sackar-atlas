@@ -64,6 +64,15 @@ ongoing_impact: >
   still wondering "if it is because he is gay."
 
 source_type: parliamentary-submission
+access_status: public
+
+topics:
+  - missing-person
+  - family-testimony
+  - police-failure
+  - inner-west
+  - newtown
+  - simon-knight
 source_reference: >
   Knight R and Conlan R (2021) Submission 34, in NSW Legislative Council
   Standing Committee on Social Issues, Gay and Transgender hate crimes between
