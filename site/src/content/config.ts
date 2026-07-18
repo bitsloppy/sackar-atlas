@@ -1464,6 +1464,61 @@ const people = defineCollection({
       'other',
     ]),
 
+    // --- Institutional role -------------------------------------------------
+    //
+    // For people who held formal institutional positions: police commissioners,
+    // ministers for police, attorneys-general, coroners, judges.
+    //
+    // The tenure fields enable the site to compute the accountability chain:
+    // "who held this role when each case occurred?" This is a timeline join
+    // between case.date_of_death and person.tenure_start / person.tenure_end,
+    // computable at build time without denormalising onto case records.
+    //
+    // Applies to any role holder across institutions:
+    //   NSW Police Force  — Commissioner of Police, Deputy Commissioner
+    //   NSW Government    — Premier, Attorney-General, Minister for Police
+    //   Judiciary         — State Coroner, Chief Justice
+    //   Inquiry           — Special Commissioner (Sackar J), Inspector-General
+
+    /**
+     * Formal institutional title held.
+     * e.g. "Commissioner of Police", "Attorney-General", "State Coroner"
+     */
+    institutional_role: z.string().optional(),
+
+    /**
+     * Institution within which this role was held.
+     * e.g. "NSW Police Force", "NSW Government", "NSW Coroners Court"
+     */
+    institution: z.string().optional(),
+
+    /**
+     * Date they began this role — ISO 8601 or year.
+     * e.g. "1984-08-07" or "1984" for John Avery as Commissioner.
+     */
+    tenure_start: z.string().optional(),
+
+    /**
+     * Date they left this role — ISO 8601 or year.
+     * Omit or null if this is a current role holder.
+     */
+    tenure_end: z.string().optional(),
+
+    /**
+     * Sequential ordinal among all holders of this role.
+     * e.g. Colin Delaney = 11th Commissioner of Police.
+     * Enables cross-referencing with official parliamentary and police records.
+     */
+    role_ordinal: z.number().optional(),
+
+    /**
+     * Wikipedia URL for this person.
+     * Useful for cross-referencing biographical details and verifying tenure dates.
+     * Wikipedia is NOT a primary source — use only for reference and date verification.
+     * All substantive claims should be sourced to primary/reliable secondary sources.
+     */
+    wikipedia_url: z.string().optional(),
+
     // --- Dates --------------------------------------------------------------
 
     birth_year: z.number().nullable().default(null),
