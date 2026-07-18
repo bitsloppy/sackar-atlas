@@ -150,6 +150,38 @@ ABC News (12 April 2023) 'From Yellow Socks to a Special Commission, the importa
 
 ---
 
+## ABC News — SCOI Coverage
+
+ABC News (4 November 2021) 'NSW government announces inquiry into Sydney's unsolved gay and transgender hate crimes, murders' [online news], ABC News.
+*[Perrottet government announces the SCOI. Shayne Mallard (Committee Chair) quoted: "at least 88 gay and transgender murders, though the number was likely higher"; notes lesbian victims often recorded as domestic violence. Ross Warren case described.]*
+<https://www.abc.net.au/news/2021-11-04/nsw-government-announces-gay-hate-crime-inquiry/100593044>
+
+ABC News (16 April 2022) 'NSW inquiry to investigate 40 years of unsolved Sydney gay hate deaths' [online news], ABC News.
+*[Justice John Sackar formally appointed; 88 cases confirmed; Scott Johnson and Ross Warren cases described. Perrottet: "close a dark chapter of our state's history." Sackar's powers: hearings, summons, inspect documents.]*
+<https://www.abc.net.au/news/2022-04-16/nsw-inquiry-into-sydney-gay-hate-deaths/100995158>
+
+ABC News (2 November 2022) 'Special commission of Inquiry into 40 years of \'lonely and terrifying\' gay hate deaths begins' [online news], ABC News.
+*[SCOI hearings open. Senior Counsel Assisting Peter Gray SC opening address: deaths were "lonely and terrifying"; "all these lives mattered"; commission will "shine a light on everything that is known". ACON CEO Nicholas Parkhill: Sydney was "a very, very scary place" in the 1980s.]*
+<https://www.abc.net.au/news/2022-11-02/inquiry-into-sydney-lgbt-deaths-begins/101605590>
+
+---
+
+## ABC News — Cases and Locations
+
+ABC News (28 May 2018) 'Sydney\'s gay hate crimes still unsolved 30 years on as report calls for more investigations' [online news], ABC News.
+*[⚠️ Primary-source quality. Alan Rosendale's testimony on his 1989 attack at Moore Park, and Paul Simes (eyewitness) who wrote down the attackers' number plate — later told by police it matched an **unmarked police car**. Rosendale and Simes met for the first time in 2013 after Simes published his account. Key source for the Rosendale case file. Covers ACON 2018 report.]*
+<https://www.abc.net.au/news/2018-05-28/sydney-gay-hate-crimes-still-unsolved/9800046>
+
+ABC News (17 March 2025) 'Sydney gay bars Oxford Hotel, Palms and Universal proposed for heritage listing' [online news], ABC News.
+*[City of Sydney Council proposes heritage listing for Oxford Hotel, Palms, and Universal (formerly Midnight Shift). Clover Moore and Garry Wotherspoon quoted. Wotherspoon: Oxford Street as "the ghetto"; important through HIV/AIDS era. Key source for location records for these venues and for the Oxford Street events collection.]*
+<https://www.abc.net.au/news/2025-03-17/oxford-street-gay-bars-heritage-listing-sydney/105047728>
+
+ABC News (19 October 2025) 'Mural of Sydney\'s queer history removed from Surry Hills Police Station days after going up' [online news], ABC News.
+*["Queer Sydney: A History" by Jeremy Smith — depicting Magda Szubanski, Courtney Act, Michael Kirby, first Mardi Gras, HIV/AIDS era, same-sex marriage — hung on office wall at Surry Hills Police Station metres from Oxford Street, then removed after an officer complained. NSW Police: "we need to ensure all officers are able to work in a professional and inclusive office." Wotherspoon quoted. Key source for Surry Hills PAC location record and a contemporary accountability event.]*
+<https://www.abc.net.au/news/2025-10-19/queer-sydney-history-mural-removed-surry-hills-police-station/105906396>
+
+---
+
 ## Notes
 
 **On the heritage call:** Sackar's call for a comprehensive queer heritage project (Chapter 16, paras 16.15–16.19) was a narrative recommendation, not one of the 19 formally numbered recommendations. The NSW Government has no formal accountability to implement it. This project is a direct response to that call.

@@ -69,6 +69,8 @@ The Surry Hills command is also the jurisdiction in which much of the documented
 
 **Contemporary events:**
 
+In October 2025, a mural titled *Queer Sydney: A History* by artist Jeremy Smith was hung on an office wall at Surry Hills Police Station, metres from Oxford Street. The work depicted LGBTQ+ identities including Magda Szubanski, Courtney Act, and former High Court judge Michael Kirby, and referenced the first Mardi Gras, the HIV/AIDS epidemic, and same-sex marriage. It also featured the phrase "Stop police attacks on gays, women and blacks" and the term "Sodom of the south" — a reference documented by historian Garry Wotherspoon. Days after it went up, an officer complained and NSW Police removed it. NSW Police would not give a reason, stating only: "we need to ensure all officers are able to work in a professional and inclusive office." Smith described the work as "a love letter to queer Sydney" and said he hoped it would "build bridges."
+
 In June 2026, police conducted drug raids on Oxford Street gay venues — Universal, Kinselas, and Palms — within or near Surry Hills PAC's jurisdiction, during Pride Month. Sydney MP Alex Greenwich and Lord Mayor Clover Moore filed a complaint with the LECC; historian and 78er Garry Wotherspoon resigned from the NSW Police LGBTQIA+ Consultative Committee in response, saying the raids sent a "chill." The LECC compelled Police Commissioner Mal Lanyon to investigate.
 
 **Police stations in this PAC (current):**
