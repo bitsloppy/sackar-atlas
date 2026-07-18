@@ -3,6 +3,7 @@ title: "Four other gay-hate crimes being investigated by NSW Police after Scott 
 source_type: online-news
 publication: "ABC News"
 date: "2020-05-16"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2020-05-16/scott-johnson-charge-four-other-sydney-gay-hate-murders/12247922"
 significance: secondary

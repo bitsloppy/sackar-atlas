@@ -3,6 +3,7 @@ title: "Mural of Sydney's queer history removed from Surry Hills Police Station 
 source_type: online-news
 publication: "ABC News"
 date: "2025-10-19"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2025-10-19/queer-sydney-history-mural-removed-surry-hills-police-station/105906396"
 significance: secondary

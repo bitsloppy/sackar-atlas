@@ -3,6 +3,7 @@ title: "NSW inquiry to investigate 40 years of unsolved Sydney gay hate deaths"
 source_type: online-news
 publication: "ABC News"
 date: "2022-04-16"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2022-04-16/nsw-inquiry-into-sydney-gay-hate-deaths/100995158"
 significance: secondary

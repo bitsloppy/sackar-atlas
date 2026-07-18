@@ -3,6 +3,7 @@ title: "From Yellow Socks to a Special Commission, the importance of LGBTQIA+ st
 source_type: online-news
 publication: "ABC News"
 date: "2023-04-12"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2023-04-12/yellow-socks-to-special-commission-into-lgbtiq-hate-crimes/102204814"
 significance: tertiary

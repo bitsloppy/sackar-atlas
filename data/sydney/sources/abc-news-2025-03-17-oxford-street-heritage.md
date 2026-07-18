@@ -3,6 +3,7 @@ title: "Sydney gay bars Oxford Hotel, Palms and Universal proposed for heritage 
 source_type: online-news
 publication: "ABC News"
 date: "2025-03-17"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2025-03-17/oxford-street-gay-bars-heritage-listing-sydney/105047728"
 significance: secondary

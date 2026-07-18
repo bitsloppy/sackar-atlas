@@ -3,6 +3,7 @@ title: "Hate crime laws rarely used by Australian authorities, police figures re
 source_type: online-news
 publication: "ABC News"
 date: "2019-05-03"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2019-05-03/hate-crimes-rarely-prosecuted-in-australia/11055938"
 significance: secondary

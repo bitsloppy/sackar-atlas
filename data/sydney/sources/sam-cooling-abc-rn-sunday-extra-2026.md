@@ -4,6 +4,7 @@ source_type: radio-segment
 show_title: "Sunday Extra"
 publication: "ABC Radio National"
 date: "2026-01-01"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/listen/programs/sundayextra/sam-cooling-state-library-nsw-queer-lgbtq-history-culture-sydney/106396878"
 significance: secondary

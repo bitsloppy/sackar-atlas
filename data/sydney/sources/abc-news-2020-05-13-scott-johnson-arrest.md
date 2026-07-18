@@ -3,6 +3,7 @@ title: "How informant sparked arrest in Scott Johnson's gay hate murder cold cas
 source_type: online-news
 publication: "ABC News"
 date: "2020-05-13"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2020-05-13/scott-johnson-murder-man-charged-after-brothers-crusade/12238728"
 significance: secondary

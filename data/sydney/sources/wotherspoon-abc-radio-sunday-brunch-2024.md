@@ -5,6 +5,7 @@ show_title: "Sydney Weekend Mornings"
 creator: "Marnie S"
 publication: "ABC Radio Sydney"
 date: "2024-03-03"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/listen/programs/sydney-weekendmornings/sunday-brunch-garry-wotherspoon/103548436"
 significance: primary-source-quality

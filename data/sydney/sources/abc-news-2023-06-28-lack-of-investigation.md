@@ -3,6 +3,7 @@ title: "Gay hate inquiry: NSW Police refused to investigate Bondi homicides"
 source_type: online-news
 publication: "ABC News"
 date: "2023-06-28"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2023-06-28/gay-hate-inquiry-nsw-police-refused-investigate-bondi-homicides/102537192"
 significance: secondary

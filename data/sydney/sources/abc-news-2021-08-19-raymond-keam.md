@@ -3,6 +3,7 @@ title: "Elderly Victorian man arrested over murder of Raymond Keam in Randwick 3
 source_type: online-news
 publication: "ABC News"
 date: "2021-08-19"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2021-08-19/elderly-victorian-man-charged-with-murder-of-raymond-keam/100389816"
 significance: secondary

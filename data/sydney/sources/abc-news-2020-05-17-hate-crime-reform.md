@@ -3,6 +3,7 @@ title: "Former NSW Police prosecutor says hate crime reforms 'a matter of life a
 source_type: online-news
 publication: "ABC News"
 date: "2020-05-17"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2020-05-17/scott-johnson-arrest-prompts-calls-for-police-hate-crime-reform/12241878"
 significance: secondary

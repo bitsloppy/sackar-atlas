@@ -3,6 +3,7 @@ title: "NSW gay hate crime inquiry: police reverse findings in murders"
 source_type: online-news
 publication: "ABC News"
 date: "2023-02-21"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2023-02-21/nsw-gay-hate-crime-inquiry-police-reverse-findings-in-murders/102003372"
 significance: secondary

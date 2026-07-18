@@ -3,6 +3,7 @@ title: "Sydney's gay hate crimes still unsolved 30 years on as report calls for 
 source_type: online-news
 publication: "ABC News"
 date: "2018-05-28"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2018-05-28/sydney-gay-hate-crimes-still-unsolved/9800046"
 significance: primary-source-quality

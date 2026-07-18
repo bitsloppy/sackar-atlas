@@ -3,6 +3,7 @@ title: "NSW gay hate inquiry: Crispin Dye — new person of interest identified"
 source_type: online-news
 publication: "ABC News"
 date: "2023-08-22"
+series_id: "abc"
 accessed_date: "2026-07-18"
 url: "https://www.abc.net.au/news/2023-08-22/nsw-gay-hate-inquiry-crispin-dye-new-person-of-interest/102758744"
 significance: secondary
