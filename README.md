@@ -63,9 +63,28 @@ All data under `data/sydney/` is published under **CC-BY 4.0**. Attribution is a
 
 ---
 
+## Accessibility
+
+This site targets **WCAG 2.1 Level AA** compliance. The subject matter documents the lives of people failed by institutions — the site should not itself be exclusionary.
+
+**Current status (2026-07-19):** AA compliant on all published pages.
+
+**Standing commitments:**
+- Text contrast ≥ 4.5:1 on all backgrounds (3:1 for large text / UI components)
+- All interactive elements keyboard-navigable with visible focus indicator
+- Semantic HTML landmarks on every page (`<header>`, `<main>`, `<nav>`, `<footer>`)
+- Skip-to-content link on every page
+- Decorative SVGs / icons marked `aria-hidden="true"`; meaningful images have `alt` text
+- Colour is never the sole differentiator — icons, labels, or patterns accompany colour coding
+- Map is an enhancement, not the only path to information — every pin links to a full text page
+
+**For contributors:** run a contrast check before merging any new colour. The WCAG AA threshold is 4.5:1 for body text — use [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) or the browser DevTools accessibility panel.
+
+---
+
 ## Status
 
-🔧 Early development — data model and first cases in progress.
+🟢 Active development — 3 cases published, full interactivity layer live, WCAG AA compliant.
 
 ---
 
