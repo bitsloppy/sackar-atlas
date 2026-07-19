@@ -21,6 +21,87 @@ Routine additions of optional fields are not.
 
 ---
 
+## 2026-07-19
+
+### Site — major interactivity + linking layer
+
+This session built the relational layer of the site — making the connections between
+cases, locations, people, and events visible and navigable rather than implied.
+
+**Cross-linking architecture:**
+- All `related_*` arrays now render as clickable links throughout the site
+- Cases → Locations: `location_name` links to location page via `location_id`;
+  `location_suburb` links to suburb filter
+- Cases → Events: `police_investigations[].event_id` renders investigation name as link
+- Cases → PAC: `police_investigations[].command_id` links to PAC jurisdiction page
+- Cases: `last_seen_location` now rendered in header (was invisible)
+- Schema additions: `related_cases[]` on cases; `event_id` on `police_investigations[]`;
+  `related_locations[]` + `related_people[]` on locations, events, people collections
+
+**New content:**
+- Events: Strike Force Parrabell (full narrative — three cases, three critical errors);
+  Strike Force Neiwand; Rise Memorial at Marks Park (2021); 1978 Mardi Gras baton charges;
+  Oxford Street Pride Month raids (June 2026); Oxford Street heritage listing proposal (2025)
+- Neighbourhood location records: Potts Point, Manly Headland Beat Precinct, Darlinghurst
+- All existing data files: `related_*` arrays populated with correct cross-references
+
+**New pages:**
+- `/locations/` — browse all locations, grouped by category
+- `/locations/[slug]/` — individual location detail pages
+- `/locations/region/[region]/` — region map pages with NSW suburb boundaries + location pins
+- `/events/` — browse all events chronologically
+- `/events/[slug]/` — individual event detail pages
+- `/people/` — browse all people, grouped by role
+- `/people/[slug]/` — individual person detail pages
+- Case pages updated: related content chips, investigation name links
+
+**Map (major rebuild):**
+- Multi-layer Leaflet map: cases, beats, nightlife venues, police jurisdictions,
+  institutions, neighbourhoods, historical events — each independently toggleable
+- Font Awesome Pro icons baked as inline SVGs at build time (no runtime CDN call)
+  - Beats: `fa-people-pants`; venues: `fa-martini-glass`; police: `fa-shield-halved`
+  - Events: `fa-hand-fist` (activism), `fa-candle-holder` (memorial), `fa-siren-on` (raids)
+  - Cases: `fa-location-dot` colour-coded by SCOI finding
+- Legend updated: actual mini-pin icons matching map markers exactly
+- Layer control (top-right): toggle each layer independently
+- All map popups link to relevant detail pages
+
+**PAC jurisdiction maps:**
+- All 7 PAC location pages now include a Leaflet map of their jurisdiction
+- Suburb boundaries fetched at build time from NSW Spatial Portal
+  (Geoscape Administrative Boundaries, CC-BY 4.0, no API key required)
+- Structured `suburbs_covered[]` and `stations[]` arrays added to all PAC files:
+  Surry Hills, Eastern Suburbs, Eastern Beaches, Northern Beaches, Kings Cross,
+  Sydney City, Inner West
+- Station pins (shield icon) show address + phone + hours in popup
+
+**Region map pages:**
+- `/locations/region/inner-sydney/` and others derive suburb list from location records
+  and fetch polygon boundaries from NSW Spatial Portal at build time
+- Map shows suburb outlines + all location pins for that region
+- Clicking region link on any location page now goes to rich region map page
+
+**Accessibility (WCAG 2.1 AA):**
+- All contrast failures fixed: `--muted` lightened (#7878a0 → #8585af) for 5.24:1
+  on surface; badge-homicide text fixed (3.48:1 → 4.77:1); badge-open fixed
+- Skip-to-content link added sitewide
+- `:focus-visible` styles added (gold outline, keyboard navigation)
+- Nav `aria-label`, `<main id="main-content">`, map `role="application"` + `aria-label`
+- All decorative SVGs: `aria-hidden="true"`
+- WCAG AA compliance added to project goals in README and `_project-status.md`
+
+**Suburb filter:**
+- Location detail pages: suburb and region text are now clickable meta-links
+- Locations index: client-side `?suburb=` / `?region=` filtering with active filter banner
+
+**Build:**
+- Font Awesome Pro: switched from kit CDN to `@fortawesome/pro-solid-svg-icons` npm package
+- `build.sh` added: reliable FA Pro auth for Cloudflare Pages CI
+  (writes token to .npmrc at build time; Cloudflare build command: `bash build.sh`)
+- 74 static pages building cleanly
+
+---
+
 ## 2026-07-18
 
 ### Cases added
