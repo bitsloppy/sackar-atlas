@@ -126,8 +126,20 @@ function countryDeterminationLabel(s: string | undefined): string {
     }
 
     <div class="detail-meta">
-      {d.suburb && <span>📍 {d.suburb}</span>}
-      {d.location_region && <span>{d.location_region.replace(/-/g, ' ')}</span>}
+      {d.suburb && (
+        <span>
+          📍 <a
+            href={`/locations/?suburb=${encodeURIComponent(d.suburb.toLowerCase())}`}
+            class="meta-link"
+          >{d.suburb}</a>
+        </span>
+      )}
+      {d.location_region && (
+        <a
+          href={`/locations/?region=${d.location_region}`}
+          class="meta-link"
+        >{d.location_region.replace(/-/g, ' ')}</a>
+      )}
       {d.active_from && (
         <span>
           {d.active_from}

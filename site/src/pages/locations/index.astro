@@ -7,6 +7,19 @@ const locations = await getCollection('locations');
 // Sort by name
 const sorted = [...locations].sort((a, b) => a.data.name.localeCompare(b.data.name));
 
+// Serialise for client-side filtering
+const locData = sorted.map(l => ({
+  slug: l.id.replace(/\.md$/, ''),
+  name: l.data.name,
+  suburb: l.data.suburb ?? null,
+  region: l.data.location_region ?? null,
+  location_type: l.data.location_type ?? null,
+  roles: l.data.location_roles ?? [],
+  stub: l.data.stub ?? false,
+  still_exists: l.data.still_exists ?? true,
+}));
+const locDataJson = JSON.stringify(locData);
+
 // Group by category for display
 const beats = sorted.filter(l => l.data.location_roles?.includes('beat'));
 const venues = sorted.filter(
@@ -28,10 +41,26 @@ const other = sorted.filter(
   description="Significant places in the Queer Heritage Sydney research project — beats, nightlife venues, crime scenes, memorials, and police jurisdictions."
 >
   <h1>Locations</h1>
-  <p class="text-muted text-ui" style="font-size:0.9rem; margin: 0.5rem 0 2rem;">
+  <p class="text-muted text-ui" style="font-size:0.9rem; margin: 0.5rem 0 1.5rem;">
     {sorted.length} {sorted.length === 1 ? 'location' : 'locations'} — beats, nightlife venues,
     police jurisdictions, and other significant places.
   </p>
+
+  <!-- Active filter banner (shown by JS when ?suburb= or ?region= is set) -->
+  <div id="filter-banner" style="display:none; margin-bottom:1.5rem">
+    <div class="filter-active-bar">
+      <span id="filter-label"></span>
+      <a href="/locations/" class="filter-clear">Clear ×</a>
+    </div>
+  </div>
+
+  <!-- Filtered results (shown by JS, hidden by default) -->
+  <div id="filter-results" style="display:none">
+    <div id="filter-cards" class="card-grid"></div>
+  </div>
+
+  <!-- Grouped sections (hidden by JS when a filter is active) -->
+  <div id="grouped-sections">
 
   {
     beats.length > 0 && (
@@ -165,4 +194,99 @@ const other = sorted.filter(
       </section>
     )
   }
+
+  </div> {/* end #grouped-sections */}
+
+  <script define:vars={{ locDataJson }}>
+    const locations = JSON.parse(locDataJson);
+    const params = new URLSearchParams(window.location.search);
+    const suburbFilter = params.get('suburb');   // e.g. 'maroubra'
+    const regionFilter = params.get('region');   // e.g. 'eastern-suburbs'
+
+    if (suburbFilter || regionFilter) {
+      // Hide grouped sections, show filter UI
+      document.getElementById('grouped-sections').style.display = 'none';
+      document.getElementById('filter-banner').style.display = 'block';
+      document.getElementById('filter-results').style.display = 'block';
+
+      // Build filter label
+      const label = document.getElementById('filter-label');
+      if (suburbFilter) {
+        // Capitalise each word for display
+        const display = suburbFilter.replace(/\b\w/g, c => c.toUpperCase());
+        label.textContent = `Locations in ${display}`;
+      } else {
+        const display = regionFilter.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+        label.textContent = `Locations in ${display}`;
+      }
+
+      // Filter and render
+      const matches = locations.filter(l => {
+        if (suburbFilter) return (l.suburb ?? '').toLowerCase() === suburbFilter;
+        if (regionFilter) return (l.region ?? '') === regionFilter;
+        return false;
+      });
+
+      const container = document.getElementById('filter-cards');
+
+      if (matches.length === 0) {
+        container.innerHTML = '<p class="text-muted text-ui">No locations found for this filter.</p>';
+      } else {
+        label.textContent += ` (${matches.length})`;
+        container.innerHTML = matches.map(l => {
+          const roleLabel = l.roles.includes('beat') ? 'Beat'
+            : l.roles.includes('nightlife-venue') ? 'Nightlife venue'
+            : l.location_type === 'police-jurisdiction' ? 'Police jurisdiction'
+            : (l.location_type ?? 'location').replace(/-/g, ' ');
+          const badgeClass = l.roles.includes('beat') ? 'badge-beat'
+            : l.roles.includes('nightlife-venue') ? 'badge-venue'
+            : 'badge-open';
+          const stub = l.stub ? '<span class="badge badge-stub">Research needed</span>' : '';
+          const meta = [l.suburb, (l.region ?? '').replace(/-/g, ' ')].filter(Boolean).join(' · ');
+          return `
+            <article class="card location-card">
+              <div class="card-badges">
+                <span class="badge ${badgeClass}">${roleLabel}</span>
+                ${stub}
+              </div>
+              <a href="/locations/${l.slug}/" class="card-name">${l.name}</a>
+              <div class="card-meta">${meta}</div>
+              ${!l.still_exists ? '<div class="card-meta">No longer exists</div>' : ''}
+            </article>
+          `;
+        }).join('');
+      }
+    }
+  </script>
+
 </Base>
+
+<style>
+  .filter-active-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem 0.85rem;
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+    font-family: var(--font-ui);
+    font-size: 0.88rem;
+    color: var(--text);
+  }
+
+  .filter-clear {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    margin-left: auto;
+    padding: 0.15rem 0.4rem;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .filter-clear:hover {
+    color: var(--text);
+    border-color: var(--muted);
+  }
+</style>
