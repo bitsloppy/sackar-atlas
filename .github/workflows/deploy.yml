@@ -26,4 +26,7 @@ jobs:
       - name: Deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: npx wrangler pages deploy site/dist --project-name=queer-heritage
+          CLOUDFLARE_ACCOUNT_ID: 00803d87a089dac92b0234ae0af5a9a8
+        run: |
+          npx wrangler pages project create queer-heritage --production-branch=main 2>/dev/null || true
+          npx wrangler pages deploy site/dist --project-name=queer-heritage
