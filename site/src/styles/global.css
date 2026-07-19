@@ -9,7 +9,7 @@
   --surface2:  #1c1c2a;
   --border:    #2a2a40;
   --text:      #dcdcf0;
-  --muted:     #7878a0;
+  --muted:     #8585af;   /* lightened from #7878a0 — WCAG AA on all surfaces */
   --accent:    #c49a5a;   /* warm gold */
   --link:      #7eb8f8;
   --link-visited: #a390e8;
@@ -18,7 +18,7 @@
   --homicide:  #c94444;
   --probable:  #c97444;
   --possible:  #c49a5a;
-  --open:      #7878a0;
+  --open:      #9090b8;   /* lightened from #7878a0 — badge-open text contrast */
   --excluded:  #4a4a60;
 
   --font-body: Georgia, 'Times New Roman', serif;
@@ -29,6 +29,37 @@
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { font-size: 17px; scroll-behavior: smooth; }
+
+/* ── Focus ────────────────────────────────────────────────────── */
+/* :focus-visible targets keyboard nav only, not mouse clicks.         */
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip link — visible only on focus for keyboard/AT users */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #0c0c14;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  transition: top 0.1s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid #0c0c14;
+  outline-offset: 2px;
+}
 
 body {
   background: var(--bg);
@@ -161,7 +192,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
   white-space: nowrap;
 }
 
-.badge-homicide  { background: #3a1010; color: var(--homicide); border: 1px solid var(--homicide); }
+.badge-homicide  { background: #3a1010; color: #e06060;          border: 1px solid var(--homicide); } /* #e06060 = 4.9:1 on #3a1010 ✓ */
 .badge-probable  { background: #2e1a08; color: var(--probable);  border: 1px solid var(--probable); }
 .badge-possible  { background: #2a2008; color: var(--possible);  border: 1px solid var(--possible); }
 .badge-open      { background: #1a1a28; color: var(--open);      border: 1px solid var(--open); }

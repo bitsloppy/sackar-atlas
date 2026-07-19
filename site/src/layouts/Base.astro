@@ -21,8 +21,9 @@ const {
     <title>{title === 'Home' ? 'Queer Heritage Sydney' : `${title} — Queer Heritage Sydney`}</title>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
-      <nav>
+      <nav aria-label="Site navigation">
         <a href="/" class="site-name">Queer Heritage Sydney</a>
         <ul>
           <li><a href="/cases/">Cases</a></li>
@@ -34,7 +35,7 @@ const {
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <slot />
     </main>
 

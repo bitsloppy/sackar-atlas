@@ -52,6 +52,8 @@ const faIconsJson = JSON.stringify(faIcons);
 
 // ── Mini-pin builder (server-side, for the legend) ─────────────────────────
 // Mirrors the client-side pinIcon() function — same shape, same maths.
+// aria-hidden="true" is set on the wrapper: the adjacent text label is the
+// accessible content; the pin shape is purely decorative in this context.
 function miniPin(iconKey: keyof typeof faIcons, colour: string, size = 20) {
   const ic   = faIcons[iconKey];
   const tail = Math.round(size / 3.5);
@@ -59,10 +61,10 @@ function miniPin(iconKey: keyof typeof faIcons, colour: string, size = 20) {
   const svgH = Math.round(size * 0.48);
   const svgW = ic ? Math.round(svgH * (ic.w / ic.h)) : svgH;
   const svg  = ic
-    ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ic.w} ${ic.h}" width="${svgW}" height="${svgH}" fill="white"><path d="${ic.path}"/></svg>`
+    ? `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ic.w} ${ic.h}" width="${svgW}" height="${svgH}" fill="white"><path d="${ic.path}"/></svg>`
     : '';
   return [
-    `<span style="display:inline-flex;flex-direction:column;align-items:center;width:${size}px;flex-shrink:0">`,
+    `<span aria-hidden="true" style="display:inline-flex;flex-direction:column;align-items:center;width:${size}px;flex-shrink:0">`,
       `<span style="width:${size}px;height:${size}px;border-radius:50%;background:${colour};`,
       `border:1.5px solid rgba(255,255,255,0.4);box-shadow:0 1px 5px rgba(0,0,0,0.55);`,
       `display:flex;align-items:center;justify-content:center">${svg}</span>`,
@@ -264,7 +266,17 @@ const eventCount        = eventPoints.length;
     </div>
   </div>
 
-  <div id="map"></div>
+  <div
+    id="map"
+    role="application"
+    aria-label="Interactive map of significant sites — death sites, beats, nightlife venues, police jurisdictions, and historical events in Sydney"
+    tabindex="0"
+  ></div>
+  <p class="text-muted text-ui" style="font-size:0.78rem; margin-top:0.5rem">
+    Map data: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors,
+    <a href="https://carto.com/attributions">CARTO</a>.
+    All location links open detail pages with full text descriptions.
+  </p>
 
   <!-- Leaflet from CDN -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -331,7 +343,7 @@ const eventCount        = eventPoints.length;
       const svgH   = Math.round(size * 0.48);
       const svgW   = ic ? Math.round(svgH * (ic.w / ic.h)) : svgH;
       const svg    = ic
-        ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ic.w} ${ic.h}" width="${svgW}" height="${svgH}" fill="white"><path d="${ic.path}"/></svg>`
+        ? `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ic.w} ${ic.h}" width="${svgW}" height="${svgH}" fill="white"><path d="${ic.path}"/></svg>`
         : '';
       return L.divIcon({
         html: `
