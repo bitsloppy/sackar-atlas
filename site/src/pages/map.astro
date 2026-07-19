@@ -50,6 +50,48 @@ const faIcons = {
 };
 const faIconsJson = JSON.stringify(faIcons);
 
+// ── Mini-pin builder (server-side, for the legend) ─────────────────────────
+// Mirrors the client-side pinIcon() function — same shape, same maths.
+function miniPin(iconKey: keyof typeof faIcons, colour: string, size = 20) {
+  const ic   = faIcons[iconKey];
+  const tail = Math.round(size / 3.5);
+  const tailH = Math.round(tail * 1.4);
+  const svgH = Math.round(size * 0.48);
+  const svgW = ic ? Math.round(svgH * (ic.w / ic.h)) : svgH;
+  const svg  = ic
+    ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ic.w} ${ic.h}" width="${svgW}" height="${svgH}" fill="white"><path d="${ic.path}"/></svg>`
+    : '';
+  return [
+    `<span style="display:inline-flex;flex-direction:column;align-items:center;width:${size}px;flex-shrink:0">`,
+      `<span style="width:${size}px;height:${size}px;border-radius:50%;background:${colour};`,
+      `border:1.5px solid rgba(255,255,255,0.4);box-shadow:0 1px 5px rgba(0,0,0,0.55);`,
+      `display:flex;align-items:center;justify-content:center">${svg}</span>`,
+      `<span style="width:0;height:0;border-left:${tail}px solid transparent;`,
+      `border-right:${tail}px solid transparent;`,
+      `border-top:${tailH}px solid ${colour};margin-top:-1px"></span>`,
+    `</span>`,
+  ].join('');
+}
+
+// Colours (mirrors client-side palette)
+const C = {
+  homicide:      '#c94444',
+  probable:      '#c97444',
+  possible:      '#c49a5a',
+  open:          '#7878a0',
+  excluded:      '#4a4a60',
+  beat:          '#2a9d8f',
+  venue:         '#9d4edd',
+  police:        '#4a7faa',
+  neighbourhood: '#4a7faa',
+  institution:   '#6b7280',
+  event:         '#e07c24',
+  memorial:      '#c8a84b',
+  policeAction:  '#c94444',
+  legal:         '#4a9d8f',
+  inquiry:       '#7878a0',
+};
+
 const cases     = await getCollection('cases', ({ data }) => data.published === true);
 const locations = await getCollection('locations');
 const events    = await getCollection('events');
@@ -157,23 +199,68 @@ const eventCount        = eventPoints.length;
   <div class="map-legend text-ui">
     <div class="legend-group">
       <strong>Death sites</strong>
-      <span class="leg-item"><span class="dot dot-homicide"></span> Confirmed homicide</span>
-      <span class="leg-item"><span class="dot dot-probable"></span> Probable hate crime</span>
-      <span class="leg-item"><span class="dot dot-possible"></span> Possible hate crime</span>
-      <span class="leg-item"><span class="dot dot-open"></span> Open / undetermined</span>
-      <span class="leg-item"><span class="dot dot-excluded"></span> Excluded</span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('locationDot', C.homicide)} />
+        Confirmed homicide
+      </span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('locationDot', C.probable)} />
+        Probable hate crime
+      </span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('locationDot', C.possible)} />
+        Possible hate crime
+      </span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('locationDot', C.open)} />
+        Open / undetermined
+      </span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('locationDot', C.excluded)} />
+        Excluded
+      </span>
     </div>
     <div class="legend-group">
       <strong>Locations</strong>
-      <span class="leg-item"><span class="dot dot-beat"></span> Beat ({beatCount})</span>
-      <span class="leg-item"><span class="dot dot-venue"></span> Venue ({venueCount})</span>
-      <span class="leg-item"><span class="dot dot-police"></span> Police ({policeCount})</span>
-      <span class="leg-item"><span class="dot dot-neighbourhood"></span> Neighbourhood ({neighbourhoodCount})</span>
-      <span class="leg-item"><span class="dot dot-institution"></span> Institution ({institutionCount})</span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('peoplePants', C.beat)} />
+        Beat ({beatCount})
+      </span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('martiniGlass', C.venue)} />
+        Nightlife venue ({venueCount})
+      </span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('shieldHalved', C.police)} />
+        Police jurisdiction ({policeCount})
+      </span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('city', C.neighbourhood)} />
+        Neighbourhood ({neighbourhoodCount})
+      </span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('building', C.institution)} />
+        Institution ({institutionCount})
+      </span>
     </div>
     <div class="legend-group">
       <strong>Events</strong>
-      <span class="leg-item"><span class="dot dot-event"></span> Historical event ({eventCount})</span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('handFist', C.event)} />
+        Activism
+      </span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('candleHolder', C.memorial)} />
+        Memorial
+      </span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('sirenOn', C.policeAction)} />
+        Police action
+      </span>
+      <span class="leg-item">
+        <Fragment set:html={miniPin('scaleBalanced', C.legal)} />
+        Legal milestone
+      </span>
     </div>
   </div>
 
@@ -479,33 +566,9 @@ const eventCount        = eventPoints.length;
   .leg-item {
     display: flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.5rem;
+    line-height: 1.2;
   }
-
-  /* Legend dots */
-  .dot {
-    display: inline-block;
-    flex-shrink: 0;
-    border-radius: 50%;
-    border: 1.5px solid rgba(255,255,255,0.2);
-  }
-
-  /* Case status */
-  .dot-homicide    { width: 10px; height: 10px; background: #c94444; }
-  .dot-probable    { width: 10px; height: 10px; background: #c97444; }
-  .dot-possible    { width: 10px; height: 10px; background: #c49a5a; }
-  .dot-open        { width: 10px; height: 10px; background: #7878a0; }
-  .dot-excluded    { width: 10px; height: 10px; background: #4a4a60; }
-
-  /* Location types */
-  .dot-beat         { width: 10px; height: 10px; background: #2a9d8f; border-radius: 2px; transform: rotate(45deg); }
-  .dot-venue        { width: 10px; height: 10px; background: #9d4edd; }
-  .dot-police       { width: 10px; height: 10px; background: #4a7faa; border-radius: 1px; }
-  .dot-neighbourhood{ width: 10px; height: 10px; background: transparent; border: 2px solid #4a7faa; }
-  .dot-institution  { width: 10px; height: 10px; background: #6b7280; }
-
-  /* Events */
-  .dot-event        { width: 10px; height: 10px; background: #e07c24; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); border-radius: 0; border: none; }
 
   /* ── Leaflet overrides for dark theme ─────────────────────────── */
   :global(.leaflet-popup-content-wrapper) {
