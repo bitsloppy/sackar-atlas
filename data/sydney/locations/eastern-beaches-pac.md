@@ -14,6 +14,35 @@ location_region: eastern-suburbs
 
 street_address: "136 Maroubra Road, Maroubra NSW 2035"
 phone: "02 9349 9299"
+
+suburbs_covered:
+  - "Maroubra"
+  - "Randwick"
+  - "Coogee"
+  - "Clovelly"
+  - "Kensington"
+  - "Banksmeadow"
+  - "Centennial Park"
+  - "Chifley"
+  - "Daceyville"
+  - "Eastgardens"
+  - "Hillsdale"
+
+stations:
+  - name: "Maroubra (PAC HQ)"
+    address: "Corner of Bennetts Place and Maroubra Road, Maroubra NSW 2035"
+    lat: -33.9502
+    lng: 151.2384
+    phone: "02 9349 9299"
+    hours: "24 hours"
+    is_hq: true
+  - name: "Randwick"
+    address: "196 Alison Road, Randwick NSW 2031"
+    lat: -33.9089
+    lng: 151.2375
+    phone: "02 9697 1099"
+    hours: "24 hours"
+    is_hq: false
 lat: -33.9496
 lng: 151.2400
 

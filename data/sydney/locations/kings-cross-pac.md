@@ -13,6 +13,29 @@ location_region: inner-sydney
 
 street_address: "Corner of Elizabeth Bay Road and Barncleuth Square, Kings Cross NSW 2011"
 phone: "02 8356 0099"
+
+suburbs_covered:
+  - "Darlinghurst"
+  - "Elizabeth Bay"
+  - "Potts Point"
+  - "Rushcutters Bay"
+  - "Woolloomooloo"
+
+stations:
+  - name: "Kings Cross (PAC HQ)"
+    address: "Corner of Elizabeth Bay Road and Barncleuth Square, Kings Cross NSW 2011"
+    lat: -33.8748
+    lng: 151.2297
+    phone: "02 8356 0099"
+    hours: "24 hours"
+    is_hq: true
+  - name: "Woolloomooloo"
+    address: "Shop 10/164 Cathedral Street, Woolloomooloo NSW 2011"
+    lat: -33.8677
+    lng: 151.2219
+    phone: "02 9380 2189"
+    hours: null
+    is_hq: false
 lat: -33.8731095
 lng: 151.2255593
 

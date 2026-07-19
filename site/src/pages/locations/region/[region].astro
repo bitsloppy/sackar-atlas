@@ -1,0 +1,300 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import {
+  faPersonHiking,
+  faMartiniGlass,
+  faShieldHalved,
+  faBuilding,
+  faCity,
+  faLocationDot,
+} from '@fortawesome/pro-solid-svg-icons';
+
+// ── Region display labels ──────────────────────────────────────────────────
+
+const regionLabels: Record<string, string> = {
+  'inner-sydney':     'Inner Sydney',
+  'eastern-suburbs':  'Eastern Suburbs',
+  'inner-west':       'Inner West',
+  'western-sydney':   'Western Sydney',
+  'northern-beaches': 'Northern Beaches',
+  'north-shore':      'North Shore',
+  'northern-sydney':  'Northern Sydney',
+  'south-sydney':     'South Sydney',
+  'greater-sydney':   'Greater Sydney',
+  'regional-nsw':     'Regional NSW',
+  'other-state':      'Other State',
+};
+
+// ── Icon data helper (same pattern as map.astro) ───────────────────────────
+
+function iconData(def: { icon: [number, number, any, any, string | string[]] }) {
+  const [w, h, , , pathRaw] = def.icon;
+  const path = Array.isArray(pathRaw) ? pathRaw.join(' ') : pathRaw;
+  return { w, h, path };
+}
+
+const faIcons = {
+  locationDot:  iconData(faLocationDot),
+  personHiking: iconData(faPersonHiking),
+  martiniGlass: iconData(faMartiniGlass),
+  shieldHalved: iconData(faShieldHalved),
+  building:     iconData(faBuilding),
+  city:         iconData(faCity),
+};
+
+// ── getStaticPaths ─────────────────────────────────────────────────────────
+
+export async function getStaticPaths() {
+  const allLocations = await getCollection('locations');
+  const regions = [...new Set(
+    allLocations.map(l => l.data.location_region).filter(Boolean)
+  )] as string[];
+
+  return await Promise.all(regions.map(async region => {
+    const locs = allLocations.filter(l => l.data.location_region === region);
+
+    // Unique suburbs from location records in this region
+    const suburbs = [...new Set(
+      locs.map(l => l.data.suburb).filter(Boolean) as string[]
+    )];
+
+    // Fetch suburb polygon boundaries at build time
+    let suburbGeoJson: object | null = null;
+    if (suburbs.length > 0) {
+      try {
+        const names = suburbs.map(s => `'${s.toUpperCase()}'`).join(',');
+        const url = new URL(
+          'https://portal.spatial.nsw.gov.au/server/rest/services/Hosted/NSW_Boundary_Concordance/FeatureServer/3/query'
+        );
+        url.searchParams.set('where', `suburbname IN (${names})`);
+        url.searchParams.set('outFields', 'suburbname,postcode');
+        url.searchParams.set('f', 'geojson');
+        const res = await fetch(url.toString(), { signal: AbortSignal.timeout(12000) });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        suburbGeoJson = await res.json();
+      } catch (e) {
+        console.warn(`[region/${region}] suburb boundary fetch failed:`, e);
+      }
+    }
+
+    return {
+      params: { region },
+      props: { region, locs, suburbs, suburbGeoJson },
+    };
+  }));
+}
+
+// ── Page props ─────────────────────────────────────────────────────────────
+
+const { region, locs, suburbs, suburbGeoJson } = Astro.props;
+const label = regionLabels[region] ?? region.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+// Location points for map (only those with coordinates)
+type LocCategory = 'beat' | 'venue' | 'police' | 'neighbourhood' | 'institution' | 'other';
+function locCategory(d: any): LocCategory {
+  const roles: string[] = d.location_roles ?? [];
+  const type: string = d.location_type ?? '';
+  if (roles.includes('beat'))              return 'beat';
+  if (type === 'police-jurisdiction')      return 'police';
+  if (roles.includes('nightlife-venue'))   return 'venue';
+  if (roles.includes('community-hub'))     return 'neighbourhood';
+  if (['hospital', 'institution'].includes(type)) return 'institution';
+  return 'other';
+}
+
+const mapPoints = locs
+  .filter(l => l.data.lat != null && l.data.lng != null)
+  .map(l => ({
+    slug:     l.id.replace(/\.md$/, ''),
+    name:     l.data.name,
+    lat:      l.data.lat,
+    lng:      l.data.lng,
+    suburb:   l.data.suburb ?? null,
+    category: locCategory(l.data),
+    roles:    l.data.location_roles ?? [],
+    stub:     l.data.stub ?? false,
+  }));
+
+// Colour palette (same as main map)
+const locColours: Record<string, string> = {
+  beat:          '#2a9d8f',
+  venue:         '#9d4edd',
+  police:        '#4a7faa',
+  neighbourhood: '#4a7faa',
+  institution:   '#6b7280',
+  other:         '#5a5a72',
+};
+
+// Serialise for client
+const suburbGeoJsonStr = JSON.stringify(suburbGeoJson);
+const mapPointsStr     = JSON.stringify(mapPoints);
+const faIconsStr       = JSON.stringify(faIcons);
+const locColoursStr    = JSON.stringify(locColours);
+---
+
+<Base
+  title={`${label} — Locations`}
+  description={`Queer Heritage locations in ${label} — beats, nightlife venues, police jurisdictions, and significant places.`}
+>
+  <!-- Breadcrumb -->
+  <p class="text-muted text-ui" style="font-size:0.82rem; margin-bottom:0.75rem">
+    <a href="/locations/">All locations</a> / <strong>{label}</strong>
+  </p>
+
+  <h1>{label}</h1>
+  <p class="text-muted text-ui" style="font-size:0.9rem; margin:0.25rem 0 1.5rem">
+    {locs.length} {locs.length === 1 ? 'location' : 'locations'} in this region.
+    {suburbs.length > 0 && (
+      <span>Suburbs: {suburbs.join(', ')}.</span>
+    )}
+  </p>
+
+  <!-- Region map -->
+  {suburbGeoJson ? (
+    <>
+      <div
+        id="region-map"
+        role="application"
+        aria-label={`Map of ${label} — suburb outlines and heritage locations`}
+        tabindex="0"
+        style="width:100%; height:480px; border-radius:6px; border:1px solid var(--border); overflow:hidden; margin-bottom:0.5rem"
+      ></div>
+      <p class="text-muted text-ui" style="font-size:0.75rem; margin-bottom:2rem">
+        Suburb boundaries: Geoscape Administrative Boundaries
+        &copy; <a href="https://geoscape.com.au/legal/data-copyright-and-disclaimer/">Geoscape Australia</a>,
+        <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>.
+        Tiles: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> /
+        <a href="https://carto.com/attributions">CARTO</a>.
+      </p>
+
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" is:inline></script>
+      <script define:vars={{ suburbGeoJsonStr, mapPointsStr, faIconsStr, locColoursStr }}>
+        const geoJson    = JSON.parse(suburbGeoJsonStr);
+        const points     = JSON.parse(mapPointsStr);
+        const FA         = JSON.parse(faIconsStr);
+        const colours    = JSON.parse(locColoursStr);
+
+        const map = L.map('region-map', { zoomControl: true, attributionControl: false });
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+          subdomains: 'abcd', maxZoom: 19,
+        }).addTo(map);
+
+        // Suburb polygon outlines
+        const suburbLayer = L.geoJSON(geoJson, {
+          style: {
+            color:       '#4a7faa',
+            weight:      1.5,
+            opacity:     0.6,
+            fillColor:   '#4a7faa',
+            fillOpacity: 0.08,
+          },
+          onEachFeature(feature, layer) {
+            const name = feature.properties?.suburbname ?? '';
+            layer.bindTooltip(
+              `<span style="font-family:system-ui;font-size:0.82rem;color:#dcdcf0">${name}</span>`,
+              { sticky: true }
+            );
+          },
+        }).addTo(map);
+
+        // Fit to suburb bounds
+        if (geoJson?.features?.length) {
+          map.fitBounds(suburbLayer.getBounds(), { padding: [24, 24] });
+        }
+
+        // Pin builder (same maths as map.astro)
+        function pinIcon(iconKey, colour, size) {
+          size = size || 26;
+          const tail  = Math.round(size / 3.5);
+          const tailH = Math.round(tail * 1.4);
+          const ic    = FA[iconKey];
+          const svgH  = Math.round(size * 0.48);
+          const svgW  = ic ? Math.round(svgH * (ic.w / ic.h)) : svgH;
+          const svg   = ic
+            ? `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ic.w} ${ic.h}" width="${svgW}" height="${svgH}" fill="white"><path d="${ic.path}"/></svg>`
+            : '';
+          return L.divIcon({
+            html: `<div style="display:flex;flex-direction:column;align-items:center;width:${size}px">
+              <div style="width:${size}px;height:${size}px;border-radius:50%;background:${colour};border:2px solid rgba(255,255,255,0.5);box-shadow:0 2px 8px rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center">${svg}</div>
+              <div style="width:0;height:0;border-left:${tail}px solid transparent;border-right:${tail}px solid transparent;border-top:${tailH}px solid ${colour};margin-top:-1px"></div>
+            </div>`,
+            className: '',
+            iconSize:    [size, size + tailH],
+            iconAnchor:  [size / 2, size + tailH],
+            popupAnchor: [0, -(size + tailH + 4)],
+          });
+        }
+
+        const iconKeyMap = {
+          beat:          'personHiking',
+          venue:         'martiniGlass',
+          police:        'shieldHalved',
+          neighbourhood: 'city',
+          institution:   'building',
+          other:         'building',
+        };
+
+        // Location pins
+        points.forEach(pt => {
+          const colour  = colours[pt.category] ?? '#5a5a72';
+          const iconKey = iconKeyMap[pt.category] ?? 'building';
+          const marker  = L.marker([pt.lat, pt.lng], { icon: pinIcon(iconKey, colour, 26) });
+          const roles   = pt.roles.join(', ').replace(/-/g, ' ');
+          marker.bindPopup(`
+            <div style="font-family:system-ui;min-width:160px">
+              <strong>${pt.name}</strong><br>
+              ${pt.suburb ? `<span style="font-size:0.82rem;color:#aaa">${pt.suburb}</span><br>` : ''}
+              <span style="font-size:0.78rem;color:#7eb8f8">${roles}</span>
+              <br><a href="/locations/${pt.slug}/" style="font-size:0.82rem;color:#7eb8f8;display:inline-block;margin-top:0.3rem">View location →</a>
+              ${pt.stub ? '<br><span style="font-size:0.76rem;color:#c0901a">⚠ Stub</span>' : ''}
+            </div>`, { maxWidth: 240 }
+          );
+          marker.addTo(map);
+        });
+      </script>
+    </>
+  ) : (
+    <div class="content-warning" style="margin-bottom:1.5rem">
+      Map unavailable — suburb boundary data could not be loaded at build time.
+    </div>
+  )}
+
+  <!-- Location cards -->
+  <div class="card-grid">
+    {locs
+      .sort((a, b) => a.data.name.localeCompare(b.data.name))
+      .map(l => {
+        const d    = l.data;
+        const slug = l.id.replace(/\.md$/, '');
+        const roles: string[] = d.location_roles ?? [];
+        const primaryRole = roles[0] ?? d.location_type ?? 'location';
+        const badgeClass = roles.includes('beat') ? 'badge badge-beat'
+          : roles.includes('nightlife-venue')     ? 'badge badge-venue'
+          : d.location_type === 'police-jurisdiction' ? 'badge badge-open'
+          : 'badge badge-excluded';
+        const roleLabel = roles.includes('beat') ? 'Beat'
+          : roles.includes('nightlife-venue')    ? 'Nightlife venue'
+          : d.location_type === 'police-jurisdiction' ? 'Police jurisdiction'
+          : primaryRole.replace(/-/g, ' ');
+        return (
+          <article class="card location-card">
+            <div class="card-badges">
+              <span class={badgeClass}>{roleLabel}</span>
+              {d.stub && <span class="badge badge-stub">Research needed</span>}
+            </div>
+            <a href={`/locations/${slug}/`} class="card-name">{d.name}</a>
+            <div class="card-meta">{d.suburb ?? ''}</div>
+            {d.still_exists === false && <div class="card-meta">No longer exists</div>}
+          </article>
+        );
+      })
+    }
+  </div>
+
+  <div style="margin-top:2rem; padding-top:1rem; border-top:1px solid var(--border)">
+    <a href="/locations/" class="text-ui" style="font-size:0.88rem">← All locations</a>
+  </div>
+</Base>

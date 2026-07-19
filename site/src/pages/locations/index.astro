@@ -242,6 +242,7 @@ const other = sorted.filter(
             : l.roles.includes('nightlife-venue') ? 'badge-venue'
             : 'badge-open';
           const stub = l.stub ? '<span class="badge badge-stub">Research needed</span>' : '';
+          const regionHref = l.region ? `/locations/region/${l.region}/` : null;
           const meta = [l.suburb, (l.region ?? '').replace(/-/g, ' ')].filter(Boolean).join(' · ');
           return `
             <article class="card location-card">

@@ -14,6 +14,36 @@ location_region: inner-west
 
 street_address: "89-101 Despointes Street, Marrickville NSW 2204"
 phone: "02 9568 9299"
+
+suburbs_covered:
+  - "Camperdown"
+  - "Darlington"
+  - "Dulwich Hill"
+  - "Enmore"
+  - "Erskineville"
+  - "Lewisham"
+  - "Marrickville"
+  - "Newtown"
+  - "Petersham"
+  - "St Peters"
+  - "Sydenham"
+  - "Tempe"
+
+stations:
+  - name: "Marrickville (PAC HQ)"
+    address: "89-101 Despointes Street, Marrickville NSW 2204"
+    lat: -33.9149
+    lng: 151.1535
+    phone: "02 9568 9299"
+    hours: "24 hours"
+    is_hq: true
+  - name: "Newtown"
+    address: "222 Australia Street, Newtown NSW 2042"
+    lat: -33.8988
+    lng: 151.1783
+    phone: "02 9550 8199"
+    hours: "24 hours"
+    is_hq: false
 lat: -33.9094111
 lng: 151.1559508
 

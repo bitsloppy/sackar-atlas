@@ -183,7 +183,7 @@ function countryDeterminationLabel(s: string | undefined): string {
       )}
       {d.location_region && (
         <a
-          href={`/locations/?region=${d.location_region}`}
+          href={`/locations/region/${d.location_region}/`}
           class="meta-link"
         >{d.location_region.replace(/-/g, ' ')}</a>
       )}

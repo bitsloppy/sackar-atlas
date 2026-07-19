@@ -15,6 +15,49 @@ location_region: eastern-suburbs
 
 street_address: "153 Bronte Road, Waverley NSW 2024"
 phone: "02 9369 9899"
+
+suburbs_covered:
+  - "Bondi Beach"
+  - "Bondi"
+  - "Bondi Junction"
+  - "Bronte"
+  - "Tamarama"
+  - "Waverley"
+  - "Paddington"
+  - "Rose Bay"
+  - "Point Piper"
+  - "Woollahra"
+  - "Dover Heights"
+
+stations:
+  - name: "Waverley (PAC HQ)"
+    address: "153 Bronte Road, Waverley NSW 2024"
+    lat: -33.8980
+    lng: 151.2517
+    phone: "02 9369 9899"
+    hours: "24 hours"
+    is_hq: true
+  - name: "Bondi Beach"
+    address: "91-93 Roscoe Street, Bondi Beach NSW 2026"
+    lat: -33.8910
+    lng: 151.2750
+    phone: "02 9365 9699"
+    hours: "24 hours"
+    is_hq: false
+  - name: "Paddington"
+    address: "16 Jersey Road, Paddington NSW 2021"
+    lat: -33.8835
+    lng: 151.2258
+    phone: "02 8356 8299"
+    hours: "24 hours"
+    is_hq: false
+  - name: "Rose Bay"
+    address: "1 Wunulla Road, Point Piper NSW 2027"
+    lat: -33.8737
+    lng: 151.2680
+    phone: "02 9362 6399"
+    hours: "24 hours"
+    is_hq: false
 lat: -33.8980185
 lng: 151.2517441
 

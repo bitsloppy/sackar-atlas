@@ -16,6 +16,73 @@ location_region: northern-beaches
 # unlike the other PACs in this project (all Central Metro Region).
 street_address: "1 Saint David Avenue, Dee Why NSW 2099"
 phone: "02 9971 3399"
+
+suburbs_covered:
+  - "Allambie Heights"
+  - "Avalon Beach"
+  - "Balgowlah"
+  - "Balgowlah Heights"
+  - "Bayview"
+  - "Beacon Hill"
+  - "Belrose"
+  - "Brookvale"
+  - "Clontarf"
+  - "Collaroy"
+  - "Cromer"
+  - "Curl Curl"
+  - "Davidson"
+  - "Dee Why"
+  - "Elanora Heights"
+  - "Fairlight"
+  - "Forestville"
+  - "Frenchs Forest"
+  - "Freshwater"
+  - "Manly"
+  - "Manly Vale"
+  - "Mona Vale"
+  - "Narrabeen"
+  - "Narraweena"
+  - "Newport"
+  - "North Balgowlah"
+  - "North Curl Curl"
+  - "North Manly"
+  - "North Narrabeen"
+  - "Oxford Falls"
+  - "Palm Beach"
+  - "Queenscliff"
+  - "Seaforth"
+  - "Terrey Hills"
+  - "Warriewood"
+
+stations:
+  - name: "Dee Why (PAC HQ)"
+    address: "1 Saint David Avenue, Dee Why NSW 2099"
+    lat: -33.7527
+    lng: 151.2893
+    phone: "02 9971 3399"
+    hours: "24 hours"
+    is_hq: true
+  - name: "Manly"
+    address: "3 Belgrave Street, Manly NSW 2095"
+    lat: -33.7981
+    lng: 151.2877
+    phone: "02 9976 8099"
+    hours: "24 hours"
+    is_hq: false
+  - name: "Frenchs Forest"
+    address: "137-139 Frenchs Forest Road West, Frenchs Forest NSW 2086"
+    lat: -33.7624
+    lng: 151.2143
+    phone: "02 9452 9599"
+    hours: "24 hours"
+    is_hq: false
+  - name: "Mona Vale"
+    address: "1705-1707 Pittwater Road, Mona Vale NSW 2103"
+    lat: -33.6811
+    lng: 151.3008
+    phone: "02 9998 0699"
+    hours: "24 hours"
+    is_hq: false
 lat: -33.7527
 lng: 151.2893
 

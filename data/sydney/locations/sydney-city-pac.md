@@ -15,6 +15,33 @@ location_region: inner-sydney
 
 street_address: "192 Day Street, Sydney NSW 2000"
 phone: "02 9265 6499"
+
+suburbs_covered:
+  - "Sydney"
+  - "Haymarket"
+  - "Barangaroo"
+  - "Dawes Point"
+  - "Millers Point"
+  - "Pyrmont"
+  - "Glebe"
+  - "Chippendale"
+  - "Darlington"
+
+stations:
+  - name: "Day Street (PAC HQ)"
+    address: "192 Day Street, Sydney NSW 2000"
+    lat: -33.8797
+    lng: 151.2021
+    phone: "02 9265 6499"
+    hours: "24 hours"
+    is_hq: true
+  - name: "The Rocks"
+    address: "132 George Street, The Rocks NSW 2000"
+    lat: -33.8604
+    lng: 151.2090
+    phone: "02 8220 6399"
+    hours: "24 hours"
+    is_hq: false
 lat: -33.8753126
 lng: 151.2039106
 
