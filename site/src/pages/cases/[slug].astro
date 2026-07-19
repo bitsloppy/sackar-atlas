@@ -137,9 +137,28 @@ const mf = d.manner_findings;
         <span>🗓 {d.date_of_death_display ?? d.date_of_death}</span>
       )}
       {d.age_at_death != null && <span>Aged {d.age_at_death}</span>}
-      {d.location_name && <span>📍 {d.location_name}</span>}
+      {d.location_name && (
+        <span>
+          📍{ }
+          {d.location_id ? (
+            <a href={`/locations/${d.location_id}/`} class="meta-link">{d.location_name}</a>
+          ) : d.location_name}
+        </span>
+      )}
       {d.location_suburb && d.location_name !== d.location_suburb && (
-        <span>{d.location_suburb}</span>
+        <a
+          href={`/locations/?suburb=${encodeURIComponent(d.location_suburb.toLowerCase())}`}
+          class="meta-link"
+        >{d.location_suburb}</a>
+      )}
+      {d.last_seen_location && (
+        <span class="text-muted" style="font-size:0.85rem">
+          Last seen: 
+          {d.last_seen_location_id ? (
+            <a href={`/locations/${d.last_seen_location_id}/`} class="meta-link">{d.last_seen_location}</a>
+          ) : d.last_seen_location}
+          {d.last_seen_date && <span class="text-muted"> ({d.last_seen_date})</span>}
+        </span>
       )}
     </div>
 
@@ -265,6 +284,11 @@ const mf = d.manner_findings;
             {pi.years && ` · ${pi.years}`}
             {pi.type && ` · ${pi.type.replace(/-/g, ' ')}`}
           </div>
+          {pi.command_id && (
+            <div class="text-muted text-ui" style="font-size:0.85rem">
+              Command: <a href={`/locations/${pi.command_id}/`} class="meta-link">{pi.command_id.replace(/-pac$/, ' PAC').replace(/-/g, ' ')}</a>
+            </div>
+          )}
           {pi.lead_officer && (
             <div class="text-muted text-ui" style="font-size:0.85rem">
               Lead: {pi.lead_officer}
