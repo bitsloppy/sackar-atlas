@@ -1,6 +1,54 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import {
+  faLocationDot,
+  faPersonHiking,
+  faMartiniGlass,
+  faShieldHalved,
+  faBuilding,
+  faCity,
+  faHandFist,
+  faFire,
+  faTriangleExclamation,
+  faScaleBalanced,
+  faMagnifyingGlass,
+  faMasksTheater,
+  faLandmark,
+  faPeopleGroup,
+  faNewspaper,
+  faStar,
+} from '@fortawesome/free-solid-svg-icons';
+
+// Extract SVG path data for each icon — passed to client as JSON.
+// Each icon definition: { icon: [width, height, ligatures, unicode, svgPathData] }
+function iconData(def: { icon: [number, number, any, any, string | string[]] }) {
+  const [w, h, , , pathRaw] = def.icon;
+  const path = Array.isArray(pathRaw) ? pathRaw.join(' ') : pathRaw;
+  return { w, h, path };
+}
+
+const faIcons = {
+  // map layers
+  locationDot:          iconData(faLocationDot),
+  personHiking:         iconData(faPersonHiking),
+  martiniGlass:         iconData(faMartiniGlass),
+  shieldHalved:         iconData(faShieldHalved),
+  building:             iconData(faBuilding),
+  city:                 iconData(faCity),
+  // event types
+  handFist:             iconData(faHandFist),
+  fire:                 iconData(faFire),
+  triangleExclamation:  iconData(faTriangleExclamation),
+  scaleBalanced:        iconData(faScaleBalanced),
+  magnifyingGlass:      iconData(faMagnifyingGlass),
+  masksTheater:         iconData(faMasksTheater),
+  landmark:             iconData(faLandmark),
+  peopleGroup:          iconData(faPeopleGroup),
+  newspaper:            iconData(faNewspaper),
+  star:                 iconData(faStar),
+};
+const faIconsJson = JSON.stringify(faIcons);
 
 const cases     = await getCollection('cases', ({ data }) => data.published === true);
 const locations = await getCollection('locations');
@@ -135,11 +183,12 @@ const eventCount        = eventPoints.length;
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" is:inline></script>
 
-  <script define:vars={{ casePointsJson, locationPointsJson, eventPointsJson }}>
+  <script define:vars={{ casePointsJson, locationPointsJson, eventPointsJson, faIconsJson }}>
 
     const cases     = JSON.parse(casePointsJson);
     const locations = JSON.parse(locationPointsJson);
     const events    = JSON.parse(eventPointsJson);
+    const FA        = JSON.parse(faIconsJson);   // { iconKey: { w, h, path } }
 
     // ── Colour palette ──────────────────────────────────────────────────────
 
@@ -182,9 +231,21 @@ const eventCount        = eventPoints.length;
     // tail — the universal map-pin shape. FA kit's MutationObserver processes
     // the <i> tags after Leaflet adds each marker to the DOM.
 
-    function pinIcon(faClass, colour, size = 28) {
-      const tail  = Math.round(size / 3.5);
-      const fs    = Math.round(size * 0.44);
+    /**
+     * Build a map-pin marker: circle head with inline FA SVG + CSS triangle tail.
+     * @param {string} iconKey  — key in the FA lookup (e.g. 'locationDot')
+     * @param {string} colour   — hex fill colour
+     * @param {number} size     — circle diameter in px
+     */
+    function pinIcon(iconKey, colour, size = 28) {
+      const tail   = Math.round(size / 3.5);
+      const tailH  = Math.round(tail * 1.4);
+      const ic     = FA[iconKey];
+      const svgH   = Math.round(size * 0.48);
+      const svgW   = ic ? Math.round(svgH * (ic.w / ic.h)) : svgH;
+      const svg    = ic
+        ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ic.w} ${ic.h}" width="${svgW}" height="${svgH}" fill="white"><path d="${ic.path}"/></svg>`
+        : '';
       return L.divIcon({
         html: `
           <div style="display:flex;flex-direction:column;align-items:center;width:${size}px">
@@ -194,52 +255,50 @@ const eventCount        = eventPoints.length;
               border:2px solid rgba(255,255,255,0.55);
               box-shadow:0 2px 10px rgba(0,0,0,0.65);
               display:flex;align-items:center;justify-content:center;
-            ">
-              <i class="${faClass}" style="color:#fff;font-size:${fs}px"></i>
-            </div>
+            ">${svg}</div>
             <div style="
               width:0;height:0;
               border-left:${tail}px solid transparent;
               border-right:${tail}px solid transparent;
-              border-top:${Math.round(tail * 1.4)}px solid ${colour};
+              border-top:${tailH}px solid ${colour};
               margin-top:-1px;
             "></div>
           </div>`,
         className: '',
-        iconSize:    [size, size + Math.round(tail * 1.4)],
-        iconAnchor:  [size / 2, size + Math.round(tail * 1.4)],
-        popupAnchor: [0, -(size + Math.round(tail * 1.4) + 4)],
+        iconSize:    [size, size + tailH],
+        iconAnchor:  [size / 2, size + tailH],
+        popupAnchor: [0, -(size + tailH + 4)],
       });
     }
 
-    // Location category → FA icon + size
+    // Location category → { FA key, size }
     const locIconMap = {
-      beat:          { fa: 'fa-solid fa-person-hiking', size: 28 },
-      venue:         { fa: 'fa-solid fa-martini-glass', size: 28 },
-      police:        { fa: 'fa-solid fa-shield-halved', size: 26 },
-      memorial:      { fa: 'fa-solid fa-candle-holder', size: 26 },
-      neighbourhood: { fa: 'fa-solid fa-city',          size: 26 },
-      institution:   { fa: 'fa-solid fa-building',      size: 24 },
-      other:         { fa: 'fa-solid fa-building',      size: 24 },
+      beat:          { key: 'personHiking',   size: 28 },
+      venue:         { key: 'martiniGlass',   size: 28 },
+      police:        { key: 'shieldHalved',   size: 26 },
+      memorial:      { key: 'fire',           size: 26 },
+      neighbourhood: { key: 'city',           size: 26 },
+      institution:   { key: 'building',       size: 24 },
+      other:         { key: 'building',       size: 24 },
     };
 
-    // Event type → FA icon
+    // Event type → FA key
     const eventIconMap = {
-      'activism':        'fa-solid fa-hand-fist',
-      'memorial':        'fa-solid fa-candle-holder',
-      'police-action':   'fa-solid fa-siren-on',
-      'legal-milestone': 'fa-solid fa-scale-balanced',
-      'inquiry':         'fa-solid fa-magnifying-glass',
-      'cultural':        'fa-solid fa-masks-theater',
-      'political':       'fa-solid fa-landmark',
-      'community':       'fa-solid fa-people-group',
-      'media':           'fa-solid fa-newspaper',
-      'other':           'fa-solid fa-star',
+      'activism':        'handFist',
+      'memorial':        'fire',
+      'police-action':   'triangleExclamation',
+      'legal-milestone': 'scaleBalanced',
+      'inquiry':         'magnifyingGlass',
+      'cultural':        'masksTheater',
+      'political':       'landmark',
+      'community':       'peopleGroup',
+      'media':           'newspaper',
+      'other':           'star',
     };
 
     function locationIcon(category, colour) {
       const cfg = locIconMap[category] ?? locIconMap.other;
-      return pinIcon(cfg.fa, colour, cfg.size);
+      return pinIcon(cfg.key, colour, cfg.size);
     }
 
     // ── Popup builders ──────────────────────────────────────────────────────
@@ -322,7 +381,7 @@ const eventCount        = eventPoints.length;
 
     cases.forEach(pt => {
       const colour = caseColours[pt.status] ?? '#7878a0';
-      L.marker([pt.lat, pt.lng], { icon: pinIcon('fa-solid fa-location-dot', colour, 30) })
+      L.marker([pt.lat, pt.lng], { icon: pinIcon('locationDot', colour, 30) })
         .bindPopup(casePopup(pt), { maxWidth: 260 })
         .addTo(layers.cases);
     });
@@ -351,8 +410,8 @@ const eventCount        = eventPoints.length;
 
     events.forEach(pt => {
       const colour = eventColours[pt.event_type] ?? '#7878a0';
-      const fa     = eventIconMap[pt.event_type] ?? 'fa-solid fa-star';
-      L.marker([pt.lat, pt.lng], { icon: pinIcon(fa, colour, 26) })
+      const faKey  = eventIconMap[pt.event_type] ?? 'star';
+      L.marker([pt.lat, pt.lng], { icon: pinIcon(faKey, colour, 26) })
         .bindPopup(eventPopup(pt), { maxWidth: 260 })
         .addTo(layers.events);
     });

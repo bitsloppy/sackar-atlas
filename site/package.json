@@ -9,6 +9,7 @@
     "check": "astro check"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "astro": "^5.0.0"
   },
   "devDependencies": {
