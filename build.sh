@@ -10,6 +10,11 @@
 #
 set -euo pipefail
 
+echo "=== Build env debug ==="
+env | grep -i fontawesome || echo "No FONTAWESOME vars found"
+env | grep -i npm || echo "No npm vars found"
+echo "=== End debug ==="
+
 cd site
 
 # Write the FA Pro registry token to .npmrc if available.
