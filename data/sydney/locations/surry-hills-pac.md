@@ -13,6 +13,23 @@ location_region: inner-sydney
 
 street_address: "Level 3, Sydney Police Centre, 151-241 Goulburn Street, Surry Hills NSW 2010"
 phone: "02 9265 4144"
+
+suburbs_covered:
+  - "Surry Hills"
+  - "Darlinghurst"
+  - "Paddington"
+  - "Moore Park"
+  - "Centennial Park"
+  - "Sydney"
+
+stations:
+  - name: "Surry Hills (PAC HQ)"
+    address: "Level 3, Sydney Police Centre, 151-241 Goulburn Street, Surry Hills NSW 2010"
+    lat: -33.8893
+    lng: 151.2097
+    phone: "02 9265 4144"
+    hours: "24 hours"
+    is_hq: true
 lat: -33.8893
 lng: 151.2097
 

@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
+import { faShieldHalved } from '@fortawesome/pro-solid-svg-icons';
 
 export async function getStaticPaths() {
   const locations = await getCollection('locations');
@@ -13,6 +14,52 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content } = await render(entry);
 const d = entry.data;
+
+// ── PAC jurisdiction map: build-time suburb boundary fetch ────────────────
+// For police-jurisdiction locations with suburbs_covered[], we call the NSW
+// Spatial Portal at build time and bake the GeoJSON into the static HTML.
+// Data: Geoscape Administrative Boundaries © Geoscape Australia, CC-BY 4.0.
+// No API key required. Gracefully falls back to no map if the API is down.
+
+let pacSuburbGeoJson: object | null = null;
+
+const isPAC = d.location_type === 'police-jurisdiction';
+const hasSubs = isPAC && (d.suburbs_covered ?? []).length > 0;
+
+if (hasSubs) {
+  try {
+    const names = (d.suburbs_covered ?? [])
+      .map(s => s.toUpperCase())
+      .map(s => `'${s}'`)
+      .join(',');
+    const url = new URL(
+      'https://portal.spatial.nsw.gov.au/server/rest/services/Hosted/NSW_Boundary_Concordance/FeatureServer/3/query'
+    );
+    url.searchParams.set('where', `suburbname IN (${names})`);
+    url.searchParams.set('outFields', 'suburbname,postcode');
+    url.searchParams.set('f', 'geojson');
+
+    const res = await fetch(url.toString());
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    pacSuburbGeoJson = await res.json();
+  } catch (e) {
+    console.warn(`[${entry.id}] PAC suburb boundary fetch failed:`, e);
+  }
+}
+
+// FA shield icon for station pins — baked in server-side, same approach as map.astro
+const shieldDef = faShieldHalved.icon;          // [w, h, ligatures, unicode, path]
+const shieldIcon = {
+  w: shieldDef[0],
+  h: shieldDef[1],
+  path: Array.isArray(shieldDef[4]) ? shieldDef[4].join(' ') : shieldDef[4],
+};
+
+const pacGeoJsonStr   = JSON.stringify(pacSuburbGeoJson);
+const shieldIconStr   = JSON.stringify(shieldIcon);
+const stationsStr     = JSON.stringify(
+  (d.stations ?? []).filter(s => s.lat != null && s.lng != null)
+);
 
 // Cross-reference related content
 const allCases = await getCollection('cases', ({ data }) => data.published === true);
@@ -223,6 +270,105 @@ function countryDeterminationLabel(s: string | undefined): string {
       </div>
     )
   }
+
+  <!-- PAC jurisdiction map (police-jurisdiction locations with suburb data) -->
+  {isPAC && hasSubs && (
+    <section class="pac-map-section" aria-label="Jurisdiction map">
+      <p class="section-heading">Jurisdiction map</p>
+
+      {pacSuburbGeoJson ? (
+        <>
+          <div
+            id="pac-map"
+            role="application"
+            aria-label={`Map showing suburbs covered by ${d.name}`}
+            tabindex="0"
+            style="width:100%; height:360px; border-radius:6px; border:1px solid var(--border); overflow:hidden;"
+          ></div>
+          <p class="text-muted text-ui" style="font-size:0.75rem; margin-top:0.4rem">
+            Suburb boundaries: Geoscape Administrative Boundaries
+            &copy; <a href="https://geoscape.com.au/legal/data-copyright-and-disclaimer/">Geoscape Australia</a>,
+            licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>.
+            Map tiles: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> / <a href="https://carto.com/attributions">CARTO</a>.
+          </p>
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+          <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" is:inline></script>
+          <script define:vars={{ pacGeoJsonStr, shieldIconStr, stationsStr }}>
+            const geoJson   = JSON.parse(pacGeoJsonStr);
+            const shield    = JSON.parse(shieldIconStr);
+            const stations  = JSON.parse(stationsStr);
+
+            const map = L.map('pac-map', { zoomControl: true, attributionControl: false });
+
+            L.tileLayer(
+              'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+              { subdomains: 'abcd', maxZoom: 19 }
+            ).addTo(map);
+
+            // Suburb polygon layer
+            const suburbLayer = L.geoJSON(geoJson, {
+              style: {
+                color:       '#4a7faa',
+                weight:      2,
+                opacity:     0.8,
+                fillColor:   '#4a7faa',
+                fillOpacity: 0.12,
+              },
+              onEachFeature(feature, layer) {
+                const name = feature.properties?.suburbname ?? '';
+                layer.bindTooltip(
+                  `<span style="font-family:system-ui;font-size:0.82rem;color:#dcdcf0">${name}</span>`,
+                  { sticky: true, className: 'pac-tooltip' }
+                );
+              },
+            }).addTo(map);
+
+            // Fit map to suburb boundaries
+            map.fitBounds(suburbLayer.getBounds(), { padding: [20, 20] });
+
+            // Station pins
+            const svgH = 13;
+            const svgW = Math.round(svgH * (shield.w / shield.h));
+            const iconSvg = `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${shield.w} ${shield.h}" width="${svgW}" height="${svgH}" fill="white"><path d="${shield.path}"/></svg>`;
+
+            function stationPin(isHQ) {
+              const size = isHQ ? 26 : 22;
+              const tail = Math.round(size / 3.5);
+              const tailH = Math.round(tail * 1.4);
+              const colour = isHQ ? '#4a7faa' : '#2a5a8a';
+              return L.divIcon({
+                html: `<div style="display:flex;flex-direction:column;align-items:center;width:${size}px">
+                  <div style="width:${size}px;height:${size}px;border-radius:50%;background:${colour};border:2px solid rgba(255,255,255,0.5);box-shadow:0 2px 8px rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center">${iconSvg}</div>
+                  <div style="width:0;height:0;border-left:${tail}px solid transparent;border-right:${tail}px solid transparent;border-top:${tailH}px solid ${colour};margin-top:-1px"></div>
+                </div>`,
+                className: '',
+                iconSize: [size, size + tailH],
+                iconAnchor: [size / 2, size + tailH],
+                popupAnchor: [0, -(size + tailH + 4)],
+              });
+            }
+
+            stations.forEach(st => {
+              L.marker([st.lat, st.lng], { icon: stationPin(st.is_hq) })
+                .bindPopup(`
+                  <div style="font-family:system-ui;min-width:160px">
+                    <strong>${st.name}</strong><br>
+                    <span style="font-size:0.82rem;color:#aaa">${st.address ?? ''}</span><br>
+                    ${st.phone ? `<span style="font-size:0.82rem;color:#7eb8f8">${st.phone}</span><br>` : ''}
+                    ${st.hours ? `<span style="font-size:0.78rem;color:#7878a0">${st.hours}</span>` : ''}
+                  </div>`, { maxWidth: 240 }
+                )
+                .addTo(map);
+            });
+          </script>
+        </>
+      ) : (
+        <p class="text-muted text-ui" style="font-size:0.85rem; font-style:italic">
+          Jurisdiction map unavailable — suburb boundary data could not be loaded at build time.
+        </p>
+      )}
+    </section>
+  )}
 
   <!-- Narrative body -->
   <div class="narrative">

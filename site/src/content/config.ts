@@ -1338,6 +1338,28 @@ const locations = defineCollection({
     /** Contact phone number (e.g. "02 9349 9299"). */
     phone: z.string().nullable().optional(),
 
+    /**
+     * Suburbs covered by this jurisdiction.
+     * Used at build time to fetch polygon boundaries from the
+     * NSW Spatial Portal (suburb_LGA_concordance, CC-BY 4.0).
+     * police-jurisdiction locations only.
+     */
+    suburbs_covered: z.array(z.string()).default([]),
+
+    /**
+     * Individual police stations within this jurisdiction.
+     * The PAC HQ is marked is_hq: true.
+     */
+    stations: z.array(z.object({
+      name: z.string(),
+      address: z.string().nullable().optional(),
+      lat: z.number().nullable().optional(),
+      lng: z.number().nullable().optional(),
+      phone: z.string().nullable().optional(),
+      hours: z.string().nullable().optional(),
+      is_hq: z.boolean().default(false),
+    })).default([]),
+
     // --- Police jurisdiction history ----------------------------------------
     //
     // NSW Police PAC boundaries and names have been reorganised multiple times.
