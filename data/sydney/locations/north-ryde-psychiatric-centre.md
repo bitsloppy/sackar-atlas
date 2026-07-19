@@ -10,8 +10,8 @@ location_roles:
 suburb: "North Ryde"
 location_region: northern-sydney
 
-lat: null
-lng: null
+lat: -33.7939
+lng: 151.1281
 
 still_exists: false
 

@@ -14,6 +14,8 @@ location_region: eastern-suburbs
 
 street_address: "136 Maroubra Road, Maroubra NSW 2035"
 phone: "02 9349 9299"
+lat: -33.9496
+lng: 151.2400
 
 still_exists: true
 

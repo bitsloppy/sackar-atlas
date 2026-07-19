@@ -13,6 +13,8 @@ location_region: inner-sydney
 
 street_address: "Level 3, Sydney Police Centre, 151-241 Goulburn Street, Surry Hills NSW 2010"
 phone: "02 9265 4144"
+lat: -33.8893
+lng: 151.2097
 
 still_exists: true
 

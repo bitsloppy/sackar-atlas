@@ -2,44 +2,131 @@
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const cases = await getCollection('cases', ({ data }) => data.published === true);
+const cases     = await getCollection('cases', ({ data }) => data.published === true);
+const locations = await getCollection('locations');
+const events    = await getCollection('events');
 
-// Build map points — only cases with lat/lng
-const points = cases
+// ── Cases ─────────────────────────────────────────────────────────────────
+
+const casePoints = cases
   .filter(e => e.data.location_lat != null && e.data.location_lng != null)
   .map(e => {
     const d = e.data;
     const slug = e.id.replace(/\.md$/, '');
-    const status = d.manner_findings?.site_status ?? 'open';
     return {
       slug,
       name: d.name,
       lat: d.location_lat,
       lng: d.location_lng,
-      location: d.location_name,
+      location: d.location_name ?? null,
       date: d.date_of_death_display ?? d.date_of_death ?? null,
-      status,
+      status: d.manner_findings?.site_status ?? 'open',
       scoi: d.scoi_category ?? null,
     };
   });
 
-const pointsJson = JSON.stringify(points);
+// ── Locations ─────────────────────────────────────────────────────────────
+
+type LocCategory = 'beat' | 'venue' | 'police' | 'memorial' | 'neighbourhood' | 'institution' | 'other';
+
+function locCategory(d: any): LocCategory {
+  const roles: string[] = d.location_roles ?? [];
+  const type: string = d.location_type ?? '';
+  if (roles.includes('beat'))              return 'beat';
+  if (roles.includes('memorial'))          return 'memorial';
+  if (type === 'police-jurisdiction')      return 'police';
+  if (roles.includes('nightlife-venue'))   return 'venue';
+  if (roles.includes('community-hub'))     return 'neighbourhood';
+  if (['hospital', 'institution'].includes(type)) return 'institution';
+  return 'other';
+}
+
+const locationPoints = locations
+  .filter(l => l.data.lat != null && l.data.lng != null)
+  .map(l => {
+    const d = l.data;
+    const slug = l.id.replace(/\.md$/, '');
+    return {
+      slug,
+      name: d.name,
+      lat: d.lat,
+      lng: d.lng,
+      category: locCategory(d),
+      location_type: d.location_type ?? null,
+      roles: d.location_roles ?? [],
+      suburb: d.suburb ?? null,
+      stub: d.stub ?? false,
+      still_exists: d.still_exists ?? true,
+      active_from: d.active_from ?? null,
+      active_to: d.active_to ?? null,
+      also_known_as: (d.also_known_as ?? []).slice(0, 2),
+      first_nations_country: d.first_nations_country ?? null,
+    };
+  });
+
+// ── Events ────────────────────────────────────────────────────────────────
+
+const eventPoints = events
+  .filter(e => e.data.location_lat != null && e.data.location_lng != null)
+  .map(e => {
+    const d = e.data;
+    const slug = e.id.replace(/\.md$/, '');
+    return {
+      slug,
+      title: d.title,
+      lat: d.location_lat,
+      lng: d.location_lng,
+      event_type: d.event_type,
+      date_display: d.date_display ?? d.date ?? null,
+      stub: d.stub ?? false,
+    };
+  });
+
+const casePointsJson     = JSON.stringify(casePoints);
+const locationPointsJson = JSON.stringify(locationPoints);
+const eventPointsJson    = JSON.stringify(eventPoints);
+
+// Layer counts for legend
+const beatCount         = locationPoints.filter(l => l.category === 'beat').length;
+const venueCount        = locationPoints.filter(l => l.category === 'venue').length;
+const policeCount       = locationPoints.filter(l => l.category === 'police').length;
+const neighbourhoodCount = locationPoints.filter(l => l.category === 'neighbourhood').length;
+const institutionCount  = locationPoints.filter(l => l.category === 'institution' || l.category === 'other').length;
+const eventCount        = eventPoints.length;
 ---
 
-<Base title="Map" description="Map of significant sites in the Queer Heritage Sydney research project.">
-  <h1>Map</h1>
-  <p class="text-muted text-ui" style="font-size:0.88rem; margin:0.5rem 0 1.25rem">
-    Death sites and significant locations from published case records.
-    Click a pin for case details.
-  </p>
+<Base title="Map" description="Spatial record of the Queer Heritage Sydney project — death sites, beats, venues, police jurisdictions, and significant events.">
 
-  <!-- Legend -->
-  <div class="legend text-ui" style="font-size:0.8rem; display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:1rem">
-    <span><span class="dot dot-homicide"></span> Confirmed homicide</span>
-    <span><span class="dot dot-probable"></span> Probable hate crime</span>
-    <span><span class="dot dot-possible"></span> Possible hate crime</span>
-    <span><span class="dot dot-open"></span> Open / undetermined</span>
-    <span><span class="dot dot-excluded"></span> Excluded</span>
+  <div class="map-header">
+    <h1>Map</h1>
+    <p class="text-muted text-ui" style="font-size:0.88rem; margin:0.25rem 0 0">
+      Death sites, beats, venues, police jurisdictions, and historical events.
+      Toggle layers with the control at top-right. Click any pin for details.
+    </p>
+  </div>
+
+  <!-- Legend bar -->
+  <div class="map-legend text-ui">
+    <div class="legend-group">
+      <strong>Death sites</strong>
+      <span class="leg-item"><span class="dot dot-homicide"></span> Confirmed homicide</span>
+      <span class="leg-item"><span class="dot dot-probable"></span> Probable hate crime</span>
+      <span class="leg-item"><span class="dot dot-possible"></span> Possible hate crime</span>
+      <span class="leg-item"><span class="dot dot-open"></span> Open / undetermined</span>
+      <span class="leg-item"><span class="dot dot-excluded"></span> Excluded</span>
+    </div>
+    <div class="legend-group">
+      <strong>Locations</strong>
+      <span class="leg-item"><span class="dot dot-beat"></span> Beat ({beatCount})</span>
+      <span class="leg-item"><span class="dot dot-venue"></span> Venue ({venueCount})</span>
+      <span class="leg-item"><span class="dot dot-police"></span> Police ({policeCount})</span>
+      <span class="leg-item"><span class="dot dot-neighbourhood"></span> Neighbourhood ({neighbourhoodCount})</span>
+      <span class="leg-item"><span class="dot dot-institution"></span> Institution ({institutionCount})</span>
+    </div>
+    <div class="legend-group">
+      <strong>Events</strong>
+      <span class="leg-item"><span class="dot dot-event"></span> Historical event ({eventCount})</span>
+    </div>
   </div>
 
   <div id="map"></div>
@@ -48,11 +135,15 @@ const pointsJson = JSON.stringify(points);
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" is:inline></script>
 
-  <script define:vars={{ pointsJson }}>
-    const points = JSON.parse(pointsJson);
+  <script define:vars={{ casePointsJson, locationPointsJson, eventPointsJson }}>
 
-    // Status → colour
-    const colours = {
+    const cases     = JSON.parse(casePointsJson);
+    const locations = JSON.parse(locationPointsJson);
+    const events    = JSON.parse(eventPointsJson);
+
+    // ── Colour palette ──────────────────────────────────────────────────────
+
+    const caseColours = {
       'confirmed-homicide': '#c94444',
       'probable':           '#c97444',
       'possible':           '#c49a5a',
@@ -62,101 +153,337 @@ const pointsJson = JSON.stringify(points);
       'missing':            '#7878a0',
     };
 
-    function pinColour(status) {
-      return colours[status] ?? '#7878a0';
-    }
+    const locColours = {
+      beat:         '#2a9d8f',   // teal
+      venue:        '#9d4edd',   // purple
+      police:       '#4a7faa',   // steel blue
+      memorial:     '#c8a84b',   // gold
+      neighbourhood:'#4a7faa',  // muted blue-grey for outline
+      institution:  '#6b7280',   // grey
+      other:        '#5a5a72',   // dim
+    };
 
-    function circleIcon(colour) {
-      const size = 14;
+    const eventColours = {
+      'activism':       '#e07c24',   // amber-orange
+      'police-action':  '#c94444',   // red
+      'legal-milestone':'#4a9d8f',   // teal-green
+      'memorial':       '#c8a84b',   // gold
+      'cultural':       '#9d4edd',   // purple
+      'inquiry':        '#7878a0',   // grey
+      'political':      '#6b8fa0',   // slate
+      'community':      '#4a9d6f',   // green
+      'media':          '#7878a0',
+      'other':          '#7878a0',
+    };
+
+    // ── Icon builders ───────────────────────────────────────────────────────
+
+    /** Solid filled circle */
+    function circleIcon(colour, size = 13) {
       return L.divIcon({
-        html: `<div style="
-          width:${size}px; height:${size}px;
-          border-radius:50%;
-          background:${colour};
-          border:2px solid rgba(255,255,255,0.5);
-          box-shadow:0 1px 4px rgba(0,0,0,0.6);
-        "></div>`,
-        className: '',
-        iconSize: [size, size],
-        iconAnchor: [size / 2, size / 2],
-        popupAnchor: [0, -(size / 2 + 4)],
+        html: `<div style="width:${size}px;height:${size}px;border-radius:50%;background:${colour};border:2px solid rgba(255,255,255,0.45);box-shadow:0 1px 5px rgba(0,0,0,0.6)"></div>`,
+        className: '', iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2], popupAnchor: [0, -(size / 2 + 5)],
       });
     }
 
-    // Dark tile layer (CartoDB Dark Matter)
-    const map = L.map('map', {
-      center: [-33.87, 151.21],
-      zoom: 11,
-    });
+    /** Rotated square — diamond shape */
+    function diamondIcon(colour, size = 13) {
+      const s = size + 2;
+      return L.divIcon({
+        html: `<div style="width:${size}px;height:${size}px;background:${colour};border:2px solid rgba(255,255,255,0.45);box-shadow:0 1px 5px rgba(0,0,0,0.6);transform:rotate(45deg);margin-top:2px"></div>`,
+        className: '', iconSize: [s, s],
+        iconAnchor: [s / 2, s / 2], popupAnchor: [0, -(s / 2 + 5)],
+      });
+    }
+
+    /** Square */
+    function squareIcon(colour, size = 12) {
+      return L.divIcon({
+        html: `<div style="width:${size}px;height:${size}px;background:${colour};border:2px solid rgba(255,255,255,0.4);box-shadow:0 1px 5px rgba(0,0,0,0.6);border-radius:2px"></div>`,
+        className: '', iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2], popupAnchor: [0, -(size / 2 + 5)],
+      });
+    }
+
+    /** Outline-only circle — neighbourhood */
+    function outlineCircleIcon(colour, size = 14) {
+      return L.divIcon({
+        html: `<div style="width:${size}px;height:${size}px;border-radius:50%;background:rgba(0,0,0,0.15);border:2.5px solid ${colour};box-shadow:0 1px 5px rgba(0,0,0,0.5)"></div>`,
+        className: '', iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2], popupAnchor: [0, -(size / 2 + 5)],
+      });
+    }
+
+    /** Star / event marker — 5-point star SVG */
+    function starIcon(colour, size = 16) {
+      const svg = `<svg width="${size}" height="${size}" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="8,1 10.2,6.2 16,6.5 11.8,10.2 13.2,16 8,12.8 2.8,16 4.2,10.2 0,6.5 5.8,6.2"
+          fill="${colour}" stroke="rgba(255,255,255,0.5)" stroke-width="1.2"/>
+      </svg>`;
+      return L.divIcon({
+        html: svg, className: '', iconSize: [size, size],
+        iconAnchor: [size / 2, size / 2], popupAnchor: [0, -(size / 2 + 5)],
+      });
+    }
+
+    function locationIcon(category, colour) {
+      if (category === 'beat')          return diamondIcon(colour);
+      if (category === 'police')        return squareIcon(colour);
+      if (category === 'neighbourhood') return outlineCircleIcon(colour);
+      if (category === 'memorial')      return starIcon(colour);
+      return circleIcon(colour);        // venue, institution, other
+    }
+
+    // ── Popup builders ──────────────────────────────────────────────────────
+
+    function dark(text)  { return `<span style="color:#aaa;font-size:0.82rem">${text}</span>`; }
+    function label(text) { return `<span style="font-size:0.78rem;color:#7eb8f8">${text}</span>`; }
+    function link(href, text) {
+      return `<a href="${href}" style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;color:#7eb8f8">${text} →</a>`;
+    }
+
+    function casePopup(pt) {
+      const scoi = pt.scoi ? label(`SCOI Cat. ${pt.scoi}`) + '<br>' : '';
+      const date = pt.date ? dark(pt.date) + '<br>' : '';
+      return `<div style="font-family:system-ui,sans-serif;min-width:180px">
+        <strong style="font-size:1rem">${pt.name}</strong><br>
+        ${date}${dark(pt.location ?? '')}${pt.location ? '<br>' : ''}
+        ${scoi}
+        ${link('/cases/' + pt.slug + '/', 'View case')}
+      </div>`;
+    }
+
+    function locationPopup(pt) {
+      const roles = pt.roles.join(', ').replace(/-/g, ' ');
+      const aka = pt.also_known_as.length ? '<br>' + dark('Also: ' + pt.also_known_as.join(', ')) : '';
+      const era  = (pt.active_from || pt.active_to)
+        ? '<br>' + dark((pt.active_from ?? '?') + ' – ' + (pt.active_to ?? (pt.still_exists ? 'present' : '?')))
+        : '';
+      const stub = pt.stub ? '<br>' + dark('⚠ Stub — research incomplete') : '';
+      return `<div style="font-family:system-ui,sans-serif;min-width:180px">
+        <strong style="font-size:1rem">${pt.name}</strong>${aka}
+        <br>${dark(pt.suburb ?? '')}${era}
+        <br>${label(roles)}${stub}
+        <br>${link('/locations/' + pt.slug + '/', 'View location')}
+      </div>`;
+    }
+
+    function eventPopup(pt) {
+      const date = pt.date_display ? dark(pt.date_display) + '<br>' : '';
+      const type = label(pt.event_type.replace(/-/g, ' '));
+      const stub = pt.stub ? '<br>' + dark('⚠ Stub') : '';
+      return `<div style="font-family:system-ui,sans-serif;min-width:180px">
+        <strong style="font-size:1rem">${pt.title}</strong><br>
+        ${date}${type}${stub}
+        <br>${link('/events/' + pt.slug + '/', 'View event')}
+      </div>`;
+    }
+
+    // ── Map setup ───────────────────────────────────────────────────────────
+
+    const map = L.map('map', { center: [-33.87, 151.21], zoom: 11 });
 
     L.tileLayer(
       'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
       {
         attribution:
-          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors ' +
+          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> ' +
           '© <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 19,
+        subdomains: 'abcd', maxZoom: 19,
       }
     ).addTo(map);
 
-    // Add pins
-    points.forEach(pt => {
-      const colour = pinColour(pt.status);
-      const marker = L.marker([pt.lat, pt.lng], { icon: circleIcon(colour) }).addTo(map);
+    // ── Layer groups ────────────────────────────────────────────────────────
 
-      const scoi = pt.scoi ? `<span style="font-size:0.78rem;color:#7eb8f8">SCOI Cat. ${pt.scoi}</span><br>` : '';
-      const date = pt.date ? `<span style="color:#7878a0;font-size:0.82rem">${pt.date}</span><br>` : '';
+    const layers = {
+      cases:         L.layerGroup(),
+      beats:         L.layerGroup(),
+      venues:        L.layerGroup(),
+      police:        L.layerGroup(),
+      institutions:  L.layerGroup(),
+      neighbourhoods:L.layerGroup(),
+      events:        L.layerGroup(),
+    };
 
-      marker.bindPopup(`
-        <div style="font-family:system-ui,sans-serif; min-width:180px">
-          <strong style="font-size:1rem">${pt.name}</strong><br>
-          ${date}
-          <span style="font-size:0.82rem;color:#aaa">${pt.location ?? ''}</span><br>
-          ${scoi}
-          <a href="/cases/${pt.slug}/"
-             style="display:inline-block;margin-top:0.4rem;font-size:0.82rem;color:#7eb8f8">
-            View case →
-          </a>
-        </div>
-      `, { maxWidth: 250 });
+    // All on by default except police jurisdictions (noisy)
+    Object.entries(layers).forEach(([key, layer]) => {
+      if (key !== 'police') layer.addTo(map);
     });
 
-    // Fit bounds to markers if any
-    if (points.length > 0) {
-      const latlngs = points.map(pt => [pt.lat, pt.lng]);
-      map.fitBounds(latlngs, { padding: [40, 40] });
+    // ── Populate case layer ──────────────────────────────────────────────────
+
+    cases.forEach(pt => {
+      const colour = caseColours[pt.status] ?? '#7878a0';
+      L.marker([pt.lat, pt.lng], { icon: circleIcon(colour, 15) })
+        .bindPopup(casePopup(pt), { maxWidth: 260 })
+        .addTo(layers.cases);
+    });
+
+    // ── Populate location layers ─────────────────────────────────────────────
+
+    locations.forEach(pt => {
+      const colour = locColours[pt.category] ?? '#5a5a72';
+      const icon   = locationIcon(pt.category, colour);
+      const marker = L.marker([pt.lat, pt.lng], { icon })
+        .bindPopup(locationPopup(pt), { maxWidth: 260 });
+
+      const layerMap = {
+        beat:         layers.beats,
+        venue:        layers.venues,
+        police:       layers.police,
+        memorial:     layers.beats,      // memorials near beat/crime-scene layer
+        neighbourhood:layers.neighbourhoods,
+        institution:  layers.institutions,
+        other:        layers.institutions,
+      };
+      const target = layerMap[pt.category] ?? layers.institutions;
+      marker.addTo(target);
+    });
+
+    // ── Populate event layer ─────────────────────────────────────────────────
+
+    events.forEach(pt => {
+      const colour = eventColours[pt.event_type] ?? '#7878a0';
+      L.marker([pt.lat, pt.lng], { icon: starIcon(colour, 16) })
+        .bindPopup(eventPopup(pt), { maxWidth: 260 })
+        .addTo(layers.events);
+    });
+
+    // ── Layer control ────────────────────────────────────────────────────────
+
+    L.control.layers(null, {
+      '● Death sites':          layers.cases,
+      '◆ Beats':                layers.beats,
+      '● Nightlife venues':     layers.venues,
+      '★ Historical events':    layers.events,
+      '◎ Neighbourhoods':       layers.neighbourhoods,
+      '■ Police jurisdictions': layers.police,
+      '● Institutions':         layers.institutions,
+    }, { collapsed: false, position: 'topright' }).addTo(map);
+
+    // ── Fit bounds to all visible points ─────────────────────────────────────
+
+    const allPoints = [
+      ...cases.map(p => [p.lat, p.lng]),
+      ...locations.map(p => [p.lat, p.lng]),
+      ...events.map(p => [p.lat, p.lng]),
+    ];
+    if (allPoints.length > 0) {
+      map.fitBounds(allPoints, { padding: [30, 30] });
     }
+
   </script>
+
 </Base>
 
 <style>
+  .map-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .map-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+  }
+
+  .legend-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .legend-group strong {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.1rem;
+  }
+
+  .leg-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+  }
+
+  /* Legend dots */
   .dot {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    flex-shrink: 0;
     border-radius: 50%;
-    margin-right: 4px;
-    vertical-align: middle;
+    border: 1.5px solid rgba(255,255,255,0.2);
   }
-  .dot-homicide { background: #c94444; }
-  .dot-probable { background: #c97444; }
-  .dot-possible { background: #c49a5a; }
-  .dot-open     { background: #7878a0; }
-  .dot-excluded { background: #4a4a60; }
 
-  /* Override Leaflet popup for dark theme */
+  /* Case status */
+  .dot-homicide    { width: 10px; height: 10px; background: #c94444; }
+  .dot-probable    { width: 10px; height: 10px; background: #c97444; }
+  .dot-possible    { width: 10px; height: 10px; background: #c49a5a; }
+  .dot-open        { width: 10px; height: 10px; background: #7878a0; }
+  .dot-excluded    { width: 10px; height: 10px; background: #4a4a60; }
+
+  /* Location types */
+  .dot-beat         { width: 10px; height: 10px; background: #2a9d8f; border-radius: 2px; transform: rotate(45deg); }
+  .dot-venue        { width: 10px; height: 10px; background: #9d4edd; }
+  .dot-police       { width: 10px; height: 10px; background: #4a7faa; border-radius: 1px; }
+  .dot-neighbourhood{ width: 10px; height: 10px; background: transparent; border: 2px solid #4a7faa; }
+  .dot-institution  { width: 10px; height: 10px; background: #6b7280; }
+
+  /* Events */
+  .dot-event        { width: 10px; height: 10px; background: #e07c24; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); border-radius: 0; border: none; }
+
+  /* ── Leaflet overrides for dark theme ─────────────────────────── */
   :global(.leaflet-popup-content-wrapper) {
     background: #1c1c2a;
     color: #dcdcf0;
     border: 1px solid #2a2a40;
     border-radius: 5px;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.6);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.65);
   }
-  :global(.leaflet-popup-tip) {
-    background: #1c1c2a;
+  :global(.leaflet-popup-tip) { background: #1c1c2a; }
+  :global(.leaflet-popup-close-button) { color: #7878a0 !important; }
+
+  :global(.leaflet-control-layers) {
+    background: #1c1c2a !important;
+    border: 1px solid #2a2a40 !important;
+    border-radius: 5px !important;
+    color: #dcdcf0 !important;
+    font-family: var(--font-ui) !important;
+    font-size: 0.8rem !important;
+    min-width: 185px;
   }
-  :global(.leaflet-popup-close-button) {
-    color: #7878a0 !important;
+  :global(.leaflet-control-layers-list) {
+    padding: 0.4rem 0.25rem;
+  }
+  :global(.leaflet-control-layers label) {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.2rem 0.5rem;
+    color: #dcdcf0;
+    cursor: pointer;
+  }
+  :global(.leaflet-control-layers label:hover) {
+    background: rgba(255,255,255,0.04);
+    border-radius: 3px;
+  }
+  :global(.leaflet-control-layers-separator) {
+    border-color: #2a2a40 !important;
+  }
+  :global(.leaflet-control-layers-toggle) {
+    background-color: #1c1c2a !important;
+  }
+
+  @media (max-width: 600px) {
+    .map-legend { flex-direction: column; gap: 0.75rem; }
   }
 </style>

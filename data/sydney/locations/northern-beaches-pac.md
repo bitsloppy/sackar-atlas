@@ -16,6 +16,8 @@ location_region: northern-beaches
 # unlike the other PACs in this project (all Central Metro Region).
 street_address: "1 Saint David Avenue, Dee Why NSW 2099"
 phone: "02 9971 3399"
+lat: -33.7527
+lng: 151.2893
 
 still_exists: true
 
