@@ -8,6 +8,10 @@ death_year: null
 
 stub: true
 
+related_cases:
+  - david-lloyd-williams
+related_events: []
+
 tags:
   - stub
   - coroner

@@ -56,7 +56,8 @@ related_cases:
   - john-russell
   - kritchikorn-rattanjurathaporn
   - gilles-mattaini
-related_events: []
+related_events:
+  - rise-memorial-marks-park
 related_media: []
 
 sources:

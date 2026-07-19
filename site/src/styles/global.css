@@ -314,6 +314,82 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
   border: 1px solid var(--border);
 }
 
+/* ── Additional badges ─────────────────────────────────────────────── */
+
+/* Beat locations — teal/green for outdoor spaces */
+.badge-beat   { background: #0a1e1a; color: #5ec4a0; border: 1px solid #2a6050; }
+
+/* Nightlife venues — purple for nightlife */
+.badge-venue  { background: #1a0e28; color: #c090f0; border: 1px solid #604080; }
+
+/* Stub records — amber warning */
+.badge-stub   { background: #1e1608; color: #c0901a; border: 1px solid #6a4a08; }
+
+/* ── Related content ────────────────────────────────────────────────── */
+
+.related-content {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.related-content p.section-heading {
+  margin-bottom: 1rem;
+}
+
+.related-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.related-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--link);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.related-chip:visited { color: var(--link-visited); }
+.related-chip:hover   { border-color: var(--accent); color: var(--accent); }
+
+.chip-meta {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+/* ── Location, event, and person card variants ────────────────────── */
+/* These extend .card — same visual style, class names for semantic clarity */
+
+.location-card,
+.event-card,
+.person-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.15s;
+}
+
+.location-card:hover,
+.event-card:hover,
+.person-card:hover {
+  border-color: var(--accent);
+}
+
 /* ── Utilities ─────────────────────────────────────────────────────── */
 
 .text-muted { color: var(--muted); }

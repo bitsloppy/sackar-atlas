@@ -8,6 +8,12 @@ death_year: null
 
 stub: true
 
+related_cases:
+  - mark-stewart
+  - paul-rath
+  - david-lloyd-williams
+related_events: []
+
 tags:
   - stub
   - pathologist

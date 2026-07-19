@@ -89,6 +89,7 @@ police_investigations:
     notes: "OIC acknowledged the location was 'frequented by homosexuals' and arranged penile and anal swabs. Despite this, he marked 'NO SUSPICIOUS CIRCUMSTANCES' in capitals in the Report of Death to Coroner on 17 June 1977 — before swab results had been returned and before the post-mortem had been conducted. Paul's clothing was returned to his family or destroyed within 1-2 days, before forensic testing was complete. Sister Helen Colman — who had last seen Paul the evening before his death and knew he had arranged to meet someone — was never interviewed. Enquiries at Paul's church (where he was expected at 7:30pm) were not made. Local residents near Bower Street were not canvassed."
   - name: "Strike Force Parrabell (review)"
     command_id: null
+    event_id: strike-force-parrabell
     type: "paper-review"
     years: null
     lead_officer: null
@@ -114,6 +115,9 @@ family_engaged_with_inquiry: true
 community_verification_status: "not-assessed"
 community_verification_notes: "The Inquiry held conferences with five of Paul's seven siblings (Chris, Liz, Helen, Gregory, Rosemary). Helen Colman and Gregory Rath gave formal statements. The family is known to have been engaged; community verification should be sought before publication."
 
+related_cases:
+  - "mark-stewart"
+  - "david-lloyd-williams"
 related_locations:
   - "shelley-headland"
   - "northern-beaches-pac"
@@ -124,6 +128,7 @@ related_people:
   - "ross-parry"
   - "ray-henry"
   - "helen-colman"
+  - "linda-iles"
 related_events: []
 related_media: []
 related_recommendations:

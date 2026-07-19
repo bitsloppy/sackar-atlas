@@ -5,8 +5,14 @@ birth_year: null
 death_year: null
 living: true
 wikipedia_url: null
-related_cases: []
-related_events: []
+related_cases:
+  - mark-stewart
+related_locations:
+  - oxford-street
+related_events:
+  - mardi-gras-1978
+  - oxford-street-pride-raids-2026
+  - oxford-street-heritage-listing-2025
 content_warnings: []
 tags:
   - historian

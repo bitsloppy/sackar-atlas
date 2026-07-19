@@ -12,7 +12,10 @@ death_year: null
 living: true
 wikipedia_url: "https://en.wikipedia.org/wiki/Clover_Moore"
 related_cases: []
-related_events: []
+related_locations:
+  - oxford-street
+related_events:
+  - oxford-street-pride-raids-2026
 content_warnings: []
 tags:
   - political

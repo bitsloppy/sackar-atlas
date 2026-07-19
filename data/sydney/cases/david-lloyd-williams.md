@@ -95,6 +95,7 @@ police_investigations:
     notes: "Constable Mortimer arrived at the scene at 3:30pm; other police and the Police Rescue Squad were already present and had recovered the body. Statements were obtained from family members, colleagues, and the treating psychiatrist. No police investigation file has since been located — the NSWPF acknowledged this and expressed regret."
 
   - name: "Strike Force Parrabell"
+    event_id: strike-force-parrabell
     type: "paper-review"
     years: "2017"
     outcome: "insufficient-information"
@@ -122,8 +123,18 @@ related_cases:
   - paul-rath       # same North Head general area; same year group
   - scott-johnson   # North Head; BCIF confusion — Parrabell's naked/folded-clothes claim appears to have originated with the Johnson case
 
+related_locations:
+  - north-head
+  - northern-beaches-pac
+  - manly-district-hospital
+  - north-ryde-psychiatric-centre
+
 related_people:
   - david-lloyd-williams
+  - john-mortimer
+  - leonard-nash
+  - grace-higgins
+  - linda-iles
 
 # --- Content warnings -------------------------------------------------------
 

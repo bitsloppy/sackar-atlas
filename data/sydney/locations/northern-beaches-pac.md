@@ -38,7 +38,10 @@ first_nations_country: "Gayamaygal"
 country_determination: aiatsis-map
 consultation_status: not-assessed
 
-related_cases: []
+related_cases:
+  - mark-stewart
+  - paul-rath
+  - david-lloyd-williams
 related_events: []
 related_media: []
 

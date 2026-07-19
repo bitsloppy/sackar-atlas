@@ -1,0 +1,366 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const people = await getCollection('people');
+  return people.map(entry => ({
+    params: { slug: entry.id.replace(/\.md$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+// Cross-reference related content
+const allCases = await getCollection('cases', ({ data }) => data.published === true);
+const allEvents = await getCollection('events');
+const allLocations = await getCollection('locations');
+const allPeople = await getCollection('people');
+
+const relatedCases = (d.related_cases ?? [])
+  .map(id => allCases.find(c => c.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedEvents = (d.related_events ?? [])
+  .map(id => allEvents.find(e => e.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedLocations = (d.related_locations ?? [])
+  .map(id => allLocations.find(l => l.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedPeople = (d.related_people ?? [])
+  .map(id => allPeople.find(p => p.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+function roleLabel(role: string): string {
+  const labels: Record<string, string> = {
+    victim: 'Victim',
+    activist: 'Activist',
+    witness: 'Witness',
+    'expert-witness': 'Expert witness',
+    pathologist: 'Pathologist',
+    coroner: 'Coroner',
+    perpetrator: 'Perpetrator',
+    police: 'Police',
+    'police-officer': 'Police officer',
+    legal: 'Legal',
+    political: 'Political',
+    community: 'Community',
+    journalist: 'Journalist',
+    other: 'Other',
+  };
+  return labels[role] ?? role;
+}
+
+function roleBadgeClass(role: string): string {
+  const classes: Record<string, string> = {
+    victim: 'badge badge-homicide',
+    activist: 'badge badge-beat',
+    witness: 'badge badge-open',
+    'expert-witness': 'badge badge-open',
+    pathologist: 'badge badge-open',
+    coroner: 'badge badge-scoi-b',
+    perpetrator: 'badge badge-probable',
+    police: 'badge badge-scoi-a',
+    'police-officer': 'badge badge-scoi-a',
+    legal: 'badge badge-scoi-b',
+    political: 'badge badge-possible',
+    community: 'badge badge-beat',
+    journalist: 'badge badge-venue',
+    other: 'badge badge-excluded',
+  };
+  return classes[role] ?? 'badge badge-excluded';
+}
+
+function statusLabel(status: string | undefined): string {
+  const labels: Record<string, string> = {
+    'confirmed-homicide': 'Confirmed homicide',
+    probable: 'Probable hate crime',
+    possible: 'Possible hate crime',
+    open: 'Open finding',
+    undetermined: 'Undetermined',
+    excluded: 'Excluded',
+    missing: 'Missing person',
+  };
+  return labels[status ?? ''] ?? status ?? '—';
+}
+
+function statusBadgeClass(status: string | undefined): string {
+  const classes: Record<string, string> = {
+    'confirmed-homicide': 'badge badge-homicide',
+    probable: 'badge badge-probable',
+    possible: 'badge badge-possible',
+    open: 'badge badge-open',
+    undetermined: 'badge badge-open',
+    excluded: 'badge badge-excluded',
+    missing: 'badge badge-open',
+  };
+  return classes[status ?? ''] ?? 'badge badge-open';
+}
+
+// Display also_known_as — only show names with display: true (skip dead names etc.)
+const displayedNames = d.also_known_as.filter(n => n.display !== false);
+---
+
+<Base
+  title={d.name}
+  description={`${roleLabel(d.role)}: ${d.name}. ${d.institutional_role ?? ''} — Queer Heritage Sydney.`}
+>
+  <!-- Stub notice -->
+  {
+    d.stub && (
+      <div class="content-warning" style="background:#1a1610; border-color:#5a4510; color:#c0a060;">
+        <strong>Research stub:</strong> This person record is a placeholder. Key details may be
+        incomplete or unverified.
+      </div>
+    )
+  }
+
+  <!-- Content warnings for victims -->
+  {
+    d.content_warnings.includes('deceased-person') && (
+      <div class="content-warning">
+        <strong>Content warning:</strong> This record documents a deceased person and may contain
+        details of violence.
+      </div>
+    )
+  }
+
+  <!-- Header -->
+  <div class="detail-header">
+    <h1>{d.name}</h1>
+
+    {d.pronouns && (
+      <p class="text-muted text-ui" style="font-size:0.85rem; margin-bottom:0.5rem">
+        {d.pronouns}
+      </p>
+    )}
+
+    {
+      displayedNames.length > 0 && (
+        <p class="text-muted text-ui" style="font-size:0.85rem; margin-bottom:0.5rem">
+          Also known as:{' '}
+          {displayedNames
+            .map(n => n.name + (n.kind && n.kind !== 'alias' ? ` (${n.kind.replace(/-/g, ' ')})` : ''))
+            .join(', ')}
+        </p>
+      )
+    }
+
+    <div class="detail-meta">
+      {d.institutional_role && (
+        <span>
+          {d.institutional_role}
+          {d.institution && `, ${d.institution}`}
+        </span>
+      )}
+      {d.tenure_start && (
+        <span>
+          {d.tenure_start}
+          {d.tenure_end ? `–${d.tenure_end}` : '–present'}
+        </span>
+      )}
+      {d.living === false && !d.died_date && !d.death_year && <span>Deceased</span>}
+    </div>
+
+    <div class="detail-badges">
+      <span class={roleBadgeClass(d.role)}>{roleLabel(d.role)}</span>
+      {d.stub && <span class="badge badge-stub">Research needed</span>}
+    </div>
+  </div>
+
+  <!-- Key facts -->
+  <div class="fact-grid">
+    {
+      (d.born_date ?? d.birth_year) && (
+        <div class="fact">
+          <span class="fact-label">Born</span>
+          <span class="fact-value">{d.born_date ?? d.birth_year}</span>
+        </div>
+      )
+    }
+
+    {
+      (d.died_date ?? d.death_year) && (
+        <div class="fact">
+          <span class="fact-label">Died</span>
+          <span class="fact-value">
+            {d.died_date ?? d.death_year}
+            {d.died_date_uncertain && ' (approx)'}
+          </span>
+        </div>
+      )
+    }
+
+    {
+      d.living === false && !d.died_date && !d.death_year && (
+        <div class="fact">
+          <span class="fact-label">Status</span>
+          <span class="fact-value">Deceased</span>
+        </div>
+      )
+    }
+
+    {
+      d.role === 'victim' && d.sexuality?.identity && d.sexuality.identity !== 'unknown' && (
+        <div class="fact">
+          <span class="fact-label">Sexuality</span>
+          <span class="fact-value">
+            {d.sexuality.identity}
+            {d.sexuality.confidence && d.sexuality.confidence !== 'unknown' && (
+              <span class="text-muted" style="font-size:0.85rem">
+                {' '}
+                ({d.sexuality.confidence})
+              </span>
+            )}
+          </span>
+        </div>
+      )
+    }
+
+    {
+      d.political_party && (
+        <div class="fact">
+          <span class="fact-label">Party</span>
+          <span class="fact-value">{d.political_party}</span>
+        </div>
+      )
+    }
+
+    {
+      d.government_level && (
+        <div class="fact">
+          <span class="fact-label">Level</span>
+          <span class="fact-value">{d.government_level.replace(/-/g, ' ')}</span>
+        </div>
+      )
+    }
+
+    {
+      d.wikipedia_url && (
+        <div class="fact">
+          <span class="fact-label">Wikipedia</span>
+          <span class="fact-value">
+            <a href={d.wikipedia_url}>Wikipedia</a>
+          </span>
+        </div>
+      )
+    }
+  </div>
+
+  <!-- Narrative body -->
+  <div class="narrative">
+    <Content />
+  </div>
+
+  <hr />
+
+  <!-- Related cases -->
+  {
+    relatedCases.length > 0 && (
+      <section style="margin:2rem 0">
+        <p class="section-heading">Related cases ({relatedCases.length})</p>
+        <div class="card-grid">
+          {relatedCases.map(c => {
+            const slug = c.id.replace(/\.md$/, '');
+            const siteStatus = c.data.manner_findings?.site_status;
+            return (
+              <article class="card">
+                <div class="card-badges">
+                  {c.data.scoi_category && (
+                    <span class={`badge badge-scoi-${c.data.scoi_category.toLowerCase()}`}>
+                      SCOI Cat. {c.data.scoi_category}
+                    </span>
+                  )}
+                  {siteStatus && (
+                    <span class={statusBadgeClass(siteStatus)}>{statusLabel(siteStatus)}</span>
+                  )}
+                </div>
+                <a href={`/cases/${slug}/`} class="card-name">
+                  {c.data.name}
+                </a>
+                <div class="card-meta">
+                  {c.data.date_of_death_display ?? c.data.date_of_death ?? 'Date unknown'}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Related events -->
+  {
+    relatedEvents.length > 0 && (
+      <section style="margin:2rem 0">
+        <p class="section-heading">Related events</p>
+        <div class="related-chips">
+          {relatedEvents.map(e => {
+            const slug = e.id.replace(/\.md$/, '');
+            return (
+              <a href={`/events/${slug}/`} class="related-chip">
+                {e.data.title}
+                {(e.data.date_display ?? e.data.date) && (
+                  <span class="chip-meta">
+                    {' '}
+                    · {e.data.date_display ?? e.data.date}
+                  </span>
+                )}
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Related locations -->
+  {
+    relatedLocations.length > 0 && (
+      <section style="margin:2rem 0">
+        <p class="section-heading">Related locations</p>
+        <div class="related-chips">
+          {relatedLocations.map(l => {
+            const slug = l.id.replace(/\.md$/, '');
+            return (
+              <a href={`/locations/${slug}/`} class="related-chip">
+                {l.data.name}
+                {l.data.suburb && <span class="chip-meta"> · {l.data.suburb}</span>}
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Related people -->
+  {
+    relatedPeople.length > 0 && (
+      <section style="margin:2rem 0">
+        <p class="section-heading">Related people</p>
+        <div class="related-chips">
+          {relatedPeople.map(p => {
+            const slug = p.id.replace(/\.md$/, '');
+            return (
+              <a href={`/people/${slug}/`} class="related-chip">
+                {p.data.name}
+                <span class="chip-meta"> · {roleLabel(p.data.role)}</span>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Back link -->
+  <div style="margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border)">
+    <a href="/people/" class="text-ui" style="font-size:0.88rem">← All people</a>
+  </div>
+</Base>

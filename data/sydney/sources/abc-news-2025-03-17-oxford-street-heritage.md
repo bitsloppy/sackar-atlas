@@ -14,7 +14,8 @@ related_locations:
 related_people:
   - garry-wotherspoon
   - clover-moore
-related_events: []
+related_events:
+  - oxford-street-heritage-listing-2025
 
 tags:
   - oxford-street

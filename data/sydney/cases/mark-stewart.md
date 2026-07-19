@@ -91,6 +91,7 @@ police_investigations:
     notes: "Investigation centred on identifying the body rather than investigating the circumstances of death. Possibility of homicide was not seriously countenanced. No photographs were taken of the body's location, position, or personal effects — later acknowledged by the NSWPF to fall short of 1970s investigative standards. Key exhibits (Seiko wristwatch, handwritten notepaper, clothing) subsequently lost, with no record of disposal or destruction. Police recorded 'no suspicious circumstances' within five hours of discovering the body. The proximity of the death site to a known beat was not considered in the investigation; the OIC stated he was unaware of the beat's existence at the time."
   - name: "Strike Force Parrabell (review)"
     command_id: null
+    event_id: strike-force-parrabell
     type: "paper-review"
     years: null
     lead_officer: null
@@ -116,6 +117,9 @@ family_engaged_with_inquiry: true
 
 community_verification_status: "not-assessed"
 
+related_cases:
+  - "paul-rath"
+  - "david-lloyd-williams"
 related_locations:
   - "shelley-headland"
   - "northern-beaches-pac"
@@ -126,6 +130,8 @@ related_people:
   - "mark-stewart"
   - "keith-thoms"            # OIC original investigation
   - "john-goldrick"          # City Coroner, inquest 16 July 1976
+  - "garry-wotherspoon"
+  - "linda-iles"
 related_events: []
 related_media: []
 related_recommendations: []

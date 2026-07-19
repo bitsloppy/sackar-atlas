@@ -14,7 +14,8 @@ related_cases:
   - gilles-mattaini
 related_locations: []
 related_people: []
-related_events: []
+related_events:
+  - strike-force-neiwand
 related_sources:
   - the-conversation-2023-shining-light-injustice
 

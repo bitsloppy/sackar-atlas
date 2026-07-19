@@ -10,12 +10,16 @@ significance: secondary
 
 related_cases:
   - ross-warren
+  - mark-stewart
+  - paul-rath
+  - david-lloyd-williams
 related_locations:
   - marks-park
   - eastern-suburbs-pac
 related_people:
   - garry-wotherspoon
-related_events: []
+related_events:
+  - rise-memorial-marks-park
 
 tags:
   - rise-memorial

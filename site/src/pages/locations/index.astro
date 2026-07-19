@@ -1,0 +1,168 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const locations = await getCollection('locations');
+
+// Sort by name
+const sorted = [...locations].sort((a, b) => a.data.name.localeCompare(b.data.name));
+
+// Group by category for display
+const beats = sorted.filter(l => l.data.location_roles?.includes('beat'));
+const venues = sorted.filter(
+  l =>
+    l.data.location_roles?.includes('nightlife-venue') &&
+    !l.data.location_roles?.includes('beat'),
+);
+const police = sorted.filter(l => l.data.location_type === 'police-jurisdiction');
+const other = sorted.filter(
+  l =>
+    !l.data.location_roles?.includes('beat') &&
+    !l.data.location_roles?.includes('nightlife-venue') &&
+    l.data.location_type !== 'police-jurisdiction',
+);
+---
+
+<Base
+  title="Locations"
+  description="Significant places in the Queer Heritage Sydney research project — beats, nightlife venues, crime scenes, memorials, and police jurisdictions."
+>
+  <h1>Locations</h1>
+  <p class="text-muted text-ui" style="font-size:0.9rem; margin: 0.5rem 0 2rem;">
+    {sorted.length} {sorted.length === 1 ? 'location' : 'locations'} — beats, nightlife venues,
+    police jurisdictions, and other significant places.
+  </p>
+
+  {
+    beats.length > 0 && (
+      <section style="margin-bottom: 2.5rem">
+        <h2>Beats ({beats.length})</h2>
+        <p class="text-muted text-ui" style="font-size:0.85rem; margin-bottom:1rem">
+          Known gay beats — meeting places that were also sites of violence and police
+          surveillance.
+        </p>
+        <div class="card-grid">
+          {beats.map(entry => {
+            const d = entry.data;
+            const slug = entry.id.replace(/\.md$/, '');
+            return (
+              <article class="card location-card">
+                <div class="card-badges">
+                  <span class="badge badge-beat">Beat</span>
+                  {d.stub && <span class="badge badge-stub">Research needed</span>}
+                </div>
+                <a href={`/locations/${slug}/`} class="card-name">
+                  {d.name}
+                </a>
+                <div class="card-meta">
+                  {[d.suburb, d.location_region?.replace(/-/g, ' ')].filter(Boolean).join(' · ')}
+                </div>
+                {d.still_exists === false && (
+                  <div class="card-meta">No longer exists</div>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    venues.length > 0 && (
+      <section style="margin-bottom: 2.5rem">
+        <h2>Nightlife venues ({venues.length})</h2>
+        <p class="text-muted text-ui" style="font-size:0.85rem; margin-bottom:1rem">
+          Pubs, clubs, saunas, and other LGBTIQ nightlife spaces.
+        </p>
+        <div class="card-grid">
+          {venues.map(entry => {
+            const d = entry.data;
+            const slug = entry.id.replace(/\.md$/, '');
+            return (
+              <article class="card location-card">
+                <div class="card-badges">
+                  <span class="badge badge-venue">Nightlife venue</span>
+                  {d.stub && <span class="badge badge-stub">Research needed</span>}
+                </div>
+                <a href={`/locations/${slug}/`} class="card-name">
+                  {d.name}
+                </a>
+                <div class="card-meta">
+                  {[d.suburb, d.location_region?.replace(/-/g, ' ')].filter(Boolean).join(' · ')}
+                </div>
+                {d.still_exists === false && (
+                  <div class="card-meta">No longer exists</div>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    police.length > 0 && (
+      <section style="margin-bottom: 2.5rem">
+        <h2>Police jurisdictions ({police.length})</h2>
+        <p class="text-muted text-ui" style="font-size:0.85rem; margin-bottom:1rem">
+          Police Area Commands and Districts that investigated these cases.
+        </p>
+        <div class="card-grid">
+          {police.map(entry => {
+            const d = entry.data;
+            const slug = entry.id.replace(/\.md$/, '');
+            return (
+              <article class="card location-card">
+                <div class="card-badges">
+                  <span class="badge badge-open">Police jurisdiction</span>
+                  {d.stub && <span class="badge badge-stub">Research needed</span>}
+                </div>
+                <a href={`/locations/${slug}/`} class="card-name">
+                  {d.name}
+                </a>
+                <div class="card-meta">
+                  {[d.suburb, d.location_region?.replace(/-/g, ' ')].filter(Boolean).join(' · ')}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    other.length > 0 && (
+      <section style="margin-bottom: 2.5rem">
+        <h2>Other significant places ({other.length})</h2>
+        <div class="card-grid">
+          {other.map(entry => {
+            const d = entry.data;
+            const slug = entry.id.replace(/\.md$/, '');
+            return (
+              <article class="card location-card">
+                <div class="card-badges">
+                  <span class="badge badge-excluded">
+                    {d.location_type.replace(/-/g, ' ')}
+                  </span>
+                  {d.stub && <span class="badge badge-stub">Research needed</span>}
+                </div>
+                <a href={`/locations/${slug}/`} class="card-name">
+                  {d.name}
+                </a>
+                <div class="card-meta">
+                  {[d.suburb, d.location_region?.replace(/-/g, ' ')].filter(Boolean).join(' · ')}
+                </div>
+                {d.still_exists === false && (
+                  <div class="card-meta">No longer exists</div>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+</Base>

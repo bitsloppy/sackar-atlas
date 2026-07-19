@@ -3,6 +3,9 @@ import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
 const allCases = await getCollection('cases', ({ data }) => data.published === true);
+const allLocations = await getCollection('locations');
+const allEvents = await getCollection('events');
+const allPeople = await getCollection('people');
 const publishedCount = allCases.length;
 ---
 
@@ -45,6 +48,21 @@ const publishedCount = allCases.length;
       <span class="nav-card-label">Cases</span>
       <span class="nav-card-count">{publishedCount} published</span>
       <span class="nav-card-desc">Individual records for each person examined by the Inquiry</span>
+    </a>
+    <a href="/locations/" class="nav-card">
+      <span class="nav-card-label">Locations</span>
+      <span class="nav-card-count">{allLocations.length} places</span>
+      <span class="nav-card-desc">Beats, nightlife venues, crime scenes, and police jurisdictions</span>
+    </a>
+    <a href="/events/" class="nav-card">
+      <span class="nav-card-label">Events</span>
+      <span class="nav-card-count">{allEvents.length} events</span>
+      <span class="nav-card-desc">Activism, law reform, cultural moments, and police actions</span>
+    </a>
+    <a href="/people/" class="nav-card">
+      <span class="nav-card-label">People</span>
+      <span class="nav-card-count">{allPeople.length} people</span>
+      <span class="nav-card-desc">Victims, activists, police, legal figures, and political actors</span>
     </a>
     <a href="/map/" class="nav-card">
       <span class="nav-card-label">Map</span>
@@ -106,7 +124,7 @@ const publishedCount = allCases.length;
 
   .home-nav {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1rem;
     margin: 2rem 0;
   }
@@ -150,6 +168,6 @@ const publishedCount = allCases.length;
 
   @media (max-width: 600px) {
     .hero h1 { font-size: 2rem; }
-    .home-nav { grid-template-columns: 1fr; }
+    .home-nav { grid-template-columns: 1fr 1fr; }
   }
 </style>

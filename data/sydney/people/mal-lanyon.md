@@ -10,7 +10,8 @@ death_year: null
 living: true
 wikipedia_url: "https://en.wikipedia.org/wiki/Mal_Lanyon"
 related_cases: []
-related_events: []
+related_events:
+  - oxford-street-pride-raids-2026
 content_warnings: []
 tags:
   - commissioner

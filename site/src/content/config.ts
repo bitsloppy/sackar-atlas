@@ -953,6 +953,12 @@ const cases = defineCollection({
     police_investigations: z.array(z.object({
       name: z.string(),                       // e.g. "Manly Police (original)", "Strike Force Parrabell"
       /**
+       * Optional slug reference to an events/ record for this investigation.
+       * When set, the investigation name renders as a link to that event page.
+       * e.g. 'strike-force-parrabell' links to data/sydney/events/strike-force-parrabell.md
+       */
+      event_id: z.string().nullable().optional(),
+      /**
        * Reference to the Police Area Command or Police District responsible.
        * Links to a record in data/sydney/locations/ with location_type='police-jurisdiction'.
        * Enables: filter all cases investigated by Surry Hills PAC; map jurisdiction
@@ -1072,6 +1078,7 @@ const cases = defineCollection({
 
     // --- Relationships ------------------------------------------------------
 
+    related_cases: z.array(z.string()).default([]),
     related_locations: z.array(z.string()).default([]),
     related_people: z.array(z.string()).default([]),
     related_events: z.array(z.string()).default([]),
@@ -1485,6 +1492,8 @@ const locations = defineCollection({
     // --- Relationships ------------------------------------------------------
 
     related_cases: z.array(z.string()).default([]),
+    related_locations: z.array(z.string()).default([]),
+    related_people: z.array(z.string()).default([]),
     related_events: z.array(z.string()).default([]),
     related_media: z.array(z.string()).default([]),
 
@@ -1586,6 +1595,7 @@ const events = defineCollection({
     // --- Relationships ------------------------------------------------------
 
     related_cases: z.array(z.string()).default([]),
+    related_locations: z.array(z.string()).default([]),
     related_people: z.array(z.string()).default([]),
     related_media: z.array(z.string()).default([]),
     /** Sackar Inquiry recommendation slugs relevant to this event. */
@@ -1800,6 +1810,8 @@ const people = defineCollection({
     // --- Relationships ------------------------------------------------------
 
     related_cases: z.array(z.string()).default([]),
+    related_locations: z.array(z.string()).default([]),
+    related_people: z.array(z.string()).default([]),
     related_events: z.array(z.string()).default([]),
 
     content_warnings: z.array(ContentWarning).default([]),

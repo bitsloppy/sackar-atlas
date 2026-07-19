@@ -42,6 +42,8 @@ physical_markers: []
 related_cases:
   - scott-johnson
   - david-lloyd-williams
+related_locations:
+  - shelley-headland
 related_events: []
 related_media: []
 

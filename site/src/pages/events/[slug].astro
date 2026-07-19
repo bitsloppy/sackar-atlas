@@ -1,0 +1,344 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const events = await getCollection('events');
+  return events.map(entry => ({
+    params: { slug: entry.id.replace(/\.md$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+// Cross-reference related content
+const allCases = await getCollection('cases', ({ data }) => data.published === true);
+const allPeople = await getCollection('people');
+const allLocations = await getCollection('locations');
+
+const relatedCases = (d.related_cases ?? [])
+  .map(id => allCases.find(c => c.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedPeople = (d.related_people ?? [])
+  .map(id => allPeople.find(p => p.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedLocations = (d.related_locations ?? [])
+  .map(id => allLocations.find(l => l.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+// Resolve primary location
+const primaryLocation = d.location_id
+  ? allLocations.find(l => l.id.replace(/\.md$/, '') === d.location_id)
+  : null;
+
+function eventTypeLabel(type: string): string {
+  const labels: Record<string, string> = {
+    activism: 'Activism',
+    'legal-milestone': 'Legal milestone',
+    cultural: 'Cultural',
+    political: 'Political',
+    community: 'Community',
+    'police-action': 'Police action',
+    memorial: 'Memorial',
+    media: 'Media',
+    inquiry: 'Inquiry',
+    other: 'Other',
+  };
+  return labels[type] ?? type;
+}
+
+function eventTypeBadgeClass(type: string): string {
+  const classes: Record<string, string> = {
+    activism: 'badge badge-probable',
+    'legal-milestone': 'badge badge-scoi-a',
+    cultural: 'badge badge-venue',
+    political: 'badge badge-open',
+    community: 'badge badge-beat',
+    'police-action': 'badge badge-homicide',
+    memorial: 'badge badge-possible',
+    media: 'badge badge-excluded',
+    inquiry: 'badge badge-scoi-b',
+    other: 'badge badge-excluded',
+  };
+  return classes[type] ?? 'badge badge-excluded';
+}
+
+function statusLabel(status: string | undefined): string {
+  const labels: Record<string, string> = {
+    'confirmed-homicide': 'Confirmed homicide',
+    probable: 'Probable hate crime',
+    possible: 'Possible hate crime',
+    open: 'Open finding',
+    undetermined: 'Undetermined',
+    excluded: 'Excluded',
+    missing: 'Missing person',
+  };
+  return labels[status ?? ''] ?? status ?? '—';
+}
+
+function statusBadgeClass(status: string | undefined): string {
+  const classes: Record<string, string> = {
+    'confirmed-homicide': 'badge badge-homicide',
+    probable: 'badge badge-probable',
+    possible: 'badge badge-possible',
+    open: 'badge badge-open',
+    undetermined: 'badge badge-open',
+    excluded: 'badge badge-excluded',
+    missing: 'badge badge-open',
+  };
+  return classes[status ?? ''] ?? 'badge badge-open';
+}
+---
+
+<Base
+  title={d.title}
+  description={`Event: ${d.title}. ${d.date_display ?? d.date} — Queer Heritage Sydney.`}
+>
+  <!-- Stub notice -->
+  {
+    d.stub && (
+      <div class="content-warning" style="background:#1a1610; border-color:#5a4510; color:#c0a060;">
+        <strong>Research stub:</strong> This event record is a placeholder. Key details may be
+        incomplete or unverified.
+      </div>
+    )
+  }
+
+  <!-- Header -->
+  <div class="detail-header">
+    <h1>{d.title}</h1>
+
+    <div class="detail-meta">
+      <span>🗓 {d.date_display ?? d.date}</span>
+      {d.date_end && <span>to {d.date_end}</span>}
+      {d.date_uncertain && <span>(date approximate)</span>}
+      {primaryLocation ? (
+        <span>
+          📍 <a href={`/locations/${d.location_id}/`}>{primaryLocation.data.name}</a>
+        </span>
+      ) : d.location_name ? (
+        <span>📍 {d.location_name}</span>
+      ) : null}
+    </div>
+
+    <div class="detail-badges">
+      <span class={eventTypeBadgeClass(d.event_type)}>{eventTypeLabel(d.event_type)}</span>
+      {d.stub && <span class="badge badge-stub">Research needed</span>}
+    </div>
+  </div>
+
+  <!-- Narrative body -->
+  <div class="narrative">
+    <Content />
+  </div>
+
+  <hr />
+
+  <!-- Related cases -->
+  {
+    relatedCases.length > 0 && (
+      <section style="margin:2rem 0">
+        <p class="section-heading">Related cases ({relatedCases.length})</p>
+        <div class="card-grid">
+          {relatedCases.map(c => {
+            const slug = c.id.replace(/\.md$/, '');
+            const siteStatus = c.data.manner_findings?.site_status;
+            return (
+              <article class="card">
+                <div class="card-badges">
+                  {c.data.scoi_category && (
+                    <span class={`badge badge-scoi-${c.data.scoi_category.toLowerCase()}`}>
+                      SCOI Cat. {c.data.scoi_category}
+                    </span>
+                  )}
+                  {siteStatus && (
+                    <span class={statusBadgeClass(siteStatus)}>{statusLabel(siteStatus)}</span>
+                  )}
+                </div>
+                <a href={`/cases/${slug}/`} class="card-name">
+                  {c.data.name}
+                </a>
+                <div class="card-meta">
+                  {c.data.date_of_death_display ?? c.data.date_of_death ?? 'Date unknown'}
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Related people -->
+  {
+    relatedPeople.length > 0 && (
+      <section style="margin:2rem 0">
+        <p class="section-heading">Related people</p>
+        <div class="related-chips">
+          {relatedPeople.map(p => {
+            const slug = p.id.replace(/\.md$/, '');
+            return (
+              <a href={`/people/${slug}/`} class="related-chip">
+                {p.data.name}
+                <span class="chip-meta"> · {p.data.role}</span>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Related locations -->
+  {
+    relatedLocations.length > 0 && (
+      <section style="margin:2rem 0">
+        <p class="section-heading">Related locations</p>
+        <div class="related-chips">
+          {relatedLocations.map(l => {
+            const slug = l.id.replace(/\.md$/, '');
+            return (
+              <a href={`/locations/${slug}/`} class="related-chip">
+                {l.data.name}
+                {l.data.suburb && <span class="chip-meta"> · {l.data.suburb}</span>}
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )
+  }
+
+  <!-- Sources -->
+  <section style="margin:2rem 0">
+    <p class="section-heading">Sources</p>
+
+    {
+      d.sources.press.length > 0 && (
+        <div style="margin-top:0.5rem">
+          <h4 style="margin-bottom:0.5rem">Press sources</h4>
+          <ul
+            class="text-ui"
+            style="font-size:0.85rem; list-style:none; display:flex; flex-direction:column; gap:0.5rem"
+          >
+            {d.sources.press.map(p => (
+              <li>
+                {p.author && <>{p.author} </>}
+                {p.date && <>({p.date}) </>}
+                '{p.title}',<em> {p.publication}</em>
+                {p.page && <>, p. {p.page}</>}
+                {p.trove_url && (
+                  <>
+                    {' '}
+                    · <a href={p.trove_url}>Trove</a>
+                  </>
+                )}
+                {!p.trove_url && p.url && (
+                  <>
+                    {' '}
+                    · <a href={p.url}>{p.url}</a>
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+
+    {
+      d.sources.hansard.length > 0 && (
+        <div style="margin-top:1rem">
+          <h4 style="margin-bottom:0.5rem">Hansard</h4>
+          <ul
+            class="text-ui"
+            style="font-size:0.85rem; list-style:none; display:flex; flex-direction:column; gap:0.5rem"
+          >
+            {d.sources.hansard.map(h => (
+              <li>
+                {h.chamber} ({h.date})
+                {h.title && <> — <em>{h.title}</em></>}
+                {h.volume && <>, vol. {h.volume}</>}
+                {h.page && <>, p. {h.page}</>}
+                {h.url && (
+                  <>
+                    {' '}
+                    · <a href={h.url}>View</a>
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+
+    {
+      d.sources.reports.length > 0 && (
+        <div style="margin-top:1rem">
+          <h4 style="margin-bottom:0.5rem">Reports</h4>
+          <ul
+            class="text-ui"
+            style="font-size:0.85rem; list-style:none; display:flex; flex-direction:column; gap:0.5rem"
+          >
+            {d.sources.reports.map(r => (
+              <li>
+                {r.author && <>{r.author} </>}({r.year}){' '}
+                <em>{r.title}</em>, {r.organisation}
+                {r.page && <>, p. {r.page}</>}
+                {r.url && (
+                  <>
+                    {' '}
+                    · <a href={r.url}>View</a>
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+
+    {
+      d.sources.archives.length > 0 && (
+        <div style="margin-top:1rem">
+          <h4 style="margin-bottom:0.5rem">Archival records</h4>
+          <ul
+            class="text-ui"
+            style="font-size:0.85rem; list-style:none; display:flex; flex-direction:column; gap:0.5rem"
+          >
+            {d.sources.archives.map(a => (
+              <li>
+                {a.institution.replace(/-/g, ' ')}
+                {a.collection && <>, {a.collection}</>}
+                {a.item_id && <>, item {a.item_id}</>}
+                {a.description && <> — {a.description}</>}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+
+    {
+      !d.sources.press.length &&
+        !d.sources.hansard.length &&
+        !d.sources.reports.length &&
+        !d.sources.archives.length && (
+          <p class="text-muted text-ui" style="font-size:0.85rem">
+            No sources listed yet.
+          </p>
+        )
+    }
+  </section>
+
+  <!-- Back link -->
+  <div style="margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border)">
+    <a href="/events/" class="text-ui" style="font-size:0.88rem">← All events</a>
+  </div>
+</Base>

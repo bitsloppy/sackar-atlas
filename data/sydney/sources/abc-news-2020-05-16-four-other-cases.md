@@ -13,6 +13,8 @@ related_cases:
   - john-russell
   - kritchikorn-rattanjurathaporn
   - gilles-mattaini
+  - mark-stewart
+  - paul-rath
 related_locations:
   - marks-park
   - eastern-suburbs-pac

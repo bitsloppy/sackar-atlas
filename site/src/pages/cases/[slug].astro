@@ -14,6 +14,28 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 const d = entry.data;
 
+// Cross-reference related content
+const allCases = await getCollection('cases', ({ data }) => data.published === true);
+const allLocations = await getCollection('locations');
+const allPeople = await getCollection('people');
+const allEvents = await getCollection('events');
+
+const relatedCases = (d.related_cases ?? [])
+  .map(id => allCases.find(c => c.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedLocations = (d.related_locations ?? [])
+  .map(id => allLocations.find(l => l.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedPeople = (d.related_people ?? [])
+  .map(id => allPeople.find(p => p.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedEvents = (d.related_events ?? [])
+  .map(id => allEvents.find(e => e.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
 // ── Helpers ────────────────────────────────────────────────────────────────
 
 function siteStatusLabel(s: string | undefined) {
@@ -230,6 +252,37 @@ const mf = d.manner_findings;
     </section>
   )}
 
+  <!-- Police investigations -->
+  {d.police_investigations.length > 0 && (
+    <section style="margin:2rem 0">
+      <p class="section-heading">Police investigations</p>
+      {d.police_investigations.map(pi => (
+        <div class="finding-box" style="margin-bottom:0.75rem">
+          <div class="label">
+            {pi.event_id ? (
+              <a href={`/events/${pi.event_id}/`}>{pi.name}</a>
+            ) : pi.name}
+            {pi.years && ` · ${pi.years}`}
+            {pi.type && ` · ${pi.type.replace(/-/g, ' ')}`}
+          </div>
+          {pi.lead_officer && (
+            <div class="text-muted text-ui" style="font-size:0.85rem">
+              Lead: {pi.lead_officer}
+            </div>
+          )}
+          {pi.outcome && (
+            <div class="value">{pi.outcome.replace(/-/g, ' ')}</div>
+          )}
+          {pi.notes && (
+            <div class="text-muted text-ui" style="font-size:0.85rem; margin-top:0.3rem">
+              {pi.notes}
+            </div>
+          )}
+        </div>
+      ))}
+    </section>
+  )}
+
   <!-- Sources -->
   <section style="margin:2rem 0">
     <p class="section-heading">Primary sources</p>
@@ -304,6 +357,85 @@ const mf = d.manner_findings;
       </div>
     )}
   </section>
+
+  <!-- Related content -->
+  {(relatedCases.length > 0 || relatedLocations.length > 0 || relatedPeople.length > 0 || relatedEvents.length > 0) && (
+    <section class="related-content" style="margin:2rem 0">
+      <p class="section-heading">Related content</p>
+
+      {relatedCases.length > 0 && (
+        <div style="margin-bottom:1.25rem">
+          <h4 style="margin-bottom:0.5rem">Related cases</h4>
+          <div class="related-chips">
+            {relatedCases.map(c => {
+              const slug = c.id.replace(/\.md$/, '');
+              return (
+                <a href={`/cases/${slug}/`} class="related-chip">
+                  {c.data.name}
+                  {(c.data.date_of_death_display ?? c.data.date_of_death) && (
+                    <span class="chip-meta"> · {c.data.date_of_death_display ?? c.data.date_of_death}</span>
+                  )}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {relatedLocations.length > 0 && (
+        <div style="margin-bottom:1.25rem">
+          <h4 style="margin-bottom:0.5rem">Related locations</h4>
+          <div class="related-chips">
+            {relatedLocations.map(l => {
+              const slug = l.id.replace(/\.md$/, '');
+              return (
+                <a href={`/locations/${slug}/`} class="related-chip">
+                  {l.data.name}
+                  {l.data.suburb && <span class="chip-meta"> · {l.data.suburb}</span>}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {relatedPeople.length > 0 && (
+        <div style="margin-bottom:1.25rem">
+          <h4 style="margin-bottom:0.5rem">Related people</h4>
+          <div class="related-chips">
+            {relatedPeople.map(p => {
+              const slug = p.id.replace(/\.md$/, '');
+              return (
+                <a href={`/people/${slug}/`} class="related-chip">
+                  {p.data.name}
+                  <span class="chip-meta"> · {p.data.role}</span>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {relatedEvents.length > 0 && (
+        <div style="margin-bottom:1.25rem">
+          <h4 style="margin-bottom:0.5rem">Related events</h4>
+          <div class="related-chips">
+            {relatedEvents.map(e => {
+              const slug = e.id.replace(/\.md$/, '');
+              return (
+                <a href={`/events/${slug}/`} class="related-chip">
+                  {e.data.title}
+                  {(e.data.date_display ?? e.data.date) && (
+                    <span class="chip-meta"> · {e.data.date_display ?? e.data.date}</span>
+                  )}
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </section>
+  )}
 
   <!-- Back link -->
   <div style="margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border)">
