@@ -3,14 +3,14 @@ import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import {
   faLocationDot,
-  faPersonHiking,
+  faPeoplePants,
   faMartiniGlass,
   faShieldHalved,
   faBuilding,
   faCity,
   faHandFist,
-  faFire,
-  faTriangleExclamation,
+  faCandleHolder,
+  faSirenOn,
   faScaleBalanced,
   faMagnifyingGlass,
   faMasksTheater,
@@ -18,7 +18,7 @@ import {
   faPeopleGroup,
   faNewspaper,
   faStar,
-} from '@fortawesome/free-solid-svg-icons';
+} from '@fortawesome/pro-solid-svg-icons';
 
 // Extract SVG path data for each icon — passed to client as JSON.
 // Each icon definition: { icon: [width, height, ligatures, unicode, svgPathData] }
@@ -31,15 +31,15 @@ function iconData(def: { icon: [number, number, any, any, string | string[]] }) 
 const faIcons = {
   // map layers
   locationDot:          iconData(faLocationDot),
-  personHiking:         iconData(faPersonHiking),
+  peoplePants:          iconData(faPeoplePants),
   martiniGlass:         iconData(faMartiniGlass),
   shieldHalved:         iconData(faShieldHalved),
   building:             iconData(faBuilding),
   city:                 iconData(faCity),
   // event types
   handFist:             iconData(faHandFist),
-  fire:                 iconData(faFire),
-  triangleExclamation:  iconData(faTriangleExclamation),
+  candleHolder:         iconData(faCandleHolder),
+  sirenOn:              iconData(faSirenOn),
   scaleBalanced:        iconData(faScaleBalanced),
   magnifyingGlass:      iconData(faMagnifyingGlass),
   masksTheater:         iconData(faMasksTheater),
@@ -273,20 +273,20 @@ const eventCount        = eventPoints.length;
 
     // Location category → { FA key, size }
     const locIconMap = {
-      beat:          { key: 'personHiking',   size: 28 },
-      venue:         { key: 'martiniGlass',   size: 28 },
-      police:        { key: 'shieldHalved',   size: 26 },
-      memorial:      { key: 'fire',           size: 26 },
-      neighbourhood: { key: 'city',           size: 26 },
-      institution:   { key: 'building',       size: 24 },
-      other:         { key: 'building',       size: 24 },
+      beat:          { key: 'peoplePants',  size: 28 },
+      venue:         { key: 'martiniGlass', size: 28 },
+      police:        { key: 'shieldHalved', size: 26 },
+      memorial:      { key: 'candleHolder', size: 26 },
+      neighbourhood: { key: 'city',         size: 26 },
+      institution:   { key: 'building',     size: 24 },
+      other:         { key: 'building',     size: 24 },
     };
 
     // Event type → FA key
     const eventIconMap = {
       'activism':        'handFist',
-      'memorial':        'fire',
-      'police-action':   'triangleExclamation',
+      'memorial':        'candleHolder',
+      'police-action':   'sirenOn',
       'legal-milestone': 'scaleBalanced',
       'inquiry':         'magnifyingGlass',
       'cultural':        'masksTheater',
