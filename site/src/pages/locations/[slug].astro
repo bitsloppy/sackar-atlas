@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
+import SectionCard from '../../components/SectionCard.astro';
 import { ICONS, SECTION_TYPE_MAP } from '../../lib/icons';
 
 export async function getStaticPaths() {
@@ -442,8 +443,7 @@ function countryDeterminationLabel(s: string | undefined): string {
   <!-- Physical markers -->
   {
     d.physical_markers.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Physical markers</p>
+      <SectionCard type="memorial" heading="Physical markers" open={false}>
         {d.physical_markers.map(marker => (
           <div class="finding-box" style="margin-bottom:0.75rem">
             <div class="label">
@@ -471,7 +471,7 @@ function countryDeterminationLabel(s: string | undefined): string {
             )}
           </div>
         ))}
-      </section>
+      </SectionCard>
     )
   }
 
@@ -480,8 +480,7 @@ function countryDeterminationLabel(s: string | undefined): string {
   <!-- Related cases -->
   {
     relatedCases.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Related cases ({relatedCases.length})</p>
+      <SectionCard type="cases" heading={`Related cases (${relatedCases.length})`} open={true}>
         <div class="card-grid">
           {relatedCases.map(c => {
             const slug = c.id.replace(/\.md$/, '');
@@ -508,15 +507,14 @@ function countryDeterminationLabel(s: string | undefined): string {
             );
           })}
         </div>
-      </section>
+      </SectionCard>
     )
   }
 
   <!-- Related events -->
   {
     relatedEvents.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Related events</p>
+      <SectionCard type="events" heading="Related events" open={false}>
         <div class="related-chips">
           {relatedEvents.map(e => {
             const slug = e.id.replace(/\.md$/, '');
@@ -533,15 +531,14 @@ function countryDeterminationLabel(s: string | undefined): string {
             );
           })}
         </div>
-      </section>
+      </SectionCard>
     )
   }
 
   <!-- Related people -->
   {
     relatedPeople.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Related people</p>
+      <SectionCard type="people" heading="Related people" open={false}>
         <div class="related-chips">
           {relatedPeople.map(p => {
             const slug = p.id.replace(/\.md$/, '');
@@ -553,15 +550,14 @@ function countryDeterminationLabel(s: string | undefined): string {
             );
           })}
         </div>
-      </section>
+      </SectionCard>
     )
   }
 
   <!-- Related locations -->
   {
     relatedLocations.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Related locations</p>
+      <SectionCard type="locations" heading="Related locations" open={false}>
         <div class="related-chips">
           {relatedLocations.map(l => {
             const slug = l.id.replace(/\.md$/, '');
@@ -573,13 +569,12 @@ function countryDeterminationLabel(s: string | undefined): string {
             );
           })}
         </div>
-      </section>
+      </SectionCard>
     )
   }
 
   <!-- Sources -->
-  <section style="margin:2rem 0">
-    <p class="section-heading">Sources</p>
+  <SectionCard type="sources" heading="Sources" open={false}>
 
     {
       d.sources.scoi && (
@@ -678,7 +673,7 @@ function countryDeterminationLabel(s: string | undefined): string {
         </div>
       )
     }
-  </section>
+  </SectionCard>
 
   <!-- Back link -->
   <div style="margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border)">

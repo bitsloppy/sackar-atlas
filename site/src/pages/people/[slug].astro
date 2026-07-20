@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
+import SectionCard from '../../components/SectionCard.astro';
 
 export async function getStaticPaths() {
   const people = await getCollection('people');
@@ -262,8 +263,7 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
   <!-- Related cases -->
   {
     relatedCases.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Related cases ({relatedCases.length})</p>
+      <SectionCard type="cases" heading={`Related cases (${relatedCases.length})`} open={true}>
         <div class="card-grid">
           {relatedCases.map(c => {
             const slug = c.id.replace(/\.md$/, '');
@@ -290,15 +290,14 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
             );
           })}
         </div>
-      </section>
+      </SectionCard>
     )
   }
 
   <!-- Related events -->
   {
     relatedEvents.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Related events</p>
+      <SectionCard type="events" heading="Related events" open={false}>
         <div class="related-chips">
           {relatedEvents.map(e => {
             const slug = e.id.replace(/\.md$/, '');
@@ -315,15 +314,14 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
             );
           })}
         </div>
-      </section>
+      </SectionCard>
     )
   }
 
   <!-- Related locations -->
   {
     relatedLocations.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Related locations</p>
+      <SectionCard type="locations" heading="Related locations" open={false}>
         <div class="related-chips">
           {relatedLocations.map(l => {
             const slug = l.id.replace(/\.md$/, '');
@@ -335,15 +333,14 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
             );
           })}
         </div>
-      </section>
+      </SectionCard>
     )
   }
 
   <!-- Related people -->
   {
     relatedPeople.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Related people</p>
+      <SectionCard type="people" heading="Related people" open={false}>
         <div class="related-chips">
           {relatedPeople.map(p => {
             const slug = p.id.replace(/\.md$/, '');
@@ -355,7 +352,7 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
             );
           })}
         </div>
-      </section>
+      </SectionCard>
     )
   }
 

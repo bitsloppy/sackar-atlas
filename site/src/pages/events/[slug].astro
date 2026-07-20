@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
+import SectionCard from '../../components/SectionCard.astro';
 
 export async function getStaticPaths() {
   const events = await getCollection('events');
@@ -142,8 +143,7 @@ function statusBadgeClass(status: string | undefined): string {
   <!-- Related cases -->
   {
     relatedCases.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Related cases ({relatedCases.length})</p>
+      <SectionCard type="cases" heading={`Related cases (${relatedCases.length})`} open={true}>
         <div class="card-grid">
           {relatedCases.map(c => {
             const slug = c.id.replace(/\.md$/, '');
@@ -170,15 +170,14 @@ function statusBadgeClass(status: string | undefined): string {
             );
           })}
         </div>
-      </section>
+      </SectionCard>
     )
   }
 
   <!-- Related people -->
   {
     relatedPeople.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Related people</p>
+      <SectionCard type="people" heading="Related people" open={false}>
         <div class="related-chips">
           {relatedPeople.map(p => {
             const slug = p.id.replace(/\.md$/, '');
@@ -190,15 +189,14 @@ function statusBadgeClass(status: string | undefined): string {
             );
           })}
         </div>
-      </section>
+      </SectionCard>
     )
   }
 
   <!-- Related locations -->
   {
     relatedLocations.length > 0 && (
-      <section style="margin:2rem 0">
-        <p class="section-heading">Related locations</p>
+      <SectionCard type="locations" heading="Related locations" open={false}>
         <div class="related-chips">
           {relatedLocations.map(l => {
             const slug = l.id.replace(/\.md$/, '');
@@ -210,13 +208,12 @@ function statusBadgeClass(status: string | undefined): string {
             );
           })}
         </div>
-      </section>
+      </SectionCard>
     )
   }
 
   <!-- Sources -->
-  <section style="margin:2rem 0">
-    <p class="section-heading">Sources</p>
+  <SectionCard type="sources" heading="Sources" open={false}>
 
     {
       d.sources.press.length > 0 && (
@@ -335,7 +332,7 @@ function statusBadgeClass(status: string | undefined): string {
           </p>
         )
     }
-  </section>
+  </SectionCard>
 
   <!-- Back link -->
   <div style="margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border)">

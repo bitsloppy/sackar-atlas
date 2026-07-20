@@ -117,6 +117,26 @@ family_engaged_with_inquiry: true
 
 community_verification_status: "not-assessed"
 
+sections:
+  - heading: "Who was Mark Stewart"
+    type: general
+    open: true
+  - heading: "The death site"
+    type: deaths
+    open: true
+  - heading: "The police investigation"
+    type: investigation
+    open: false
+  - heading: "The hotel question"
+    type: investigation
+    open: false
+  - heading: "Parrabell and the inquiry review"
+    type: investigation
+    open: false
+  - heading: "What remains open"
+    type: legal
+    open: true
+
 related_cases:
   - "paul-rath"
   - "david-lloyd-williams"

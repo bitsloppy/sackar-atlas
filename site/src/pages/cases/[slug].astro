@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
+import SectionCard from '../../components/SectionCard.astro';
+import { ICONS, SECTION_TYPE_MAP } from '../../lib/icons';
 
 export async function getStaticPaths() {
   const cases = await getCollection('cases', ({ data }) => data.published === true);
@@ -35,6 +37,19 @@ const relatedPeople = (d.related_people ?? [])
 const relatedEvents = (d.related_events ?? [])
   .map(id => allEvents.find(e => e.id.replace(/\.md$/, '') === id))
   .filter((x): x is NonNullable<typeof x> => x != null);
+
+
+// Narrative section accordion config
+const caseSectionConfig = {};
+for (const s of (d.sections ?? [])) {
+  const meta = SECTION_TYPE_MAP[s.type] ?? SECTION_TYPE_MAP.general;
+  const ic   = ICONS[meta.icon];
+  const svgH = 13;
+  const svgW = Math.round(svgH * (ic.w / ic.h));
+  const svg  = `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ic.w} ${ic.h}" width="${svgW}" height="${svgH}" fill="${meta.colour}"><path d="${ic.path}"/></svg>`;
+  caseSectionConfig[s.heading] = { type: s.type, open: s.open, iconSvg: svg, colour: meta.colour };
+}
+const caseSectionConfigStr = JSON.stringify(caseSectionConfig);
 
 // ── Helpers ────────────────────────────────────────────────────────────────
 
@@ -233,16 +248,53 @@ const mf = d.manner_findings;
   )}
 
   <!-- Narrative body -->
-  <div class="narrative">
+  <div class="narrative" id="case-narrative">
     <Content />
   </div>
 
-  <hr />
+  {(d.sections ?? []).length > 0 && (
+    <script define:vars={{ caseSectionConfigStr }}>
+      (function () {
+        const cfg  = JSON.parse(caseSectionConfigStr);
+        const narr = document.getElementById('case-narrative');
+        if (!narr) return;
+        const h2s = Array.from(narr.querySelectorAll('h2'));
+        if (!h2s.length) return;
+        h2s.forEach(h2 => {
+          const heading = h2.textContent?.trim() ?? '';
+          const meta    = cfg[heading] ?? { open: true, iconSvg: '', colour: 'var(--muted)' };
+          const siblings = [];
+          let node = h2.nextSibling;
+          while (node && !(node.nodeType === 1 && node.tagName === 'H2')) {
+            siblings.push(node);
+            node = node.nextSibling;
+          }
+          const details = document.createElement('details');
+          if (meta.open) details.open = true;
+          details.className = 'section-card';
+          const summary = document.createElement('summary');
+          summary.className = 'section-card-header';
+          summary.innerHTML = [
+            meta.iconSvg ? `<span class="section-icon" aria-hidden="true" style="color:${meta.colour}">${meta.iconSvg}</span>` : '',
+            `<span class="section-card-title">${heading}</span>`,
+            `<span class="section-chevron" aria-hidden="true"></span>`,
+          ].join('');
+          const body = document.createElement('div');
+          body.className = 'section-card-body';
+          siblings.forEach(s => body.appendChild(s.cloneNode(true)));
+          details.appendChild(summary);
+          details.appendChild(body);
+          h2.parentNode.insertBefore(details, h2);
+          h2.remove();
+          siblings.forEach(s => { if (s.parentNode) s.parentNode.removeChild(s); });
+        });
+      })();
+    </script>
+  )}
 
   <!-- Manner findings -->
   {mf && (
-    <section style="margin:2rem 0">
-      <p class="section-heading">Official determinations</p>
+    <SectionCard type="legal" heading="Official determinations" open={true}>
 
       {mf.inquests.length > 0 && mf.inquests.map(inq => (
         <div class="finding-box" style="margin-bottom:0.75rem">
@@ -268,13 +320,12 @@ const mf = d.manner_findings;
           </div>
         </div>
       )}
-    </section>
+    </SectionCard>
   )}
 
   <!-- Police investigations -->
   {d.police_investigations.length > 0 && (
-    <section style="margin:2rem 0">
-      <p class="section-heading">Police investigations</p>
+    <SectionCard type="investigation" heading="Police investigations" open={false}>
       {d.police_investigations.map(pi => (
         <div class="finding-box" style="margin-bottom:0.75rem">
           <div class="label">
@@ -304,12 +355,11 @@ const mf = d.manner_findings;
           )}
         </div>
       ))}
-    </section>
+    </SectionCard>
   )}
 
   <!-- Sources -->
-  <section style="margin:2rem 0">
-    <p class="section-heading">Primary sources</p>
+  <SectionCard type="sources" heading="Primary sources" open={false}>
 
     {d.sources.scoi && (
       <div class="finding-box">
@@ -380,12 +430,11 @@ const mf = d.manner_findings;
         </ul>
       </div>
     )}
-  </section>
+  </SectionCard>
 
   <!-- Related content -->
   {(relatedCases.length > 0 || relatedLocations.length > 0 || relatedPeople.length > 0 || relatedEvents.length > 0) && (
-    <section class="related-content" style="margin:2rem 0">
-      <p class="section-heading">Related content</p>
+    <SectionCard type="cases" heading="Related content" open={true}>
 
       {relatedCases.length > 0 && (
         <div style="margin-bottom:1.25rem">
@@ -458,7 +507,7 @@ const mf = d.manner_findings;
           </div>
         </div>
       )}
-    </section>
+    </SectionCard>
   )}
 
   <!-- Back link -->

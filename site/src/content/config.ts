@@ -1125,6 +1125,20 @@ const cases = defineCollection({
 
     community_verification_notes: z.string().nullable().optional(),
 
+    // --- Narrative sections ------------------------------------------------
+    // Same as locations.sections[]: maps markdown h2 headings to section types
+    // so the case detail page can render accordion cards with icons.
+
+    sections: z.array(z.object({
+      heading: z.string(),
+      type: z.enum([
+        'beat', 'deaths', 'first-nations', 'memorial',
+        'investigation', 'legal', 'cultural', 'sources',
+        'people', 'events', 'cases', 'locations', 'general',
+      ]).default('general'),
+      open: z.boolean().default(false),
+    })).default([]),
+
     // --- Sources ------------------------------------------------------------
 
     sources: z.object({

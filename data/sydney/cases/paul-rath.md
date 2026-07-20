@@ -115,6 +115,23 @@ family_engaged_with_inquiry: true
 community_verification_status: "not-assessed"
 community_verification_notes: "The Inquiry held conferences with five of Paul's seven siblings (Chris, Liz, Helen, Gregory, Rosemary). Helen Colman and Gregory Rath gave formal statements. The family is known to have been engaged; community verification should be sought before publication."
 
+sections:
+  - heading: "Who was Paul Rath"
+    type: general
+    open: true
+  - heading: "The evening of 15 June 1977"
+    type: deaths
+    open: true
+  - heading: "The investigation"
+    type: investigation
+    open: false
+  - heading: "Parrabell and the SCOI"
+    type: investigation
+    open: false
+  - heading: "Sackar's finding and Recommendation 1"
+    type: legal
+    open: true
+
 related_cases:
   - "mark-stewart"
   - "david-lloyd-williams"
