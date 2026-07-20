@@ -1,0 +1,172 @@
+---
+/**
+ * SuburbMap — small embedded map showing one or more Sydney suburbs outlined.
+ *
+ * Suburb polygon data is fetched from the NSW Spatial Portal at build time
+ * (Geoscape Administrative Boundaries, CC-BY 4.0). Renders on the dark
+ * CartoDB tile base to match the rest of the site.
+ *
+ * Usage:
+ *   <SuburbMap suburbs={["Manly", "Balgowlah"]} height={300} />
+ *
+ * If the NSW Spatial API is unavailable at build time, the map shows a
+ * graceful text fallback — no broken layout.
+ *
+ * Attribution (required by Geoscape licence):
+ *   Suburb boundaries: Geoscape Administrative Boundaries © Geoscape Australia, CC-BY 4.0.
+ *   Map tiles: OpenStreetMap / CARTO.
+ */
+
+interface Props {
+  /** Suburb names (title case, e.g. "Manly", "Balgowlah Heights"). */
+  suburbs: string[];
+  /** Map height in px. Default 280. */
+  height?: number;
+  /** Accessible aria-label. Auto-generated from suburb list if omitted. */
+  label?: string;
+  /** Optional caption shown below the map. */
+  caption?: string;
+}
+
+const {
+  suburbs,
+  height = 280,
+  label,
+  caption,
+} = Astro.props;
+
+// Auto-generate accessible label
+const ariaLabel = label
+  ?? `Map showing ${suburbs.join(', ')} suburb${suburbs.length !== 1 ? 's' : ''}`;
+
+// ── Fetch suburb boundaries at build time ─────────────────────────────────
+// NSW Spatial Portal — Geoscape Administrative Boundaries
+// No API key required. Suburb names uppercased for the SQL IN clause.
+
+let geoJson: object | null = null;
+let fetchError = false;
+
+if (suburbs.length > 0) {
+  try {
+    const names = suburbs
+      .map(s => `'${s.toUpperCase().replace(/'/g, "''")}'`)
+      .join(',');
+    const url = new URL(
+      'https://portal.spatial.nsw.gov.au/server/rest/services/Hosted/NSW_Boundary_Concordance/FeatureServer/3/query'
+    );
+    url.searchParams.set('where', `suburbname IN (${names})`);
+    url.searchParams.set('outFields', 'suburbname,postcode');
+    url.searchParams.set('f', 'geojson');
+
+    const res = await fetch(url.toString(), { signal: AbortSignal.timeout(10000) });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    geoJson = await res.json();
+  } catch (e) {
+    console.warn(`[SuburbMap] boundary fetch failed for ${suburbs.join(', ')}:`, e);
+    fetchError = true;
+  }
+}
+
+const geoJsonStr    = JSON.stringify(geoJson);
+const suburbsStr    = JSON.stringify(suburbs);
+// Unique id so multiple SuburbMaps on one page don't clash
+const mapId         = `suburb-map-${suburbs.join('-').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}`;
+---
+
+{geoJson ? (
+  <figure class="suburb-map-figure">
+    <div
+      id={mapId}
+      role="application"
+      aria-label={ariaLabel}
+      tabindex="0"
+      style={`width:100%; height:${height}px; border-radius:6px; border:1px solid var(--border); overflow:hidden;`}
+    ></div>
+
+    <figcaption class="suburb-map-caption text-ui text-muted">
+      {caption && <span>{caption} · </span>}
+      <span>
+        Boundaries: <a href="https://geoscape.com.au/legal/data-copyright-and-disclaimer/">Geoscape Australia</a>
+        (<a href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a>) ·
+        Tiles: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> /
+        <a href="https://carto.com/attributions">CARTO</a>
+      </span>
+    </figcaption>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" is:inline></script>
+    <script define:vars={{ geoJsonStr, mapId }}>
+      (function () {
+        const geoJson = JSON.parse(geoJsonStr);
+        const el      = document.getElementById(mapId);
+        if (!el || !geoJson) return;
+
+        const map = L.map(el, { zoomControl: true, attributionControl: false });
+
+        L.tileLayer(
+          'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+          { subdomains: 'abcd', maxZoom: 19 }
+        ).addTo(map);
+
+        const layer = L.geoJSON(geoJson, {
+          style: {
+            color:       '#4a7faa',
+            weight:      2,
+            opacity:     0.85,
+            fillColor:   '#4a7faa',
+            fillOpacity: 0.12,
+          },
+          onEachFeature(feature, lyr) {
+            const name = feature.properties?.suburbname ?? '';
+            lyr.bindTooltip(
+              `<span style="font-family:system-ui;font-size:0.82rem;color:#dcdcf0">${name}</span>`,
+              { sticky: true, className: 'suburb-map-tooltip' }
+            );
+          },
+        }).addTo(map);
+
+        // Fit to suburb bounds
+        const bounds = layer.getBounds();
+        if (bounds.isValid()) {
+          map.fitBounds(bounds, { padding: [16, 16] });
+        }
+      })();
+    </script>
+  </figure>
+) : fetchError ? (
+  <p class="text-muted text-ui suburb-map-fallback" style="font-size:0.85rem; font-style:italic">
+    Map unavailable — suburb boundary data could not be loaded at build time.
+  </p>
+) : null}
+
+<style>
+  .suburb-map-figure {
+    margin: 1.25rem 0;
+  }
+
+  .suburb-map-caption {
+    font-size: 0.72rem;
+    margin-top: 0.4rem;
+    line-height: 1.4;
+  }
+
+  .suburb-map-fallback {
+    padding: 0.75rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+  }
+
+  /* Leaflet popup overrides — dark theme */
+  :global(.suburb-map-tooltip) {
+    background: #1c1c2a !important;
+    border: 1px solid #2a2a40 !important;
+    border-radius: 4px !important;
+    color: #dcdcf0 !important;
+    padding: 0.25rem 0.5rem !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5) !important;
+  }
+  :global(.suburb-map-tooltip::before) {
+    border-top-color: #2a2a40 !important;
+  }
+</style>
