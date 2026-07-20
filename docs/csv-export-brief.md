@@ -137,4 +137,4 @@ Once the endpoints are built and confirmed in the build, add a "Download data" s
 
 ## Resume prompt for fresh session
 
-> "Sackar Atlas — build the CSV export endpoints. Brief is at `~/code/queer-heritage/docs/csv-export-brief.md`. Start with cases.csv, verify the build, then do locations and people if time allows. Push when done."
+> "Sackar Atlas — build the CSV export endpoints. Brief is at `~/code/sackar-atlas/docs/csv-export-brief.md`. Start with cases.csv, verify the build, then do locations and people if time allows. Push when done."

@@ -21,7 +21,7 @@ Structured historical data for queer heritage in Sydney.
 ## Format
 
 Each record is a markdown file with YAML frontmatter (source of truth for the data layer).
-A SQLite database (`queer-sydney.db`) is generated from these files at build time.
+A SQLite database (`sackar-atlas.db`) is generated from these files at build time.
 
 Data schema: see `../../site/src/schema/` (once built).
 

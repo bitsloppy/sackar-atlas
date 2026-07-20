@@ -139,7 +139,7 @@ For each named entity extracted in Step 1:
 Generate the QA card:
 
 ```bash
-cd ~/code/queer-heritage
+cd ~/code/sackar-atlas
 python3 scripts/qa-card.py {slug}
 ```
 

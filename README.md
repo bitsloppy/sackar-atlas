@@ -31,7 +31,7 @@ A public data project making a dense government inquiry accessible to anyone. Th
 
 All structured data is published as open data under CC-BY 4.0. On every build, the site publishes:
 - `cases.json` / `cases.csv` — individual case records
-- `queer-sydney.db` — full relational SQLite database
+- `sackar-atlas.db` — full relational SQLite database
 
 ---
 

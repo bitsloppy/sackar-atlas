@@ -1,6 +1,6 @@
 # Site
 
-Astro static site — the public-facing queer-heritage website.
+Astro static site — the public-facing Sackar Atlas website.
 
 **Licence:** MIT — see [../LICENSE-code](../LICENSE-code)
 
