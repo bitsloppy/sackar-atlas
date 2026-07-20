@@ -1,61 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
-import {
-  faLocationDot,
-  faPeoplePants,
-  faMartiniGlass,
-  faShieldHalved,
-  faBuilding,
-  faCity,
-  faHandFist,
-  faCandleHolder,
-  faSirenOn,
-  faScaleBalanced,
-  faMagnifyingGlass,
-  faMasksTheater,
-  faLandmark,
-  faPeopleGroup,
-  faNewspaper,
-  faStar,
-} from '@fortawesome/pro-solid-svg-icons';
+import { ICONS, COLOURS, EVENT_TYPE_MAP, SITE_STATUS_COLOUR } from '../lib/icons';
 
-// Extract SVG path data for each icon — passed to client as JSON.
-// Each icon definition: { icon: [width, height, ligatures, unicode, svgPathData] }
-function iconData(def: { icon: [number, number, any, any, string | string[]] }) {
-  const [w, h, , , pathRaw] = def.icon;
-  const path = Array.isArray(pathRaw) ? pathRaw.join(' ') : pathRaw;
-  return { w, h, path };
-}
-
-const faIcons = {
-  // map layers
-  locationDot:          iconData(faLocationDot),
-  peoplePants:          iconData(faPeoplePants),
-  martiniGlass:         iconData(faMartiniGlass),
-  shieldHalved:         iconData(faShieldHalved),
-  building:             iconData(faBuilding),
-  city:                 iconData(faCity),
-  // event types
-  handFist:             iconData(faHandFist),
-  candleHolder:         iconData(faCandleHolder),
-  sirenOn:              iconData(faSirenOn),
-  scaleBalanced:        iconData(faScaleBalanced),
-  magnifyingGlass:      iconData(faMagnifyingGlass),
-  masksTheater:         iconData(faMasksTheater),
-  landmark:             iconData(faLandmark),
-  peopleGroup:          iconData(faPeopleGroup),
-  newspaper:            iconData(faNewspaper),
-  star:                 iconData(faStar),
-};
-const faIconsJson = JSON.stringify(faIcons);
+// Serialise the icon registry for Leaflet (client-side).
+const faIconsJson = JSON.stringify(ICONS);
 
 // ── Mini-pin builder (server-side, for the legend) ─────────────────────────
 // Mirrors the client-side pinIcon() function — same shape, same maths.
 // aria-hidden="true" is set on the wrapper: the adjacent text label is the
 // accessible content; the pin shape is purely decorative in this context.
-function miniPin(iconKey: keyof typeof faIcons, colour: string, size = 20) {
-  const ic   = faIcons[iconKey];
+function miniPin(iconKey: keyof typeof ICONS, colour: string, size = 20) {
+  const ic   = ICONS[iconKey];
   const tail = Math.round(size / 3.5);
   const tailH = Math.round(tail * 1.4);
   const svgH = Math.round(size * 0.48);
@@ -75,23 +31,23 @@ function miniPin(iconKey: keyof typeof faIcons, colour: string, size = 20) {
   ].join('');
 }
 
-// Colours (mirrors client-side palette)
+// Colour aliases for the legend (sourced from central registry)
 const C = {
-  homicide:      '#c94444',
-  probable:      '#c97444',
-  possible:      '#c49a5a',
-  open:          '#7878a0',
-  excluded:      '#4a4a60',
-  beat:          '#2a9d8f',
-  venue:         '#9d4edd',
-  police:        '#4a7faa',
-  neighbourhood: '#4a7faa',
-  institution:   '#6b7280',
-  event:         '#e07c24',
-  memorial:      '#c8a84b',
-  policeAction:  '#c94444',
-  legal:         '#4a9d8f',
-  inquiry:       '#7878a0',
+  homicide:      COLOURS.homicide,
+  probable:      COLOURS.probable,
+  possible:      COLOURS.possible,
+  open:          COLOURS.open,
+  excluded:      COLOURS.excluded,
+  beat:          COLOURS.beat,
+  venue:         COLOURS.venue,
+  police:        COLOURS.police,
+  neighbourhood: COLOURS.neighbourhood,
+  institution:   COLOURS.institution,
+  event:         COLOURS.activism,
+  memorial:      COLOURS.memorial,
+  policeAction:  COLOURS.policeAction,
+  legal:         COLOURS.legalMilestone,
+  inquiry:       COLOURS.inquiry,
 };
 
 const cases     = await getCollection('cases', ({ data }) => data.published === true);

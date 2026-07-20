@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
-import { faShieldHalved } from '@fortawesome/pro-solid-svg-icons';
+import { ICONS, SECTION_TYPE_MAP } from '../../lib/icons';
 
 export async function getStaticPaths() {
   const locations = await getCollection('locations');
@@ -47,19 +47,28 @@ if (hasSubs) {
   }
 }
 
-// FA shield icon for station pins — baked in server-side, same approach as map.astro
-const shieldDef = faShieldHalved.icon;          // [w, h, ligatures, unicode, path]
-const shieldIcon = {
-  w: shieldDef[0],
-  h: shieldDef[1],
-  path: Array.isArray(shieldDef[4]) ? shieldDef[4].join(' ') : shieldDef[4],
-};
+// Shield icon for PAC station pins — from central registry
+const shieldIcon = ICONS.shieldHalved;
 
 const pacGeoJsonStr   = JSON.stringify(pacSuburbGeoJson);
 const shieldIconStr   = JSON.stringify(shieldIcon);
 const stationsStr     = JSON.stringify(
   (d.stations ?? []).filter(s => s.lat != null && s.lng != null)
 );
+
+// Section accordion config — serialised for client-side JS enhancement
+// Builds a map of { [headingText]: { type, open, iconSvg, colour } } so the
+// client script can wrap markdown h2s in <details> cards with the right icon.
+const sectionConfig: Record<string, { type: string; open: boolean; iconSvg: string; colour: string }> = {};
+for (const s of (d.sections ?? [])) {
+  const meta = SECTION_TYPE_MAP[s.type] ?? SECTION_TYPE_MAP.general;
+  const ic   = ICONS[meta.icon as keyof typeof ICONS];
+  const svgH = 13;
+  const svgW = Math.round(svgH * (ic.w / ic.h));
+  const svg  = `<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${ic.w} ${ic.h}" width="${svgW}" height="${svgH}" fill="${meta.colour}"><path d="${ic.path}"/></svg>`;
+  sectionConfig[s.heading] = { type: s.type, open: s.open, iconSvg: svg, colour: meta.colour };
+}
+const sectionConfigStr = JSON.stringify(sectionConfig);
 
 // Cross-reference related content
 const allCases = await getCollection('cases', ({ data }) => data.published === true);
@@ -371,9 +380,64 @@ function countryDeterminationLabel(s: string | undefined): string {
   )}
 
   <!-- Narrative body -->
-  <div class="narrative">
+  <!-- Section accordion: h2s in the markdown are progressively wrapped in    -->
+  <!-- <details>/<summary> cards. sectionConfig provides icon + type per h2.  -->
+  <!-- Headings not in sectionConfig default to open=true, icon=star.        -->
+  <div class="narrative" id="loc-narrative">
     <Content />
   </div>
+
+  {(d.sections ?? []).length > 0 && (
+    <script define:vars={{ sectionConfigStr }}>
+      (function () {
+        const cfg     = JSON.parse(sectionConfigStr);
+        const narr    = document.getElementById('loc-narrative');
+        if (!narr) return;
+        const h2s = Array.from(narr.querySelectorAll('h2'));
+        if (!h2s.length) return;
+
+        h2s.forEach(h2 => {
+          const heading  = h2.textContent?.trim() ?? '';
+          const meta     = cfg[heading] ?? { open: true, iconSvg: '', colour: 'var(--muted)' };
+
+          // Collect siblings until next h2 or end of narrative
+          const siblings = [];
+          let node = h2.nextSibling;
+          while (node && !(node.nodeType === 1 && node.tagName === 'H2')) {
+            siblings.push(node);
+            node = node.nextSibling;
+          }
+
+          // Build <details> card
+          const details  = document.createElement('details');
+          if (meta.open) details.open = true;
+          details.className = 'section-card';
+
+          const summary  = document.createElement('summary');
+          summary.className = 'section-card-header';
+          summary.innerHTML = [
+            meta.iconSvg
+              ? `<span class="section-icon" aria-hidden="true" style="color:${meta.colour}">${meta.iconSvg}</span>`
+              : '',
+            `<span class="section-card-title">${heading}</span>`,
+            `<span class="section-chevron" aria-hidden="true"></span>`,
+          ].join('');
+
+          const body = document.createElement('div');
+          body.className = 'section-card-body';
+          siblings.forEach(s => body.appendChild(s.cloneNode(true)));
+
+          details.appendChild(summary);
+          details.appendChild(body);
+
+          // Replace h2 + siblings with the new details card
+          h2.parentNode.insertBefore(details, h2);
+          h2.remove();
+          siblings.forEach(s => { if (s.parentNode) s.parentNode.removeChild(s); });
+        });
+      })();
+    </script>
+  )}
 
   <!-- Physical markers -->
   {

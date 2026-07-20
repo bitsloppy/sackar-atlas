@@ -1,14 +1,7 @@
 ---
 import Base from '../../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
-import {
-  faPersonHiking,
-  faMartiniGlass,
-  faShieldHalved,
-  faBuilding,
-  faCity,
-  faLocationDot,
-} from '@fortawesome/pro-solid-svg-icons';
+import { ICONS, COLOURS } from '../../../lib/icons';
 
 // ── Region display labels ──────────────────────────────────────────────────
 
@@ -26,22 +19,7 @@ const regionLabels: Record<string, string> = {
   'other-state':      'Other State',
 };
 
-// ── Icon data helper (same pattern as map.astro) ───────────────────────────
-
-function iconData(def: { icon: [number, number, any, any, string | string[]] }) {
-  const [w, h, , , pathRaw] = def.icon;
-  const path = Array.isArray(pathRaw) ? pathRaw.join(' ') : pathRaw;
-  return { w, h, path };
-}
-
-const faIcons = {
-  locationDot:  iconData(faLocationDot),
-  personHiking: iconData(faPersonHiking),
-  martiniGlass: iconData(faMartiniGlass),
-  shieldHalved: iconData(faShieldHalved),
-  building:     iconData(faBuilding),
-  city:         iconData(faCity),
-};
+// Icons serialised for Leaflet client-side via define:vars
 
 // ── getStaticPaths ─────────────────────────────────────────────────────────
 
@@ -116,20 +94,20 @@ const mapPoints = locs
     stub:     l.data.stub ?? false,
   }));
 
-// Colour palette (same as main map)
+// Colour palette from central registry
 const locColours: Record<string, string> = {
-  beat:          '#2a9d8f',
-  venue:         '#9d4edd',
-  police:        '#4a7faa',
-  neighbourhood: '#4a7faa',
-  institution:   '#6b7280',
-  other:         '#5a5a72',
+  beat:          COLOURS.beat,
+  venue:         COLOURS.venue,
+  police:        COLOURS.police,
+  neighbourhood: COLOURS.neighbourhood,
+  institution:   COLOURS.institution,
+  other:         COLOURS.other,
 };
 
 // Serialise for client
 const suburbGeoJsonStr = JSON.stringify(suburbGeoJson);
 const mapPointsStr     = JSON.stringify(mapPoints);
-const faIconsStr       = JSON.stringify(faIcons);
+const faIconsStr       = JSON.stringify(ICONS);
 const locColoursStr    = JSON.stringify(locColours);
 ---
 

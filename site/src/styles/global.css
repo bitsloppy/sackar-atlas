@@ -432,6 +432,88 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
   border-color: var(--accent);
 }
 
+/* ── Section cards (accordion) ─────────────────────────────────────── */
+/* Zero-JS expandable sections on detail pages using <details>/<summary>. */
+/* Icon + colour driven by section type; aria handled by native HTML.     */
+
+.section-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.section-card + .section-card {
+  margin-top: 0.5rem;
+}
+
+.section-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  user-select: none;
+  list-style: none;          /* Firefox */
+  transition: background 0.1s, color 0.1s;
+}
+/* Remove default WebKit disclosure triangle */
+.section-card-header::-webkit-details-marker { display: none; }
+.section-card-header::marker { display: none; }
+
+.section-card-header:hover {
+  background: var(--surface2);
+  color: var(--text);
+}
+
+.section-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.section-card-title {
+  flex: 1;
+}
+
+/* Chevron rotates when open */
+.section-chevron {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  transform: rotate(-45deg);    /* pointing right = collapsed */
+  transition: transform 0.2s ease, border-color 0.1s;
+}
+
+details[open] > summary .section-chevron {
+  transform: rotate(45deg);     /* pointing down = expanded */
+}
+
+.section-card-header:hover .section-chevron {
+  border-color: var(--text);
+}
+
+.section-card-body {
+  padding: 0.5rem 1.25rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Suppress h2 inside section-card-body — heading lives in the summary */
+.section-card-body > h2:first-child {
+  display: none;
+}
+
 /* ── Utilities ─────────────────────────────────────────────────────── */
 
 .text-muted { color: var(--muted); }

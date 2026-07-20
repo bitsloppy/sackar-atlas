@@ -1503,6 +1503,25 @@ const locations = defineCollection({
     /** Acknowledgement of Country text for display on the location page. */
     acknowledgement: z.string().nullable().optional(),
 
+    // --- Narrative sections ------------------------------------------------
+    //
+    // Maps h2 headings in the markdown body → section types, so the detail
+    // page can render each section as an accordion card with the right icon.
+    // Headings not listed here fall back to type 'general' (open by default).
+
+    sections: z.array(z.object({
+      /** Must match the h2 heading text exactly (case-sensitive). */
+      heading: z.string(),
+      /** Section type — drives icon + colour from the central icon registry. */
+      type: z.enum([
+        'beat', 'deaths', 'first-nations', 'memorial',
+        'investigation', 'legal', 'cultural', 'sources',
+        'people', 'events', 'cases', 'locations', 'general',
+      ]).default('general'),
+      /** Start expanded? Default false — unlisted headings also default false. */
+      open: z.boolean().default(false),
+    })).default([]),
+
     // --- Physical markers ---------------------------------------------------
     //
     // Sackar Chapter 16 explicitly called for physical markers at significant

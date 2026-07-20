@@ -1,0 +1,60 @@
+---
+/**
+ * SectionCard — expandable accordion card for detail page sections.
+ *
+ * Uses <details>/<summary>: zero JS, fully accessible, keyboard-navigable.
+ * Icon and colour driven by the central icon registry (src/lib/icons.ts).
+ *
+ * Usage:
+ *   <SectionCard type="first-nations" heading="First Nations Country" open={false}>
+ *     ...content...
+ *   </SectionCard>
+ */
+
+import { ICONS, SECTION_TYPE_MAP } from '../lib/icons';
+import type { IconKey } from '../lib/icons';
+
+interface Props {
+  /** Section type key — maps to icon + colour in SECTION_TYPE_MAP. */
+  type?: string;
+  /** Display heading shown in the summary bar. */
+  heading: string;
+  /** Start expanded? Default false. */
+  open?: boolean;
+  /** Optional style overrides on the card element. */
+  style?: string;
+}
+
+const { type = 'general', heading, open = false, style } = Astro.props;
+
+const meta   = SECTION_TYPE_MAP[type] ?? SECTION_TYPE_MAP.general;
+const ic     = ICONS[meta.icon as IconKey];
+const colour = meta.colour;
+
+// Build a small inline SVG for the summary icon (server-rendered, no JS).
+const svgH = 13;
+const svgW = ic ? Math.round(svgH * (ic.w / ic.h)) : svgH;
+---
+
+<details class="section-card" open={open || undefined} data-section-type={type} style={style}>
+  <summary class="section-card-header">
+    {ic && (
+      <span class="section-icon" aria-hidden="true" style={`color: ${colour}`}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox={`0 0 ${ic.w} ${ic.h}`}
+          width={svgW}
+          height={svgH}
+          fill="currentColor"
+        >
+          <path d={ic.path} />
+        </svg>
+      </span>
+    )}
+    <span class="section-card-title">{heading}</span>
+    <span class="section-chevron" aria-hidden="true"></span>
+  </summary>
+  <div class="section-card-body">
+    <slot />
+  </div>
+</details>

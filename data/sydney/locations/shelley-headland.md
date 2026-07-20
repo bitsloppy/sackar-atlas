@@ -58,6 +58,20 @@ consultation_notes: "Traditional name unknown. Consult Manly Warringah Local Abo
 # — is a candidate for a commemorative marker. No marker currently exists.
 # Northern Beaches Council has jurisdiction.
 
+sections:
+  - heading: "The beat"
+    type: beat
+    open: true
+  - heading: "Deaths at this site"
+    type: deaths
+    open: true
+  - heading: "First Nations Country"
+    type: first-nations
+    open: false
+  - heading: "Proposed memorial"
+    type: memorial
+    open: false
+
 physical_markers:
   - type: proposed
     description: "Commemorative marker called for by Sackar J in Chapter 16 of the SCOI report. At least two deaths at this site (Mark Stewart 1976, Paul Rath 1977) were examined by the Inquiry. Northern Beaches Council has jurisdiction."
