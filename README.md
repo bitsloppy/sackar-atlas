@@ -1,18 +1,16 @@
-# Queer Heritage
+# Sackar Atlas
 
-A historical record of queer Sydney — documenting LGBTIQ hate crime deaths, activism, legal milestones, cultural moments, and places across six decades.
-
-Built in response to Justice Sackar's 2023 findings and call for a lasting public heritage record.
+A navigable public record of the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar Inquiry, December 2023) — connecting cases, places, people, and institutions from the public record.
 
 ---
 
 ## What this is
 
-This is not just a crime database. The violence sits alongside activism, law reform, and culture. This project maps what it can as open data anyone can use.
+A public data project making a dense government inquiry accessible to anyone. The SCOI report is a PDF — a formal, correct, important document that makes all its connections invisible. This project takes the public record and makes those connections legible: real people, real places, an interconnected institutional system, all drawn from primary sources.
 
 **Scope:** Individual cases examined by the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar Inquiry, December 2023), plus the broader historical context: activism, legal milestones, cultural events, and significant places, from the 1960s to the present.
 
-**Framing:** Journalistic and open-research. Built to connect with oral history projects and archival institutions from the start.
+**Framing:** Public interest data journalism. Built on primary sources — the SCOI report, Hansard, coronial records, police annual reports, Trove press archives — synthesised and made navigable. Oral history and community memory are beyond this project's scope; the infrastructure is built to support that work by others.
 
 ---
 
@@ -41,18 +39,18 @@ All structured data is published as open data under CC-BY 4.0. On every build, t
 
 ### The dataset (AGSM author–date)
 
-> Roberts A (2026) *Queer Heritage: Historical LGBTIQ Hate Crimes in Sydney* [data set], GitHub, https://github.com/bitsloppy/queer-heritage, accessed [Day Month Year].
+> Roberts A (2026) *Sackar Atlas: A Public Record of the NSW LGBTIQ Hate Crimes Inquiry* [data set], GitHub, https://github.com/bitsloppy/sackar-atlas, accessed [Day Month Year].
 
-A `CITATION.cff` file is included — GitHub renders this as a **Cite this repository** button in the sidebar (look for it under "About").
+A `CITATION.cff` file is included — GitHub renders this as a **Cite this repository** button in the sidebar.
 
 ### An individual record
 
-> Roberts A (2026) '[Record title]', *Queer Heritage* [data set record], https://github.com/bitsloppy/queer-heritage/blob/main/data/sydney/[collection]/[slug].md, accessed [Day Month Year].
+> Roberts A (2026) '[Record title]', *Sackar Atlas* [data set record], https://github.com/bitsloppy/sackar-atlas/blob/main/data/sydney/[collection]/[slug].md, accessed [Day Month Year].
 
 Example:
-> Roberts A (2026) 'Mark Stewart', *Queer Heritage* [data set record], https://github.com/bitsloppy/queer-heritage/blob/main/data/sydney/cases/mark-stewart.md, accessed 17 July 2026.
+> Roberts A (2026) 'Mark Stewart', *Sackar Atlas* [data set record], https://github.com/bitsloppy/sackar-atlas/blob/main/data/sydney/cases/mark-stewart.md, accessed 17 July 2026.
 
-Once the site is live, use the site URL instead of the GitHub file path. Each record page will include a pre-formatted citation string.
+Once the site is live on a domain, use the site URL instead of the GitHub file path. Each record page will include a pre-formatted citation string.
 
 ### Licence requirement
 
@@ -78,7 +76,7 @@ This site targets **WCAG 2.1 Level AA** compliance. The subject matter documents
 - Colour is never the sole differentiator — icons, labels, or patterns accompany colour coding
 - Map is an enhancement, not the only path to information — every pin links to a full text page
 
-**For contributors:** run a contrast check before merging any new colour. The WCAG AA threshold is 4.5:1 for body text — use [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/) or the browser DevTools accessibility panel.
+**For contributors:** run a contrast check before merging any new colour. The WCAG AA threshold is 4.5:1 for body text.
 
 ---
 

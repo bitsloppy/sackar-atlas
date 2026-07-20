@@ -1,5 +1,5 @@
 /**
- * Queer Heritage — Astro Content Collections Schema
+ * Sackar Atlas — Astro Content Collections Schema
  *
  * Five collections, all loaded from data/sydney/ outside the Astro project root.
  * Requires Astro 5.x (Content Layer API with glob loader for external paths).
