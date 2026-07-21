@@ -323,4 +323,7 @@ export const DESIGN_TOKENS: Record<string, string> = {
 
   // NSW Aboriginal palette — exposed for direct use
   'nsw-aboriginal-palette-billabong-blue': NSW_ABORIGINAL_PALETTE.billabongBlue,  // #00405E
+
+  // NSW semantic tokens
+  'nsw-off-white': '#f2f2f2',  // $grey-50 from NSW Design System
 };
