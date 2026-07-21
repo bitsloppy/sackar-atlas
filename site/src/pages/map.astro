@@ -474,13 +474,13 @@ const eventCount        = eventPoints.length;
     // ── Layer control ────────────────────────────────────────────────────────
 
     L.control.layers(null, {
-      '● Death sites':          layers.cases,
-      '◆ Beats':                layers.beats,
-      '● Nightlife venues':     layers.venues,
-      '★ Historical events':    layers.events,
-      '◎ Neighbourhoods':       layers.neighbourhoods,
-      '■ Police jurisdictions': layers.police,
-      '● Institutions':         layers.institutions,
+      'Death sites':          layers.cases,
+      'Beats':                layers.beats,
+      'Nightlife venues':     layers.venues,
+      'Historical events':    layers.events,
+      'Neighbourhoods':       layers.neighbourhoods,
+      'Police jurisdictions': layers.police,
+      'Institutions':         layers.institutions,
     }, { collapsed: false, position: 'topright' }).addTo(map);
 
     // ── Fit bounds to all visible points ─────────────────────────────────────
@@ -538,22 +538,22 @@ const eventCount        = eventPoints.length;
     line-height: 1.2;
   }
 
-  /* ── Leaflet overrides for dark theme ─────────────────────────── */
+  /* ── Leaflet overrides — palette-aligned theme ───────────────── */
   :global(.leaflet-popup-content-wrapper) {
-    background: #1c1c2a;
-    color: #dcdcf0;
-    border: 1px solid #2a2a40;
+    background: var(--nav-bg);
+    color: var(--nav-text);
+    border: 1px solid rgba(255,255,255,0.15);
     border-radius: 5px;
-    box-shadow: 0 3px 14px rgba(0,0,0,0.65);
+    box-shadow: 0 3px 14px rgba(0,0,0,0.4);
   }
-  :global(.leaflet-popup-tip) { background: #1c1c2a; }
-  :global(.leaflet-popup-close-button) { color: #7878a0 !important; }
+  :global(.leaflet-popup-tip) { background: var(--nav-bg); }
+  :global(.leaflet-popup-close-button) { color: var(--nav-text) !important; opacity: 0.6; }
 
   :global(.leaflet-control-layers) {
-    background: #1c1c2a !important;
-    border: 1px solid #2a2a40 !important;
+    background: var(--nav-bg) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
     border-radius: 5px !important;
-    color: #dcdcf0 !important;
+    color: var(--nav-text) !important;
     font-family: var(--font-ui) !important;
     font-size: 0.8rem !important;
     min-width: 185px;
@@ -566,18 +566,18 @@ const eventCount        = eventPoints.length;
     align-items: center;
     gap: 0.4rem;
     padding: 0.2rem 0.5rem;
-    color: #dcdcf0;
+    color: var(--nav-text);
     cursor: pointer;
   }
   :global(.leaflet-control-layers label:hover) {
-    background: rgba(255,255,255,0.04);
+    background: rgba(255,255,255,0.08);
     border-radius: 3px;
   }
   :global(.leaflet-control-layers-separator) {
-    border-color: #2a2a40 !important;
+    border-color: rgba(255,255,255,0.15) !important;
   }
   :global(.leaflet-control-layers-toggle) {
-    background-color: #1c1c2a !important;
+    background-color: var(--nav-bg) !important;
   }
 
   @media (max-width: 600px) {
