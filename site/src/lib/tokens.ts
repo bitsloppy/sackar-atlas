@@ -266,7 +266,7 @@ export const DESIGN_TOKENS: Record<string, string> = {
   'link-visited':  PALETTE.linkVisited,
 
   // Nav
-  'nav-bg':        PALETTE.navBg,
+  'nav-bg':        NSW_ABORIGINAL_PALETTE.billabongBlue,  // #00405E
   'nav-text':      PALETTE.navText,
 
   // Finding colours (02 shades — for pins/icons/borders)
@@ -320,4 +320,7 @@ export const DESIGN_TOKENS: Record<string, string> = {
   'nsw-palette-blue-02':   NSW_PALETTE.blue02,    // #146CFD
   'nsw-palette-blue-03':   NSW_PALETTE.blue03,    // #8CE0FF
   'nsw-palette-blue-04':   NSW_PALETTE.blue04,    // #CBEDFD
+
+  // NSW Aboriginal palette — exposed for direct use
+  'nsw-aboriginal-palette-billabong-blue': NSW_ABORIGINAL_PALETTE.billabongBlue,  // #00405E
 };
