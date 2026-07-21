@@ -153,7 +153,7 @@ export const PALETTE = {
   linkVisited: '#6B3F6B',  // muted purple — 8.01:1 on bg ✓ (conventional visited)
 
   // Nav
-  navBg:       '#0B3F47',  // NSW Teal 01 — white on it 11.56:1 ✓, gold 5.36:1 ✓
+  navBg:       NSW_ABORIGINAL_PALETTE.billabongBlue,  // #00405E — white on it 10.4:1 ✓
   navText:     '#FDFCF5',  // warm white text on teal
 
   // Finding / site-status — NSW palette 02 shades for icon/pin use
@@ -266,7 +266,7 @@ export const DESIGN_TOKENS: Record<string, string> = {
   'link-visited':  PALETTE.linkVisited,
 
   // Nav
-  'nav-bg':        NSW_ABORIGINAL_PALETTE.billabongBlue,  // #00405E
+  'nav-bg':        PALETTE.navBg,
   'nav-text':      PALETTE.navText,
 
   // Finding colours (02 shades — for pins/icons/borders)
