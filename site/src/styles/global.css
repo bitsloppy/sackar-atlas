@@ -419,9 +419,9 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 /* Icon + colour driven by section type; aria handled by native HTML.     */
 
 .section-card {
-  border: 1px solid var(--border);
+  border: 1px solid var(--nsw-palette-blue-03);
   border-radius: 6px;
-  background: var(--surface);
+  background: var(--nsw-palette-blue-04);
   margin: 1rem 0;
   overflow: hidden;
 }

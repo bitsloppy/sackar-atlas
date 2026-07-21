@@ -316,4 +316,6 @@ export const DESIGN_TOKENS: Record<string, string> = {
   // NSW palette ramp values — exposed for direct use
   'nsw-palette-yellow-03': NSW_PALETTE.yellow03,  // #FDE79A
   'nsw-palette-yellow-04': NSW_PALETTE.yellow04,  // #FFF4CF
+  'nsw-palette-blue-03':   NSW_PALETTE.blue03,    // #8CE0FF
+  'nsw-palette-blue-04':   NSW_PALETTE.blue04,    // #CBEDFD
 };
