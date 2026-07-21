@@ -432,9 +432,9 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 /* Icon + colour driven by section type; aria handled by native HTML.     */
 
 .section-card {
-  border: 1px solid var(--nsw-palette-blue-03);
+  border: 1px solid var(--nsw-palette-blue-04);
   border-radius: 6px;
-  background: var(--nsw-palette-blue-04);
+  background: color-mix(in srgb, var(--nsw-palette-blue-04) 30%, white);
   margin: 1rem 0;
   overflow: hidden;
 }
@@ -454,7 +454,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.09em;
-  color: var(--muted);
+  color: var(--nsw-palette-blue-01);
   user-select: none;
   list-style: none;          /* Firefox */
   transition: background 0.1s, color 0.1s;
@@ -485,8 +485,8 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
   flex-shrink: 0;
   width: 0.5rem;
   height: 0.5rem;
-  border-right: 2px solid var(--muted);
-  border-bottom: 2px solid var(--muted);
+  border-right: 2px solid var(--nsw-palette-blue-02);
+  border-bottom: 2px solid var(--nsw-palette-blue-02);
   transform: rotate(-45deg);    /* pointing right = collapsed */
   transition: transform 0.2s ease, border-color 0.1s;
 }
