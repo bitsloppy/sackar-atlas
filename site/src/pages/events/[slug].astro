@@ -100,7 +100,8 @@ function statusBadgeClass(status: string | undefined): string {
   title={d.title}
   description={`Event: ${d.title}. ${d.date_display ?? d.date} — Sackar Atlas.`}
 >
-  <!-- Stub notice -->
+  <!-- ══ SECTION: Stub warning ═══════════════════════════════════════════════ -->
+  <!-- Conditional: only shown when stub: true.                               -->
   {
     d.stub && (
       <div class="stub-warning">
@@ -110,7 +111,8 @@ function statusBadgeClass(status: string | undefined): string {
     )
   }
 
-  <!-- Header -->
+  <!-- ══ SECTION: Header ════════════════════════════════════════════════════ -->
+  <!-- Title, date, type badge. (No key facts grid on events — by design.)   -->
   <div class="detail-header">
     <h1>{d.title}</h1>
 
@@ -133,14 +135,16 @@ function statusBadgeClass(status: string | undefined): string {
     </div>
   </div>
 
-  <!-- Narrative body -->
+  <!-- ══ SECTION: Narrative body ════════════════════════════════════════════ -->
+  <!-- Markdown prose from the data file.                                     -->
   <div class="narrative">
     <Content />
   </div>
 
   <hr />
 
-  <!-- Related cases -->
+  <!-- ══ SECTION: Related cases ════════════════════════════════════════════ -->
+  <!-- Conditional. Shows count in heading.                                   -->
   {
     relatedCases.length > 0 && (
       <SectionCard type="cases" heading={`Related cases (${relatedCases.length})`} open={true}>
@@ -174,7 +178,8 @@ function statusBadgeClass(status: string | undefined): string {
     )
   }
 
-  <!-- Related people -->
+  <!-- ══ SECTION: Related people ═══════════════════════════════════════════ -->
+  <!-- Conditional.                                                           -->
   {
     relatedPeople.length > 0 && (
       <SectionCard type="people" heading="Related people" open={false}>
@@ -193,7 +198,8 @@ function statusBadgeClass(status: string | undefined): string {
     )
   }
 
-  <!-- Related locations -->
+  <!-- ══ SECTION: Related locations ════════════════════════════════════════ -->
+  <!-- Conditional.                                                           -->
   {
     relatedLocations.length > 0 && (
       <SectionCard type="locations" heading="Related locations" open={false}>
@@ -212,7 +218,8 @@ function statusBadgeClass(status: string | undefined): string {
     )
   }
 
-  <!-- Sources -->
+  <!-- ══ SECTION: Sources ══════════════════════════════════════════════════ -->
+  <!-- Always shown.                                                          -->
   <SectionCard type="sources" heading="Sources" open={false}>
 
     {
@@ -334,7 +341,7 @@ function statusBadgeClass(status: string | undefined): string {
     }
   </SectionCard>
 
-  <!-- Back link -->
+  <!-- ══ SECTION: Back link ════════════════════════════════════════════════ -->
   <div style="margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border)">
     <a href="/events/" class="text-ui" style="font-size:0.88rem">← All events</a>
   </div>

@@ -160,7 +160,8 @@ function countryDeterminationLabel(s: string | undefined): string {
 ---
 
 <Base title={d.name} description={`Location: ${d.name}. ${d.suburb ?? ''} — Sackar Atlas.`}>
-  <!-- Stub notice -->
+  <!-- ══ SECTION: Stub warning ═══════════════════════════════════════════════ -->
+  <!-- Conditional: only shown when stub: true on the location.               -->
   {
     d.stub && (
       <div class="stub-warning">
@@ -170,7 +171,8 @@ function countryDeterminationLabel(s: string | undefined): string {
     )
   }
 
-  <!-- Header -->
+  <!-- ══ SECTION: Header ════════════════════════════════════════════════════ -->
+  <!-- Name, type badge, suburb, region, First Nations country.               -->
   <div class="detail-header">
     <h1>{d.name}</h1>
 
@@ -214,7 +216,8 @@ function countryDeterminationLabel(s: string | undefined): string {
     </div>
   </div>
 
-  <!-- Key facts -->
+  <!-- ══ SECTION: Key facts grid ════════════════════════════════════════════ -->
+  <!-- Type · Suburb · Region · Country · PAC jurisdiction · Active dates     -->
   <div class="fact-grid">
     {
       d.first_nations_country && (
@@ -271,7 +274,8 @@ function countryDeterminationLabel(s: string | undefined): string {
     }
   </div>
 
-  <!-- Acknowledgement of Country -->
+  <!-- ══ SECTION: Acknowledgement of Country ═══════════════════════════════ -->
+  <!-- Always shown. Country name pulled from data.                           -->
   {
     d.acknowledgement && (
       <div class="finding-box" style="margin-bottom:2rem; border-color:#2a3a2a">
@@ -281,7 +285,9 @@ function countryDeterminationLabel(s: string | undefined): string {
     )
   }
 
-  <!-- PAC jurisdiction map (police-jurisdiction locations with suburb data) -->
+  <!-- ══ SECTION: PAC jurisdiction map ═════════════════════════════════════ -->
+  <!-- Conditional: only for location_type=police-jurisdiction with           -->
+  <!-- suburbs_covered[] set. Fetches NSW Spatial Portal boundaries at build. -->
   {isPAC && hasSubs && (
     <section class="pac-map-section" aria-label="Jurisdiction map">
       <p class="section-heading">Jurisdiction map</p>
@@ -380,10 +386,10 @@ function countryDeterminationLabel(s: string | undefined): string {
     </section>
   )}
 
-  <!-- Narrative body -->
-  <!-- Section accordion: h2s in the markdown are progressively wrapped in    -->
-  <!-- <details>/<summary> cards. sectionConfig provides icon + type per h2.  -->
-  <!-- Headings not in sectionConfig default to open=true, icon=star.        -->
+  <!-- ══ SECTION: Narrative body ════════════════════════════════════════════ -->
+  <!-- Markdown prose from the data file. h2 headings are progressively       -->
+  <!-- wrapped in SectionCard accordions by the inline script below.          -->
+  <!-- Each h2 must match a sections[] entry in the data file (type, open).   -->
   <div class="narrative" id="loc-narrative">
     <Content />
   </div>
@@ -440,7 +446,8 @@ function countryDeterminationLabel(s: string | undefined): string {
     </script>
   )}
 
-  <!-- Physical markers -->
+  <!-- ══ SECTION: Physical markers ══════════════════════════════════════════ -->
+  <!-- Conditional: only shown when physical_markers[] is not empty.          -->
   {
     d.physical_markers.length > 0 && (
       <SectionCard type="memorial" heading="Physical markers" open={false}>
@@ -477,7 +484,8 @@ function countryDeterminationLabel(s: string | undefined): string {
 
   <hr />
 
-  <!-- Related cases -->
+  <!-- ══ SECTION: Related cases ════════════════════════════════════════════ -->
+  <!-- Conditional. Shows count in heading.                                   -->
   {
     relatedCases.length > 0 && (
       <SectionCard type="cases" heading={`Related cases (${relatedCases.length})`} open={true}>
@@ -511,7 +519,8 @@ function countryDeterminationLabel(s: string | undefined): string {
     )
   }
 
-  <!-- Related events -->
+  <!-- ══ SECTION: Related events ═══════════════════════════════════════════ -->
+  <!-- Conditional.                                                           -->
   {
     relatedEvents.length > 0 && (
       <SectionCard type="events" heading="Related events" open={false}>
@@ -535,7 +544,8 @@ function countryDeterminationLabel(s: string | undefined): string {
     )
   }
 
-  <!-- Related people -->
+  <!-- ══ SECTION: Related people ═══════════════════════════════════════════ -->
+  <!-- Conditional.                                                           -->
   {
     relatedPeople.length > 0 && (
       <SectionCard type="people" heading="Related people" open={false}>
@@ -554,7 +564,8 @@ function countryDeterminationLabel(s: string | undefined): string {
     )
   }
 
-  <!-- Related locations -->
+  <!-- ══ SECTION: Related locations ════════════════════════════════════════ -->
+  <!-- Conditional.                                                           -->
   {
     relatedLocations.length > 0 && (
       <SectionCard type="locations" heading="Related locations" open={false}>
@@ -573,7 +584,8 @@ function countryDeterminationLabel(s: string | undefined): string {
     )
   }
 
-  <!-- Sources -->
+  <!-- ══ SECTION: Sources ══════════════════════════════════════════════════ -->
+  <!-- Always shown (may be sparse for stubs).                                -->
   <SectionCard type="sources" heading="Sources" open={false}>
 
     {
@@ -675,7 +687,7 @@ function countryDeterminationLabel(s: string | undefined): string {
     }
   </SectionCard>
 
-  <!-- Back link -->
+  <!-- ══ SECTION: Back link ════════════════════════════════════════════════ -->
   <div style="margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border)">
     <a href="/locations/" class="text-ui" style="font-size:0.88rem">← All locations</a>
   </div>

@@ -133,7 +133,8 @@ const mf = d.manner_findings;
 
 <Base title={d.name} description={`Case record: ${d.name}. ${d.scoi_finding ?? ''}`}>
 
-  <!-- Content warnings -->
+  <!-- ══ SECTION: Content warning ══════════════════════════════════════════ -->
+  <!-- Always shown. Adjust wording here if needed.                           -->
   <div class="content-warning">
     <strong>Content warning:</strong> This record documents a death and contains details of police
     investigations, inquest findings, and forensic information.
@@ -142,7 +143,8 @@ const mf = d.manner_findings;
     )}
   </div>
 
-  <!-- Header -->
+  <!-- ══ SECTION: Header ════════════════════════════════════════════════════ -->
+  <!-- Name, date, location, SCOI category badge, site status badge.          -->
   <div class="detail-header">
     <h1>{d.name}</h1>
     {d.pronouns && <p class="text-muted text-ui" style="font-size:0.85rem; margin-bottom:0.5rem">{d.pronouns}</p>}
@@ -192,7 +194,8 @@ const mf = d.manner_findings;
     </div>
   </div>
 
-  <!-- Key facts -->
+  <!-- ══ SECTION: Key facts grid ════════════════════════════════════════════ -->
+  <!-- Born · Sexuality · SCOI finding · Accountability · Police conduct · Reward -->
   <div class="fact-grid">
     <div class="fact">
       <span class="fact-label">Born</span>
@@ -237,7 +240,8 @@ const mf = d.manner_findings;
     )}
   </div>
 
-  <!-- SCOI finding text -->
+  <!-- ══ SECTION: SCOI finding blockquote ═══════════════════════════════════ -->
+  <!-- Conditional: only shown when scoi_finding field is set on the case.    -->
   {d.scoi_finding && (
     <div style="margin-bottom:2rem">
       <p class="section-heading">Sackar Inquiry finding</p>
@@ -247,7 +251,10 @@ const mf = d.manner_findings;
     </div>
   )}
 
-  <!-- Narrative body -->
+  <!-- ══ SECTION: Narrative body ════════════════════════════════════════════ -->
+  <!-- Markdown prose from the data file. h2 headings are progressively       -->
+  <!-- wrapped in SectionCard accordions by the inline script below.          -->
+  <!-- Each h2 must match a sections[] entry in the data file (type, open).   -->
   <div class="narrative" id="case-narrative">
     <Content />
   </div>
@@ -292,7 +299,9 @@ const mf = d.manner_findings;
     </script>
   )}
 
-  <!-- Manner findings -->
+  <!-- ══ SECTION: Official determinations ═══════════════════════════════════ -->
+  <!-- Conditional: only shown when manner_findings is present.               -->
+  <!-- Contains: inquest findings + Parrabell finding (if any).               -->
   {mf && (
     <SectionCard type="legal" heading="Official determinations" open={true}>
 
@@ -323,7 +332,8 @@ const mf = d.manner_findings;
     </SectionCard>
   )}
 
-  <!-- Police investigations -->
+  <!-- ══ SECTION: Police investigations ═════════════════════════════════════ -->
+  <!-- Conditional: only shown when police_investigations[] is not empty.     -->
   {d.police_investigations.length > 0 && (
     <SectionCard type="investigation" heading="Police investigations" open={false}>
       {d.police_investigations.map(pi => (
@@ -358,7 +368,9 @@ const mf = d.manner_findings;
     </SectionCard>
   )}
 
-  <!-- Sources -->
+  <!-- ══ SECTION: Sources ═══════════════════════════════════════════════════ -->
+  <!-- Sub-sections: SCOI report · Press · Coronial · Archival               -->
+  <!-- ⚠️  heading currently says "Primary sources" — differs from other pages -->
   <SectionCard type="sources" heading="Primary sources" open={false}>
 
     {d.sources.scoi && (
@@ -432,7 +444,9 @@ const mf = d.manner_findings;
     )}
   </SectionCard>
 
-  <!-- Related content -->
+  <!-- ══ SECTION: Related content ═══════════════════════════════════════════ -->
+  <!-- Bundled section containing: cases · locations · people · events        -->
+  <!-- ⚠️  Other page types use separate sections per type — see page-structure.md -->
   {(relatedCases.length > 0 || relatedLocations.length > 0 || relatedPeople.length > 0 || relatedEvents.length > 0) && (
     <SectionCard type="cases" heading="Related content" open={true}>
 
@@ -510,7 +524,7 @@ const mf = d.manner_findings;
     </SectionCard>
   )}
 
-  <!-- Back link -->
+  <!-- ══ SECTION: Back link ══════════════════════════════════════════════════ -->
   <div style="margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border)">
     <a href="/cases/" class="text-ui" style="font-size:0.88rem">← All cases</a>
   </div>

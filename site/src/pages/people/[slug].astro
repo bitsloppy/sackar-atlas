@@ -111,7 +111,8 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
   title={d.name}
   description={`${roleLabel(d.role)}: ${d.name}. ${d.institutional_role ?? ''} — Sackar Atlas.`}
 >
-  <!-- Stub notice -->
+  <!-- ══ SECTION: Stub warning ═══════════════════════════════════════════════ -->
+  <!-- Conditional: only shown when stub: true.                               -->
   {
     d.stub && (
       <div class="stub-warning">
@@ -121,7 +122,8 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
     )
   }
 
-  <!-- Content warnings for victims -->
+  <!-- ══ SECTION: Content warning ═════════════════════════════════════════════ -->
+  <!-- Conditional: only shown when person is a victim (role=victim).         -->
   {
     d.content_warnings.includes('deceased-person') && (
       <div class="content-warning">
@@ -131,7 +133,8 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
     )
   }
 
-  <!-- Header -->
+  <!-- ══ SECTION: Header ════════════════════════════════════════════════════ -->
+  <!-- Name, role badge, dates.                                               -->
   <div class="detail-header">
     <h1>{d.name}</h1>
 
@@ -174,7 +177,8 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
     </div>
   </div>
 
-  <!-- Key facts -->
+  <!-- ══ SECTION: Key facts grid ════════════════════════════════════════════ -->
+  <!-- Role · Born/died · Affiliation · Tenure etc.                           -->
   <div class="fact-grid">
     {
       (d.born_date ?? d.birth_year) && (
@@ -253,14 +257,16 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
     }
   </div>
 
-  <!-- Narrative body -->
+  <!-- ══ SECTION: Narrative body ════════════════════════════════════════════ -->
+  <!-- Markdown prose from the data file.                                     -->
   <div class="narrative">
     <Content />
   </div>
 
   <hr />
 
-  <!-- Related cases -->
+  <!-- ══ SECTION: Related cases ════════════════════════════════════════════ -->
+  <!-- Conditional. Shows count in heading.                                   -->
   {
     relatedCases.length > 0 && (
       <SectionCard type="cases" heading={`Related cases (${relatedCases.length})`} open={true}>
@@ -294,7 +300,8 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
     )
   }
 
-  <!-- Related events -->
+  <!-- ══ SECTION: Related events ═══════════════════════════════════════════ -->
+  <!-- Conditional.                                                           -->
   {
     relatedEvents.length > 0 && (
       <SectionCard type="events" heading="Related events" open={false}>
@@ -318,7 +325,8 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
     )
   }
 
-  <!-- Related locations -->
+  <!-- ══ SECTION: Related locations ════════════════════════════════════════ -->
+  <!-- Conditional.                                                           -->
   {
     relatedLocations.length > 0 && (
       <SectionCard type="locations" heading="Related locations" open={false}>
@@ -337,7 +345,8 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
     )
   }
 
-  <!-- Related people -->
+  <!-- ══ SECTION: Related people ═══════════════════════════════════════════ -->
+  <!-- Conditional.                                                           -->
   {
     relatedPeople.length > 0 && (
       <SectionCard type="people" heading="Related people" open={false}>
@@ -356,7 +365,8 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
     )
   }
 
-  <!-- Back link -->
+  <!-- ══ SECTION: Back link ════════════════════════════════════════════════ -->
+  <!-- ⚠️  No Sources section on People pages — intentional or missing?         -->
   <div style="margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border)">
     <a href="/people/" class="text-ui" style="font-size:0.88rem">← All people</a>
   </div>
