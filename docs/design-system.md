@@ -180,7 +180,62 @@ All icons live at `site/src/lib/icons.ts`. The full set currently available:
 
 ---
 
-## 4. The Central Registry Rule
+## 4. Colour Reference — NSW Design System
+
+The NSW Government Design System (MIT licence) is the canonical source for colours on
+this site. When adding a new colour, pick from there first.
+
+Full palette: https://designsystem.nsw.gov.au/core/colour/index.html
+
+Both palettes are available in `site/src/lib/tokens.ts` as `NSW_PALETTE` and
+`NSW_ABORIGINAL_PALETTE`.
+
+### Which palette to use
+
+| Context | Palette | Notes |
+|---|---|---|
+| Location/event categories | NSW Gov palette | Draw from the 02 shades for icons/borders on dark bg |
+| Data visualisation | NSW Gov palette | 8+ distinct hues from 02 shades — good categorical set |
+| First Nations / Country content | Aboriginal palette | Marshland Lime, Billabong Blue, Bushland Green |
+| Finding colours (homicide/probable/possible) | Custom (keep) | Deliberately muted; WCAG-checked badge pairs |
+| Brand accent, site backgrounds | Custom (keep) | Dark archival theme |
+
+### How the 4-stop ramp works on a dark theme
+
+Each NSW hue has four stops: 01 (darkest) → 04 (lightest).
+
+On this dark-background site:
+- **01** — badge/chip background (dark tint of the hue)
+- **02** — border, icon, main colour identifier
+- **03** — text on a 01 background (check contrast before using)
+- **04** — too light; avoid on dark bg
+
+Example — beat (teal):
+```
+bg:     NSW_PALETTE.teal01  #0B3F47
+border: NSW_PALETTE.teal02  #2E808E
+text:   NSW_PALETTE.teal03  #8CDBE5   (4.9:1 on teal01 ✓)
+```
+
+### Aboriginal palette — usage note
+
+The Aboriginal palette is published for "content relating to Aboriginal audiences or
+content." First Nations Country acknowledgments and custodianship sections on this
+site qualify. Don't use it as general decoration.
+
+Current site usage:
+- `firstNations` section card icon/label → Marshland Lime `#78A146` (6.25:1 on surface ✓)
+
+### Saying "I want something like X"
+
+When you want to add a new badge, map layer, or category colour, reference the NSW
+palette by name: "something like NSW teal" or "a green in the legal milestone family".
+Look up the exact hex at designsystem.nsw.gov.au, pick the right stop for dark-theme
+use (usually 02 for borders/icons), add to `tokens.ts`.
+
+---
+
+## 5. The Central Registry Rule
 
 > **Never** redeclare colours or icon mappings in individual page files.
 > Import from `site/src/lib/icons.ts` everywhere.
