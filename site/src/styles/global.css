@@ -14,7 +14,7 @@ html { font-size: 17px; scroll-behavior: smooth; }
 /* :focus-visible targets keyboard nav only, not mouse clicks.         */
 
 :focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--link);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -61,7 +61,7 @@ a:hover { color: var(--accent); }
 
 header {
   border-bottom: 1px solid var(--border);
-  background: var(--surface);
+  background: var(--nav-bg);
 }
 
 header nav {
@@ -75,14 +75,14 @@ header nav {
 }
 
 .site-name {
-  font-family: var(--font-ui);
-  font-weight: 700;
-  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 1.1rem;
   color: var(--accent) !important;
   text-decoration: none;
   letter-spacing: 0.02em;
 }
-.site-name:hover { color: var(--text) !important; }
+.site-name:hover { color: var(--nav-text) !important; }
 
 header nav ul {
   list-style: none;
@@ -93,11 +93,12 @@ header nav ul {
 header nav ul a {
   font-family: var(--font-ui);
   font-size: 0.9rem;
-  color: var(--muted);
+  color: var(--nav-text);
   text-decoration: none;
   letter-spacing: 0.03em;
+  opacity: 0.85;
 }
-header nav ul a:hover { color: var(--text); }
+header nav ul a:hover { opacity: 1; color: var(--accent); }
 
 /* ── Main ────────────────────────────────────────────────────────────── */
 
@@ -113,10 +114,10 @@ main {
 
 footer {
   border-top: 1px solid var(--border);
-  background: var(--surface);
+  background: var(--nav-bg);
   font-family: var(--font-ui);
   font-size: 0.82rem;
-  color: var(--muted);
+  color: var(--nav-text);
 }
 
 footer .inner {
@@ -128,8 +129,8 @@ footer .inner {
   gap: 0.4rem;
 }
 
-footer a { color: var(--muted); }
-footer a:hover { color: var(--accent); }
+footer a { color: var(--nav-text); opacity: 0.85; }
+footer a:hover { color: var(--accent); opacity: 1; }
 
 footer .country {
   color: #5858780;
@@ -141,10 +142,10 @@ footer .country {
 
 /* ── Typography ─────────────────────────────────────────────────────── */
 
-h1 { font-size: 2rem; font-weight: 700; line-height: 1.2; color: var(--text); margin-bottom: 0.5rem; }
-h2 { font-size: 1.4rem; font-weight: 700; line-height: 1.3; color: var(--text); margin: 2rem 0 0.75rem; }
-h3 { font-size: 1.1rem; font-weight: 700; color: var(--text); margin: 1.5rem 0 0.5rem; }
-h4 { font-size: 0.95rem; font-weight: 700; color: var(--muted); margin: 1rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
+h1 { font-family: var(--font-heading); font-size: 2rem; font-weight: 400; line-height: 1.2; color: var(--text); margin-bottom: 0.5rem; }
+h2 { font-family: var(--font-heading); font-size: 1.4rem; font-weight: 400; line-height: 1.3; color: var(--text); margin: 2rem 0 0.75rem; }
+h3 { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 400; color: var(--text); margin: 1.5rem 0 0.5rem; }
+h4 { font-family: var(--font-ui); font-size: 0.95rem; font-weight: 700; color: var(--muted); margin: 1rem 0 0.4rem; text-transform: uppercase; letter-spacing: 0.05em; }
 
 p { margin-bottom: 1rem; }
 
@@ -172,11 +173,11 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
   white-space: nowrap;
 }
 
-.badge-homicide  { background: var(--badge-homicide-bg);   color: var(--badge-homicide-text); border: 1px solid var(--homicide); } /* text = 4.9:1 on bg ✓ */
-.badge-probable  { background: var(--badge-probable-bg);   color: var(--probable);            border: 1px solid var(--probable); }
-.badge-possible  { background: var(--badge-possible-bg);   color: var(--possible);            border: 1px solid var(--possible); }
-.badge-open      { background: var(--badge-open-bg);       color: var(--open);                border: 1px solid var(--open); }
-.badge-excluded  { background: var(--badge-excluded-bg);   color: var(--muted);               border: 1px solid var(--border); }
+.badge-homicide  { background: var(--badge-homicide-bg); color: var(--badge-homicide-text); border: 1px solid var(--badge-homicide-border); }
+.badge-probable  { background: var(--badge-probable-bg); color: var(--badge-probable-text); border: 1px solid var(--probable); }
+.badge-possible  { background: var(--badge-possible-bg); color: var(--badge-possible-text); border: 1px solid var(--possible); }
+.badge-open      { background: var(--badge-open-bg);     color: var(--badge-open-text);     border: 1px solid var(--border); }
+.badge-excluded  { background: var(--badge-excluded-bg); color: var(--badge-excluded-text); border: 1px solid var(--border); }
 .badge-scoi-a    { background: var(--badge-scoi-bg);       color: var(--badge-scoi-a-text);   border: 1px solid var(--badge-scoi-a-border); }
 .badge-scoi-b    { background: var(--badge-scoi-bg);       color: var(--badge-scoi-b-text);   border: 1px solid var(--badge-scoi-b-border); }
 

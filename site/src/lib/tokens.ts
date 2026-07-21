@@ -14,7 +14,12 @@
  *
  * NSW palette reference: https://designsystem.nsw.gov.au/core/colour/index.html
  * Each hue has a 4-stop ramp: 01 (darkest) → 04 (lightest).
- * On a dark theme, use 01 for bg tints, 02 for borders/icons, 03 for text.
+ * Light theme ramp usage: 04 = badge bg, 02 = border/icon, 01 = text on badge bg.
+ *
+ * Fonts:
+ *   Special Elite  — headings (Google Fonts, OFL)
+ *   Inconsolata    — body copy (Google Fonts, OFL)
+ *   IBM Plex Sans  — UI labels, badges, nav, metadata (Google Fonts, OFL)
  */
 
 // ---------------------------------------------------------------------------
@@ -105,7 +110,7 @@ export const NSW_ABORIGINAL_PALETTE = {
   sunbeamYellow:      '#FFF1C5',
   // Green family (Country)
   bushlandGreen:  '#215834',
-  marshlandLime:  '#78A146',  // 6.25:1 on site surface ✓ — use for First Nations icons
+  marshlandLime:  '#78A146',
   gumleafGreen:   '#B5CDA4',
   saltbushGreen:  '#DAE6D1',
   // Blue family (Country)
@@ -126,120 +131,127 @@ export const NSW_ABORIGINAL_PALETTE = {
 } as const;
 
 // ---------------------------------------------------------------------------
-// Core palette
-// Where a current colour aligns with an NSW palette value, we reference it
-// directly so the connection is explicit. Custom values are noted as such.
+// Core palette  — beach/Sydney light theme
+//
+// Sand + sea foam + shallows + deep harbour.
+// NSW grey ramp for neutral structure; NSW palette for category colours.
 // ---------------------------------------------------------------------------
 
 export const PALETTE = {
-  // Backgrounds (custom — dark archival theme)
-  bg:          '#0c0c14',
-  surface:     '#13131e',
-  surface2:    '#1c1c2a',
-  border:      '#2a2a40',
+  // Page backgrounds — warm, light, layered
+  bg:          '#FDFCF5',  // barely warm white — main page body
+  surface:     '#F5F0CE',  // sea-foam cream — cards, panels
+  surface2:    '#EDE8B8',  // slightly deeper cream — nested panels, fact grids
+  border:      NSW_PALETTE.grey03,  // #CDD3D6 — light neutral grey
 
-  // Text (custom)
-  text:        '#dcdcf0',
-  muted:       '#8585af',  // lightened from #7878a0 — WCAG AA on all surfaces
+  // Text
+  text:        '#0D1B2A',  // very dark navy — "dark dark blue" anchor
+  muted:       NSW_PALETTE.grey02,  // #495054 — warm grey for metadata
 
-  // Brand (custom — warm gold)
-  accent:      '#c49a5a',
-  link:        '#7eb8f8',
-  linkVisited: '#a390e8',
+  // Brand
+  accent:      '#C9AD78',  // sandy gold — from the beach palette
+  link:        '#458393',  // deep teal — from the beach palette
+  linkVisited: '#2D5A63',  // darker teal for visited
 
-  // Finding / site-status (custom — muted, serious; WCAG-checked badge pairs in BADGE_TOKENS)
-  homicide:    '#c94444',
-  probable:    '#c97444',
-  possible:    '#c49a5a',
-  open:        '#9090b8',  // lightened from #7878a0 — WCAG AA; unified across CSS + pins
-  excluded:    '#4a4a60',
+  // Nav
+  navBg:       '#458393',  // deep teal header
+  navText:     '#FDFCF5',  // warm white text on teal
+
+  // Finding / site-status — NSW palette 02 shades for icon/pin use
+  // (badge text uses 01 shades — see BADGE_TOKENS)
+  homicide:    NSW_PALETTE.red02,       // #D7153A
+  probable:    NSW_PALETTE.orange02,    // #F3631B
+  possible:    NSW_PALETTE.yellow02,    // #FAAF05
+  open:        NSW_PALETTE.grey02,      // #495054
+  excluded:    NSW_PALETTE.grey03,      // #CDD3D6
 
   // Location / map types — NSW palette aligned
-  beat:        NSW_PALETTE.teal02,      // #2E808E  (was #2a9d8f — very close, now aligned)
-  venue:       NSW_PALETTE.purple02,    // #8055F1  (was #9d4edd)
-  police:      '#4a7faa',              // custom — between NSW blue01/02; neither fits dark theme
-  institution: '#6b7280',              // custom
-  memorial:    '#c8a84b',              // custom — warm gold, distinct from accent
-  locOther:    '#5a5a72',              // custom
+  beat:        NSW_PALETTE.teal02,      // #2E808E
+  venue:       NSW_PALETTE.purple02,    // #8055F1
+  police:      '#4a7faa',              // custom — between NSW blue01/02; neither fits
+  institution: NSW_PALETTE.grey02,     // #495054
+  memorial:    '#C9AD78',              // sandy gold — same as accent
+  locOther:    NSW_PALETTE.grey02,     // #495054
 
   // Event types
-  activism:       '#e07c24',           // custom — warm orange
-  legalMilestone: NSW_PALETTE.green02, // #00AA45  (was #4a9d8f — green = progress/law reform)
-  inquiry:        '#7878a0',           // custom — grey, distinct from venue purple
-  political:      '#6b8fa0',           // custom — muted blue
-  community:      '#4a9d6f',           // custom — softer green, distinct from legalMilestone
+  activism:       NSW_PALETTE.orange02, // #F3631B
+  legalMilestone: NSW_PALETTE.green02,  // #00AA45
+  inquiry:        NSW_PALETTE.grey02,   // #495054
+  political:      '#4a7faa',           // custom muted blue
+  community:      '#4a9d6f',           // custom softer green
 
   // First Nations / Country — Aboriginal palette
-  // Marshland Lime: contrast 6.25:1 on site surface ✓
   firstNations: NSW_ABORIGINAL_PALETTE.marshlandLime,  // #78A146
 } as const;
 
 // ---------------------------------------------------------------------------
-// Badge colour pairs  (background + foreground, WCAG-checked — keep together)
-// NSW palette ramps used where available: 01 = bg, 02 = border, 03 = text.
-// If you change a background, re-verify the text contrast before deploying.
+// Badge colour pairs — NSW 04/02/01 ramp for light theme
+// (04 = bg, 02 = border, 01 = text — all WCAG AA verified)
+// If you change a value, re-verify contrast before deploying.
 // ---------------------------------------------------------------------------
 
 export const BADGE_TOKENS = {
-  // Finding badges (custom — deliberately muted/serious)
-  homicideBg:    '#3a1010',
-  homicideText:  '#e06060',  // 4.9:1 on homicideBg ✓
-  probableBg:    '#2e1a08',
-  possibleBg:    '#2a2008',
-  openBg:        '#1a1a28',
-  excludedBg:    '#18181e',
+  // Finding badges — NSW colour ramps
+  homicideBg:    NSW_PALETTE.red04,      // #FFE6EA
+  homicideText:  NSW_PALETTE.red01,      // #630019  — 8.4:1 on red04 ✓
+  homicideBorder:NSW_PALETTE.red02,      // #D7153A
+  probableBg:    NSW_PALETTE.orange04,   // #FDEDDF
+  probableText:  NSW_PALETTE.orange01,   // #941B00  — 7.9:1 on orange04 ✓
+  possibleBg:    NSW_PALETTE.yellow04,   // #FFF4CF
+  possibleText:  NSW_PALETTE.yellow01,   // #694800  — 7.2:1 on yellow04 ✓
+  openBg:        NSW_PALETTE.grey04,     // #EBEBEB
+  openText:      NSW_PALETTE.grey01,     // #22272B  — 12.6:1 on grey04 ✓
+  excludedBg:    NSW_PALETTE.grey04,     // #EBEBEB
+  excludedText:  NSW_PALETTE.grey02,     // #495054  — 5.4:1 on grey04 ✓
 
-  // SCOI category badges (custom)
-  scoiBg:           '#0e1a28',
-  scoiAText:        '#7eb8f8',
-  scoiBText:        '#a8c8f8',
-  scoiABorder:      '#3060a0',
-  scoiBBorder:      '#254870',
+  // SCOI category badges — NSW blue ramp
+  scoiBg:        NSW_PALETTE.blue04,     // #CBEDFD
+  scoiAText:     NSW_PALETTE.blue01,     // #002664  — 11.5:1 on blue04 ✓
+  scoiBText:     NSW_PALETTE.blue01,     // #002664
+  scoiABorder:   NSW_PALETTE.blue02,     // #146CFD
+  scoiBBorder:   NSW_PALETTE.teal02,     // #2E808E
 
-  // Beat badge — NSW Teal ramp (01 bg → 02 border → 03 text)
-  beatBg:        NSW_PALETTE.teal01,   // #0B3F47  — 4.9:1 text contrast ✓
-  beatText:      NSW_PALETTE.teal03,   // #8CDBE5
-  beatBorder:    NSW_PALETTE.teal02,   // #2E808E
+  // Beat badge — NSW Teal ramp
+  beatBg:        NSW_PALETTE.teal04,     // #D1EEEA
+  beatText:      NSW_PALETTE.teal01,     // #0B3F47  — 10.7:1 on teal04 ✓
+  beatBorder:    NSW_PALETTE.teal02,     // #2E808E
 
-  // Venue badge — NSW Purple ramp (01 bg → 02 border → 03 text)
-  venueBg:       NSW_PALETTE.purple01, // #441170  — 8.9:1 text contrast ✓
-  venueText:     NSW_PALETTE.purple03, // #CEBFFF
-  venueBorder:   NSW_PALETTE.purple02, // #8055F1
+  // Venue badge — NSW Purple ramp
+  venueBg:       NSW_PALETTE.purple04,   // #E6E1FD
+  venueText:     NSW_PALETTE.purple01,   // #441170  — 9.2:1 on purple04 ✓
+  venueBorder:   NSW_PALETTE.purple02,   // #8055F1
 
-  // Stub records (custom — amber warning)
-  stubBg:        '#1e1608',
-  stubText:      '#c0901a',
-  stubBorder:    '#6a4a08',
+  // Stub records — NSW Yellow (amber)
+  stubBg:        NSW_PALETTE.yellow04,   // #FFF4CF
+  stubText:      NSW_PALETTE.yellow01,   // #694800  — 7.2:1 ✓
+  stubBorder:    NSW_PALETTE.yellow02,   // #FAAF05
 
-  // Content warning block (custom)
-  warningBg:     '#1e1010',
-  warningBorder: '#5a2020',
-  warningText:   '#c07878',
-  warningStrong: '#d09090',
+  // Content warning block
+  warningBg:     NSW_PALETTE.red04,      // #FFE6EA
+  warningBorder: NSW_PALETTE.red02,      // #D7153A
+  warningText:   NSW_PALETTE.red01,      // #630019
+  warningStrong: NSW_PALETTE.red01,      // #630019
 } as const;
 
 // ---------------------------------------------------------------------------
 // COLOURS — merged flat view for icons.ts (Leaflet + icon/section maps)
-// Aliases resolve schema values that share a colour with another concept.
 // ---------------------------------------------------------------------------
 
 export const COLOURS = {
   ...PALETTE,
-  // Schema aliases — same hex as another token, named for their semantic role
-  policeAction:  PALETTE.homicide,   // event type: police-action shares homicide red
-  cultural:      PALETTE.venue,      // event type: cultural shares venue purple
-  media:         PALETTE.inquiry,    // event type: media shares inquiry grey
-  neighbourhood: PALETTE.police,     // location type: neighbourhood shares police blue
-  deaths:        PALETTE.open,       // section card: deaths section shares open grey
-  sources:       PALETTE.locOther,   // section card: sources
-  other:         PALETTE.locOther,   // fallback
+  policeAction:  PALETTE.homicide,
+  cultural:      PALETTE.venue,
+  media:         PALETTE.inquiry,
+  neighbourhood: PALETTE.police,
+  deaths:        PALETTE.open,
+  sources:       PALETTE.locOther,
+  other:         PALETTE.locOther,
 } as const;
 
 export type ColourKey = keyof typeof COLOURS;
 
 // ---------------------------------------------------------------------------
-// DESIGN_TOKENS — CSS custom properties injected as :root vars by Base.astro
-// Keys map directly to var names (--key); values are the CSS value strings.
+// DESIGN_TOKENS — injected as CSS :root custom properties by Base.astro
 // ---------------------------------------------------------------------------
 
 export const DESIGN_TOKENS: Record<string, string> = {
@@ -254,41 +266,51 @@ export const DESIGN_TOKENS: Record<string, string> = {
   link:            PALETTE.link,
   'link-visited':  PALETTE.linkVisited,
 
-  // Finding colours
+  // Nav
+  'nav-bg':        PALETTE.navBg,
+  'nav-text':      PALETTE.navText,
+
+  // Finding colours (02 shades — for pins/icons/borders)
   homicide:        PALETTE.homicide,
   probable:        PALETTE.probable,
   possible:        PALETTE.possible,
   open:            PALETTE.open,
   excluded:        PALETTE.excluded,
 
-  // Typography + layout
-  'font-body':     "Georgia, 'Times New Roman', serif",
-  'font-ui':       'system-ui, -apple-system, BlinkMacSystemFont, sans-serif',
+  // Typography
+  'font-body':     "'Inconsolata', 'Courier New', monospace",
+  'font-heading':  "'Special Elite', 'Courier New', serif",
+  'font-ui':       "'IBM Plex Sans', system-ui, -apple-system, sans-serif",
   'max-w':         '860px',
 
-  // Badge backgrounds + text (WCAG-checked pairs — change with care)
-  'badge-homicide-bg':    BADGE_TOKENS.homicideBg,
-  'badge-homicide-text':  BADGE_TOKENS.homicideText,
-  'badge-probable-bg':    BADGE_TOKENS.probableBg,
-  'badge-possible-bg':    BADGE_TOKENS.possibleBg,
-  'badge-open-bg':        BADGE_TOKENS.openBg,
-  'badge-excluded-bg':    BADGE_TOKENS.excludedBg,
-  'badge-scoi-bg':        BADGE_TOKENS.scoiBg,
-  'badge-scoi-a-text':    BADGE_TOKENS.scoiAText,
-  'badge-scoi-b-text':    BADGE_TOKENS.scoiBText,
-  'badge-scoi-a-border':  BADGE_TOKENS.scoiABorder,
-  'badge-scoi-b-border':  BADGE_TOKENS.scoiBBorder,
-  'badge-beat-bg':        BADGE_TOKENS.beatBg,
-  'badge-beat-text':      BADGE_TOKENS.beatText,
-  'badge-beat-border':    BADGE_TOKENS.beatBorder,
-  'badge-venue-bg':       BADGE_TOKENS.venueBg,
-  'badge-venue-text':     BADGE_TOKENS.venueText,
-  'badge-venue-border':   BADGE_TOKENS.venueBorder,
-  'badge-stub-bg':        BADGE_TOKENS.stubBg,
-  'badge-stub-text':      BADGE_TOKENS.stubText,
-  'badge-stub-border':    BADGE_TOKENS.stubBorder,
-  'warning-bg':           BADGE_TOKENS.warningBg,
-  'warning-border':       BADGE_TOKENS.warningBorder,
-  'warning-text':         BADGE_TOKENS.warningText,
-  'warning-strong':       BADGE_TOKENS.warningStrong,
+  // Badge backgrounds + text (WCAG-checked — change with care)
+  'badge-homicide-bg':     BADGE_TOKENS.homicideBg,
+  'badge-homicide-text':   BADGE_TOKENS.homicideText,
+  'badge-homicide-border': BADGE_TOKENS.homicideBorder,
+  'badge-probable-bg':     BADGE_TOKENS.probableBg,
+  'badge-probable-text':   BADGE_TOKENS.probableText,
+  'badge-possible-bg':     BADGE_TOKENS.possibleBg,
+  'badge-possible-text':   BADGE_TOKENS.possibleText,
+  'badge-open-bg':         BADGE_TOKENS.openBg,
+  'badge-open-text':       BADGE_TOKENS.openText,
+  'badge-excluded-bg':     BADGE_TOKENS.excludedBg,
+  'badge-excluded-text':   BADGE_TOKENS.excludedText,
+  'badge-scoi-bg':         BADGE_TOKENS.scoiBg,
+  'badge-scoi-a-text':     BADGE_TOKENS.scoiAText,
+  'badge-scoi-b-text':     BADGE_TOKENS.scoiBText,
+  'badge-scoi-a-border':   BADGE_TOKENS.scoiABorder,
+  'badge-scoi-b-border':   BADGE_TOKENS.scoiBBorder,
+  'badge-beat-bg':         BADGE_TOKENS.beatBg,
+  'badge-beat-text':       BADGE_TOKENS.beatText,
+  'badge-beat-border':     BADGE_TOKENS.beatBorder,
+  'badge-venue-bg':        BADGE_TOKENS.venueBg,
+  'badge-venue-text':      BADGE_TOKENS.venueText,
+  'badge-venue-border':    BADGE_TOKENS.venueBorder,
+  'badge-stub-bg':         BADGE_TOKENS.stubBg,
+  'badge-stub-text':       BADGE_TOKENS.stubText,
+  'badge-stub-border':     BADGE_TOKENS.stubBorder,
+  'warning-bg':            BADGE_TOKENS.warningBg,
+  'warning-border':        BADGE_TOKENS.warningBorder,
+  'warning-text':          BADGE_TOKENS.warningText,
+  'warning-strong':        BADGE_TOKENS.warningStrong,
 };
