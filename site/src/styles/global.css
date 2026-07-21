@@ -269,6 +269,19 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 
 .content-warning strong { color: var(--warning-strong); }
 
+/* Stub notice — uses yellow badge tokens; WCAG AA verified (7.2:1) */
+.stub-warning {
+  background: var(--badge-stub-bg);
+  border: 1px solid var(--badge-stub-border);
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--badge-stub-text);
+}
+.stub-warning strong { color: var(--badge-stub-text); }
+
 .fact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
