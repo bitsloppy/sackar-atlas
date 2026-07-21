@@ -191,9 +191,12 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
   margin-top: 1.5rem;
 }
 
-.card {
+.card,
+.location-card,
+.event-card,
+.person-card {
   background: color-mix(in srgb, var(--nsw-palette-yellow-04) 30%, white);
-  border: 1px solid var(--nsw-palette-yellow-04);
+  border: 1px solid var(--nsw-palette-yellow-03);
   border-radius: 6px;
   padding: 1.25rem;
   display: flex;
@@ -201,7 +204,10 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
   gap: 0.6rem;
   transition: border-color 0.15s;
 }
-.card:hover { border-color: var(--accent); }
+.card:hover,
+.location-card:hover,
+.event-card:hover,
+.person-card:hover { border-color: var(--accent); }
 
 .card-name {
   font-size: 1.1rem;
@@ -403,28 +409,6 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 .chip-meta {
   color: var(--muted);
   font-size: 0.78rem;
-}
-
-/* ── Location, event, and person card variants ────────────────────── */
-/* These extend .card — same visual style, class names for semantic clarity */
-
-.location-card,
-.event-card,
-.person-card {
-  background: color-mix(in srgb, var(--nsw-palette-yellow-04) 30%, white);
-  border: 1px solid var(--nsw-palette-yellow-04);
-  border-radius: 6px;
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  transition: border-color 0.15s;
-}
-
-.location-card:hover,
-.event-card:hover,
-.person-card:hover {
-  border-color: var(--accent);
 }
 
 /* ── Section cards (accordion) ─────────────────────────────────────── */
