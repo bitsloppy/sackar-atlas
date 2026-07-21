@@ -1,30 +1,10 @@
 /* ===================================================================
-   Queer Heritage Sydney — Global Styles
+   Sackar Atlas — Global Styles
    Dark, serious, readable. This is a historical record, not a product.
+
+   Design tokens (:root vars) are injected by Base.astro from tokens.ts.
+   To change a colour, edit src/lib/tokens.ts — not here.
    =================================================================== */
-
-:root {
-  --bg:        #0c0c14;
-  --surface:   #13131e;
-  --surface2:  #1c1c2a;
-  --border:    #2a2a40;
-  --text:      #dcdcf0;
-  --muted:     #8585af;   /* lightened from #7878a0 — WCAG AA on all surfaces */
-  --accent:    #c49a5a;   /* warm gold */
-  --link:      #7eb8f8;
-  --link-visited: #a390e8;
-
-  /* Finding colours */
-  --homicide:  #c94444;
-  --probable:  #c97444;
-  --possible:  #c49a5a;
-  --open:      #9090b8;   /* lightened from #7878a0 — badge-open text contrast */
-  --excluded:  #4a4a60;
-
-  --font-body: Georgia, 'Times New Roman', serif;
-  --font-ui:   system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  --max-w: 860px;
-}
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -192,13 +172,13 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
   white-space: nowrap;
 }
 
-.badge-homicide  { background: #3a1010; color: #e06060;          border: 1px solid var(--homicide); } /* #e06060 = 4.9:1 on #3a1010 ✓ */
-.badge-probable  { background: #2e1a08; color: var(--probable);  border: 1px solid var(--probable); }
-.badge-possible  { background: #2a2008; color: var(--possible);  border: 1px solid var(--possible); }
-.badge-open      { background: #1a1a28; color: var(--open);      border: 1px solid var(--open); }
-.badge-excluded  { background: #18181e; color: var(--muted);     border: 1px solid var(--border); }
-.badge-scoi-a    { background: #0e1a28; color: #7eb8f8;          border: 1px solid #3060a0; }
-.badge-scoi-b    { background: #0e1a28; color: #a8c8f8;          border: 1px solid #254870; }
+.badge-homicide  { background: var(--badge-homicide-bg);   color: var(--badge-homicide-text); border: 1px solid var(--homicide); } /* text = 4.9:1 on bg ✓ */
+.badge-probable  { background: var(--badge-probable-bg);   color: var(--probable);            border: 1px solid var(--probable); }
+.badge-possible  { background: var(--badge-possible-bg);   color: var(--possible);            border: 1px solid var(--possible); }
+.badge-open      { background: var(--badge-open-bg);       color: var(--open);                border: 1px solid var(--open); }
+.badge-excluded  { background: var(--badge-excluded-bg);   color: var(--muted);               border: 1px solid var(--border); }
+.badge-scoi-a    { background: var(--badge-scoi-bg);       color: var(--badge-scoi-a-text);   border: 1px solid var(--badge-scoi-a-border); }
+.badge-scoi-b    { background: var(--badge-scoi-bg);       color: var(--badge-scoi-b-text);   border: 1px solid var(--badge-scoi-b-border); }
 
 /* ── Cards ──────────────────────────────────────────────────────────── */
 
@@ -275,17 +255,17 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 .detail-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
 .content-warning {
-  background: #1e1010;
-  border: 1px solid #5a2020;
+  background: var(--warning-bg);
+  border: 1px solid var(--warning-border);
   border-radius: 5px;
   padding: 0.75rem 1rem;
   font-family: var(--font-ui);
   font-size: 0.84rem;
-  color: #c07878;
+  color: var(--warning-text);
   margin-bottom: 2rem;
 }
 
-.content-warning strong { color: #d09090; }
+.content-warning strong { color: var(--warning-strong); }
 
 .fact-grid {
   display: grid;
@@ -359,13 +339,13 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 /* ── Additional badges ─────────────────────────────────────────────── */
 
 /* Beat locations — teal/green for outdoor spaces */
-.badge-beat   { background: #0a1e1a; color: #5ec4a0; border: 1px solid #2a6050; }
+.badge-beat   { background: var(--badge-beat-bg);   color: var(--badge-beat-text);   border: 1px solid var(--badge-beat-border); }
 
 /* Nightlife venues — purple for nightlife */
-.badge-venue  { background: #1a0e28; color: #c090f0; border: 1px solid #604080; }
+.badge-venue  { background: var(--badge-venue-bg);  color: var(--badge-venue-text);  border: 1px solid var(--badge-venue-border); }
 
 /* Stub records — amber warning */
-.badge-stub   { background: #1e1608; color: #c0901a; border: 1px solid #6a4a08; }
+.badge-stub   { background: var(--badge-stub-bg);   color: var(--badge-stub-text);   border: 1px solid var(--badge-stub-border); }
 
 /* ── Related content ────────────────────────────────────────────────── */
 

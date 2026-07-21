@@ -1,9 +1,8 @@
 /**
- * Sackar Atlas — Central Icon & Colour Registry
+ * Sackar Atlas — Central Icon Registry
  *
- * Single source of truth for every icon, colour, and schema-value → visual
- * mapping used across the site. Import this everywhere; never re-declare
- * colours or icon maps in individual pages.
+ * Icon definitions and schema-value → visual mappings.
+ * Colours come from tokens.ts — do not define colours here.
  *
  * Usage in Astro pages (server-side):
  *   import { ICONS, COLOURS, SECTION_TYPE } from '../lib/icons';
@@ -81,42 +80,9 @@ export const ICONS = {
 
 export type IconKey = keyof typeof ICONS;
 
-// ---------------------------------------------------------------------------
-// Colour palette — single source of truth
-// ---------------------------------------------------------------------------
-
-export const COLOURS = {
-  // Case site-status
-  homicide:        '#c94444',
-  probable:        '#c97444',
-  possible:        '#c49a5a',
-  open:            '#7878a0',
-  excluded:        '#4a4a60',
-
-  // Location categories
-  beat:            '#2a9d8f',   // teal
-  venue:           '#9d4edd',   // purple
-  police:          '#4a7faa',   // steel blue
-  neighbourhood:   '#4a7faa',   // same — same layer, PAC map
-  institution:     '#6b7280',   // grey
-  other:           '#5a5a72',   // dim
-  memorial:        '#c8a84b',   // gold
-
-  // Event types
-  activism:        '#e07c24',
-  policeAction:    '#c94444',
-  legalMilestone:  '#4a9d8f',
-  inquiry:         '#7878a0',
-  cultural:        '#9d4edd',
-  political:       '#6b8fa0',
-  community:       '#4a9d6f',
-  media:           '#7878a0',
-
-  // Section-card specific
-  firstNations:    '#4a7a5a',   // muted green — land
-  deaths:          '#7878a0',   // respectful grey, not alarming red
-  sources:         '#5a5a72',
-} as const;
+// Colours live in tokens.ts — imported here for internal map use and re-exported.
+import { COLOURS } from './tokens';
+export { COLOURS };
 
 // ---------------------------------------------------------------------------
 // Schema-value → visual mappings
