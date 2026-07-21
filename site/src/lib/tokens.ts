@@ -312,4 +312,8 @@ export const DESIGN_TOKENS: Record<string, string> = {
   'warning-border':        BADGE_TOKENS.warningBorder,
   'warning-text':          BADGE_TOKENS.warningText,
   'warning-strong':        BADGE_TOKENS.warningStrong,
+
+  // NSW palette ramp values — exposed for direct use
+  'nsw-palette-yellow-03': NSW_PALETTE.yellow03,  // #FDE79A
+  'nsw-palette-yellow-04': NSW_PALETTE.yellow04,  // #FFF4CF
 };

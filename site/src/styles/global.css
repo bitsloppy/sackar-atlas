@@ -192,8 +192,8 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 }
 
 .card {
-  background: var(--surface);
-  border: 1px solid var(--border);
+  background: var(--nsw-palette-yellow-04);
+  border: 1px solid var(--nsw-palette-yellow-03);
   border-radius: 6px;
   padding: 1.25rem;
   display: flex;
