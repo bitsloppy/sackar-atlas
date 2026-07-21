@@ -98,7 +98,8 @@ header nav ul a {
   letter-spacing: 0.03em;
   opacity: 0.85;
 }
-header nav ul a:hover { opacity: 1; color: var(--accent); }
+header nav ul a:hover   { opacity: 1; color: var(--accent); }
+header nav ul a:visited { color: var(--nav-text); } /* override global a:visited — nav bg is dark */
 
 /* ── Main ────────────────────────────────────────────────────────────── */
 

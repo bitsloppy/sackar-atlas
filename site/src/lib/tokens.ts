@@ -18,8 +18,7 @@
  *
  * Fonts:
  *   Special Elite  — headings (Google Fonts, OFL)
- *   Inconsolata    — body copy (Google Fonts, OFL)
- *   IBM Plex Sans  — UI labels, badges, nav, metadata (Google Fonts, OFL)
+ *   Outfit         — body copy + UI labels/badges/nav (Google Fonts, OFL)
  */
 
 // ---------------------------------------------------------------------------
@@ -278,9 +277,9 @@ export const DESIGN_TOKENS: Record<string, string> = {
   excluded:        PALETTE.excluded,
 
   // Typography
-  'font-body':     "'Inconsolata', 'Courier New', monospace",
+  'font-body':     "'Outfit', system-ui, sans-serif",
   'font-heading':  "'Special Elite', 'Courier New', serif",
-  'font-ui':       "'IBM Plex Sans', system-ui, -apple-system, sans-serif",
+  'font-ui':       "'Outfit', system-ui, sans-serif",
   'max-w':         '860px',
 
   // Badge backgrounds + text (WCAG-checked — change with care)
