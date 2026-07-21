@@ -464,8 +464,8 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 .section-card-header::marker { display: none; }
 
 .section-card-header:hover {
-  background: var(--surface2);
-  color: var(--text);
+  background: var(--nsw-palette-blue-04);
+  color: var(--nsw-palette-blue-01);
 }
 
 .section-icon {
