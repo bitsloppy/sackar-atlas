@@ -133,7 +133,7 @@ footer a { color: var(--nav-text); opacity: 0.85; }
 footer a:hover { color: var(--accent); opacity: 1; }
 
 footer .country {
-  color: #5858780;
+  color: var(--nav-text);
   border-top: 1px solid var(--border);
   margin-top: 0.6rem;
   padding-top: 0.6rem;

@@ -150,11 +150,11 @@ export const PALETTE = {
 
   // Brand
   accent:      '#C9AD78',  // sandy gold — from the beach palette
-  link:        '#458393',  // deep teal — from the beach palette
-  linkVisited: '#2D5A63',  // darker teal for visited
+  link:        '#1F5C68',  // dark teal — 7.32:1 on bg, 6.54:1 on surface ✓
+  linkVisited: '#6B3F6B',  // muted purple — 8.01:1 on bg ✓ (conventional visited)
 
   // Nav
-  navBg:       '#458393',  // deep teal header
+  navBg:       '#0B3F47',  // NSW Teal 01 — white on it 11.56:1 ✓, gold 5.36:1 ✓
   navText:     '#FDFCF5',  // warm white text on teal
 
   // Finding / site-status — NSW palette 02 shades for icon/pin use
