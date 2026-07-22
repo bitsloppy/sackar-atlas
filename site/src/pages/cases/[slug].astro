@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
 import SectionCard from '../../components/SectionCard.astro';
+import FindingBox from '../../components/FindingBox.astro';
 import { ICONS, SECTION_TYPE_MAP } from '../../lib/icons';
 
 export async function getStaticPaths() {
@@ -244,10 +245,15 @@ const mf = d.manner_findings;
   <!-- Conditional: only shown when scoi_finding field is set on the case.    -->
   {d.scoi_finding && (
     <div style="margin-bottom:2rem">
-      <p class="section-heading">Sackar Inquiry finding</p>
-      <div class="finding-box">
+      <FindingBox
+        heading="Sackar Inquiry finding"
+        source={d.sources?.scoi
+          ? `SCOI Vol ${d.sources.scoi.volume}${d.sources.scoi.chapter ? `, Ch ${d.sources.scoi.chapter}` : ''}${d.sources.scoi.page_start ? `, p.${d.sources.scoi.page_start}` : ''}`
+          : 'Sackar Commission of Inquiry (2023)'}
+        open={true}
+      >
         <blockquote>{d.scoi_finding}</blockquote>
-      </div>
+      </FindingBox>
     </div>
   )}
 
@@ -306,28 +312,25 @@ const mf = d.manner_findings;
     <SectionCard type="legal" heading="Official determinations" open={true}>
 
       {mf.inquests.length > 0 && mf.inquests.map(inq => (
-        <div class="finding-box" style="margin-bottom:0.75rem">
-          <div class="label">
-            Coronial inquest {mf.inquests.length > 1 ? `(${inq.sequence})` : ''} —
-            {inq.date ?? 'date unknown'}
-            {inq.coroner && ` · ${inq.coroner}`}
-          </div>
+        <FindingBox
+          heading={`Coronial inquest${mf.inquests.length > 1 ? ` (${inq.sequence})` : ''}`}
+          source={`${inq.date ?? 'Date unknown'}${inq.coroner ? ` · Coroner ${inq.coroner}` : ''}`}
+        >
           <div class="value">{coronialFindingLabel(inq.finding)}</div>
           {inq.finding_text && (
             <blockquote>{inq.finding_text}</blockquote>
           )}
-        </div>
+        </FindingBox>
       ))}
 
       {mf.parrabell_finding && (
-        <div class="finding-box">
-          <div class="label">Strike Force Parrabell (BCIF)</div>
+        <FindingBox heading="Strike Force Parrabell (BCIF)" source="NSW Police Strike Force Parrabell">
           <div class="value">{mf.parrabell_finding.replace(/-/g, ' ')}</div>
-          <div class="text-muted text-ui" style="font-size:0.8rem; margin-top:0.3rem">
+          <p class="text-muted text-ui" style="font-size:0.8rem; margin-top:0.3rem">
             Note: the Sackar Inquiry found the Parrabell methodology was fundamentally flawed
             and its findings are not authoritative.
-          </div>
-        </div>
+          </p>
+        </FindingBox>
       )}
     </SectionCard>
   )}
@@ -337,14 +340,15 @@ const mf = d.manner_findings;
   {d.police_investigations.length > 0 && (
     <SectionCard type="investigation" heading="Police investigations" open={false}>
       {d.police_investigations.map(pi => (
-        <div class="finding-box" style="margin-bottom:0.75rem">
-          <div class="label">
-            {pi.event_id ? (
-              <a href={`/events/${pi.event_id}/`}>{pi.name}</a>
-            ) : pi.name}
-            {pi.years && ` · ${pi.years}`}
-            {pi.type && ` · ${pi.type.replace(/-/g, ' ')}`}
-          </div>
+        <FindingBox
+          heading={pi.name}
+          source={`${pi.years ? pi.years : 'NSW Police'}${pi.type ? ` · ${pi.type.replace(/-/g, ' ')}` : ''}`}
+        >
+          {pi.event_id && (
+            <div class="text-muted text-ui" style="font-size:0.85rem">
+              Event: <a href={`/events/${pi.event_id}/`}>{pi.name}</a>
+            </div>
+          )}
           {pi.command_id && (
             <div class="text-muted text-ui" style="font-size:0.85rem">
               Command: <a href={`/locations/${pi.command_id}/`} class="meta-link">{pi.command_id.replace(/-pac$/, ' PAC').replace(/-/g, ' ')}</a>
@@ -363,7 +367,7 @@ const mf = d.manner_findings;
               {pi.notes}
             </div>
           )}
-        </div>
+        </FindingBox>
       ))}
     </SectionCard>
   )}

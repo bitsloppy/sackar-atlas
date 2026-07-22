@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
 import SectionCard from '../../components/SectionCard.astro';
+import FindingBox from '../../components/FindingBox.astro';
 import { ICONS, SECTION_TYPE_MAP } from '../../lib/icons';
 
 export async function getStaticPaths() {
@@ -452,31 +453,19 @@ function countryDeterminationLabel(s: string | undefined): string {
     d.physical_markers.length > 0 && (
       <SectionCard type="memorial" heading="Physical markers" open={false}>
         {d.physical_markers.map(marker => (
-          <div class="finding-box" style="margin-bottom:0.75rem">
-            <div class="label">
-              {marker.type.replace(/-/g, ' ')}
-              {marker.installed && ` · ${marker.installed}`}
-            </div>
-            {marker.name && <div class="value">{marker.name}</div>}
+          <FindingBox
+            heading={marker.name || marker.type.replace(/-/g, ' ')}
+            source={`${marker.type.replace(/-/g, ' ')}${marker.installed ? ` · ${marker.installed}` : ''}${marker.managed_by ? ` · ${marker.managed_by}` : ''}`}
+          >
             {marker.description && (
-              <div class="text-muted text-ui" style="font-size:0.85rem; margin-top:0.3rem">
-                {marker.description}
-              </div>
-            )}
-            {marker.managed_by && (
-              <div class="text-muted text-ui" style="font-size:0.82rem">
-                Managed by: {marker.managed_by}
-              </div>
+              <p style="font-size:0.85rem; margin:0 0 0.3rem">{marker.description}</p>
             )}
             {marker.type === 'proposed' && (
-              <div
-                class="text-muted text-ui"
-                style="font-size:0.8rem; margin-top:0.3rem; font-style:italic"
-              >
+              <p class="text-muted text-ui" style="font-size:0.8rem; font-style:italic; margin:0">
                 Called for by the Sackar Inquiry (Chapter 16) — not yet installed.
-              </div>
+              </p>
             )}
-          </div>
+          </FindingBox>
         ))}
       </SectionCard>
     )
