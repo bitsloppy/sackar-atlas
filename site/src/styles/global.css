@@ -347,6 +347,71 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 .finding-box .value { font-size: 0.95rem; }
 .finding-box blockquote { margin: 0.5rem 0 0; font-size: 0.92rem; }
 
+/* ── FindingBox accordion ───────────────────────────────────────────── */
+.finding-card {
+  background: color-mix(in srgb, var(--nsw-palette-yellow-04) 15%, white);
+  border: 1px solid var(--nsw-palette-yellow-03);
+  border-left: 4px solid var(--nav-bg);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.finding-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.finding-card-header::-webkit-details-marker { display: none; }
+
+.finding-card-icon {
+  color: var(--nav-bg);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.finding-card-title {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--nav-bg);
+  flex: 1;
+}
+
+/* reuse the chevron from section-card */
+.finding-card .section-chevron {
+  color: var(--nav-bg);
+  opacity: 0.6;
+}
+
+.finding-card-body {
+  padding: 0 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+.finding-card-source {
+  margin-top: 0.9rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--nsw-palette-yellow-03);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.finding-source-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 0.4rem;
+  color: var(--nav-bg);
+}
+
 /* ── Map ────────────────────────────────────────────────────────────── */
 
 #map {

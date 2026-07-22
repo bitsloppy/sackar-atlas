@@ -1,0 +1,54 @@
+---
+/**
+ * FindingBox — collapsible accordion for inquiry findings and testimony.
+ *
+ * Uses <details>/<summary>: zero JS, fully accessible, keyboard-navigable.
+ * Always includes a source citation at the foot of the body.
+ *
+ * Usage:
+ *   <FindingBox heading="Sackar Inquiry finding" source="SCOI Vol 2, Chapter 5, p.84">
+ *     The commission found...
+ *   </FindingBox>
+ */
+
+import { ICONS } from '../lib/icons';
+
+interface Props {
+  /** Heading shown in the summary bar. */
+  heading: string;
+  /** Source citation — shown as attribution at the foot of the body. Required. */
+  source: string;
+  /** Start expanded? Default false. */
+  open?: boolean;
+}
+
+const { heading, source, open = false } = Astro.props;
+
+const ic   = ICONS.quoteLeft;
+const svgH = 13;
+const svgW = Math.round(svgH * (ic.w / ic.h));
+---
+
+<details class="finding-card" open={open || undefined}>
+  <summary class="finding-card-header">
+    <span class="finding-card-icon" aria-hidden="true">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox={`0 0 ${ic.w} ${ic.h}`}
+        width={svgW}
+        height={svgH}
+        fill="currentColor"
+      >
+        <path d={ic.path} />
+      </svg>
+    </span>
+    <span class="finding-card-title">{heading}</span>
+    <span class="section-chevron" aria-hidden="true"></span>
+  </summary>
+  <div class="finding-card-body">
+    <slot />
+    <footer class="finding-card-source">
+      <span class="finding-source-label">Source</span>{source}
+    </footer>
+  </div>
+</details>

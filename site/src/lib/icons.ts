@@ -33,6 +33,8 @@ import {
   faStar,
   // First Nations / geography
   faEarthOceania,
+  // Findings / testimony
+  faQuoteLeft,
 } from '@fortawesome/pro-solid-svg-icons';
 
 // ---------------------------------------------------------------------------
@@ -76,6 +78,8 @@ export const ICONS = {
   star:            iconData(faStar),
   // First Nations / geography
   earthOceania:    iconData(faEarthOceania),
+  // Findings / testimony
+  quoteLeft:       iconData(faQuoteLeft),
 } as const;
 
 export type IconKey = keyof typeof ICONS;
