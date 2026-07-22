@@ -488,7 +488,7 @@ function countryDeterminationLabel(s: string | undefined): string {
   <!-- Conditional. Shows count in heading.                                   -->
   {
     relatedCases.length > 0 && (
-      <SectionCard type="cases" heading={`Related cases (${relatedCases.length})`} open={true}>
+      <SectionCard type="cases" heading="Related cases" open={true}>
         <div class="card-grid">
           {relatedCases.map(c => {
             const slug = c.id.replace(/\.md$/, '');

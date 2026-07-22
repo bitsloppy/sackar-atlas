@@ -5,14 +5,18 @@ inconsistencies and decide what to change — then ask Good Buddy to implement.*
 
 ---
 
-## Quick audit: inconsistencies to resolve
+## Quick audit
 
-| Issue | Current state | Decision needed |
-|---|---|---|
-| **Sources section name** | Cases: "Primary sources" · Locations/Events: "Sources" | Pick one |
-| **Related items layout** | Cases: one bundled "Related content" section · Locations/Events/People: separate section per type | Pick one |
-| **Count in related headings** | "Related cases (N)" has count · "Related events", "Related people" etc. do not | Always show count, or never? |
-| **People — no Sources section** | People pages have no Sources block at all | Intentional or missing? |
+All inconsistencies resolved 2026-07-22. Canonical decisions:
+
+| Item | Canonical |
+|---|---|
+| Sources section name | "Sources" on all page types |
+| Related items layout | Separate section per type on all page types |
+| Count in related headings | No counts — just "Related cases", "Related events" etc. |
+| People — Sources section | Added |
+
+If new inconsistencies emerge, add them here with a Decision needed column.
 
 ---
 
@@ -33,11 +37,11 @@ inconsistencies and decide what to change — then ask Good Buddy to implement.*
 | Official determinations | ✅ | — | — | — |
 | Police investigations | ✅ | — | — | — |
 | Physical markers | — | ✅ | — | — |
-| Related cases | ⚠️ bundled | ✅ separate | ✅ separate | ✅ separate |
-| Related events | ⚠️ bundled | ✅ separate | — | ✅ separate |
-| Related people | ⚠️ bundled | ✅ separate | ✅ separate | ✅ separate |
-| Related locations | ⚠️ bundled | ✅ separate | ✅ separate | ✅ separate |
-| Sources | ⚠️ "Primary sources" | ✅ "Sources" | ✅ "Sources" | — missing |
+| Related cases | ✅ separate | ✅ separate | ✅ separate | ✅ separate |
+| Related events | ✅ separate | ✅ separate | — | ✅ separate |
+| Related people | ✅ separate | ✅ separate | ✅ separate | ✅ separate |
+| Related locations | ✅ separate | ✅ separate | ✅ separate | ✅ separate |
+| Sources | ✅ "Sources" | ✅ "Sources" | ✅ "Sources" | ✅ "Sources" |
 | Back link | ✅ | ✅ | ✅ | ✅ |
 
 ---
@@ -54,11 +58,12 @@ inconsistencies and decide what to change — then ask Good Buddy to implement.*
     └─ Each h2 maps to a sections[] entry in the data file (type, open/closed)
 7.  [Official determinations]   — conditional: manner_findings present; inquests + Parrabell
 8.  [Police investigations]     — conditional: police_investigations[] not empty
-9.  Sources                     ← currently "Primary sources" — ⚠️ inconsistent
-    └─ Sub-sections: SCOI report · Press · Coronial · Archival
-10. Related content             ← currently bundled — ⚠️ inconsistent with others
-    └─ Sub-sections: Related cases · Related locations · Related people · Related events
-11. Back link                   — ← All cases
+9.  Sources                     — Sub-sections: SCOI report · Press · Coronial · Archival
+10. [Related cases]             — conditional
+11. [Related locations]         — conditional
+12. [Related people]            — conditional
+13. [Related events]            — conditional
+14. Back link                   — ← All cases
 ```
 
 ---
@@ -73,7 +78,7 @@ inconsistencies and decide what to change — then ask Good Buddy to implement.*
 5.  [PAC jurisdiction map]      — conditional: location_type=police-jurisdiction + suburbs_covered[]
 6.  Narrative body              — markdown content; h2s become accordion SectionCards
 7.  [Physical markers]          — conditional: physical_markers[] not empty
-8.  [Related cases (N)]         — conditional
+8.  [Related cases]             — conditional
 9.  [Related events]            — conditional
 10. [Related people]            — conditional
 11. [Related locations]         — conditional
@@ -89,7 +94,7 @@ inconsistencies and decide what to change — then ask Good Buddy to implement.*
 1.  [Stub warning]              — conditional: stub: true
 2.  Header                      — title, date, type badge
 3.  Narrative body              — markdown content
-4.  [Related cases (N)]         — conditional
+4.  [Related cases]             — conditional
 5.  [Related people]            — conditional
 6.  [Related locations]         — conditional
 7.  Sources                     — always shown
@@ -108,11 +113,11 @@ Note: Events has no key facts grid and no related events (events don't link to o
 3.  Header                      — name, role badge, dates
 4.  Key facts grid              — role, born/died, affiliation, tenure etc.
 5.  Narrative body              — markdown content
-6.  [Related cases (N)]         — conditional
+6.  [Related cases]             — conditional
 7.  [Related events]            — conditional
 8.  [Related locations]         — conditional
 9.  [Related people]            — conditional
-10. Sources                     ← currently MISSING — ⚠️
+10. Sources                     — press · hansard · reports · archives (shows "No sources listed yet" when empty)
 11. Back link                   — ← All people
 ```
 

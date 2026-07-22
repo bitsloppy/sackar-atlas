@@ -269,7 +269,7 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
   <!-- Conditional. Shows count in heading.                                   -->
   {
     relatedCases.length > 0 && (
-      <SectionCard type="cases" heading={`Related cases (${relatedCases.length})`} open={true}>
+      <SectionCard type="cases" heading="Related cases" open={true}>
         <div class="card-grid">
           {relatedCases.map(c => {
             const slug = c.id.replace(/\.md$/, '');
@@ -365,8 +365,83 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
     )
   }
 
+  <!-- ══ SECTION: Sources ══════════════════════════════════════════════════ -->
+  <!-- Always shown.                                                          -->
+  <SectionCard type="sources" heading="Sources" open={false}>
+
+    {d.sources.press.length > 0 && (
+      <div style="margin-top:0.5rem">
+        <h4 style="margin-bottom:0.5rem">Press sources</h4>
+        <ul class="text-ui" style="font-size:0.85rem; list-style:none; display:flex; flex-direction:column; gap:0.5rem">
+          {d.sources.press.map(p => (
+            <li>
+              {p.author && <>{p.author} </>}
+              {p.date && <>({p.date}) </>}
+              '{p.title}',<em> {p.publication}</em>
+              {p.page && <>, p. {p.page}</>}
+              {p.trove_url && <> · <a href={p.trove_url}>Trove</a></>}
+              {!p.trove_url && p.url && <> · <a href={p.url}>{p.url}</a></>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {d.sources.hansard.length > 0 && (
+      <div style="margin-top:1rem">
+        <h4 style="margin-bottom:0.5rem">Hansard</h4>
+        <ul class="text-ui" style="font-size:0.85rem; list-style:none; display:flex; flex-direction:column; gap:0.5rem">
+          {d.sources.hansard.map(h => (
+            <li>
+              {h.chamber} ({h.date})
+              {h.title && <> — <em>{h.title}</em></>}
+              {h.volume && <>, vol. {h.volume}</>}
+              {h.page && <>, p. {h.page}</>}
+              {h.url && <> · <a href={h.url}>View</a></>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {d.sources.reports.length > 0 && (
+      <div style="margin-top:1rem">
+        <h4 style="margin-bottom:0.5rem">Reports</h4>
+        <ul class="text-ui" style="font-size:0.85rem; list-style:none; display:flex; flex-direction:column; gap:0.5rem">
+          {d.sources.reports.map(r => (
+            <li>
+              {r.author && <>{r.author} </>}({r.year}) <em>{r.title}</em>, {r.organisation}
+              {r.page && <>, p. {r.page}</>}
+              {r.url && <> · <a href={r.url}>View</a></>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {d.sources.archives.length > 0 && (
+      <div style="margin-top:1rem">
+        <h4 style="margin-bottom:0.5rem">Archival records</h4>
+        <ul class="text-ui" style="font-size:0.85rem; list-style:none; display:flex; flex-direction:column; gap:0.5rem">
+          {d.sources.archives.map(a => (
+            <li>
+              {a.institution.replace(/-/g, ' ')}
+              {a.collection && <>, {a.collection}</>}
+              {a.item_id && <>, item {a.item_id}</>}
+              {a.description && <> — {a.description}</>}
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    {!d.sources.press.length && !d.sources.hansard.length && !d.sources.reports.length && !d.sources.archives.length && (
+      <p class="text-muted text-ui" style="font-size:0.85rem">No sources listed yet.</p>
+    )}
+
+  </SectionCard>
+
   <!-- ══ SECTION: Back link ════════════════════════════════════════════════ -->
-  <!-- ⚠️  No Sources section on People pages — intentional or missing?         -->
   <div style="margin-top:3rem; padding-top:1rem; border-top:1px solid var(--border)">
     <a href="/people/" class="text-ui" style="font-size:0.88rem">← All people</a>
   </div>

@@ -1869,6 +1869,18 @@ const people = defineCollection({
     related_people: z.array(z.string()).default([]),
     related_events: z.array(z.string()).default([]),
 
+    // --- Sources ------------------------------------------------------------
+
+    sources: z.object({
+      press: z.array(PressSource).default([]),
+      archives: z.array(ArchiveSource).default([]),
+      hansard: z.array(HansardSource).default([]),
+      oral_history: z.array(OralHistorySource).default([]),
+      reports: z.array(ReportSource).default([]),
+      /** Audio-visual media sources — podcasts, documentaries, TV journalism. */
+      media_sources: z.array(MediaSource).default([]),
+    }).default({ press: [], archives: [], hansard: [], oral_history: [], reports: [], media_sources: [] }),
+
     content_warnings: z.array(ContentWarning).default([]),
     tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
 
