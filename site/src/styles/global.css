@@ -349,8 +349,8 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 
 /* ── FindingBox accordion ───────────────────────────────────────────── */
 .finding-card {
-  background: color-mix(in srgb, var(--nsw-palette-yellow-04) 15%, white);
-  border: 1px solid var(--nsw-palette-yellow-03);
+  background: var(--nsw-off-white);
+  border: 1px solid var(--nav-bg);
   border-left: 4px solid var(--nav-bg);
   border-radius: 5px;
   margin-bottom: 1rem;
@@ -387,7 +387,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 /* reuse the chevron from section-card */
 .finding-card .section-chevron {
   color: var(--nav-bg);
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .finding-card-body {
@@ -398,7 +398,7 @@ hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
 .finding-card-source {
   margin-top: 0.9rem;
   padding-top: 0.6rem;
-  border-top: 1px solid var(--nsw-palette-yellow-03);
+  border-top: 1px solid var(--nav-bg);
   font-family: var(--font-ui);
   font-size: 0.78rem;
   color: var(--muted);
