@@ -2,37 +2,70 @@
    themes/locations.css — Locations: Teal/green family
    Places, Country, outdoor spaces. Tied to land and water.
 
-   NSW Teal ramp: teal04 (#D1EEEA) → teal03 (#8CDBE5) → teal02 (#2E808E) → teal01 (#0B3F47)
-   Aboriginal palette: billabongBlue (#00405E), saltwaterBlue (#0D6791)
+   NSW Teal: teal04 #D1EEEA → teal03 #8CDBE5 → teal02 #2E808E → teal01 #0B3F47
+   First Nations: saltbushGreen #DAE6D1, marshlandLime #78A146, bushlandGreen #215834
 
-   Edit the values below to restyle all location cards and detail accents.
+   Edit the values below to restyle all location cards and section accents.
    To change a colour: edit here. No TypeScript needed.
    =================================================================== */
 
-/* ── Location card ──────────────────────────────────────────────────── */
+/* ── Location / Beat section cards ──────────────────────────────────── */
+
+.section-card[data-section-type="locations"],
+.section-card[data-section-type="beat"] {
+  border-color: #8CDBE5;                                    /* teal03 */
+  background: color-mix(in srgb, #D1EEEA 25%, white);       /* teal04 tint */
+}
+
+.section-card[data-section-type="locations"] .section-card-header,
+.section-card[data-section-type="beat"] .section-card-header {
+  color: #0B3F47;                                            /* teal01 */
+}
+
+.section-card[data-section-type="locations"] .section-chevron,
+.section-card[data-section-type="beat"] .section-chevron {
+  border-color: #2E808E;                                     /* teal02 */
+}
+
+.section-card[data-section-type="locations"] .section-card-header:hover,
+.section-card[data-section-type="beat"] .section-card-header:hover {
+  background: color-mix(in srgb, #D1EEEA 55%, white);
+}
+
+/* ── First Nations section card — Aboriginal green palette ──────────── */
+
+.section-card[data-section-type="first-nations"] {
+  border-color: #B5CDA4;                                    /* gumleafGreen */
+  background: color-mix(in srgb, #DAE6D1 25%, white);       /* saltbushGreen tint */
+}
+
+.section-card[data-section-type="first-nations"] .section-card-header {
+  color: #215834;                                            /* bushlandGreen */
+}
+
+.section-card[data-section-type="first-nations"] .section-chevron {
+  border-color: #78A146;                                     /* marshlandLime */
+}
+
+.section-card[data-section-type="first-nations"] .section-card-header:hover {
+  background: color-mix(in srgb, #DAE6D1 55%, white);
+}
+
+/* ── Related-locations chips — teal tint ────────────────────────────── */
+
+.section-card[data-section-type="locations"] .related-chip {
+  background: color-mix(in srgb, #D1EEEA 40%, white);
+  border-color: #8CDBE5;                                     /* teal03 */
+  color: #0B3F47;                                            /* teal01 */
+}
+.section-card[data-section-type="locations"] .related-chip:visited { color: #0B3F47; }
+.section-card[data-section-type="locations"] .related-chip:hover   { border-color: #2E808E; color: #0B3F47; }
+.section-card[data-section-type="locations"] .chip-meta             { color: #2E808E; }
+
+/* ── Location card (index page) ─────────────────────────────────────── */
 
 .location-card {
-  background: color-mix(in srgb, #D1EEEA 40%, white);  /* teal04 */
-  border-color: #8CDBE5;                                 /* teal03 */
+  background: color-mix(in srgb, #D1EEEA 40%, white);       /* teal04 */
+  border-color: #8CDBE5;                                     /* teal03 */
 }
-
-.location-card:hover {
-  border-color: #2E808E;                                 /* teal02 */
-}
-
-/* ── Location detail — fact grid accent ─────────────────────────────── */
-
-/* Example: teal tint on location fact grids
-.location-detail .fact-grid {
-  background: color-mix(in srgb, #D1EEEA 20%, white);
-  border-color: #8CDBE5;
-}
-*/
-
-/* ── Location detail — related-content accent ───────────────────────── */
-
-/* Example:
-.location-detail .related-content {
-  border-color: #8CDBE5;
-}
-*/
+.location-card:hover { border-color: #2E808E; }              /* teal02 */

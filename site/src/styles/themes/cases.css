@@ -9,29 +9,46 @@
    To change a colour: edit here. No TypeScript needed.
    =================================================================== */
 
-/* ── Case card ──────────────────────────────────────────────────────── */
-/* .card is already yellow (base) — .case-card is an alias.             */
-/* Override here if you want cases to use a distinct colour.            */
+/* ── Case / Deaths section cards ───────────────────────────────────── */
+/* NSW Red ramp: red04 #FFE6EA → red03 #FFB8C1 → red02 #D7153A → red01 #630019 */
 
-/* Example: uncomment to shift cases to a warm red tint
-.card,
-.case-card {
+.section-card[data-section-type="cases"],
+.section-card[data-section-type="deaths"] {
+  border-color: #FFB8C1;                                    /* red03 */
+  background: color-mix(in srgb, #FFE6EA 25%, white);       /* red04 tint */
+}
+
+.section-card[data-section-type="cases"] .section-card-header,
+.section-card[data-section-type="deaths"] .section-card-header {
+  color: #630019;                                            /* red01 */
+}
+
+.section-card[data-section-type="cases"] .section-chevron,
+.section-card[data-section-type="deaths"] .section-chevron {
+  border-color: #D7153A;                                     /* red02 */
+}
+
+.section-card[data-section-type="cases"] .section-card-header:hover,
+.section-card[data-section-type="deaths"] .section-card-header:hover {
+  background: color-mix(in srgb, #FFE6EA 55%, white);
+}
+
+/* ── Related-cases chips — red tint ─────────────────────────────────── */
+
+.section-card[data-section-type="cases"] .related-chip {
+  background: color-mix(in srgb, #FFE6EA 40%, white);
+  border-color: #FFB8C1;                                     /* red03 */
+  color: #630019;                                            /* red01 */
+}
+.section-card[data-section-type="cases"] .related-chip:visited { color: #630019; }
+.section-card[data-section-type="cases"] .related-chip:hover   { border-color: #D7153A; color: #630019; }
+.section-card[data-section-type="cases"] .chip-meta             { color: #941B00; }     /* orange01 — readable contrast */
+
+/* ── Case card ──────────────────────────────────────────────────────── */
+/* .card / .case-card — uncomment to shift from yellow to red           */
+
+/* .card, .case-card {
   background: color-mix(in srgb, #FFE6EA 30%, white);
   border-color: #FFB8C1;
 }
-.card:hover,
-.case-card:hover {
-  border-color: #D7153A;
-}
-*/
-
-/* ── Case detail — fact grid accent ─────────────────────────────────── */
-/* The fact-grid on a case detail page can pick up a tinted background  */
-/* to distinguish it from the neutral default.                          */
-
-/* Example: subtle red tint on case fact grids
-.case-detail .fact-grid {
-  background: color-mix(in srgb, #FFE6EA 20%, white);
-  border-color: #FFB8C1;
-}
-*/
+.card:hover, .case-card:hover { border-color: #D7153A; } */

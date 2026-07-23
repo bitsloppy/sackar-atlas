@@ -1,29 +1,56 @@
 /* ===================================================================
-   themes/events.css — Events: Orange family
-   Activism, law reform, cultural moments. Time-bound.
+   themes/events.css — Events + Investigations + Memorial: Orange family
+   Activism, law reform, police investigations, memorials. Time-bound.
 
-   NSW Orange ramp: orange04 (#FDEDDF) → orange03 (#FFCE99) → orange02 (#F3631B) → orange01 (#941B00)
+   NSW Orange: orange04 #FDEDDF → orange03 #FFCE99 → orange02 #F3631B → orange01 #941B00
+   Memorial uses the same orange family — warmth, grief, remembrance.
 
-   Edit the values below to restyle all event cards and detail accents.
+   Edit the values below to restyle event/investigation cards and section accents.
    To change a colour: edit here. No TypeScript needed.
    =================================================================== */
 
-/* ── Event card ─────────────────────────────────────────────────────── */
+/* ── Events / Investigation / Memorial section cards ────────────────── */
+
+.section-card[data-section-type="events"],
+.section-card[data-section-type="investigation"],
+.section-card[data-section-type="memorial"] {
+  border-color: #FFCE99;                                    /* orange03 */
+  background: color-mix(in srgb, #FDEDDF 25%, white);       /* orange04 tint */
+}
+
+.section-card[data-section-type="events"] .section-card-header,
+.section-card[data-section-type="investigation"] .section-card-header,
+.section-card[data-section-type="memorial"] .section-card-header {
+  color: #941B00;                                            /* orange01 */
+}
+
+.section-card[data-section-type="events"] .section-chevron,
+.section-card[data-section-type="investigation"] .section-chevron,
+.section-card[data-section-type="memorial"] .section-chevron {
+  border-color: #F3631B;                                     /* orange02 */
+}
+
+.section-card[data-section-type="events"] .section-card-header:hover,
+.section-card[data-section-type="investigation"] .section-card-header:hover,
+.section-card[data-section-type="memorial"] .section-card-header:hover {
+  background: color-mix(in srgb, #FDEDDF 55%, white);
+}
+
+/* ── Related-events chips — orange tint ─────────────────────────────── */
+
+.section-card[data-section-type="events"] .related-chip {
+  background: color-mix(in srgb, #FDEDDF 40%, white);
+  border-color: #FFCE99;                                     /* orange03 */
+  color: #941B00;                                            /* orange01 */
+}
+.section-card[data-section-type="events"] .related-chip:visited { color: #941B00; }
+.section-card[data-section-type="events"] .related-chip:hover   { border-color: #F3631B; color: #941B00; }
+.section-card[data-section-type="events"] .chip-meta             { color: #F3631B; }       /* orange02 */
+
+/* ── Event card (index page) ────────────────────────────────────────── */
 
 .event-card {
-  background: color-mix(in srgb, #FDEDDF 40%, white);    /* orange04 */
-  border-color: #FFCE99;                                   /* orange03 */
+  background: color-mix(in srgb, #FDEDDF 40%, white);       /* orange04 */
+  border-color: #FFCE99;                                     /* orange03 */
 }
-
-.event-card:hover {
-  border-color: #F3631B;                                   /* orange02 */
-}
-
-/* ── Events detail — fact grid accent ──────────────────────────────── */
-
-/* Example:
-.event-detail .fact-grid {
-  background: color-mix(in srgb, #FDEDDF 20%, white);
-  border-color: #FFCE99;
-}
-*/
+.event-card:hover { border-color: #F3631B; }                 /* orange02 */

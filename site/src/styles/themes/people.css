@@ -2,28 +2,50 @@
    themes/people.css — People: Purple family
    Individuals — victims, witnesses, officers, politicians.
 
-   NSW Purple ramp: purple04 (#E6E1FD) → purple03 (#CEBFFF) → purple02 (#8055F1) → purple01 (#441170)
+   NSW Purple: purple04 #E6E1FD → purple03 #CEBFFF → purple02 #8055F1 → purple01 #441170
 
-   Edit the values below to restyle all people cards and detail accents.
+   Edit the values below to restyle all people cards and section accents.
    To change a colour: edit here. No TypeScript needed.
    =================================================================== */
 
-/* ── Person card ────────────────────────────────────────────────────── */
+/* ── People / Cultural section cards ────────────────────────────────── */
+
+.section-card[data-section-type="people"],
+.section-card[data-section-type="cultural"] {
+  border-color: #CEBFFF;                                    /* purple03 */
+  background: color-mix(in srgb, #E6E1FD 25%, white);       /* purple04 tint */
+}
+
+.section-card[data-section-type="people"] .section-card-header,
+.section-card[data-section-type="cultural"] .section-card-header {
+  color: #441170;                                            /* purple01 */
+}
+
+.section-card[data-section-type="people"] .section-chevron,
+.section-card[data-section-type="cultural"] .section-chevron {
+  border-color: #8055F1;                                     /* purple02 */
+}
+
+.section-card[data-section-type="people"] .section-card-header:hover,
+.section-card[data-section-type="cultural"] .section-card-header:hover {
+  background: color-mix(in srgb, #E6E1FD 55%, white);
+}
+
+/* ── Related-people chips — purple tint ─────────────────────────────── */
+
+.section-card[data-section-type="people"] .related-chip {
+  background: color-mix(in srgb, #E6E1FD 40%, white);
+  border-color: #CEBFFF;                                     /* purple03 */
+  color: #441170;                                            /* purple01 */
+}
+.section-card[data-section-type="people"] .related-chip:visited { color: #441170; }
+.section-card[data-section-type="people"] .related-chip:hover   { border-color: #8055F1; color: #441170; }
+.section-card[data-section-type="people"] .chip-meta             { color: #8055F1; }       /* purple02 */
+
+/* ── Person card (index page) ───────────────────────────────────────── */
 
 .person-card {
-  background: color-mix(in srgb, #E6E1FD 40%, white);   /* purple04 */
-  border-color: #CEBFFF;                                  /* purple03 */
+  background: color-mix(in srgb, #E6E1FD 40%, white);       /* purple04 */
+  border-color: #CEBFFF;                                     /* purple03 */
 }
-
-.person-card:hover {
-  border-color: #8055F1;                                  /* purple02 */
-}
-
-/* ── People detail — fact grid accent ──────────────────────────────── */
-
-/* Example:
-.person-detail .fact-grid {
-  background: color-mix(in srgb, #E6E1FD 20%, white);
-  border-color: #CEBFFF;
-}
-*/
+.person-card:hover { border-color: #8055F1; }                /* purple02 */
