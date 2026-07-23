@@ -42,6 +42,17 @@ held_by: "Mitchell Library / State Library NSW / ..."
 
 ## Outstanding stubs
 
+### Ross Warren (1989)
+
+| Status | Publication | Date | Title | Page | Notes |
+|--------|------------|------|-------|------|-------|
+| ☐ | The Daily Telegraph | 1989-07-26 | "Murder Fears for TV Weatherman" | — | Rod Mori byline; first public report on Warren's disappearance; cited in SCOI as Exhibit 2, Tab 61 (SCOI.76851) |
+
+**Priority:** Only known contemporary press source for Ross Warren. Likely on Trove; search 'Ross Warren' + 'WIN4' or 'Marks Park' + July 1989, Daily Telegraph.
+
+---
+
+
 ### cases/david-lloyd-williams.md
 
 | Status | Publication | Date | Title | Page | Notes |

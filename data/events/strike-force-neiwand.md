@@ -1,17 +1,20 @@
 ---
 title: "Strike Force Neiwand"
 event_type: "inquiry"
-date: "2005"
-date_end: "2012"
-date_uncertain: true
-date_display: "c.2005–2012 (dates approximate)"
+date: "2015"
+date_end: "2018"
+date_uncertain: false
+date_display: "October 2015 – January 2018"
 decade: "2000s"
 location_id: null
 location_name: null
 location_lat: null
 location_lng: null
 route_waypoints: []
-related_cases: []
+related_cases:
+  - ross-warren
+  - john-russell
+  - gilles-mattaini
 related_locations: []
 related_people: []
 related_media: []

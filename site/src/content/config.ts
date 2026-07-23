@@ -708,8 +708,29 @@ const cases = defineCollection({
      * Date of birth in ISO 8601 format (YYYY-MM-DD).
      * Source: coronial record, SCOI statement, family evidence.
      * Enables precise age-at-death calculation and contextual display.
+     * Leave null when only the year is known — use born_year instead.
      */
     born_date: z.string().nullable().optional(),
+
+    /**
+     * Birth year — for cases where only the year can be inferred
+     * (e.g. derived from age_at_death + date_of_death).
+     * Use when born_date is null. Do not duplicate born_date here.
+     */
+    born_year: z.number().nullable().optional(),
+
+    /**
+     * Whether born_date or born_year is approximate.
+     * Set true when the date/year is inferred rather than confirmed from records.
+     */
+    born_date_uncertain: z.boolean().default(false),
+
+    /**
+     * Human-readable birth date display — for fuzzy or inferred dates.
+     * e.g. "c. 1961", "probably 1963–1964", "18 January 1950"
+     * Mirrors the date_of_death_display pattern.
+     */
+    born_date_display: z.string().nullable().optional(),
 
     /**
      * Place of birth — city/town and country.

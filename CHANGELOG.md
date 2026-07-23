@@ -21,6 +21,32 @@ Routine additions of optional fields are not.
 
 ---
 
+## 2026-07-23
+
+### Data — Ross Warren (1989) and Scott Johnson (1988)
+
+Two new cases entered, completing the Marks Park cluster (Warren) and the North Head cluster (Johnson).
+
+**Ross Warren** — SCOI Category A, 1989. Television presenter at WIN4 Wollongong. Disappeared from near Marks Park, Tamarama, in the early hours of 22 July 1989. His car and keys were found at the park. His body has never been found. Deputy State Coroner Milledge (2005) found he was a victim of homicide; Sackar J confirmed this and found objectively reason to suspect LGBTIQ bias. OIC DS Kenneth Bowditch found to have made false claims about investigative steps — active misconduct. No accountability.
+
+**Scott Johnson** — examined in Vol. 3, Ch. 11 (Strike Force Macnamir). American mathematics PhD student. Found naked at foot of cliff, Blue Fish Point, North Head, 10 December 1988. Three inquests over 29 years: suicide (1989), open (2012), homicide (Barnes, 2017). Sackar J examined institutional resistance by Strike Force Macnamir to a homicide finding. Scott White convicted of manslaughter, 2023 (*R v White* [2023] NSWSC 611).
+
+**New records:**
+- `data/cases/ross-warren.md` (published)
+- `data/people/ross-warren.md`
+- `data/cases/scott-johnson.md` (published)
+- `data/people/scott-johnson.md`
+- `data/people/kenneth-bowditch.md` (stub — OIC Paddington, active misconduct)
+- `data/people/scott-white.md` (stub — convicted of manslaughter)
+- `data/people/doreen-cruickshank.md` (stub — OIC Manly 1989)
+- `data/people/stephen-page.md` (stub — led Operation Taradale)
+
+**Updated:**
+- `data/events/strike-force-neiwand.md` — corrected dates (October 2015 – January 2018), added related_cases (warren, russell, mattaini)
+- `resources/trove-todo.md` — added Daily Telegraph 1989-07-26 (Warren press source)
+
+---
+
 ## 2026-07-19
 
 ### Site — major interactivity + linking layer
