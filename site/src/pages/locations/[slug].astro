@@ -275,16 +275,7 @@ function countryDeterminationLabel(s: string | undefined): string {
     }
   </div>
 
-  <!-- ══ SECTION: Acknowledgement of Country ═══════════════════════════════ -->
-  <!-- Always shown. Country name pulled from data.                           -->
-  {
-    d.acknowledgement && (
-      <div class="finding-box" style="margin-bottom:2rem; border-color:#2a3a2a">
-        <div class="label">Acknowledgement of Country</div>
-        <div class="value" style="font-size:0.92rem">{d.acknowledgement}</div>
-      </div>
-    )
-  }
+  <!-- First Nations acknowledgement moved to opt-in SectionCard near bottom -->
 
   <!-- ══ SECTION: PAC jurisdiction map ═════════════════════════════════════ -->
   <!-- Conditional: only for location_type=police-jurisdiction with           -->
@@ -595,6 +586,45 @@ function countryDeterminationLabel(s: string | undefined): string {
       </SectionCard>
     )
   }
+
+  <!-- ══ SECTION: First Nations Country information ══════════════════════ -->
+  <!-- Opt-in: collapsed by default. Country name still visible in fact grid. -->
+  {(d.first_nations_country || d.acknowledgement) && (
+    <SectionCard type="first-nations" heading="First Nations Country information" open={false}>
+      {d.acknowledgement && (
+        <p style="font-size:0.92rem; margin-bottom:1rem">{d.acknowledgement}</p>
+      )}
+      <dl class="fact-grid" style="margin-top:0">
+        {d.first_nations_country && (
+          <div class="fact">
+            <span class="fact-label">Country</span>
+            <span class="fact-value">
+              {d.first_nations_country}
+              {d.first_nations_country_additional && ` / ${d.first_nations_country_additional}`}
+            </span>
+          </div>
+        )}
+        {d.country_determination && (
+          <div class="fact">
+            <span class="fact-label">Source</span>
+            <span class="fact-value">{countryDeterminationLabel(d.country_determination)}</span>
+          </div>
+        )}
+        {d.consultation_status && (
+          <div class="fact">
+            <span class="fact-label">Consultation</span>
+            <span class="fact-value" style="font-size:0.85rem; color:var(--muted)">
+              {d.consultation_status === 'not-assessed'
+                ? 'Not yet assessed'
+                : d.consultation_status === 'consulted'
+                ? 'Community consulted'
+                : d.consultation_status}
+            </span>
+          </div>
+        )}
+      </dl>
+    </SectionCard>
+  )}
 
   <!-- ══ SECTION: Sources ══════════════════════════════════════════════════ -->
   <!-- Always shown (may be sparse for stubs).                                -->
