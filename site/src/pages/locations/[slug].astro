@@ -318,7 +318,7 @@ function countryDeterminationLabel(s: string | undefined): string {
             const map = L.map('pac-map', { zoomControl: true, attributionControl: false });
 
             L.tileLayer(
-              'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+              'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
               { subdomains: 'abcd', maxZoom: 19 }
             ).addTo(map);
 
@@ -334,7 +334,7 @@ function countryDeterminationLabel(s: string | undefined): string {
               onEachFeature(feature, layer) {
                 const name = feature.properties?.suburbname ?? '';
                 layer.bindTooltip(
-                  `<span style="font-family:system-ui;font-size:0.82rem;color:#dcdcf0">${name}</span>`,
+                  `<span style="font-family:system-ui;font-size:0.82rem;color:var(--nav-text,#fff)">${name}</span>`,
                   { sticky: true, className: 'pac-tooltip' }
                 );
               },
@@ -378,6 +378,29 @@ function countryDeterminationLabel(s: string | undefined): string {
                 .addTo(map);
             });
           </script>
+
+          <!-- Leaflet theme overrides — matches map.astro palette -->
+          <style>
+            :global(#pac-map .leaflet-popup-content-wrapper) {
+              background: var(--nav-bg, #00405E);
+              color: var(--nav-text, #fff);
+              border: 1px solid rgba(255,255,255,0.15);
+              border-radius: 5px;
+              box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+            }
+            :global(#pac-map .leaflet-popup-tip) { background: var(--nav-bg, #00405E); }
+            :global(#pac-map .leaflet-popup-close-button) { color: var(--nav-text, #fff) !important; opacity: 0.6; }
+            :global(.pac-tooltip) {
+              background: var(--nav-bg, #00405E) !important;
+              border: 1px solid rgba(255,255,255,0.15) !important;
+              border-radius: 4px !important;
+              color: var(--nav-text, #fff) !important;
+              font-family: var(--font-ui, system-ui) !important;
+              font-size: 0.82rem !important;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.3) !important;
+            }
+            :global(.pac-tooltip::before) { border-top-color: var(--nav-bg, #00405E) !important; }
+          </style>
         </>
       ) : (
         <p class="text-muted text-ui" style="font-size:0.85rem; font-style:italic">
