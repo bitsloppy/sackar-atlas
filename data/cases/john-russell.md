@@ -175,6 +175,7 @@ related_people:
   - "sally-johnston"
 related_events:
   - "strike-force-neiwand"
+  - "rise-memorial-marks-park"
 related_media: []
 related_recommendations: []
 

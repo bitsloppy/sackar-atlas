@@ -11,9 +11,9 @@ location_lat: -33.8943
 location_lng: 151.2721
 route_waypoints: []
 related_cases:
-  - mark-stewart
-  - paul-rath
-  - david-lloyd-williams
+  - ross-warren
+  - john-russell
+  - gilles-mattaini
 related_locations:
   - marks-park
 related_people: []

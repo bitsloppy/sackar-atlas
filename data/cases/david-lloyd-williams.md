@@ -136,6 +136,10 @@ related_people:
   - grace-higgins
   - linda-iles
 
+related_events:
+  - "strike-force-parrabell"
+related_media: []
+
 # --- Content warnings -------------------------------------------------------
 
 content_warnings:

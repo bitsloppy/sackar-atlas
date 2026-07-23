@@ -142,6 +142,7 @@ related_cases:
   - "david-lloyd-williams"
 related_locations:
   - "shelley-headland"
+  - "manly-headland-precinct"
   - "northern-beaches-pac"
   - "chevron-hotel"          # possible connection — contested; see case notes
   - "hilton-hotel-sydney"    # last seen / staying here 9 May 1976
@@ -152,7 +153,8 @@ related_people:
   - "john-goldrick"          # City Coroner, inquest 16 July 1976
   - "garry-wotherspoon"
   - "linda-iles"
-related_events: []
+related_events:
+  - "strike-force-parrabell"
 related_media: []
 related_recommendations: []
 

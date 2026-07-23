@@ -137,6 +137,7 @@ related_cases:
   - "david-lloyd-williams"
 related_locations:
   - "shelley-headland"
+  - "manly-headland-precinct"
   - "northern-beaches-pac"
   - "city-morgue-glebe"       # post-mortem + identification
   - "manly-district-hospital" # pronounced dead here
@@ -146,7 +147,8 @@ related_people:
   - "ray-henry"
   - "helen-colman"
   - "linda-iles"
-related_events: []
+related_events:
+  - "strike-force-parrabell"
 related_media: []
 related_recommendations:
   - "rec-01"

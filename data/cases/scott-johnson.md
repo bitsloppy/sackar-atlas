@@ -179,6 +179,7 @@ related_cases:
   - "david-lloyd-williams"
 related_locations:
   - "north-head"
+  - "northern-beaches-pac"
 related_people:
   - "scott-johnson"
   - "scott-white"

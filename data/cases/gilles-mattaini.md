@@ -174,6 +174,7 @@ related_people:
   - "stephen-page"
 related_events:
   - "strike-force-neiwand"
+  - "rise-memorial-marks-park"
 related_media: []
 related_recommendations: []
 
