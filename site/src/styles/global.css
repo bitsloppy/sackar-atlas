@@ -151,14 +151,57 @@ h4 { font-family: var(--font-ui); font-size: 0.95rem; font-weight: 700; color: v
 p { margin-bottom: 1rem; }
 
 blockquote {
-  border-left: 3px solid var(--border);
-  padding-left: 1.25rem;
+/* border-left: 3px solid var(--border); */
+/* padding-left: 1.25rem; */
   color: var(--muted);
   font-style: italic;
   margin: 1.25rem 0;
 }
 
 hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+
+/* ── Lists ──────────────────────────────────────────────────────────── */
+/* Scoped to prose content areas; nav, chips, and card grids remain unstyled */
+
+.narrative ul,
+.narrative ol,
+.section-card-body ul,
+.section-card-body ol,
+.finding-card-body ul,
+.finding-card-body ol {
+  margin: 0.75rem 0 1rem 1.5rem;
+  padding: 0;
+}
+
+.narrative ul,
+.section-card-body ul,
+.finding-card-body ul {
+  list-style: disc;
+}
+
+.narrative ol,
+.section-card-body ol,
+.finding-card-body ol {
+  list-style: decimal;
+}
+
+.narrative li,
+.section-card-body li,
+.finding-card-body li {
+  margin-bottom: 0.35rem;
+  line-height: 1.65;
+  max-width: 72ch;
+}
+
+/* Nested lists */
+.narrative li ul,
+.narrative li ol,
+.section-card-body li ul,
+.section-card-body li ol,
+.finding-card-body li ul,
+.finding-card-body li ol {
+  margin: 0.25rem 0 0.25rem 1.5rem;
+}
 
 /* ── Badges ─────────────────────────────────────────────────────────── */
 
