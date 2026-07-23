@@ -2,70 +2,83 @@
    themes/locations.css — Locations: Teal/green family
    Places, Country, outdoor spaces. Tied to land and water.
 
-   NSW Teal: teal04 #D1EEEA → teal03 #8CDBE5 → teal02 #2E808E → teal01 #0B3F47
-   First Nations: saltbushGreen #DAE6D1, marshlandLime #78A146, bushlandGreen #215834
+   NSW Teal: teal04 var(--theme-locations-bg) → teal03 var(--theme-locations-border) → teal02 var(--theme-locations-accent) → teal01 var(--theme-locations-text)
+   First Nations: saltbushGreen var(--theme-firstnations-bg), marshlandLime var(--theme-firstnations-accent), bushlandGreen var(--theme-firstnations-text)
 
    Edit the values below to restyle all location cards and section accents.
    To change a colour: edit here. No TypeScript needed.
    =================================================================== */
 
+/* ── Colours — edit these ────────────────────────────────────────────── */
+:root {
+  --theme-locations-bg:     #D1EEEA;   /* teal04 — lightest tint */
+  --theme-locations-border: #8CDBE5;   /* teal03 — card borders */
+  --theme-locations-accent: #2E808E;   /* teal02 — chevron, hover borders */
+  --theme-locations-text:   #0B3F47;   /* teal01 — header text */
+
+  --theme-firstnations-bg:     #DAE6D1;   /* saltbushGreen */
+  --theme-firstnations-border: #B5CDA4;   /* gumleafGreen */
+  --theme-firstnations-accent: #78A146;   /* marshlandLime */
+  --theme-firstnations-text:   #215834;   /* bushlandGreen */
+}
+
 /* ── Location / Beat section cards ──────────────────────────────────── */
 
 .section-card[data-section-type="locations"],
 .section-card[data-section-type="beat"] {
-  border-color: #8CDBE5;                                    /* teal03 */
-  background: color-mix(in srgb, #D1EEEA 25%, white);       /* teal04 tint */
+  border-color: var(--theme-locations-border);                                    /* teal03 */
+  background: color-mix(in srgb, var(--theme-locations-bg) 25%, white);       /* teal04 tint */
 }
 
 .section-card[data-section-type="locations"] .section-card-header,
 .section-card[data-section-type="beat"] .section-card-header {
-  color: #0B3F47;                                            /* teal01 */
+  color: var(--theme-locations-text);                                            /* teal01 */
 }
 
 .section-card[data-section-type="locations"] .section-chevron,
 .section-card[data-section-type="beat"] .section-chevron {
-  border-color: #2E808E;                                     /* teal02 */
+  border-color: var(--theme-locations-accent);                                     /* teal02 */
 }
 
 .section-card[data-section-type="locations"] .section-card-header:hover,
 .section-card[data-section-type="beat"] .section-card-header:hover {
-  background: color-mix(in srgb, #D1EEEA 55%, white);
+  background: color-mix(in srgb, var(--theme-locations-bg) 55%, white);
 }
 
 /* ── First Nations section card — Aboriginal green palette ──────────── */
 
 .section-card[data-section-type="first-nations"] {
-  border-color: #B5CDA4;                                    /* gumleafGreen */
-  background: color-mix(in srgb, #DAE6D1 25%, white);       /* saltbushGreen tint */
+  border-color: var(--theme-firstnations-border);                                    /* gumleafGreen */
+  background: color-mix(in srgb, var(--theme-firstnations-bg) 25%, white);       /* saltbushGreen tint */
 }
 
 .section-card[data-section-type="first-nations"] .section-card-header {
-  color: #215834;                                            /* bushlandGreen */
+  color: var(--theme-firstnations-text);                                            /* bushlandGreen */
 }
 
 .section-card[data-section-type="first-nations"] .section-chevron {
-  border-color: #78A146;                                     /* marshlandLime */
+  border-color: var(--theme-firstnations-accent);                                     /* marshlandLime */
 }
 
 .section-card[data-section-type="first-nations"] .section-card-header:hover {
-  background: color-mix(in srgb, #DAE6D1 55%, white);
+  background: color-mix(in srgb, var(--theme-firstnations-bg) 55%, white);
 }
 
 /* ── Related-locations chips — teal tint ────────────────────────────── */
 
 .section-card[data-section-type="locations"] .related-chip {
-  background: color-mix(in srgb, #D1EEEA 40%, white);
-  border-color: #8CDBE5;                                     /* teal03 */
-  color: #0B3F47;                                            /* teal01 */
+  background: color-mix(in srgb, var(--theme-locations-bg) 40%, white);
+  border-color: var(--theme-locations-border);                                     /* teal03 */
+  color: var(--theme-locations-text);                                            /* teal01 */
 }
-.section-card[data-section-type="locations"] .related-chip:visited { color: #0B3F47; }
-.section-card[data-section-type="locations"] .related-chip:hover   { border-color: #2E808E; color: #0B3F47; }
-.section-card[data-section-type="locations"] .chip-meta             { color: #2E808E; }
+.section-card[data-section-type="locations"] .related-chip:visited { color: var(--theme-locations-text); }
+.section-card[data-section-type="locations"] .related-chip:hover   { border-color: var(--theme-locations-accent); color: var(--theme-locations-text); }
+.section-card[data-section-type="locations"] .chip-meta             { color: var(--theme-locations-accent); }
 
 /* ── Location card (index page) ─────────────────────────────────────── */
 
 .location-card {
-  background: color-mix(in srgb, #D1EEEA 40%, white);       /* teal04 */
-  border-color: #8CDBE5;                                     /* teal03 */
+  background: color-mix(in srgb, var(--theme-locations-bg) 40%, white);       /* teal04 */
+  border-color: var(--theme-locations-border);                                     /* teal03 */
 }
-.location-card:hover { border-color: #2E808E; }              /* teal02 */
+.location-card:hover { border-color: var(--theme-locations-accent); }              /* teal02 */

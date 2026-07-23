@@ -2,73 +2,55 @@
    themes/sources.css — Sources + Legal + General: Blue family
    Evidence, citations, authority. Information as the argument.
 
-   NSW Blue: blue04 #CBEDFD → blue03 #8CE0FF → blue02 #146CFD → blue01 #002664
-   Note: section cards default to blue already — sources/legal/general
-   reinforce that rather than override it.
-
-   Edit the values below to restyle source citations and section accents.
-   To change a colour: edit here. No TypeScript needed.
+   NSW Blue: blue04 var(--theme-sources-bg) → blue03 var(--theme-sources-border) → blue02 var(--theme-sources-accent) → blue01 var(--theme-sources-text)
    =================================================================== */
 
-/* ── Sources / Legal section cards ─────────────────────────────────── */
-/* These use the existing blue default from sections.css.               */
-/* Add overrides here if you want to differentiate them from each other.*/
-
-/* Example — deeper blue for legal:
-.section-card[data-section-type="legal"] {
-  border-color: var(--nsw-palette-blue-03);
-  background: color-mix(in srgb, var(--nsw-palette-blue-04) 40%, white);
+/* ── Colours — edit these ────────────────────────────────────────────── */
+:root {
+  --theme-sources-bg:     #CBEDFD;   /* blue04 — lightest tint */
+  --theme-sources-border: #8CE0FF;   /* blue03 — card/list borders */
+  --theme-sources-accent: #146CFD;   /* blue02 — left-border accents, chevron */
+  --theme-sources-text:   #002664;   /* blue01 — header text, labels */
 }
-*/
 
-/* ── Source list — inside a sources section card ────────────────────── */
-/* Add class="source-list" to <ul> in page templates.                   */
+/* ── Sources section card ────────────────────────────────────────────── */
+/* Default blue from sections.css is correct — no card-level override.  */
+/* Sub-section headings inside the card (Press / Coronial / Archival)   */
+
+.section-card[data-section-type="sources"] h4 {
+  color: var(--theme-sources-text);
+  border-bottom: 1px solid var(--theme-sources-border);
+  padding-bottom: 0.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Source list ─────────────────────────────────────────────────────── */
+/* class="source-list" on <ul> in page templates                         */
 
 .source-list {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  margin: 0.75rem 0;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
   padding: 0;
 }
 
 .source-list li {
-  background: color-mix(in srgb, #CBEDFD 20%, white);       /* blue04, very light */
-  border: 1px solid #8CE0FF;                                  /* blue03 */
-  border-left: 3px solid #146CFD;                             /* blue02 accent line */
-  border-radius: 4px;
-  padding: 0.6rem 0.9rem;
+  border-left: 3px solid var(--theme-sources-accent);        /* blue02 accent line */
+  padding: 0.4rem 0.75rem;
   font-family: var(--font-ui);
   font-size: 0.85rem;
   line-height: 1.55;
   max-width: none;                                            /* override .narrative li */
 }
 
-/* Sub-section headings inside the sources card (Press / Coronial / Archival) */
-.section-card[data-section-type="sources"] h4 {
-  font-family: var(--font-ui);
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #002664;                                             /* blue01 */
-  margin: 1.25rem 0 0.5rem;
-  padding-bottom: 0.3rem;
-  border-bottom: 1px solid #8CE0FF;                           /* blue03 */
-}
-
-/* SCOI finding-box inside sources card — blue left accent */
-.section-card[data-section-type="sources"] .finding-box {
-  border-left: 3px solid #146CFD;                             /* blue02 */
-}
-
-/* ── Source card (standalone use) ───────────────────────────────────── */
-/* .source-card — add to any citation wrapper outside a section card.   */
+/* ── Source card (standalone — outside a section card) ──────────────── */
 
 .source-card {
-  background: color-mix(in srgb, #CBEDFD 30%, white);        /* blue04 */
-  border: 1px solid #8CE0FF;                                  /* blue03 */
+  background: color-mix(in srgb, var(--theme-sources-bg) 30%, white);
+  border: 1px solid var(--theme-sources-border);
   border-radius: 6px;
   padding: 1rem 1.25rem;
   display: flex;
@@ -83,7 +65,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  color: #002664;                                             /* blue01 */
+  color: var(--theme-sources-text);
   margin-bottom: 0.25rem;
 }
 
