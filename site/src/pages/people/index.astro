@@ -2,113 +2,108 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const people = await getCollection('people');
+const people    = await getCollection('people');
+const allCases  = await getCollection('cases');
 
-// Sort by name within each group
+// Published case slugs — used for case filter options
+const publishedCases = allCases
+  .filter(c => c.data.published === true)
+  .sort((a, b) => {
+    const ya = a.data.date_of_death?.substring(0, 4) ?? '9999';
+    const yb = b.data.date_of_death?.substring(0, 4) ?? '9999';
+    return ya.localeCompare(yb);
+  });
+
+// All case slugs in the dataset — for data-attr cross-referencing
+// (includes unpublished — connects people to cases even if case page isn't live yet)
+const allCaseSlugs = new Set(allCases.map(c => c.id.replace(/\.md$/, '')));
+
+// Sort people alphabetically
 const sorted = [...people].sort((a, b) => a.data.name.localeCompare(b.data.name));
 
-// Group by role
-const victims = sorted.filter(p => p.data.role === 'victim');
-const communityActivists = sorted.filter(
-  p => p.data.role === 'activist' || p.data.role === 'community' || p.data.role === 'journalist',
-);
-const legal = sorted.filter(
-  p =>
-    p.data.role === 'coroner' ||
-    p.data.role === 'legal' ||
-    p.data.role === 'expert-witness' ||
-    p.data.role === 'pathologist' ||
-    p.data.role === 'witness',
-);
+// Resolve which case slugs a person is connected to
+function personCaseSlugs(p: typeof people[0]): string[] {
+  return (p.data.related_cases ?? []).filter(rc => allCaseSlugs.has(rc as string)) as string[];
+}
 
-// Police: officers first, then commissioners (by institutional_role)
-const allPolice = sorted.filter(
-  p => p.data.role === 'police' || p.data.role === 'police-officer',
-);
-const policeCommissioners = allPolice.filter(p =>
-  p.data.institutional_role?.toLowerCase().includes('commissioner'),
-);
-const policeOfficers = allPolice.filter(
-  p => !p.data.institutional_role?.toLowerCase().includes('commissioner'),
-);
-const police = [...policeOfficers, ...policeCommissioners];
-
-const political = sorted.filter(p => p.data.role === 'political');
-const perpetrators = sorted.filter(p => p.data.role === 'perpetrator');
-const other = sorted.filter(
-  p =>
-    p.data.role !== 'victim' &&
-    p.data.role !== 'activist' &&
-    p.data.role !== 'community' &&
-    p.data.role !== 'journalist' &&
-    p.data.role !== 'coroner' &&
-    p.data.role !== 'legal' &&
-    p.data.role !== 'expert-witness' &&
-    p.data.role !== 'pathologist' &&
-    p.data.role !== 'witness' &&
-    p.data.role !== 'police' &&
-    p.data.role !== 'police-officer' &&
-    p.data.role !== 'political' &&
-    p.data.role !== 'perpetrator',
-);
+// Role → display group key (used for data attrs + filter checkboxes)
+function roleGroup(role: string): string {
+  if (role === 'victim')                                                        return 'victims';
+  if (role === 'police' || role === 'police-officer')                           return 'police';
+  if (role === 'political')                                                     return 'political';
+  if (['legal','coroner','expert-witness','pathologist','witness'].includes(role)) return 'legal';
+  if (['community','activist','journalist'].includes(role))                     return 'community';
+  if (role === 'perpetrator')                                                   return 'perpetrators';
+  return 'other';
+}
 
 function roleLabel(role: string): string {
   const labels: Record<string, string> = {
-    victim: 'Victim',
-    activist: 'Activist',
-    witness: 'Witness',
-    'expert-witness': 'Expert witness',
-    pathologist: 'Pathologist',
-    coroner: 'Coroner',
-    perpetrator: 'Perpetrator',
-    police: 'Police',
-    'police-officer': 'Police officer',
-    legal: 'Legal',
-    political: 'Political',
-    community: 'Community',
-    journalist: 'Journalist',
-    other: 'Other',
+    victim: 'Victim', activist: 'Activist', witness: 'Witness',
+    'expert-witness': 'Expert witness', pathologist: 'Pathologist',
+    coroner: 'Coroner', perpetrator: 'Perpetrator',
+    police: 'Police', 'police-officer': 'Police officer',
+    legal: 'Legal', political: 'Political',
+    community: 'Community', journalist: 'Journalist', other: 'Other',
   };
   return labels[role] ?? role;
 }
 
 function roleBadgeClass(role: string): string {
   const classes: Record<string, string> = {
-    victim: 'badge badge-homicide',
-    activist: 'badge badge-beat',
-    witness: 'badge badge-open',
-    'expert-witness': 'badge badge-open',
-    pathologist: 'badge badge-open',
-    coroner: 'badge badge-scoi-b',
-    perpetrator: 'badge badge-probable',
-    police: 'badge badge-scoi-a',
-    'police-officer': 'badge badge-scoi-a',
-    legal: 'badge badge-scoi-b',
-    political: 'badge badge-possible',
-    community: 'badge badge-beat',
-    journalist: 'badge badge-venue',
-    other: 'badge badge-excluded',
+    victim: 'badge badge-homicide', activist: 'badge badge-beat',
+    witness: 'badge badge-open', 'expert-witness': 'badge badge-open',
+    pathologist: 'badge badge-open', coroner: 'badge badge-scoi-b',
+    perpetrator: 'badge badge-probable', police: 'badge badge-scoi-a',
+    'police-officer': 'badge badge-scoi-a', legal: 'badge badge-scoi-b',
+    political: 'badge badge-possible', community: 'badge badge-beat',
+    journalist: 'badge badge-venue', other: 'badge badge-excluded',
   };
   return classes[role] ?? 'badge badge-excluded';
 }
 
-const groups = [
-  { label: 'Victims', items: victims, desc: 'People whose deaths are examined in this project.' },
-  {
-    label: 'Community and activists',
-    items: communityActivists,
-    desc: 'Activists, community figures, and journalists who documented or fought for accountability.',
-  },
-  {
-    label: 'Legal',
-    items: legal,
-    desc: 'Coroners, lawyers, judges, pathologists, and expert witnesses.',
-  },
-  { label: 'Police', items: police, desc: 'Officers and commissioners involved in these cases.' },
-  { label: 'Political', items: political, desc: 'Politicians and officials.' },
-  { label: 'Perpetrators', items: perpetrators, desc: 'Named perpetrators.' },
-  { label: 'Other', items: other, desc: '' },
-].filter(g => g.items.length > 0);
+// Groups — same structure as before, used for rendered section headers
+const GROUP_DEFS = [
+  { key: 'victims',      label: 'Victims',                desc: 'People whose deaths are examined in this project.' },
+  { key: 'community',   label: 'Community and activists', desc: 'Activists, community figures, and journalists who documented or fought for accountability.' },
+  { key: 'legal',       label: 'Legal',                  desc: 'Coroners, lawyers, judges, pathologists, and expert witnesses.' },
+  { key: 'police',      label: 'Police',                 desc: 'Officers and commissioners involved in these cases.' },
+  { key: 'political',   label: 'Political',              desc: 'Politicians and officials.' },
+  { key: 'perpetrators',label: 'Perpetrators',           desc: 'Named perpetrators.' },
+  { key: 'other',       label: 'Other',                  desc: '' },
+];
+
+// Police: commissioners last within their group
+const policeCommissionerSlugs = new Set(
+  sorted
+    .filter(p => (p.data.role === 'police' || p.data.role === 'police-officer') &&
+                  p.data.institutional_role?.toLowerCase().includes('commissioner'))
+    .map(p => p.id)
+);
+
+function groupItems(key: string) {
+  const base = sorted.filter(p => roleGroup(p.data.role as string) === key);
+  if (key !== 'police') return base;
+  return [
+    ...base.filter(p => !policeCommissionerSlugs.has(p.id)),
+    ...base.filter(p =>  policeCommissionerSlugs.has(p.id)),
+  ];
+}
+
+const groups = GROUP_DEFS
+  .map(g => ({ ...g, items: groupItems(g.key) }))
+  .filter(g => g.items.length > 0);
+
+// Role filter options — only groups that actually have people
+const roleFilterOptions = [
+  { value: 'victims',      label: 'Victims' },
+  { value: 'police',       label: 'Police' },
+  { value: 'political',    label: 'Political' },
+  { value: 'legal',        label: 'Legal' },
+  { value: 'community',    label: 'Community & activists' },
+  { value: 'perpetrators', label: 'Perpetrators' },
+  { value: 'other',        label: 'Other' },
+].filter(opt => groups.some(g => g.key === opt.value));
 ---
 
 <Base
@@ -116,52 +111,340 @@ const groups = [
   description="Individuals in the Sackar Atlas research project — victims, activists, police, legal figures, and political actors."
 >
   <h1>People</h1>
-  <p class="text-muted text-ui" style="font-size:0.9rem; margin: 0.5rem 0 2rem;">
-    {sorted.length} {sorted.length === 1 ? 'person' : 'people'} — victims, activists, police,
-    legal, and political figures.
-  </p>
 
-  {
-    groups.map(group => (
-      <section style="margin-bottom: 2.5rem">
-        <h2>
-          {group.label} ({group.items.length})
-        </h2>
-        {group.desc && (
-          <p class="text-muted text-ui" style="font-size:0.85rem; margin-bottom:1rem">
-            {group.desc}
-          </p>
-        )}
-        <div class="card-grid">
-          {group.items.map(entry => {
-            const d = entry.data;
-            const slug = entry.id.replace(/\.md$/, '');
-            return (
-              <article class="card person-card">
-                <div class="card-badges">
-                  <span class={roleBadgeClass(d.role)}>{roleLabel(d.role)}</span>
-                  {d.stub && <span class="badge badge-stub">Research needed</span>}
-                </div>
-                <a href={`/people/${slug}/`} class="card-name">
-                  {d.name}
-                </a>
-                {d.institutional_role && (
-                  <div class="card-meta">
-                    {d.institutional_role}
-                    {d.institution && `, ${d.institution}`}
-                  </div>
-                )}
-                {d.birth_year && (
-                  <div class="card-meta">
-                    b. {d.birth_year}
-                    {d.death_year && ` · d. ${d.death_year}`}
-                  </div>
-                )}
-              </article>
-            );
-          })}
+  <div class="people-layout">
+
+    <!-- ── Filter sidebar ─────────────────────────────────────────────── -->
+    <aside class="filter-sidebar" aria-label="Filter people">
+
+      <div class="filter-header">
+        <span class="filter-title">Filter</span>
+        <button id="clear-filters" class="clear-btn" hidden>Clear all</button>
+      </div>
+
+      <p class="result-count text-muted text-ui" id="result-count">
+        {sorted.length} {sorted.length === 1 ? 'person' : 'people'}
+      </p>
+
+      <!-- Search -->
+      <details class="filter-section" open>
+        <summary class="filter-section-heading">Name</summary>
+        <div class="filter-body">
+          <input
+            type="search"
+            id="filter-search"
+            class="filter-search-input"
+            placeholder="Search…"
+            aria-label="Search by name"
+          />
         </div>
-      </section>
-    ))
-  }
+      </details>
+
+      <!-- Role -->
+      <details class="filter-section" open>
+        <summary class="filter-section-heading">Role</summary>
+        <div class="filter-body">
+          {roleFilterOptions.map(opt => (
+            <label class="filter-label">
+              <input type="checkbox" class="filter-role" value={opt.value} />
+              {opt.label}
+            </label>
+          ))}
+        </div>
+      </details>
+
+      <!-- Case -->
+      {publishedCases.length > 0 && (
+        <details class="filter-section" open>
+          <summary class="filter-section-heading">Case</summary>
+          <div class="filter-body">
+            {publishedCases
+              .filter(c => c.data.manner_findings?.site_status !== 'excluded')
+              .map(c => {
+                const slug = c.id.replace(/\.md$/, '');
+                const year = c.data.date_of_death?.substring(0, 4) ?? '';
+                return (
+                  <label class="filter-label">
+                    <input type="checkbox" class="filter-case" value={slug} />
+                    <span>{c.data.name}</span>
+                    {year && <span class="filter-label-meta">{year}</span>}
+                  </label>
+                );
+              })}
+          </div>
+        </details>
+      )}
+
+    </aside>
+
+    <!-- ── People groups ──────────────────────────────────────────────── -->
+    <div class="people-main" id="people-main">
+      {groups.map(group => (
+        <section class="people-group" data-group={group.key} style="margin-bottom:2.5rem">
+          <h2>
+            {group.label}
+            <span class="group-count text-muted" style="font-size:0.75rem;font-weight:400;margin-left:0.4em">
+              (<span data-count-label>{group.items.length}</span>)
+            </span>
+          </h2>
+          {group.desc && (
+            <p class="text-muted text-ui" style="font-size:0.85rem;margin-bottom:1rem">{group.desc}</p>
+          )}
+          <div class="card-grid">
+            {group.items.map(entry => {
+              const d      = entry.data;
+              const slug   = entry.id.replace(/\.md$/, '');
+              const rg     = roleGroup(d.role as string);
+              const pcases = personCaseSlugs(entry);
+              return (
+                <article
+                  class="card person-card"
+                  data-name={(d.name as string).toLowerCase()}
+                  data-role-group={rg}
+                  data-cases={pcases.join(' ')}
+                >
+                  <div class="card-badges">
+                    <span class={roleBadgeClass(d.role as string)}>{roleLabel(d.role as string)}</span>
+                    {d.stub && <span class="badge badge-stub">Research needed</span>}
+                  </div>
+                  <a href={`/people/${slug}/`} class="card-name">{d.name}</a>
+                  {d.institutional_role && (
+                    <div class="card-meta">
+                      {d.institutional_role}
+                      {d.institution && `, ${d.institution}`}
+                    </div>
+                  )}
+                  {d.birth_year && (
+                    <div class="card-meta">
+                      b.&nbsp;{d.birth_year}
+                      {d.death_year && ` · d. ${d.death_year}`}
+                    </div>
+                  )}
+                </article>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+
+      <!-- Empty state -->
+      <p id="no-results" class="text-muted text-ui" style="display:none;font-style:italic;margin-top:2rem">
+        No people match the current filters.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── Filter logic ─────────────────────────────────────────────────── -->
+  <script>
+    const searchInput  = document.getElementById('filter-search')    as HTMLInputElement;
+    const clearBtn     = document.getElementById('clear-filters')    as HTMLButtonElement;
+    const resultCount  = document.getElementById('result-count')     as HTMLParagraphElement;
+    const noResults    = document.getElementById('no-results')       as HTMLParagraphElement;
+    const roleBoxes    = document.querySelectorAll<HTMLInputElement>('.filter-role');
+    const caseBoxes    = document.querySelectorAll<HTMLInputElement>('.filter-case');
+    const cards        = document.querySelectorAll<HTMLElement>('.person-card');
+    const groups       = document.querySelectorAll<HTMLElement>('.people-group');
+
+    const total = cards.length;
+
+    function applyFilters() {
+      const searchText   = searchInput.value.toLowerCase().trim();
+      const activeRoles  = new Set([...roleBoxes].filter(b => b.checked).map(b => b.value));
+      const activeCases  = new Set([...caseBoxes].filter(b => b.checked).map(b => b.value));
+      const anyFilter    = searchText || activeRoles.size > 0 || activeCases.size > 0;
+
+      // Show/hide clear button
+      clearBtn.hidden = !anyFilter;
+
+      let visible = 0;
+
+      cards.forEach(card => {
+        const nameMatch = !searchText || (card.dataset.name ?? '').includes(searchText);
+        const roleMatch = activeRoles.size === 0 || activeRoles.has(card.dataset.roleGroup ?? '');
+        const cardCases = (card.dataset.cases ?? '').split(' ').filter(Boolean);
+        const caseMatch = activeCases.size === 0 || cardCases.some(c => activeCases.has(c));
+
+        const show = nameMatch && roleMatch && caseMatch;
+        card.style.display = show ? '' : 'none';
+        if (show) visible++;
+      });
+
+      // Update group sections — hide empty ones, update counts
+      groups.forEach(group => {
+        const visibleCards = [...group.querySelectorAll<HTMLElement>('.person-card')]
+          .filter(c => c.style.display !== 'none');
+        group.style.display = visibleCards.length === 0 ? 'none' : '';
+        const countEl = group.querySelector('[data-count-label]');
+        if (countEl) countEl.textContent = String(visibleCards.length);
+      });
+
+      // Update result count
+      const label = visible === 1 ? 'person' : 'people';
+      resultCount.textContent = anyFilter
+        ? `${visible} of ${total} ${label}`
+        : `${total} ${label}`;
+
+      // No-results message
+      noResults.style.display = visible === 0 ? '' : 'none';
+    }
+
+    function clearFilters() {
+      searchInput.value = '';
+      roleBoxes.forEach(b => { b.checked = false; });
+      caseBoxes.forEach(b => { b.checked = false; });
+      applyFilters();
+    }
+
+    searchInput.addEventListener('input', applyFilters);
+    roleBoxes.forEach(b => b.addEventListener('change', applyFilters));
+    caseBoxes.forEach(b => b.addEventListener('change', applyFilters));
+    clearBtn.addEventListener('click', clearFilters);
+  </script>
 </Base>
+
+<style>
+  /* ── Two-column layout ─────────────────────────────────────── */
+  .people-layout {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .filter-sidebar {
+    width: 210px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 1.5rem;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    scrollbar-width: thin;
+  }
+
+  .people-main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* ── Sidebar chrome ─────────────────────────────────────────── */
+  .filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+  }
+
+  .filter-title {
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--muted);
+  }
+
+  .clear-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .clear-btn:hover { color: var(--text); }
+
+  .result-count {
+    font-size: 0.82rem;
+    margin: 0 0 0.75rem;
+  }
+
+  /* ── Filter sections ────────────────────────────────────────── */
+  .filter-section {
+    border-top: 1px solid var(--border);
+    padding: 0;
+    margin-bottom: 0;
+  }
+
+  .filter-section-heading {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    padding: 0.5rem 0;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+  .filter-section-heading::-webkit-details-marker { display: none; }
+  .filter-section-heading::after {
+    content: '›';
+    font-size: 1rem;
+    color: var(--muted);
+    transition: transform 0.15s;
+    transform: rotate(90deg);
+  }
+  details.filter-section:not([open]) .filter-section-heading::after {
+    transform: rotate(0deg);
+  }
+
+  .filter-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .filter-search-input {
+    width: 100%;
+    padding: 0.35rem 0.5rem;
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text);
+    box-sizing: border-box;
+  }
+  .filter-search-input:focus {
+    outline: 2px solid var(--link);
+    outline-offset: 1px;
+  }
+
+  .filter-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--font-ui);
+    font-size: 0.82rem;
+    color: var(--text);
+    cursor: pointer;
+    line-height: 1.3;
+  }
+  .filter-label input[type="checkbox"] {
+    flex-shrink: 0;
+    accent-color: var(--link);
+  }
+  .filter-label-meta {
+    margin-left: auto;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  /* ── Mobile: stack sidebar above cards ─────────────────────── */
+  @media (max-width: 680px) {
+    .people-layout {
+      flex-direction: column;
+    }
+    .filter-sidebar {
+      width: 100%;
+      position: static;
+      max-height: none;
+    }
+    .filter-section-heading::after { display: none; }
+  }
+</style>
