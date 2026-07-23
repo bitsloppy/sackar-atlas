@@ -285,3 +285,16 @@ Roberts A (2026) Queer Heritage — Historical LGBTIQ Hate Crime Documentation
 ```
 
 See `CITATION.cff` for machine-readable citation metadata.
+
+## 2026-07-23 (continued)
+
+### Data — John Russell and Gilles Mattaini
+
+Completes the Taradale cluster — all three cases examined by Milledge (2005) and Sackar (2023) are now published.
+
+**John Russell** — SCOI Category A, 1989. Barman at Bronte Bowling Club. Found dead at base of Marks Park cliff 23 November 1989, age 31. Multiple skull fractures; unusual body position. Human hairs on his left hand (not his own, per Peter Russell) — lost before the first inquest. Clothing washed by police before being returned to family. Milledge (2005): thrown from cliff by person/persons unknown. Sackar: confirmed homicide, reason to suspect LGBTIQ bias. Strike Force Neiwand secretly reversed the Milledge homicide finding without telling the Russell family — found by Sackar J to be "intellectually dishonest."
+
+**Gilles Mattaini** — SCOI Category A, 1985. French national, casual barman (Menzies Hotel), long-term partner Jacques Musy. Disappeared 15 September 1985, age 26. Body never found. No police investigation in 1985 — disappearance was never reported. First investigation was Operation Taradale in 2000, 15 years later. Milledge: cause and manner undetermined. Sackar: reason to suspect both homicide and LGBTIQ bias.
+
+**New records:** cases/john-russell, cases/gilles-mattaini, people/john-russell, people/gilles-mattaini, people/sally-johnston (stub — OIC Russell), people/jacques-musy (stub — Mattaini's partner, key witness)
+
