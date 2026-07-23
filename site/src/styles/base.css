@@ -1,0 +1,54 @@
+/* ===================================================================
+   base.css — Reset, root, body, focus, skip-link
+   =================================================================== */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 17px; scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.75;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Focus ──────────────────────────────────────────────────────────── */
+/* :focus-visible targets keyboard nav only, not mouse clicks.          */
+
+:focus-visible {
+  outline: 2px solid var(--link);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Skip link — visible only on focus for keyboard/AT users */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #0c0c14;
+  font-family: var(--font-ui);
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 0 0 4px 4px;
+  text-decoration: none;
+  transition: top 0.1s;
+}
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid #0c0c14;
+  outline-offset: 2px;
+}
+
+/* ── Links ──────────────────────────────────────────────────────────── */
+
+a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+a:visited { color: var(--link-visited); }
+a:hover { color: var(--accent); }

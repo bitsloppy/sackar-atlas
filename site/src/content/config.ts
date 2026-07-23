@@ -1,7 +1,7 @@
 /**
  * Sackar Atlas — Astro Content Collections Schema
  *
- * Five collections, all loaded from data/sydney/ outside the Astro project root.
+ * Five collections, all loaded from data/ outside the Astro project root.
  * Requires Astro 5.x (Content Layer API with glob loader for external paths).
  *
  * Collections:
@@ -431,7 +431,7 @@ const MannerFindings = z.object({
    * null = no conviction (the common case for these cold cases).
    */
   conviction: z.object({
-    person_id: z.string().nullable().optional(),  // ref to a record in data/sydney/people/
+    person_id: z.string().nullable().optional(),  // ref to a record in data/people/
     offence: z.string(),               // e.g. "manslaughter", "murder"
     verdict: z.enum(['guilty', 'manslaughter', 'acquitted']).optional(),
     year: z.number(),
@@ -569,7 +569,7 @@ const PhysicalMarker = z.object({
 // ---------------------------------------------------------------------------
 
 const cases = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/cases' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/cases' }),
   schema: z.object({
 
     // --- Identity -----------------------------------------------------------
@@ -735,7 +735,7 @@ const cases = defineCollection({
     /** Longitude for map pin. */
     location_lng: z.number().nullable().default(null),
 
-    /** Reference to a record in data/sydney/locations/ */
+    /** Reference to a record in data/locations/ */
     location_id: z.string().nullable().default(null),
 
     // --- Last known location ------------------------------------------------
@@ -745,7 +745,7 @@ const cases = defineCollection({
 
     last_seen_date: z.string().nullable().optional(),
 
-    /** Reference to a record in data/sydney/locations/ */
+    /** Reference to a record in data/locations/ */
     last_seen_location_id: z.string().nullable().default(null),
 
     // --- Cause and manner ---------------------------------------------------
@@ -920,7 +920,7 @@ const cases = defineCollection({
     // --- Perpetrators -------------------------------------------------------
 
     perpetrators: z.array(z.object({
-      /** Reference to a record in data/sydney/people/ — null if unidentified. */
+      /** Reference to a record in data/people/ — null if unidentified. */
       person_id: z.string().nullable().default(null),
       status: z.enum([
         'unidentified',
@@ -955,12 +955,12 @@ const cases = defineCollection({
       /**
        * Optional slug reference to an events/ record for this investigation.
        * When set, the investigation name renders as a link to that event page.
-       * e.g. 'strike-force-parrabell' links to data/sydney/events/strike-force-parrabell.md
+       * e.g. 'strike-force-parrabell' links to data/events/strike-force-parrabell.md
        */
       event_id: z.string().nullable().optional(),
       /**
        * Reference to the Police Area Command or Police District responsible.
-       * Links to a record in data/sydney/locations/ with location_type='police-jurisdiction'.
+       * Links to a record in data/locations/ with location_type='police-jurisdiction'.
        * Enables: filter all cases investigated by Surry Hills PAC; map jurisdiction
        * vs outcome; identify which commands had the worst investigative records.
        */
@@ -1087,7 +1087,7 @@ const cases = defineCollection({
      * Sackar Inquiry recommendation slugs that apply to this case.
      * e.g. ["rec-16"] for Recommendation 16 (FIGG DNA testing — Brennan, Cawsey, Dye).
      * e.g. ["rec-17"] for Recommendation 17 (UHT must notify Coroner of contrary findings).
-     * Slugs are defined in data/sydney/recommendations/.
+     * Slugs are defined in data/recommendations/.
      */
     related_recommendations: z.array(z.string()).default([]),
 
@@ -1240,7 +1240,7 @@ const cases = defineCollection({
 // ---------------------------------------------------------------------------
 
 const locations = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/locations' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/locations' }),
   schema: z.object({
 
     name: z.string(),
@@ -1606,7 +1606,7 @@ const locations = defineCollection({
 // ---------------------------------------------------------------------------
 
 const events = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/events' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/events' }),
   schema: z.object({
 
     title: z.string(),
@@ -1683,7 +1683,7 @@ const events = defineCollection({
 // ---------------------------------------------------------------------------
 
 const people = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/people' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/people' }),
   schema: z.object({
 
     name: z.string(),
@@ -1897,7 +1897,7 @@ const people = defineCollection({
 // ---------------------------------------------------------------------------
 
 const media = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/media' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/media' }),
   schema: z.object({
 
     type: z.enum(['video', 'photo', 'audio', 'document']),
@@ -1987,7 +1987,7 @@ const media = defineCollection({
 // ---------------------------------------------------------------------------
 
 const testimonies = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/testimonies' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/testimonies' }),
   schema: z.object({
 
     // --- Identity -----------------------------------------------------------
@@ -2000,7 +2000,7 @@ const testimonies = defineCollection({
      */
     person_display: z.string(),
 
-    /** Reference to a record in data/sydney/people/ — null if anonymous. */
+    /** Reference to a record in data/people/ — null if anonymous. */
     person_id: z.string().nullable().default(null),
 
     /** True if the person chose to remain anonymous in the source document. */
@@ -2061,7 +2061,7 @@ const testimonies = defineCollection({
       /** Location name as given in testimony — may be vague ("North Sydney park"). */
       location_name: z.string().nullable().optional(),
 
-      /** Reference to a record in data/sydney/locations/ — null if not yet linked. */
+      /** Reference to a record in data/locations/ — null if not yet linked. */
       location_id: z.string().nullable().default(null),
 
       location_lat: z.number().nullable().default(null),
@@ -2287,7 +2287,7 @@ const testimonies = defineCollection({
 // ---------------------------------------------------------------------------
 
 const recommendations = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/recommendations' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/recommendations' }),
   schema: z.object({
 
     /** Formal recommendation number (1–19). null for the heritage call. */
@@ -2380,11 +2380,11 @@ const recommendations = defineCollection({
  *   - Generate a "Sources & Conditions" page at build time
  *   - Ensure correct citation format (some override AGSM with their own style)
  *
- * File location: data/sydney/source-collections/<id>.md
+ * File location: data/source-collections/<id>.md
  * Referenced from: OralHistorySource.collection_id, ArchiveSource.collection_id
  */
 const source_collections = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/source-collections' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/source-collections' }),
   schema: z.object({
 
     /** Full institutional name. */
@@ -2515,7 +2515,7 @@ const source_collections = defineCollection({
 // ---------------------------------------------------------------------------
 
 const sources = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sydney/sources' }),
+  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: '../data/sources' }),
   schema: z.object({
 
     title: z.string(),

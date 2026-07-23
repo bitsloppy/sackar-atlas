@@ -17,10 +17,10 @@ import re
 from pathlib import Path
 
 BASE = Path(__file__).parent.parent
-CASES = BASE / "data/sydney/cases"
-PEOPLE = BASE / "data/sydney/people"
-LOCATIONS = BASE / "data/sydney/locations"
-SOURCES = BASE / "data/sydney/sources"
+CASES = BASE / "data/cases"
+PEOPLE = BASE / "data/people"
+LOCATIONS = BASE / "data/locations"
+SOURCES = BASE / "data/sources"
 
 def read_file(path):
     try:
@@ -375,11 +375,11 @@ def main():
     ln("---")
     ln()
     ln("**Files written:**")
-    ln(f"  - `data/sydney/cases/{slug}.md` ✅")
-    ln(f"  - `data/sydney/people/{slug}.md` {'✅' if check_ref(PEOPLE, slug) else '❌ MISSING'}")
+    ln(f"  - `data/cases/{slug}.md` ✅")
+    ln(f"  - `data/people/{slug}.md` {'✅' if check_ref(PEOPLE, slug) else '❌ MISSING'}")
     if location_id:
         loc_exists = check_ref(LOCATIONS, location_id)
-        ln(f"  - `data/sydney/locations/{location_id}.md` {'✅' if loc_exists else '❌ MISSING'}")
+        ln(f"  - `data/locations/{location_id}.md` {'✅' if loc_exists else '❌ MISSING'}")
     ln()
     ln("*Review the above. If happy: `git add . && git commit && git push`. If changes needed: edit and re-run.*")
 

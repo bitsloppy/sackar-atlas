@@ -28,7 +28,7 @@ the case files are drafted. Allow 15–30 minutes per case.
 
 > **Check before creating.** For every entity below, search existing records first.
 > Update `related_cases[]` on an existing record rather than creating a duplicate.
-> `ls data/sydney/{locations,people,sources}/` + `grep` are enough.
+> `ls data/{locations,people,sources}/` + `grep` are enough.
 
 ### 1. Locations
 
@@ -43,7 +43,7 @@ Scan the case file and SCOI section for every named place:
 | Police station | Manly Police → `northern-beaches-pac.md` ✅ |
 | Court / morgue | City Morgue, Glebe → `city-morgue-glebe.md` ✅ (created during Paul Rath pass) |
 
-For each: check `data/sydney/locations/` → create stub if absent.
+For each: check `data/locations/` → create stub if absent.
 
 **Stub minimum fields:**
 ```yaml
@@ -170,8 +170,8 @@ SCOI text section as context: extract named entities, check existing records,
 draft stubs. Anna reviews and commits.
 
 Prompt template for subagent:
-> "Cross-reference pass for [case slug]. The case file is at data/sydney/cases/[slug].md.
+> "Cross-reference pass for [case slug]. The case file is at data/cases/[slug].md.
 > The SCOI section is Vol 2 Ch 5 paras [x]–[y]. Extract all named locations and
-> non-victim people. Check data/sydney/locations/ and data/sydney/people/ for
+> non-victim people. Check data/locations/ and data/people/ for
 > existing records. Draft stub files for any missing. List press sources to add to
 > trove-todo.md. Do not create records for one-off witnesses unlikely to recur."

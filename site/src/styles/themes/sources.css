@@ -1,0 +1,68 @@
+/* ===================================================================
+   themes/sources.css — Sources: Blue family
+   Evidence, citations, archival materials. Information as authority.
+
+   NSW Blue ramp: blue04 (#CBEDFD) → blue03 (#8CE0FF) → blue02 (#146CFD) → blue01 (#002664)
+   Note: blue04/01 are already used for section-card accordions (sections.css).
+   Sources use the same ramp — intentional; both are "informational" UI.
+
+   Edit the values below to restyle all source citations.
+   To change a colour: edit here. No TypeScript needed.
+   =================================================================== */
+
+/* ── Source card ────────────────────────────────────────────────────── */
+/* Add .source-card to any source citation wrapper in Astro templates.  */
+
+.source-card {
+  background: color-mix(in srgb, #CBEDFD 30%, white);    /* blue04 */
+  border: 1px solid #8CE0FF;                               /* blue03 */
+  border-radius: 6px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+}
+
+/* ── Source list items ──────────────────────────────────────────────── */
+/* When sources are rendered as a list inside .section-card-body.        */
+
+.source-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.source-item {
+  background: color-mix(in srgb, #CBEDFD 20%, white);    /* blue04, lighter */
+  border: 1px solid #8CE0FF;                               /* blue03 */
+  border-left: 3px solid #146CFD;                          /* blue02 accent line */
+  border-radius: 4px;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.source-type-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #002664;                                          /* blue01 */
+  margin-bottom: 0.25rem;
+}
+
+.source-citation { color: var(--text); }
+
+.source-url {
+  display: inline-block;
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  color: var(--link);
+  word-break: break-all;
+}

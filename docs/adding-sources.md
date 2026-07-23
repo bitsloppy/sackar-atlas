@@ -4,7 +4,7 @@ Two kinds of source to track:
 
 | Type | What it is | Where it goes |
 |---|---|---|
-| **Repository / archive** | An organisation that *holds* a collection (PHG, AQuA, State Library) | `data/sydney/source-collections/<id>.md` + REFERENCES.md |
+| **Repository / archive** | An organisation that *holds* a collection (PHG, AQuA, State Library) | `data/source-collections/<id>.md` + REFERENCES.md |
 | **Reading item** | A specific book, article, report, exhibition, website to read/use | `data/reading-list.md` |
 
 These are not mutually exclusive — an oral history repository might also produce books, in which case the org goes in source-collections and its books go in the reading list.
@@ -21,7 +21,7 @@ Use this when you've found an organisation that *holds materials* relevant to th
 
 2. **Check whether they're already in the schema** — `site/src/content/config.ts` has an `institution` enum in `ArchiveSource`. If they're listed there but don't have a source-collections entry yet, they need one.
 
-3. **Create `data/sydney/source-collections/<slug>.md`** with this frontmatter:
+3. **Create `data/source-collections/<slug>.md`** with this frontmatter:
 
 ```yaml
 ---

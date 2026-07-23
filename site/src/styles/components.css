@@ -1,0 +1,174 @@
+/* ===================================================================
+   components.css — Badges, cards, fact-grid, map, chips, utilities
+   =================================================================== */
+
+/* ── Badges ─────────────────────────────────────────────────────────── */
+
+.badge {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+/* Finding badges */
+.badge-homicide  { background: var(--badge-homicide-bg);  color: var(--badge-homicide-text);  border: 1px solid var(--badge-homicide-border); }
+.badge-probable  { background: var(--badge-probable-bg);  color: var(--badge-probable-text);  border: 1px solid var(--probable); }
+.badge-possible  { background: var(--badge-possible-bg);  color: var(--badge-possible-text);  border: 1px solid var(--possible); }
+.badge-open      { background: var(--badge-open-bg);      color: var(--badge-open-text);      border: 1px solid var(--border); }
+.badge-excluded  { background: var(--badge-excluded-bg);  color: var(--badge-excluded-text);  border: 1px solid var(--border); }
+
+/* SCOI category badges — NSW blue ramp */
+.badge-scoi-a    { background: var(--badge-scoi-bg);      color: var(--badge-scoi-a-text);    border: 1px solid var(--badge-scoi-a-border); }
+.badge-scoi-b    { background: var(--badge-scoi-bg);      color: var(--badge-scoi-b-text);    border: 1px solid var(--badge-scoi-b-border); }
+
+/* Location type badges */
+.badge-beat      { background: var(--badge-beat-bg);      color: var(--badge-beat-text);      border: 1px solid var(--badge-beat-border); }
+.badge-venue     { background: var(--badge-venue-bg);     color: var(--badge-venue-text);     border: 1px solid var(--badge-venue-border); }
+
+/* Stub records — amber warning */
+.badge-stub      { background: var(--badge-stub-bg);      color: var(--badge-stub-text);      border: 1px solid var(--badge-stub-border); }
+
+/* ── Card grid ──────────────────────────────────────────────────────── */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+/* ── Base card — cases (yellow) ────────────────────────────────────── */
+/* Per-type overrides live in themes/*.css                              */
+
+.card,
+.case-card {
+  background: color-mix(in srgb, var(--nsw-palette-yellow-04) 30%, white);
+  border: 1px solid var(--nsw-palette-yellow-03);
+  border-radius: 6px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.15s;
+}
+.card:hover,
+.case-card:hover { border-color: var(--accent); }
+
+/* ── Card internals ─────────────────────────────────────────────────── */
+
+.card-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--nav-bg);
+}
+.card-name:hover { color: var(--accent); }
+
+.card-meta {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.card-badges { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+
+/* ── Fact grid ──────────────────────────────────────────────────────── */
+
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  background: color-mix(in srgb, var(--nsw-off-white) 30%, white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.fact { display: flex; flex-direction: column; gap: 0.2rem; }
+
+.fact-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.fact-value { font-size: 0.95rem; }
+
+/* ── Map ────────────────────────────────────────────────────────────── */
+
+#map {
+  width: 100%;
+  height: 68vh;
+  min-height: 480px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+/* ── Related content ────────────────────────────────────────────────── */
+
+.related-content {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.related-content p.section-heading {
+  margin-bottom: 1rem;
+}
+
+.related-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.related-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--link);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.related-chip:visited { color: var(--link-visited); }
+.related-chip:hover   { border-color: var(--accent); color: var(--accent); }
+
+.chip-meta {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+/* ── Utilities ──────────────────────────────────────────────────────── */
+
+.text-muted { color: var(--muted); }
+.text-ui    { font-family: var(--font-ui); }
+.mt-0       { margin-top: 0; }
+.mb-0       { margin-bottom: 0; }
+
+/* ── Responsive ─────────────────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  h1 { font-size: 1.6rem; }
+  .detail-header h1 { font-size: 1.8rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .fact-grid { grid-template-columns: 1fr 1fr; }
+}

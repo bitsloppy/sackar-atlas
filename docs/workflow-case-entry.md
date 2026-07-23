@@ -57,7 +57,7 @@ Extract:
 
 Write **all of the following simultaneously**:
 
-#### A. `data/sydney/cases/{slug}.md`
+#### A. `data/cases/{slug}.md`
 
 Core fields to get right — these are the analytical decisions:
 
@@ -74,7 +74,7 @@ Core fields to get right — these are the analytical decisions:
 | `content_warnings` | Always includes `'deceased-person'` for death cases. Add `'graphic-violence'` where post-mortem detail is included. |
 | `first_nations` | Explicitly set to `null` (not yet assessed) unless evidence exists. Never omit. |
 
-#### B. `data/sydney/people/{slug}.md` — always
+#### B. `data/people/{slug}.md` — always
 
 Same slug as the case. Key fields:
 - `role: victim`
@@ -83,9 +83,9 @@ Same slug as the case. Key fields:
 - `sexuality` (same assessment as case, from same evidence)
 - Brief biographical narrative in the body
 
-#### C. `data/sydney/locations/{death-site-slug}.md` — always if absent
+#### C. `data/locations/{death-site-slug}.md` — always if absent
 
-Death site always gets a location record. Check `data/sydney/locations/` first.
+Death site always gets a location record. Check `data/locations/` first.
 If the location exists (e.g. `shelley-headland.md`): add the new case to its `related_cases[]`.
 If not: create it. Minimum: name, location_type, location_roles, suburb, Country, stub: true.
 
@@ -96,13 +96,13 @@ any stub or adding any source. Duplicates are harder to clean up than they are t
 
 ```bash
 # Before creating a location stub:
-ls data/sydney/locations/ | grep {slug}
+ls data/locations/ | grep {slug}
 
 # Before creating a people stub:
-ls data/sydney/people/ | grep {slug}
+ls data/people/ | grep {slug}
 
 # Before adding to sources/:
-ls data/sydney/sources/ | grep {keyword}
+ls data/sources/ | grep {keyword}
 
 # Before adding to trove-todo.md:
 grep "{title}" resources/trove-todo.md
@@ -161,9 +161,9 @@ This produces a structured summary — not the raw YAML — covering:
 On Anna's approval, commit with a descriptive message:
 
 ```bash
-git add data/sydney/cases/{slug}.md \
-        data/sydney/people/{slug}.md \
-        data/sydney/locations/... \
+git add data/cases/{slug}.md \
+        data/people/{slug}.md \
+        data/locations/... \
         [any stubs] \
         resources/trove-todo.md
 git commit -m "data: add {Name} — SCOI Category {A/B}, {year}

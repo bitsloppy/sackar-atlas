@@ -1,0 +1,29 @@
+/* ===================================================================
+   themes/people.css — People: Purple family
+   Individuals — victims, witnesses, officers, politicians.
+
+   NSW Purple ramp: purple04 (#E6E1FD) → purple03 (#CEBFFF) → purple02 (#8055F1) → purple01 (#441170)
+
+   Edit the values below to restyle all people cards and detail accents.
+   To change a colour: edit here. No TypeScript needed.
+   =================================================================== */
+
+/* ── Person card ────────────────────────────────────────────────────── */
+
+.person-card {
+  background: color-mix(in srgb, #E6E1FD 40%, white);   /* purple04 */
+  border-color: #CEBFFF;                                  /* purple03 */
+}
+
+.person-card:hover {
+  border-color: #8055F1;                                  /* purple02 */
+}
+
+/* ── People detail — fact grid accent ──────────────────────────────── */
+
+/* Example:
+.person-detail .fact-grid {
+  background: color-mix(in srgb, #E6E1FD 20%, white);
+  border-color: #CEBFFF;
+}
+*/

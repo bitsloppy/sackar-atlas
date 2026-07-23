@@ -1,0 +1,244 @@
+/* ===================================================================
+   sections.css — Detail pages, section cards, finding cards,
+                  warnings, narrative blocks
+   =================================================================== */
+
+/* ── Detail page header ─────────────────────────────────────────────── */
+
+.detail-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.detail-header h1 { font-size: 2.4rem; }
+
+.detail-meta {
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.75rem 0 1rem;
+}
+
+.detail-meta span::before { content: ''; }
+
+.meta-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed var(--muted);
+  transition: color 0.15s, border-color 0.15s;
+}
+.meta-link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.detail-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+
+/* ── Warnings ───────────────────────────────────────────────────────── */
+
+.content-warning {
+  background: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-ui);
+  font-size: 0.84rem;
+  color: var(--warning-text);
+  margin-bottom: 2rem;
+}
+.content-warning strong { color: var(--warning-strong); }
+
+/* Stub notice — uses yellow badge tokens; WCAG AA verified (7.2:1) */
+.stub-warning {
+  background: var(--badge-stub-bg);
+  border: 1px solid var(--badge-stub-border);
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--badge-stub-text);
+}
+.stub-warning strong { color: var(--badge-stub-text); }
+
+/* ── Narrative prose ────────────────────────────────────────────────── */
+
+.narrative { margin: 2rem 0; }
+.narrative p { max-width: 72ch; }
+.narrative h2, .narrative h3 { margin-top: 2.5rem; }
+
+.section-heading {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── Finding box ────────────────────────────────────────────────────── */
+
+.finding-box {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.finding-box .label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-bottom: 0.3rem;
+}
+
+.finding-box .value { font-size: 0.95rem; }
+.finding-box blockquote { margin: 0.5rem 0 0; font-size: 0.92rem; }
+
+/* ── Finding card (accordion) ───────────────────────────────────────── */
+
+.finding-card {
+  background: var(--nsw-off-white);
+  border: 1px solid var(--nav-bg);
+  border-left: 4px solid var(--nav-bg);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.finding-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+.finding-card-header::-webkit-details-marker { display: none; }
+
+.finding-card-icon {
+  color: var(--nav-bg);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.finding-card-title {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--nav-bg);
+  flex: 1;
+}
+
+/* Reuse the chevron from section-card */
+.finding-card .section-chevron {
+  color: var(--nav-bg);
+  opacity: 1;
+}
+
+.finding-card-body {
+  padding: 0 1rem 1rem;
+  font-size: 0.95rem;
+}
+
+.finding-card-source {
+  margin-top: 0.9rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--nav-bg);
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.finding-source-label {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-right: 0.4rem;
+  color: var(--nav-bg);
+}
+
+/* ── Section cards (accordion) ──────────────────────────────────────── */
+/* Zero-JS expandable sections using <details>/<summary>.               */
+
+.section-card {
+  border: 1px solid var(--nsw-palette-blue-04);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--nsw-palette-blue-04) 30%, white);
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.section-card + .section-card { margin-top: 0.5rem; }
+
+.section-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--nsw-palette-blue-01);
+  user-select: none;
+  list-style: none;         /* Firefox */
+  transition: background 0.1s, color 0.1s;
+}
+.section-card-header::-webkit-details-marker { display: none; }
+.section-card-header::marker { display: none; }
+
+.section-card-header:hover {
+  background: var(--nsw-palette-blue-04);
+  color: var(--nsw-palette-blue-01);
+}
+
+.section-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.section-card-title { flex: 1; }
+
+/* Chevron rotates when open */
+.section-chevron {
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid var(--nsw-palette-blue-02);
+  border-bottom: 2px solid var(--nsw-palette-blue-02);
+  transform: rotate(-45deg);    /* pointing right = collapsed */
+  transition: transform 0.2s ease, border-color 0.1s;
+}
+
+details[open] > summary .section-chevron { transform: rotate(45deg); }
+
+.section-card-header:hover .section-chevron { border-color: var(--text); }
+
+.section-card-body {
+  background: color-mix(in srgb, var(--nsw-off-white) 30%, white);
+  padding: 0.5rem 1.25rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Suppress h2 inside section-card-body — heading lives in the summary */
+.section-card-body > h2:first-child { display: none; }
