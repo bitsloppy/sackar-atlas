@@ -1,0 +1,806 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const cases = await getCollection('cases', ({ data }) => data.published === true);
+  return cases.map(entry => ({
+    params: { slug: entry.id.replace(/\.md$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+const mf = d.manner_findings;
+
+// Cross-reference related content
+const allCases     = await getCollection('cases', ({ data }) => data.published === true);
+const allLocations = await getCollection('locations');
+const allPeople    = await getCollection('people');
+const allEvents    = await getCollection('events');
+
+const relatedCases = (d.related_cases ?? [])
+  .map(id => allCases.find(c => c.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedLocations = (d.related_locations ?? [])
+  .map(id => allLocations.find(l => l.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedPeople = (d.related_people ?? [])
+  .map(id => allPeople.find(p => p.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedEvents = (d.related_events ?? [])
+  .map(id => allEvents.find(e => e.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const hasRelated =
+  relatedCases.length > 0 ||
+  relatedLocations.length > 0 ||
+  relatedPeople.length > 0 ||
+  relatedEvents.length > 0;
+
+// ── Label helpers ─────────────────────────────────────────────────────────
+
+function statusLabel(s: string | undefined): string {
+  const m: Record<string, string> = {
+    'confirmed-homicide': 'Confirmed homicide',
+    'probable':           'Probable hate crime',
+    'possible':           'Possible hate crime',
+    'open':               'Open finding',
+    'undetermined':       'Undetermined',
+    'excluded':           'Excluded — no LGBTIQ connection',
+    'missing':            'Missing person',
+  };
+  return m[s ?? ''] ?? s ?? '—';
+}
+
+function statusVariant(s: string | undefined): 'danger' | 'warning' | 'neutral' {
+  if (s === 'confirmed-homicide') return 'danger';
+  if (s === 'probable' || s === 'possible') return 'warning';
+  return 'neutral';
+}
+
+function inquiryFindingLabel(s: string | undefined): string {
+  const m: Record<string, string> = {
+    'confirmed-homicide':        'Confirmed homicide',
+    'probable-hate-crime':       'Probable hate crime',
+    'possible-hate-crime':       'Possible hate crime',
+    'open':                      'Open — could not determine',
+    'undetermined':              'Undetermined',
+    'not-individually-examined': 'Not individually examined',
+    'excluded':                  'Excluded — no LGBTIQ connection',
+  };
+  return m[s ?? ''] ?? s ?? '—';
+}
+
+function coronialFindingLabel(s: string | undefined): string {
+  const m: Record<string, string> = {
+    'open':         'Open finding',
+    'suicide':      'Suicide',
+    'accidental':   'Accidental death',
+    'homicide':     'Unlawfully killed',
+    'undetermined': 'Undetermined',
+    'not-held':     'No inquest held',
+  };
+  return m[s ?? ''] ?? s ?? '—';
+}
+
+function misconductLabel(s: string | null | undefined): string {
+  const m: Record<string, string> = {
+    'none':                     'No finding',
+    'inadequate-investigation': 'Inadequate investigation (systemic/era)',
+    'bias-affected':            'Bias-affected investigation',
+    'active-misconduct':        'Active misconduct identified',
+    'institutional-misconduct': 'Institutional misconduct',
+  };
+  return m[s ?? ''] ?? s ?? '—';
+}
+
+function accountabilityLabel(s: string | null | undefined): string {
+  const m: Record<string, string> = {
+    'no-accountability':       'No accountability',
+    'scoi-examined':           'SCOI examined; no further action',
+    'recommendation-pending':  'Recommendation pending',
+    'active-investigation':    'Active investigation',
+    'inquest-outstanding':     'Coronial inquest outstanding',
+    'charges-laid':            'Charges laid',
+    'convicted':               'Conviction obtained',
+  };
+  return m[s ?? ''] ?? s ?? '—';
+}
+
+const scoi = d.sources?.scoi;
+const scoiRef = scoi
+  ? `SCOI Vol. ${scoi.volume}${scoi.chapter ? `, Ch. ${scoi.chapter}` : ''}${scoi.page_start ? `, p.${scoi.page_start}` : ''}`
+  : 'Sackar Commission of Inquiry (2023)';
+---
+
+<Layout
+  title={d.name}
+  description={`Case record: ${d.name}. ${d.scoi_finding?.slice(0, 120) ?? 'NSW SCOI LGBTIQ hate crimes inquiry.'}`}
+>
+  <div class="case-detail">
+
+    <!-- ══ Content warning ═══════════════════════════════════════════════════ -->
+    <div class="content-warning-wrap section">
+      <wa-callout variant="warning" appearance="filled-outlined">
+        <wa-icon slot="icon" name="triangle-exclamation" variant="solid"></wa-icon>
+        <strong>Content warning:</strong> This record documents a death and contains details of
+        police investigations, inquest findings, and forensic information.
+        {d.historical_misgendering && (
+          <span>
+            Historical records for this person contain misgendering — this record uses correct
+            pronouns and name throughout.
+          </span>
+        )}
+      </wa-callout>
+    </div>
+
+    <!-- ══ Page header ═══════════════════════════════════════════════════════ -->
+    <header class="case-header section">
+      <div class="case-header-inner wa-stack wa-gap-m">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/cases/">Cases</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">{d.name}</span>
+        </nav>
+
+        <div class="wa-stack wa-gap-xs">
+          <h1 class="case-name">{d.name}</h1>
+          {d.pronouns && <p class="case-pronouns">{d.pronouns}</p>}
+        </div>
+
+        <!-- Status badges -->
+        <div class="case-badges wa-cluster wa-gap-2xs">
+          {d.scoi_category && (
+            <wa-tag
+              variant={d.scoi_category === 'A' ? 'danger' : 'warning'}
+              appearance="filled"
+              pill
+            >
+              SCOI Category {d.scoi_category}
+            </wa-tag>
+          )}
+          {mf?.site_status && (
+            <wa-tag
+              variant={statusVariant(mf.site_status)}
+              appearance="filled-outlined"
+              pill
+            >
+              {statusLabel(mf.site_status)}
+            </wa-tag>
+          )}
+          {d.stub && (
+            <wa-tag variant="neutral" appearance="outlined" pill>
+              Research incomplete
+            </wa-tag>
+          )}
+        </div>
+
+        <!-- Meta row -->
+        <div class="case-meta wa-cluster wa-gap-m">
+          {(d.date_of_death_display ?? d.date_of_death) && (
+            <span class="meta-item">
+              <wa-icon name="calendar" variant="solid" class="meta-icon" label="Date of death"></wa-icon>
+              {d.date_of_death_display ?? d.date_of_death}
+              {d.age_at_death != null && `, aged ${d.age_at_death}`}
+            </span>
+          )}
+          {d.location_name && (
+            <span class="meta-item">
+              <wa-icon name="location-dot" variant="solid" class="meta-icon" label="Location"></wa-icon>
+              {d.location_id ? (
+                <a href={`/locations/${d.location_id}/`} class="meta-link">{d.location_name}</a>
+              ) : (
+                d.location_name
+              )}
+            </span>
+          )}
+          {d.last_seen_location && (
+            <span class="meta-item meta-item--quiet">
+              <wa-icon name="eye" variant="solid" class="meta-icon" label="Last seen"></wa-icon>
+              Last seen: {d.last_seen_location_id ? (
+                <a href={`/locations/${d.last_seen_location_id}/`} class="meta-link">{d.last_seen_location}</a>
+              ) : (
+                d.last_seen_location
+              )}
+              {d.last_seen_date && <span class="date-quiet">({d.last_seen_date})</span>}
+            </span>
+          )}
+        </div>
+      </div>
+    </header>
+
+    <!-- ══ Key facts ═════════════════════════════════════════════════════════ -->
+    <section class="facts-section section">
+      <div class="facts-grid">
+
+        {(d.born_date_display ?? d.born_date) && (
+          <div class="fact">
+            <span class="fact-label">Born</span>
+            <span class="fact-value">
+              {d.born_date_display ?? d.born_date}
+              {d.born_place && <><br /><span class="fact-sub">{d.born_place}</span></>}
+            </span>
+          </div>
+        )}
+
+        {d.sexuality && (
+          <div class="fact">
+            <span class="fact-label">Sexuality</span>
+            <span class="fact-value">
+              {d.sexuality.display_note ?? d.sexuality.identity ?? 'Unknown'}
+              {d.sexuality.confidence && d.sexuality.confidence !== 'unknown' && (
+                <span class="fact-sub">({d.sexuality.confidence})</span>
+              )}
+            </span>
+          </div>
+        )}
+
+        {mf?.inquiry_finding && (
+          <div class="fact">
+            <span class="fact-label">SCOI finding</span>
+            <span class="fact-value">{inquiryFindingLabel(mf.inquiry_finding)}</span>
+          </div>
+        )}
+
+        {mf?.inquests && mf.inquests.length > 0 && (
+          <div class="fact">
+            <span class="fact-label">Coronial inquest{mf.inquests.length > 1 ? 's' : ''}</span>
+            <span class="fact-value wa-stack wa-gap-3xs">
+              {mf.inquests.map(inq => (
+                <span>
+                  {coronialFindingLabel(inq.finding)}
+                  {inq.date && <span class="fact-sub">({inq.date.slice(0, 4)})</span>}
+                </span>
+              ))}
+            </span>
+          </div>
+        )}
+
+        {d.accountability_status && (
+          <div class="fact">
+            <span class="fact-label">Accountability</span>
+            <span class="fact-value">{accountabilityLabel(d.accountability_status)}</span>
+          </div>
+        )}
+
+        {d.police_misconduct_level && d.police_misconduct_level !== 'none' && (
+          <div class="fact">
+            <span class="fact-label">Police conduct</span>
+            <span class="fact-value">{misconductLabel(d.police_misconduct_level)}</span>
+          </div>
+        )}
+
+        {d.reward_offered && (
+          <div class="fact fact--highlight">
+            <span class="fact-label">Police reward</span>
+            <span class="fact-value">{d.reward_amount ?? 'Reward offered'}</span>
+          </div>
+        )}
+
+        {d.cause_of_death && (
+          <div class="fact">
+            <span class="fact-label">Cause of death</span>
+            <span class="fact-value">{d.cause_of_death}</span>
+          </div>
+        )}
+
+      </div>
+    </section>
+
+    <!-- ══ SCOI inquiry finding ══════════════════════════════════════════════ -->
+    {d.scoi_finding && (
+      <section class="finding-section section">
+        <wa-details open appearance="filled-outlined">
+          <span slot="summary" class="details-summary">
+            <wa-icon name="gavel" variant="solid" class="details-icon"></wa-icon>
+            Sackar Inquiry finding
+          </span>
+          <blockquote class="inquiry-finding">
+            <p>{d.scoi_finding}</p>
+            <footer class="finding-source">— {scoiRef}</footer>
+          </blockquote>
+        </wa-details>
+      </section>
+    )}
+
+    <!-- ══ Police misconduct note ════════════════════════════════════════════ -->
+    {d.police_misconduct_summary && (
+      <section class="misconduct-section section">
+        <wa-callout variant="danger" appearance="filled-outlined">
+          <wa-icon slot="icon" name="shield-halved" variant="solid"></wa-icon>
+          <strong>Police conduct finding:</strong> {d.police_misconduct_summary}
+        </wa-callout>
+      </section>
+    )}
+
+    <!-- ══ Narrative body (markdown) ════════════════════════════════════════ -->
+    <section class="narrative-section section">
+      <div class="narrative prose">
+        <Content />
+      </div>
+    </section>
+
+    <!-- ══ Police investigations ════════════════════════════════════════════ -->
+    {(d.police_investigations ?? []).length > 0 && (
+      <section class="investigations-section section">
+        <wa-details appearance="filled-outlined">
+          <span slot="summary" class="details-summary">
+            <wa-icon name="magnifying-glass" variant="solid" class="details-icon"></wa-icon>
+            Police investigations
+          </span>
+          <div class="investigations-list wa-stack wa-gap-m">
+            {(d.police_investigations ?? []).map(inv => (
+              <div class="investigation-item">
+                <div class="inv-header wa-cluster wa-gap-s wa-align-items-center">
+                  <strong>{inv.name}</strong>
+                  {inv.years && <span class="inv-years">{inv.years}</span>}
+                  {inv.outcome && (
+                    <wa-tag variant="neutral" size="s" appearance="outlined" pill>
+                      {inv.outcome.replace(/-/g, ' ')}
+                    </wa-tag>
+                  )}
+                </div>
+                {inv.notes && <p class="inv-notes">{inv.notes}</p>}
+              </div>
+            ))}
+          </div>
+        </wa-details>
+      </section>
+    )}
+
+    <!-- ══ Related content ══════════════════════════════════════════════════ -->
+    {hasRelated && (
+      <section class="related-section section">
+        <h2 class="related-heading">Related</h2>
+        <wa-tab-group>
+
+          {relatedCases.length > 0 && (
+            <>
+              <wa-tab panel="related-cases">
+                Cases ({relatedCases.length})
+              </wa-tab>
+              <wa-tab-panel name="related-cases">
+                <ul class="related-list">
+                  {relatedCases.map(c => (
+                    <li>
+                      <a href={`/cases/${c.id.replace(/\.md$/, '')}/`} class="related-link">
+                        {c.data.name}
+                      </a>
+                      <span class="related-meta">
+                        {c.data.date_of_death_display ?? c.data.date_of_death}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </wa-tab-panel>
+            </>
+          )}
+
+          {relatedLocations.length > 0 && (
+            <>
+              <wa-tab panel="related-locations">
+                Locations ({relatedLocations.length})
+              </wa-tab>
+              <wa-tab-panel name="related-locations">
+                <ul class="related-list">
+                  {relatedLocations.map(l => (
+                    <li>
+                      <a href={`/locations/${l.id.replace(/\.md$/, '')}/`} class="related-link">
+                        {l.data.name}
+                      </a>
+                      {l.data.suburb && (
+                        <span class="related-meta">{l.data.suburb}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </wa-tab-panel>
+            </>
+          )}
+
+          {relatedPeople.length > 0 && (
+            <>
+              <wa-tab panel="related-people">
+                People ({relatedPeople.length})
+              </wa-tab>
+              <wa-tab-panel name="related-people">
+                <ul class="related-list">
+                  {relatedPeople.map(p => (
+                    <li>
+                      <a href={`/people/${p.id.replace(/\.md$/, '')}/`} class="related-link">
+                        {p.data.name}
+                      </a>
+                      {p.data.role && (
+                        <span class="related-meta">{p.data.role}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </wa-tab-panel>
+            </>
+          )}
+
+          {relatedEvents.length > 0 && (
+            <>
+              <wa-tab panel="related-events">
+                Events ({relatedEvents.length})
+              </wa-tab>
+              <wa-tab-panel name="related-events">
+                <ul class="related-list">
+                  {relatedEvents.map(e => (
+                    <li>
+                      <a href={`/events/${e.id.replace(/\.md$/, '')}/`} class="related-link">
+                        {e.data.title}
+                      </a>
+                      {e.data.date_display && (
+                        <span class="related-meta">{e.data.date_display}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </wa-tab-panel>
+            </>
+          )}
+
+        </wa-tab-group>
+      </section>
+    )}
+
+    <!-- ══ Sources ═══════════════════════════════════════════════════════════ -->
+    {scoi && (
+      <section class="sources-section section">
+        <wa-details appearance="filled-outlined">
+          <span slot="summary" class="details-summary">
+            <wa-icon name="book-open" variant="solid" class="details-icon"></wa-icon>
+            Primary source
+          </span>
+          <div class="source-citation">
+            <p>
+              NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J) (2023)
+              <em>Report of the Special Commission of Inquiry</em>,
+              vol.&nbsp;{scoi.volume}
+              {scoi.chapter && `, ch.&nbsp;${scoi.chapter}`}
+              {scoi.page_start && `, p.&nbsp;${scoi.page_start}`}
+              {scoi.page_end && scoi.page_end !== scoi.page_start && `–${scoi.page_end}`},
+              NSW Government, Sydney.
+            </p>
+          </div>
+        </wa-details>
+      </section>
+    )}
+
+  </div>
+</Layout>
+
+<style>
+  .case-detail {
+    padding-bottom: var(--wa-space-5xl);
+  }
+
+  /* ─── Content warning ─── */
+  .content-warning-wrap {
+    padding-top: var(--wa-space-xl);
+    padding-bottom: 0;
+  }
+
+  /* ─── Case header ─── */
+  .case-header {
+    padding-block: var(--wa-space-3xl);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-2xs);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .breadcrumb a {
+    color: var(--wa-color-text-link);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb-sep {
+    color: var(--wa-color-text-quiet);
+  }
+
+  .case-name {
+    font-size: var(--wa-font-size-3xl);
+    font-weight: 700;
+    margin: 0;
+    color: var(--wa-color-text-normal);
+    border-left: var(--wa-space-2xs) solid var(--site-cases);
+    padding-left: var(--wa-space-m);
+  }
+
+  .case-pronouns {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    padding-left: var(--wa-space-m);
+  }
+
+  .case-badges {
+    flex-wrap: wrap;
+  }
+
+  .case-meta {
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wa-space-3xs);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .meta-item--quiet {
+    font-size: var(--wa-font-size-xs);
+  }
+
+  .meta-icon {
+    font-size: var(--wa-font-size-xs);
+  }
+
+  .meta-link {
+    color: var(--wa-color-text-link);
+    text-decoration: none;
+  }
+
+  .meta-link:hover {
+    text-decoration: underline;
+  }
+
+  .date-quiet {
+    color: var(--wa-color-text-quiet);
+    font-size: var(--wa-font-size-xs);
+  }
+
+  /* ─── Key facts grid ─── */
+  .facts-section {
+    padding-top: var(--wa-space-2xl);
+    padding-bottom: var(--wa-space-xl);
+  }
+
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: var(--wa-space-s);
+  }
+
+  .fact {
+    padding: var(--wa-space-s) var(--wa-space-m);
+    background-color: var(--wa-color-surface-lowered);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-3xs);
+  }
+
+  .fact--highlight {
+    border-color: var(--wa-color-warning-border-normal);
+    background-color: color-mix(in oklch, var(--wa-color-warning-fill-quiet) 60%, transparent);
+  }
+
+  .fact-label {
+    font-size: var(--wa-font-size-xs);
+    font-weight: 600;
+    color: var(--wa-color-text-quiet);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .fact-value {
+    font-size: var(--wa-font-size-s);
+    font-weight: 500;
+    color: var(--wa-color-text-normal);
+    line-height: 1.5;
+  }
+
+  .fact-sub {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    margin-left: var(--wa-space-3xs);
+  }
+
+  /* ─── SCOI finding ─── */
+  .finding-section,
+  .misconduct-section,
+  .investigations-section,
+  .related-section,
+  .sources-section {
+    padding-top: var(--wa-space-xl);
+    padding-bottom: 0;
+  }
+
+  .details-summary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wa-space-2xs);
+    font-size: var(--wa-font-size-s);
+    font-weight: 500;
+  }
+
+  .details-icon {
+    color: var(--wa-color-text-quiet);
+    font-size: var(--wa-font-size-s);
+    flex-shrink: 0;
+  }
+
+  .inquiry-finding {
+    margin: 0;
+    padding: var(--wa-space-m) var(--wa-space-l);
+    border-left: var(--wa-space-2xs) solid var(--site-cases);
+    background-color: var(--wa-color-surface-lowered);
+    border-radius: 0 var(--wa-border-radius-s) var(--wa-border-radius-s) 0;
+  }
+
+  .inquiry-finding p {
+    margin: 0 0 var(--wa-space-s) 0;
+    font-size: var(--wa-font-size-s);
+    line-height: 1.65;
+    color: var(--wa-color-text-normal);
+    font-style: italic;
+  }
+
+  .finding-source {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    font-style: normal;
+  }
+
+  /* ─── Narrative prose ─── */
+  .narrative-section {
+    padding-top: var(--wa-space-2xl);
+  }
+
+  .prose :global(h2) {
+    font-size: var(--wa-font-size-xl);
+    font-weight: 600;
+    margin: var(--wa-space-2xl) 0 var(--wa-space-s) 0;
+    padding-top: var(--wa-space-l);
+    border-top: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    color: var(--wa-color-text-normal);
+  }
+
+  .prose :global(h3) {
+    font-size: var(--wa-font-size-l);
+    font-weight: 600;
+    margin: var(--wa-space-l) 0 var(--wa-space-xs) 0;
+  }
+
+  .prose :global(p) {
+    font-size: var(--wa-font-size-m);
+    line-height: 1.75;
+    color: var(--wa-color-text-quiet);
+    margin: 0 0 var(--wa-space-m) 0;
+  }
+
+  .prose :global(a) {
+    color: var(--wa-color-text-link);
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    padding-left: var(--wa-space-l);
+    margin: 0 0 var(--wa-space-m) 0;
+  }
+
+  .prose :global(li) {
+    font-size: var(--wa-font-size-m);
+    line-height: 1.7;
+    color: var(--wa-color-text-quiet);
+    margin-bottom: var(--wa-space-3xs);
+  }
+
+  .prose :global(blockquote) {
+    margin: var(--wa-space-m) 0;
+    padding: var(--wa-space-s) var(--wa-space-m);
+    border-left: var(--wa-space-2xs) solid var(--wa-color-surface-border);
+    color: var(--wa-color-text-quiet);
+  }
+
+  /* ─── Police investigations ─── */
+  .investigations-list {
+    padding: var(--wa-space-s) 0;
+  }
+
+  .investigation-item {
+    padding-bottom: var(--wa-space-s);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
+  .investigation-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .inv-header {
+    flex-wrap: wrap;
+  }
+
+  .inv-years {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .inv-notes {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: var(--wa-space-2xs) 0 0 0;
+    line-height: 1.55;
+  }
+
+  /* ─── Related content ─── */
+  .related-heading {
+    font-size: var(--wa-font-size-l);
+    font-weight: 600;
+    margin: 0 0 var(--wa-space-m) 0;
+  }
+
+  .related-list {
+    list-style: none;
+    padding: var(--wa-space-s) 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-xs);
+  }
+
+  .related-list li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--wa-space-s);
+  }
+
+  .related-link {
+    color: var(--wa-color-text-link);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--wa-font-size-s);
+  }
+
+  .related-link:hover {
+    text-decoration: underline;
+  }
+
+  .related-meta {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+  }
+
+  /* ─── Sources ─── */
+  .source-citation p {
+    font-size: var(--wa-font-size-s);
+    line-height: 1.65;
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+  }
+</style>
+
+<script>
+  import '@awesome.me/webawesome/dist/components/callout/callout.js';
+  import '@awesome.me/webawesome/dist/components/tag/tag.js';
+  import '@awesome.me/webawesome/dist/components/icon/icon.js';
+  import '@awesome.me/webawesome/dist/components/details/details.js';
+  import '@awesome.me/webawesome/dist/components/tab-group/tab-group.js';
+  import '@awesome.me/webawesome/dist/components/tab/tab.js';
+  import '@awesome.me/webawesome/dist/components/tab-panel/tab-panel.js';
+</script>

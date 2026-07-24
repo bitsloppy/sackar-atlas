@@ -1,0 +1,388 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allPeople = await getCollection('people');
+const allCases  = await getCollection('cases', ({ data }) => data.published === true);
+
+// Sort alphabetically; stubs to the bottom
+const sorted = allPeople.sort((a, b) => {
+  if (a.data.stub !== b.data.stub) return a.data.stub ? 1 : -1;
+  return a.data.name.localeCompare(b.data.name);
+});
+
+// Unique roles present in the dataset (preserve display order)
+const ROLE_ORDER = [
+  'victim', 'perpetrator', 'witness', 'activist',
+  'police', 'police-officer', 'coroner', 'pathologist',
+  'expert-witness', 'legal', 'political', 'community', 'journalist', 'other',
+];
+const presentRoles = ROLE_ORDER.filter(r => sorted.some(p => p.data.role === r));
+
+// Cases referenced by at least one person
+const referencedCaseIds = new Set(
+  sorted.flatMap(p => (p.data.related_cases as string[] | undefined) ?? [])
+);
+const referencedCases = allCases
+  .filter(c => referencedCaseIds.has(c.id.replace(/\.md$/, '')))
+  .sort((a, b) => {
+    const da = a.data.date_of_death ?? '9999';
+    const db = b.data.date_of_death ?? '9999';
+    return da.localeCompare(db);
+  });
+
+function roleLabel(role: string): string {
+  const labels: Record<string, string> = {
+    'victim':         'Victim',
+    'activist':       'Activist',
+    'witness':        'Witness',
+    'expert-witness': 'Expert witness',
+    'pathologist':    'Pathologist',
+    'coroner':        'Coroner',
+    'perpetrator':    'Perpetrator',
+    'police':         'Police',
+    'police-officer': 'Police officer',
+    'legal':          'Legal',
+    'political':      'Political',
+    'community':      'Community figure',
+    'journalist':     'Journalist',
+    'other':          'Other',
+  };
+  return labels[role] ?? role;
+}
+
+function roleVariant(role: string): 'brand' | 'neutral' | 'success' | 'warning' | 'danger' {
+  const variants: Record<string, 'brand' | 'neutral' | 'success' | 'warning' | 'danger'> = {
+    'victim':         'danger',
+    'perpetrator':    'warning',
+    'police':         'neutral',
+    'police-officer': 'neutral',
+    'activist':       'brand',
+    'political':      'neutral',
+    'legal':          'neutral',
+    'coroner':        'neutral',
+  };
+  return variants[role] ?? 'neutral';
+}
+---
+
+<Layout
+  title="People"
+  description="Individuals documented by the Sackar Atlas — victims, activists, witnesses, police officers, legal figures, and political figures."
+>
+  <!-- ── Hero ── -->
+  <section class="page-hero section">
+    <div class="page-hero-inner wa-stack wa-gap-s">
+      <h1>People</h1>
+      <p class="page-hero-desc">
+        <span id="people-count">{sorted.length}</span> of {sorted.length} individual{sorted.length === 1 ? '' : 's'}
+        — victims, activists, witnesses, police officers, coroners, legal figures, and politicians
+        connected to the documented history.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Filter bar ── -->
+  <div class="filter-bar section" id="filter-bar">
+    <div class="filter-bar-inner">
+
+      <!-- Case select -->
+      {referencedCases.length > 0 && (
+        <div class="filter-group">
+          <label class="filter-label" for="case-filter">Case</label>
+          <select class="case-select" id="case-filter">
+            <option value="all">All cases</option>
+            {referencedCases.map(c => (
+              <option value={c.id.replace(/\.md$/, '')}>
+                {c.data.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+      <!-- Role chips -->
+      <div class="filter-group">
+        <span class="filter-label">Type</span>
+        <div class="role-chips wa-cluster wa-gap-2xs" id="role-filters">
+          <button class="filter-chip active" data-role="all">All</button>
+          {presentRoles.map(role => (
+            <button class="filter-chip" data-role={role}>
+              {roleLabel(role)}
+            </button>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── Grid ── -->
+  <section class="index-section section">
+    <div class="index-grid wa-grid wa-gap-l" id="people-grid">
+      {sorted.map((entry) => {
+        const d = entry.data;
+        const slug = entry.id.replace(/\.md$/, '');
+        const cases = ((d.related_cases as string[] | undefined) ?? []).join(',');
+        return (
+          <article data-role={d.role} data-cases={cases}>
+            <a href={`/people/${slug}/`} class="item-card-link">
+              <wa-card appearance="filled-outlined" with-header>
+                <div slot="header" class="card-badges wa-cluster wa-gap-2xs">
+                  <wa-tag
+                    variant={roleVariant(d.role)}
+                    appearance="filled"
+                    size="s"
+                    pill
+                  >
+                    {roleLabel(d.role)}
+                  </wa-tag>
+                  {d.stub && (
+                    <wa-tag variant="neutral" appearance="outlined" size="s" pill>
+                      Stub
+                    </wa-tag>
+                  )}
+                </div>
+
+                <div class="card-body wa-stack wa-gap-xs">
+                  <strong class="item-name">{d.name}</strong>
+                  {d.institutional_role && (
+                    <p class="item-title">{d.institutional_role}{d.institution ? `, ${d.institution}` : ''}</p>
+                  )}
+                  {(d.tenure_start || d.tenure_end) && (
+                    <p class="item-tenure">
+                      {d.tenure_start ?? '?'} – {d.tenure_end ?? 'present'}
+                    </p>
+                  )}
+                </div>
+              </wa-card>
+            </a>
+          </article>
+        );
+      })}
+    </div>
+
+    <!-- Empty state -->
+    <p class="empty-state" id="empty-state" hidden>
+      No people match those filters.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  /* ─── Page hero ─── */
+  .page-hero {
+    padding-block: var(--wa-space-3xl);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
+  .page-hero-inner h1 {
+    font-size: var(--wa-font-size-2xl);
+    font-weight: 700;
+    margin: 0;
+    color: var(--wa-color-text-normal);
+  }
+
+  .page-hero-desc {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  /* ─── Filter bar ─── */
+  .filter-bar {
+    padding-block: var(--wa-space-m);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    position: sticky;
+    top: var(--header-height, 4rem);
+    z-index: 4;
+  }
+
+  .filter-bar-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--wa-space-l);
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-s);
+    flex-wrap: wrap;
+  }
+
+  .filter-label {
+    font-size: var(--wa-font-size-xs);
+    font-weight: 600;
+    color: var(--wa-color-text-quiet);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  /* Role chips */
+  .role-chips {
+    flex-wrap: wrap;
+  }
+
+  .filter-chip {
+    padding: var(--wa-space-2xs) var(--wa-space-s);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-pill);
+    background: var(--wa-color-surface-default);
+    font-family: var(--font-ui);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    cursor: pointer;
+    transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .filter-chip:hover {
+    border-color: var(--site-people);
+    color: var(--site-people);
+  }
+
+  .filter-chip.active {
+    background-color: var(--site-people);
+    border-color: var(--site-people);
+    color: #fff;
+  }
+
+  /* Case select */
+  .case-select {
+    padding: var(--wa-space-2xs) var(--wa-space-s);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-m);
+    background-color: var(--wa-color-surface-default);
+    font-family: var(--font-ui);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-normal);
+    cursor: pointer;
+    appearance: auto;
+  }
+
+  .case-select:focus {
+    outline: var(--wa-focus-ring);
+    outline-offset: var(--wa-focus-ring-offset);
+    border-color: var(--site-people);
+  }
+
+  /* ─── Grid ─── */
+  .index-section {
+    padding-block: var(--wa-space-3xl);
+  }
+
+  .index-grid {
+    --min-column-size: 20rem;
+  }
+
+  /* ─── Card ─── */
+  .item-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    border-left: var(--wa-space-2xs) solid var(--site-people);
+    border-radius: var(--wa-border-radius-m);
+  }
+
+  .item-card-link wa-card {
+    height: 100%;
+    transition: box-shadow 0.15s ease;
+  }
+
+  .item-card-link:hover wa-card {
+    box-shadow: var(--wa-shadow-m);
+  }
+
+  .card-badges {
+    flex-wrap: wrap;
+  }
+
+  .card-body {
+    padding-top: var(--wa-space-2xs);
+  }
+
+  .item-name {
+    font-size: var(--wa-font-size-m);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    display: block;
+  }
+
+  .item-title {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .item-tenure {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+  }
+
+  /* ─── Empty state ─── */
+  .empty-state {
+    padding-block: var(--wa-space-2xl);
+    text-align: center;
+    color: var(--wa-color-text-quiet);
+    font-size: var(--wa-font-size-s);
+  }
+</style>
+
+<script>
+  import '@awesome.me/webawesome/dist/components/card/card.js';
+  import '@awesome.me/webawesome/dist/components/tag/tag.js';
+  import '@awesome.me/webawesome/dist/components/icon/icon.js';
+
+  const total    = document.querySelectorAll('#people-grid article').length;
+  const articles = document.querySelectorAll<HTMLElement>('#people-grid article');
+  const chips    = document.querySelectorAll<HTMLButtonElement>('#role-filters .filter-chip');
+  const caseSelect = document.getElementById('case-filter') as HTMLSelectElement | null;
+  const countEl    = document.getElementById('people-count');
+  const emptyEl    = document.getElementById('empty-state');
+
+  let activeRole = 'all';
+  let activeCase = 'all';
+
+  function applyFilters() {
+    let visible = 0;
+
+    articles.forEach(article => {
+      const role  = article.dataset.role ?? '';
+      const cases = article.dataset.cases ? article.dataset.cases.split(',') : [];
+
+      const roleMatch = activeRole === 'all' || role === activeRole;
+      const caseMatch = activeCase === 'all' || cases.includes(activeCase);
+
+      const show = roleMatch && caseMatch;
+      article.hidden = !show;
+      if (show) visible++;
+    });
+
+    if (countEl) countEl.textContent = String(visible);
+    if (emptyEl) emptyEl.hidden = visible > 0;
+  }
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeRole = chip.dataset.role ?? 'all';
+      applyFilters();
+    });
+  });
+
+  caseSelect?.addEventListener('change', () => {
+    activeCase = caseSelect.value;
+    applyFilters();
+  });
+</script>

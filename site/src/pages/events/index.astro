@@ -1,0 +1,392 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allEvents = await getCollection('events');
+const allCases  = await getCollection('cases', ({ data }) => data.published === true);
+
+// Sort by date ascending; undated go last
+const sorted = allEvents.sort((a, b) => {
+  const da = a.data.date ?? '9999';
+  const db = b.data.date ?? '9999';
+  return da.localeCompare(db);
+});
+
+function eventTypeLabel(type: string): string {
+  const labels: Record<string, string> = {
+    'activism':       'Activism',
+    'legal-milestone':'Legal milestone',
+    'cultural':       'Cultural',
+    'political':      'Political',
+    'community':      'Community',
+    'police-action':  'Police action',
+    'memorial':       'Memorial',
+    'media':          'Media',
+    'inquiry':        'Inquiry',
+    'other':          'Other',
+  };
+  return labels[type] ?? type;
+}
+
+function eventTypeVariant(type: string): 'brand' | 'neutral' | 'success' | 'warning' | 'danger' {
+  const variants: Record<string, 'brand' | 'neutral' | 'success' | 'warning' | 'danger'> = {
+    'activism':       'brand',
+    'legal-milestone':'success',
+    'police-action':  'warning',
+    'inquiry':        'warning',
+    'memorial':       'neutral',
+  };
+  return variants[type] ?? 'neutral';
+}
+
+// ── Filter bar data ──
+const EVENT_TYPE_ORDER = ['inquiry', 'police-action', 'activism', 'memorial', 'legal-milestone', 'other'];
+const EVENT_TYPE_CHIP_LABELS: Record<string, string> = {
+  'inquiry':         'Inquiry / investigation',
+  'police-action':   'Police action',
+  'activism':        'Activism',
+  'memorial':        'Memorial',
+  'legal-milestone': 'Legal milestone',
+  'other':           'Other',
+};
+const presentEventTypes = EVENT_TYPE_ORDER.filter(t => sorted.some(e => e.data.event_type === t));
+
+// Cases referenced by at least one event
+const referencedCaseIds = new Set(
+  sorted.flatMap(e => (e.data.related_cases as string[] | undefined) ?? [])
+);
+const referencedCases = allCases
+  .filter(c => referencedCaseIds.has(c.id.replace(/\.md$/, '')))
+  .sort((a, b) => {
+    const da = a.data.date_of_death ?? '9999';
+    const db = b.data.date_of_death ?? '9999';
+    return da.localeCompare(db);
+  });
+---
+
+<Layout
+  title="Events"
+  description="Historical events documented by the Sackar Atlas — activism, legal milestones, police actions, memorials, and community moments."
+>
+  <!-- ── Hero ── -->
+  <section class="page-hero section">
+    <div class="page-hero-inner wa-stack wa-gap-s">
+      <h1>Events</h1>
+      <p class="page-hero-desc">
+        <span id="events-count">{sorted.length}</span> of {sorted.length} event{sorted.length === 1 ? '' : 's'} — activism, law reform, police actions,
+        memorials, and cultural moments documented by the Sackar Atlas, in chronological order.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Filter bar ── -->
+  <div class="filter-bar section" id="filter-bar">
+    <div class="filter-bar-inner">
+
+      <!-- Event type chips -->
+      <div class="filter-group">
+        <span class="filter-label">Type</span>
+        <div class="type-chips" id="type-filters">
+          <button class="filter-chip active" data-type="all">All</button>
+          {presentEventTypes.map(t => (
+            <button class="filter-chip" data-type={t}>
+              {EVENT_TYPE_CHIP_LABELS[t] ?? t}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Case dropdown -->
+      {referencedCases.length > 0 && (
+        <div class="filter-group">
+          <label class="filter-label" for="case-filter">Case</label>
+          <select class="case-select" id="case-filter">
+            <option value="all">All cases</option>
+            {referencedCases.map(c => (
+              <option value={c.id.replace(/\.md$/, '')}>
+                {c.data.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+    </div>
+  </div>
+
+  <section class="index-section section">
+    <div class="index-grid wa-grid wa-gap-l" id="events-grid">
+      {sorted.map((entry) => {
+        const d = entry.data;
+        const slug = entry.id.replace(/\.md$/, '');
+        const relatedCases = (d.related_cases as string[] | undefined) ?? [];
+        return (
+          <article data-type={d.event_type} data-cases={relatedCases.join(',')}>
+            <a href={`/events/${slug}/`} class="item-card-link">
+              <wa-card appearance="filled-outlined" with-header>
+                <div slot="header" class="card-badges wa-cluster wa-gap-2xs">
+                  <wa-tag
+                    variant={eventTypeVariant(d.event_type)}
+                    appearance="filled"
+                    size="s"
+                    pill
+                  >
+                    {eventTypeLabel(d.event_type)}
+                  </wa-tag>
+                  {d.stub && (
+                    <wa-tag variant="neutral" appearance="outlined" size="s" pill>
+                      Stub
+                    </wa-tag>
+                  )}
+                </div>
+
+                <div class="card-body wa-stack wa-gap-xs">
+                  <strong class="item-name">{d.title}</strong>
+                  <div class="item-meta wa-cluster wa-gap-s">
+                    <span class="meta-item">
+                      <wa-icon name="calendar" variant="solid" class="meta-icon"></wa-icon>
+                      {d.date_display ?? d.date}
+                    </span>
+                    {d.location_name && (
+                      <span class="meta-item">
+                        <wa-icon name="location-dot" variant="solid" class="meta-icon"></wa-icon>
+                        {d.location_name}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </wa-card>
+            </a>
+          </article>
+        );
+      })}
+    </div>
+
+    <!-- Empty state -->
+    <p class="empty-state" id="empty-state" hidden>
+      No events match those filters.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  /* ─── Page hero ─── */
+  .page-hero {
+    padding-block: var(--wa-space-3xl);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
+  .page-hero-inner h1 {
+    font-size: var(--wa-font-size-2xl);
+    font-weight: 700;
+    margin: 0;
+    color: var(--wa-color-text-normal);
+  }
+
+  .page-hero-desc {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  /* ─── Filter bar ─── */
+  .filter-bar {
+    padding-block: var(--wa-space-m);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    position: sticky;
+    top: var(--header-height, 4rem);
+    z-index: 4;
+  }
+
+  .filter-bar-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--wa-space-l);
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-s);
+    flex-wrap: wrap;
+  }
+
+  .filter-label {
+    font-size: var(--wa-font-size-xs);
+    font-weight: 600;
+    color: var(--wa-color-text-quiet);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .type-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wa-space-2xs);
+  }
+
+  .filter-chip {
+    padding: var(--wa-space-2xs) var(--wa-space-s);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-pill);
+    background: var(--wa-color-surface-default);
+    font-family: var(--font-ui);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    cursor: pointer;
+    transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .filter-chip:hover {
+    border-color: var(--site-events);
+    color: var(--site-events);
+  }
+
+  .filter-chip.active {
+    background-color: var(--site-events);
+    border-color: var(--site-events);
+    color: #fff;
+  }
+
+  /* Case select */
+  .case-select {
+    padding: var(--wa-space-2xs) var(--wa-space-s);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-m);
+    background-color: var(--wa-color-surface-default);
+    font-family: var(--font-ui);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-normal);
+    cursor: pointer;
+    appearance: auto;
+  }
+
+  .case-select:focus {
+    outline: var(--wa-focus-ring);
+    outline-offset: var(--wa-focus-ring-offset);
+    border-color: var(--site-events);
+  }
+
+  /* ─── Grid ─── */
+  .index-section {
+    padding-block: var(--wa-space-3xl);
+  }
+
+  .index-grid {
+    --min-column-size: 22rem;
+  }
+
+  /* ─── Card ─── */
+  .item-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    border-left: var(--wa-space-2xs) solid var(--site-events);
+    border-radius: var(--wa-border-radius-m);
+  }
+
+  .item-card-link wa-card {
+    height: 100%;
+    transition: box-shadow 0.15s ease;
+  }
+
+  .item-card-link:hover wa-card {
+    box-shadow: var(--wa-shadow-m);
+  }
+
+  .card-badges {
+    flex-wrap: wrap;
+  }
+
+  .card-body {
+    padding-top: var(--wa-space-2xs);
+  }
+
+  .item-name {
+    font-size: var(--wa-font-size-m);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    display: block;
+  }
+
+  .item-meta {
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wa-space-3xs);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .meta-icon {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+  }
+
+  /* ─── Empty state ─── */
+  .empty-state {
+    padding-block: var(--wa-space-2xl);
+    text-align: center;
+    color: var(--wa-color-text-quiet);
+    font-size: var(--wa-font-size-s);
+  }
+</style>
+
+<script>
+  import '@awesome.me/webawesome/dist/components/card/card.js';
+  import '@awesome.me/webawesome/dist/components/tag/tag.js';
+  import '@awesome.me/webawesome/dist/components/icon/icon.js';
+
+  const articles   = document.querySelectorAll<HTMLElement>('#events-grid article');
+  const typeChips  = document.querySelectorAll<HTMLButtonElement>('#type-filters .filter-chip');
+  const caseSelect = document.getElementById('case-filter') as HTMLSelectElement | null;
+  const countEl    = document.getElementById('events-count');
+  const emptyEl    = document.getElementById('empty-state');
+
+  let activeType = 'all';
+  let activeCase = 'all';
+
+  function applyFilters() {
+    let visible = 0;
+
+    articles.forEach(article => {
+      const type  = article.dataset.type ?? '';
+      const cases = article.dataset.cases ? article.dataset.cases.split(',') : [];
+
+      const typeMatch = activeType === 'all' || type === activeType;
+      const caseMatch = activeCase === 'all' || cases.includes(activeCase);
+
+      const show = typeMatch && caseMatch;
+      article.hidden = !show;
+      if (show) visible++;
+    });
+
+    if (countEl) countEl.textContent = String(visible);
+    if (emptyEl) emptyEl.hidden = visible > 0;
+  }
+
+  typeChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      typeChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeType = chip.dataset.type ?? 'all';
+      applyFilters();
+    });
+  });
+
+  caseSelect?.addEventListener('change', () => {
+    activeCase = caseSelect.value;
+    applyFilters();
+  });
+</script>

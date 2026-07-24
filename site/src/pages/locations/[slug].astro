@@ -1,0 +1,523 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const locations = await getCollection('locations');
+  return locations.map(entry => ({
+    params: { slug: entry.id.replace(/\.md$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+// Cross-reference related content
+const allCases     = await getCollection('cases', ({ data }) => data.published === true);
+const allLocations = await getCollection('locations');
+const allPeople    = await getCollection('people');
+const allEvents    = await getCollection('events');
+
+const relatedCases = (d.related_cases ?? [])
+  .map(id => allCases.find(c => c.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedLocations = (d.related_locations ?? [])
+  .map(id => allLocations.find(l => l.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedPeople = (d.related_people ?? [])
+  .map(id => allPeople.find(p => p.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedEvents = (d.related_events ?? [])
+  .map(id => allEvents.find(e => e.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const hasRelated =
+  relatedCases.length > 0 ||
+  relatedLocations.length > 0 ||
+  relatedPeople.length > 0 ||
+  relatedEvents.length > 0;
+
+function typeLabel(type: string): string {
+  return type.replace(/-/g, ' ');
+}
+
+function roleLabel(role: string): string {
+  const labels: Record<string, string> = {
+    'beat':           'Beat',
+    'nightlife-venue':'Nightlife venue',
+    'march-route':    'March route',
+    'crime-scene':    'Crime scene',
+    'last-seen':      'Last seen',
+    'memorial':       'Memorial',
+    'institution':    'Institution',
+    'institutional':  'Institution',
+    'community-hub':  'Community hub',
+    'burial-site':    'Burial site',
+  };
+  return labels[role] ?? role;
+}
+---
+
+<Layout
+  title={d.name}
+  description={`Location record: ${d.name}${d.suburb ? `, ${d.suburb}` : ''}. Sackar Atlas location database.`}
+>
+  <div class="location-detail">
+
+    <!-- ══ Stub warning ══════════════════════════════════════════════════════ -->
+    {d.stub && (
+      <div class="callout-wrap section">
+        <wa-callout variant="warning">
+          <wa-icon slot="icon" name="triangle-exclamation" variant="solid"></wa-icon>
+          <strong>Research incomplete:</strong> This location record is a stub. Information may be
+          partial or unverified. Contributions welcome.
+        </wa-callout>
+      </div>
+    )}
+
+    <!-- ══ Page header ═══════════════════════════════════════════════════════ -->
+    <header class="location-header section">
+      <div class="location-header-inner wa-stack wa-gap-m">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/locations/">Locations</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">{d.name}</span>
+        </nav>
+
+        <h1 class="location-name">{d.name}</h1>
+
+        <!-- Type and role badges -->
+        <div class="location-badges wa-cluster wa-gap-2xs">
+          <wa-tag variant="neutral" appearance="filled" size="s">{typeLabel(d.location_type)}</wa-tag>
+          {(d.location_roles ?? []).map((role) => (
+            <wa-tag variant="neutral" appearance="outlined" size="s">{roleLabel(role)}</wa-tag>
+          ))}
+        </div>
+
+        <!-- Meta row -->
+        <div class="location-meta wa-cluster wa-gap-m">
+          {d.suburb && (
+            <span class="meta-item">
+              <wa-icon name="location-dot" variant="solid" class="meta-icon" label="Suburb"></wa-icon>
+              {d.suburb}
+            </span>
+          )}
+          {d.location_region && (
+            <span class="meta-item">
+              <wa-icon name="map" variant="solid" class="meta-icon" label="Region"></wa-icon>
+              {d.location_region.replace(/-/g, ' ')}
+            </span>
+          )}
+        </div>
+      </div>
+    </header>
+
+    <!-- ══ First Nations acknowledgement ═════════════════════════════════════ -->
+    {d.first_nations_country && (
+      <div class="callout-wrap section">
+        <wa-callout variant="neutral" appearance="filled-outlined">
+          <wa-icon slot="icon" name="hand-holding-heart" variant="solid"></wa-icon>
+          <p class="fn-ack">
+            This place sits on <strong>{d.first_nations_country}</strong> Country.
+            {d.first_nations_country_additional && (
+              <> It also overlaps with <strong>{d.first_nations_country_additional}</strong> Country.</>
+            )}
+          </p>
+          {d.acknowledgement && (
+            <p class="fn-ack-extra">{d.acknowledgement}</p>
+          )}
+        </wa-callout>
+      </div>
+    )}
+
+    <!-- ══ Key facts ═════════════════════════════════════════════════════════ -->
+    <section class="facts-section section">
+      <div class="facts-grid">
+
+        {(d.lat != null && d.lng != null) && (
+          <div class="fact">
+            <span class="fact-label">Map coordinates</span>
+            <span class="fact-value">{d.lat?.toFixed(4)}, {d.lng?.toFixed(4)}</span>
+          </div>
+        )}
+
+        {d.active_from && (
+          <div class="fact">
+            <span class="fact-label">Active from</span>
+            <span class="fact-value">{d.active_from}</span>
+          </div>
+        )}
+
+        {d.active_to && (
+          <div class="fact">
+            <span class="fact-label">Active to</span>
+            <span class="fact-value">{d.active_to}</span>
+          </div>
+        )}
+
+        <div class="fact">
+          <span class="fact-label">Still exists</span>
+          <span class="fact-value">{d.still_exists ? 'Yes' : 'No'}</span>
+        </div>
+
+        {d.current_name && (
+          <div class="fact">
+            <span class="fact-label">Current name</span>
+            <span class="fact-value">{d.current_name}</span>
+          </div>
+        )}
+
+        {d.traditional_name && (
+          <div class="fact">
+            <span class="fact-label">Traditional name</span>
+            <span class="fact-value">
+              {d.traditional_name}
+              {d.traditional_name_language && (
+                <span class="fact-sub">({d.traditional_name_language})</span>
+              )}
+            </span>
+          </div>
+        )}
+
+      </div>
+    </section>
+
+    <!-- ══ Narrative body (markdown) ════════════════════════════════════════ -->
+    <section class="narrative-section section">
+      <div class="narrative prose">
+        <Content />
+      </div>
+    </section>
+
+    <!-- ══ Related content ══════════════════════════════════════════════════ -->
+    {hasRelated && (
+      <section class="related-section section">
+        <h2 class="related-heading">Related</h2>
+        <wa-tab-group>
+
+          {relatedCases.length > 0 && (
+            <>
+              <wa-tab panel="related-cases">
+                Cases ({relatedCases.length})
+              </wa-tab>
+              <wa-tab-panel name="related-cases">
+                <ul class="related-list">
+                  {relatedCases.map(c => (
+                    <li>
+                      <a href={`/cases/${c.id.replace(/\.md$/, '')}/`} class="related-link">
+                        {c.data.name}
+                      </a>
+                      <span class="related-meta">
+                        {c.data.date_of_death_display ?? c.data.date_of_death}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </wa-tab-panel>
+            </>
+          )}
+
+          {relatedLocations.length > 0 && (
+            <>
+              <wa-tab panel="related-locations">
+                Locations ({relatedLocations.length})
+              </wa-tab>
+              <wa-tab-panel name="related-locations">
+                <ul class="related-list">
+                  {relatedLocations.map(l => (
+                    <li>
+                      <a href={`/locations/${l.id.replace(/\.md$/, '')}/`} class="related-link">
+                        {l.data.name}
+                      </a>
+                      {l.data.suburb && (
+                        <span class="related-meta">{l.data.suburb}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </wa-tab-panel>
+            </>
+          )}
+
+          {relatedPeople.length > 0 && (
+            <>
+              <wa-tab panel="related-people">
+                People ({relatedPeople.length})
+              </wa-tab>
+              <wa-tab-panel name="related-people">
+                <ul class="related-list">
+                  {relatedPeople.map(p => (
+                    <li>
+                      <a href={`/people/${p.id.replace(/\.md$/, '')}/`} class="related-link">
+                        {p.data.name}
+                      </a>
+                      {p.data.role && (
+                        <span class="related-meta">{p.data.role}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </wa-tab-panel>
+            </>
+          )}
+
+          {relatedEvents.length > 0 && (
+            <>
+              <wa-tab panel="related-events">
+                Events ({relatedEvents.length})
+              </wa-tab>
+              <wa-tab-panel name="related-events">
+                <ul class="related-list">
+                  {relatedEvents.map(e => (
+                    <li>
+                      <a href={`/events/${e.id.replace(/\.md$/, '')}/`} class="related-link">
+                        {e.data.title}
+                      </a>
+                      {e.data.date_display && (
+                        <span class="related-meta">{e.data.date_display}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </wa-tab-panel>
+            </>
+          )}
+
+        </wa-tab-group>
+      </section>
+    )}
+
+  </div>
+</Layout>
+
+<style>
+  .location-detail {
+    padding-bottom: var(--wa-space-5xl);
+  }
+
+  /* ─── Callout wrap ─── */
+  .callout-wrap {
+    padding-top: var(--wa-space-xl);
+    padding-bottom: 0;
+  }
+
+  .fn-ack {
+    margin: 0 0 var(--wa-space-2xs) 0;
+    font-size: var(--wa-font-size-s);
+    line-height: 1.5;
+  }
+
+  .fn-ack-extra {
+    margin: 0;
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    line-height: 1.5;
+  }
+
+  /* ─── Location header ─── */
+  .location-header {
+    padding-block: var(--wa-space-3xl);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-2xs);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .breadcrumb a {
+    color: var(--wa-color-text-link);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb-sep {
+    color: var(--wa-color-text-quiet);
+  }
+
+  .location-name {
+    font-size: var(--wa-font-size-3xl);
+    font-weight: 700;
+    margin: 0;
+    color: var(--wa-color-text-normal);
+    border-left: var(--wa-space-2xs) solid var(--site-locations);
+    padding-left: var(--wa-space-m);
+  }
+
+  .location-badges {
+    flex-wrap: wrap;
+  }
+
+  .location-meta {
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wa-space-3xs);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    text-transform: capitalize;
+  }
+
+  .meta-icon {
+    font-size: var(--wa-font-size-xs);
+  }
+
+  /* ─── Key facts grid ─── */
+  .facts-section {
+    padding-top: var(--wa-space-2xl);
+    padding-bottom: var(--wa-space-xl);
+  }
+
+  .facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    gap: var(--wa-space-s);
+  }
+
+  .fact {
+    padding: var(--wa-space-s) var(--wa-space-m);
+    background-color: var(--wa-color-surface-lowered);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-3xs);
+  }
+
+  .fact-label {
+    font-size: var(--wa-font-size-xs);
+    font-weight: 600;
+    color: var(--wa-color-text-quiet);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .fact-value {
+    font-size: var(--wa-font-size-s);
+    font-weight: 500;
+    color: var(--wa-color-text-normal);
+    line-height: 1.5;
+  }
+
+  .fact-sub {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    margin-left: var(--wa-space-3xs);
+  }
+
+  /* ─── Narrative prose ─── */
+  .narrative-section {
+    padding-top: var(--wa-space-2xl);
+  }
+
+  .prose {
+    max-width: 72ch;
+  }
+
+  .prose :global(h2) {
+    font-size: var(--wa-font-size-l);
+    font-weight: 600;
+    margin: var(--wa-space-2xl) 0 var(--wa-space-s) 0;
+    padding-top: var(--wa-space-l);
+    border-top: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    color: var(--wa-color-text-normal);
+  }
+
+  .prose :global(h3) {
+    font-size: var(--wa-font-size-m);
+    font-weight: 600;
+    margin: var(--wa-space-l) 0 var(--wa-space-xs) 0;
+  }
+
+  .prose :global(p) {
+    font-size: var(--wa-font-size-s);
+    line-height: 1.7;
+    color: var(--wa-color-text-quiet);
+    margin: 0 0 var(--wa-space-m) 0;
+  }
+
+  .prose :global(a) {
+    color: var(--wa-color-text-link);
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    padding-left: var(--wa-space-l);
+    margin: 0 0 var(--wa-space-m) 0;
+  }
+
+  .prose :global(li) {
+    font-size: var(--wa-font-size-s);
+    line-height: 1.65;
+    color: var(--wa-color-text-quiet);
+    margin-bottom: var(--wa-space-3xs);
+  }
+
+  /* ─── Related content ─── */
+  .related-section {
+    padding-top: var(--wa-space-xl);
+    padding-bottom: 0;
+  }
+
+  .related-heading {
+    font-size: var(--wa-font-size-l);
+    font-weight: 600;
+    margin: 0 0 var(--wa-space-m) 0;
+  }
+
+  .related-list {
+    list-style: none;
+    padding: var(--wa-space-s) 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-xs);
+  }
+
+  .related-list li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--wa-space-s);
+  }
+
+  .related-link {
+    color: var(--wa-color-text-link);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--wa-font-size-s);
+  }
+
+  .related-link:hover {
+    text-decoration: underline;
+  }
+
+  .related-meta {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+  }
+</style>
+
+<script>
+  import '@awesome.me/webawesome/dist/components/callout/callout.js';
+  import '@awesome.me/webawesome/dist/components/tag/tag.js';
+  import '@awesome.me/webawesome/dist/components/icon/icon.js';
+  import '@awesome.me/webawesome/dist/components/tab-group/tab-group.js';
+  import '@awesome.me/webawesome/dist/components/tab/tab.js';
+  import '@awesome.me/webawesome/dist/components/tab-panel/tab-panel.js';
+</script>

@@ -1,31 +1,237 @@
 ---
+import '@awesome.me/webawesome/dist/styles/utilities.css';
+import '@awesome.me/webawesome/dist/styles/themes/default.css';
+
 interface Props {
   title: string;
   description?: string;
 }
 
-import '@awesome.me/webawesome/dist/styles/layers.css';
-import '@awesome.me/webawesome/dist/styles/themes/default.css';
-
 const {
   title,
-  description = 'Sackar Atlas — a public record of LGBTIQ lives examined by the NSW SCOI.',
+  description = 'Sackar Atlas — a public data project making the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes navigable.',
 } = Astro.props;
+
+const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas`;
 ---
 
 <!doctype html>
-<html lang="en" class="wa-theme-default wa-palette-default">
+<html lang="en" class="wa-theme-default wa-palette-default wa-light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <title>{title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas`}</title>
+    <title>{pageTitle}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Special+Elite&display=swap"
+      rel="stylesheet"
+    />
+    <style is:global>
+      /* ─── Site-level custom properties (declared once here, referenced everywhere) ── */
+      :root {
+        /* Brand / nav colour — NSW Aboriginal billabong blue */
+        --site-brand: #00405e;
+        --site-brand-text: #ffffff;
+
+        /* Content-type palette (declared once; referenced via classes) */
+        --site-cases:     #be123c; /* rose-700 */
+        --site-locations: #0f766e; /* teal-700 */
+        --site-people:    #6d28d9; /* violet-700 */
+        --site-events:    #b45309; /* amber-700 */
+
+        /* Display font */
+        --font-display: 'Special Elite', serif;
+        --font-ui: 'Outfit', system-ui, -apple-system, sans-serif;
+      }
+
+      /* ─── Reset (required for wa-page) ─── */
+      html,
+      body {
+        min-height: 100%;
+        padding: 0;
+        margin: 0;
+        font-family: var(--font-ui);
+      }
+
+      /* ─── wa-page regions ─── */
+      main {
+        padding: 0; /* let hero/section backgrounds bleed edge-to-edge */
+      }
+
+      .section {
+        padding-inline: var(--wa-space-xl);
+      }
+
+      /* Header: brand background — target slotted element directly (light DOM, always wins) */
+      header[slot='header'] {
+        background-color: var(--site-brand);
+        width: 100%;
+      }
+
+      /* Footer: lowered surface + top border */
+      wa-page::part(footer) {
+        background-color: var(--wa-color-surface-lowered);
+        border-top: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+      }
+
+      footer[slot='footer'] {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      /* ─── Header/drawer recipe ───────────────────────────────────────────────── */
+      /* Hide desktop sidebar (nav links live in the header bar on desktop) */
+      wa-page[view='desktop']::part(navigation) {
+        display: none;
+      }
+      /* No --menu-width set: leave at auto so the hidden sidebar leaves no empty band */
+
+      /* ─── Header interior ─── */
+      .header-inner {
+        padding-block: var(--wa-space-s);
+      }
+
+      .header-logo {
+        font-family: var(--font-display);
+        font-size: var(--wa-font-size-l);
+        color: var(--site-brand-text);
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+      }
+
+      /* Desktop nav links (inside header bar) */
+      .header-nav {
+        /* wa-cluster handles the flex layout */
+      }
+
+      .header-nav a {
+        color: rgba(255, 255, 255, 0.88);
+        text-decoration: none;
+        font-size: var(--wa-font-size-s);
+        font-weight: 500;
+        padding: var(--wa-space-2xs) var(--wa-space-xs);
+        border-radius: var(--wa-border-radius-m);
+        transition: background-color 0.12s ease, color 0.12s ease;
+      }
+
+      .header-nav a:hover,
+      .header-nav a[aria-current='page'] {
+        background-color: rgba(255, 255, 255, 0.14);
+        color: #ffffff;
+      }
+
+      /* ─── Mobile drawer nav ─── */
+      .drawer-nav {
+        padding: var(--wa-space-m);
+      }
+
+      .drawer-nav a {
+        display: block;
+        padding: var(--wa-space-xs) var(--wa-space-s);
+        color: var(--wa-color-text-normal);
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: var(--wa-border-radius-m);
+        transition: background-color 0.12s ease;
+      }
+
+      .drawer-nav a:hover,
+      .drawer-nav a[aria-current='page'] {
+        background-color: var(--wa-color-surface-raised);
+      }
+
+      /* ─── Footer interior ────────────────────────────────────────────────────
+         WA slotted footer is already display:flex + justify-content:space-between.
+         Two direct <p> children → pushed to opposite edges automatically.
+         Override only padding-inline so it aligns with .section cards above. ── */
+      footer[slot='footer'] {
+        padding-inline: var(--wa-space-xl);
+      }
+
+      footer[slot='footer'] p {
+        margin: 0;
+        font-size: var(--wa-font-size-s);
+        color: var(--wa-color-text-quiet);
+        max-width: 44ch;
+      }
+
+      .footer-credit {
+        text-align: right;
+      }
+
+      footer[slot='footer'] a {
+        color: var(--wa-color-text-link);
+      }
+    </style>
   </head>
   <body>
-    <slot />
+    <wa-page>
+      <!-- ── Header: logo + desktop nav + mobile toggle ── -->
+      <header slot="header" class="section header-inner wa-split wa-align-items-center">
+        <a href="/" class="header-logo" aria-label="Sackar Atlas home">Sackar Atlas</a>
+
+        <div class="wa-cluster wa-gap-3xs wa-align-items-center">
+          <!-- Desktop nav — hidden on mobile via .wa-desktop-only -->
+          <nav
+            class="header-nav wa-cluster wa-gap-3xs wa-desktop-only"
+            aria-label="Main navigation"
+          >
+            <a href="/cases/">Cases</a>
+            <a href="/locations/">Locations</a>
+            <a href="/events/">Events</a>
+            <a href="/people/">People</a>
+            <a href="/map/">Map</a>
+          </nav>
+
+          <!-- Mobile hamburger — hidden on desktop via .wa-mobile-only -->
+          <wa-button
+            data-toggle-nav
+            appearance="plain"
+            class="wa-mobile-only"
+            aria-label="Open navigation menu"
+          >
+            <wa-icon name="bars" label="Menu"></wa-icon>
+          </wa-button>
+        </div>
+      </header>
+
+      <!-- ── Navigation slot: same links for mobile drawer ── -->
+      <nav slot="navigation" class="drawer-nav wa-stack wa-gap-2xs" aria-label="Mobile navigation">
+        <a href="/cases/" data-drawer="close">Cases</a>
+        <a href="/locations/" data-drawer="close">Locations</a>
+        <a href="/events/" data-drawer="close">Events</a>
+        <a href="/people/" data-drawer="close">People</a>
+        <a href="/map/" data-drawer="close">Map</a>
+      </nav>
+
+      <!-- ── Main content ── -->
+      <main>
+        <slot />
+      </main>
+
+      <!-- ── Footer: two direct <p> children; WA flex+space-between does the split ── -->
+      <footer slot="footer">
+        <p>
+          Sackar Atlas acknowledges the Gadigal, Bidjigal, Gayamaygal, and all peoples of Country
+          across the places documented here. Sovereignty was never ceded.
+        </p>
+        <p class="footer-credit">
+          A public data project by Anna Roberts, drawing on the NSW Special Commission of Inquiry
+          into LGBTIQ Hate Crimes (Sackar J, 2023). All data from public records.
+          <a href="https://github.com/bitsloppy/sackar-atlas">GitHub</a>
+        </p>
+      </footer>
+    </wa-page>
   </body>
+
   <script>
-    // Import WA components here as you use them
+    import '@awesome.me/webawesome/dist/components/page/page.js';
     import '@awesome.me/webawesome/dist/components/button/button.js';
+    import '@awesome.me/webawesome/dist/components/icon/icon.js';
+    // wa-divider removed (footer now uses two-column split)
   </script>
 </html>

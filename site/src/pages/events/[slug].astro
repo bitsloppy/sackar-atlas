@@ -1,0 +1,397 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const events = await getCollection('events');
+  return events.map(entry => ({
+    params: { slug: entry.id.replace(/\.md$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
+
+// Cross-reference related content
+const allCases     = await getCollection('cases', ({ data }) => data.published === true);
+const allLocations = await getCollection('locations');
+const allPeople    = await getCollection('people');
+
+const relatedCases = (d.related_cases ?? [])
+  .map(id => allCases.find(c => c.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedLocations = (d.related_locations ?? [])
+  .map(id => allLocations.find(l => l.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const relatedPeople = (d.related_people ?? [])
+  .map(id => allPeople.find(p => p.id.replace(/\.md$/, '') === id))
+  .filter((x): x is NonNullable<typeof x> => x != null);
+
+const hasRelated =
+  relatedCases.length > 0 ||
+  relatedLocations.length > 0 ||
+  relatedPeople.length > 0;
+
+function eventTypeLabel(type: string): string {
+  const labels: Record<string, string> = {
+    'activism':       'Activism',
+    'legal-milestone':'Legal milestone',
+    'cultural':       'Cultural',
+    'political':      'Political',
+    'community':      'Community',
+    'police-action':  'Police action',
+    'memorial':       'Memorial',
+    'media':          'Media',
+    'inquiry':        'Inquiry',
+    'other':          'Other',
+  };
+  return labels[type] ?? type;
+}
+
+function eventTypeVariant(type: string): 'brand' | 'neutral' | 'success' | 'warning' | 'danger' {
+  const variants: Record<string, 'brand' | 'neutral' | 'success' | 'warning' | 'danger'> = {
+    'activism':       'brand',
+    'legal-milestone':'success',
+    'police-action':  'warning',
+    'inquiry':        'warning',
+    'memorial':       'neutral',
+  };
+  return variants[type] ?? 'neutral';
+}
+
+// Find location record for linking
+const locationEntry = d.location_id
+  ? allLocations.find(l => l.id.replace(/\.md$/, '') === d.location_id)
+  : null;
+---
+
+<Layout
+  title={d.title}
+  description={`Event record: ${d.title}. ${d.date_display ?? d.date}. Sackar Atlas historical events.`}
+>
+  <div class="event-detail">
+
+    <!-- ══ Stub warning ══════════════════════════════════════════════════════ -->
+    {d.stub && (
+      <div class="callout-wrap section">
+        <wa-callout variant="warning">
+          <wa-icon slot="icon" name="triangle-exclamation" variant="solid"></wa-icon>
+          <strong>Research incomplete:</strong> This event record is a stub. Information may be
+          partial or unverified.
+        </wa-callout>
+      </div>
+    )}
+
+    <!-- ══ Page header ═══════════════════════════════════════════════════════ -->
+    <header class="event-header section">
+      <div class="event-header-inner wa-stack wa-gap-m">
+        <!-- Breadcrumb -->
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/events/">Events</a>
+          <span class="breadcrumb-sep" aria-hidden="true">/</span>
+          <span aria-current="page">{d.title}</span>
+        </nav>
+
+        <h1 class="event-title">{d.title}</h1>
+
+        <!-- Type badge -->
+        <div class="event-badges wa-cluster wa-gap-2xs">
+          <wa-tag
+            variant={eventTypeVariant(d.event_type)}
+            appearance="filled"
+            pill
+          >
+            {eventTypeLabel(d.event_type)}
+          </wa-tag>
+        </div>
+
+        <!-- Meta row -->
+        <div class="event-meta wa-cluster wa-gap-m">
+          <span class="meta-item">
+            <wa-icon name="calendar" variant="solid" class="meta-icon" label="Date"></wa-icon>
+            {d.date_display ?? d.date}
+            {d.date_end && <> – {d.date_end}</>}
+          </span>
+          {d.location_name && (
+            <span class="meta-item">
+              <wa-icon name="location-dot" variant="solid" class="meta-icon" label="Location"></wa-icon>
+              {locationEntry ? (
+                <a href={`/locations/${locationEntry.id.replace(/\.md$/, '')}/`} class="meta-link">
+                  {d.location_name}
+                </a>
+              ) : (
+                d.location_name
+              )}
+            </span>
+          )}
+        </div>
+      </div>
+    </header>
+
+    <!-- ══ Narrative body (markdown) ════════════════════════════════════════ -->
+    <section class="narrative-section section">
+      <div class="narrative prose">
+        <Content />
+      </div>
+    </section>
+
+    <!-- ══ Related content ══════════════════════════════════════════════════ -->
+    {hasRelated && (
+      <section class="related-section section">
+        <h2 class="related-heading">Related</h2>
+        <wa-tab-group>
+
+          {relatedCases.length > 0 && (
+            <>
+              <wa-tab panel="related-cases">
+                Cases ({relatedCases.length})
+              </wa-tab>
+              <wa-tab-panel name="related-cases">
+                <ul class="related-list">
+                  {relatedCases.map(c => (
+                    <li>
+                      <a href={`/cases/${c.id.replace(/\.md$/, '')}/`} class="related-link">
+                        {c.data.name}
+                      </a>
+                      <span class="related-meta">
+                        {c.data.date_of_death_display ?? c.data.date_of_death}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </wa-tab-panel>
+            </>
+          )}
+
+          {relatedLocations.length > 0 && (
+            <>
+              <wa-tab panel="related-locations">
+                Locations ({relatedLocations.length})
+              </wa-tab>
+              <wa-tab-panel name="related-locations">
+                <ul class="related-list">
+                  {relatedLocations.map(l => (
+                    <li>
+                      <a href={`/locations/${l.id.replace(/\.md$/, '')}/`} class="related-link">
+                        {l.data.name}
+                      </a>
+                      {l.data.suburb && (
+                        <span class="related-meta">{l.data.suburb}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </wa-tab-panel>
+            </>
+          )}
+
+          {relatedPeople.length > 0 && (
+            <>
+              <wa-tab panel="related-people">
+                People ({relatedPeople.length})
+              </wa-tab>
+              <wa-tab-panel name="related-people">
+                <ul class="related-list">
+                  {relatedPeople.map(p => (
+                    <li>
+                      <a href={`/people/${p.id.replace(/\.md$/, '')}/`} class="related-link">
+                        {p.data.name}
+                      </a>
+                      {p.data.role && (
+                        <span class="related-meta">{p.data.role}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </wa-tab-panel>
+            </>
+          )}
+
+        </wa-tab-group>
+      </section>
+    )}
+
+  </div>
+</Layout>
+
+<style>
+  .event-detail {
+    padding-bottom: var(--wa-space-5xl);
+  }
+
+  /* ─── Callout wrap ─── */
+  .callout-wrap {
+    padding-top: var(--wa-space-xl);
+    padding-bottom: 0;
+  }
+
+  /* ─── Event header ─── */
+  .event-header {
+    padding-block: var(--wa-space-3xl);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-2xs);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .breadcrumb a {
+    color: var(--wa-color-text-link);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .breadcrumb-sep {
+    color: var(--wa-color-text-quiet);
+  }
+
+  .event-title {
+    font-size: var(--wa-font-size-3xl);
+    font-weight: 700;
+    margin: 0;
+    color: var(--wa-color-text-normal);
+    border-left: var(--wa-space-2xs) solid var(--site-events);
+    padding-left: var(--wa-space-m);
+  }
+
+  .event-badges {
+    flex-wrap: wrap;
+  }
+
+  .event-meta {
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wa-space-3xs);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .meta-icon {
+    font-size: var(--wa-font-size-xs);
+  }
+
+  .meta-link {
+    color: var(--wa-color-text-link);
+    text-decoration: none;
+  }
+
+  .meta-link:hover {
+    text-decoration: underline;
+  }
+
+  /* ─── Narrative prose ─── */
+  .narrative-section {
+    padding-top: var(--wa-space-2xl);
+  }
+
+  .prose {
+    max-width: 72ch;
+  }
+
+  .prose :global(h2) {
+    font-size: var(--wa-font-size-l);
+    font-weight: 600;
+    margin: var(--wa-space-2xl) 0 var(--wa-space-s) 0;
+    padding-top: var(--wa-space-l);
+    border-top: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    color: var(--wa-color-text-normal);
+  }
+
+  .prose :global(h3) {
+    font-size: var(--wa-font-size-m);
+    font-weight: 600;
+    margin: var(--wa-space-l) 0 var(--wa-space-xs) 0;
+  }
+
+  .prose :global(p) {
+    font-size: var(--wa-font-size-s);
+    line-height: 1.7;
+    color: var(--wa-color-text-quiet);
+    margin: 0 0 var(--wa-space-m) 0;
+  }
+
+  .prose :global(a) {
+    color: var(--wa-color-text-link);
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    padding-left: var(--wa-space-l);
+    margin: 0 0 var(--wa-space-m) 0;
+  }
+
+  .prose :global(li) {
+    font-size: var(--wa-font-size-s);
+    line-height: 1.65;
+    color: var(--wa-color-text-quiet);
+    margin-bottom: var(--wa-space-3xs);
+  }
+
+  /* ─── Related content ─── */
+  .related-section {
+    padding-top: var(--wa-space-xl);
+    padding-bottom: 0;
+  }
+
+  .related-heading {
+    font-size: var(--wa-font-size-l);
+    font-weight: 600;
+    margin: 0 0 var(--wa-space-m) 0;
+  }
+
+  .related-list {
+    list-style: none;
+    padding: var(--wa-space-s) 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-xs);
+  }
+
+  .related-list li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--wa-space-s);
+  }
+
+  .related-link {
+    color: var(--wa-color-text-link);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--wa-font-size-s);
+  }
+
+  .related-link:hover {
+    text-decoration: underline;
+  }
+
+  .related-meta {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+  }
+</style>
+
+<script>
+  import '@awesome.me/webawesome/dist/components/callout/callout.js';
+  import '@awesome.me/webawesome/dist/components/tag/tag.js';
+  import '@awesome.me/webawesome/dist/components/icon/icon.js';
+  import '@awesome.me/webawesome/dist/components/tab-group/tab-group.js';
+  import '@awesome.me/webawesome/dist/components/tab/tab.js';
+  import '@awesome.me/webawesome/dist/components/tab-panel/tab-panel.js';
+</script>

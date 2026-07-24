@@ -1,0 +1,403 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const cases = await getCollection('cases', ({ data }) => data.published === true);
+
+// Sort by date_of_death ascending; undated go last
+const sorted = cases.sort((a, b) => {
+  const da = a.data.date_of_death ?? '9999';
+  const db = b.data.date_of_death ?? '9999';
+  return da.localeCompare(db);
+});
+
+function statusLabel(status: string | undefined): string {
+  const labels: Record<string, string> = {
+    'confirmed-homicide': 'Confirmed homicide',
+    'probable':           'Probable hate crime',
+    'possible':           'Possible hate crime',
+    'open':               'Open finding',
+    'undetermined':       'Undetermined',
+    'excluded':           'Excluded',
+    'missing':            'Missing person',
+  };
+  return labels[status ?? ''] ?? status ?? '—';
+}
+
+function statusVariant(status: string | undefined): string {
+  const variants: Record<string, string> = {
+    'confirmed-homicide': 'danger',
+    'probable':           'warning',
+    'possible':           'warning',
+    'open':               'neutral',
+    'undetermined':       'neutral',
+    'excluded':           'neutral',
+    'missing':            'neutral',
+  };
+  return variants[status ?? ''] ?? 'neutral';
+}
+
+function statusAppearance(status: string | undefined): string {
+  return status === 'confirmed-homicide' ? 'filled' : 'filled-outlined';
+}
+
+// ── Filter bar data ──
+const STATUS_ORDER = ['confirmed-homicide', 'probable', 'possible', 'open', 'undetermined', 'excluded'];
+const STATUS_CHIP_LABELS: Record<string, string> = {
+  'confirmed-homicide': 'Confirmed homicide',
+  'probable':           'Probable',
+  'possible':           'Possible',
+  'open':               'Open',
+  'undetermined':       'Undetermined',
+  'excluded':           'Excluded',
+};
+const presentStatuses = STATUS_ORDER.filter(s =>
+  sorted.some(c => c.data.manner_findings?.site_status === s)
+);
+const presentCategories = [...new Set(
+  sorted.map(c => c.data.scoi_category).filter(Boolean)
+)] as string[];
+const showCategoryFilter = presentCategories.length > 1;
+---
+
+<Layout
+  title="Cases"
+  description="Published case records from the NSW SCOI into LGBTIQ Hate Crimes. Individual deaths examined by the Sackar Inquiry."
+>
+  <!-- ── Hero ── -->
+  <section class="page-hero section">
+    <div class="page-hero-inner wa-stack wa-gap-s">
+      <h1>Cases</h1>
+      <p class="page-hero-desc">
+        <span id="cases-count">{sorted.length}</span> of {sorted.length} published {sorted.length === 1 ? 'record' : 'records'} — individual deaths
+        examined by the Sackar Inquiry, listed chronologically. Cases under community review are not shown.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Filter bar ── -->
+  <div class="filter-bar section" id="filter-bar">
+    <div class="filter-bar-inner">
+
+      <!-- Status chips -->
+      <div class="filter-group">
+        <span class="filter-label">Status</span>
+        <div class="status-chips" id="status-filters">
+          <button class="filter-chip active" data-status="all">All</button>
+          {presentStatuses.map(s => (
+            <button class="filter-chip" data-status={s}>
+              {STATUS_CHIP_LABELS[s] ?? s}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Category chips (only shown when >1 category present) -->
+      {showCategoryFilter && (
+        <div class="filter-group">
+          <span class="filter-label">Category</span>
+          <div class="cat-chips" id="cat-filters">
+            <button class="filter-chip active" data-cat="all">All</button>
+            {presentCategories.map(cat => (
+              <button class="filter-chip" data-cat={cat}>
+                Category {cat}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+    </div>
+  </div>
+
+  <section class="cases-section section">
+    <div class="cases-grid wa-grid wa-gap-l" id="cases-grid">
+      {sorted.map((entry) => {
+        const d = entry.data;
+        const slug = entry.id.replace(/\.md$/, '');
+        const siteStatus = d.manner_findings?.site_status;
+
+        return (
+          <article data-status={siteStatus ?? ''} data-category={d.scoi_category ?? ''}>
+            <a href={`/cases/${slug}/`} class="case-card-link">
+              <wa-card appearance="filled-outlined" with-header with-footer>
+                <!-- Header: SCOI category + status badges -->
+                <div slot="header" class="case-card-badges wa-cluster wa-gap-2xs">
+                  {d.scoi_category && (
+                    <wa-tag
+                      variant={d.scoi_category === 'A' ? 'danger' : 'warning'}
+                      appearance="filled"
+                      size="s"
+                      pill
+                    >
+                      SCOI Cat. {d.scoi_category}
+                    </wa-tag>
+                  )}
+                  {siteStatus && (
+                    <wa-tag
+                      variant={statusVariant(siteStatus)}
+                      appearance={statusAppearance(siteStatus)}
+                      size="s"
+                      pill
+                    >
+                      {statusLabel(siteStatus)}
+                    </wa-tag>
+                  )}
+                  {d.stub && (
+                    <wa-tag variant="neutral" appearance="outlined" size="s" pill>
+                      Stub
+                    </wa-tag>
+                  )}
+                </div>
+
+                <!-- Body: name + meta -->
+                <div class="case-card-body wa-stack wa-gap-xs">
+                  <strong class="case-card-name">{d.name}</strong>
+                  <div class="case-card-meta wa-cluster wa-gap-s">
+                    <span class="meta-item">
+                      <wa-icon name="calendar" variant="solid" class="meta-icon"></wa-icon>
+                      {d.date_of_death_display ?? d.date_of_death ?? 'Date unknown'}
+                      {d.age_at_death != null && `, aged ${d.age_at_death}`}
+                    </span>
+                    {d.location_name && (
+                      <span class="meta-item">
+                        <wa-icon name="location-dot" variant="solid" class="meta-icon"></wa-icon>
+                        {d.location_name}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <!-- Footer: SCOI finding snippet -->
+                {d.scoi_finding && (
+                  <p slot="footer" class="case-card-finding">
+                    {d.scoi_finding.length > 160
+                      ? d.scoi_finding.slice(0, 160) + '…'
+                      : d.scoi_finding}
+                  </p>
+                )}
+              </wa-card>
+            </a>
+          </article>
+        );
+      })}
+    </div>
+
+    <!-- Empty state -->
+    <p class="empty-state" id="empty-state" hidden>
+      No cases match those filters.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  /* ─── Page hero ─── */
+  .page-hero {
+    padding-block: var(--wa-space-3xl);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
+  .page-hero-inner h1 {
+    font-size: var(--wa-font-size-2xl);
+    font-weight: 700;
+    margin: 0;
+    color: var(--wa-color-text-normal);
+  }
+
+  .page-hero-desc {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  /* ─── Filter bar ─── */
+  .filter-bar {
+    padding-block: var(--wa-space-m);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    position: sticky;
+    top: var(--header-height, 4rem);
+    z-index: 4;
+  }
+
+  .filter-bar-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--wa-space-l);
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-s);
+    flex-wrap: wrap;
+  }
+
+  .filter-label {
+    font-size: var(--wa-font-size-xs);
+    font-weight: 600;
+    color: var(--wa-color-text-quiet);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .status-chips,
+  .cat-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wa-space-2xs);
+  }
+
+  .filter-chip {
+    padding: var(--wa-space-2xs) var(--wa-space-s);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-pill);
+    background: var(--wa-color-surface-default);
+    font-family: var(--font-ui);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    cursor: pointer;
+    transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .filter-chip:hover {
+    border-color: var(--site-cases);
+    color: var(--site-cases);
+  }
+
+  .filter-chip.active {
+    background-color: var(--site-cases);
+    border-color: var(--site-cases);
+    color: #fff;
+  }
+
+  /* ─── Cases grid ─── */
+  .cases-section {
+    padding-block: var(--wa-space-3xl);
+  }
+
+  .cases-grid {
+    --min-column-size: 22rem;
+  }
+
+  /* ─── Case card ─── */
+  .case-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    border-left: var(--wa-space-2xs) solid var(--site-cases);
+    border-radius: var(--wa-border-radius-m);
+  }
+
+  .case-card-link wa-card {
+    height: 100%;
+    transition: box-shadow 0.15s ease;
+  }
+
+  .case-card-link:hover wa-card {
+    box-shadow: var(--wa-shadow-m);
+  }
+
+  .case-card-badges {
+    flex-wrap: wrap;
+  }
+
+  .case-card-name {
+    font-size: var(--wa-font-size-m);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    display: block;
+  }
+
+  .case-card-meta {
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wa-space-3xs);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .meta-icon {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .case-card-finding {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* ─── Empty state ─── */
+  .empty-state {
+    padding-block: var(--wa-space-2xl);
+    text-align: center;
+    color: var(--wa-color-text-quiet);
+    font-size: var(--wa-font-size-s);
+  }
+</style>
+
+<script>
+  import '@awesome.me/webawesome/dist/components/card/card.js';
+  import '@awesome.me/webawesome/dist/components/tag/tag.js';
+  import '@awesome.me/webawesome/dist/components/icon/icon.js';
+
+  const articles    = document.querySelectorAll<HTMLElement>('#cases-grid article');
+  const statusChips = document.querySelectorAll<HTMLButtonElement>('#status-filters .filter-chip');
+  const catChips    = document.querySelectorAll<HTMLButtonElement>('#cat-filters .filter-chip');
+  const countEl     = document.getElementById('cases-count');
+  const emptyEl     = document.getElementById('empty-state');
+
+  let activeStatus = 'all';
+  let activeCat    = 'all';
+
+  function applyFilters() {
+    let visible = 0;
+
+    articles.forEach(article => {
+      const status = article.dataset.status ?? '';
+      const cat    = article.dataset.category ?? '';
+
+      const statusMatch = activeStatus === 'all' || status === activeStatus;
+      const catMatch    = activeCat === 'all' || cat === activeCat;
+
+      const show = statusMatch && catMatch;
+      article.hidden = !show;
+      if (show) visible++;
+    });
+
+    if (countEl) countEl.textContent = String(visible);
+    if (emptyEl) emptyEl.hidden = visible > 0;
+  }
+
+  statusChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      statusChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeStatus = chip.dataset.status ?? 'all';
+      applyFilters();
+    });
+  });
+
+  catChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      catChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeCat = chip.dataset.cat ?? 'all';
+      applyFilters();
+    });
+  });
+</script>

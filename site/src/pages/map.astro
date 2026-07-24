@@ -1,0 +1,312 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import 'leaflet/dist/leaflet.css';
+
+// Gather all published cases with coordinates for map pins
+const cases = await getCollection('cases', ({ data }) => data.published === true);
+const locations = await getCollection('locations');
+
+// Build map data: cases with lat/lng
+const caseMarkers = cases
+  .filter(c => c.data.location_lat != null && c.data.location_lng != null)
+  .map(c => ({
+    id:   c.id.replace(/\.md$/, ''),
+    name: c.data.name,
+    lat:  c.data.location_lat!,
+    lng:  c.data.location_lng!,
+    date: c.data.date_of_death_display ?? c.data.date_of_death ?? '',
+    status: c.data.manner_findings?.site_status ?? 'open',
+    url:  `/cases/${c.id.replace(/\.md$/, '')}/`,
+    type: 'case' as const,
+  }));
+
+// Location markers (beats, memorials, venues) with coordinates
+const locationMarkers = locations
+  .filter(l => l.data.lat != null && l.data.lng != null)
+  .map(l => ({
+    id:    l.id.replace(/\.md$/, ''),
+    name:  l.data.name,
+    lat:   l.data.lat!,
+    lng:   l.data.lng!,
+    type:  l.data.location_type,
+    roles: l.data.location_roles,
+    url:   `/locations/${l.id.replace(/\.md$/, '')}/`,
+    markerType: 'location' as const,
+  }));
+
+const mapData = JSON.stringify({ cases: caseMarkers, locations: locationMarkers });
+---
+
+<Layout
+  title="Map"
+  description="Interactive map of the Sackar Atlas — death sites, known beats, venues, and memorials across Sydney."
+>
+  <div class="map-page">
+    <!-- ── Map header ── -->
+    <div class="map-header section">
+      <div class="map-header-inner wa-split wa-align-items-center">
+        <div class="wa-stack wa-gap-2xs">
+          <h1>Map</h1>
+          <p class="map-desc">
+            Death sites, known beats, venues, memorials, and police jurisdictions across Sydney.
+          </p>
+        </div>
+        <div class="map-legend wa-cluster wa-gap-2xs" role="group" aria-label="Toggle map layers">
+          <button class="layer-btn layer-btn--case active" data-layer="cases" aria-pressed="true">
+            <span class="legend-dot" aria-hidden="true"></span>
+            Cases
+          </button>
+          <button class="layer-btn layer-btn--beat active" data-layer="beats" aria-pressed="true">
+            <span class="legend-dot" aria-hidden="true"></span>
+            Beats
+          </button>
+          <button class="layer-btn layer-btn--venue active" data-layer="venues" aria-pressed="true">
+            <span class="legend-dot" aria-hidden="true"></span>
+            Venues
+          </button>
+          <button class="layer-btn layer-btn--memorial active" data-layer="memorials" aria-pressed="true">
+            <span class="legend-dot" aria-hidden="true"></span>
+            Memorials
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Map container ── -->
+    <div class="map-container" id="map" role="application" aria-label="Interactive map of Sackar Atlas locations">
+      <div class="map-loading" id="map-loading" aria-live="polite">
+        Loading map…
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<!-- Map data injected for client script -->
+<script define:vars={{ mapData }}>
+  window.__SACKAR_MAP_DATA__ = JSON.parse(mapData);
+</script>
+
+<script>
+  import L from 'leaflet';
+
+  const data = (window as any).__SACKAR_MAP_DATA__;
+  const mapEl = document.getElementById('map') as HTMLElement | null;
+  const loading = document.getElementById('map-loading');
+
+  if (mapEl && data) {
+    // HMR guard: Leaflet marks initialised containers with _leaflet_id.
+    // If the dev server hot-reloads and reruns this script, destroy first.
+    if ((mapEl as any)._leaflet_id) {
+      (mapEl as any)._leaflet_id = undefined;
+      mapEl.innerHTML = '';
+    }
+
+    // Remove loading indicator
+    if (loading) loading.remove();
+
+    // Initialise Leaflet — centred on Sydney
+    const map = L.map(mapEl, {
+      center: [-33.87, 151.21],
+      zoom: 13,
+      zoomControl: true,
+    });
+
+    // Base tile layer — CartoDB Voyager (warm sandy tones)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+      attribution:
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors ' +
+        '&copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19,
+    }).addTo(map);
+
+    // ── Icons ──
+    const caseIcon = L.divIcon({
+      className: 'map-marker map-marker--case',
+      html: '<span class="marker-dot"></span>',
+      iconSize: [14, 14], iconAnchor: [7, 7],
+    });
+    const beatIcon = L.divIcon({
+      className: 'map-marker map-marker--beat',
+      html: '<span class="marker-dot"></span>',
+      iconSize: [12, 12], iconAnchor: [6, 6],
+    });
+    const venueIcon = L.divIcon({
+      className: 'map-marker map-marker--venue',
+      html: '<span class="marker-dot"></span>',
+      iconSize: [12, 12], iconAnchor: [6, 6],
+    });
+    const memorialIcon = L.divIcon({
+      className: 'map-marker map-marker--memorial',
+      html: '<span class="marker-dot"></span>',
+      iconSize: [12, 12], iconAnchor: [6, 6],
+    });
+
+    // ── Layer groups ──
+    const casesLayer    = L.layerGroup();
+    const beatsLayer    = L.layerGroup();
+    const venuesLayer   = L.layerGroup();
+    const memorialsLayer = L.layerGroup();
+
+    for (const c of data.cases) {
+      L.marker([c.lat, c.lng], { icon: caseIcon })
+        .bindPopup(`<strong><a href="${c.url}">${c.name}</a></strong><br>${c.date}`)
+        .addTo(casesLayer);
+    }
+
+    for (const loc of data.locations) {
+      const roles: string[] = loc.roles ?? [];
+      if (roles.includes('memorial')) {
+        L.marker([loc.lat, loc.lng], { icon: memorialIcon })
+          .bindPopup(`<strong><a href="${loc.url}">${loc.name}</a></strong>`)
+          .addTo(memorialsLayer);
+      } else if (roles.includes('nightlife-venue')) {
+        L.marker([loc.lat, loc.lng], { icon: venueIcon })
+          .bindPopup(`<strong><a href="${loc.url}">${loc.name}</a></strong>`)
+          .addTo(venuesLayer);
+      } else {
+        L.marker([loc.lat, loc.lng], { icon: beatIcon })
+          .bindPopup(`<strong><a href="${loc.url}">${loc.name}</a></strong>`)
+          .addTo(beatsLayer);
+      }
+    }
+
+    // Add all layers to map initially
+    casesLayer.addTo(map);
+    beatsLayer.addTo(map);
+    venuesLayer.addTo(map);
+    memorialsLayer.addTo(map);
+
+    // ── Layer toggle buttons ──
+    const layerMap: Record<string, L.LayerGroup> = {
+      cases:     casesLayer,
+      beats:     beatsLayer,
+      venues:    venuesLayer,
+      memorials: memorialsLayer,
+    };
+
+    document.querySelectorAll<HTMLButtonElement>('.layer-btn[data-layer]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.layer!;
+        const layer = layerMap[key];
+        const isActive = btn.classList.toggle('active');
+        btn.setAttribute('aria-pressed', String(isActive));
+        if (isActive) {
+          layer.addTo(map);
+        } else {
+          layer.remove();
+        }
+      });
+    });
+  }
+</script>
+
+<style>
+  /* ─── Map page layout ─── */
+  .map-page {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 3.5rem); /* subtract header height */
+  }
+
+  /* ─── Map header ─── */
+  .map-header {
+    padding-block: var(--wa-space-m);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    flex-shrink: 0;
+  }
+
+  .map-header h1 {
+    font-size: var(--wa-font-size-l);
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .map-desc {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+  }
+
+  /* ─── Layer toggle buttons ─── */
+  .map-legend {
+    flex-wrap: wrap;
+  }
+
+  .layer-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wa-space-2xs);
+    padding: var(--wa-space-2xs) var(--wa-space-s);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-pill);
+    background: var(--wa-color-surface-default);
+    font-family: var(--font-ui);
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: opacity 0.15s ease, background-color 0.15s ease;
+  }
+
+  .layer-btn:not(.active) {
+    opacity: 0.45;
+  }
+
+  .layer-btn.active {
+    background: var(--wa-color-surface-raised);
+    color: var(--wa-color-text-normal);
+  }
+
+  .legend-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: var(--wa-border-radius-circle);
+    flex-shrink: 0;
+  }
+
+  .layer-btn--case .legend-dot     { background-color: var(--site-cases); }
+  .layer-btn--beat .legend-dot     { background-color: var(--site-locations); }
+  .layer-btn--venue .legend-dot    { background-color: var(--site-people); }
+  .layer-btn--memorial .legend-dot { background-color: var(--site-events); }
+
+  /* ─── Map container ─── */
+  .map-container {
+    flex: 1;
+    position: relative;
+    min-height: 0;
+  }
+
+  .map-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--wa-color-text-quiet);
+    font-size: var(--wa-font-size-s);
+  }
+
+  /* ─── Leaflet marker styles ─── */
+  :global(.map-marker) {
+    background: transparent;
+    border: none;
+  }
+
+  :global(.marker-dot) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--wa-border-radius-circle);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  }
+
+  :global(.map-marker--case .marker-dot)     { background-color: var(--site-cases); }
+  :global(.map-marker--beat .marker-dot)     { background-color: var(--site-locations); }
+  :global(.map-marker--venue .marker-dot)    { background-color: var(--site-people); }
+  :global(.map-marker--memorial .marker-dot) { background-color: var(--site-events); }
+</style>

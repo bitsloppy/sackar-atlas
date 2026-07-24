@@ -1,8 +1,388 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+// Count published cases for the stats banner
+const allCases = await getCollection('cases', ({ data }) => data.published === true);
+const caseCount = allCases.length;
 ---
 
 <Layout title="Home">
-  <h1>Sackar Atlas</h1>
-  <wa-button>Hello Web Awesome</wa-button>
+  <!-- ─── Hero ─── -->
+  <section class="hero section">
+    <div class="hero-inner wa-stack wa-gap-l">
+      <h1 class="display-title">Sackar Atlas</h1>
+      <p class="hero-strapline">
+        Making the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes navigable.
+      </p>
+      <p class="hero-body">
+        Between 1970 and 2010, at least 30 gay and transgender people were killed in Sydney —
+        pushed from cliffs, bashed at beats, murdered in their homes. The Sackar Inquiry (2023)
+        examined their deaths. This atlas maps what it found: the people, the places, the
+        failures, and the connections that a 3,000-page PDF cannot show.
+      </p>
+      <div class="wa-cluster wa-gap-s">
+        <a href="/cases/" class="cta-primary">Browse the cases</a>
+        <a href="/map/" class="cta-secondary">Open the map</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Stats strip ─── -->
+  <section class="stats-strip section">
+    <div class="stats-grid">
+      <div class="stat">
+        <span class="stat-number">{caseCount}</span>
+        <span class="stat-label">cases published</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">30+</span>
+        <span class="stat-label">deaths examined</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">2023</span>
+        <span class="stat-label">SCOI report</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">3 vols</span>
+        <span class="stat-label">of public record</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Section nav cards ─── -->
+  <section class="nav-cards-section section">
+    <h2 class="section-heading">Explore the atlas</h2>
+    <div class="nav-cards wa-grid wa-gap-l">
+
+      <div class="nav-card-wrap nav-card-cases">
+        <a href="/cases/" class="nav-card-link">
+          <wa-card appearance="filled-outlined" with-footer>
+            <div class="nav-card-icon-row">
+              <wa-icon name="user" variant="solid" class="nav-card-icon"></wa-icon>
+              <strong class="nav-card-label">Cases</strong>
+            </div>
+            <p class="nav-card-desc">
+              Individual deaths examined by the Sackar Inquiry — the people, their lives, the
+              evidence, and how institutions responded.
+            </p>
+            <span slot="footer" class="nav-card-footer-link">
+              Browse cases
+              <wa-icon name="arrow-right" variant="solid"></wa-icon>
+            </span>
+          </wa-card>
+        </a>
+      </div>
+
+      <div class="nav-card-wrap nav-card-locations">
+        <a href="/locations/" class="nav-card-link">
+          <wa-card appearance="filled-outlined" with-footer>
+            <div class="nav-card-icon-row">
+              <wa-icon name="location-dot" variant="solid" class="nav-card-icon"></wa-icon>
+              <strong class="nav-card-label">Locations</strong>
+            </div>
+            <p class="nav-card-desc">
+              The headlands, beats, venues, and police jurisdictions that define the geography
+              of this history.
+            </p>
+            <span slot="footer" class="nav-card-footer-link">
+              Browse locations
+              <wa-icon name="arrow-right" variant="solid"></wa-icon>
+            </span>
+          </wa-card>
+        </a>
+      </div>
+
+      <div class="nav-card-wrap nav-card-events">
+        <a href="/events/" class="nav-card-link">
+          <wa-card appearance="filled-outlined" with-footer>
+            <div class="nav-card-icon-row">
+              <wa-icon name="calendar-days" variant="solid" class="nav-card-icon"></wa-icon>
+              <strong class="nav-card-label">Events</strong>
+            </div>
+            <p class="nav-card-desc">
+              Activism, law reform, police operations, and cultural moments — the broader
+              history alongside the violence.
+            </p>
+            <span slot="footer" class="nav-card-footer-link">
+              Browse events
+              <wa-icon name="arrow-right" variant="solid"></wa-icon>
+            </span>
+          </wa-card>
+        </a>
+      </div>
+
+      <div class="nav-card-wrap nav-card-people">
+        <a href="/people/" class="nav-card-link">
+          <wa-card appearance="filled-outlined" with-footer>
+            <div class="nav-card-icon-row">
+              <wa-icon name="users" variant="solid" class="nav-card-icon"></wa-icon>
+              <strong class="nav-card-label">People</strong>
+            </div>
+            <p class="nav-card-desc">
+              Victims, activists, witnesses, police commissioners — everyone named in the
+              public record of these events.
+            </p>
+            <span slot="footer" class="nav-card-footer-link">
+              Browse people
+              <wa-icon name="arrow-right" variant="solid"></wa-icon>
+            </span>
+          </wa-card>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── About ─── -->
+  <section class="about-section section">
+    <div class="about-inner wa-stack wa-gap-l">
+      <h2>About this project</h2>
+      <p>
+        Sackar Atlas is a public data project by Anna Roberts. It synthesises the public record
+        of the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023) and
+        makes the connections between cases, locations, institutions, and people visible in a
+        way a 3,000-page PDF cannot.
+      </p>
+      <p>
+        This is a cartographer's project, not a community heritage project. All data is drawn
+        from public records — the SCOI report, Hansard, coronial findings, Trove press archives.
+        The connections are the argument.
+      </p>
+      <p>
+        The site is designed for community organisations, journalists, researchers, and the
+        general public to use freely. Infrastructure-first: built so others can layer oral
+        history and community memory on top.
+      </p>
+      <p>
+        <a href="https://github.com/bitsloppy/sackar-atlas">Source code on GitHub</a>
+        &nbsp;&middot;&nbsp;
+        Data: NSW SCOI 2023, Hansard, Trove, coronial records
+      </p>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  /* ─── Hero ──────────────────────────────────────────────────────────────── */
+  .hero {
+    background-color: var(--wa-color-surface-lowered);
+    padding-block: var(--wa-space-5xl);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
+  .hero-inner {
+    max-width: 52ch;
+  }
+
+  .display-title {
+    font-family: var(--font-display);
+    font-size: var(--wa-font-size-4xl);
+    font-weight: normal;
+    margin: 0;
+    color: var(--wa-color-text-normal);
+    letter-spacing: 0.01em;
+  }
+
+  .hero-strapline {
+    font-size: var(--wa-font-size-l);
+    font-weight: 500;
+    color: var(--wa-color-text-normal);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .hero-body {
+    font-size: var(--wa-font-size-m);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    line-height: 1.65;
+    max-width: 60ch;
+  }
+
+  /* CTA buttons (hand-rolled since these are <a> tags, not wa-button) */
+  .cta-primary {
+    display: inline-block;
+    background-color: var(--site-brand);
+    color: #ffffff;
+    text-decoration: none;
+    padding: var(--wa-space-xs) var(--wa-space-l);
+    border-radius: var(--wa-border-radius-m);
+    font-weight: 600;
+    font-size: var(--wa-font-size-s);
+    transition: opacity 0.12s ease;
+  }
+
+  .cta-primary:hover {
+    opacity: 0.9;
+  }
+
+  .cta-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--site-brand);
+    text-decoration: none;
+    padding: var(--wa-space-xs) var(--wa-space-l);
+    border-radius: var(--wa-border-radius-m);
+    font-weight: 600;
+    font-size: var(--wa-font-size-s);
+    border: var(--wa-border-width-s) solid var(--site-brand);
+    transition: background-color 0.12s ease;
+  }
+
+  .cta-secondary:hover {
+    background-color: color-mix(in oklch, var(--site-brand) 8%, transparent);
+  }
+
+  /* ─── Stats strip ────────────────────────────────────────────────────────── */
+  .stats-strip {
+    background-color: var(--site-brand);
+    padding-block: var(--wa-space-2xl);
+  }
+
+  .stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wa-space-2xl);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-3xs);
+  }
+
+  .stat-number {
+    font-size: var(--wa-font-size-3xl);
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat-label {
+    font-size: var(--wa-font-size-s);
+    color: rgba(255, 255, 255, 0.75);
+    font-weight: 400;
+  }
+
+  /* ─── Section nav cards ──────────────────────────────────────────────────── */
+  .nav-cards-section {
+    padding-block: var(--wa-space-4xl);
+  }
+
+  .section-heading {
+    font-size: var(--wa-font-size-xl);
+    font-weight: 600;
+    margin: 0 0 var(--wa-space-2xl) 0;
+    color: var(--wa-color-text-normal);
+  }
+
+  .nav-cards {
+    --min-column-size: 20rem;
+  }
+
+  /* Coloured left-border accent on the wrapper (not on wa-card directly) */
+  .nav-card-wrap {
+    border-left: var(--wa-space-2xs) solid transparent;
+    border-radius: var(--wa-border-radius-m);
+  }
+
+  .nav-card-cases     { border-left-color: var(--site-cases); }
+  .nav-card-locations { border-left-color: var(--site-locations); }
+  .nav-card-events    { border-left-color: var(--site-events); }
+  .nav-card-people    { border-left-color: var(--site-people); }
+
+  .nav-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+  }
+
+  .nav-card-link wa-card {
+    height: 100%;
+    transition: box-shadow 0.15s ease;
+  }
+
+  .nav-card-link:hover wa-card {
+    box-shadow: var(--wa-shadow-m);
+  }
+
+  /* Card internal spacing via documented --spacing custom property */
+  .nav-card-wrap wa-card {
+    --spacing: var(--wa-space-xl);
+  }
+
+  .nav-card-icon-row {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-s);
+    margin-bottom: var(--wa-space-m);
+  }
+
+  .nav-card-icon {
+    font-size: var(--wa-font-size-2xl);
+    flex-shrink: 0;
+  }
+
+  .nav-card-cases     .nav-card-icon { color: var(--site-cases); }
+  .nav-card-locations .nav-card-icon { color: var(--site-locations); }
+  .nav-card-events    .nav-card-icon { color: var(--site-events); }
+  .nav-card-people    .nav-card-icon { color: var(--site-people); }
+
+  .nav-card-label {
+    font-size: var(--wa-font-size-l);
+    font-weight: 700;
+    color: var(--wa-color-text-normal);
+  }
+
+  .nav-card-desc {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  .nav-card-footer-link {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-2xs);
+    font-size: var(--wa-font-size-s);
+    font-weight: 500;
+    color: var(--wa-color-text-link);
+  }
+
+  /* ─── About section ──────────────────────────────────────────────────────── */
+  .about-section {
+    padding-block: var(--wa-space-4xl);
+    background-color: var(--wa-color-surface-lowered);
+    border-top: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
+  .about-inner {
+    max-width: 65ch;
+  }
+
+  .about-inner h2 {
+    font-size: var(--wa-font-size-xl);
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .about-inner p {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .about-inner a {
+    color: var(--wa-color-text-link);
+  }
+</style>
+
+<script>
+  import '@awesome.me/webawesome/dist/components/card/card.js';
+  import '@awesome.me/webawesome/dist/components/icon/icon.js';
+</script>
