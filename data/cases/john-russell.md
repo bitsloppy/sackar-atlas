@@ -133,7 +133,7 @@ police_misconduct_level: "inadequate-investigation"
 police_misconduct_summary: "The original Bondi Police investigation was conducted on the assumption of misadventure due to intoxication and did not seriously investigate foul play. Human hairs on Russell's left hand — likely from an assailant — were lost before the first inquest. His clothing was washed by police before being used in a public appeal, destroying potential evidence. No forensic testing of clothing, cigarette packet, or lighter was conducted. The OIC (Constable Dunbar, later Johnston) failed to identify any persons of interest. The Sackar Inquiry found these failures fell short of policing standards. Strike Force Neiwand's subsequent internal reversal of the Milledge homicide finding, without notifying the family, was found to be 'intellectually dishonest.'"
 
 accountability_status: "no-accountability"
-coronial_update_post_scoi: "not-applicable"
+coronial_update_post_scoi: "pending"
 nswpf_apology_to_family: null
 nswpf_apology_notes: null
 

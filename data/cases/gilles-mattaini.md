@@ -135,7 +135,7 @@ police_misconduct_level: "inadequate-investigation"
 police_misconduct_summary: "There was no police investigation at all in 1985. Mattaini's disappearance was never reported to police — a fact that itself reflects the climate of the era, in which gay men and their communities did not trust police to respond appropriately. The complete absence of a 1985 investigation means no contemporaneous forensic evidence, no crime scene examination, no witness statements taken while memories were fresh, and no body search. This failure cannot be attributed to named individuals in the same way as Bowditch's conduct in the Warren case — but it represents the systemic inadequacy that the SCOI was established to examine. The Sackar Inquiry found this absence of investigation was consistent with the pattern across multiple cases in this period."
 
 accountability_status: "no-accountability"
-coronial_update_post_scoi: "not-applicable"
+coronial_update_post_scoi: "pending"
 nswpf_apology_to_family: null
 nswpf_apology_notes: null
 

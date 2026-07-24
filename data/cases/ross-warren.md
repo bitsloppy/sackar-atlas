@@ -124,7 +124,7 @@ police_misconduct_level: "active-misconduct"
 police_misconduct_summary: "DS Bowditch's conduct at Paddington Police in 1989 was found to constitute active misconduct: he made multiple specific false claims about investigative steps he stated he had taken (including submitting a Coroner's brief, taking formal statements, involving Air Wing and Water Police) that were contradicted by every available witness and document. He effectively closed any inquiry within four days. Coroner Milledge described the so-called investigation as 'grossly inadequate and shameful.' The NSWPF itself accepted in submissions that Bowditch's 'apparently false assertions' were 'extraordinary.' The case was never reported to the Coroner as required."
 
 accountability_status: "no-accountability"
-coronial_update_post_scoi: "not-applicable"
+coronial_update_post_scoi: "pending"
 nswpf_apology_to_family: null
 nswpf_apology_notes: null
 
