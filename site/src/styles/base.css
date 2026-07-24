@@ -2,6 +2,58 @@
    base.css — Reset, root, body, focus, skip-link
    =================================================================== */
 
+/* ── FOUCE prevention ────────────────────────────────────────────────── */
+/* Hide WA custom elements until they upgrade, preventing a flash of    */
+/* unstyled content on first load. Per: webawesome.com/docs/utilities/fouce */
+
+wa-callout:not(:defined),
+wa-divider:not(:defined),
+wa-tab-group:not(:defined),
+wa-tab:not(:defined),
+wa-tab-panel:not(:defined) {
+  visibility: hidden;
+}
+
+/* ── Web Awesome token overrides — NSW palette alignment ─────────────── */
+/* These override WA's default brand/surface/text tokens so that         */
+/* wa-callout, wa-tab-group, wa-divider etc. feel cohesive with          */
+/* the site's NSW Government colour system and beach/Sydney light theme.  */
+/* WA docs: https://webawesome.com/docs/tokens/color                     */
+
+:root,
+.wa-light,
+.wa-dark .wa-invert {
+  /* ── Surface tokens → NSW beach palette ─────────────────────────── */
+  --wa-color-surface-default: #FDFCF5;  /* warm white — main body         */
+  --wa-color-surface-raised:  #F5F0CE;  /* sea-foam cream — cards/panels  */
+  --wa-color-surface-lowered: #EDE8B8;  /* deeper cream — nested panels   */
+  --wa-color-surface-border:  #CDD3D6;  /* NSW grey03 — surface borders   */
+
+  /* ── Text tokens → NSW dark navy + grey ─────────────────────────── */
+  --wa-color-text-normal: #0D1B2A;  /* very dark navy — body copy         */
+  --wa-color-text-quiet:  #495054;  /* NSW grey02 — metadata/captions     */
+  --wa-color-text-link:   #1F5C68;  /* dark teal — 7.32:1 on bg ✓         */
+
+  /* ── Brand tokens → NSW Aboriginal billabong blue ───────────────── */
+  /* billabongBlue #00405E  (white on it: 10.4:1 ✓)                    */
+  /* saltwaterBlue #0D6791  (white on it: 6.3:1 ✓)                     */
+  /* lightWaterBlue #84C5D1 (billabongBlue on it: 4.7:1 ✓)             */
+  /* coastalBlue #C1E2E8    (billabongBlue on it: 7.5:1 ✓)             */
+  --wa-color-brand-fill-quiet:    #C1E2E8;  /* coastalBlue — subtle bg    */
+  --wa-color-brand-fill-normal:   #0D6791;  /* saltwaterBlue — normal bg  */
+  --wa-color-brand-fill-loud:     #00405E;  /* billabongBlue — prominent  */
+  --wa-color-brand-border-quiet:  #84C5D1;  /* lightWaterBlue — subtle    */
+  --wa-color-brand-border-normal: #0D6791;  /* saltwaterBlue — normal     */
+  --wa-color-brand-border-loud:   #00405E;  /* billabongBlue — prominent  */
+  --wa-color-brand-on-quiet:      #00405E;  /* billabongBlue on light fill */
+  --wa-color-brand-on-normal:     #FDFCF5;  /* warm white on saltwaterBlue */
+  --wa-color-brand-on-loud:       #FDFCF5;  /* warm white on billabongBlue */
+
+  /* ── Typography tokens → Outfit + Special Elite ─────────────────── */
+  --wa-font-family-body:    'Outfit', system-ui, sans-serif;
+  --wa-font-family-heading: 'Special Elite', 'Courier New', serif;
+}
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { font-size: 17px; scroll-behavior: smooth; }
