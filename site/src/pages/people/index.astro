@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import BadgeTag from '../../components/BadgeTag.astro';
 
 const people    = await getCollection('people');
 const allCases  = await getCollection('cases');
@@ -51,15 +52,15 @@ function roleLabel(role: string): string {
 
 function roleBadgeClass(role: string): string {
   const classes: Record<string, string> = {
-    victim: 'badge badge-homicide', activist: 'badge badge-beat',
-    witness: 'badge badge-open', 'expert-witness': 'badge badge-open',
-    pathologist: 'badge badge-open', coroner: 'badge badge-scoi-b',
-    perpetrator: 'badge badge-probable', police: 'badge badge-scoi-a',
-    'police-officer': 'badge badge-scoi-a', legal: 'badge badge-scoi-b',
-    political: 'badge badge-possible', community: 'badge badge-beat',
-    journalist: 'badge badge-venue', other: 'badge badge-excluded',
+    victim: 'badge-homicide', activist: 'badge-beat',
+    witness: 'badge-open', 'expert-witness': 'badge-open',
+    pathologist: 'badge-open', coroner: 'badge-scoi-b',
+    perpetrator: 'badge-probable', police: 'badge-scoi-a',
+    'police-officer': 'badge-scoi-a', legal: 'badge-scoi-b',
+    political: 'badge-possible', community: 'badge-beat',
+    journalist: 'badge-venue', other: 'badge-excluded',
   };
-  return classes[role] ?? 'badge badge-excluded';
+  return classes[role] ?? 'badge-excluded';
 }
 
 // Groups — same structure as before, used for rendered section headers
@@ -204,8 +205,8 @@ const roleFilterOptions = [
                   data-cases={pcases.join(' ')}
                 >
                   <div class="card-badges">
-                    <span class={roleBadgeClass(d.role as string)}>{roleLabel(d.role as string)}</span>
-                    {d.stub && <span class="badge badge-stub">Research needed</span>}
+                    <BadgeTag cls={roleBadgeClass(d.role as string)}>{roleLabel(d.role as string)}</BadgeTag>
+                    {d.stub && <BadgeTag cls="badge-stub">Research needed</BadgeTag>}
                   </div>
                   <a href={`/people/${slug}/`} class="card-name">{d.name}</a>
                   {d.institutional_role && (

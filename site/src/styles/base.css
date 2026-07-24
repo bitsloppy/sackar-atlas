@@ -8,6 +8,7 @@
 
 wa-callout:not(:defined),
 wa-divider:not(:defined),
+wa-tag:not(:defined),
 wa-tab-group:not(:defined),
 wa-tab:not(:defined),
 wa-tab-panel:not(:defined) {

@@ -2,6 +2,7 @@
 import Base from '../../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import { ICONS, COLOURS } from '../../../lib/icons';
+import BadgeTag from '../../../components/BadgeTag.astro';
 
 // ── Region display labels ──────────────────────────────────────────────────
 
@@ -249,10 +250,10 @@ const locColoursStr    = JSON.stringify(locColours);
         const slug = l.id.replace(/\.md$/, '');
         const roles: string[] = d.location_roles ?? [];
         const primaryRole = roles[0] ?? d.location_type ?? 'location';
-        const badgeClass = roles.includes('beat') ? 'badge badge-beat'
-          : roles.includes('nightlife-venue')     ? 'badge badge-venue'
-          : d.location_type === 'police-jurisdiction' ? 'badge badge-open'
-          : 'badge badge-excluded';
+        const badgeClass = roles.includes('beat') ? 'badge-beat'
+          : roles.includes('nightlife-venue')     ? 'badge-venue'
+          : d.location_type === 'police-jurisdiction' ? 'badge-open'
+          : 'badge-excluded';
         const roleLabel = roles.includes('beat') ? 'Beat'
           : roles.includes('nightlife-venue')    ? 'Nightlife venue'
           : d.location_type === 'police-jurisdiction' ? 'Police jurisdiction'
@@ -260,8 +261,8 @@ const locColoursStr    = JSON.stringify(locColours);
         return (
           <article class="card location-card">
             <div class="card-badges">
-              <span class={badgeClass}>{roleLabel}</span>
-              {d.stub && <span class="badge badge-stub">Research needed</span>}
+              <BadgeTag cls={badgeClass}>{roleLabel}</BadgeTag>
+              {d.stub && <BadgeTag cls="badge-stub">Research needed</BadgeTag>}
             </div>
             <a href={`/locations/${slug}/`} class="card-name">{d.name}</a>
             <div class="card-meta">{d.suburb ?? ''}</div>

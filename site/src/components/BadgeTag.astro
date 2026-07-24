@@ -1,0 +1,48 @@
+---
+/**
+ * BadgeTag — site badge wrapper for <wa-tag>.
+ *
+ * Centralises the badge-class → WA variant mapping so every badge
+ * renders with the correct semantic variant and appearance.
+ * Per-class CSS token overrides in components.css inject the exact
+ * WCAG-verified NSW palette colors for each badge type.
+ *
+ * Usage:
+ *   <BadgeTag cls="badge-homicide">Confirmed homicide</BadgeTag>
+ *   <BadgeTag cls={`badge-scoi-${d.scoi_category.toLowerCase()}`}>
+ *     SCOI Category {d.scoi_category}
+ *   </BadgeTag>
+ *
+ * In client-side JS template strings (e.g. innerHTML), use <wa-tag> directly:
+ *   `<wa-tag variant="neutral" appearance="accent" size="s" class="badge-beat">Beat</wa-tag>`
+ */
+
+interface Props {
+  /** Badge class name (e.g. 'badge-homicide', 'badge-stub'). Drives variant + token scoping. */
+  cls: string;
+  /** Tag size. Default 's' — compact for inline status labels. */
+  size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+}
+
+const { cls, size = 's' } = Astro.props;
+
+// Maps badge class → WA semantic variant.
+// beat/venue/open/excluded all use 'neutral' with per-class CSS token
+// overrides in components.css to inject the correct NSW palette colors.
+const WA_VARIANT: Record<string, string> = {
+  'badge-homicide': 'danger',
+  'badge-probable': 'warning',
+  'badge-possible': 'warning',
+  'badge-open':     'neutral',
+  'badge-excluded': 'neutral',
+  'badge-scoi-a':   'brand',
+  'badge-scoi-b':   'brand',
+  'badge-beat':     'neutral',
+  'badge-venue':    'neutral',
+  'badge-stub':     'warning',
+};
+
+const variant = WA_VARIANT[cls] ?? 'neutral';
+---
+
+<wa-tag variant={variant} appearance="accent" size={size} class={cls}><slot /></wa-tag>

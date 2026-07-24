@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
 import SectionCard from '../../components/SectionCard.astro';
+import BadgeTag from '../../components/BadgeTag.astro';
 
 export async function getStaticPaths() {
   const people = await getCollection('people');
@@ -59,22 +60,22 @@ function roleLabel(role: string): string {
 
 function roleBadgeClass(role: string): string {
   const classes: Record<string, string> = {
-    victim: 'badge badge-homicide',
-    activist: 'badge badge-beat',
-    witness: 'badge badge-open',
-    'expert-witness': 'badge badge-open',
-    pathologist: 'badge badge-open',
-    coroner: 'badge badge-scoi-b',
-    perpetrator: 'badge badge-probable',
-    police: 'badge badge-scoi-a',
-    'police-officer': 'badge badge-scoi-a',
-    legal: 'badge badge-scoi-b',
-    political: 'badge badge-possible',
-    community: 'badge badge-beat',
-    journalist: 'badge badge-venue',
-    other: 'badge badge-excluded',
+    victim: 'badge-homicide',
+    activist: 'badge-beat',
+    witness: 'badge-open',
+    'expert-witness': 'badge-open',
+    pathologist: 'badge-open',
+    coroner: 'badge-scoi-b',
+    perpetrator: 'badge-probable',
+    police: 'badge-scoi-a',
+    'police-officer': 'badge-scoi-a',
+    legal: 'badge-scoi-b',
+    political: 'badge-possible',
+    community: 'badge-beat',
+    journalist: 'badge-venue',
+    other: 'badge-excluded',
   };
-  return classes[role] ?? 'badge badge-excluded';
+  return classes[role] ?? 'badge-excluded';
 }
 
 function statusLabel(status: string | undefined): string {
@@ -92,15 +93,15 @@ function statusLabel(status: string | undefined): string {
 
 function statusBadgeClass(status: string | undefined): string {
   const classes: Record<string, string> = {
-    'confirmed-homicide': 'badge badge-homicide',
-    probable: 'badge badge-probable',
-    possible: 'badge badge-possible',
-    open: 'badge badge-open',
-    undetermined: 'badge badge-open',
-    excluded: 'badge badge-excluded',
-    missing: 'badge badge-open',
+    'confirmed-homicide': 'badge-homicide',
+    probable: 'badge-probable',
+    possible: 'badge-possible',
+    open: 'badge-open',
+    undetermined: 'badge-open',
+    excluded: 'badge-excluded',
+    missing: 'badge-open',
   };
-  return classes[status ?? ''] ?? 'badge badge-open';
+  return classes[status ?? ''] ?? 'badge-open';
 }
 
 // Display also_known_as — only show names with display: true (skip dead names etc.)
@@ -172,8 +173,8 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
     </div>
 
     <div class="detail-badges">
-      <span class={roleBadgeClass(d.role)}>{roleLabel(d.role)}</span>
-      {d.stub && <span class="badge badge-stub">Research needed</span>}
+      <BadgeTag cls={roleBadgeClass(d.role)}>{roleLabel(d.role)}</BadgeTag>
+      {d.stub && <BadgeTag cls="badge-stub">Research needed</BadgeTag>}
     </div>
   </div>
 
@@ -300,12 +301,12 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
               <article class="card">
                 <div class="card-badges">
                   {c.data.scoi_category && (
-                    <span class={`badge badge-scoi-${c.data.scoi_category.toLowerCase()}`}>
+                    <BadgeTag cls={`badge-scoi-${c.data.scoi_category.toLowerCase()}`}>
                       SCOI Cat. {c.data.scoi_category}
-                    </span>
+                    </BadgeTag>
                   )}
                   {siteStatus && (
-                    <span class={statusBadgeClass(siteStatus)}>{statusLabel(siteStatus)}</span>
+                    <BadgeTag cls={statusBadgeClass(siteStatus)}>{statusLabel(siteStatus)}</BadgeTag>
                   )}
                 </div>
                 <a href={`/cases/${slug}/`} class="card-name">{c.data.name}</a>

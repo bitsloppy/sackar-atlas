@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import BadgeTag from '../../components/BadgeTag.astro';
 
 const locations = await getCollection('locations');
 
@@ -77,8 +78,8 @@ const other = sorted.filter(
             return (
               <article class="card location-card">
                 <div class="card-badges">
-                  <span class="badge badge-beat">Beat</span>
-                  {d.stub && <span class="badge badge-stub">Research needed</span>}
+                  <BadgeTag cls="badge-beat">Beat</BadgeTag>
+                  {d.stub && <BadgeTag cls="badge-stub">Research needed</BadgeTag>}
                 </div>
                 <a href={`/locations/${slug}/`} class="card-name">
                   {d.name}
@@ -111,8 +112,8 @@ const other = sorted.filter(
             return (
               <article class="card location-card">
                 <div class="card-badges">
-                  <span class="badge badge-venue">Nightlife venue</span>
-                  {d.stub && <span class="badge badge-stub">Research needed</span>}
+                  <BadgeTag cls="badge-venue">Nightlife venue</BadgeTag>
+                  {d.stub && <BadgeTag cls="badge-stub">Research needed</BadgeTag>}
                 </div>
                 <a href={`/locations/${slug}/`} class="card-name">
                   {d.name}
@@ -145,8 +146,8 @@ const other = sorted.filter(
             return (
               <article class="card location-card">
                 <div class="card-badges">
-                  <span class="badge badge-open">Police jurisdiction</span>
-                  {d.stub && <span class="badge badge-stub">Research needed</span>}
+                  <BadgeTag cls="badge-open">Police jurisdiction</BadgeTag>
+                  {d.stub && <BadgeTag cls="badge-stub">Research needed</BadgeTag>}
                 </div>
                 <a href={`/locations/${slug}/`} class="card-name">
                   {d.name}
@@ -173,10 +174,10 @@ const other = sorted.filter(
             return (
               <article class="card location-card">
                 <div class="card-badges">
-                  <span class="badge badge-excluded">
+                  <BadgeTag cls="badge-excluded">
                     {d.location_type.replace(/-/g, ' ')}
-                  </span>
-                  {d.stub && <span class="badge badge-stub">Research needed</span>}
+                  </BadgeTag>
+                  {d.stub && <BadgeTag cls="badge-stub">Research needed</BadgeTag>}
                 </div>
                 <a href={`/locations/${slug}/`} class="card-name">
                   {d.name}
@@ -241,13 +242,14 @@ const other = sorted.filter(
           const badgeClass = l.roles.includes('beat') ? 'badge-beat'
             : l.roles.includes('nightlife-venue') ? 'badge-venue'
             : 'badge-open';
-          const stub = l.stub ? '<span class="badge badge-stub">Research needed</span>' : '';
+          const badgeVariant = badgeClass === 'badge-beat' || badgeClass === 'badge-venue' ? 'neutral' : 'neutral';
+          const stub = l.stub ? `<wa-tag variant="warning" appearance="accent" size="s" class="badge-stub">Research needed</wa-tag>` : '';
           const regionHref = l.region ? `/locations/region/${l.region}/` : null;
           const meta = [l.suburb, (l.region ?? '').replace(/-/g, ' ')].filter(Boolean).join(' · ');
           return `
             <article class="card location-card">
               <div class="card-badges">
-                <span class="badge ${badgeClass}">${roleLabel}</span>
+                <wa-tag variant="neutral" appearance="accent" size="s" class="${badgeClass}">${roleLabel}</wa-tag>
                 ${stub}
               </div>
               <a href="/locations/${l.slug}/" class="card-name">${l.name}</a>

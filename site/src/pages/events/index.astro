@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import BadgeTag from '../../components/BadgeTag.astro';
 
 const events = await getCollection('events');
 
@@ -29,18 +30,18 @@ function eventTypeLabel(type: string): string {
 
 function eventTypeBadgeClass(type: string): string {
   const classes: Record<string, string> = {
-    activism: 'badge badge-probable',
-    'legal-milestone': 'badge badge-scoi-a',
-    cultural: 'badge badge-venue',
-    political: 'badge badge-open',
-    community: 'badge badge-beat',
-    'police-action': 'badge badge-homicide',
-    memorial: 'badge badge-possible',
-    media: 'badge badge-excluded',
-    inquiry: 'badge badge-scoi-b',
-    other: 'badge badge-excluded',
+    activism: 'badge-probable',
+    'legal-milestone': 'badge-scoi-a',
+    cultural: 'badge-venue',
+    political: 'badge-open',
+    community: 'badge-beat',
+    'police-action': 'badge-homicide',
+    memorial: 'badge-possible',
+    media: 'badge-excluded',
+    inquiry: 'badge-scoi-b',
+    other: 'badge-excluded',
   };
-  return classes[type] ?? 'badge badge-excluded';
+  return classes[type] ?? 'badge-excluded';
 }
 ---
 
@@ -62,8 +63,8 @@ function eventTypeBadgeClass(type: string): string {
         return (
           <article class="card event-card">
             <div class="card-badges">
-              <span class={eventTypeBadgeClass(d.event_type)}>{eventTypeLabel(d.event_type)}</span>
-              {d.stub && <span class="badge badge-stub">Research needed</span>}
+              <BadgeTag cls={eventTypeBadgeClass(d.event_type)}>{eventTypeLabel(d.event_type)}</BadgeTag>
+              {d.stub && <BadgeTag cls="badge-stub">Research needed</BadgeTag>}
             </div>
             <a href={`/events/${slug}/`} class="card-name">
               {d.title}

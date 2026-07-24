@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import BadgeTag from '../../components/BadgeTag.astro';
 
 const cases = await getCollection('cases', ({ data }) => data.published === true);
 
@@ -27,15 +28,15 @@ function statusLabel(status: string | undefined): string {
 
 function statusBadgeClass(status: string | undefined): string {
   const classes: Record<string, string> = {
-    'confirmed-homicide': 'badge badge-homicide',
-    'probable': 'badge badge-probable',
-    'possible': 'badge badge-possible',
-    'open': 'badge badge-open',
-    'undetermined': 'badge badge-open',
-    'excluded': 'badge badge-excluded',
-    'missing': 'badge badge-open',
+    'confirmed-homicide': 'badge-homicide',
+    'probable': 'badge-probable',
+    'possible': 'badge-possible',
+    'open': 'badge-open',
+    'undetermined': 'badge-open',
+    'excluded': 'badge-excluded',
+    'missing': 'badge-open',
   };
-  return classes[status ?? ''] ?? 'badge badge-open';
+  return classes[status ?? ''] ?? 'badge-open';
 }
 ---
 
@@ -55,14 +56,14 @@ function statusBadgeClass(status: string | undefined): string {
         <article class="card">
           <div class="card-badges">
             {d.scoi_category && (
-              <span class={`badge badge-scoi-${d.scoi_category.toLowerCase()}`}>
+              <BadgeTag cls={`badge-scoi-${d.scoi_category.toLowerCase()}`}>
                 SCOI Cat. {d.scoi_category}
-              </span>
+              </BadgeTag>
             )}
             {siteStatus && (
-              <span class={statusBadgeClass(siteStatus)}>
+              <BadgeTag cls={statusBadgeClass(siteStatus)}>
                 {statusLabel(siteStatus)}
-              </span>
+              </BadgeTag>
             )}
           </div>
 

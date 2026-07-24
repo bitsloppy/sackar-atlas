@@ -3,6 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { getCollection, render } from 'astro:content';
 import SectionCard from '../../components/SectionCard.astro';
 import FindingBox from '../../components/FindingBox.astro';
+import BadgeTag from '../../components/BadgeTag.astro';
 import { ICONS, SECTION_TYPE_MAP } from '../../lib/icons';
 
 export async function getStaticPaths() {
@@ -69,15 +70,15 @@ function siteStatusLabel(s: string | undefined) {
 
 function siteStatusClass(s: string | undefined) {
   const m: Record<string, string> = {
-    'confirmed-homicide': 'badge badge-homicide',
-    'probable':           'badge badge-probable',
-    'possible':           'badge badge-possible',
-    'open':               'badge badge-open',
-    'undetermined':       'badge badge-open',
-    'excluded':           'badge badge-excluded',
-    'missing':            'badge badge-open',
+    'confirmed-homicide': 'badge-homicide',
+    'probable':           'badge-probable',
+    'possible':           'badge-possible',
+    'open':               'badge-open',
+    'undetermined':       'badge-open',
+    'excluded':           'badge-excluded',
+    'missing':            'badge-open',
   };
-  return m[s ?? ''] ?? 'badge badge-open';
+  return m[s ?? ''] ?? 'badge-open';
 }
 
 function inquiryFindingLabel(s: string | undefined) {
@@ -182,16 +183,16 @@ const mf = d.manner_findings;
 
     <div class="detail-badges">
       {d.scoi_category && (
-        <span class={`badge badge-scoi-${d.scoi_category.toLowerCase()}`}>
+        <BadgeTag cls={`badge-scoi-${d.scoi_category.toLowerCase()}`}>
           SCOI Category {d.scoi_category}
-        </span>
+        </BadgeTag>
       )}
       {mf?.site_status && (
-        <span class={siteStatusClass(mf.site_status)}>
+        <BadgeTag cls={siteStatusClass(mf.site_status)}>
           {siteStatusLabel(mf.site_status)}
-        </span>
+        </BadgeTag>
       )}
-      {d.stub && <span class="badge badge-excluded">Stub — research incomplete</span>}
+      {d.stub && <BadgeTag cls="badge-excluded">Stub — research incomplete</BadgeTag>}
     </div>
   </div>
 

@@ -2,37 +2,87 @@
    components.css — Badges, cards, fact-grid, map, chips, utilities
    =================================================================== */
 
-/* ── Badges ─────────────────────────────────────────────────────────── */
+/* ── Badge tags (<wa-tag>) ───────────────────────────────────────────── */
+/* All site badges are <wa-tag appearance="accent" size="s">.             */
+/* Each .badge-X class scopes WA's color tokens to inject the exact      */
+/* WCAG-verified NSW palette values. See BadgeTag.astro for variant map.  */
 
-.badge {
-  display: inline-block;
+/* Typography — inherited through shadow DOM to slot content */
+wa-tag[class^="badge-"],
+wa-tag[class*=" badge-"] {
   font-family: var(--font-ui);
-  font-size: 0.72rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 0.2rem 0.55rem;
-  border-radius: 3px;
-  white-space: nowrap;
 }
 
-/* Finding badges */
-.badge-homicide  { background: var(--badge-homicide-bg);  color: var(--badge-homicide-text);  border: 1px solid var(--badge-homicide-border); }
-.badge-probable  { background: var(--badge-probable-bg);  color: var(--badge-probable-text);  border: 1px solid var(--probable); }
-.badge-possible  { background: var(--badge-possible-bg);  color: var(--badge-possible-text);  border: 1px solid var(--possible); }
-.badge-open      { background: var(--badge-open-bg);      color: var(--badge-open-text);      border: 1px solid var(--border); }
-.badge-excluded  { background: var(--badge-excluded-bg);  color: var(--badge-excluded-text);  border: 1px solid var(--border); }
+/* ── Finding badges ─────────────────────────────────────────────────── */
 
-/* SCOI category badges — NSW blue ramp */
-.badge-scoi-a    { background: var(--badge-scoi-bg);      color: var(--badge-scoi-a-text);    border: 1px solid var(--badge-scoi-a-border); }
-.badge-scoi-b    { background: var(--badge-scoi-bg);      color: var(--badge-scoi-b-text);    border: 1px solid var(--badge-scoi-b-border); }
+wa-tag.badge-homicide {
+  --wa-color-danger-fill-quiet:   var(--badge-homicide-bg);
+  --wa-color-danger-border-quiet: var(--badge-homicide-border);
+  --wa-color-danger-on-quiet:     var(--badge-homicide-text);
+}
 
-/* Location type badges */
-.badge-beat      { background: var(--badge-beat-bg);      color: var(--badge-beat-text);      border: 1px solid var(--badge-beat-border); }
-.badge-venue     { background: var(--badge-venue-bg);     color: var(--badge-venue-text);     border: 1px solid var(--badge-venue-border); }
+wa-tag.badge-probable {
+  --wa-color-warning-fill-quiet:   var(--badge-probable-bg);
+  --wa-color-warning-border-quiet: var(--probable);                /* NSW orange02 */
+  --wa-color-warning-on-quiet:     var(--badge-probable-text);
+}
 
-/* Stub records — amber warning */
-.badge-stub      { background: var(--badge-stub-bg);      color: var(--badge-stub-text);      border: 1px solid var(--badge-stub-border); }
+wa-tag.badge-possible {
+  --wa-color-warning-fill-quiet:   var(--badge-possible-bg);
+  --wa-color-warning-border-quiet: var(--possible);                /* NSW yellow02 */
+  --wa-color-warning-on-quiet:     var(--badge-possible-text);
+}
+
+wa-tag.badge-open {
+  --wa-color-neutral-fill-quiet:   var(--badge-open-bg);
+  --wa-color-neutral-border-quiet: var(--border);
+  --wa-color-neutral-on-quiet:     var(--badge-open-text);
+}
+
+wa-tag.badge-excluded {
+  --wa-color-neutral-fill-quiet:   var(--badge-excluded-bg);
+  --wa-color-neutral-border-quiet: var(--border);
+  --wa-color-neutral-on-quiet:     var(--badge-excluded-text);
+}
+
+/* ── SCOI category badges — NSW blue ramp ───────────────────────────── */
+
+wa-tag.badge-scoi-a {
+  --wa-color-brand-fill-quiet:   var(--badge-scoi-bg);
+  --wa-color-brand-border-quiet: var(--badge-scoi-a-border);
+  --wa-color-brand-on-quiet:     var(--badge-scoi-a-text);
+}
+
+wa-tag.badge-scoi-b {
+  --wa-color-brand-fill-quiet:   var(--badge-scoi-bg);
+  --wa-color-brand-border-quiet: var(--badge-scoi-b-border);
+  --wa-color-brand-on-quiet:     var(--badge-scoi-b-text);
+}
+
+/* ── Location / role type badges ────────────────────────────────────── */
+
+wa-tag.badge-beat {
+  --wa-color-neutral-fill-quiet:   var(--badge-beat-bg);
+  --wa-color-neutral-border-quiet: var(--badge-beat-border);
+  --wa-color-neutral-on-quiet:     var(--badge-beat-text);
+}
+
+wa-tag.badge-venue {
+  --wa-color-neutral-fill-quiet:   var(--badge-venue-bg);
+  --wa-color-neutral-border-quiet: var(--badge-venue-border);
+  --wa-color-neutral-on-quiet:     var(--badge-venue-text);
+}
+
+/* ── Stub records — amber warning ───────────────────────────────────── */
+
+wa-tag.badge-stub {
+  --wa-color-warning-fill-quiet:   var(--badge-stub-bg);
+  --wa-color-warning-border-quiet: var(--badge-stub-border);
+  --wa-color-warning-on-quiet:     var(--badge-stub-text);
+}
 
 /* ── Card grid ──────────────────────────────────────────────────────── */
 
