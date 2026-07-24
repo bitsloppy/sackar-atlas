@@ -265,11 +265,33 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
 
   <wa-divider />
 
-  <!-- ══ SECTION: Related cases ════════════════════════════════════════════ -->
-  <!-- Conditional. Shows count in heading.                                   -->
-  {
-    relatedCases.length > 0 && (
-      <SectionCard type="cases" heading="Related cases" open={true}>
+  <!-- ══ SECTION: Related info tabs ══════════════════════════════════════════ -->
+  <p class="section-heading" style="margin-top:2rem">Related info</p>
+  <wa-tab-group label="Related info">
+
+    <wa-tab slot="nav" panel="people">People</wa-tab>
+    <wa-tab slot="nav" panel="cases">Cases</wa-tab>
+    <wa-tab slot="nav" panel="locations">Locations</wa-tab>
+    <wa-tab slot="nav" panel="events">Events</wa-tab>
+
+    <wa-tab-panel name="people">
+      {relatedPeople.length > 0 ? (
+        <div class="related-chips">
+          {relatedPeople.map(p => {
+            const slug = p.id.replace(/\.md$/, '');
+            return (
+              <a href={`/people/${slug}/`} class="related-chip">
+                {p.data.name}
+                <span class="chip-meta"> · {roleLabel(p.data.role)}</span>
+              </a>
+            );
+          })}
+        </div>
+      ) : <p class="text-muted text-ui" style="font-size:0.88rem; margin:0">None recorded.</p>}
+    </wa-tab-panel>
+
+    <wa-tab-panel name="cases">
+      {relatedCases.length > 0 ? (
         <div class="card-grid">
           {relatedCases.map(c => {
             const slug = c.id.replace(/\.md$/, '');
@@ -286,9 +308,7 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
                     <span class={statusBadgeClass(siteStatus)}>{statusLabel(siteStatus)}</span>
                   )}
                 </div>
-                <a href={`/cases/${slug}/`} class="card-name">
-                  {c.data.name}
-                </a>
+                <a href={`/cases/${slug}/`} class="card-name">{c.data.name}</a>
                 <div class="card-meta">
                   {c.data.date_of_death_display ?? c.data.date_of_death ?? 'Date unknown'}
                 </div>
@@ -296,40 +316,11 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
             );
           })}
         </div>
-      </SectionCard>
-    )
-  }
+      ) : <p class="text-muted text-ui" style="font-size:0.88rem; margin:0">None recorded.</p>}
+    </wa-tab-panel>
 
-  <!-- ══ SECTION: Related events ═══════════════════════════════════════════ -->
-  <!-- Conditional.                                                           -->
-  {
-    relatedEvents.length > 0 && (
-      <SectionCard type="events" heading="Related events" open={false}>
-        <div class="related-chips">
-          {relatedEvents.map(e => {
-            const slug = e.id.replace(/\.md$/, '');
-            return (
-              <a href={`/events/${slug}/`} class="related-chip">
-                {e.data.title}
-                {(e.data.date_display ?? e.data.date) && (
-                  <span class="chip-meta">
-                    {' '}
-                    · {e.data.date_display ?? e.data.date}
-                  </span>
-                )}
-              </a>
-            );
-          })}
-        </div>
-      </SectionCard>
-    )
-  }
-
-  <!-- ══ SECTION: Related locations ════════════════════════════════════════ -->
-  <!-- Conditional.                                                           -->
-  {
-    relatedLocations.length > 0 && (
-      <SectionCard type="locations" heading="Related locations" open={false}>
+    <wa-tab-panel name="locations">
+      {relatedLocations.length > 0 ? (
         <div class="related-chips">
           {relatedLocations.map(l => {
             const slug = l.id.replace(/\.md$/, '');
@@ -341,29 +332,28 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
             );
           })}
         </div>
-      </SectionCard>
-    )
-  }
+      ) : <p class="text-muted text-ui" style="font-size:0.88rem; margin:0">None recorded.</p>}
+    </wa-tab-panel>
 
-  <!-- ══ SECTION: Related people ═══════════════════════════════════════════ -->
-  <!-- Conditional.                                                           -->
-  {
-    relatedPeople.length > 0 && (
-      <SectionCard type="people" heading="Related people" open={false}>
+    <wa-tab-panel name="events">
+      {relatedEvents.length > 0 ? (
         <div class="related-chips">
-          {relatedPeople.map(p => {
-            const slug = p.id.replace(/\.md$/, '');
+          {relatedEvents.map(e => {
+            const slug = e.id.replace(/\.md$/, '');
             return (
-              <a href={`/people/${slug}/`} class="related-chip">
-                {p.data.name}
-                <span class="chip-meta"> · {roleLabel(p.data.role)}</span>
+              <a href={`/events/${slug}/`} class="related-chip">
+                {e.data.title}
+                {(e.data.date_display ?? e.data.date) && (
+                  <span class="chip-meta"> · {e.data.date_display ?? e.data.date}</span>
+                )}
               </a>
             );
           })}
         </div>
-      </SectionCard>
-    )
-  }
+      ) : <p class="text-muted text-ui" style="font-size:0.88rem; margin:0">None recorded.</p>}
+    </wa-tab-panel>
+
+  </wa-tab-group>
 
   <!-- ══ SECTION: Sources ══════════════════════════════════════════════════ -->
   <!-- Always shown.                                                          -->

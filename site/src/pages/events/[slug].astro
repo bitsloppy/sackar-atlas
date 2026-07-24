@@ -143,11 +143,32 @@ function statusBadgeClass(status: string | undefined): string {
 
   <wa-divider />
 
-  <!-- ══ SECTION: Related cases ════════════════════════════════════════════ -->
-  <!-- Conditional. Shows count in heading.                                   -->
-  {
-    relatedCases.length > 0 && (
-      <SectionCard type="cases" heading="Related cases" open={true}>
+  <!-- ══ SECTION: Related info tabs ══════════════════════════════════════════ -->
+  <p class="section-heading" style="margin-top:2rem">Related info</p>
+  <wa-tab-group label="Related info">
+
+    <wa-tab slot="nav" panel="people">People</wa-tab>
+    <wa-tab slot="nav" panel="cases">Cases</wa-tab>
+    <wa-tab slot="nav" panel="locations">Locations</wa-tab>
+
+    <wa-tab-panel name="people">
+      {relatedPeople.length > 0 ? (
+        <div class="related-chips">
+          {relatedPeople.map(p => {
+            const slug = p.id.replace(/\.md$/, '');
+            return (
+              <a href={`/people/${slug}/`} class="related-chip">
+                {p.data.name}
+                <span class="chip-meta"> · {p.data.role}</span>
+              </a>
+            );
+          })}
+        </div>
+      ) : <p class="text-muted text-ui" style="font-size:0.88rem; margin:0">None recorded.</p>}
+    </wa-tab-panel>
+
+    <wa-tab-panel name="cases">
+      {relatedCases.length > 0 ? (
         <div class="card-grid">
           {relatedCases.map(c => {
             const slug = c.id.replace(/\.md$/, '');
@@ -164,9 +185,7 @@ function statusBadgeClass(status: string | undefined): string {
                     <span class={statusBadgeClass(siteStatus)}>{statusLabel(siteStatus)}</span>
                   )}
                 </div>
-                <a href={`/cases/${slug}/`} class="card-name">
-                  {c.data.name}
-                </a>
+                <a href={`/cases/${slug}/`} class="card-name">{c.data.name}</a>
                 <div class="card-meta">
                   {c.data.date_of_death_display ?? c.data.date_of_death ?? 'Date unknown'}
                 </div>
@@ -174,35 +193,11 @@ function statusBadgeClass(status: string | undefined): string {
             );
           })}
         </div>
-      </SectionCard>
-    )
-  }
+      ) : <p class="text-muted text-ui" style="font-size:0.88rem; margin:0">None recorded.</p>}
+    </wa-tab-panel>
 
-  <!-- ══ SECTION: Related people ═══════════════════════════════════════════ -->
-  <!-- Conditional.                                                           -->
-  {
-    relatedPeople.length > 0 && (
-      <SectionCard type="people" heading="Related people" open={false}>
-        <div class="related-chips">
-          {relatedPeople.map(p => {
-            const slug = p.id.replace(/\.md$/, '');
-            return (
-              <a href={`/people/${slug}/`} class="related-chip">
-                {p.data.name}
-                <span class="chip-meta"> · {p.data.role}</span>
-              </a>
-            );
-          })}
-        </div>
-      </SectionCard>
-    )
-  }
-
-  <!-- ══ SECTION: Related locations ════════════════════════════════════════ -->
-  <!-- Conditional.                                                           -->
-  {
-    relatedLocations.length > 0 && (
-      <SectionCard type="locations" heading="Related locations" open={false}>
+    <wa-tab-panel name="locations">
+      {relatedLocations.length > 0 ? (
         <div class="related-chips">
           {relatedLocations.map(l => {
             const slug = l.id.replace(/\.md$/, '');
@@ -214,9 +209,10 @@ function statusBadgeClass(status: string | undefined): string {
             );
           })}
         </div>
-      </SectionCard>
-    )
-  }
+      ) : <p class="text-muted text-ui" style="font-size:0.88rem; margin:0">None recorded.</p>}
+    </wa-tab-panel>
+
+  </wa-tab-group>
 
   <!-- ══ SECTION: Sources ══════════════════════════════════════════════════ -->
   <!-- Always shown.                                                          -->
