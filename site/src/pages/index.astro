@@ -27,6 +27,14 @@ const caseCount = allCases.length;
       </div>
     </div>
   </section>
+  <!-- ─── Hero attribution ─── -->
+  <div class="hero-caption section" role="note">
+    <p>
+      Black and white photograph of police and plainclothes officers moving protesters along a Sydney street, with a large blurry figure in the foreground.
+      Mitchell Library, State Library of New South Wales and Courtesy SEARCH Foundation.
+      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
+    </p>
+  </div>
 
   <!-- ─── Stats strip ─── -->
   <section class="stats-strip section">
@@ -166,12 +174,33 @@ const caseCount = allCases.length;
 <style>
   /* ─── Hero ──────────────────────────────────────────────────────────────── */
   .hero {
-    background-color: var(--wa-color-surface-lowered);
+    position: relative;
+    background-image: url('/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: left center;
     padding-block: var(--wa-space-5xl);
     border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    overflow: hidden;
+    min-height: 22rem;
+  }
+
+  /* Semi-transparent gradient overlay — darker on the left where text sits */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to right,
+      rgba(0, 28, 46, 0.80) 0%,
+      rgba(0, 28, 46, 0.65) 55%,
+      rgba(0, 28, 46, 0.48) 100%
+    );
+    z-index: 0;
   }
 
   .hero-inner {
+    position: relative;
+    z-index: 1;
     max-width: 52ch;
   }
 
@@ -180,31 +209,31 @@ const caseCount = allCases.length;
     font-size: var(--wa-font-size-4xl);
     font-weight: normal;
     margin: 0;
-    color: var(--wa-color-text-normal);
+    color: #ffffff;
     letter-spacing: 0.01em;
   }
 
   .hero-strapline {
     font-size: var(--wa-font-size-l);
     font-weight: 500;
-    color: var(--wa-color-text-normal);
+    color: rgba(255, 255, 255, 0.95);
     margin: 0;
     line-height: 1.4;
   }
 
   .hero-body {
     font-size: var(--wa-font-size-m);
-    color: var(--wa-color-text-quiet);
+    color: rgba(255, 255, 255, 0.82);
     margin: 0;
     line-height: 1.65;
     max-width: 60ch;
   }
 
-  /* CTA buttons (hand-rolled since these are <a> tags, not wa-button) */
+  /* CTA buttons — inverted for dark hero background */
   .cta-primary {
     display: inline-block;
-    background-color: var(--site-brand);
-    color: #ffffff;
+    background-color: #ffffff;
+    color: var(--site-brand);
     text-decoration: none;
     padding: var(--wa-space-xs) var(--wa-space-l);
     border-radius: var(--wa-border-radius-m);
@@ -220,18 +249,36 @@ const caseCount = allCases.length;
   .cta-secondary {
     display: inline-block;
     background-color: transparent;
-    color: var(--site-brand);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     padding: var(--wa-space-xs) var(--wa-space-l);
     border-radius: var(--wa-border-radius-m);
     font-weight: 600;
     font-size: var(--wa-font-size-s);
-    border: var(--wa-border-width-s) solid var(--site-brand);
+    border: var(--wa-border-width-s) solid rgba(255, 255, 255, 0.55);
     transition: background-color 0.12s ease;
   }
 
   .cta-secondary:hover {
-    background-color: color-mix(in oklch, var(--site-brand) 8%, transparent);
+    background-color: rgba(255, 255, 255, 0.12);
+  }
+
+  /* ─── Hero attribution ───────────────────────────────────────────────────── */
+  .hero-caption {
+    padding-block: var(--wa-space-s);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
+  .hero-caption p {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .hero-caption a {
+    color: var(--wa-color-text-link);
   }
 
   /* ─── Stats strip ────────────────────────────────────────────────────────── */
