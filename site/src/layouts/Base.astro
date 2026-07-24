@@ -5,6 +5,10 @@ interface Props {
 }
 
 import '../styles/global.css';
+// Web Awesome — cascade layers (ordering) + design tokens only.
+// Do NOT import webawesome.css (includes native.css which overrides our element styles).
+import '@awesome.me/webawesome/dist/styles/layers.css';
+import '@awesome.me/webawesome/dist/styles/themes/default.css';
 import { DESIGN_TOKENS } from '../lib/tokens';
 
 // Build :root { --key: value; ... } block from design tokens
@@ -67,4 +71,10 @@ const {
       </div>
     </footer>
   </body>
+  <!-- Web Awesome: register components used site-wide.
+       Add page-specific components in their own pages instead. -->
+  <script>
+    import '@awesome.me/webawesome/dist/components/callout/callout.js';
+    import '@awesome.me/webawesome/dist/components/badge/badge.js';
+  </script>
 </html>

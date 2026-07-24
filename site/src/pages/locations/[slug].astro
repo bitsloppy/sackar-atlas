@@ -165,10 +165,10 @@ function countryDeterminationLabel(s: string | undefined): string {
   <!-- Conditional: only shown when stub: true on the location.               -->
   {
     d.stub && (
-      <div class="stub-warning">
+      <wa-callout variant="warning" appearance="accent">
         <strong>Research stub:</strong> This location record is a placeholder. Key details may be
         incomplete or unverified. Contributions welcome.
-      </div>
+      </wa-callout>
     )
   }
 

@@ -115,10 +115,10 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
   <!-- Conditional: only shown when stub: true.                               -->
   {
     d.stub && (
-      <div class="stub-warning">
+      <wa-callout variant="warning" appearance="accent">
         <strong>Research stub:</strong> This person record is a placeholder. Key details may be
         incomplete or unverified.
-      </div>
+      </wa-callout>
     )
   }
 
