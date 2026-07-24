@@ -106,16 +106,17 @@ const presentRoles = ROLE_FILTER_ORDER.filter(r => allRoles.includes(r));
   <div class="filter-bar section" id="filter-bar">
     <div class="filter-bar-inner">
 
-      <!-- Case dropdown -->
+      <!-- Case chips (multi-select) -->
       {linkedCases.length > 0 && (
         <div class="filter-group">
-          <label class="filter-label" for="case-filter">Case</label>
-          <select class="item-select" id="case-filter">
-            <option value="all">All cases</option>
+          <span class="filter-label">Case</span>
+          <div class="case-chips" id="case-filters">
             {linkedCases.map(c => (
-              <option value={c.id.replace(/\.md$/, '')}>{c.data.name}</option>
+              <button class="filter-chip" data-case={c.id.replace(/\.md$/, '')}>
+                {c.data.name}
+              </button>
             ))}
-          </select>
+          </div>
         </div>
       )}
 
@@ -256,7 +257,8 @@ const presentRoles = ROLE_FILTER_ORDER.filter(r => allRoles.includes(r));
     white-space: nowrap;
   }
 
-  .role-chips {
+  .role-chips,
+  .case-chips {
     display: flex;
     flex-wrap: wrap;
     gap: var(--wa-space-2xs);
@@ -385,16 +387,16 @@ const presentRoles = ROLE_FILTER_ORDER.filter(r => allRoles.includes(r));
   import '@awesome.me/webawesome/dist/components/tag/tag.js';
   import '@awesome.me/webawesome/dist/components/icon/icon.js';
 
-  const articles    = document.querySelectorAll<HTMLElement>('#locations-grid article');
-  const roleChips   = document.querySelectorAll<HTMLButtonElement>('#role-filters .filter-chip');
-  const caseSelect  = document.getElementById('case-filter') as HTMLSelectElement | null;
-  const typeSelect  = document.getElementById('type-filter') as HTMLSelectElement | null;
-  const countEl     = document.getElementById('locations-count');
-  const emptyEl     = document.getElementById('empty-state');
+  const articles   = document.querySelectorAll<HTMLElement>('#locations-grid article');
+  const roleChips  = document.querySelectorAll<HTMLButtonElement>('#role-filters .filter-chip');
+  const caseChips  = document.querySelectorAll<HTMLButtonElement>('#case-filters .filter-chip');
+  const typeSelect = document.getElementById('type-filter') as HTMLSelectElement | null;
+  const countEl    = document.getElementById('locations-count');
+  const emptyEl    = document.getElementById('empty-state');
 
-  let activeRole = 'all';
-  let activeCase = 'all';
-  let activeType = 'all';
+  let activeRole  = 'all';
+  let activeType  = 'all';
+  const activeCases = new Set<string>(); // empty = show all
 
   function applyFilters() {
     let visible = 0;
@@ -402,9 +404,12 @@ const presentRoles = ROLE_FILTER_ORDER.filter(r => allRoles.includes(r));
       const type  = article.dataset.type ?? '';
       const roles = article.dataset.roles ? article.dataset.roles.split(',') : [];
       const cases = article.dataset.cases ? article.dataset.cases.split(',') : [];
+
       const typeMatch = activeType === 'all' || type === activeType;
       const roleMatch = activeRole === 'all' || roles.includes(activeRole);
-      const caseMatch = activeCase === 'all' || cases.includes(activeCase);
+      // Case: show if no cases selected, OR if location matches ANY selected case
+      const caseMatch = activeCases.size === 0 || cases.some(c => activeCases.has(c));
+
       const show = typeMatch && roleMatch && caseMatch;
       article.hidden = !show;
       if (show) visible++;
@@ -413,6 +418,7 @@ const presentRoles = ROLE_FILTER_ORDER.filter(r => allRoles.includes(r));
     if (emptyEl) emptyEl.hidden = visible > 0;
   }
 
+  // Role chips — single-select
   roleChips.forEach(chip => {
     chip.addEventListener('click', () => {
       roleChips.forEach(c => c.classList.remove('active'));
@@ -422,6 +428,21 @@ const presentRoles = ROLE_FILTER_ORDER.filter(r => allRoles.includes(r));
     });
   });
 
-  caseSelect?.addEventListener('change', () => { activeCase = caseSelect.value; applyFilters(); });
+  // Case chips — multi-select toggle
+  caseChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const key = chip.dataset.case!;
+      if (activeCases.has(key)) {
+        activeCases.delete(key);
+        chip.classList.remove('active');
+      } else {
+        activeCases.add(key);
+        chip.classList.add('active');
+      }
+      chip.setAttribute('aria-pressed', String(activeCases.has(key)));
+      applyFilters();
+    });
+  });
+
   typeSelect?.addEventListener('change', () => { activeType = typeSelect.value; applyFilters(); });
 </script>
