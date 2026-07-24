@@ -26,7 +26,7 @@ SCOI text → RESEARCH → DRAFT (case + person + stubs) → QA CARD → Anna re
 Read the SCOI section for this case. For Category A cases this is always Vol 2, Chapter 5.
 
 > **Use `.txt` files, not PDFs.** The text extractions in
-> `resources/queer-heritage-research/` (Obsidian vault) are faster and grep-searchable.
+> `/Users/anna/Obsidian/Lab/Projects/sackar-atlas/` are faster and grep-searchable.
 > File: `SCOI-Vol2-text.txt`. Sections can run 50–150+ source lines; read in
 > multiple chunks using `offset` until you reach the next case heading.
 
@@ -294,18 +294,22 @@ When reviewing the QA card, check:
 Entered so far:
 - [x] Mark Stewart (1976, Shelley Headland, Manly)
 - [x] Paul Rath (1977, Shelley Headland, Manly) — Recommendation 1 (fresh inquest)
+- [x] David Lloyd-Williams (1978, North Head) — excluded (suicide, no LGBTIQ connection)
+- [x] Gilles Mattaini (1985, Marks Park)
+- [x] Scott Johnson (1988, North Head) — confirmed homicide; conviction 2023
+- [x] Ross Warren (1989, Marks Park)
+- [x] John Russell (1989, Marks Park)
 
 Recommended next (based on source readiness and cross-reference density):
-1. **David Lloyd-Williams** (1978) — North Head; next in SCOI Ch 5 sequence; connects
-   Manly cluster geographically
-2. **Ross Warren** (1989) — most-referenced case in sources; 5+ sources waiting;
+1. **Ross Warren** (1989) — most-referenced case in sources; 5+ sources waiting;
    marks-park.md already exists
-3. **Scott Johnson** (1988) — most prominent case; Bondi Badlands ep. 5 + Deep Water;
-   north-head.md already exists
-4. **John Russell** (1989) — linked to Warren; same Marks Park geography
-5. **Raymond Keam** (1987) — one of the few with a subsequent arrest (Stan Early, 2021)
-6. **Crispin Dye** (1993) — forensic breakthrough (DNA match 30 years later)
-7. **Ernest Head** (1976) — same year as Stewart; POI identified
+2. **John Russell** (1989) — linked to Warren; same Marks Park geography
+3. **Raymond Keam** (1987) — one of the few with a subsequent arrest (Stan Early, 2021)
+4. **Crispin Dye** (1993) — forensic breakthrough (DNA match 30 years later)
+5. **Ernest Head** (1976) — same year as Stewart; POI identified
+
+Note: David Lloyd-Williams (1978) was excluded — suicide, no LGBTIQ connection confirmed.
+Scott Johnson (1988) already entered.
 
 Bulk entry (after 5–6 individual cases to prove the pattern):
 - Remaining Category A cases (SCOI Vol 2, Chapter 5)
