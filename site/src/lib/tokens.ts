@@ -225,11 +225,7 @@ export const BADGE_TOKENS = {
   stubText:      NSW_PALETTE.yellow01,   // #694800  — 7.2:1 ✓
   stubBorder:    NSW_PALETTE.yellow02,   // #FAAF05
 
-  // Content warning block
-  warningBg:     NSW_PALETTE.red04,      // #FFE6EA
-  warningBorder: NSW_PALETTE.red02,      // #D7153A
-  warningText:   NSW_PALETTE.red01,      // #630019
-  warningStrong: NSW_PALETTE.red01,      // #630019
+  // warningBg/Border/Text/Strong removed — content warnings now use wa-callout
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -308,10 +304,7 @@ export const DESIGN_TOKENS: Record<string, string> = {
   'badge-stub-bg':         BADGE_TOKENS.stubBg,
   'badge-stub-text':       BADGE_TOKENS.stubText,
   'badge-stub-border':     BADGE_TOKENS.stubBorder,
-  'warning-bg':            BADGE_TOKENS.warningBg,
-  'warning-border':        BADGE_TOKENS.warningBorder,
-  'warning-text':          BADGE_TOKENS.warningText,
-  'warning-strong':        BADGE_TOKENS.warningStrong,
+  // warning-bg/border/text/strong removed — replaced by wa-callout
 
   // NSW palette ramp values — exposed for direct use
   'nsw-palette-yellow-03': NSW_PALETTE.yellow03,  // #FDE79A

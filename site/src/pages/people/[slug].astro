@@ -126,10 +126,10 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
   <!-- Conditional: only shown when person is a victim (role=victim).         -->
   {
     d.content_warnings.includes('deceased-person') && (
-      <div class="content-warning">
+      <wa-callout variant="danger" appearance="accent">
         <strong>Content warning:</strong> This record documents a deceased person and may contain
         details of violence.
-      </div>
+      </wa-callout>
     )
   }
 
@@ -263,7 +263,7 @@ const displayedNames = d.also_known_as.filter(n => n.display !== false);
     <Content />
   </div>
 
-  <hr />
+  <wa-divider />
 
   <!-- ══ SECTION: Related cases ════════════════════════════════════════════ -->
   <!-- Conditional. Shows count in heading.                                   -->

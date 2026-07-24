@@ -136,13 +136,13 @@ const mf = d.manner_findings;
 
   <!-- ══ SECTION: Content warning ══════════════════════════════════════════ -->
   <!-- Always shown. Adjust wording here if needed.                           -->
-  <div class="content-warning">
+  <wa-callout variant="danger" appearance="accent">
     <strong>Content warning:</strong> This record documents a death and contains details of police
     investigations, inquest findings, and forensic information.
     {d.historical_misgendering && (
       <span> Historical records for this person contain misgendering — this record uses correct pronouns and name.</span>
     )}
-  </div>
+  </wa-callout>
 
   <!-- ══ SECTION: Header ════════════════════════════════════════════════════ -->
   <!-- Name, date, location, SCOI category badge, site status badge.          -->

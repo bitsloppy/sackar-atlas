@@ -38,32 +38,8 @@
 
 .detail-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
 
-/* ── Warnings ───────────────────────────────────────────────────────── */
-
-.content-warning {
-  background: var(--warning-bg);
-  border: 1px solid var(--warning-border);
-  border-radius: 5px;
-  padding: 0.75rem 1rem;
-  font-family: var(--font-ui);
-  font-size: 0.84rem;
-  color: var(--warning-text);
-  margin-bottom: 2rem;
-}
-.content-warning strong { color: var(--warning-strong); }
-
-/* Stub notice — uses yellow badge tokens; WCAG AA verified (7.2:1) */
-.stub-warning {
-  background: var(--badge-stub-bg);
-  border: 1px solid var(--badge-stub-border);
-  border-radius: 6px;
-  padding: 0.9rem 1.1rem;
-  margin-bottom: 1.5rem;
-  font-family: var(--font-ui);
-  font-size: 0.9rem;
-  color: var(--badge-stub-text);
-}
-.stub-warning strong { color: var(--badge-stub-text); }
+/* ── Warnings: now wa-callout (variant=danger for content, variant=warning for stubs) ── */
+/* .content-warning and .stub-warning removed — replaced by <wa-callout> */
 
 /* ── Narrative prose ────────────────────────────────────────────────── */
 

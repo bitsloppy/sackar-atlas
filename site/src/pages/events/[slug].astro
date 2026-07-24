@@ -104,10 +104,10 @@ function statusBadgeClass(status: string | undefined): string {
   <!-- Conditional: only shown when stub: true.                               -->
   {
     d.stub && (
-      <div class="stub-warning">
+      <wa-callout variant="warning" appearance="accent">
         <strong>Research stub:</strong> This event record is a placeholder. Key details may be
         incomplete or unverified.
-      </div>
+      </wa-callout>
     )
   }
 
@@ -141,7 +141,7 @@ function statusBadgeClass(status: string | undefined): string {
     <Content />
   </div>
 
-  <hr />
+  <wa-divider />
 
   <!-- ══ SECTION: Related cases ════════════════════════════════════════════ -->
   <!-- Conditional. Shows count in heading.                                   -->
