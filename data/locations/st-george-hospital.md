@@ -42,6 +42,13 @@ tags:
   - kogarah
 
 stub: true
+sources:
+  press: []
+  archives: []
+  oral_history: []
+  geographic: []
+  reports: []
+  media_sources: []
 ---
 
 St George Hospital in Kogarah is a major public hospital in southern Sydney. Crispin Dye was transferred here from St Vincent's Hospital on 23 December 1993, and died here on 25 December 1993.

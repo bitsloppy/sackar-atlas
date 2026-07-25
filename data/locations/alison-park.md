@@ -44,6 +44,13 @@ tags:
   - "randwick"
 
 stub: false
+sources:
+  press: []
+  archives: []
+  oral_history: []
+  geographic: []
+  reports: []
+  media_sources: []
 ---
 
 Alison Park in Randwick was a known gay beat in the 1980s. The park sits adjacent to Alison Road and was surrounded by residential boarding houses.

@@ -15,7 +15,15 @@ lng: 151.1281
 
 still_exists: false
 
-# --- First Nations ----------------------------------------------------------
+#
+sources:
+  press: []
+  archives: []
+  oral_history: []
+  geographic: []
+  reports: []
+  media_sources: []
+--- First Nations ----------------------------------------------------------
 
 first_nations_country: null
 country_determination: not-assessed

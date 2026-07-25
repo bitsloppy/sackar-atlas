@@ -49,6 +49,13 @@ tags:
   - "oxford-street"
 
 stub: false
+sources:
+  press: []
+  archives: []
+  oral_history: []
+  geographic: []
+  reports: []
+  media_sources: []
 ---
 
 Kinselas is a heritage-listed venue in Darlinghurst, originally built as a funeral parlour and chapel of rest in 1919. It became one of Sydney's most prominent gay-friendly nightclubs in the 1980s and 1990s, located at 383 Bourke Street in the heart of the Oxford Street LGBTIQ+ precinct.

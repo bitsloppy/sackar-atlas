@@ -23,7 +23,15 @@ lng: 151.2140
 active_from: "1970s"
 still_exists: true
 
-# --- First Nations ----------------------------------------------------------
+#
+sources:
+  press: []
+  archives: []
+  oral_history: []
+  geographic: []
+  reports: []
+  media_sources: []
+--- First Nations ----------------------------------------------------------
 
 first_nations_country: "Gadigal"
 country_determination: aiatsis-map

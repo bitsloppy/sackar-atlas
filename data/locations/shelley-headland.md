@@ -25,7 +25,15 @@ lng: 151.2882
 active_from: "1970s"
 still_exists: true
 
-# --- First Nations ----------------------------------------------------------
+#
+sources:
+  press: []
+  archives: []
+  oral_history: []
+  geographic: []
+  reports: []
+  media_sources: []
+--- First Nations ----------------------------------------------------------
 #
 # The Shelley Headland and the broader North Head peninsula form part of
 # Gayamaygal Country. Gayamaygal (also Garigal) people are the custodians
