@@ -82,7 +82,7 @@ This site targets **WCAG 2.1 Level AA** compliance. The subject matter documents
 
 ## Status
 
-🟢 Active development — 5 cases published, full interactivity layer live, WCAG AA compliant. [Live site →](https://sackar-atlas.soft-hill-5225.workers.dev)
+🟢 Active development — 5 cases published, full interactivity layer live, WCAG AA compliant.
 
 ---
 
