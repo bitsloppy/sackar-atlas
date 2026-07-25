@@ -40,6 +40,10 @@ const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas
         --site-locations: #0f766e; /* teal-700 */
         --site-people:    #6d28d9; /* violet-700 */
         --site-events:    #b45309; /* amber-700 */
+        --site-sources:   #0369a1; /* sky-700 */
+
+        /* Link colour — override WA default to brand blue */
+        --wa-color-text-link: var(--site-brand);
 
         /* Display font */
         --font-display: 'Special Elite', serif;
@@ -70,9 +74,9 @@ const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas
         width: 100%;
       }
 
-      /* Footer: lowered surface + top border */
+      /* Footer: warm yellow tint (NSW DS #FFF4CF + 40% white) */
       wa-page::part(footer) {
-        background-color: var(--wa-color-surface-lowered);
+        background-color: #FFFBEE !important;
         border-top: var(--wa-border-width-s) solid var(--wa-color-surface-border);
       }
 
@@ -80,6 +84,7 @@ const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas
         box-sizing: border-box;
         width: 100%;
         max-width: 100%;
+        background-color: #FFFBEE !important;
       }
 
       /* ─── Header/drawer recipe ───────────────────────────────────────────────── */
@@ -163,6 +168,17 @@ const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas
         text-align: right;
       }
 
+      @media (max-width: 600px) {
+        footer[slot='footer'] {
+          flex-direction: column;
+          gap: var(--wa-space-m);
+        }
+        .footer-credit {
+          text-align: left;
+        }
+      }
+
+
       footer[slot='footer'] a {
         color: var(--wa-color-text-link);
       }
@@ -184,6 +200,7 @@ const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas
             <a href="/locations/">Locations</a>
             <a href="/events/">Events</a>
             <a href="/people/">People</a>
+            <a href="/sources/">Sources</a>
             <a href="/map/">Map</a>
           </nav>
 
@@ -205,6 +222,7 @@ const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas
         <a href="/locations/" data-drawer="close">Locations</a>
         <a href="/events/" data-drawer="close">Events</a>
         <a href="/people/" data-drawer="close">People</a>
+        <a href="/sources/" data-drawer="close">Sources</a>
         <a href="/map/" data-drawer="close">Map</a>
       </nav>
 
@@ -219,11 +237,10 @@ const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas
           Sackar Atlas acknowledges the Gadigal, Bidjigal, Gayamaygal, and all peoples of Country
           across the places documented here. Sovereignty was never ceded.
         </p>
-        <p class="footer-credit">
-          A public data project by Anna Roberts, drawing on the NSW Special Commission of Inquiry
-          into LGBTIQ Hate Crimes (Sackar J, 2023). All data from public records.
-          <a href="https://github.com/bitsloppy/sackar-atlas">GitHub</a>
-        </p>
+        <div class="footer-credit wa-stack wa-gap-s">
+          <p>A public data project by Anna Roberts, drawing on the <br /> NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023).</p>
+          <p>Data compiled from <a href="/sources/">public records</a> &middot; Source on <a href="https://github.com/bitsloppy/sackar-atlas">GitHub</a></p>
+        </div>
       </footer>
     </wa-page>
   </body>

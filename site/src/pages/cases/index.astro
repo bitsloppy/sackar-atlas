@@ -120,7 +120,7 @@ const showCategoryFilter = presentCategories.length > 1;
         return (
           <article data-status={siteStatus ?? ''} data-category={d.scoi_category ?? ''}>
             <a href={`/cases/${slug}/`} class="case-card-link">
-              <wa-card appearance="filled-outlined" with-header with-footer>
+              <wa-card appearance="filled-outlined" with-header>
                 <!-- Header: SCOI category + status badges -->
                 <div slot="header" class="case-card-badges wa-cluster wa-gap-2xs">
                   {d.scoi_category && (
@@ -168,14 +168,7 @@ const showCategoryFilter = presentCategories.length > 1;
                   </div>
                 </div>
 
-                <!-- Footer: SCOI finding snippet -->
-                {d.scoi_finding && (
-                  <p slot="footer" class="case-card-finding">
-                    {d.scoi_finding.length > 160
-                      ? d.scoi_finding.slice(0, 160) + '…'
-                      : d.scoi_finding}
-                  </p>
-                )}
+
               </wa-card>
             </a>
           </article>
@@ -331,14 +324,6 @@ const showCategoryFilter = presentCategories.length > 1;
   .meta-icon {
     font-size: var(--wa-font-size-xs);
     color: var(--wa-color-text-quiet);
-  }
-
-  .case-card-finding {
-    font-size: var(--wa-font-size-s);
-    color: var(--wa-color-text-quiet);
-    margin: 0;
-    line-height: 1.5;
-    font-style: italic;
   }
 
   /* ─── Empty state ─── */

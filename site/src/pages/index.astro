@@ -30,9 +30,9 @@ const caseCount = allCases.length;
   <!-- ─── Hero attribution ─── -->
   <div class="hero-caption section" role="note">
     <p>
-      Black and white photograph of police and plainclothes officers moving protesters along a Sydney street, with a large blurry figure in the foreground.
-      Mitchell Library, State Library of New South Wales and Courtesy SEARCH Foundation.
-      <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
+      Black and white photograph of police and plainclothes officers moving protesters along near St James Station during gay liberation demonstrations, Sydney, New South Wales, September 1978.  
+      &nbsp;<a href="https://archival.sl.nsw.gov.au/Details/archive/110369600" target="_blank" rel="noopener">Mitchell Library, State Library of New South Wales</a> and Courtesy SEARCH Foundation.
+      &nbsp;<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
     </p>
   </div>
 
@@ -44,16 +44,16 @@ const caseCount = allCases.length;
         <span class="stat-label">cases published</span>
       </div>
       <div class="stat">
-        <span class="stat-number">30+</span>
-        <span class="stat-label">deaths examined</span>
-      </div>
-      <div class="stat">
         <span class="stat-number">2023</span>
         <span class="stat-label">SCOI report</span>
       </div>
       <div class="stat">
         <span class="stat-number">3 vols</span>
         <span class="stat-label">of public record</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">30+</span>
+        <span class="stat-label">deaths examined</span>
       </div>
     </div>
   </section>
@@ -71,7 +71,7 @@ const caseCount = allCases.length;
               <strong class="nav-card-label">Cases</strong>
             </div>
             <p class="nav-card-desc">
-              Individual deaths examined by the Sackar Inquiry — the people, their lives, the
+              Individual deaths examined by the Sackar Inquiry — the people, the
               evidence, and how institutions responded.
             </p>
             <span slot="footer" class="nav-card-footer-link">
@@ -90,8 +90,7 @@ const caseCount = allCases.length;
               <strong class="nav-card-label">Locations</strong>
             </div>
             <p class="nav-card-desc">
-              The headlands, beats, venues, and police jurisdictions that define the geography
-              of this history.
+              Two Sydney's side by side – beats and venues next to police staions and crime scenes – the geography that defines this history.
             </p>
             <span slot="footer" class="nav-card-footer-link">
               Browse locations
@@ -128,7 +127,7 @@ const caseCount = allCases.length;
               <strong class="nav-card-label">People</strong>
             </div>
             <p class="nav-card-desc">
-              Victims, activists, witnesses, police commissioners — everyone named in the
+              Victims, activists, witnesses, police commissioners — people named in the
               public record of these events.
             </p>
             <span slot="footer" class="nav-card-footer-link">
@@ -147,26 +146,15 @@ const caseCount = allCases.length;
     <div class="about-inner wa-stack wa-gap-l">
       <h2>About this project</h2>
       <p>
-        Sackar Atlas is a public data project by Anna Roberts. It synthesises the public record
-        of the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023) and
-        makes the connections between cases, locations, institutions, and people visible in a
-        way a 3,000-page PDF cannot.
+        Sackar Atlas is a public data project by Anna Roberts. 
       </p>
       <p>
-        This is a cartographer's project, not a community heritage project. All data is drawn
-        from public records — the SCOI report, Hansard, coronial findings, Trove press archives.
-        The connections are the argument.
+        It uses AI tools to synthesise data from public records — the <a href="https://www.nsw.gov.au/departments-and-agencies/cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes">Special Commission of Inquiry into LGBTIQ hate crimes report</a>, <a href="https://data.nsw.gov.au/data/dataset/?tags=Police+Department">police data</a> — with information from press archives (<a href="https://trove.nla.gov.au/">Trove</a>) and <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>. The aim is to make the connections between cases, locations, institutions, and people visible in a way a 3,000-page PDF cannot.
       </p>
       <p>
         The site is designed for community organisations, journalists, researchers, and the
-        general public to use freely. Infrastructure-first: built so others can layer oral
-        history and community memory on top.
-      </p>
-      <p>
-        <a href="https://github.com/bitsloppy/sackar-atlas">Source code on GitHub</a>
-        &nbsp;&middot;&nbsp;
-        Data: NSW SCOI 2023, Hansard, Trove, coronial records
-      </p>
+        general public to use freely. <a href="https://github.com/bitsloppy/sackar-atlas">Source code on GitHub</a>
+     </p>
     </div>
   </section>
 </Layout>
@@ -177,7 +165,7 @@ const caseCount = allCases.length;
     position: relative;
     background-image: url('/images/hero-bg.jpg');
     background-size: cover;
-    background-position: left center;
+    background-position: left 70%;
     padding-block: var(--wa-space-5xl);
     border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
     overflow: hidden;

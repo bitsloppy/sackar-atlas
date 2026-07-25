@@ -1,0 +1,532 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allSources = await getCollection('sources');
+const allCases   = await getCollection('cases', ({ data }) => data.published === true);
+
+// Sort by date descending (most recent first); undated go last
+const sorted = allSources.sort((a, b) => {
+  const da = a.data.date ?? '0000';
+  const db = b.data.date ?? '0000';
+  return db.localeCompare(da);
+});
+
+// ── Labels / icons ──────────────────────────────────────────────────────────
+
+function typeLabel(type: string): string {
+  const labels: Record<string, string> = {
+    'online-news':     'Online news',
+    'newspaper':       'Newspaper',
+    'community-press': 'Community press',
+    'magazine-feature':'Magazine',
+    'podcast-episode': 'Podcast',
+    'radio-segment':   'Radio',
+    'documentary':     'Documentary',
+    'tv-segment':      'TV',
+    'book':            'Book',
+    'book-chapter':    'Book chapter',
+    'academic-article':'Academic',
+  };
+  return labels[type] ?? type;
+}
+
+function typeIcon(type: string): string {
+  const icons: Record<string, string> = {
+    'online-news':     'newspaper',
+    'newspaper':       'newspaper',
+    'community-press': 'newspaper',
+    'magazine-feature':'book-open',
+    'podcast-episode': 'microphone',
+    'radio-segment':   'tower-broadcast',
+    'documentary':     'film',
+    'tv-segment':      'tv',
+    'book':            'book',
+    'book-chapter':    'bookmark',
+    'academic-article':'graduation-cap',
+  };
+  return icons[type] ?? 'file-lines';
+}
+
+function sourceDisplayLine(d: any): string {
+  const parts: string[] = [];
+  if (d.publication)  parts.push(d.publication);
+  else if (d.show_title) parts.push(d.show_title);
+  if (d.creator)      parts.push(d.creator);
+  else if (d.author)  parts.push(d.author);
+  if (d.date)         parts.push(d.date.slice(0, 4));
+  return parts.join(' · ');
+}
+
+// ── Filter bar data ─────────────────────────────────────────────────────────
+
+const TYPE_ORDER = ['online-news', 'podcast-episode', 'documentary', 'radio-segment', 'academic-article', 'newspaper', 'community-press', 'magazine-feature', 'book', 'book-chapter', 'tv-segment'];
+const TYPE_CHIP_LABELS: Record<string, string> = {
+  'online-news':     'Online news',
+  'podcast-episode': 'Podcast',
+  'documentary':     'Documentary',
+  'radio-segment':   'Radio',
+  'academic-article':'Academic',
+  'newspaper':       'Newspaper',
+  'community-press': 'Community press',
+  'magazine-feature':'Magazine',
+  'book':            'Book',
+  'book-chapter':    'Book chapter',
+  'tv-segment':      'TV',
+};
+const presentTypes = TYPE_ORDER.filter(t => sorted.some(s => s.data.source_type === t));
+
+// Cases referenced by at least one source
+const referencedCaseIds = new Set(
+  sorted.flatMap(s => (s.data.related_cases as string[] | undefined) ?? [])
+);
+const referencedCases = allCases
+  .filter(c => referencedCaseIds.has(c.id.replace(/\.md$/, '')))
+  .sort((a, b) => {
+    const da = a.data.date_of_death ?? '9999';
+    const db = b.data.date_of_death ?? '9999';
+    return da.localeCompare(db);
+  });
+
+const hasPrimarySourceQuality = sorted.some(s => s.data.significance === 'primary-source-quality');
+---
+
+<Layout
+  title="Sources"
+  description="External sources, journalism, documentaries, and research that inform the Sackar Atlas — with direct links so you can read and listen yourself."
+>
+  <!-- ── Hero ── -->
+  <section class="page-hero section">
+    <div class="page-hero-inner wa-stack wa-gap-s">
+      <h1>Sources</h1>
+      <p class="page-hero-desc">
+        <span id="sources-count">{sorted.length}</span> of {sorted.length} source{sorted.length === 1 ? '' : 's'} —
+        journalism, documentaries, radio, and research that inform the Atlas. Click through to read, watch, or listen.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Filter bar ── -->
+  <div class="filter-bar section" id="filter-bar">
+    <div class="filter-bar-inner">
+
+      <!-- Type chips -->
+      <div class="filter-group">
+        <span class="filter-label">Type</span>
+        <div class="type-chips" id="type-filters">
+          <button class="filter-chip active" data-type="all">All</button>
+          {presentTypes.map(t => (
+            <button class="filter-chip" data-type={t}>
+              {TYPE_CHIP_LABELS[t] ?? t}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Significance chips -->
+      {hasPrimarySourceQuality && (
+        <div class="filter-group">
+          <span class="filter-label">Significance</span>
+          <div class="type-chips" id="sig-filters">
+            <button class="filter-chip sig-chip active" data-sig="all">All</button>
+            <button class="filter-chip sig-chip" data-sig="primary-source-quality">Primary source quality</button>
+          </div>
+        </div>
+      )}
+
+      <!-- Case dropdown -->
+      {referencedCases.length > 0 && (
+        <div class="filter-group">
+          <label class="filter-label" for="case-filter">Case</label>
+          <select class="case-select" id="case-filter">
+            <option value="all">All cases</option>
+            {referencedCases.map(c => (
+              <option value={c.id.replace(/\.md$/, '')}>
+                {c.data.name}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
+
+    </div>
+  </div>
+
+  <!-- ── Grid ── -->
+  <section class="index-section section">
+    <div class="index-grid wa-grid wa-gap-l" id="sources-grid">
+      {sorted.map((entry) => {
+        const d = entry.data;
+        const relatedCases = (d.related_cases as string[] | undefined) ?? [];
+        const primaryUrl = d.url ?? d.spotify_url ?? d.apple_podcasts_url ?? null;
+        const displayLine = sourceDisplayLine(d);
+
+        return (
+          <article
+            data-type={d.source_type}
+            data-sig={d.significance ?? 'secondary'}
+            data-cases={relatedCases.join(',')}
+          >
+            <div class="source-card">
+              <!-- Type + significance badges -->
+              <div class="card-badges wa-cluster wa-gap-2xs">
+                <wa-tag variant="neutral" appearance="filled" size="s" pill>
+                  <wa-icon slot="prefix" name={typeIcon(d.source_type)} variant="solid"></wa-icon>
+                  {typeLabel(d.source_type)}
+                </wa-tag>
+                {d.significance === 'primary-source-quality' && (
+                  <wa-tag variant="warning" appearance="filled" size="s" pill>
+                    Primary source quality
+                  </wa-tag>
+                )}
+              </div>
+
+              <!-- Title + meta -->
+              <div class="card-body wa-stack wa-gap-2xs">
+                {primaryUrl ? (
+                  <a
+                    href={primaryUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="source-title-link"
+                  >
+                    {d.title}
+                    <wa-icon name="arrow-up-right-from-square" variant="solid" class="ext-icon"></wa-icon>
+                  </a>
+                ) : (
+                  <span class="source-title">{d.title}</span>
+                )}
+                {displayLine && (
+                  <p class="source-meta">{displayLine}</p>
+                )}
+              </div>
+
+              <!-- Related cases -->
+              {relatedCases.length > 0 && (
+                <div class="related-cases wa-cluster wa-gap-2xs">
+                  {relatedCases.map(slug => {
+                    const c = allCases.find(c => c.id.replace(/\.md$/, '') === slug);
+                    return c ? (
+                      <a href={`/cases/${slug}/`} class="case-pill">
+                        {c.data.name}
+                      </a>
+                    ) : null;
+                  })}
+                </div>
+              )}
+
+              <!-- Extra links for podcasts -->
+              {(d.spotify_url || d.apple_podcasts_url) && d.source_type === 'podcast-episode' && (
+                <div class="podcast-links wa-cluster wa-gap-xs">
+                  {d.spotify_url && (
+                    <a href={d.spotify_url} target="_blank" rel="noopener noreferrer" class="podcast-link">
+                      <wa-icon name="spotify" library="brand-icons" variant="solid"></wa-icon>
+                      Spotify
+                    </a>
+                  )}
+                  {d.apple_podcasts_url && (
+                    <a href={d.apple_podcasts_url} target="_blank" rel="noopener noreferrer" class="podcast-link">
+                      <wa-icon name="apple" library="brand-icons" variant="solid"></wa-icon>
+                      Apple Podcasts
+                    </a>
+                  )}
+                </div>
+              )}
+            </div>
+          </article>
+        );
+      })}
+    </div>
+
+    <p class="empty-state" id="empty-state" hidden>
+      No sources match those filters.
+    </p>
+  </section>
+</Layout>
+
+<style>
+  /* ─── Page hero ─── */
+  .page-hero {
+    padding-block: var(--wa-space-3xl);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
+  .page-hero-inner h1 {
+    font-size: var(--wa-font-size-2xl);
+    font-weight: 700;
+    margin: 0;
+    color: var(--wa-color-text-normal);
+  }
+
+  .page-hero-desc {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  /* ─── Filter bar ─── */
+  .filter-bar {
+    padding-block: var(--wa-space-m);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    position: sticky;
+    top: var(--header-height, 4rem);
+    z-index: 4;
+  }
+
+  .filter-bar-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--wa-space-l);
+  }
+
+  .filter-group {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-s);
+    flex-wrap: wrap;
+  }
+
+  .filter-label {
+    font-size: var(--wa-font-size-xs);
+    font-weight: 600;
+    color: var(--wa-color-text-quiet);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+
+  .type-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--wa-space-2xs);
+  }
+
+  .filter-chip {
+    padding: var(--wa-space-2xs) var(--wa-space-s);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-pill);
+    background: var(--wa-color-surface-default);
+    font-family: var(--font-ui);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    cursor: pointer;
+    transition: background-color 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    white-space: nowrap;
+    line-height: 1;
+  }
+
+  .filter-chip:hover {
+    border-color: var(--site-sources);
+    color: var(--site-sources);
+  }
+
+  .filter-chip.active {
+    background-color: var(--site-sources);
+    border-color: var(--site-sources);
+    color: #fff;
+  }
+
+  .case-select {
+    padding: var(--wa-space-2xs) var(--wa-space-s);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-m);
+    background-color: var(--wa-color-surface-default);
+    font-family: var(--font-ui);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-normal);
+    cursor: pointer;
+    appearance: auto;
+  }
+
+  .case-select:focus {
+    outline: var(--wa-focus-ring);
+    outline-offset: var(--wa-focus-ring-offset);
+    border-color: var(--site-sources);
+  }
+
+  /* ─── Grid ─── */
+  .index-section {
+    padding-block: var(--wa-space-3xl);
+  }
+
+  .index-grid {
+    --min-column-size: 22rem;
+  }
+
+  /* ─── Source card ─── */
+  .source-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-s);
+    padding: var(--wa-space-m);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-left: var(--wa-space-2xs) solid var(--site-sources);
+    border-radius: var(--wa-border-radius-m);
+    background-color: var(--wa-color-surface-default);
+    height: 100%;
+    box-sizing: border-box;
+    transition: box-shadow 0.15s ease;
+  }
+
+  .source-card:hover {
+    box-shadow: var(--wa-shadow-m);
+  }
+
+  .card-badges {
+    flex-wrap: wrap;
+  }
+
+  .card-body {
+    flex: 1;
+  }
+
+  .source-title-link {
+    font-size: var(--wa-font-size-m);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    text-decoration: none;
+    line-height: 1.3;
+    display: inline;
+  }
+
+  .source-title-link:hover {
+    color: var(--site-sources);
+    text-decoration: underline;
+  }
+
+  .source-title {
+    font-size: var(--wa-font-size-m);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    line-height: 1.3;
+  }
+
+  .ext-icon {
+    font-size: 0.7em;
+    margin-left: 0.3em;
+    opacity: 0.6;
+    vertical-align: super;
+  }
+
+  .source-meta {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+  }
+
+  /* ─── Related case pills ─── */
+  .related-cases {
+    flex-wrap: wrap;
+  }
+
+  .case-pill {
+    font-size: var(--wa-font-size-xs);
+    padding: 2px var(--wa-space-xs);
+    border: var(--wa-border-width-s) solid var(--site-cases);
+    border-radius: var(--wa-border-radius-pill);
+    color: var(--site-cases);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.12s ease, color 0.12s ease;
+  }
+
+  .case-pill:hover {
+    background-color: var(--site-cases);
+    color: #fff;
+  }
+
+  /* ─── Podcast links ─── */
+  .podcast-links {
+    flex-wrap: wrap;
+  }
+
+  .podcast-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wa-space-2xs);
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    text-decoration: none;
+    padding: 2px var(--wa-space-xs);
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-pill);
+    transition: color 0.12s ease, border-color 0.12s ease;
+  }
+
+  .podcast-link:hover {
+    color: var(--site-sources);
+    border-color: var(--site-sources);
+  }
+
+  /* ─── Empty state ─── */
+  .empty-state {
+    text-align: center;
+    color: var(--wa-color-text-quiet);
+    padding-block: var(--wa-space-3xl);
+  }
+</style>
+
+<script>
+  const grid     = document.getElementById('sources-grid')!;
+  const countEl  = document.getElementById('sources-count')!;
+  const emptyEl  = document.getElementById('empty-state')!;
+  const typeBar  = document.getElementById('type-filters');
+  const sigBar   = document.getElementById('sig-filters');
+  const caseSel  = document.getElementById('case-filter') as HTMLSelectElement | null;
+
+  let activeType = 'all';
+  let activeSig  = 'all';
+  let activeCase = 'all';
+
+  function applyFilters() {
+    const articles = grid.querySelectorAll<HTMLElement>('article');
+    let visible = 0;
+
+    articles.forEach(article => {
+      const type  = article.dataset.type  ?? '';
+      const sig   = article.dataset.sig   ?? '';
+      const cases = article.dataset.cases ?? '';
+
+      const typeOk = activeType === 'all' || type === activeType;
+      const sigOk  = activeSig  === 'all' || sig === activeSig;
+      const caseOk = activeCase === 'all' || cases.split(',').includes(activeCase);
+
+      const show = typeOk && sigOk && caseOk;
+      article.hidden = !show;
+      if (show) visible++;
+    });
+
+    countEl.textContent = String(visible);
+    emptyEl.hidden = visible > 0;
+  }
+
+  // Type chips
+  typeBar?.addEventListener('click', e => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('.filter-chip');
+    if (!btn) return;
+    typeBar.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    activeType = btn.dataset.type ?? 'all';
+    applyFilters();
+  });
+
+  // Significance chips
+  sigBar?.addEventListener('click', e => {
+    const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('.sig-chip');
+    if (!btn) return;
+    sigBar.querySelectorAll('.sig-chip').forEach(c => c.classList.remove('active'));
+    btn.classList.add('active');
+    activeSig = btn.dataset.sig ?? 'all';
+    applyFilters();
+  });
+
+  // Case dropdown
+  caseSel?.addEventListener('change', () => {
+    activeCase = caseSel.value;
+    applyFilters();
+  });
+</script>

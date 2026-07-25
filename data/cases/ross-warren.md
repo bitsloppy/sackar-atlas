@@ -378,8 +378,3 @@ LGBTIQ bias was a factor in the death."*
 No one has ever been charged with Ross Warren's murder. His body has never been
 found. His mother wrote letters to police for years seeking answers. No
 accountability has followed.
-
----
-
-*Source: NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J,
-2023), Vol. 2, Ch. 5, paras 5.1583–5.2105, pp. 479–560.*

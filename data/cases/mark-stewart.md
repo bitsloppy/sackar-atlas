@@ -343,7 +343,3 @@ Relevant factors identified by the Inquiry as supporting the possibility of LGBT
 Nothing more is known. His younger sister spoke with the Inquiry. His father died years before the SCOI was established. Every physical exhibit from 1976 is gone. The notepaper that might have answered the key question was never photographed.
 
 Mark Stewart was eighteen years old. He had been in Sydney for perhaps four days. He knew the cliffs above Shelley Beach from childhood holidays. He was found face down on the rocks below, and within five hours police had concluded there was nothing suspicious.
-
----
-
-*Source: NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023), Vol. 2, Ch. 5, paras 5.96–5.281, pp. 219–252.*

@@ -374,8 +374,3 @@ Jacques Musy gave a statement to Operation Taradale in 2002 — seventeen years 
 the man he had shared his life with since 1978 walked out the door and did not
 come back. The Inquiry noted that Renée Mattaini, Gilles' mother, died in 2017
 still not knowing what had happened to her son.
-
----
-
-*Source: NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J,
-2023), Vol. 2, Ch. 5, paras 5.1583–5.2104, pp. 479–560.*

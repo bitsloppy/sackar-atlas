@@ -37,11 +37,23 @@ const relatedEvents = (d.related_events ?? [])
   .map(id => allEvents.find(e => e.id.replace(/\.md$/, '') === id))
   .filter((x): x is NonNullable<typeof x> => x != null);
 
+const policeInvestigations = (d.police_investigations ?? []) as Array<{
+  name: string; years?: string | null; outcome?: string | null; notes?: string | null;
+}>;
+
+const policeEvents = relatedEvents.filter(e =>
+  e.data.event_type === 'police-action' || e.data.event_type === 'inquiry'
+);
+const otherEvents = relatedEvents.filter(e =>
+  e.data.event_type !== 'police-action' && e.data.event_type !== 'inquiry'
+);
+const hasEventsTab = policeInvestigations.length > 0 || relatedEvents.length > 0;
+
 const hasRelated =
   relatedCases.length > 0 ||
   relatedLocations.length > 0 ||
   relatedPeople.length > 0 ||
-  relatedEvents.length > 0;
+  hasEventsTab;
 
 // ── Label helpers ─────────────────────────────────────────────────────────
 
@@ -111,6 +123,37 @@ function accountabilityLabel(s: string | null | undefined): string {
     'convicted':               'Conviction obtained',
   };
   return m[s ?? ''] ?? s ?? '—';
+}
+
+// ── Body excerpt helper (strips basic markdown) ──────────────────────────
+function getExcerpt(body: string | undefined | null, maxLen = 240): string | null {
+  if (!body) return null;
+  const plain = body
+    .replace(/#{1,6}\s+/g, '')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/`[^`]+`/g, '')
+    .trim();
+  const firstPara = plain.split(/\n\n+/).find(p => p.trim().length > 20)?.trim() ?? '';
+  if (!firstPara) return null;
+  return firstPara.length <= maxLen ? firstPara : firstPara.slice(0, maxLen).trimEnd() + '\u2026';
+}
+
+function evTypeLabel(type: string): string {
+  const m: Record<string, string> = {
+    'activism':        'Activism',
+    'legal-milestone': 'Legal milestone',
+    'cultural':        'Cultural',
+    'political':       'Political',
+    'community':       'Community',
+    'police-action':   'Police action',
+    'memorial':        'Memorial',
+    'media':           'Media',
+    'inquiry':         'Inquiry',
+    'other':           'Other',
+  };
+  return m[type] ?? type;
 }
 
 const scoi = d.sources?.scoi;
@@ -230,17 +273,38 @@ const scoiRef = scoi
           </div>
         )}
 
-        {d.sexuality && (
-          <div class="fact">
-            <span class="fact-label">Sexuality</span>
-            <span class="fact-value">
-              {d.sexuality.display_note ?? d.sexuality.identity ?? 'Unknown'}
-              {d.sexuality.confidence && d.sexuality.confidence !== 'unknown' && (
-                <span class="fact-sub">({d.sexuality.confidence})</span>
+        {d.sexuality && (() => {
+          const shortLabel =
+            d.sexuality.identity
+              ? d.sexuality.identity.charAt(0).toUpperCase() + d.sexuality.identity.slice(1)
+              : d.sexuality.confidence === 'unknown' || !d.sexuality.confidence
+              ? 'Uncertain'
+              : d.sexuality.confidence.charAt(0).toUpperCase() + d.sexuality.confidence.slice(1);
+          const isLong = (d.sexuality.display_note?.length ?? 0) > 80;
+          return (
+            <div class="fact">
+              <span class="fact-label">Sexuality</span>
+              {isLong ? (
+                <details class="fact-expandable">
+                  <summary class="fact-value fact-value--summary">
+                    {shortLabel}
+                    {d.sexuality.confidence && d.sexuality.confidence !== 'unknown' && (
+                      <span class="fact-sub">({d.sexuality.confidence})</span>
+                    )}
+                  </summary>
+                  <p class="fact-expanded-note">{d.sexuality.display_note}</p>
+                </details>
+              ) : (
+                <span class="fact-value">
+                  {d.sexuality.display_note ?? shortLabel}
+                  {d.sexuality.confidence && d.sexuality.confidence !== 'unknown' && (
+                    <span class="fact-sub">({d.sexuality.confidence})</span>
+                  )}
+                </span>
               )}
-            </span>
-          </div>
-        )}
+            </div>
+          );
+        })()}
 
         {mf?.inquiry_finding && (
           <div class="fact">
@@ -327,43 +391,44 @@ const scoiRef = scoi
       </div>
     </section>
 
-    <!-- ══ Police investigations ════════════════════════════════════════════ -->
-    {(d.police_investigations ?? []).length > 0 && (
-      <section class="investigations-section section">
+    <!-- ══ Sources ═══════════════════════════════════════════════════════════════════ -->
+    {scoi && (
+      <section class="sources-section section">
         <wa-details appearance="filled-outlined">
           <span slot="summary" class="details-summary">
-            <wa-icon name="magnifying-glass" variant="solid" class="details-icon"></wa-icon>
-            Police investigations
+            <wa-icon name="book-open" variant="solid" class="details-icon"></wa-icon>
+            Sources
           </span>
-          <div class="investigations-list wa-stack wa-gap-m">
-            {(d.police_investigations ?? []).map(inv => (
-              <div class="investigation-item">
-                <div class="inv-header wa-cluster wa-gap-s wa-align-items-center">
-                  <strong>{inv.name}</strong>
-                  {inv.years && <span class="inv-years">{inv.years}</span>}
-                  {inv.outcome && (
-                    <wa-tag variant="neutral" size="s" appearance="outlined" pill>
-                      {inv.outcome.replace(/-/g, ' ')}
-                    </wa-tag>
-                  )}
-                </div>
-                {inv.notes && <p class="inv-notes">{inv.notes}</p>}
-              </div>
-            ))}
+          <div class="source-citation">
+            <p>
+              NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J) (2023)
+              <em>Report of the Special Commission of Inquiry</em>,
+              vol.&nbsp;{scoi.volume}
+              {scoi.chapter && `, ch.&nbsp;${scoi.chapter}`}
+              {scoi.paragraph && `, paras&nbsp;${scoi.paragraph}`}
+              {scoi.page_start && `, pp.&nbsp;${scoi.page_start}`}
+              {scoi.page_end && scoi.page_end !== scoi.page_start && `–${scoi.page_end}`},
+              NSW Government, Sydney.
+            </p>
           </div>
         </wa-details>
       </section>
     )}
 
+
     <!-- ══ Related content ══════════════════════════════════════════════════ -->
     {hasRelated && (
       <section class="related-section section">
-        <h2 class="related-heading">Related</h2>
-        <wa-tab-group>
+        <div class="nav-block">
+          <div class="nav-block-header">
+            <wa-icon name="share-nodes" variant="solid" class="details-icon"></wa-icon>
+            Related
+          </div>
+          <wa-tab-group>
 
           {relatedCases.length > 0 && (
             <>
-              <wa-tab panel="related-cases">
+              <wa-tab panel="related-cases" class="tab-cases">
                 Cases ({relatedCases.length})
               </wa-tab>
               <wa-tab-panel name="related-cases">
@@ -385,7 +450,7 @@ const scoiRef = scoi
 
           {relatedLocations.length > 0 && (
             <>
-              <wa-tab panel="related-locations">
+              <wa-tab panel="related-locations" class="tab-locations">
                 Locations ({relatedLocations.length})
               </wa-tab>
               <wa-tab-panel name="related-locations">
@@ -407,7 +472,7 @@ const scoiRef = scoi
 
           {relatedPeople.length > 0 && (
             <>
-              <wa-tab panel="related-people">
+              <wa-tab panel="related-people" class="tab-people">
                 People ({relatedPeople.length})
               </wa-tab>
               <wa-tab-panel name="related-people">
@@ -427,52 +492,104 @@ const scoiRef = scoi
             </>
           )}
 
-          {relatedEvents.length > 0 && (
+          {hasEventsTab && (
             <>
-              <wa-tab panel="related-events">
-                Events ({relatedEvents.length})
+              <wa-tab panel="related-events" class="tab-events">
+                Events ({policeInvestigations.length + relatedEvents.length})
               </wa-tab>
               <wa-tab-panel name="related-events">
-                <ul class="related-list">
-                  {relatedEvents.map(e => (
-                    <li>
-                      <a href={`/events/${e.id.replace(/\.md$/, '')}/`} class="related-link">
-                        {e.data.title}
-                      </a>
-                      {e.data.date_display && (
-                        <span class="related-meta">{e.data.date_display}</span>
+                <div class="events-tab-content wa-stack wa-gap-l">
+
+                  {/* Police response group */}
+                  {(policeInvestigations.length > 0 || policeEvents.length > 0) && (
+                    <div class="event-group">
+                      <h3 class="event-group-heading">
+                        <wa-icon name="magnifying-glass" variant="solid"></wa-icon>
+                        Police response
+                      </h3>
+                      <div class="event-group-items wa-stack wa-gap-m">
+                        {policeInvestigations.map(inv => (
+                          <div class="event-verbose event-verbose--police">
+                            <div class="ev-header wa-cluster wa-gap-s">
+                              <strong class="ev-title">{inv.name}</strong>
+                              {inv.years && <span class="ev-years">{inv.years}</span>}
+                              {inv.outcome && (
+                                <wa-tag variant="neutral" size="s" appearance="outlined" pill>
+                                  {(inv.outcome as string).replace(/-/g, ' ')}
+                                </wa-tag>
+                              )}
+                            </div>
+                            {inv.notes && <p class="ev-notes">{inv.notes}</p>}
+                          </div>
+                        ))}
+                        {policeEvents.map(e => {
+                          const slug = e.id.replace(/\.md$/, '');
+                          const excerpt = getExcerpt((e as any).body);
+                          return (
+                            <div class="event-verbose event-verbose--police">
+                              <div class="ev-header wa-cluster wa-gap-s">
+                                <wa-tag variant="warning" size="s" appearance="filled" pill>
+                                  {evTypeLabel(e.data.event_type)}
+                                </wa-tag>
+                                <a href={`/events/${slug}/`} class="ev-title-link">{e.data.title}</a>
+                                {(e.data.date_display ?? e.data.date) && (
+                                  <span class="ev-years">{e.data.date_display ?? e.data.date}</span>
+                                )}
+                              </div>
+                              {excerpt && <p class="ev-notes">{excerpt}</p>}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Other events group */}
+                  {otherEvents.length > 0 && (
+                    <div class="event-group">
+                      {(policeInvestigations.length > 0 || policeEvents.length > 0) && (
+                        <h3 class="event-group-heading">
+                          <wa-icon name="calendar" variant="solid"></wa-icon>
+                          Other events
+                        </h3>
                       )}
-                    </li>
-                  ))}
-                </ul>
+                      <div class="event-group-items wa-stack wa-gap-m">
+                        {otherEvents.map(e => {
+                          const slug = e.id.replace(/\.md$/, '');
+                          const excerpt = getExcerpt((e as any).body);
+                          return (
+                            <div class="event-verbose">
+                              <div class="ev-header wa-cluster wa-gap-s">
+                                <wa-tag variant="neutral" size="s" appearance="filled" pill>
+                                  {evTypeLabel(e.data.event_type)}
+                                </wa-tag>
+                                <a href={`/events/${slug}/`} class="ev-title-link">{e.data.title}</a>
+                                {(e.data.date_display ?? e.data.date) && (
+                                  <span class="ev-years">{e.data.date_display ?? e.data.date}</span>
+                                )}
+                              </div>
+                              {excerpt && <p class="ev-notes">{excerpt}</p>}
+                              {e.data.location_name && (
+                                <p class="ev-location">
+                                  <wa-icon name="location-dot" variant="solid" class="meta-icon"></wa-icon>
+                                  {e.data.location_name}
+                                </p>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
+                </div>
               </wa-tab-panel>
             </>
           )}
 
-        </wa-tab-group>
-      </section>
-    )}
 
-    <!-- ══ Sources ═══════════════════════════════════════════════════════════ -->
-    {scoi && (
-      <section class="sources-section section">
-        <wa-details appearance="filled-outlined">
-          <span slot="summary" class="details-summary">
-            <wa-icon name="book-open" variant="solid" class="details-icon"></wa-icon>
-            Primary source
-          </span>
-          <div class="source-citation">
-            <p>
-              NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J) (2023)
-              <em>Report of the Special Commission of Inquiry</em>,
-              vol.&nbsp;{scoi.volume}
-              {scoi.chapter && `, ch.&nbsp;${scoi.chapter}`}
-              {scoi.page_start && `, p.&nbsp;${scoi.page_start}`}
-              {scoi.page_end && scoi.page_end !== scoi.page_start && `–${scoi.page_end}`},
-              NSW Government, Sydney.
-            </p>
-          </div>
-        </wa-details>
+        </wa-tab-group>
+        </div>
       </section>
     )}
 
@@ -486,8 +603,10 @@ const scoiRef = scoi
 
   /* ─── Content warning ─── */
   .content-warning-wrap {
-    padding-top: var(--wa-space-xl);
-    padding-bottom: 0;
+    padding-top: var(--wa-space-l);
+    padding-bottom: var(--wa-space-l);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
   }
 
   /* ─── Case header ─── */
@@ -620,6 +739,42 @@ const scoiRef = scoi
     margin-left: var(--wa-space-3xs);
   }
 
+  .fact-expandable {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-2xs);
+  }
+
+  .fact-value--summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: baseline;
+    gap: var(--wa-space-2xs);
+  }
+
+  .fact-value--summary::-webkit-details-marker { display: none; }
+
+  .fact-value--summary::after {
+    content: '\25BE'; /* ▾ */
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    transition: transform 0.15s ease;
+  }
+
+  details[open] .fact-value--summary::after {
+    content: '\25B4'; /* ▴ */
+  }
+
+  .fact-expanded-note {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    line-height: 1.6;
+    margin: var(--wa-space-2xs) 0 0 0;
+    padding-top: var(--wa-space-2xs);
+    border-top: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+  }
+
   /* ─── SCOI finding ─── */
   .finding-section,
   .misconduct-section,
@@ -717,42 +872,129 @@ const scoiRef = scoi
     color: var(--wa-color-text-quiet);
   }
 
-  /* ─── Police investigations ─── */
-  .investigations-list {
-    padding: var(--wa-space-s) 0;
+  /* ─── Events tab: verbose grouped layout ─── */
+  .events-tab-content {
+    padding-block: var(--wa-space-s);
   }
 
-  .investigation-item {
-    padding-bottom: var(--wa-space-s);
+  .event-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-s);
+  }
+
+  .event-group-heading {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-2xs);
+    font-size: var(--wa-font-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    padding-bottom: var(--wa-space-xs);
     border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
   }
 
-  .investigation-item:last-child {
-    border-bottom: none;
-    padding-bottom: 0;
+  .event-group-items {
+    padding-left: var(--wa-space-xs);
   }
 
-  .inv-header {
+  .event-verbose {
+    padding: var(--wa-space-s) var(--wa-space-m);
+    border-left: 3px solid var(--wa-color-surface-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-2xs);
+  }
+
+  .event-verbose--police {
+    border-left-color: var(--wa-color-warning-border-normal);
+  }
+
+  .ev-header {
     flex-wrap: wrap;
+    align-items: center;
   }
 
-  .inv-years {
+  .ev-title {
     font-size: var(--wa-font-size-s);
-    color: var(--wa-color-text-quiet);
+    color: var(--wa-color-text-normal);
   }
 
-  .inv-notes {
+  .ev-title-link {
+    font-size: var(--wa-font-size-s);
+    font-weight: 600;
+    color: var(--wa-color-text-link);
+    text-decoration: none;
+  }
+
+  .ev-title-link:hover {
+    text-decoration: underline;
+  }
+
+  .ev-years {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    white-space: nowrap;
+  }
+
+  .ev-notes {
     font-size: var(--wa-font-size-s);
     color: var(--wa-color-text-quiet);
-    margin: var(--wa-space-2xs) 0 0 0;
-    line-height: 1.55;
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  .ev-location {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-3xs);
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
   }
 
   /* ─── Related content ─── */
-  .related-heading {
-    font-size: var(--wa-font-size-l);
-    font-weight: 600;
-    margin: 0 0 var(--wa-space-m) 0;
+  /* ─── Tab group: padding + colour-coded tabs ─── */
+  wa-tab-group::part(body) {
+    padding: var(--wa-space-m);
+  }
+
+  wa-tab-group::part(nav) {
+    padding-inline: var(--wa-space-s);
+  }
+
+  /* Active indicator colour per tab type */
+  .tab-cases    { --indicator-color: var(--site-cases); }
+  .tab-locations{ --indicator-color: var(--site-locations); }
+  .tab-people   { --indicator-color: var(--site-people); }
+  .tab-events   { --indicator-color: var(--site-events); }
+
+  /* Tab label colour when active — target the shadow part */
+  .tab-cases[active]::part(base)    { color: var(--site-cases); }
+  .tab-locations[active]::part(base){ color: var(--site-locations); }
+  .tab-people[active]::part(base)   { color: var(--site-people); }
+  .tab-events[active]::part(base)   { color: var(--site-events); }
+
+  /* ─── Nav block (shared container for Sources + Related) ─── */
+  .nav-block {
+    border: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-m);
+    overflow: hidden;
+  }
+
+  .nav-block-header {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-xs);
+    padding: var(--wa-space-s) var(--wa-space-m);
+    background-color: var(--wa-color-surface-lowered);
+    border-bottom: var(--wa-border-width-s) solid var(--wa-color-surface-border);
+    font-size: var(--wa-font-size-s);
+    font-weight: 500;
+    color: var(--wa-color-text-normal);
   }
 
   .related-list {

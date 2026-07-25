@@ -298,7 +298,3 @@ Sackar J's formal finding:
 He declined to adopt the Coroner's accidental finding. He found there is "objectively reason to suspect both that the death of Mr Rath was a homicide and that LGBTIQ bias was a factor."
 
 **Recommendation 1:** The Commissioner of the NSWPF, or a serving police officer, should make an application for a fresh inquest into Paul Rath's death.
-
----
-
-*Source: NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023), Vol. 2, Ch. 5, paras 5.282–5.461, pp. 253–282.*

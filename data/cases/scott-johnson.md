@@ -184,6 +184,7 @@ related_people:
   - "scott-johnson"
   - "scott-white"
   - "doreen-cruickshank"
+  - "derek-hand"
 related_events: []
 related_media: []
 related_recommendations: []
@@ -403,10 +404,3 @@ been investigated as a potential hate crime from the beginning.
 
 Scott Johnson was awarded his PhD in mathematics by the Australian National
 University in 1995 — seven years after he died.
-
----
-
-*Source: NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J,
-2023), Vol. 3, Ch. 11, paras 11.4–11.240, pp. 1627–1672. See also: State Coroner
-Barnes, Third Inquest into the death of Scott Russell Johnson, 30 November 2017;
-R v White [2023] NSWSC 611.*

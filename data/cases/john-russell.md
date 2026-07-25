@@ -391,8 +391,3 @@ Peter Russell learned about the Neiwand reversal through the Sackar Inquiry.
 
 Strike Force Parrabell had categorised the death as "evidence to suspect a bias
 crime." The Sackar Inquiry confirmed this. No one has ever been charged.
-
----
-
-*Source: NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J,
-2023), Vol. 2, Ch. 5, paras 5.1583–5.2106, pp. 479–560.*

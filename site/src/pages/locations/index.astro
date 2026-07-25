@@ -176,15 +176,15 @@ const presentRoles = ROLE_FILTER_ORDER.filter(r => allRoles.includes(r));
                     )}
                   </div>
                   {(d.location_roles ?? []).length > 0 && (
-                    <div class="item-roles wa-cluster wa-gap-2xs">
+                    <div class="item-roles">
                       {(d.location_roles ?? []).map((role) => (
-                        <wa-tag size="s" appearance="outlined" variant="neutral">{roleLabel(role)}</wa-tag>
+                        <span class="role-chip">{roleLabel(role)}</span>
                       ))}
                     </div>
                   )}
                   {d.stub && (
-                    <div>
-                      <wa-tag variant="neutral" size="s">Research incomplete</wa-tag>
+                    <div class="item-roles">
+                      <span class="role-chip role-chip--stub">Research incomplete</span>
                     </div>
                   )}
                 </div>
@@ -370,7 +370,28 @@ const presentRoles = ROLE_FILTER_ORDER.filter(r => allRoles.includes(r));
   }
 
   .item-roles {
+    display: flex;
     flex-wrap: wrap;
+    gap: var(--wa-space-2xs);
+    margin-top: var(--wa-space-3xs);
+  }
+
+  .role-chip {
+    display: inline-block;
+    font-size: var(--wa-font-size-xs);
+    font-family: var(--font-ui);
+    color: var(--wa-color-text-quiet);
+    background: transparent;
+    border: 1px solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-pill);
+    padding: 1px var(--wa-space-xs);
+    white-space: nowrap;
+    line-height: 1.6;
+  }
+
+  .role-chip--stub {
+    color: var(--wa-color-text-quiet);
+    border-style: dashed;
   }
 
   /* ─── Empty state ─── */
