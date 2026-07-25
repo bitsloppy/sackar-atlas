@@ -10,6 +10,7 @@ stub: true
 
 related_cases:
   - david-lloyd-williams
+  - ernest-head
 related_events: []
 
 tags:

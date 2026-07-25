@@ -28,7 +28,8 @@ consultation_status: not-assessed
 
 physical_markers: []
 
-related_cases: []
+related_cases:
+  - "crispin-dye"
 related_locations:
   - oxford-street
   - surry-hills-pac

@@ -122,3 +122,7 @@ held_by: "Mitchell Library / State Library NSW / ..."
   not Trove IDs — they can't be searched on Trove directly.
 - The SCOI cited the 18 May 1976 Manly Daily as SCOI.82454 — this is the exhibit number
   in the inquiry record, confirming the article exists.
+
+## Crispin Dye
+
+- Feneley R and Levy M (13 August 2014) "$100,000 reward to find killers of AC/DC manager Crispin Dye", Sydney Morning Herald. SCOI exhibit: SCOI.83514. Note: 2014 article, unlikely to be on Trove — check SMH archives or direct URL.

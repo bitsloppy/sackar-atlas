@@ -36,6 +36,7 @@ physical_markers: []
 related_cases:
   - mark-stewart
   - paul-rath
+  - ernest-head
 related_events: []
 related_media: []
 
