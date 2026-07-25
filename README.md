@@ -19,7 +19,7 @@ A public data project making a dense government inquiry accessible to anyone. Th
 | Folder | Contents | Licence |
 |--------|----------|---------|
 | `site/` | Astro static site (public-facing website) | MIT |
-| `data/sydney/` | Structured historical data — cases, locations, events, people | CC-BY 4.0 |
+| `data/` | Structured historical data — cases, locations, events, people | CC-BY 4.0 |
 | `journalism/` | Original writing and archival journalism | © Anna Roberts |
 | `scripts/` | Data ingestion tools, Trove helper, build utilities | MIT |
 
@@ -45,16 +45,16 @@ A `CITATION.cff` file is included — GitHub renders this as a **Cite this repos
 
 ### An individual record
 
-> Roberts A (2026) '[Record title]', *Sackar Atlas* [data set record], https://github.com/bitsloppy/sackar-atlas/blob/main/data/sydney/[collection]/[slug].md, accessed [Day Month Year].
+> Roberts A (2026) '[Record title]', *Sackar Atlas* [data set record], https://github.com/bitsloppy/sackar-atlas/blob/main/data/[collection]/[slug].md, accessed [Day Month Year].
 
 Example:
-> Roberts A (2026) 'Mark Stewart', *Sackar Atlas* [data set record], https://github.com/bitsloppy/sackar-atlas/blob/main/data/sydney/cases/mark-stewart.md, accessed 17 July 2026.
+> Roberts A (2026) 'Mark Stewart', *Sackar Atlas* [data set record], https://github.com/bitsloppy/sackar-atlas/blob/main/data/cases/mark-stewart.md, accessed 17 July 2026.
 
 Once the site is live on a domain, use the site URL instead of the GitHub file path. Each record page will include a pre-formatted citation string.
 
 ### Licence requirement
 
-All data under `data/sydney/` is published under **CC-BY 4.0**. Attribution is a licence condition — please cite as above. Original journalism under `journalism/` is © Anna Roberts, all rights reserved.
+All data under `data/` is published under **CC-BY 4.0**. Attribution is a licence condition — please cite as above. Original journalism under `journalism/` is © Anna Roberts, all rights reserved.
 
 → Full licence details: [LICENSING.md](LICENSING.md)  
 → Methodology and project bibliography: [REFERENCES.md](REFERENCES.md)
@@ -65,7 +65,7 @@ All data under `data/sydney/` is published under **CC-BY 4.0**. Attribution is a
 
 This site targets **WCAG 2.1 Level AA** compliance. The subject matter documents the lives of people failed by institutions — the site should not itself be exclusionary.
 
-**Current status (2026-07-19):** AA compliant on all published pages.
+**Current status (2026-07-25):** AA compliant on all published pages.
 
 **Standing commitments:**
 - Text contrast ≥ 4.5:1 on all backgrounds (3:1 for large text / UI components)
@@ -82,7 +82,7 @@ This site targets **WCAG 2.1 Level AA** compliance. The subject matter documents
 
 ## Status
 
-🟢 Active development — 3 cases published, full interactivity layer live, WCAG AA compliant.
+🟢 Active development — 5 cases published, full interactivity layer live, WCAG AA compliant. [Live site →](https://sackar-atlas.soft-hill-5225.workers.dev)
 
 ---
 
