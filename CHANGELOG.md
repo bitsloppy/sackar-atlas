@@ -21,6 +21,24 @@ Routine additions of optional fields are not.
 
 ---
 
+## 2026-07-25
+
+### Data — Raymond Keam (1987), Crispin Dye (1993), Ernest Head (1976)
+
+Three new cases entered, plus 7 new people stubs and 3 new location records.
+
+**Raymond Keam** — SCOI Category A, 1987. Killed in Alison Park, Randwick — a known gay beat. Aged 43. Married man and father; targeted based on a false perception of his sexual orientation. Stanley Bruce Early (then 'Spider Sutton') was convicted of murder on 7 June 2023 and sentenced to a maximum of 22 years by Justice Yehia on 20 October 2023. One of only two successful prosecutions from the Parrabell 88 (the other being Scott Johnson/Scott White). Sexuality: unknown. Source: SCOI Vol 2, para 5.29, p 206.
+
+**Crispin Dye** — SCOI Category A, 1993. Music publisher; AC/DC manager. Killed in the laneway behind Kinselas nightclub, Darlinghurst, on Christmas morning 1993. Aged 41. Found with severe head injuries; died St George Hospital. Strike Force Barcoo investigated; no charges. Parrabell adopted a binary robbery-or-bias approach Sackar found unconvincing; UHT recommendations (2005) were ignored. 2023: FASS testing of retained clothing discovered Unknown Male B DNA profile (unmatched) and two previously unknown pieces of paper in his shirt pocket. Recommendation 4 applies. Sexuality: possible. Source: SCOI Vol 2, Ch 5, paras 5.3895–5.4270, pp 873–932.
+
+**Ernest Head** — SCOI Category B, 1976. Malaysian-born; emigrated 1960; clerk at the Corporate Affairs Commission. Found dead at his Summer Hill apartment, stabbed 35 times. Gay man, confirmed. In 2023, a palm print in blood found above his body was matched via V11 NAFIS to Engin Simsek — whose fingerprints had been in police files since 1980. Simsek died in Türkiye in 1999; no prosecution possible. Original investigation extensive and thorough, but almost all physical exhibits subsequently lost. Sexuality: confirmed. Source: SCOI Vol 2, Ch 6, paras 6.73–6.298, pp 1162–1201.
+
+New people stubs: stanley-early, engin-simsek, geoffrey-knight, derek-hand, geoffrey-fagan.
+New location records: alison-park, kinselas, st-george-hospital.
+Backlinks updated: eastern-beaches-pac, darlinghurst, surry-hills-pac, city-morgue-glebe, strike-force-parrabell, leonard-nash, scott-johnson (derek-hand).
+
+---
+
 ## 2026-07-23
 
 ### Data — Ross Warren (1989) and Scott Johnson (1988)
