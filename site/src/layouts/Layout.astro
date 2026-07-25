@@ -170,11 +170,16 @@ const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas
 
       @media (max-width: 600px) {
         footer[slot='footer'] {
-          flex-direction: column;
+          flex-direction: column !important;
           gap: var(--wa-space-m);
         }
         .footer-credit {
-          text-align: left;
+          text-align: left !important;
+          width: 100%;
+        }
+        .footer-credit p {
+          max-width: 100%;
+          text-align: left !important;
         }
       }
 
