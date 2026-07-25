@@ -6,11 +6,7 @@ const allSources = await getCollection('sources');
 const allCases   = await getCollection('cases', ({ data }) => data.published === true);
 
 // Sort by date descending (most recent first); undated go last
-const sorted = allSources.sort((a, b) => {
-  const da = a.data.date ?? '0000';
-  const db = b.data.date ?? '0000';
-  return db.localeCompare(da);
-});
+const sorted = allSources.sort((a, b) => a.data.title.localeCompare(b.data.title));
 
 // ── Labels / icons ──────────────────────────────────────────────────────────
 

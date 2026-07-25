@@ -6,11 +6,7 @@ const allEvents = await getCollection('events');
 const allCases  = await getCollection('cases', ({ data }) => data.published === true);
 
 // Sort by date ascending; undated go last
-const sorted = allEvents.sort((a, b) => {
-  const da = a.data.date ?? '9999';
-  const db = b.data.date ?? '9999';
-  return da.localeCompare(db);
-});
+const sorted = allEvents.sort((a, b) => a.data.title.localeCompare(b.data.title));
 
 function eventTypeLabel(type: string): string {
   const labels: Record<string, string> = {
