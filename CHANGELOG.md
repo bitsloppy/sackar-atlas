@@ -23,6 +23,16 @@ Routine additions of optional fields are not.
 
 ## 2026-07-25
 
+### Data — Bill Rooney (1986)
+
+**Bill Rooney** — SCOI Category A, 1986. Died 20 February 1986 at Wollongong Hospital from blunt head injuries sustained in Crown Lane, Wollongong on 14 February (Valentine's Day). Aged 35. Found semi-conscious between a toilet block and retaining wall behind L&B Discounts, near Annabel's Disco. Manner of death undetermined — assault or accidental fall cannot be distinguished on available evidence. Sackar J found objectively reason to suspect LGBTIQ bias. Key person of interest: Mark Scerri, convicted for 12 similar attacks on gay men in Wollongong beginning three weeks after Rooney's death; never charged with Rooney's death. Original investigation found bias-affected: scene hosed down before SIS arrived, no exhibits retained, no sexual assault exam — that omission proved fatal when ODPP twice declined to charge Scerri (1991, 1993). Coroner Soden delivered open finding 15 May 1987 (consistent with SCOI). Strike Force Parrabell answered all 10 indicators "No Evidence of Bias Crime" while its own Case Summary said "it is likely the original Coronial finding... is incorrect" — a logical disconnect Sackar J found inexplicable. Sexuality: confirmed (openly gay, living with de facto partner Wayne Davis). Source: SCOI Vol 2, Ch 5, paras 5.2107–5.2359, pp 561–599.
+
+New location records: crown-lane-wollongong, wollongong-hospital, tattersalls-hotel-wollongong (stub), grand-hotel-wollongong (stub).
+New people: william-rooney, mark-scerri, michael-tranby (stub), warwick-soden (stub), d-ainsworth (stub).
+Backlinks updated: strike-force-parrabell, linda-iles.
+
+---
+
 ### Data — Raymond Keam (1987), Crispin Dye (1993), Ernest Head (1976)
 
 Three new cases entered, plus 7 new people stubs and 3 new location records.
