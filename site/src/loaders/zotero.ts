@@ -159,7 +159,15 @@ async function fetchAllItems(groupId: string, apiKey: string | undefined): Promi
           `Check that the API key has read access to this group.`
         );
         activeHeaders = headerSets[1];
-        res = await fetchPage(url, activeHeaders);
+        try {
+          res = await fetchPage(url, activeHeaders);
+        } catch (fallbackErr: any) {
+          throw new Error(
+            `[zotero] Unauthenticated access also failed (${fallbackErr.message}). ` +
+            `Check that the Zotero group library is set to public read access ` +
+            `(Group Settings → Library → Library reading → Anyone).`
+          );
+        }
       } else {
         throw new Error(`[zotero] API error fetching group ${groupId}: ${err.message}`);
       }
