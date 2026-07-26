@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import '@awesome.me/webawesome/dist/components/tooltip/tooltip.js';
 
 const cases = await getCollection('cases', ({ data }) => data.published === true);
 
