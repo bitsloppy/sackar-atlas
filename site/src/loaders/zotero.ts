@@ -288,8 +288,8 @@ export function zoteroGroupLoader(): Loader {
     name: 'zotero-group-loader',
 
     async load({ store, logger, parseData, generateDigest }: LoaderContext) {
-      const groupId = import.meta.env.ZOTERO_GROUP_ID ?? process.env.ZOTERO_GROUP_ID;
-      const apiKey  = import.meta.env.ZOTERO_API_KEY ?? process.env.ZOTERO_API_KEY;
+      const groupId = (import.meta.env.ZOTERO_GROUP_ID ?? process.env.ZOTERO_GROUP_ID)?.trim();
+      const apiKey  = (import.meta.env.ZOTERO_API_KEY ?? process.env.ZOTERO_API_KEY)?.trim();
 
       if (!groupId) {
         logger.warn(
