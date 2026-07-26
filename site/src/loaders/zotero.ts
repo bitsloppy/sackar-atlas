@@ -220,11 +220,9 @@ function transformItem(item: any): Record<string, unknown> {
     ...splitList(x.tags),
   ]);
 
-  const significance = VALID_SOURCE_TYPES.has(x.significance ?? '')
+  const significance = ['primary-source-quality', 'secondary', 'tertiary'].includes(x.significance ?? '')
     ? x.significance
-    : (['primary-source-quality', 'secondary', 'tertiary'].includes(x.significance ?? '')
-        ? x.significance
-        : 'secondary');
+    : 'secondary';
 
   return {
     title:        d.title ?? 'Untitled',
@@ -271,6 +269,9 @@ function transformItem(item: any): Record<string, unknown> {
     related_sources:         splitList(x.related_sources),
 
     tags: [...tagSet],
+
+    // Stable human-readable slug — used as the content collection ID
+    sackar_atlas_id: x.sackar_atlas_id ?? null,
   };
 }
 
@@ -328,9 +329,10 @@ export function zoteroGroupLoader(): Loader {
           const digest  = generateDigest(rawData);
 
           // parseData validates + coerces against the collection schema
-          const data = await parseData({ id: item.key, data: rawData });
+          const id = (rawData.sackar_atlas_id as string | null) ?? item.key;
+          const data = await parseData({ id, data: rawData });
 
-          store.set({ id: item.key, data, digest });
+          store.set({ id, data, digest });
           loaded++;
         } catch (err) {
           logger.warn(`[zotero] Skipping item ${item.key} (${item.data.title ?? 'untitled'}): ${err}`);

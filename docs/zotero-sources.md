@@ -71,6 +71,7 @@ timestamp: 14:32
 
 | Field | Type | Notes |
 |-------|------|-------|
+| `sackar_atlas_id` | string | Stable human-readable slug for this source. Used as the content collection ID. Required for sources referenced from case files. Format: `publication-YYYY-MM-DD-keyword` |
 | `source_type` | string | Override automatic type mapping (see table above) |
 | `significance` | enum | `primary-source-quality` · `secondary` (default) · `tertiary` |
 | `show_title` | string | Series/show name for AV items (e.g. "Bondi Badlands") |
