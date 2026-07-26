@@ -5,7 +5,11 @@ import { getCollection } from 'astro:content';
 const cases = await getCollection('cases', ({ data }) => data.published === true);
 
 // Sort by date_of_death ascending; undated go last
-const sorted = cases.sort((a, b) => a.data.name.localeCompare(b.data.name));
+const sorted = cases.sort((a, b) => {
+  const da = a.data.date_of_death ?? '9999';
+  const db = b.data.date_of_death ?? '9999';
+  return da.localeCompare(db);
+});
 
 function statusLabel(status: string | undefined): string {
   const labels: Record<string, string> = {
