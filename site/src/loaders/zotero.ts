@@ -126,7 +126,13 @@ function safeInt(val: string | number | undefined): number | undefined {
 
 async function fetchPage(url: string, headers: Record<string, string>) {
   const res = await fetch(url, { headers });
-  if (!res.ok) throw Object.assign(new Error(`${res.status} ${res.statusText}`), { status: res.status });
+  if (!res.ok) {
+    const body = await res.text().catch(() => '');
+    throw Object.assign(
+      new Error(`${res.status} ${res.statusText}${body ? ': ' + body.slice(0, 200) : ''}`),
+      { status: res.status }
+    );
+  }
   return res;
 }
 
@@ -288,8 +294,8 @@ export function zoteroGroupLoader(): Loader {
     name: 'zotero-group-loader',
 
     async load({ store, logger, parseData, generateDigest }: LoaderContext) {
-      const groupId = (import.meta.env.ZOTERO_GROUP_ID ?? process.env.ZOTERO_GROUP_ID)?.trim();
-      const apiKey  = (import.meta.env.ZOTERO_API_KEY ?? process.env.ZOTERO_API_KEY)?.trim();
+      const groupId = (process.env.ZOTERO_GROUP_ID ?? import.meta.env.ZOTERO_GROUP_ID)?.trim();
+      const apiKey  = (process.env.ZOTERO_API_KEY ?? import.meta.env.ZOTERO_API_KEY)?.trim();
 
       if (!groupId) {
         logger.warn(
