@@ -1,6 +1,4 @@
 ---
-import '@awesome.me/webawesome/dist/styles/utilities.css';
-import '@awesome.me/webawesome/dist/styles/themes/default.css';
 
 interface Props {
   title: string;
@@ -22,6 +20,11 @@ const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <title>{pageTitle}</title>
+    <!-- Web Awesome Pro (CDN autoloader) -->
+    <link rel="stylesheet" href="https://ka-p.webawesome.com/kit/b75567f200a343f9/webawesome@3.10.0/styles/themes/default.css" />
+    <link rel="stylesheet" href="https://ka-p.webawesome.com/kit/b75567f200a343f9/webawesome@3.10.0/styles/native.css" />
+    <link rel="stylesheet" href="https://ka-p.webawesome.com/kit/b75567f200a343f9/webawesome@3.10.0/styles/utilities.css" />
+    <script type="module" src="https://ka-p.webawesome.com/kit/b75567f200a343f9/webawesome@3.10.0/webawesome.loader.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -244,16 +247,11 @@ const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas
         </p>
         <div class="footer-credit wa-stack wa-gap-s">
           <p>A public data project by Anna Roberts, drawing on the <br /> NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023).</p>
-          <p>Data compiled from <a href="/sources/">public records</a> &middot; Source on <a href="https://github.com/bitsloppy/sackar-atlas">GitHub</a></p>
+          <p><a href="https://www.zotero.org/groups/6623153/sackar-atlas/library">Bibliography</a> &middot; Source on <a href="https://github.com/bitsloppy/sackar-atlas">GitHub</a></p>
         </div>
       </footer>
     </wa-page>
   </body>
 
-  <script>
-    import '@awesome.me/webawesome/dist/components/page/page.js';
-    import '@awesome.me/webawesome/dist/components/button/button.js';
-    import '@awesome.me/webawesome/dist/components/icon/icon.js';
-    // wa-divider removed (footer now uses two-column split)
-  </script>
+  <!-- WA components load on demand via the autoloader script in <head> -->
 </html>
