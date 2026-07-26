@@ -3,6 +3,9 @@ name: Build and Deploy
 on:
   push:
     branches: [main]
+  schedule:
+    - cron: '0 2 * * *'  # nightly at 2am UTC (noon AEST)
+  workflow_dispatch:     # manual trigger via GitHub Actions UI
 
 jobs:
   deploy:
