@@ -95,9 +95,19 @@ const showCategoryFilter = presentCategories.length > 1;
           <div class="cat-chips" id="cat-filters">
             <button class="filter-chip active" data-cat="all">All</button>
             {presentCategories.map(cat => (
-              <button class="filter-chip" data-cat={cat}>
-                Category {cat}
-              </button>
+              <>
+                <button class="filter-chip" data-cat={cat} id={`cat-chip-${cat}`}>
+                  Category {cat}
+                </button>
+                <wa-tooltip for={`cat-chip-${cat}`} placement="bottom" style="--max-width: 280px;">
+                  {cat === 'A'
+                    ? 'Category A — deaths the SCOI found were likely anti-gay homicides. The inquiry made formal findings or strong recommendations for further investigation in each case.'
+                    : cat === 'B'
+                    ? 'Category B — deaths with a possible connection to anti-gay violence, but where the evidence was insufficient for the SCOI to make a Category A finding.'
+                    : `SCOI Category ${cat}`
+                  }
+                </wa-tooltip>
+              </>
             ))}
           </div>
         </div>

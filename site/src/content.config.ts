@@ -34,9 +34,10 @@
 
 import { fileURLToPath } from 'node:url';
 import { defineCollection, z } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { zoteroGroupLoader } from './loaders/zotero';
 
 const DATA_DIR = fileURLToPath(new URL('../../data', import.meta.url));
-import { glob } from 'astro/loaders';
 
 // ---------------------------------------------------------------------------
 // Shared sub-schemas (reused across collections)
@@ -2539,7 +2540,7 @@ const source_collections = defineCollection({
 // ---------------------------------------------------------------------------
 
 const sources = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: `${DATA_DIR}/sources` }),
+  loader: zoteroGroupLoader(),
   schema: z.object({
 
     title: z.string(),
