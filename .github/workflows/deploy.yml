@@ -21,6 +21,8 @@ jobs:
       - name: Build
         env:
           FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+          ZOTERO_GROUP_ID: 6623153
+          ZOTERO_API_KEY: ${{ secrets.ZOTERO_API_KEY }}
         run: bash build.sh
 
       - name: Deploy
