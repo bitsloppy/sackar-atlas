@@ -124,23 +124,47 @@ function safeInt(val: string | number | undefined): number | undefined {
 
 // ── Zotero API fetch with pagination ─────────────────────────────────────────
 
+async function fetchPage(url: string, headers: Record<string, string>) {
+  const res = await fetch(url, { headers });
+  if (!res.ok) throw Object.assign(new Error(`${res.status} ${res.statusText}`), { status: res.status });
+  return res;
+}
+
 async function fetchAllItems(groupId: string, apiKey: string | undefined): Promise<any[]> {
-  const headers: Record<string, string> = { 'Zotero-API-Version': '3' };
-  if (apiKey) headers['Zotero-API-Key'] = apiKey;
+  // Build header sets to try in order: authenticated first, then unauthenticated fallback.
+  const headerSets: Record<string, string>[] = [
+    { 'Zotero-API-Version': '3', ...(apiKey ? { 'Zotero-API-Key': apiKey } : {}) },
+  ];
+  if (apiKey) {
+    // If an API key is configured but returns 403, fall back to public (unauthenticated) access.
+    headerSets.push({ 'Zotero-API-Version': '3' });
+  }
 
   const items: any[] = [];
   let start = 0;
+  let activeHeaders = headerSets[0];
 
   while (true) {
     const url = `${BASE_URL}/groups/${groupId}/items/top?format=json&limit=${PAGE_SIZE}&start=${start}`;
-    const res = await fetch(url, { headers });
+    let res: Response;
 
-    if (res.status === 403) {
-      throw new Error(
-        `[zotero] 403 Forbidden — check that ZOTERO_API_KEY has read access to group ${groupId}, ` +
-        `or make the group library publicly readable.`
-      );
+    try {
+      res = await fetchPage(url, activeHeaders);
+    } catch (err: any) {
+      if (err.status === 403 && headerSets.length > 1 && activeHeaders === headerSets[0]) {
+        // API key rejected — group may be public; retry without auth.
+        console.warn(
+          `[zotero] ZOTERO_API_KEY returned 403 for group ${groupId}. ` +
+          `Retrying without authentication (public group access). ` +
+          `Check that the API key has read access to this group.`
+        );
+        activeHeaders = headerSets[1];
+        res = await fetchPage(url, activeHeaders);
+      } else {
+        throw new Error(`[zotero] API error fetching group ${groupId}: ${err.message}`);
+      }
     }
+
     if (!res.ok) {
       throw new Error(`[zotero] API error ${res.status} ${res.statusText}: ${await res.text()}`);
     }
