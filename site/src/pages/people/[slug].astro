@@ -19,6 +19,30 @@ const allCases     = await getCollection('cases', ({ data }) => data.published =
 const allLocations = await getCollection('locations');
 const allPeople    = await getCollection('people');
 const allEvents    = await getCollection('events');
+const allSources   = await getCollection('sources');
+
+// Sources linked to this person in Zotero
+const personSlug = entry.id.replace(/\.md$/, '');
+const personSources = allSources
+  .filter(s => (s.data.related_people as string[] | undefined)?.includes(personSlug))
+  .sort((a, b) => {
+    const sigA = (a.data.significance as string) === 'primary-source-quality' ? 0 : 1;
+    const sigB = (b.data.significance as string) === 'primary-source-quality' ? 0 : 1;
+    if (sigA !== sigB) return sigA - sigB;
+    const da = (a.data.date as string | null) ?? '9999';
+    const db = (b.data.date as string | null) ?? '9999';
+    return da.localeCompare(db);
+  });
+
+// Only show the synthesized Wikipedia entry if no Zotero source already links to Wikipedia
+const zoteroHasWikipedia = personSources.some(s => {
+  const url = (s.data.url as string | null) ?? '';
+  return url.includes('wikipedia.org');
+});
+const showWikipediaEntry = !!d.wikipedia_url && !zoteroHasWikipedia;
+
+const hasSourcesSection = personSources.length > 0 || showWikipediaEntry;
+const totalSources = personSources.length + (showWikipediaEntry ? 1 : 0);
 
 const relatedCases = (d.related_cases ?? [])
   .map(id => allCases.find(c => c.id.replace(/\.md$/, '') === id))
@@ -41,6 +65,51 @@ const hasRelated =
   relatedLocations.length > 0 ||
   relatedPeople.length > 0 ||
   relatedEvents.length > 0;
+
+// ── Source helpers (mirrors cases/[slug].astro) ─────────────────────────────
+function srcTypeLabel(type: string): string {
+  const m: Record<string, string> = {
+    'online-news':     'Online news',
+    'newspaper':       'Newspaper',
+    'community-press': 'Community press',
+    'magazine-feature':'Magazine',
+    'podcast-episode': 'Podcast',
+    'radio-segment':   'Radio',
+    'documentary':     'Documentary',
+    'tv-segment':      'TV',
+    'book':            'Book',
+    'book-chapter':    'Book chapter',
+    'academic-article':'Academic',
+  };
+  return m[type] ?? type;
+}
+
+function srcTypeIcon(type: string): string {
+  const m: Record<string, string> = {
+    'online-news':     'newspaper',
+    'newspaper':       'newspaper',
+    'community-press': 'newspaper',
+    'magazine-feature':'book-open',
+    'podcast-episode': 'microphone',
+    'radio-segment':   'tower-broadcast',
+    'documentary':     'film',
+    'tv-segment':      'tv',
+    'book':            'book',
+    'book-chapter':    'bookmark',
+    'academic-article':'graduation-cap',
+  };
+  return m[type] ?? 'file-lines';
+}
+
+function srcDisplayLine(sd: any): string {
+  const parts: string[] = [];
+  if (sd.publication)  parts.push(sd.publication);
+  else if (sd.show_title) parts.push(sd.show_title);
+  if (sd.creator)      parts.push(sd.creator);
+  else if (sd.author)  parts.push(sd.author);
+  if (sd.date)         parts.push(String(sd.date).slice(0, 4));
+  return parts.join(' · ');
+}
 
 function roleLabel(role: string): string {
   const labels: Record<string, string> = {
@@ -202,6 +271,60 @@ function roleVariant(role: string): 'brand' | 'neutral' | 'success' | 'warning' 
         <Content />
       </div>
     </section>
+
+    <!-- ══ Sources ════════════════════════════════════════════════════════════ -->
+    {hasSourcesSection && (
+      <section class="sources-section section">
+        <wa-details appearance="filled-outlined" open>
+          <span slot="summary" class="details-summary">
+            <wa-icon name="book-open" variant="solid" class="details-icon"></wa-icon>
+            Sources ({totalSources})
+          </span>
+          <div class="sources-list">
+            {personSources.map(src => {
+              const sd = src.data as any;
+              const displayLine = srcDisplayLine(sd);
+              const href = sd.url ?? sd.trove_url ?? null;
+              return (
+                <div class="source-item">
+                  <div class="source-item-header">
+                    <wa-icon
+                      name={srcTypeIcon(sd.source_type)}
+                      variant="solid"
+                      class="source-type-icon"
+                      label={srcTypeLabel(sd.source_type)}
+                    ></wa-icon>
+                    {href ? (
+                      <a href={href} class="source-title" target="_blank" rel="noopener noreferrer">
+                        {sd.title}
+                        <wa-icon name="arrow-up-right-from-square" variant="solid" class="source-ext-icon"></wa-icon>
+                      </a>
+                    ) : (
+                      <span class="source-title source-title--nolink">{sd.title}</span>
+                    )}
+                  </div>
+                  {displayLine && (
+                    <p class="source-display-line">{displayLine}</p>
+                  )}
+                </div>
+              );
+            })}
+            {showWikipediaEntry && (
+              <div class="source-item">
+                <div class="source-item-header">
+                  <wa-icon name="globe" variant="solid" class="source-type-icon" label="Web"></wa-icon>
+                  <a href={d.wikipedia_url} class="source-title" target="_blank" rel="noopener noreferrer">
+                    {d.name} — Wikipedia
+                    <wa-icon name="arrow-up-right-from-square" variant="solid" class="source-ext-icon"></wa-icon>
+                  </a>
+                </div>
+                <p class="source-display-line source-display-line--wiki">Wikipedia · Reference only — not a primary source</p>
+              </div>
+            )}
+          </div>
+        </wa-details>
+      </section>
+    )}
 
     <!-- ══ Related content ══════════════════════════════════════════════════ -->
     {hasRelated && (
@@ -464,6 +587,89 @@ function roleVariant(role: string): 'brand' | 'neutral' | 'success' | 'warning' 
     margin-bottom: var(--wa-space-3xs);
   }
 
+  /* ─── Sources ─── */
+  .sources-section {
+    padding-top: var(--wa-space-xl);
+    padding-bottom: 0;
+  }
+
+  .details-summary {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--wa-space-2xs);
+    font-size: var(--wa-font-size-s);
+    font-weight: 500;
+  }
+
+  .details-icon {
+    color: var(--wa-color-text-quiet);
+    font-size: var(--wa-font-size-s);
+    flex-shrink: 0;
+  }
+
+  .sources-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-xs);
+  }
+
+  .source-item {
+    padding: var(--wa-space-xs) var(--wa-space-s);
+    border-left: 3px solid var(--wa-color-surface-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-3xs);
+  }
+
+  .source-item-header {
+    display: flex;
+    align-items: baseline;
+    gap: var(--wa-space-2xs);
+    flex-wrap: wrap;
+  }
+
+  .source-type-icon {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    flex-shrink: 0;
+    position: relative;
+    top: 1px;
+  }
+
+  .source-title {
+    font-size: var(--wa-font-size-s);
+    font-weight: 500;
+    color: var(--wa-color-text-link);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--wa-space-3xs);
+  }
+
+  .source-title:hover {
+    text-decoration: underline;
+  }
+
+  .source-title--nolink {
+    color: var(--wa-color-text-normal);
+  }
+
+  .source-ext-icon {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .source-display-line {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    padding-left: calc(var(--wa-font-size-xs) + var(--wa-space-2xs));
+  }
+
+  .source-display-line--wiki {
+    font-style: italic;
+  }
+
   /* ─── Related content ─── */
   .related-section {
     padding-top: var(--wa-space-xl);
@@ -512,6 +718,7 @@ function roleVariant(role: string): 'brand' | 'neutral' | 'success' | 'warning' 
   import '@awesome.me/webawesome/dist/components/callout/callout.js';
   import '@awesome.me/webawesome/dist/components/tag/tag.js';
   import '@awesome.me/webawesome/dist/components/icon/icon.js';
+  import '@awesome.me/webawesome/dist/components/details/details.js';
   import '@awesome.me/webawesome/dist/components/tab-group/tab-group.js';
   import '@awesome.me/webawesome/dist/components/tab/tab.js';
   import '@awesome.me/webawesome/dist/components/tab-panel/tab-panel.js';
