@@ -214,11 +214,27 @@ function transformItem(item: any): Record<string, unknown> {
 
   const creator = primaryCreator(d.creators);
 
-  // Merge Zotero tags + Extra tags (deduped)
-  const tagSet = new Set([
+  // Parse all tags — Zotero tags + Extra tags — split into namespaced cross-refs and plain tags
+  const allTags = [
     ...(d.tags ?? []).map((t: any) => String(t.tag)),
     ...splitList(x.tags),
-  ]);
+  ];
+
+  const relatedCases: string[] = [];
+  const relatedLocations: string[] = [];
+  const relatedEvents: string[] = [];
+  const relatedPeople: string[] = [];
+  const relatedRecommendations: string[] = [];
+  const plainTags: string[] = [];
+
+  for (const tag of allTags) {
+    if (tag.startsWith('case:'))          relatedCases.push(tag.slice(5));
+    else if (tag.startsWith('location:')) relatedLocations.push(tag.slice(9));
+    else if (tag.startsWith('event:'))    relatedEvents.push(tag.slice(6));
+    else if (tag.startsWith('person:'))   relatedPeople.push(tag.slice(7));
+    else if (tag.startsWith('rec:'))      relatedRecommendations.push(tag.slice(4));
+    else                                  plainTags.push(tag);
+  }
 
   const significance = ['primary-source-quality', 'secondary', 'tertiary'].includes(x.significance ?? '')
     ? x.significance
@@ -260,15 +276,16 @@ function transformItem(item: any): Record<string, unknown> {
     // Significance
     significance,
 
-    // Cross-references (all from Extra)
-    related_cases:           splitList(x.related_cases),
-    related_locations:       splitList(x.related_locations),
-    related_people:          splitList(x.related_people),
-    related_events:          splitList(x.related_events),
-    related_recommendations: splitList(x.related_recommendations),
-    related_sources:         splitList(x.related_sources),
+    // Cross-references — tags take precedence; Extra related_* fields merged for migration compat.
+    // Once all items use namespaced tags, Extra related_* fields can be dropped.
+    related_cases:           [...new Set([...relatedCases,           ...splitList(x.related_cases)])],
+    related_locations:       [...new Set([...relatedLocations,       ...splitList(x.related_locations)])],
+    related_people:          [...new Set([...relatedPeople,          ...splitList(x.related_people)])],
+    related_events:          [...new Set([...relatedEvents,          ...splitList(x.related_events)])],
+    related_recommendations: [...new Set([...relatedRecommendations, ...splitList(x.related_recommendations)])],
+    related_sources:         splitList(x.related_sources), // keep in Extra — no tag equivalent
 
-    tags: [...tagSet],
+    tags: plainTags,
 
     // Stable human-readable slug — used as the content collection ID
     sackar_atlas_id: x.sackar_atlas_id ?? null,

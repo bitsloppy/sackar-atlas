@@ -78,13 +78,19 @@ timestamp: 14:32
 | `episode_title` | string | Episode title (distinct from the item title field) |
 | `episode_number` | integer | Episode number within the series |
 | `series_id` | string | Slug of a `source_collections/` entry (links to series notes) |
-| `related_cases` | csv | Case slugs — e.g. `ross-warren, john-russell` |
-| `related_locations` | csv | Location slugs — e.g. `marks-park` |
-| `related_people` | csv | People slugs — e.g. `garry-wotherspoon` |
-| `related_events` | csv | Event slugs |
-| `related_recommendations` | csv | Recommendation slugs — e.g. `rec-17` |
-| `related_sources` | csv | Other source item keys (for companion pieces) |
-| `tags` | csv | Free tags — merged with any Zotero tags on the item |
+| `related_sources` | csv | Other source item keys (for companion pieces) — keep in Extra, no tag equivalent |
+
+**Cross-references — use namespaced Zotero tags instead of Extra fields:**
+
+| Tag prefix | Maps to | Example |
+|------------|---------|----------|
+| `case:<slug>` | related\_cases | `case:john-russell` |
+| `location:<slug>` | related\_locations | `location:marks-park` |
+| `event:<slug>` | related\_events | `event:strike-force-parrabell` |
+| `person:<slug>` | related\_people | `person:garry-wotherspoon` |
+| `rec:<slug>` | related\_recommendations | `rec:rec-17` |
+
+All other tags are plain and appear in the site's tag list. During migration, existing `related_*` Extra fields still work and are merged with tag-sourced values — they can be removed from Extra once you've moved them to tags.
 | `spotify_url` | url | Podcast Spotify link |
 | `apple_podcasts_url` | url | Podcast Apple Podcasts link |
 | `trove_id` | string | NLA Trove persistent ID |
