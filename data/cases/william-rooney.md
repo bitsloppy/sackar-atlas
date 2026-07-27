@@ -187,17 +187,6 @@ related_events:
   - "strike-force-parrabell"
 related_recommendations: []
 
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.2107–5.2359"
-    page_start: 561
-    page_end: 599
-    exhibits: []
-  press: []
-  archives: []
-  oral_history: []
 # ==========================================================
 
 ---

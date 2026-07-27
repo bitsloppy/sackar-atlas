@@ -192,28 +192,6 @@ decade: "1970s"
 
 stub: false
 
-sources:
-  scoi:
-    volume: 2
-    chapter: 6
-    paragraph: "6.73–6.298"
-    page_start: 1162
-    page_end: 1201
-    exhibits: []
-  press: []
-  archives: []
-  hansard: []
-  oral_history: []
-  coronial:
-    - deceased: "Ernest Head"
-      finding: "homicide"
-      coroner: "City Coroner Nash"
-      date: "1977-12-16"
-      court: "Glebe Coroners Court"
-      jurisdiction: "NSW"
-      accessible: false
-  reports: []
-  media_sources: []
 ---
 
 ## Who was Ernest Head

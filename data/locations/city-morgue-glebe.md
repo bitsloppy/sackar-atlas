@@ -40,16 +40,6 @@ related_cases:
 related_events: []
 related_media: []
 
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic:
-    - service: "NSW Health Pathology"
-      url: "https://www.health.nsw.gov.au/pathology"
-  reports: []
-  media_sources: []
-
 content_warnings:
   - deceased-person
 

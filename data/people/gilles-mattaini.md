@@ -26,11 +26,6 @@ stub: false
 related_cases:
   - "gilles-mattaini"
 
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.1583–5.2104"
 ---
 
 Gilles Jacques Mattaini was born in France on 25 October 1958. He met his partner

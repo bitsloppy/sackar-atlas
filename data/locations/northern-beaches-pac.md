@@ -115,22 +115,6 @@ related_cases:
 related_events: []
 related_media: []
 
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic:
-    - service: "NSW Police Force"
-      reference: "Northern Beaches PAC page, North West Metro Region"
-      url: "https://www.police.nsw.gov.au/about_us/regions_commands_districts/north_west_metro_region/northern_beaches"
-      accessed_date: "2026-07-18"
-  reports:
-    - type: community-report
-      organisation: "ACON"
-      title: "In Pursuit of Truth and Justice"
-      year: "2018"
-      page: "13–14"
-
 content_warnings: []
 tags:
   - police-area-command

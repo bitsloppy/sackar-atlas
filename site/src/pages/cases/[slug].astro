@@ -17,6 +17,7 @@ const mf = d.manner_findings;
 
 // Cross-reference related content
 const allCases     = await getCollection('cases', ({ data }) => data.published === true);
+const allSources   = await getCollection('sources');
 const allLocations = await getCollection('locations');
 const allPeople    = await getCollection('people');
 const allEvents    = await getCollection('events');
@@ -156,10 +157,66 @@ function evTypeLabel(type: string): string {
   return m[type] ?? type;
 }
 
-const scoi = d.sources?.scoi;
-const scoiRef = scoi
-  ? `SCOI Vol. ${scoi.volume}${scoi.chapter ? `, Ch. ${scoi.chapter}` : ''}${scoi.page_start ? `, p.${scoi.page_start}` : ''}`
-  : 'Sackar Commission of Inquiry (2023)';
+// Sources from Zotero — join on case slug
+const caseSlug = entry.id.replace(/\.md$/, '');
+const caseSources = allSources
+  .filter(s => (s.data.related_cases as string[] | undefined)?.includes(caseSlug))
+  .sort((a, b) => {
+    // Primary-source-quality items first (SCOI references)
+    const sigA = (a.data.significance as string) === 'primary-source-quality' ? 0 : 1;
+    const sigB = (b.data.significance as string) === 'primary-source-quality' ? 0 : 1;
+    if (sigA !== sigB) return sigA - sigB;
+    // Then by date ascending, undated last
+    const da = (a.data.date as string | null) ?? '9999';
+    const db = (b.data.date as string | null) ?? '9999';
+    return da.localeCompare(db);
+  });
+
+// ── Source display helpers ──────────────────────────────────────────────────
+
+function srcTypeLabel(type: string): string {
+  const m: Record<string, string> = {
+    'online-news':     'Online news',
+    'newspaper':       'Newspaper',
+    'community-press': 'Community press',
+    'magazine-feature':'Magazine',
+    'podcast-episode': 'Podcast',
+    'radio-segment':   'Radio',
+    'documentary':     'Documentary',
+    'tv-segment':      'TV',
+    'book':            'Book',
+    'book-chapter':    'Book chapter',
+    'academic-article':'Academic',
+  };
+  return m[type] ?? type;
+}
+
+function srcTypeIcon(type: string): string {
+  const m: Record<string, string> = {
+    'online-news':     'newspaper',
+    'newspaper':       'newspaper',
+    'community-press': 'newspaper',
+    'magazine-feature':'book-open',
+    'podcast-episode': 'microphone',
+    'radio-segment':   'tower-broadcast',
+    'documentary':     'film',
+    'tv-segment':      'tv',
+    'book':            'book',
+    'book-chapter':    'bookmark',
+    'academic-article':'graduation-cap',
+  };
+  return m[type] ?? 'file-lines';
+}
+
+function srcDisplayLine(sd: any): string {
+  const parts: string[] = [];
+  if (sd.publication)  parts.push(sd.publication);
+  else if (sd.show_title) parts.push(sd.show_title);
+  if (sd.creator)      parts.push(sd.creator);
+  else if (sd.author)  parts.push(sd.author);
+  if (sd.date)         parts.push(String(sd.date).slice(0, 4));
+  return parts.join(' · ');
+}
 ---
 
 <Layout
@@ -368,7 +425,7 @@ const scoiRef = scoi
           </span>
           <blockquote class="inquiry-finding">
             <p>{d.scoi_finding}</p>
-            <footer class="finding-source">— {scoiRef}</footer>
+            <footer class="finding-source">— Sackar Commission of Inquiry (2023)</footer>
           </blockquote>
         </wa-details>
       </section>
@@ -392,24 +449,42 @@ const scoiRef = scoi
     </section>
 
     <!-- ══ Sources ═══════════════════════════════════════════════════════════════════ -->
-    {scoi && (
+    {caseSources.length > 0 && (
       <section class="sources-section section">
-        <wa-details appearance="filled-outlined">
+        <wa-details appearance="filled-outlined" open>
           <span slot="summary" class="details-summary">
             <wa-icon name="book-open" variant="solid" class="details-icon"></wa-icon>
-            Sources
+            Sources ({caseSources.length})
           </span>
-          <div class="source-citation">
-            <p>
-              NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J) (2023)
-              <em>Report of the Special Commission of Inquiry</em>,
-              vol.&nbsp;{scoi.volume}
-              {scoi.chapter && `, ch.&nbsp;${scoi.chapter}`}
-              {scoi.paragraph && `, paras&nbsp;${scoi.paragraph}`}
-              {scoi.page_start && `, pp.&nbsp;${scoi.page_start}`}
-              {scoi.page_end && scoi.page_end !== scoi.page_start && `–${scoi.page_end}`},
-              NSW Government, Sydney.
-            </p>
+          <div class="sources-list">
+            {caseSources.map(src => {
+              const sd = src.data as any;
+              const displayLine = srcDisplayLine(sd);
+              const href = sd.url ?? sd.trove_url ?? null;
+              return (
+                <div class="source-item">
+                  <div class="source-item-header">
+                    <wa-icon
+                      name={srcTypeIcon(sd.source_type)}
+                      variant="solid"
+                      class="source-type-icon"
+                      label={srcTypeLabel(sd.source_type)}
+                    ></wa-icon>
+                    {href ? (
+                      <a href={href} class="source-title" target="_blank" rel="noopener noreferrer">
+                        {sd.title}
+                        <wa-icon name="arrow-up-right-from-square" variant="solid" class="source-ext-icon"></wa-icon>
+                      </a>
+                    ) : (
+                      <span class="source-title source-title--nolink">{sd.title}</span>
+                    )}
+                  </div>
+                  {displayLine && (
+                    <p class="source-display-line">{displayLine}</p>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </wa-details>
       </section>
@@ -1029,11 +1104,63 @@ const scoiRef = scoi
   }
 
   /* ─── Sources ─── */
-  .source-citation p {
+  .sources-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-xs);
+  }
+
+  .source-item {
+    padding: var(--wa-space-xs) var(--wa-space-s);
+    border-left: 3px solid var(--wa-color-surface-border);
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-3xs);
+  }
+
+  .source-item-header {
+    display: flex;
+    align-items: baseline;
+    gap: var(--wa-space-2xs);
+    flex-wrap: wrap;
+  }
+
+  .source-type-icon {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+    flex-shrink: 0;
+    position: relative;
+    top: 1px;
+  }
+
+  .source-title {
     font-size: var(--wa-font-size-s);
-    line-height: 1.65;
+    font-weight: 500;
+    color: var(--wa-color-text-link);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: baseline;
+    gap: var(--wa-space-3xs);
+  }
+
+  .source-title:hover {
+    text-decoration: underline;
+  }
+
+  .source-title--nolink {
+    color: var(--wa-color-text-normal);
+  }
+
+  .source-ext-icon {
+    font-size: var(--wa-font-size-xs);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .source-display-line {
+    font-size: var(--wa-font-size-xs);
     color: var(--wa-color-text-quiet);
     margin: 0;
+    padding-left: calc(var(--wa-font-size-xs) + var(--wa-space-2xs));
   }
 </style>
 

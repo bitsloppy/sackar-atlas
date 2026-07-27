@@ -19,20 +19,6 @@ related_locations:
 related_people: []
 related_media: []
 related_recommendations: []
-sources:
-  press:
-    - type: online-news
-      author: null
-      title: "Bondi Rise memorial honours victims of Sydney gay hate crimes during 1970s to 1990s"
-      publication: "ABC News"
-      date: "2021-10-22"
-      url: "https://www.abc.net.au/news/2021-10-22/bondi-rise-memorial-honouring-victims-of-sydney-gay-hate-crimes/100561710"
-      accessed_date: "2026-07-18"
-  archives: []
-  hansard: []
-  oral_history: []
-  reports: []
-  media_sources: []
 content_warnings:
   - deceased-person
 tags:

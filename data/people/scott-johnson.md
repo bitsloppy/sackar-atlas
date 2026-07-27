@@ -26,11 +26,6 @@ stub: false
 related_cases:
   - "scott-johnson"
 
-sources:
-  scoi:
-    volume: 3
-    chapter: 11
-    paragraph: "11.4–11.5"
 ---
 
 Scott Russell Johnson was an American mathematician completing his doctorate at

@@ -17,20 +17,6 @@ related_people:
   - garry-wotherspoon
 related_media: []
 related_recommendations: []
-sources:
-  press:
-    - type: online-news
-      author: null
-      title: "Sydney gay bars Oxford Hotel, Palms and Universal proposed for heritage listing"
-      publication: "ABC News"
-      date: "2025-03-17"
-      url: "https://www.abc.net.au/news/2025-03-17/sydney-gay-bars-oxford-hotel-palms-universal-heritage-listing/105056274"
-      accessed_date: "2026-07-18"
-  archives: []
-  hansard: []
-  oral_history: []
-  reports: []
-  media_sources: []
 content_warnings: []
 tags:
   - oxford-street

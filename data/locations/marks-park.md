@@ -24,13 +24,6 @@ active_from: "1970s"
 still_exists: true
 
 #
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic: []
-  reports: []
-  media_sources: []
 --- First Nations ----------------------------------------------------------
 
 first_nations_country: "Bidjigal"
@@ -67,21 +60,6 @@ related_cases:
 related_events:
   - rise-memorial-marks-park
 related_media: []
-
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic:
-    - service: "Waverley Council"
-      url: "https://www.waverley.nsw.gov.au"
-  reports:
-    - type: inquiry-report
-      organisation: "NSW Special Commission of Inquiry into LGBTIQ Hate Crimes"
-      title: "Report of the Special Commission of Inquiry"
-      year: "2023"
-      author: "Sackar J"
-  media_sources: []
 
 content_warnings:
   - deceased-person

@@ -16,11 +16,6 @@ stub: true
 related_cases:
   - "scott-johnson"
 
-sources:
-  scoi:
-    volume: 3
-    chapter: 11
-    paragraph: "11.6–11.9"
 ---
 
 Detective Sergeant Doreen Cruickshank was the Officer in Charge of the original

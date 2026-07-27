@@ -26,11 +26,6 @@ stub: false
 related_cases:
   - "ross-warren"
 
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.1583–5.2105"
 ---
 
 Ross Bradley Warren was twenty-five years old, a television presenter in Wollongong,

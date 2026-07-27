@@ -16,13 +16,6 @@ lng: 151.1281
 still_exists: false
 
 #
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic: []
-  reports: []
-  media_sources: []
 --- First Nations ----------------------------------------------------------
 
 first_nations_country: null
@@ -43,14 +36,6 @@ related_cases:
   - david-lloyd-williams
 related_events: []
 related_media: []
-
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic: []
-  reports: []
-  media_sources: []
 
 content_warnings:
   - deceased-person

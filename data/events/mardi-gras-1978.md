@@ -19,13 +19,6 @@ related_people:
   - mervyn-wood
 related_media: []
 related_recommendations: []
-sources:
-  press: []
-  archives: []
-  hansard: []
-  oral_history: []
-  reports: []
-  media_sources: []
 content_warnings: []
 tags:
   - mardi-gras

@@ -24,13 +24,6 @@ active_from: "1970s"
 still_exists: true
 
 #
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic: []
-  reports: []
-  media_sources: []
 --- First Nations ----------------------------------------------------------
 
 first_nations_country: "Gadigal"
@@ -59,24 +52,6 @@ physical_markers:
 related_cases: []
 related_events: []
 related_media: []
-
-sources:
-  press:
-    - type: online-news
-      author: null
-      title: "Oxford Street's LGBTQ+ history could be permanently protected"
-      publication: "ABC News"
-      date: "2025-03-17"
-      trove_id: null
-      url: null
-      accessed_date: "2026-07-18"
-  archives: []
-  oral_history: []
-  geographic:
-    - service: "City of Sydney Council"
-      url: "https://www.cityofsydney.nsw.gov.au"
-  reports: []
-  media_sources: []
 
 content_warnings: []
 

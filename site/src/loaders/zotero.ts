@@ -225,6 +225,7 @@ function transformItem(item: any): Record<string, unknown> {
   const relatedEvents: string[] = [];
   const relatedPeople: string[] = [];
   const relatedRecommendations: string[] = [];
+  const relatedOrgs: string[] = [];
   const plainTags: string[] = [];
 
   for (const tag of allTags) {
@@ -233,6 +234,7 @@ function transformItem(item: any): Record<string, unknown> {
     else if (tag.startsWith('event:'))    relatedEvents.push(tag.slice(6));
     else if (tag.startsWith('person:'))   relatedPeople.push(tag.slice(7));
     else if (tag.startsWith('rec:'))      relatedRecommendations.push(tag.slice(4));
+    else if (tag.startsWith('org:'))      relatedOrgs.push(tag.slice(4));
     else                                  plainTags.push(tag);
   }
 
@@ -283,6 +285,7 @@ function transformItem(item: any): Record<string, unknown> {
     related_people:          [...new Set([...relatedPeople,          ...splitList(x.related_people)])],
     related_events:          [...new Set([...relatedEvents,          ...splitList(x.related_events)])],
     related_recommendations: [...new Set([...relatedRecommendations, ...splitList(x.related_recommendations)])],
+    related_organisations:   [...new Set(relatedOrgs)], // no Extra field equivalent; tags only
     related_sources:         splitList(x.related_sources), // keep in Extra — no tag equivalent
 
     tags: plainTags,

@@ -18,11 +18,6 @@ related_cases:
   - "john-russell"
   - "gilles-mattaini"
 
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.1610–5.1612"
 ---
 
 Detective Sergeant Stephen Page was the officer who led Operation Taradale — the

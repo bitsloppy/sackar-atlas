@@ -26,13 +26,6 @@ stub: true
 
 # === First Nations
 
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic: []
-  reports: []
-  media_sources: []
 # ==========================================================
 
 first_nations_country: "Dharawal"

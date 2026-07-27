@@ -16,11 +16,6 @@ stub: true
 related_cases:
   - "scott-johnson"
 
-sources:
-  scoi:
-    volume: 3
-    chapter: 11
-    paragraph: "11.180"
 ---
 
 Scott White was arrested on 12 May 2020 and charged with the murder of Scott Johnson,

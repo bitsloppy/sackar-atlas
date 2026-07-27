@@ -36,14 +36,6 @@ related_people: []
 related_events: []
 related_media: []
 
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic: []
-  reports: []
-  media_sources: []
-
 content_warnings: []
 
 stub: true

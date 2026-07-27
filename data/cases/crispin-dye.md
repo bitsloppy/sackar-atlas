@@ -199,36 +199,6 @@ decade: "1990s"
 
 stub: false
 
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.3895–5.4270"
-    page_start: 873
-    page_end: 932
-    exhibits: []
-  press:
-    - type: "newspaper"
-      author: "Feneley R"
-      title: "$100,000 reward to find killers of AC/DC manager Crispin Dye"
-      publication: "Sydney Morning Herald"
-      date: "2014-08-13"
-      trove_id: null
-      url: null
-      page: null
-  archives: []
-  hansard: []
-  oral_history: []
-  coronial:
-    - deceased: "Crispin Wilson Dye"
-      finding: "homicide"
-      coroner: "State Coroner Derek Hand"
-      date: "1995-08-08"
-      court: "NSW Coroners Court"
-      jurisdiction: "NSW"
-      accessible: false
-  reports: []
-  media_sources: []
 ---
 
 ## Who was Crispin Dye

@@ -16,11 +16,6 @@ stub: true
 related_cases:
   - "john-russell"
 
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.1337, 5.1900"
 ---
 
 Sally Johnston (née Dunbar) was the Officer in Charge of the original police

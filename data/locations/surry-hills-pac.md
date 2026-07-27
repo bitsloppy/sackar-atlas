@@ -53,20 +53,6 @@ related_cases:
 related_events: []
 related_media: []
 
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic:
-    - service: "NSW Police Force"
-      url: "https://www.police.nsw.gov.au"
-  reports:
-    - type: community-report
-      organisation: "ACON"
-      title: "In Pursuit of Truth and Justice"
-      year: "2018"
-      page: "20"
-
 content_warnings: []
 tags:
   - police-area-command

@@ -16,11 +16,6 @@ stub: true
 related_cases:
   - "gilles-mattaini"
 
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.1593–5.1600, 5.1902–5.1909"
 ---
 
 Jacques Paul Musy was the long-term partner of Gilles Mattaini. They met in Paris

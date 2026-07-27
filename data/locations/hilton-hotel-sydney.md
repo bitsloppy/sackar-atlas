@@ -21,13 +21,6 @@ active_from: "1975"
 still_exists: true
 
 #
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic: []
-  reports: []
-  media_sources: []
 --- First Nations ----------------------------------------------------------
 
 first_nations_country: "Gadigal"
@@ -47,23 +40,6 @@ related_cases:
   - mark-stewart   # Mark Stewart checked into Room 3117 on 9 May 1976; last seen here
 related_events: []
 related_media: []
-
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.98–5.116"
-    page_start: 220
-    page_end: 222
-  press: []
-  archives: []
-  oral_history: []
-  geographic:
-    - service: "Hilton Hotels"
-      url: "https://www.hilton.com/en/hotels/sydhihi-hilton-sydney/"
-      accessed_date: "2026-07-18"
-  reports: []
-  media_sources: []
 
 content_warnings: []
 

@@ -16,11 +16,6 @@ stub: true
 related_cases:
   - "ross-warren"
 
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.1608–5.1645"
 ---
 
 Detective Sergeant Kenneth Bowditch was the Officer in Charge at Paddington Police

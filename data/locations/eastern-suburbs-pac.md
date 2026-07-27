@@ -91,26 +91,6 @@ related_cases:
 related_events: []
 related_media: []
 
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic:
-    - service: "NSW Police Force"
-      reference: "Eastern Suburbs PAC page, Central Metro Region"
-      url: "https://www.police.nsw.gov.au/about_us/regions_commands_districts/central_metro_region/eastern_suburbs"
-      accessed_date: "2026-07-18"
-  reports:
-    - type: community-report
-      organisation: "ACON"
-      title: "In Pursuit of Truth and Justice"
-      year: "2018"
-    - type: parliamentary-committee
-      organisation: "NSW Legislative Council Standing Committee on Social Issues"
-      title: "Gay and Transgender hate crimes between 1970 and 2010"
-      year: "2021"
-      report_number: "Report 58"
-
 content_warnings: []
 tags:
   - police-area-command

@@ -26,13 +26,6 @@ active_from: "1970s"
 still_exists: true
 
 #
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic: []
-  reports: []
-  media_sources: []
 --- First Nations ----------------------------------------------------------
 #
 # The Shelley Headland and the broader North Head peninsula form part of
@@ -99,51 +92,6 @@ related_events: []
 related_media: []
 
 # --- Sources ----------------------------------------------------------------
-
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.96–5.281"
-    page_start: 219
-    page_end: 252
-  press:
-    - type: newspaper
-      author: null
-      title: "Mystery boy dies in cliff plunge"
-      publication: "The Manly Daily"
-      date: "1976-05-12"
-      page: "1"
-      trove_id: null
-      url: null
-    - type: newspaper
-      author: null
-      title: "90 arrested by new police beach unit"
-      publication: "The Manly Daily"
-      date: "1977-04-27"
-      page: "1"
-      trove_id: null
-      url: null
-      # Note: references a 'Starsky and Hutch' beach patrol that had
-      # "busted homosexual activities at North Head" — documents police
-      # awareness of the beat by April 1977.
-  archives: []
-  oral_history: []
-  geographic:
-    - service: "OpenStreetMap"
-      reference: "Shelley Headland / Shelly Headland Upper Lookout area"
-      url: "https://www.openstreetmap.org"
-      accessed_date: "2026-07-18"
-    - service: "NSW National Parks and Wildlife Service"
-      reference: "Sydney Harbour National Park — North Head"
-      url: "https://www.nationalparks.nsw.gov.au"
-  reports:
-    - type: inquiry-report
-      organisation: "NSW Special Commission of Inquiry into LGBTIQ Hate Crimes"
-      title: "Report of the Special Commission of Inquiry"
-      year: "2023"
-      author: "Sackar J"
-      page: "219–252"
 
 content_warnings:
   - deceased-person

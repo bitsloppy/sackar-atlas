@@ -19,13 +19,6 @@ related_people:
   - mal-lanyon
 related_media: []
 related_recommendations: []
-sources:
-  press: []
-  archives: []
-  hansard: []
-  oral_history: []
-  reports: []
-  media_sources: []
 content_warnings: []
 tags:
   - oxford-street

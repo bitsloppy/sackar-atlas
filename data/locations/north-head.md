@@ -23,13 +23,6 @@ active_from: "1970s"
 still_exists: true
 
 #
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic: []
-  reports: []
-  media_sources: []
 --- First Nations ----------------------------------------------------------
 
 first_nations_country: "Gayamaygal"
@@ -54,17 +47,6 @@ related_locations:
   - shelley-headland
 related_events: []
 related_media: []
-
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic:
-    - service: "NSW National Parks and Wildlife Service"
-      reference: "Sydney Harbour National Park — North Head Sanctuary"
-      url: "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park/local-area/north-head-sanctuary"
-  reports: []
-  media_sources: []
 
 content_warnings:
   - deceased-person

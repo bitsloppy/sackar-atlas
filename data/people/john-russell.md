@@ -26,11 +26,6 @@ stub: false
 related_cases:
   - "john-russell"
 
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.1583–5.2106"
 ---
 
 John Alan Russell was thirty-one years old when he was found dead at the base of

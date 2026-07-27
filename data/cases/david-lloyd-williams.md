@@ -36,21 +36,6 @@ first_language: "English"
 cald_notes: "Born in Barnhurst, England. Had been living in Australia for approximately seven years at the time of his death, having migrated around 1971."
 
 #
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.462–5.556"
-    page_start: 283
-    page_end: 311
-    exhibits: []
-  press: []
-  archives: []
-  hansard: []
-  oral_history: []
-  coronial: []
-  reports: []
-  media_sources: []
 --- Sexuality ---------------------------------------------------------------
 # No evidence before the Inquiry that Mr Lloyd-Williams was a member of the
 # LGBTIQ community. His friend Dr Neil McEwan told the Inquiry he did not
@@ -164,67 +149,6 @@ content_warnings:
   - "mental-health"
 
 # --- Sources ----------------------------------------------------------------
-
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.462–5.549"
-    page_start: 283
-    page_end: 297
-    exhibits:
-      - id: "SCOI.74028"
-        description: "Death certificate of David Lloyd-Williams, 9 November 1978 (BDM2)"
-      - id: "SCOI.73571.00002"
-        description: "Report of Death to Coroner, 24 August 1978"
-      - id: "SCOI.73571.00007"
-        description: "Certificate of life extinct, 24 August 1978"
-      - id: "SCOI.73571.00008"
-        description: "Statement of Robert Steele, 9 October 1978 (finder of body)"
-      - id: "SCOI.73571.00010"
-        description: "Statement of Anna Louisa Worton (mother-in-law), 24 August 1978"
-      - id: "SCOI.73571.00011"
-        description: "Statement of Elizabeth Lloyd-Williams (sister), 24 August 1978"
-      - id: "SCOI.73571.00012"
-        description: "Statement of Herbert Charles Russell (work colleague, identified body), 24 August 1978"
-      - id: "SCOI.73571.00013"
-        description: "Statement of Constable John Charles Mortimer (OIC), 24 August 1978"
-      - id: "SCOI.73571.00014"
-        description: "Post-mortem report of Dr Grace Higgins, 13 September 1978"
-      - id: "SCOI.73571.00016"
-        description: "Report of Dr J E Hoult (treating psychiatrist), 29 August 1978"
-      - id: "SCOI.73571.00004"
-        description: "Findings of City Coroner Leonard James Nash, 23 October 1978"
-      - id: "SCOI.82180"
-        description: "Strike Force Parrabell Bias Crimes Indicators Review Form — David Williams, 9 March 2017"
-      - id: "SCOI.82316"
-        description: "Expert report of Dr Linda Iles, 11 January 2023"
-      - id: "SCOI.82318"
-        description: "Letter of instruction from Caitlin Healey-Nash to Dr Linda Iles, 19 December 2022"
-      - id: "SCOI.82364"
-        description: "Statement of Caitlin Healey-Nash summarising information from Dr Neil McEwan, 5 February 2023"
-
-  press:
-    - type: "newspaper"
-      author: null
-      title: "Cliff Death Fall"
-      publication: "The Manly Daily"
-      date: "1978-08-25"
-      page: "1"
-      trove_id: null
-      url: null
-      notes: "First report. Describes the cliff location as 'south-eastern point' of North Head, approximately 300 feet (90 metres) from the base. Notes a white Volkswagen station sedan parked with keys in the ignition. Includes a photograph."
-    - type: "newspaper"
-      author: null
-      title: "Victim named"
-      publication: "The Manly Daily"
-      date: "1978-08-26"
-      page: "1"
-      trove_id: null
-      url: null
-      notes: "Second report. Identifies the deceased."
-
-  oral_history: []
 
 tags:
   - scoi-category-a

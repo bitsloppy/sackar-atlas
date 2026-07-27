@@ -189,37 +189,6 @@ decade: "1980s"
 
 stub: false
 
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.29"
-    page_start: 206
-    page_end: 206
-    exhibits: []
-  press:
-    - type: "online-news"
-      author: null
-      title: "Man accused of historic murder in a Sydney park would allegedly 'set upon' gay men, court hears"
-      publication: "ABC News"
-      date: "2023-05-04"
-      url: "https://www.abc.net.au/news/2023-05-04/nsw-stanley-early-on-trial-for-raymond-keam-1987-murder/102300106"
-      trove_id: null
-      accessed_date: "2026-07-25"
-    - type: "online-news"
-      author: null
-      title: "Australian gay hate killer sentenced to 22 years behind bars"
-      publication: "PinkNews"
-      date: "2023-10-23"
-      url: "https://www.thepinknews.com/2023/10/23/australian-gay-hate-killer-behind-bars/"
-      trove_id: null
-      accessed_date: "2026-07-25"
-  archives: []
-  hansard: []
-  oral_history: []
-  coronial: []
-  reports: []
-  media_sources: []
 ---
 
 ## Who was Raymond Keam

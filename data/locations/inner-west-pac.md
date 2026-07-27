@@ -71,21 +71,6 @@ related_cases:
 related_events: []
 related_media: []
 
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic:
-    - service: "NSW Police Force"
-      url: "https://www.police.nsw.gov.au"
-  reports:
-    - type: parliamentary-committee
-      organisation: "NSW Legislative Council Standing Committee on Social Issues"
-      title: "Gay and Transgender hate crimes between 1970 and 2010"
-      year: "2021"
-      report_number: "Report 58"
-      page: "20–21"
-
 content_warnings: []
 tags:
   - police-area-command

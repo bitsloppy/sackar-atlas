@@ -22,13 +22,6 @@ active_to: "1985"
 still_exists: false
 
 #
-sources:
-  press: []
-  archives: []
-  oral_history: []
-  geographic: []
-  reports: []
-  media_sources: []
 --- History ----------------------------------------------------------------
 # Opened September 1960. Initially operated as 'Chevron Hilton Hotel' under
 # a failed management arrangement with Hilton International. From 1965 until
@@ -55,35 +48,6 @@ related_cases:
   - mark-stewart   # possible connection — contested; Parrabell conflated this hotel with the Hilton
 related_events: []
 related_media: []
-
-sources:
-  scoi:
-    volume: 2
-    chapter: 5
-    paragraph: "5.128–5.200"
-    page_start: 224
-    page_end: 236
-  press:
-    - type: magazine
-      author: null
-      title: "Chevron Hotel advertisement"
-      publication: "The Bulletin"
-      date: "1965-02-20"
-      trove_id: null
-      url: null
-      # Documents the change from 'Chevron Hilton' to 'Chevron Hotel' branding
-    - type: magazine
-      author: null
-      title: "Chevron Hotel advertisement"
-      publication: "The Bulletin"
-      date: "1965-09-11"
-      trove_id: null
-      url: null
-  archives: []
-  oral_history: []
-  geographic: []
-  reports: []
-  media_sources: []
 
 content_warnings: []
 
