@@ -21,6 +21,10 @@ site/public/cases.json
 site/public/cases.csv
 site/public/queer-sydney.db
 
+# Primary source PDFs — large files, not committed
+# Download from public sources listed in sources/SOURCES.md
+sources/pdf/
+
 # Logs
 *.log
 npm-debug.log*
