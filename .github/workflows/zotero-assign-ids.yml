@@ -1,0 +1,28 @@
+name: Zotero — Assign sackar_atlas_id to remaining items
+
+# Manual trigger only.
+# Assigns sackar_atlas_id to 24 items without IDs and deletes 2 placeholder entries.
+# Requires: ZOTERO_OPENCLAW_ACCESS secret (read/write for group 6623153)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  assign-ids:
+    name: Assign IDs and clean up placeholders
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run ID assignment script
+        env:
+          ZOTERO_API_KEY:  ${{ secrets.ZOTERO_OPENCLAW_ACCESS }}
+          ZOTERO_GROUP_ID: "6623153"
+        run: python3 scripts/zotero-assign-ids.py
