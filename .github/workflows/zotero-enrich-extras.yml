@@ -1,0 +1,31 @@
+name: Zotero — Enrich Extra fields
+
+# One-shot manual trigger only.
+# Adds missing series_id, spotify_url, runtime, and sackar_atlas_id fields
+# to 25 items in the sackar-atlas Zotero group library.
+#
+# Requires: ZOTERO_OPENCLAW_ACCESS secret (read/write key for group 6623153)
+# Set at: GitHub → Settings → Secrets and variables → Actions
+
+on:
+  workflow_dispatch:
+
+jobs:
+  enrich:
+    name: Enrich Zotero Extra fields
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run enrichment script
+        env:
+          ZOTERO_API_KEY:  ${{ secrets.ZOTERO_OPENCLAW_ACCESS }}
+          ZOTERO_GROUP_ID: "6623153"
+        run: python3 scripts/zotero-enrich-extras.py
