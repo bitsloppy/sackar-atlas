@@ -12,15 +12,18 @@ Does NOT commit anything — read-only diagnostic tool.
 """
 
 import sys
-import os
 import re
 from pathlib import Path
 
-BASE = Path(__file__).parent.parent
-CASES = BASE / "data/cases"
+BASE   = Path(__file__).parent.parent
+CASES  = BASE / "data/cases"
 PEOPLE = BASE / "data/people"
 LOCATIONS = BASE / "data/locations"
-SOURCES = BASE / "data/sources"
+# Sources are managed in Zotero; the RIS export is the local reference.
+ZOTERO_RIS = BASE / "data/sources/zotero-export/sackar-atlas-sources.ris"
+
+
+# ─── File helpers ──────────────────────────────────────────────────────────────
 
 def read_file(path):
     try:
@@ -28,30 +31,28 @@ def read_file(path):
     except FileNotFoundError:
         return None
 
+
+# ─── Frontmatter parsers ───────────────────────────────────────────────────────
+
 def extract_fm(content):
-    """Extract frontmatter as a dict of raw string values (no full YAML parse needed)."""
+    """Return the raw frontmatter string from a markdown file."""
     m = re.match(r'^---\n(.*?)\n---', content, re.DOTALL)
-    if not m:
-        return {}
-    return m.group(1)
+    return m.group(1) if m else ""
 
 def clean_val(v):
     """Strip quotes, inline YAML comments, and whitespace from a scalar value."""
     v = v.strip()
-    # Remove inline comments (# ...)
     v = re.sub(r'\s+#.*$', '', v)
     v = v.strip().strip('"').strip("'")
     return None if v in ('null', '~', '') else v
 
 def get_scalar(fm, key):
-    """Get a simple scalar value from frontmatter text."""
+    """Get a simple top-level scalar value from frontmatter text."""
     m = re.search(rf'^{re.escape(key)}:\s*(.+)$', fm, re.MULTILINE)
-    if not m:
-        return None
-    return clean_val(m.group(1))
+    return clean_val(m.group(1)) if m else None
 
 def get_list(fm, key):
-    """Get a YAML list value (top-level only)."""
+    """Get a top-level YAML list value."""
     m = re.search(rf'^{re.escape(key)}:\n((?:  - .+\n?)*)', fm, re.MULTILINE)
     if not m:
         return []
@@ -71,72 +72,87 @@ def get_nested(fm, parent, child):
         return None
     block = m.group(1)
     cm = re.search(rf'^\s+{re.escape(child)}:\s*(.+)$', block, re.MULTILINE)
-    if not cm:
-        return None
-    return clean_val(cm.group(1))
+    return clean_val(cm.group(1)) if cm else None
 
-def get_sources_scoi(fm):
-    """Extract SCOI citation fields from the nested sources.scoi block."""
-    # Find the sources: block
-    sources_m = re.search(r'^sources:\n((?:  .+\n|(?:    .+\n)|(?:\n))*)', fm, re.MULTILINE)
-    if not sources_m:
-        return {}
-    sources_block = sources_m.group(1)
-    # Find scoi: sub-block within it
-    scoi_m = re.search(r'^  scoi:\n((?:    .+\n?)*)', sources_block, re.MULTILINE)
-    if not scoi_m:
-        return {}
-    scoi_block = scoi_m.group(1)
-    result = {}
-    for field in ['volume', 'chapter', 'paragraph', 'page_start', 'page_end']:
-        fm2 = re.search(rf'^\s+{re.escape(field)}:\s*(.+)$', scoi_block, re.MULTILINE)
-        if fm2:
-            result[field] = clean_val(fm2.group(1))
-    return result
+def field_present(fm, key):
+    """True if the field key appears at the top level in frontmatter."""
+    return bool(re.search(rf'^{re.escape(key)}:', fm, re.MULTILINE))
 
-def count_press_sources(fm):
-    """Count press sources in the sources.press[] array."""
-    # Find sources block, then press sub-block
-    sources_m = re.search(r'^sources:\n((?:  .+\n|(?:    .+\n)|(?:\n))*)', fm, re.MULTILINE)
-    if not sources_m:
+def get_sections_count(fm):
+    """Count entries in the sections[] array."""
+    m = re.search(r'^sections:\n((?:  - .+\n(?:    .+\n)*)*)', fm, re.MULTILINE)
+    if not m:
         return 0
-    sb = sources_m.group(1)
-    press_m = re.search(r'^  press:\n((?:    .+\n?)*)', sb, re.MULTILINE)
-    if not press_m:
-        return 0
-    return len(re.findall(r'^\s+- type:', press_m.group(1), re.MULTILINE))
+    return len(re.findall(r'^\s+- heading:', m.group(1), re.MULTILINE))
+
+def count_body_h2s(body):
+    """Count ## headings in the markdown body."""
+    return len(re.findall(r'^## ', body, re.MULTILINE))
+
+
+# ─── Zotero RIS source count ───────────────────────────────────────────────────
+
+def count_zotero_sources(slug):
+    """
+    Count source items in the Zotero RIS export that reference this case slug.
+
+    Looks for the slug in:
+      - N1 field: "Related cases: slug1, slug2" (pipe-separated metadata block)
+      - KW field: "case:slug" (namespaced tag)
+
+    Returns (count, ris_found) where ris_found is False if the export is missing.
+    """
+    if not ZOTERO_RIS.exists():
+        return 0, False
+
+    content = ZOTERO_RIS.read_text(encoding='utf-8')
+    # Split into individual records at ER  -
+    records = re.split(r'\nER\s+-\s*\n', content)
+
+    count = 0
+    for record in records:
+        # Check N1 field: "Related cases: slug1, slug2"
+        n1_m = re.search(r'^N1\s+-\s+(.+)$', record, re.MULTILINE)
+        if n1_m:
+            n1_text = n1_m.group(1)
+            cases_m = re.search(r'Related cases?:\s*([^|]+)', n1_text, re.IGNORECASE)
+            if cases_m:
+                linked = [s.strip() for s in cases_m.group(1).split(',')]
+                if slug in linked:
+                    count += 1
+                    continue
+
+        # Check KW fields: "case:slug"
+        kw_lines = re.findall(r'^KW\s+-\s+(.+)$', record, re.MULTILINE)
+        for kw in kw_lines:
+            if kw.strip() == f'case:{slug}':
+                count += 1
+                break
+
+    return count, True
+
+
+# ─── Reference checks ─────────────────────────────────────────────────────────
 
 def check_ref(collection_path, slug):
-    """Check if a data file exists for a slug."""
     return (collection_path / f"{slug}.md").exists()
 
-def count_sources(fm, source_type):
-    """Count entries of a given type in sources block."""
-    # Simple heuristic: count occurrences of the type within the sources block
-    sources_m = re.search(r'^sources:\n((?:  .+\n|(?:    .+\n))*)', fm, re.MULTILINE | re.DOTALL)
-    if not sources_m:
-        return 0
-    block = sources_m.group(1)
-    return len(re.findall(rf'^\s+- type: {re.escape(source_type)}', block, re.MULTILINE))
-
-def get_press_count(fm):
-    sources_m = re.search(r'^sources:.*?(?=^\w|\Z)', fm, re.MULTILINE | re.DOTALL)
-    if not sources_m:
-        return 0
-    return fm.count('trove_id:')
-
-def get_trove_null_count(fm):
-    return fm.count('trove_id: null')
-
-def ref_status(slug, collection_path, label):
+def ref_status(slug, collection_path):
     exists = check_ref(collection_path, slug)
     stub_flag = False
     if exists:
         content = read_file(collection_path / f"{slug}.md")
         if content:
             stub_flag = 'stub: true' in content
-    icon = "✅" if (exists and not stub_flag) else ("🔶 stub" if (exists and stub_flag) else "❌ missing")
-    return f"{slug} {icon}"
+    if exists and not stub_flag:
+        return f"{slug} ✅"
+    elif exists and stub_flag:
+        return f"{slug} 🔶 stub"
+    else:
+        return f"{slug} ❌ missing"
+
+
+# ─── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
     if len(sys.argv) < 2:
@@ -157,105 +173,103 @@ def main():
     body_m = re.match(r'^---\n.*?\n---\n(.*)', content, re.DOTALL)
     body = body_m.group(1).strip() if body_m else ""
 
-    # --- Key fields ---
-    name = get_scalar(fm, 'name') or slug
-    born_date = get_scalar(fm, 'born_date')
-    born_place = get_scalar(fm, 'born_place')
+    # ── Key fields ────────────────────────────────────────────────────────────
+    name         = get_scalar(fm, 'name') or slug
+    born_date    = get_scalar(fm, 'born_date')
+    born_year    = get_scalar(fm, 'born_year')
+    born_place   = get_scalar(fm, 'born_place')
     died_display = get_scalar(fm, 'date_of_death_display') or get_scalar(fm, 'date_of_death')
-    age = get_scalar(fm, 'age_at_death')
+    age          = get_scalar(fm, 'age_at_death')
     case_outcome = get_scalar(fm, 'case_outcome') or 'death'
-    scoi_cat = get_scalar(fm, 'scoi_category')
-    decade = get_scalar(fm, 'decade')
+    scoi_cat     = get_scalar(fm, 'scoi_category')
+    decade       = get_scalar(fm, 'decade')
 
     location_name = get_scalar(fm, 'location_name')
-    location_id = get_scalar(fm, 'location_id')
-    last_seen = get_scalar(fm, 'last_seen_location')
+    location_id   = get_scalar(fm, 'location_id')
+    last_seen     = get_scalar(fm, 'last_seen_location')
 
     sexuality_conf = get_nested(fm, 'sexuality', 'confidence')
     sexuality_note = get_nested(fm, 'sexuality', 'display_note')
 
-    motive = get_scalar(fm, 'motive_bias_assessment')
-    killing_ctx = get_scalar(fm, 'killing_location_context')
-    misconduct = get_scalar(fm, 'police_misconduct_level')
-    misconduct_summary = get_scalar(fm, 'police_misconduct_summary')
+    motive        = get_scalar(fm, 'motive_bias_assessment')
+    killing_ctx   = get_scalar(fm, 'killing_location_context')
+    group_attack  = get_scalar(fm, 'group_attack')
+    misconduct    = get_scalar(fm, 'police_misconduct_level')
+    misconduct_sum = get_scalar(fm, 'police_misconduct_summary')
     accountability = get_scalar(fm, 'accountability_status')
-    apology = get_scalar(fm, 'nswpf_apology_to_family')
-    scoi_finding = get_scalar(fm, 'scoi_finding')
+    apology        = get_scalar(fm, 'nswpf_apology_to_family')
+    scoi_finding   = get_scalar(fm, 'scoi_finding')
+
+    judicial_noted = get_scalar(fm, 'judicial_bias_noted')
 
     inquiry_finding = get_nested(fm, 'manner_findings', 'inquiry_finding')
-    site_status = get_nested(fm, 'manner_findings', 'site_status')
-    parrabell = get_nested(fm, 'manner_findings', 'parrabell_finding')
+    site_status     = get_nested(fm, 'manner_findings', 'site_status')
+    parrabell       = get_nested(fm, 'manner_findings', 'parrabell_finding')
 
     related_locations = get_list(fm, 'related_locations')
     related_people_list = get_list(fm, 'related_people')
     related_recommendations = get_list(fm, 'related_recommendations')
     source_lists = get_list(fm, 'source_lists')
 
-    trove_nulls = get_trove_null_count(fm)
-    press_count = count_press_sources(fm)
-    scoi_fields = get_sources_scoi(fm)
+    sections_count = get_sections_count(fm)
+    body_h2_count  = count_body_h2s(body)
 
-    # --- Cross-reference state ---
+    zotero_count, ris_found = count_zotero_sources(slug)
+
+    # ── Cross-reference state ─────────────────────────────────────────────────
     loc_status = []
     if location_id:
-        loc_status.append(ref_status(location_id, LOCATIONS, 'death site'))
+        loc_status.append(ref_status(location_id, LOCATIONS))
     for loc in related_locations:
         if loc != location_id:
-            loc_status.append(ref_status(loc, LOCATIONS, ''))
+            loc_status.append(ref_status(loc, LOCATIONS))
 
-    people_status = []
-    # Victim record
-    people_status.append(ref_status(slug, PEOPLE, 'victim record'))
+    people_status = [ref_status(slug, PEOPLE)]  # victim record always first
     for p in related_people_list:
         if p != slug:
-            people_status.append(ref_status(p, PEOPLE, ''))
+            people_status.append(ref_status(p, PEOPLE))
 
-    # Dangling case refs (forward refs)
-    all_case_refs = []
-    sources_dir_files = list(SOURCES.glob("*.md"))
-    for sf in sources_dir_files:
-        sc = read_file(sf)
-        if sc and slug in sc:
-            fm_s = extract_fm(sc)
-            for ref in get_list(fm_s, 'related_cases'):
-                if not check_ref(CASES, ref) and ref not in all_case_refs:
-                    all_case_refs.append(ref)
-
-    # --- Output ---
+    # ── Output ────────────────────────────────────────────────────────────────
     w = []
     def ln(s=""): w.append(s)
 
+    # ── Header ────────────────────────────────────────────────────────────────
+    cat_label = f"SCOI Category {scoi_cat}" if scoi_cat else "No SCOI category"
     ln(f"# QA Card — {name}")
-    ln(f"*SCOI Category {scoi_cat} · {decade or '?'} · case_outcome: {case_outcome}*")
+    ln(f"*{cat_label} · {decade or '?'} · case_outcome: {case_outcome}*")
     ln()
 
+    # ── Identity ──────────────────────────────────────────────────────────────
     ln("## Identity")
-    if born_date:
-        ln(f"- **Born:** {born_date}{(' — ' + born_place) if born_place else ''}")
-    elif born_place:
-        ln(f"- **Born:** {born_place} (date unknown)")
-    ln(f"- **Died:** {died_display}{(' · age ' + age) if age else ''}")
+    born_str = born_date or (f"c. {born_year}" if born_year else None)
+    if born_str:
+        place_str = f' — {born_place}' if born_place else ''
+        ln(f"- **Born:** {born_str}{place_str}")
+    else:
+        ln("- **Born:** *not set*")
+    ln(f"- **Died:** {died_display or '(not set)'}{(' · age ' + age) if age else ''}")
     co_b = get_scalar(fm, 'country_of_birth')
-    cb = get_scalar(fm, 'cultural_background')
+    cb   = get_scalar(fm, 'cultural_background')
     if co_b: ln(f"- **Country of birth:** {co_b}")
-    if cb: ln(f"- **Background:** {cb}")
+    if cb:   ln(f"- **Background:** {cb}")
     ln()
 
+    # ── Sexuality assessment ──────────────────────────────────────────────────
     ln("## Sexuality assessment")
-    ln(f"- **Confidence:** `{sexuality_conf}`")
+    ln(f"- **Confidence:** `{sexuality_conf or '(not set)'}`")
     if sexuality_note:
-        # Trim long notes
         note_short = sexuality_note.strip()[:300].rstrip()
         ln(f"- **Reasoning:** {note_short}{'…' if len(sexuality_note) > 300 else ''}")
     ln()
 
+    # ── What happened ─────────────────────────────────────────────────────────
     ln("## What happened")
-    # Pull first 3 lines of body as summary
     first_lines = [l for l in body.split('\n') if l.strip() and not l.startswith('#')][:3]
     for l in first_lines:
         ln(f"> {l.strip()[:120]}{'…' if len(l.strip()) > 120 else ''}")
     ln()
 
+    # ── Location ──────────────────────────────────────────────────────────────
     ln("## Location")
     ln(f"- **Death site:** {location_name or '(not set)'}")
     ln(f"  - location_id: `{location_id or 'null ⚠️'}`")
@@ -264,57 +278,72 @@ def main():
     ln(f"- **Context:** `{killing_ctx or '(not set)'}`")
     ln()
 
+    # ── Official findings ─────────────────────────────────────────────────────
     ln("## Official findings")
-    ln(f"| Stage | Finding |")
-    ln(f"|---|---|")
+    ln("| Stage | Finding |")
+    ln("|---|---|")
 
-    # Get inquest finding
     inquest_m = re.search(r'inquests:\n((?:    .+\n?)*)', fm)
     if inquest_m:
-        iq_block = inquest_m.group(1)
-        iq_finding = re.search(r'finding: (\S+)', iq_block)
-        iq_coroner = re.search(r'coroner: "([^"]+)"', iq_block)
-        iq_date = re.search(r'date: "([^"]+)"', iq_block)
-        finding_str = iq_finding.group(1) if iq_finding else '?'
+        iq_block    = inquest_m.group(1)
+        iq_finding  = re.search(r'finding:\s+"?(\S+?)"?\s*$', iq_block, re.MULTILINE)
+        iq_coroner  = re.search(r'coroner:\s+"([^"]+)"', iq_block)
+        iq_date     = re.search(r'date:\s+"([^"]+)"', iq_block)
+        finding_str = iq_finding.group(1).strip('"') if iq_finding else '?'
         coroner_str = iq_coroner.group(1) if iq_coroner else '?'
-        date_str = iq_date.group(1) if iq_date else '?'
+        date_str    = iq_date.group(1) if iq_date else '?'
         ln(f"| Original inquest ({date_str}) | `{finding_str}` — {coroner_str} |")
+    else:
+        ln("| Original inquest | *not set* |")
 
     ln(f"| Strike Force Parrabell | `{parrabell or '(not set)'}` |")
     ln(f"| Sackar Inquiry | `{inquiry_finding or '(not set)'}` — site_status: `{site_status or '?'}` |")
     ln()
 
     if scoi_finding:
-        ln(f"**Sackar's formal finding:**")
+        ln("**Sackar's formal finding:**")
         ln(f"> {scoi_finding[:400]}{'…' if len(scoi_finding) > 400 else ''}")
         ln()
 
+    # ── Police conduct & accountability ───────────────────────────────────────
     ln("## Police conduct & accountability")
     ln(f"- **Misconduct level:** `{misconduct or '(not set)'}`")
-    if misconduct_summary:
-        short = misconduct_summary.strip()[:250].rstrip()
-        ln(f"- **Summary:** {short}{'…' if len(misconduct_summary) > 250 else ''}")
+    if misconduct_sum:
+        short = misconduct_sum.strip()[:250].rstrip()
+        ln(f"- **Summary:** {short}{'…' if len(misconduct_sum) > 250 else ''}")
     ln(f"- **Accountability status:** `{accountability or '(not set)'}`")
     ln(f"- **Apology to family:** `{apology or 'null'}`")
     ln(f"- **Motive bias assessment:** `{motive or '(not set)'}`")
+    ln(f"- **Group attack:** `{group_attack or 'null'}`")
+    if judicial_noted and judicial_noted != 'false':
+        judicial_notes = get_scalar(fm, 'judicial_bias_notes')
+        ln(f"- **Judicial bias noted:** `{judicial_noted}`")
+        if judicial_notes:
+            ln(f"  - {judicial_notes[:200]}")
+    else:
+        ln(f"- **Judicial bias noted:** `{judicial_noted or 'false'}`")
     ln()
 
+    # ── Sources (Zotero) ──────────────────────────────────────────────────────
     ln("## Sources")
-    scoi_ref = f"Vol {scoi_fields.get('volume','?')}, Ch {scoi_fields.get('chapter','?')}, paras {scoi_fields.get('paragraph','?')}, pp {scoi_fields.get('page_start','?')}–{scoi_fields.get('page_end','?')}"
-    ln(f"- **SCOI:** {scoi_ref}")
-    ln(f"- **Press:** {press_count} article(s) — {trove_nulls} needing Trove IDs")
-    archives_c = fm.count('institution:')
-    if archives_c:
-        ln(f"- **Archives:** {archives_c} record(s)")
-    coronial_c = fm.count('deceased:')
-    if coronial_c:
-        ln(f"- **Coronial:** {coronial_c} inquest record(s)")
+    if ris_found:
+        zotero_label = f"{zotero_count} source(s) linked in Zotero" if zotero_count else "⚠️  0 sources linked in Zotero — check tagging"
+        ln(f"- **Zotero:** {zotero_label}")
+    else:
+        ln(f"- **Zotero:** RIS export not found at `{ZOTERO_RIS.relative_to(BASE)}`")
     if source_lists:
         ln(f"- **Source lists:** {', '.join(source_lists)}")
     if related_recommendations:
         ln(f"- **Recommendations linked:** {', '.join(related_recommendations)}")
     ln()
 
+    # ── Narrative structure ───────────────────────────────────────────────────
+    ln("## Narrative structure")
+    ln(f"- **Body h2 headings:** {body_h2_count}")
+    ln(f"- **sections[] entries:** {sections_count}")
+    ln()
+
+    # ── Network state ─────────────────────────────────────────────────────────
     ln("## Network state")
     ln()
     ln("**Locations:**")
@@ -328,9 +357,10 @@ def main():
         ln(f"  - {s}")
     ln()
 
-    # Check for any missing that should exist
+    # ── Warnings ──────────────────────────────────────────────────────────────
     warnings = []
-    # Sanity: check no other case file shares the same name (catches near-duplicates)
+
+    # Duplicate name check
     same_name = [
         f.stem for f in CASES.glob('*.md')
         if f.stem != slug and
@@ -338,33 +368,63 @@ def main():
     ]
     if same_name:
         warnings.append(f"⚠️  Another case has the same name '{name}': {', '.join(same_name)} — check for duplicate")
+
+    # Location
     if not location_id:
         warnings.append("⚠️  `location_id` is null — death site has no location record")
+
+    # Victim people record
     if not check_ref(PEOPLE, slug):
         warnings.append(f"⚠️  No people record for victim: `people/{slug}.md`")
-    if not born_date and case_outcome == 'death':
-        warnings.append("⚠️  `born_date` is missing — check coronial / SCOI records")
+
+    # Born date / year — warn only if both are absent
+    if case_outcome == 'death' and not born_date and not born_year:
+        warnings.append("⚠️  `born_date` and `born_year` both missing — check coronial / SCOI records")
+
+    # Parrabell finding — must be a valid value, never null or absent
+    if not parrabell:
+        warnings.append("⚠️  `manner_findings.parrabell_finding` is not set — must be a valid enum value; use `not-assessed` if Parrabell didn't review this case")
+
+    # Police misconduct and accountability
     if not misconduct:
         warnings.append("⚠️  `police_misconduct_level` is null")
     if not accountability:
         warnings.append("⚠️  `accountability_status` is null")
-    # content_warnings must include 'deceased-person' for any death case
+
+    # content_warnings must include 'deceased-person' for death cases
     if case_outcome == 'death' and 'deceased-person' not in fm:
         warnings.append("⚠️  `content_warnings` is missing 'deceased-person' — required for all death cases")
+
     # source_lists must be non-empty for SCOI cases
     if scoi_cat and not source_lists:
         warnings.append(f"⚠️  `source_lists` is empty for a SCOI Category {scoi_cat} case — add 'scoi-category-{scoi_cat.lower()}'")
-    # first_nations must be explicitly present (even as null) — prompt a conscious decision
-    # Distinguish 'field missing entirely' from 'field: null' (both return None from get_scalar)
-    fn_present = bool(re.search(r'^first_nations:', fm, re.MULTILINE))
-    fn_raw = re.search(r'^first_nations:\s*(.+)$', fm, re.MULTILINE)
-    fn_val = fn_raw.group(1).strip() if fn_raw else None
+
+    # scoi_category: null is invalid — it should be omitted entirely for non-A/B cases
+    scoi_cat_raw = re.search(r'^scoi_category:\s*(.+)$', fm, re.MULTILINE)
+    if scoi_cat_raw and clean_val(scoi_cat_raw.group(1)) is None:
+        warnings.append("⚠️  `scoi_category: null` — omit the field entirely for non-Category-A/B cases (null is not a valid enum value)")
+
+    # first_nations must be set explicitly
+    fn_present = field_present(fm, 'first_nations')
+    fn_val     = get_scalar(fm, 'first_nations')
     if not fn_present:
         warnings.append("⚠️  `first_nations` field missing — add explicitly (null = not yet assessed)")
-    elif fn_val in ('null', '~', None):
+    elif fn_val is None:
         warnings.append("ℹ️  `first_nations: null` — not yet assessed; note if research has confirmed no FN identity")
-    if trove_nulls > 0:
-        warnings.append(f"ℹ️  {trove_nulls} press source(s) need Trove IDs — check resources/trove-todo.md")
+
+    # sections[] should be populated when body has h2 headings
+    if body_h2_count > 0 and sections_count == 0:
+        warnings.append(f"⚠️  Body has {body_h2_count} h2 heading(s) but `sections[]` is empty — populate sections[] to enable accordion rendering")
+    elif body_h2_count > 0 and sections_count != body_h2_count:
+        warnings.append(f"ℹ️  Body has {body_h2_count} h2 heading(s) but sections[] has {sections_count} entries — check all headings are mapped")
+
+    # judicial_bias_noted — informational if not set
+    if not field_present(fm, 'judicial_bias_noted'):
+        warnings.append("ℹ️  `judicial_bias_noted` not set — check ACON/SCOI for any documented judicial remarks; set `false` if none found")
+
+    # Zotero — warn if no sources linked
+    if ris_found and zotero_count == 0:
+        warnings.append("ℹ️  No Zotero sources linked to this case — check RIS export tags (case:{slug} or 'Related cases: {slug}')".format(slug=slug))
 
     if warnings:
         ln("**Flags:**")
@@ -372,18 +432,20 @@ def main():
             ln(f"  - {w_item}")
         ln()
 
+    # ── Files summary ─────────────────────────────────────────────────────────
     ln("---")
     ln()
-    ln("**Files written:**")
+    ln("**Files:**")
     ln(f"  - `data/cases/{slug}.md` ✅")
     ln(f"  - `data/people/{slug}.md` {'✅' if check_ref(PEOPLE, slug) else '❌ MISSING'}")
     if location_id:
         loc_exists = check_ref(LOCATIONS, location_id)
         ln(f"  - `data/locations/{location_id}.md` {'✅' if loc_exists else '❌ MISSING'}")
     ln()
-    ln("*Review the above. If happy: `git add . && git commit && git push`. If changes needed: edit and re-run.*")
+    ln("*Review the above. If happy: flip `published: true`, then `git add data/ CHANGELOG.md && git commit && git push`.*")
 
     print('\n'.join(w))
+
 
 if __name__ == '__main__':
     main()
