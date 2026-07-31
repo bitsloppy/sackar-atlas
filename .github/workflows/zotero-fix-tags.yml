@@ -1,0 +1,28 @@
+name: Zotero — Fix malformed tags
+
+# Manual trigger only.
+# Fixes prefix errors, bogus year: tags, location/event non-slug tags.
+# Requires: ZOTERO_OPENCLAW_ACCESS secret (read/write for group 6623153)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fix-tags:
+    name: Fix malformed Zotero tags
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run tag fix script
+        env:
+          ZOTERO_API_KEY:  ${{ secrets.ZOTERO_OPENCLAW_ACCESS }}
+          ZOTERO_GROUP_ID: "6623153"
+        run: python3 scripts/zotero-fix-tags.py
