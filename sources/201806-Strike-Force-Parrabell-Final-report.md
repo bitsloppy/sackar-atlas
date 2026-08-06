@@ -209,7 +209,7 @@ There was a time when a man beating his wife and children was regarded as a fath
 
 In Australia women were forbidden to vote until after the turn of the twentieth century, and it was not until 1962 that the same right was provided to Indigenous citizens. In 1978 protest activity motivated by celebration became the basis of today's Sydney Gay and Lesbian Mardi Gras that attracted a response from police involving excessive force and arrests followed by the publication of participants' identities in a public shaming exercise. The degree of animosity towards gay men especially was not isolated to any particular section of society which reflected well entrenched social, political, legal, cultural and institutional bias. Within this context the NSW Police Force was no different with the backing of legislation that identified criminality by natural behaviour.
 
-Violence directed against gay men and lesbians in this country and many others around the world is not a new phenomenon. According to some sources2 there is evidence of gay bashings in Australia since colonisation, however it has only been recognised as a social problem in the last several decades.
+Violence directed against gay men and lesbians in this country and many others around the world is not a new phenomenon. According to some sources [^2] there is evidence of gay bashings in Australia since colonisation, however it has only been recognised as a social problem in the last several decades.
 
 Whilst anti-gay violence is not new, it has grown alongside increasing visibility and openness of an urban, suburban and rural gay culture. Factors that impact upon and hopefully promote increased visibility of the Lesbian, Gay, Bisexual, Transgender, Intersex and Queer (LGBTIQ) community and openness about sexuality and gender diversity include snowballing social and legislative reforms.
 
@@ -229,24 +229,11 @@ Within the same period of time when many gay men began enjoying the freedom and 
 of positive visibility, HIV/AIDS arrived in Australia with the first recorded AIDS case in 1982 and the first AIDS-related death in 1983. What followed is often referred to as the 'AIDS crisis', drawing a significant media and social response of gay alienation within the context of
 'moral panic'.
 
-The 'Grim Reaper' advertising campaign in 1987 epitomised this alienation, notwithstanding
-accolades for creative effectiveness. It certainly did not impact positively upon the gay
-community, given its promotion of fear, not only of AIDS itself but also of those held
-responsible for its spread - gay men.
+The 'Grim Reaper' advertising campaign in 1987 epitomised this alienation, notwithstanding accolades for creative effectiveness. It certainly did not impact positively upon the gay community, given its promotion of fear, not only of AIDS itself but also of those held responsible for its spread - gay men.
 
-In the eyes of many gay men this campaign reignited and refocussed homophobia within
-communities, driven by fear and supported by one of the most famous advertising campaigns
-of the twentieth century. The link between anti-gay violence and moral panic associated with
-the spread of AIDS in Australian states is well documented.[^3]
+In the eyes of many gay men this campaign reignited and refocussed homophobia within communities, driven by fear and supported by one of the most famous advertising campaigns of the twentieth century. The link between anti-gay violence and moral panic associated with the spread of AIDS in Australian states is well documented.[^3]
 
-Another factor was the social attitude towards 'beats' - locations such as public parks, beaches
-and toilets, where men meet or arrange to meet other men for sexual or social purposes. Some
-of the most highly publicised disappearances and deaths of men during this period were at
-known beats, including Bondi headlands (popularised by the book Bondi Badlands4 and more
-recently Deep Water5). Moral attitudes of the time (and to some extent today) towards beats
-and anonymous sexual activity at such locations create a dangerous environmental context. At
-these locations men were identified as legitimate targets of violence, unlikely to seek police
-involvement or assistance.
+Another factor was the social attitude towards 'beats' - locations such as public parks, beaches and toilets, where men meet or arrange to meet other men for sexual or social purposes. Some of the most highly publicised disappearances and deaths of men during this period were at known beats, including Bondi headlands (popularised by the book Bondi Badlands[^4] and more recently Deep Water [^5]). Moral attitudes of the time (and to some extent today) towards beats and anonymous sexual activity at such locations create a dangerous environmental context. At these locations men were identified as legitimate targets of violence, unlikely to seek police involvement or assistance.
 
 ### Responsibility of Police
 
@@ -325,7 +312,7 @@ The aspect of humanity was not lost on the investigators that formed Strike Forc
 
 ### Investigative Review
 
-On 30 August 2015 Strike Force Parrabell commenced a thorough investigative review to determine whether 88 deaths originally listed in a submission to the Australian Institute of Criminology7, and commonly referred to by media representatives, could be classified as motivated by bias including gay-hate.
+On 30 August 2015 Strike Force Parrabell commenced a thorough investigative review to determine whether 88 deaths originally listed in a submission to the Australian Institute of Criminology[^7], and commonly referred to by media representatives, could be classified as motivated by bias including gay-hate.
 
 The identification of bias motivation was of primary importance, however, where appropriate, investigators were to also make recommendations about conducting further enquiries if fresh evidence might be uncovered, or bias of the original investigator was shown or suspected.
 
@@ -557,7 +544,7 @@ That such bias influenced homicide investigations and that the outcomes of these
 
 Retrospectively, it is reasonable to ask, as Sue Thompson and Stephen Tomsen among others have done, whether being better informed to the possible connection of homicides to a pattern of bias crime would have permitted police to alert the public at large or a vulnerable population to the danger.
 
-Whilst that principal is reasonable, it depends upon the discovery of connected events and individuals through a systemic review. CrimTrac10 and other devices are used to discover such connections. These are only as good as the precision and accuracy of the information that is collected for dissemination and analysis.
+Whilst that principal is reasonable, it depends upon the discovery of connected events and individuals through a systemic review. CrimTrac [^10] and other devices are used to discover such connections. These are only as good as the precision and accuracy of the information that is collected for dissemination and analysis.
 
 Connecting bias crime depends upon a sound evaluation of the motivation of the offender through the review of forensic materials. Very often, particularly in homicides, that evaluation is confounded by a lack of strong evidence.
 
@@ -761,7 +748,7 @@ This is related to scholarship that has reviewed the spatial mapping of anti-gay
 
 Beat spaces have a long history of attracting the attention and animosity of police (Dalton 2012). In Australia, some of the earliest arrests and criminal prosecutions for conduct at beats date back to the 1910s (Wotherspoon 1991:66). Little is known about these matters as scant offence details were preserved in court archives. Various historians of homosexual subculture note that the police were often aware of sexual conduct at beats and this period marks the start of police vigilance to the phenomenon of beats (French 1986; Wotherspoon 1991; Murdoch 2000; Carbery 1992). During the period covered by the Parrabell review, many men assaulted at beats would often not report such crimes to police for fear of being 'outed' or being construed as engaging in illegal 'public' sexual conduct (and risking prosecution). As Tomsen points out, such men were often perceived by their assailants to be 'soft targets' who would not resist or report attacks (2009: 42). That gay men were soft targets that often saw them subjected to robbery is evident in many of the Parrabell case files.
 
-Beat spaces are very complex and have spatial and temporal attributes. They are often ephemeral spaces and only become sites of sexual activity when like-minded men meet. Some beats are popular during the day, whilst others mainly attract men at night. Many of the cases reviewed by SFP make explicit references to beats, and certainly there are innumerable cases where perpetrator(s) have targeted men at beats for bashings that have sometimes proved fatal. Many notorious beats featured in the Parrabell review including Alexandria Park, Moore Park, Marks Park27 and Centennial Park.
+Beat spaces are very complex and have spatial and temporal attributes. They are often ephemeral spaces and only become sites of sexual activity when like-minded men meet. Some beats are popular during the day, whilst others mainly attract men at night. Many of the cases reviewed by SFP make explicit references to beats, and certainly there are innumerable cases where perpetrator(s) have targeted men at beats for bashings that have sometimes proved fatal. Many notorious beats featured in the Parrabell review including Alexandria Park, Moore Park, Marks Park [^27] and Centennial Park.
 
 Despite the long and well documented history of bashers targeting gay men [and men perceived to be gay] at beats, the relevance of beats to this review of bias-related violence was complex and nuanced. Whilst beats often featured as a geographical site where extreme violence was perpetrated, or where bashers were drawn to their vicinity to seek out victims, sometimes the existence of a beat did not figure as a significant explanatory feature in relation to interpreting the role of violence in a particular case. For example, in one particular case a man was determined to have died in a public toilet as a result of a drug overdose. In another case, a man was stabbed to death in a park in a violent frenzy by a drug addicted assailant. The victim was sitting on a bench near a public toilet that operated as a beat but robbery appears to have been the principal motive for the crime.
 
