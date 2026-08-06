@@ -2806,7 +2806,7 @@ persons unknown.
 suspect that LGBTIQ bias was a factor in Mr Brennan's death.
 
 
-# 5.4771. I make the following recommendations for future investigations:
+5.4771. I make the following recommendations for future investigations:
 
 
 <table>

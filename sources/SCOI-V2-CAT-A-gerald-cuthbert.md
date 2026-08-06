@@ -1483,7 +1483,7 @@ a suspicion that LGBTIQ bias was a factor in the death of Mr Cuthbert.
 # Conclusions and Recommendations
 
 
-# 5.1089. I make the following recommendation:
+5.1089. I make the following recommendation:
 
 
 <table>

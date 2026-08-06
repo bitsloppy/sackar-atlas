@@ -1710,6 +1710,8 @@ raised by the NSWPF with respect to this being a possible motivation for
 Mr Allen's death.
 
 
+
+
 5.2607. The various motivations behind Mr Allen's fatal attack are addressed further in
 Chapter 17, so as to avoid any prejudice to possible future investigations.
 

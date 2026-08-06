@@ -15,6 +15,7 @@ an area known as Shelley Beach at Tathra on the NSW South Coast, at about
 ## 5.3024. Mr Paynter's time of death was estimated to be approximately 12:00am on 12- 13 October 1989.
 
 
+
 Circumstances of death
 
 
