@@ -1,0 +1,35 @@
+# Sackar Atlas
+
+A structured open dataset documenting historical anti-LGBTIQ hate crimes in Sydney,
+derived from the 2023 NSW Special Commission of Inquiry into LGBTIQ Hate Crimes.
+
+- Repo: https://github.com/bitsloppy/sackar-atlas
+- Licence: CC-BY 4.0 (data)
+- Citation: Roberts A (2026) *Queer Heritage: Historical LGBTIQ Hate Crimes in Sydney* [data set], GitHub
+
+## Collections
+
+- `data/cases/` — one file per victim (YAML frontmatter + narrative)
+- `data/locations/` — places: beats, crime scenes, memorials, police commands
+- `data/events/` — strike forces, inquiries, legal milestones, memorials
+- `data/people/` — victims, perpetrators, witnesses, investigators, officials
+- `data/recommendations/` — the 19 SCOI formal recommendations
+- `data/testimonies/` — witness and survivor testimony
+
+## Identifiers
+
+Every record has a slug (lowercase-hyphenated filename). Slugs are used for all
+cross-references between records. Source items use `sackar-atlas-id` (Zotero Extra field).
+
+## Primary sources
+
+The SCOI report is the primary source for all case data. All citations use AGSM author-date.
+Source records are managed in a Zotero group library; RIS export at:
+`data/sources/zotero-export/sackar-atlas-sources.ris`
+
+## Full instructions
+
+For AI agent instructions including schema detail, cross-referencing, source hierarchy,
+and uncertainty labelling:
+
+→ `docs/ai-instructions.md`
