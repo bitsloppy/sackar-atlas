@@ -1,33 +1,17 @@
 
 
-LEGISLATIVE COUNCIL
+# Gay and Transgender Hate Crimes Between 1970 and 2010
 
+## NSW Legislative Council Standing Committee on Social Issues — Report No. 58
 
-STANDING COMMITTEE ON SOCIAL ISSUES
-
-
-<table>
- <tr>
-  <th></th>
-  <th>Gay and Transgender hate crimes<br/>between 1970 and 2010</th>
- </tr>
- <tr>
-  <td></td>
-  <td>Final report</td>
- </tr>
- <tr>
-  <td></td>
-  <td></td>
- </tr>
- <tr>
-  <td>May 2021</td>
-  <td></td>
- </tr>
- <tr>
-  <td></td>
-  <td>www.parliament.nsw.gov.au</td>
- </tr>
-</table>
+<!-- 
+    Source: NSW Legislative Council Standing Committee on Social Issues (2021)
+    Gay and Transgender Hate Crimes Between 1970 and 2010, Report No. 58
+    NSW Parliament. Published May 2021.
+    sackar-atlas-id: nsw-parliament-report-58-2021
+    PDF: sources/pdf/Report No 58 - Committee on Social Issues - Gay and Transgender hate crimes between 1970 and 2010.pdf
+    URL: https://www.parliament.nsw.gov.au/committees/inquiries/Pages/inquiry-details.aspx?pk=1874
+-->
 
 
 

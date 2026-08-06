@@ -68,6 +68,15 @@ NSW Government (23 October 2024) *NSW Government supports all recommendations of
 Special Commission into Historical LGBTIQ+ Hate Crimes* [media release], NSW
 Government, accessed 17 July 2026.
 
+### Other primary sources
+
+ACON and Pride History Group (2018) *In Pursuit of Truth & Justice: Documenting Gay and Transgender Prejudice Killings in NSW in the Late 20th Century*, ACON, Sydney.
+
+NSW Legislative Council Standing Committee on Social Issues (2021) *Gay and Transgender Hate Crimes Between 1970 and 2010*, Report No. 58, NSW Parliament.
+
+Dalton D, de Lint W and Tyson D (2018) *Strike Force Parrabell Final Report*, NSW Police Force.
+Available: <https://www.police.nsw.gov.au/__data/assets/pdf_file/0003/575265/Strike_Force_Parrabell_-_FINAL_REPORT.pdf>
+
 ---
 
 ## Methodology

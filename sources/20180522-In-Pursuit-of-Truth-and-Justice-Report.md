@@ -1,19 +1,16 @@
 
 
-# IN PURSUIT OF T & RUTH
+# In Pursuit of Truth & Justice
 
+## Documenting Gay and Transgender Prejudice Killings in NSW in the Late 20th Century
 
-## JUSTICE
-
-
-DOCUMENTING GAY AND TRANSGENDER PREJUDICE KILLINGS
-IN NSW IN THE LATE 20TH CENTURY
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-1
+<!-- 
+    Source: ACON and Pride History Group (2018)
+    In Pursuit of Truth & Justice: Documenting Gay and Transgender Prejudice Killings in NSW in the Late 20th Century
+    ACON, Sydney. Published 22 May 2018.
+    sackar-atlas-id: acon-phg-2018-in-pursuit-of-truth-and-justice
+    PDF: sources/pdf/In-Pursuit-of-Truth-and-Justice-Report-FINAL-220518.pdf
+-->
 
 
 
