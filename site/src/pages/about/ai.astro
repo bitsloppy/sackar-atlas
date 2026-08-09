@@ -1,0 +1,247 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="AI use"
+  description="How AI tools were used in building Sackar Atlas, and what human oversight applies."
+>
+
+  <div class="page-prose section">
+    <wa-stack gap="xl">
+
+      <!-- Page header -->
+      <wa-stack gap="xs">
+        <p class="breadcrumb"><a href="/about/">About the data</a> /</p>
+        <h1>AI use</h1>
+        <p class="subtitle">
+          How AI tools were used in building this project, and what human oversight applies.
+        </p>
+      </wa-stack>
+
+      <!-- The short version -->
+      <wa-callout variant="neutral" open>
+        <wa-icon slot="icon" name="circle-info"></wa-icon>
+        <strong>The short version.</strong> AI tools (Claude, via OpenClaw) were used throughout
+        this project. Anna Roberts oversaw and verified everything. No AI-generated content
+        appears on this site without human review.
+      </wa-callout>
+
+      <!-- What AI did -->
+      <wa-stack gap="m">
+        <h2>What AI did</h2>
+
+        <wa-stack gap="s">
+          <h3>Infrastructure</h3>
+          <p>
+            Schema design, site build, data pipeline scripts. Built collaboratively with AI
+            assistance; these are not user-facing content. The code is open source and
+            inspectable on <a href="https://github.com/bitsloppy/sackar-atlas">GitHub</a>.
+          </p>
+        </wa-stack>
+
+        <wa-stack gap="s">
+          <h3>Research assistance</h3>
+          <p>
+            Scanning source documents, extracting structured data, suggesting cross-references
+            between records. AI proposes; Anna verifies from the primary source before anything
+            is committed to the data.
+          </p>
+        </wa-stack>
+
+        <wa-stack gap="s">
+          <h3>Prose drafting</h3>
+          <p>
+            Case narratives and analysis were drafted with AI assistance working directly from
+            the source documents, then reviewed and edited by Anna Roberts before publication.
+          </p>
+        </wa-stack>
+      </wa-stack>
+
+      <!-- What AI did not do -->
+      <wa-stack gap="m">
+        <h2>What AI did not do</h2>
+        <ul>
+          <li>
+            AI did not make editorial judgments that appear unchecked on the site.
+          </li>
+          <li>
+            AI did not generate facts. Every factual claim is sourced to a primary document.
+          </li>
+          <li>
+            AI did not access sources other than the documents provided to it.
+          </li>
+        </ul>
+      </wa-stack>
+
+      <!-- Uncertainty ladder -->
+      <wa-stack gap="m">
+        <h2>How we distinguish AI contribution from primary source</h2>
+        <p>
+          The data schema uses an explicit uncertainty ladder:
+        </p>
+        <table class="uncertainty-table">
+          <thead>
+            <tr>
+              <th>Label</th>
+              <th>What it means</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>SCOI confirms</code></td>
+              <td>Directly stated in the Special Commission of Inquiry findings</td>
+            </tr>
+            <tr>
+              <td><code>probable</code></td>
+              <td>Strongly supported by primary sources; human-verified</td>
+            </tr>
+            <tr>
+              <td><code>possible</code></td>
+              <td>Plausible on the available evidence; not confirmed</td>
+            </tr>
+            <tr>
+              <td><code>AI inference</code></td>
+              <td>An interpretive suggestion from AI, explicitly flagged as unverified</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Fields labelled <code>AI inference</code> are not findings. They are working notes,
+          clearly marked, pending human review.
+        </p>
+      </wa-stack>
+
+      <!-- Corrections -->
+      <wa-callout variant="warning" open>
+        <wa-icon slot="icon" name="triangle-exclamation"></wa-icon>
+        If you find an error that may be the result of AI misreading or misrepresenting a
+        source, please <a href="/corrections/">submit a correction</a>.
+      </wa-callout>
+
+      <!-- Footer nav -->
+      <p class="back-link">
+        <a href="/about/">← About the data</a>
+      </p>
+
+    </wa-stack>
+  </div>
+
+</Layout>
+
+<style>
+  .page-prose {
+    max-width: 68ch;
+    margin-inline: auto;
+    padding-block: var(--wa-space-3xl);
+  }
+
+  .breadcrumb {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+  }
+
+  .breadcrumb a {
+    color: var(--wa-color-text-quiet);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    color: var(--site-brand);
+    text-decoration: underline;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: var(--wa-font-size-3xl);
+    color: var(--site-brand);
+    margin: 0;
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: var(--wa-font-size-l);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    margin: 0;
+  }
+
+  h3 {
+    font-size: var(--wa-font-size-m);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    margin: 0;
+  }
+
+  p, li {
+    font-size: var(--wa-font-size-m);
+    color: var(--wa-color-text-normal);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .subtitle {
+    font-size: var(--wa-font-size-m);
+    color: var(--wa-color-text-quiet);
+  }
+
+  ul {
+    margin: 0;
+    padding-inline-start: 1.4em;
+  }
+
+  ul li + li {
+    margin-block-start: var(--wa-space-xs);
+  }
+
+  code {
+    font-size: 0.88em;
+    background-color: var(--wa-color-neutral-95);
+    padding: 0.1em 0.35em;
+    border-radius: var(--wa-border-radius-s);
+    color: var(--wa-color-text-normal);
+  }
+
+  .uncertainty-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--wa-font-size-s);
+  }
+
+  .uncertainty-table th {
+    text-align: left;
+    padding: var(--wa-space-xs) var(--wa-space-s);
+    background-color: var(--wa-color-neutral-95);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    border-bottom: 1px solid var(--wa-color-surface-border);
+  }
+
+  .uncertainty-table td {
+    padding: var(--wa-space-xs) var(--wa-space-s);
+    border-bottom: 1px solid var(--wa-color-surface-border);
+    color: var(--wa-color-text-normal);
+    vertical-align: top;
+  }
+
+  .uncertainty-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .back-link {
+    padding-block-start: var(--wa-space-m);
+    border-top: 1px solid var(--wa-color-surface-border);
+  }
+
+  .back-link a {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    text-decoration: none;
+  }
+
+  .back-link a:hover {
+    color: var(--site-brand);
+    text-decoration: underline;
+  }
+</style>

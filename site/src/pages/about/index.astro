@@ -1,0 +1,337 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="About the data"
+  description="What Sackar Atlas is, how the source documents are prepared, and how to use or cite the data."
+>
+
+  <div class="page-prose section">
+    <wa-stack gap="xl">
+
+      <!-- Page header -->
+      <wa-stack gap="xs">
+        <h1>About the data</h1>
+        <p class="subtitle">
+          What this corpus is, how the sources are prepared, and how to cite or reuse the data.
+        </p>
+      </wa-stack>
+
+      <!-- GitHub callout -->
+      <wa-callout variant="neutral" open>
+        <wa-icon slot="icon" name="code-branch"></wa-icon>
+        All source documents, structured data, and site code are open source on
+        <a href="https://github.com/bitsloppy/sackar-atlas">GitHub ↗</a>.
+        Data is published under CC-BY 4.0.
+      </wa-callout>
+
+      <!-- What this is -->
+      <wa-stack gap="m">
+        <h2>What this is</h2>
+        <p>
+          Sackar Atlas is a curated, human-verified corpus of primary source documents about
+          LGBTIQ hate crime deaths in NSW, built around the 2023 Special Commission of Inquiry
+          into LGBTIQ Hate Crimes (Commissioner: Justice John Sackar AO KC).
+        </p>
+        <p>
+          It is an online reference book — designed to make a dense government inquiry
+          accessible to researchers, journalists, community members, and historians. The SCOI
+          report is a PDF. This project takes the public record and makes its connections
+          legible: real people, real places, an interconnected institutional system, all drawn
+          from primary sources. It is also machine-readable, designed to be usable by AI tools
+          as well as humans.
+        </p>
+        <p>
+          This is a journalism and research project by Anna Roberts. It is not a community
+          heritage project. The infrastructure is built to support that work by others.
+        </p>
+      </wa-stack>
+
+      <!-- The sources -->
+      <wa-stack gap="m">
+        <h2>The primary sources</h2>
+        <p>
+          The project draws on seven primary source documents. All are publicly available.
+          All are committed to the repository as clean Markdown files. PDFs are available via
+          the download links below.
+        </p>
+
+        <table class="sources-table">
+          <thead>
+            <tr>
+              <th>Document</th>
+              <th>Publisher</th>
+              <th>Year</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>SCOI Volume 1 — Executive summary, context, methodology</td>
+              <td>Special Commission of Inquiry (Sackar J)</td>
+              <td>2023</td>
+              <td><a href="https://www.nsw.gov.au/departments-and-agencies/the-cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes" target="_blank" rel="noopener">NSW Government ↗</a></td>
+            </tr>
+            <tr>
+              <td>SCOI Volume 2 — Category A and B deaths</td>
+              <td>Special Commission of Inquiry (Sackar J)</td>
+              <td>2023</td>
+              <td><a href="https://www.nsw.gov.au/departments-and-agencies/the-cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes" target="_blank" rel="noopener">NSW Government ↗</a></td>
+            </tr>
+            <tr>
+              <td>SCOI Volume 3 — Strike forces, institutional failures, recommendations</td>
+              <td>Special Commission of Inquiry (Sackar J)</td>
+              <td>2023</td>
+              <td><a href="https://www.nsw.gov.au/departments-and-agencies/the-cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes" target="_blank" rel="noopener">NSW Government ↗</a></td>
+            </tr>
+            <tr>
+              <td>SCOI Annexures</td>
+              <td>Special Commission of Inquiry (Sackar J)</td>
+              <td>2023</td>
+              <td><a href="https://www.nsw.gov.au/departments-and-agencies/the-cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes" target="_blank" rel="noopener">NSW Government ↗</a></td>
+            </tr>
+            <tr>
+              <td>Strike Force Parrabell Final Report</td>
+              <td>NSW Police Force</td>
+              <td>2018</td>
+              <td>Obtained via GIPA — not publicly available</td>
+            </tr>
+            <tr>
+              <td>In Pursuit of Truth & Justice</td>
+              <td>ACON / Pride History Group</td>
+              <td>2018</td>
+              <td><a href="https://www.pridehistory.org.au/" target="_blank" rel="noopener">Pride History Group ↗</a></td>
+            </tr>
+            <tr>
+              <td>Report No. 58 — Gay and Transgender Hate Crimes 1970–2010</td>
+              <td>NSW Legislative Council Committee on Social Issues</td>
+              <td>2021</td>
+              <td><a href="https://www.parliament.nsw.gov.au/committees/inquiries/Pages/inquiry-details.aspx?pk=1874" target="_blank" rel="noopener">NSW Parliament ↗</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </wa-stack>
+
+      <!-- How sources are prepared -->
+      <wa-stack gap="m">
+        <h2>How the source documents are prepared</h2>
+        <ul>
+          <li>PDFs are converted to Markdown and manually reviewed against the original.</li>
+          <li>
+            Paragraph IDs are added to enable precise cross-referencing, using the format
+            <code>SCOI-V2.5.551</code> (volume, chapter, paragraph).
+          </li>
+          <li>
+            Editorial decisions — formatting choices, corrections, omissions — are documented
+            inline in <code>sources/EDITORIAL-DECISIONS.md</code>.
+          </li>
+          <li>
+            Scripts are used only for cleanup and adding reference IDs — not for content.
+          </li>
+          <li>
+            The source files are the source of truth. The structured data YAML is derived
+            from them, not the reverse.
+          </li>
+        </ul>
+      </wa-stack>
+
+      <!-- How to use -->
+      <wa-stack gap="m">
+        <h2>How to use the data</h2>
+
+        <wa-stack gap="s">
+          <h3>Source documents</h3>
+          <p>
+            The cleaned Markdown source files are in the <code>sources/</code> directory of
+            the <a href="https://github.com/bitsloppy/sackar-atlas">GitHub repository</a>.
+          </p>
+        </wa-stack>
+
+        <wa-stack gap="s">
+          <h3>Paragraph references</h3>
+          <p>
+            Use the format <code>SCOI-V2.5.551</code> for paragraph-level citations.
+            In-text: <code>(Sackar J 2023, SCOI-V2.5.551)</code>.
+          </p>
+        </wa-stack>
+
+        <wa-stack gap="s">
+          <h3>Data schema</h3>
+          <p>
+            The data schema — collections, fields, uncertainty ladder — is described in
+            <a href="https://github.com/bitsloppy/sackar-atlas/blob/main/docs/ai-instructions.md"><code>docs/ai-instructions.md</code> ↗</a>
+            and
+            <a href="https://github.com/bitsloppy/sackar-atlas/blob/main/llms.txt"><code>llms.txt</code> ↗</a>
+            in the repository.
+          </p>
+        </wa-stack>
+
+        <wa-stack gap="s">
+          <h3>Licence</h3>
+          <p>
+            Structured data under <code>data/</code> is published under
+            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY 4.0</a>.
+            Original journalism is © Anna Roberts. Code is MIT.
+            See <a href="https://github.com/bitsloppy/sackar-atlas/blob/main/LICENSING.md">LICENSING.md ↗</a>
+            for full detail.
+          </p>
+        </wa-stack>
+      </wa-stack>
+
+      <!-- Citation -->
+      <wa-stack gap="m">
+        <h2>Citing this project</h2>
+        <p>Suggested citation (AGSM author–date):</p>
+        <blockquote>
+          Roberts A (2026) <em>Sackar Atlas</em>, available at
+          https://sackar-atlas.soft-hill-5225.workers.dev
+        </blockquote>
+        <p>
+          For individual records, cite the specific page URL and the primary source paragraph
+          it draws on.
+        </p>
+      </wa-stack>
+
+      <!-- Corrections CTA -->
+      <p class="corrections-link">
+        Something wrong? <a href="/corrections/">Submit a correction →</a>
+      </p>
+
+      <!-- Sub-pages -->
+      <wa-stack gap="s">
+        <h2>Also in this section</h2>
+        <a href="/about/ai/" class="sub-page-link">
+          <wa-icon name="robot"></wa-icon>
+          AI use — how AI tools were used in building this project
+        </a>
+      </wa-stack>
+
+    </wa-stack>
+  </div>
+
+</Layout>
+
+<style>
+  .page-prose {
+    max-width: 72ch;
+    margin-inline: auto;
+    padding-block: var(--wa-space-3xl);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: var(--wa-font-size-3xl);
+    color: var(--site-brand);
+    margin: 0;
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: var(--wa-font-size-l);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    margin: 0;
+  }
+
+  h3 {
+    font-size: var(--wa-font-size-m);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    margin: 0;
+  }
+
+  p, li {
+    font-size: var(--wa-font-size-m);
+    color: var(--wa-color-text-normal);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .subtitle {
+    font-size: var(--wa-font-size-m);
+    color: var(--wa-color-text-quiet);
+  }
+
+  ul {
+    margin: 0;
+    padding-inline-start: 1.4em;
+  }
+
+  ul li + li {
+    margin-block-start: var(--wa-space-xs);
+  }
+
+  code {
+    font-size: 0.88em;
+    background-color: var(--wa-color-neutral-95);
+    padding: 0.1em 0.35em;
+    border-radius: var(--wa-border-radius-s);
+    color: var(--wa-color-text-normal);
+  }
+
+  blockquote {
+    margin: 0;
+    padding: var(--wa-space-s) var(--wa-space-m);
+    border-left: 3px solid var(--site-brand);
+    background-color: var(--wa-color-neutral-95);
+    border-radius: 0 var(--wa-border-radius-m) var(--wa-border-radius-m) 0;
+    font-style: italic;
+    font-size: var(--wa-font-size-m);
+    color: var(--wa-color-text-normal);
+  }
+
+  /* Sources table */
+  .sources-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--wa-font-size-s);
+  }
+
+  .sources-table th {
+    text-align: left;
+    padding: var(--wa-space-xs) var(--wa-space-s);
+    background-color: var(--wa-color-neutral-95);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    border-bottom: 2px solid var(--wa-color-surface-border);
+  }
+
+  .sources-table td {
+    padding: var(--wa-space-xs) var(--wa-space-s);
+    border-bottom: 1px solid var(--wa-color-surface-border);
+    color: var(--wa-color-text-normal);
+    vertical-align: top;
+  }
+
+  .sources-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .corrections-link {
+    padding: var(--wa-space-m);
+    background-color: var(--wa-color-neutral-95);
+    border-radius: var(--wa-border-radius-m);
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+  }
+
+  /* Sub-page links */
+  .sub-page-link {
+    display: flex;
+    align-items: center;
+    gap: var(--wa-space-s);
+    padding: var(--wa-space-s) var(--wa-space-m);
+    border: 1px solid var(--wa-color-surface-border);
+    border-radius: var(--wa-border-radius-m);
+    color: var(--site-brand);
+    text-decoration: none;
+    font-size: var(--wa-font-size-m);
+    font-weight: 500;
+    transition: background-color 0.12s ease;
+  }
+
+  .sub-page-link:hover {
+    background-color: var(--wa-color-neutral-95);
+  }
+</style>

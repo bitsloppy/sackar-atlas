@@ -1,0 +1,173 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+
+// Load the corrections register from data/corrections.md
+// import.meta.url = site/src/pages/corrections/index.astro → ../../../../data/corrections.md
+const correctionsPath = fileURLToPath(new URL('../../../../data/corrections.md', import.meta.url));
+const rawMd = fs.readFileSync(correctionsPath, 'utf-8');
+
+// Extract entries: lines that start with [YYYY-MM-DD]
+const entries = rawMd
+  .split('\n')
+  .filter(line => /^\[\d{4}-\d{2}-\d{2}\]/.test(line.trim()));
+---
+
+<Layout title="Corrections" description="How to submit a correction to the Sackar Atlas data. Corrections register.">
+
+  <div class="page-prose section">
+    <wa-stack gap="xl">
+
+      <!-- Page header -->
+      <wa-stack gap="xs">
+        <h1>Corrections</h1>
+        <p class="subtitle">How to submit a correction to the Sackar Atlas data.</p>
+      </wa-stack>
+
+      <!-- How to submit -->
+      <wa-stack gap="m">
+        <h2>How to submit a correction</h2>
+        <p>
+          Email <a href="mailto:corrections@sackaratlas.net">corrections@sackaratlas.net</a> with:
+        </p>
+        <ul>
+          <li>The URL of the page with the error</li>
+          <li>What it currently says</li>
+          <li>What it should say</li>
+          <li>Your source — document, page or paragraph number if available</li>
+        </ul>
+        <p>
+          All submissions are reviewed by Anna Roberts. Corrections that are confirmed are applied
+          to the data files and noted in the register below with a date.
+        </p>
+      </wa-stack>
+
+      <!-- What counts -->
+      <wa-stack gap="m">
+        <h2>What counts as a correction</h2>
+        <ul>
+          <li>Factual errors — wrong name, wrong date, wrong location</li>
+          <li>Misquotation of a source document</li>
+          <li>Misidentification of a person</li>
+        </ul>
+
+        <h3>What doesn't</h3>
+        <ul>
+          <li>
+            Disagreement with SCOI findings or coronial conclusions — those are the primary source.
+            The data reflects what the inquiry found, not what is definitively true.
+          </li>
+          <li>
+            Requests to remove information. If you have a privacy concern, email the same address
+            and explain your situation.
+          </li>
+        </ul>
+      </wa-stack>
+
+      <!-- Corrections register -->
+      <wa-stack gap="m">
+        <h2>Corrections register</h2>
+        {entries.length === 0 ? (
+          <wa-callout variant="neutral" open>
+            <wa-icon slot="icon" name="circle-check"></wa-icon>
+            No corrections on record.
+          </wa-callout>
+        ) : (
+          <ul class="register-list">
+            {entries.map(entry => (
+              <li>{entry}</li>
+            ))}
+          </ul>
+        )}
+      </wa-stack>
+
+      <!-- Footer nav -->
+      <p class="back-link">
+        <a href="/">← Back to Sackar Atlas</a>
+      </p>
+
+    </wa-stack>
+  </div>
+
+</Layout>
+
+<style>
+  .page-prose {
+    max-width: 68ch;
+    margin-inline: auto;
+    padding-block: var(--wa-space-3xl);
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: var(--wa-font-size-3xl);
+    color: var(--site-brand);
+    margin: 0;
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: var(--wa-font-size-l);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    margin: 0;
+  }
+
+  h3 {
+    font-size: var(--wa-font-size-m);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    margin: 0;
+  }
+
+  p, li {
+    font-size: var(--wa-font-size-m);
+    color: var(--wa-color-text-normal);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .subtitle {
+    font-size: var(--wa-font-size-m);
+    color: var(--wa-color-text-quiet);
+  }
+
+  ul {
+    margin: 0;
+    padding-inline-start: 1.4em;
+  }
+
+  ul li + li {
+    margin-block-start: var(--wa-space-xs);
+  }
+
+  .register-list {
+    list-style: none;
+    padding: 0;
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+  }
+
+  .register-list li {
+    padding: var(--wa-space-xs) 0;
+    border-bottom: 1px solid var(--wa-color-surface-border);
+    font-size: var(--wa-font-size-s);
+  }
+
+  .back-link {
+    padding-block-start: var(--wa-space-m);
+    border-top: 1px solid var(--wa-color-surface-border);
+  }
+
+  .back-link a {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    text-decoration: none;
+  }
+
+  .back-link a:hover {
+    color: var(--site-brand);
+    text-decoration: underline;
+  }
+</style>
