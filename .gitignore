@@ -19,11 +19,17 @@ dist/
 # (these get regenerated at build time — don't commit them)
 site/public/cases.json
 site/public/cases.csv
-site/public/queer-sydney.db
+site/public/sackar-atlas.db
 
 # Primary source PDFs — large files, not committed
 # Download from public sources listed in sources/SOURCES.md
 sources/pdf/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.bak
 
 # Logs
 *.log
