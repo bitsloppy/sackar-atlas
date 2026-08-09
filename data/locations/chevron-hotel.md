@@ -22,7 +22,7 @@ active_to: "1985"
 still_exists: false
 
 #
---- History ----------------------------------------------------------------
+# --- History ----------------------------------------------------------------
 # Opened September 1960. Initially operated as 'Chevron Hilton Hotel' under
 # a failed management arrangement with Hilton International. From 1965 until
 # closure in 1985, simply the 'Chevron Hotel'.

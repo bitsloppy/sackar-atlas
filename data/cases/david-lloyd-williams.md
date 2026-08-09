@@ -36,7 +36,7 @@ first_language: "English"
 cald_notes: "Born in Barnhurst, England. Had been living in Australia for approximately seven years at the time of his death, having migrated around 1971."
 
 #
---- Sexuality ---------------------------------------------------------------
+# --- Sexuality ---------------------------------------------------------------
 # No evidence before the Inquiry that Mr Lloyd-Williams was a member of the
 # LGBTIQ community. His friend Dr Neil McEwan told the Inquiry he did not
 # understand Mr Lloyd-Williams to be gay. Sackar explicitly found no LGBTIQ bias.

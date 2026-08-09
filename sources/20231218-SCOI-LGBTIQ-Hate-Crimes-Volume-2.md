@@ -1,88 +1,38 @@
-
-
-Volume 2
-
-
-1. 5
-
-
-<table>
- <tr>
-  <th></th>
-  <th></th>
- </tr>
- <tr>
-  <td></td>
-  <td></td>
- </tr>
- <tr>
-  <td></td>
-  <td></td>
- </tr>
- <tr>
-  <td></td>
-  <td></td>
- </tr>
-</table>
-
-
-# Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-Volume 2
-
+# Special Commission of Inquiry into LGBTIQ hate crimes - Volume 2
 
 Commissioner, The Honourable Justice John Sackar
 December 2023
-hate crimes
-
-
-Special Commission of Inquiry into LGBTIQ
-
-
-199
-
-
-
-
-Volume 2
-
 
 # TABLE OF CONTENTS VOLUME 2
 
-
 Chapter 5: Category A Deaths
 Category A
-In the matter of Mark Stewart
-In the matter of Paul Edward Rath
-In the matter of David Lloyd-Williams
-In the matter of Walter Bedser
-In the matter of Richard Slater
-In the matter of Gerald Cuthbert
-In the matter of Peter John Sheil
-In the matter of Wendy Waine
-In the matters of Gilles Mattaini, Ross Warren and
-In the matter of William (Bill) Antony Rooney
-In the matter of Andrew Currie
-In the matter of William Allen
-In the matter of Russell Phillip Payne
-In the matter of Samantha Raye
-In the matter of John Hughes
-In the matter of Graham William Paynter
-In the matter of Simon Blair Wark
-In the matter of William Dutfield
-In the matter of Robert Malcolm
-In the matter of Brian Wayne Schmidt Walker
-In the matter of Crispin Wilson Dye
-In the matter of James Meek
-In the matter of Kenneth Brennan
-In the matter of Carl Gregory Stockton
-In the matter of Scott Stuart Miller
-In the matter of Samantha Rose
-
-
-John Russell
-
+* In the matter of Mark Stewart
+* In the matter of Paul Edward Rath
+* In the matter of David Lloyd-Williams
+* In the matter of Walter Bedser
+* In the matter of Richard Slater
+* In the matter of Gerald Cuthbert
+* In the matter of Peter John Sheil
+* In the matter of Wendy Waine
+* In the matters of Gilles Mattaini, Ross Warren and John Russell
+* In the matter of William (Bill) Antony Rooney
+* In the matter of Andrew Currie
+* In the matter of William Allen
+* In the matter of Russell Phillip Payne
+* In the matter of Samantha Raye
+* In the matter of John Hughes
+* In the matter of Graham William Paynter
+* In the matter of Simon Blair Wark
+* In the matter of William Dutfield
+* In the matter of Robert Malcolm
+* In the matter of Brian Wayne Schmidt Walker
+* In the matter of Crispin Wilson Dye
+* In the matter of James Meek
+* In the matter of Kenneth Brennan
+* In the matter of Carl Gregory Stockton
+* In the matter of Scott Stuart Miller
+* In the matter of Samantha Rose
 
 Chapter 6: Category B Deaths
 Category B
@@ -92,460 +42,110 @@ In the matter of Peter Karl Baumann
 In the matter of Anthony Cawsey
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-201
-202
-219
-253
-283
-298
-339
-370
-393
-426
-479
-561
-600
-619
-647
-661
-693
-718
-733
-784
-813
-860
-873
-933
-983
-1026
-1051
-1104
-
-
-1148
-1149
-1162
-1202
-1236
-1276
-
-
-200
-
-
-
-
-Volume 2
-
-
-1. 
-
-2. 
-
-
-<table>
- <tr>
-  <th></th>
-  <th></th>
- </tr>
- <tr>
-  <td></td>
-  <td></td>
- </tr>
-</table>
-
-
-1. 
-
-
-2
-3
-4
-5
-
-
 # Chapter 5: Category A Deaths
 
+## CATEGORY A
 
-Volume 2
-hate crimes
+### Introduction
 
+5.1. In the Terms of Reference, I was authorised as Commissioner "to inquire into and report and make recommendations" to the Governor in relation to two categories of unsolved deaths, Categories A and B. My consideration of Category B deaths is contained in Chapter 6 of this Report.
 
-Special Commission of Inquiry into LGBTIQ
+5.2. Category A is expressed as follows: A. The manner and cause of death in all cases that remain unsolved from the 88 deaths or suspected deaths of men potentially motivated by gay hate bias that were considered by Strike Force Parrabell.
 
+5.3. The significance of several aspects of the language used in Category A is addressed at Chapter 1 of this Report. I reiterate some aspects of that discussion here.
 
-201
+5.4. First, Category A refers to deaths that were "potentially motivated by gay hate bias", while Category B refers to "suspected hate crime deaths ... where ... the victim was ... a member of the [LGBTIQ] community" (emphasis added).
 
+5.5. I have treated those two different verbal formulations as referring to what is substantially the same concept or criterion. I have generally adopted the language of "LGBTIQ hate crime death" as reflecting this one criterion.
 
+5.6. For the purposes of the Inquiry, as I have explained in Chapter 1 of this Report, an unsolved death is regarded as a suspected LGBTIQ hate crime death, and thus prima facie within one or both of Categories A and B of the Terms of Reference, in circumstances where there is, objectively, reason to suspect both that the death was a homicide, and that membership or perceived membership of the LGBTIQ community was a factor in the commission of the crime.
 
+5.7. Accordingly, for example, deaths associated with attacks on people who may not themselves have been members of the LGBTIQ community, but who are wrongly perceived by their assailants in such a way, would come within the meaning of "LGBTIQ hate crime deaths". Further, the Terms of Reference direct me to inquire into and report only on "deaths", not on crimes such as assaults which may have been LGBTIQ bias crimes but did not result in death.
 
-Chapter 5: Category A Deaths
+5.8. Secondly, Category A refers to 88 deaths of "men" that were "considered by Strike Force Parrabell" whereas in Category B, the reference is to the deaths of people described as "victims". In fact, some of the deaths considered by Strike Force Parrabell were not of men. In order to recognise and acknowledge the gender identity of all those persons considered by Strike Force Parrabell, I have interpreted the word "men" in Category A as referring generally to "people".
 
+#### Deaths considered "unsolved" by Strike Force Parrabell
 
-# Introduction
+5.9 The origins of Strike Force Parrabell are set out in detail in Chapter 13.
 
+5.10. Strike Force Parrabell was established by the NSWPF in about August 2015. It was a review, on the papers, of a list of 88 deaths which had been the subject of media attention since at least 2013. The 88 deaths occurred in a 23-year period between 1976 and 1999.[^1] All 88 names are listed at the commencement of the Parrabell Report.
 
-# CATEGORY A
+5.11. That list had been developed over many years, since about 1990, principally by Ms Sue Thompson, who was the NSWPF Gay and Lesbian Client Consultant from 1990 to 2002. Ms Thompson was assisted by others in developing the list, including Professor Stephen Tomsen.
 
+5.12. Strike Force Parrabell reviewed only 86 of the 88 deaths. One of the deaths occurred in Tasmania and was not examined.[^2] Another death, that of "David Williams", although it was one of the 24 described as "unsolved" in the Case Summaries, was actually not examined at all, because Strike Force Parrabell was unable to locate any records relating to the death.[^3]
 
-5.1. In the Terms of Reference, I was authorised as Commissioner "to inquire into and
-report and make recommendations" to the Governor in relation to two categories
-of unsolved deaths, Categories A and B. My consideration of Category B deaths is
-contained in Chapter 6 of this Report.
+5.13. In the Case Summaries prepared by Strike Force Parrabell, 24 cases are described as "unsolved", whereas in the Parrabell Report itself, the number of "unsolved" cases is said to be 23.
 
+5.14. The explanation for the discrepancy between 23 and 24 unsolved cases was, as the Inquiry ascertained, that the person noted as "David Williams" was actually named "David Lloyd-Williams".[^4] The Inquiry's consideration of the death of Mr Lloyd- Williams is included below.
 
-5.2. Category A is expressed as follows:
-A. The manner and cause of death in all cases that remain unsolved from the 88 deaths or
-suspected deaths of men potentially motivated by gay hate bias that were considered by
-Strike Force Parrabell.
+5.15. In my view, the Parrabell Report did not identify any criterion or criteria used in designating cases as "solved" or "unsolved". None of the three Strike Force Parrabell officers who gave evidence to the Inquiry addressed the topic of what criterion, if any, was used by the Strike Force in describing a case as "unsolved".
 
+5.16. The 24 deaths described as "unsolved" in the Strike Force Parrabell Case Summaries were as follows (in chronological order):
 
-5.3. The significance of several aspects of the language used in Category A is addressed
-at Chapter 1 of this Report. I reiterate some aspects of that discussion here.
+1. Mark Stewart (aka Mark Spanswick) (1976);
+2. David Williams (1979);
+3. Walter John Bedser (1980);
+4. Richard Slater (1980);
+5. Gerald Leslie Cuthbert [^5] (1981);
+6. Peter Sheil (1983);
+7. Wendy Waine (1985);
+8. Gilles Mattaini (1985);
+9. William Antony Rooney (1986);
+10. Raymond Frederick Keam (1987);
+11. Scott Johnson (1988);
+12. William Emmanuel Allen (1988);
+13. Ross Bradley Warren (1989);
+14. Graham Paynter (1989);
+15. John Russell (1989);
+16. Michael John Swaczak (1991);
+17. William Dutfield (1991);
+18. Cyril Olsen (1992);
+19. Crispin Wilson Dye (1993);
+20. James William Meek (1995);
+21. Kenneth Brennan (1995);
+22. Carl Stockton (1996);
+23. Scott Stuart Miller (1997); and
+24. Samantha Rose (1997).
 
 
-5.4. First, Category A refers to deaths that were "potentially motivated by gay hate
-bias", while Category B refers to "suspected hate crime deaths ... where ... the
-victim was ... a member of the [LGBTIQ] community" (emphasis added).
+#### Deaths considered "unsolved" by ACON
 
+5.17. In its report, In Pursuit of Truth and Justice, published in May 2018 (one month prior to the report of Strike Force Parrabell) (the ACON Report), ACON referred to "approximately 30" of the 88 deaths as unsolved.6 The ACON Report did not identify those 30 by name.
 
-5.5. I have treated those two different verbal formulations as referring to what is
-substantially the same concept or criterion. I have generally adopted the language
-of "LGBTIQ hate crime death" as reflecting this one criterion.
+5.18. However, in July 2016, ACON provided Strike Force Parrabell with a document titled, "ACON Gay Hate Murders List as at 18 July 2016".7 Based on that list, it seems that, in addition to the 24 deaths described by Strike Force Parrabell as "unsolved", ACON considered the following deaths to also be unsolved:
 
+1. Paul Rath (1977);
+2. Andrew Currie (1988);
+3. Russell Payne (1989);
+4. Samantha Raye (1989);
+5. John Gordon Hughes (1989);
+6. Blair Wark (1990); and
+7. Gerard Fleming (2007).
 
-5.6. For the purposes of the Inquiry, as I have explained in Chapter 1 of this Report,
-an unsolved death is regarded as a suspected LGBTIQ hate crime death, and thus
-prima facie within one or both of Categories A and B of the Terms of Reference,
-in circumstances where there is, objectively, reason to suspect both that the death
-was a homicide, and that membership or perceived membership of the LGBTIQ
-community was a factor in the commission of the crime.
+5.19. Mr Fleming died in 2007, and his death was therefore outside the timeframe being considered by Strike Force Parrabell.8 I note that on 30 August 2008 a teenager was convicted of manslaughter in relation to the death of Mr Fleming, and consequently I do not consider that his death was unsolved for the purposes of the Inquiry.[^9]
 
+#### Deaths considered "unsolved" by the Inquiry
 
-5.7. Accordingly, for example, deaths associated with attacks on people who may not
-themselves have been members of the LGBTIQ community, but who are wrongly
-perceived by their assailants in such a way, would come within the meaning of
-"LGBTIQ hate crime deaths". Further, the Terms of Reference direct me to
-inquire into and report only on "deaths", not on crimes such as assaults which may
-have been LGBTIQ bias crimes but did not result in death.
+5.20. As I observed in Chapter 1, a key preliminary step in the Inquiry's work was for me to reach a determination as to which deaths were "unsolved". The Terms of Reference did not define the term "unsolved".
 
+5.21. I did not simply proceed on the footing that the "unsolved" cases referred to in Category A of the Terms of Reference were the 23 (or 24) so described by Strike Force Parrabell. Rather, it was necessary for me to make my own assessment as to how many of the 88 Parrabell cases should be regarded as having "remained unsolved", as at the inception of the Inquiry in April 2022.
 
-5.8. Secondly, Category A refers to 88 deaths of "men" that were "considered by Strike
-Force Parrabell" whereas in Category B, the reference is to the deaths of people
-described as "victims". In fact, some of the deaths considered by Strike Force
-Parrabell were not of men. In order to recognise and acknowledge the gender
-identity of all those persons considered by Strike Force Parrabell, I have
-interpreted the word "men" in Category A as referring generally to "people".
+5.22. From May 2022 onwards, the Inquiry embarked on its own assessment of which of the 88 deaths reviewed by Strike Force Parrabell should properly be regarded as having "remained unsolved" as at the date of the Terms of Reference. That process involved, inter alia, consideration of publicly available information, including court judgments, and all the material eventually produced by the NSWPF. One resource, among many, considered by the Inquiry was the SBS "Gay Hate Decades" website.[^10]
 
+5.23. The Inquiry also took into consideration concerns expressed by some community groups, academics and activists, that some deaths of LGBTIQ persons had been inadequately investigated, sometimes leading to precipitate findings of suicide or misadventure.[^11]
 
-Special Commission of Inquiry into LGBTIQ hate crimes
+5.24. I concluded that a case was "unsolved" where, upon a preliminary review of the material available to me, it was either apparent that a case was not solved (see below), or where the primary theory advanced in the material was attended by sufficient doubt for me to consider that the case was prima facie unsolved.
 
-
-202
-
-
-
-
-Chapter 5: Category A Deaths
-
-
-Deaths considered "unsolved" by Strike Force Parrabell
-
-
-1. The origins of Strike Force Parrabell are set out in detail in Chapter 13.
-
-
-5.10. Strike Force Parrabell was established by the NSWPF in about August 2015. It was
-a review, on the papers, of a list of 88 deaths which had been the subject of media
-attention since at least 2013. The 88 deaths occurred in a 23-year period between
-1976 and 1999.1 All 88 names are listed at the commencement of the Parrabell
-Report.
-
-
-5.11. That list had been developed over many years, since about 1990, principally by
-Ms Sue Thompson, who was the NSWPF Gay and Lesbian Client Consultant
-from 1990 to 2002. Ms Thompson was assisted by others in developing the list,
-including Professor Stephen Tomsen.
-
-
-5.12. Strike Force Parrabell reviewed only 86 of the 88 deaths. One of the deaths
-occurred in Tasmania and was not examined.2 Another death, that of "David
-Williams", although it was one of the 24 described as "unsolved" in the Case
-Summaries, was actually not examined at all, because Strike Force Parrabell was
-unable to locate any records relating to the death.3
-
-
-5.13. In the Case Summaries prepared by Strike Force Parrabell, 24 cases are described
-as "unsolved", whereas in the Parrabell Report itself, the number of "unsolved"
-cases is said to be 23.
-
-
-5.14. The explanation for the discrepancy between 23 and 24 unsolved cases was, as the
-Inquiry ascertained, that the person noted as "David Williams" was actually named
-"David Lloyd-Williams".4 The Inquiry's consideration of the death of Mr Lloyd-
-Williams is included below.
-
-
-5.15. In my view, the Parrabell Report did not identify any criterion or criteria used in
-designating cases as "solved" or "unsolved". None of the three Strike Force
-Parrabell officers who gave evidence to the Inquiry addressed the topic of what
-criterion, if any, was used by the Strike Force in describing a case as "unsolved".
-
-
-# 5.16. The 24 deaths described as "unsolved" in the Strike Force Parrabell Case Summaries were as follows (in chronological order):
-
-
-Mark Stewart (aka Mark Spanswick) (1976);
-David Williams (1979);
-Walter John Bedser (1980);
-Richard Slater (1980);
-Gerald Leslie Cuthbert5 (1981);
-
-
-1. 
-
-2. 
-
-3. 
-
-4. 
-
-5. 
-
-
-1 Exhibit 6, Tab 56A, Document from Sue Thompson titled 'Brief: Likely NSW Gay Hate Murders from Late 70s to Late 90s', undated
-(SCOI.77314).
-2 Exhibit 1, Tab 2, NSW Police Force, Strike Force Parrabell Final Report, 23, 69 (Report, June 2018) (SCOI.02632).
-3 Exhibit 6, Tab 49, Strike Force Parrabell Case Summaries, undated, 2 (SCOI.76961.00014).
-4 Exhibit 12, Tab 6, Death Certificate for David Lloyd-Williams, 9 November 1978 (SCOI.74028).
-5 Incorrectly identified as "Gerard Leslie Cuthbert" in the Strike Force Parrabell Report: see Exhibit 1, Tab 2, NSW Police Force, Strike
-Force Parrabell Final Report, 7 (Report, June 2018) (SCOI.02632).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-203
-
-
-
-
-Chapter 5: Category A Deaths
-
-
-<table>
- <tr>
-  <th>(6)</th>
-  <th>Peter Sheil (1983);</th>
- </tr>
- <tr>
-  <td>(7)</td>
-  <td>Wendy Waine (1985);</td>
- </tr>
- <tr>
-  <td>(8)</td>
-  <td>Gilles Mattaini (1985);</td>
- </tr>
- <tr>
-  <td>(9)</td>
-  <td>William Antony Rooney (1986);</td>
- </tr>
- <tr>
-  <td>(10)</td>
-  <td>Raymond Frederick Keam (1987);</td>
- </tr>
- <tr>
-  <td>(11)</td>
-  <td>Scott Johnson (1988);</td>
- </tr>
- <tr>
-  <td>(12)</td>
-  <td>William Emmanuel Allen (1988);</td>
- </tr>
- <tr>
-  <td>(13)</td>
-  <td>Ross Bradley Warren (1989);</td>
- </tr>
- <tr>
-  <td>(14)</td>
-  <td>Graham Paynter (1989);</td>
- </tr>
- <tr>
-  <td>(15)</td>
-  <td>John Russell (1989);</td>
- </tr>
- <tr>
-  <td>(16)</td>
-  <td>Michael John Swaczak (1991);</td>
- </tr>
- <tr>
-  <td>(17)</td>
-  <td>William Dutfield (1991);</td>
- </tr>
- <tr>
-  <td>(18)</td>
-  <td>Cyril Olsen (1992);</td>
- </tr>
- <tr>
-  <td>(19)</td>
-  <td>Crispin Wilson Dye (1993);</td>
- </tr>
- <tr>
-  <td>(20)</td>
-  <td>James William Meek (1995);</td>
- </tr>
- <tr>
-  <td>(21)</td>
-  <td>Kenneth Brennan (1995);</td>
- </tr>
- <tr>
-  <td>(22)</td>
-  <td>Carl Stockton (1996);</td>
- </tr>
- <tr>
-  <td>(23)</td>
-  <td>Scott Stuart Miller (1997); and</td>
- </tr>
- <tr>
-  <td>(24)</td>
-  <td>Samantha Rose (1997).</td>
- </tr>
-</table>
-
-
-Deaths considered "unsolved" by ACON
-
-
-1. In its report, In Pursuit of Truth and Justice, published in May 2018 (one month prior to the report of Strike Force Parrabell) (the ACON Report), ACON referred to "approximately 30" of the 88 deaths as unsolved.6 The ACON Report did not identify those 30 by name.
-
-
-5.18. However, in July 2016, ACON provided Strike Force Parrabell with a document
-titled, "ACON Gay Hate Murders List as at 18 July 2016".7 Based on that list, it
-seems that, in addition to the 24 deaths described by Strike Force Parrabell as
-"unsolved", ACON considered the following deaths to also be unsolved:
-
-
-(1) Paul Rath (1977);
-(2) Andrew Currie (1988);
-
-
-6 Exhibit 1, Tab 1, ACON, In Pursuit of Truth
-20th Century, 6 (Report, 26 May 2018) (SCOI.03667).
-7 Exhibit 6, Tab 67A, ACON Gay Hate Murders List, 18 July 2016
-
-
-and Justice: Documenting Gay and Transgender Prejudice Killings in NSW in the Lat e
-
-
-(SCOI.74278).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-204
-
-
-
-
-Chapter 5: Category A Deaths
-
-
-1. Russell Payne (1989);
-
-2. Samantha Raye (1989);
-
-3. John Gordon Hughes (1989);
-
-4. Blair Wark (1990); and
-
-5. Gerard Fleming (2007).
-
-
-Mr Fleming died in 2007, and his death was therefore outside the timeframe being
-considered by Strike Force Parrabell.8 I note that on 30 August 2008 a teenager
-was convicted of manslaughter in relation to the death of Mr Fleming, and
-consequently I do not consider that his death was unsolved for the purposes of
-the Inquiry.9
-
-
-5.19.
-
-
-Deaths considered "unsolved" by the Inquiry
-5.20. As I observed in Chapter 1, a key preliminary step in the Inquiry's work was for
-me to reach a determination as to which deaths were "unsolved". The Terms of
-Reference did not define the term "unsolved".
-
-
-5.21. I did not simply proceed on the footing that the "unsolved" cases referred to in
-Category A of the Terms of Reference were the 23 (or 24) so described by Strike
-Force Parrabell. Rather, it was necessary for me to make my own assessment as to
-how many of the 88 Parrabell cases should be regarded as having "remained
-unsolved", as at the inception of the Inquiry in April 2022.
-
-
-5.22. From May 2022 onwards, the Inquiry embarked on its own assessment of which
-of the 88 deaths reviewed by Strike Force Parrabell should properly be regarded
-as having "remained unsolved" as at the date of the Terms of Reference. That
-process involved, inter alia, consideration of publicly available information,
-including court judgments, and all the material eventually produced by the
-NSWPF. One resource, among many, considered by the Inquiry was the SBS "Gay
-Hate Decades" website.10
-
-
-5.23. The Inquiry also took into consideration concerns expressed by some community
-groups, academics and activists, that some deaths of LGBTIQ persons had been
-inadequately investigated, sometimes leading to precipitate findings of suicide or
-misadventure.11
-
-
-5.24. I concluded that a case was "unsolved" where, upon a preliminary review of the
-material available to me, it was either apparent that a case was not solved (see
-below), or where the primary theory advanced in the material was attended by
-sufficient doubt for me to consider that the case was prima facie unsolved.
-
-
-8 Exhibit 6, Tab 85, Email from Craig Middleton to Jacqueline Braw re: ACON Gay Hate Murders List, 9 February 2017 (SCOI.74437).
-9 AAP, 'Manslaughter verdict in stabbing case', The Sydney Morning Herald (online, 30 August 2008)
-<https://www.smh.com.au/national/manslaughter-verdict-in-stabbing-case-20080830-gdsswu.html>.
-10 Exhibit 6, Tab 223, Rick Feneley, 'The Gay Hate Decades', SBS (online) <https://www.sbs.com.au/gayhatedecades/> (SCOI.82033).
-11 Exhibit 1, Tab 1, ACON, In Pursuit of Truth and Justice: Documenting Gay and Transgender Prejudice Killings in NSW in the Lat e
-20th Century, 4-5, 31 (Report, 26 May 2018) (SCOI.03667).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-205
-
-
-
-
-Chapter 5: Category A Deaths
-
-
-5.25. The assessment of the status of a case depended on the circumstances of each
-case. For example, among the circumstances in which a case might be regarded as
-"solved" would be cases where:
-
+5.25. The assessment of the status of a case depended on the circumstances of each case. For example, among the circumstances in which a case might be regarded as "solved" would be cases where:
 
 a. One or more persons have been charged and convicted in connection with
 the death, and all appeals have been finalised;
-
 
 1. Such a person has been acquitted, despite having been the perpetrator, on grounds such as self-defence;
 
 2. The evidence available to me at this preliminary stage established that the death was not a homicide but a suicide or misadventure.
 
-
-5.26. Conversely, among the cases which might be regarded as "unsolved" would be,
-for example, cases where although the death was a homicide (or the possibility of
-homicide could not be ruled out):
-
+5.26. Conversely, among the cases which might be regarded as "unsolved" would be, for example, cases where although the death was a homicide (or the possibility of homicide could not be ruled out):
 
 a. No person of interest had been identified;
 b. One or more persons of interest were identified, but no person had ever been
@@ -557,698 +157,190 @@ charged;
 2. A conviction was overturned by a higher court.
 
 
-Other cases which might be regarded as "unsolved" were those where a deceased
-was found in circumstances where what actually happened (the manner of death)
-was simply unknown, even where the cause of death might be sufficiently clear
+5.27. Other cases which might be regarded as "unsolved" were those where a deceased was found in circumstances where what actually happened (the manner of death) was simply unknown, even where the cause of death might be sufficiently clear (e.g., injuries caused by a blow to the head, or injuries consistent with a fall from height).
 
-
-(e.g., injuries caused by a blow to the head, or injuries consistent with a fall from
-
-
-height).
-
-
-5.27.
-
-
-5.28. Of the 88 Parrabell cases, I identified eight described as "solved" which I
-considered warranted close attention as possibly also being "unsolved" (in addition
-to the 24 so described by Strike Force Parrabell). These cases were:
-
+5.28. Of the 88 Parrabell cases, I identified eight described as "solved" which I considered warranted close attention as possibly also being "unsolved" (in addition to the 24 so described by Strike Force Parrabell). These cases were:
 
 1. Paul Rath (1977);
-
 2. Andrew Currie (1978);
-
 3. Russell Payne (1989);
-
 4. Samantha Raye (1989);
-
 5. John Gordon Hughes (1989);
-
 6. Simon 'Blair' Wark (1990);
-
 7. Robert Malcolm (1992); and
-
 8. Brian Walker (1992).
 
+5.29 However, two of that total of 32 cases, namely the deaths of Raymond Keam in 1987 and Scott Johnson in 1988, were the subject of ongoing criminal proceedings. Accordingly, having regard in particular to Paragraph E of the Terms of Reference, the Inquiry did not investigate those two deaths. In 2023, as events transpired, in both of those cases, offenders were convicted of homicide (murder in the case of Mr Keam and manslaughter in the case of Scott Johnson).
 
-Special Commission of Inquiry into LGBTIQ hate crimes
+5.30. To the extent that Public Hearing 2 touched upon the investigative history of the Scott Johnson matter, the basis for the Inquiry doing so is referred to in my judgment delivered on 18 July 2023.12
 
+5.31. The Inquiry thereafter took steps to inquire into that total of 30 deaths. This involved obtaining and reviewing all available historical material, as well as all further information that could be obtained by way of present-day forensic testing and/or by other means including expert review. Those 30 deaths then proceeded through the Case Review and Documentary Tender processes outlined below. Each death is considered in turn in this Chapter.
 
-206
+5.32. For completeness, I note that two of the deaths which I have considered pursuant to Category A, namely the deaths of Cyril Olsen and Michael Swaczak, were not presented in a public hearing and are addressed in the confidential volume of this Report. For the public record, I note that in my view both those deaths were homicides, and that in both cases there is objectively reason to suspect that LGBTIQ bias was a factor in the death.
 
+5.33. Over the course of the Inquiry's work, I had the benefit of submissions addressing the topic of how I should understand the word "unsolved" in the Terms of Reference, and whether specific matters were "unsolved" for the purposes of the Terms of Reference. However, those submissions did not cause me to depart from the approach I took initially (as outlined above) to the question of which matters were unsolved.
 
+#### Other introductory matters
 
+5.34. The Terms of Reference required me to report on the manner and cause of death and on the question of LGBTIQ bias, in relation to particular unsolved cases. However, part of the broader utility of the Inquiry's work in investigating deaths falling within the Terms of Reference lies in what was revealed concerning the investigative practices, and attitudinal responses, of those responsible for investigating deaths that may be LGBTIQ hate crimes. This is true at both the initial investigatory stage, and at the stage of any subsequent review of that investigation (for example, by the UHT). I have expressed opinions on such matters in the course of my discussion of particular deaths.
 
-1. However, two of that total of 32 cases, namely the deaths of Raymond Keam in 1987 and Scott Johnson in 1988, were the subject of ongoing criminal proceedings. Accordingly, having regard in particular to Paragraph E of the Terms of Reference, the Inquiry did not investigate those two deaths. In 2023, as events transpired, in both of those cases, offenders were convicted of homicide (murder in the case of Mr Keam and manslaughter in the case of Scott Johnson).
+5.35. As noted below, issues relating to investigative practices generally were explored in the separate Investigative Practices Hearing that is the subject of Chapter 8. Both the subject matter of that hearing, and the need for such a hearing, arose substantially from the Inquiry's consideration of the individual Category A deaths.
 
+5.36. Issues relating to the varying and changing approaches adopted by NSWPF officers in relation to their dealings and association with the LGBTIQ community were explored in the first public hearing (the Context Hearing). That hearing provided me with both documentary and oral evidence about the social and cultural contexts of the period under examination, namely the 40 years from 1970 to 2010, especially as to the lived experience of members of the LGBTIQ community during those years.
 
-Chapter 5: Category A Deaths
+5.37. The Inquiry also examined aspects of Strike Forces Macnamir, Parrabell and Neiwand, and the BCU, in the course of Public Hearing 2. This has contributed to the acquisition of a baseline of information concerning the culture, practices and approaches of the NSWPF in relation to the investigation of homicides where LGBTIQ bias was or may have been a factor. That has also assisted me in the task of examining the individual deaths, as I observed in my judgment of 18 July 2023 concerning the Terms of Reference, including at [84]-[86].
 
+5.38. There is also an important matter of terminology to address before I address the individual cases. Much of the underlying evidentiary material refers to the targeting of gay men in particular locations, refers to specific venues as being frequented by gay men, and/or assumes that all users of beats were gay men. This evidentiary material frequently proceeds on an underlying assumption - explicit or implicit - that any man who sought or engaged in sexual activity with other men was gay.
 
-5.30. To the extent that Public Hearing 2 touched upon the investigative history of the
-Scott Johnson matter, the basis for the Inquiry doing so is referred to in my
-judgment delivered on 18 July 2023.12
+5.39. For reasons explained in the Terminology section of this Report, that assumption is erroneous. It erases the experience of many people who may have used beats, or been present in LGBTIQ-friendly venues. However, it is an assumption that, having regard to the evidence I received in the Context Hearing, may well have been shared by the perpetrators of bias crimes (in addition to many in the NSWPF and more broadly in the community), and it is important that I acknowledge that reality.
 
+5.40. There is a tension between acknowledging that cisgender gay men, and those who were assumed, rightly or wrongly, to be cisgender gay men, were specific targets of some types of violence, while also seeking to ensure that misconceptions concerning sexuality and gender are not perpetuated. For example, in some instances, if I were to say that a perpetrator had assumed a person was "a member of the LGBTIQ community", this may obscure the different experiences of violence by different aspects of the LGBTIQ community, and the underlying animus of a perpetrator of violence.
 
-5.31. The Inquiry thereafter took steps to inquire into that total of 30 deaths. This
-involved obtaining and reviewing all available historical material, as well as all
-further information that could be obtained by way of present-day forensic testing
-and/or by other means including expert review. Those 30 deaths then proceeded
-through the Case Review and Documentary Tender processes outlined below.
-Each death is considered in turn in this Chapter.
+5.41. There is no perfect approach to this issue. In general, where violence may have been connected to a beat, I have used the language of "beat user" to reflect the diversity of people who used beats. Where underlying documents or the submissions before the Inquiry refer to the targeting of gay men, I have often retained that language when summarising that evidence or those submissions, even though that language is likely to be overly simplistic. In doing so, I seek to acknowledge that cisgender gay men (or those assumed to be cisgender gay men) were specific targets of violence, and comprise many of the cases before the Inquiry, but should not be understood as overlooking the fact that many men who were not cisgender gay men used beats, and that other parts of the LGBTIQ community also experienced significant violence.
 
+5.42. Further, in relation to some deaths, Counsel Assisting recommended that I make a finding that the person died by suicide. Whether or not that finding was appropriate in each case was the subject of submissions from both Counsel Assisting and the NSWPF.
 
-5.32. For completeness, I note that two of the deaths which I have considered pursuant
-to Category A, namely the deaths of Cyril Olsen and Michael Swaczak, were not
-presented in a public hearing and are addressed in the confidential volume of this
-Report. For the public record, I note that in my view both those deaths were
-homicides, and that in both cases there is objectively reason to suspect that
-LGBTIQ bias was a factor in the death.
+5.43. Counsel Assisting drew my attention to the lack of a single settled definition of suicide, or test to be applied at common law in Australia.13 Moreover, none of the Coroners Acts in Australia requires coroners to make an explicit determination of suicide or of a deceased's intent.[^14]
 
+5.44. The long-accepted principle in Australia is that a finding of death by suicide should not be made lightly.15 Historically, there were significant consequences of a finding of death by suicide, including for religious burial and life insurance policies, and coroners have traditionally employed a high standard of proof on this issue, usually encapsulated by reference to the Briginshaw principle.[^16]
 
-5.33. Over the course of the Inquiry's work, I had the benefit of submissions addressing
-the topic of how I should understand the word "unsolved" in the Terms of
-Reference, and whether specific matters were "unsolved" for the purposes of the
-Terms of Reference. However, those submissions did not cause me to depart from
-the approach I took initially (as outlined above) to the question of which matters
-were unsolved.
+5.45. However, as Counsel Assisting observed, social attitudes towards suicide have changed over time.17 Thus, for example in Clark v NZI Life Ltd (1991) 2 Qd R 11 at 16, Thomas J suggested that a finding of suicide may no longer be one of such gravity as to "bring it toward the top of the range of what is sometimes called the Briginshaw test".18 Nevertheless, it remains the case that Australian coroners continue to employ a high standard of proof in suicide determinations.[^19]
 
+5.46. Counsel Assisting drew my attention to one formulation, proposed by Coroner Coate in the Coroners Court of Victoria, namely that the appropriate question to be asked is "whether or not, in doing what [the deceased] did on that [occasion], [the deceased] was engaged in a voluntary or deliberate course of conduct or act or acts in which [the deceased] consciously intended at the moment of engagement in the acts, by those acts, to end [their] own life".[^20]
 
-Other introductory matters
-
-
-1. The Terms of Reference required me to report on the manner and cause of death and on the question of LGBTIQ bias, in relation to particular unsolved cases. However, part of the broader utility of the Inquiry's work in investigating deaths falling within the Terms of Reference lies in what was revealed concerning the investigative practices, and attitudinal responses, of those responsible for investigating deaths that may be LGBTIQ hate crimes. This is true at both the initial investigatory stage, and at the stage of any subsequent review of that investigation (for example, by the UHT). I have expressed opinions on such matters in the course of my discussion of particular deaths.
-
-
-5.35. As noted below, issues relating to investigative practices generally were explored
-in the separate Investigative Practices Hearing that is the subject of Chapter 8.
-Both the subject matter of that hearing, and the need for such a hearing, arose
-substantially from the Inquiry's consideration of the individual Category A deaths.
-
-
-12 Judgment of the Inquiry, 18 July 2023,
-
-
-[74]-[114] (ORD.00012).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-207
-
-
-
-
-1. Issues relating to the varying and changing approaches adopted by NSWPF officers in relation to their dealings and association with the LGBTIQ community were explored in the first public hearing (the Context Hearing). That hearing provided me with both documentary and oral evidence about the social and cultural contexts of the period under examination, namely the 40 years from 1970 to 2010, especially as to the lived experience of members of the LGBTIQ community during those years.
-
-
-Chapter 5: Category A Deaths
-
-
-5.37. The Inquiry also examined aspects of Strike Forces Macnamir, Parrabell and
-Neiwand, and the BCU, in the course of Public Hearing 2. This has contributed to
-the acquisition of a baseline of information concerning the culture, practices and
-approaches of the NSWPF in relation to the investigation of homicides where
-LGBTIQ bias was or may have been a factor. That has also assisted me in the task
-of examining the individual deaths, as I observed in my judgment of 18 July 2023
-concerning the Terms of Reference, including at [84]-[86].
-
-
-5.38. There is also an important matter of terminology to address before I address the
-individual cases. Much of the underlying evidentiary material refers to the targeting
-of gay men in particular locations, refers to specific venues as being frequented by
-gay men, and/or assumes that all users of beats were gay men. This evidentiary
-material frequently proceeds on an underlying assumption - explicit or implicit -
-that any man who sought or engaged in sexual activity with other men was gay.
-
-
-5.39. For reasons explained in the Terminology section of this Report, that assumption
-is erroneous. It erases the experience of many people who may have used beats,
-or been present in LGBTIQ-friendly venues. However, it is an assumption that,
-having regard to the evidence I received in the Context Hearing, may well have
-been shared by the perpetrators of bias crimes (in addition to many in the NSWPF
-and more broadly in the community), and it is important that I acknowledge that
-reality.
-
-
-5.40. There is a tension between acknowledging that cisgender gay men, and those who
-were assumed, rightly or wrongly, to be cisgender gay men, were specific targets
-of some types of violence, while also seeking to ensure that misconceptions
-concerning sexuality and gender are not perpetuated. For example, in some
-instances, if I were to say that a perpetrator had assumed a person was "a member
-of the LGBTIQ community", this may obscure the different experiences of
-violence by different aspects of the LGBTIQ community, and the underlying
-animus of a perpetrator of violence.
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-208
-
-
-
-
-Chapter 5: Category A Deaths
-
-
-5.41. There is no perfect approach to this issue. In general, where violence may have
-been connected to a beat, I have used the language of "beat user" to reflect the
-diversity of people who used beats. Where underlying documents or the
-submissions before the Inquiry refer to the targeting of gay men, I have often
-retained that language when summarising that evidence or those submissions, even
-though that language is likely to be overly simplistic. In doing so, I seek to
-acknowledge that cisgender gay men (or those assumed to be cisgender gay men)
-were specific targets of violence, and comprise many of the cases before the
-Inquiry, but should not be understood as overlooking the fact that many men who
-were not cisgender gay men used beats, and that other parts of the LGBTIQ
-community also experienced significant violence.
-
-
-5.42. Further, in relation to some deaths, Counsel Assisting recommended that I make
-a finding that the person died by suicide. Whether or not that finding was
-appropriate in each case was the subject of submissions from both Counsel
-Assisting and the NSWPF.
-
-
-5.43. Counsel Assisting drew my attention to the lack of a single settled definition of
-suicide, or test to be applied at common law in Australia.13 Moreover, none of the
-Coroners Acts in Australia requires coroners to make an explicit determination of
-suicide or of a deceased's intent.14
-
-
-5.44. The long-accepted principle in Australia is that a finding of death by suicide should
-not be made lightly.15 Historically, there were significant consequences of a finding
-of death by suicide, including for religious burial and life insurance policies, and
-coroners have traditionally employed a high standard of proof on this issue, usually
-encapsulated by reference to the Briginshaw principle.16
-
-
-5.45. However, as Counsel Assisting observed, social attitudes towards suicide have
-changed over time.17 Thus, for example in Clark v NZI Life Ltd (1991) 2 Qd R 11
-at 16, Thomas J suggested that a finding of suicide may no longer be one of such
-gravity as to "bring it toward the top of the range of what is sometimes called the
-Briginshaw test".18 Nevertheless, it remains the case that Australian coroners
-continue to employ a high standard of proof in suicide determinations.19
-
-
-13 See Stephanie Jowett, Belinda Carpenter and
-Journal 355, 363.
-14 See Stephanie Jowett, Belinda Carpenter
-Journal 355, 360ff.
-15 American Home Assurance Company v King [2001]
-Associated Motor Insurers Ltd v Elmore Haulage Pty Ltd
-v BP Shipping Ltd [2015] UKSC 17, [33]-[36] (Lady Hale,
-16 Briginshaw v Briginshaw (1938) 60 CLR 336, 361-2 (Dixon J).
-17 Stephanie Jowett, Belinda Carpenter and Gordon Tait, 'Determining a
-355, 364.
-18 Clark v NZI Life Ltd (1991) 2 Qd R 11, 16.
-19 Stephanie Jowett, Belinda Carpenter and Gordon Tait, 'Determining a
-355, 370-373; Senate Community Affairs References Committee, Parliament of
-
-
-Gordon Tait, 'Determining a Suicide under Australian Law' (2018) 41(2) UNSW Law
-
-
-and Gordon Tait, 'Determining a Suicide under Australian Law' (2018) 41(2) UNSW Law
-
-
-NSWCA 201, [10]-[13] (Stein JA, Handley JA and Beazley JA agreeing); Australian
-(2013) 39 VR 365, [55]. For an overview of English authorities on suicide see Breganza
-Lord Kerr agreeing), [61]-[62] (Lord Hodge, Lord Kerr agreeing).
-
-
-Suicide under Australian Law' (2018) 41(2) UNSW Law Journal
-
-
-Suicide under Australian Law' (2018) 41(2) UNSW Law Journal
-Australia, The Hidden Toll: Suicide in Australia (2010) 26.
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-209
-
-
-
-
-Chapter 5: Category A Deaths
-
-
-5.46. Counsel Assisting drew my attention to one formulation, proposed by Coroner
-Coate in the Coroners Court of Victoria, namely that the appropriate question to
-be asked is "whether or not, in doing what [the deceased] did on that [occasion],
-[the deceased] was engaged in a voluntary or deliberate course of conduct or act
-or acts in which [the deceased] consciously intended at the moment of engagement
-in the acts, by those acts, to end [their] own life".20
-
-
-5.47. On that formulation, suicide comprises three elements:21
+5.47. On that formulation, suicide comprises three elements:[^21]
 a. A voluntary or deliberate act of the deceased, where
 b. The intent behind the act was to end their own life, with
 c. A conscious understanding, at the moment of engagement in the act, that such
 an act would necessarily result in death.
 
+5.48. Accordingly, I adopt and apply that formulation in respect of the cases in which the possibility of suicide is raised.
 
-5.48. Accordingly, I adopt and apply that formulation in respect of the cases in which
-the possibility of suicide is raised.
+## Case Review Process
 
+5.49. The Inquiry sought and received a very large volume of documents and records of various kinds, primarily from two main sources: the NSWPF and the Coroners Court. However, many records were incomplete and some NSWPF files were missing or lost, in whole or in part. Other materials were also sought from and provided by numerous bodies, both in NSW and elsewhere, including the ODPP, the Supreme Court, the District Court, the Local Court, and other government agencies to assist in the consideration of these deaths.
 
-# Case Review Process
-
-
-5.49. The Inquiry sought and received a very large volume of documents and records of
-various kinds, primarily from two main sources: the NSWPF and the Coroners
-Court. However, many records were incomplete and some NSWPF files were
-missing or lost, in whole or in part. Other materials were also sought from and
-provided by numerous bodies, both in NSW and elsewhere, including the ODPP,
-the Supreme Court, the District Court, the Local Court, and other government
-agencies to assist in the consideration of these deaths.
-
-
-5.50. The Inquiry conducted a detailed review of the material received in relation to each
-death (or disappearance where the person was presumed deceased) and produced
-a "Case Summary" with a preliminary analysis of the death. The analysis included,
-among other things:
-
-
+5.50. The Inquiry conducted a detailed review of the material received in relation to each death (or disappearance where the person was presumed deceased) and produced a "Case Summary" with a preliminary analysis of the death. The analysis included, among other things:
 1. An account of the known facts surrounding the death;
-
 2. Details of the initial police investigation and any subsequent investigation (for example by the UHT);
-
 3. Consideration of whether witnesses and persons of interest were still alive and whether exhibits were available; and
-
 4. Initial observations as to possible avenues of fresh investigation.
 
+5.51. The next step was the completion of a separate and more focused document, identifying specific "Factors for Decision". One of those factors was whether I ought to regard a death as solved or unsolved. This document also included recommendations as to what investigative steps should be taken, including any expert opinions to be obtained, and a preliminary assessment as to the possible presence of LGBTIQ bias.
 
-20 Findings of Coate J, Inquest into the Death of Tyler Jordan Cassidy, 11 November 2011, 52 [244].
-21 See Stephanie Jowett, Belinda Carpenter and Gordon Tait, 'Determining a Suicide under Australian Law' (2018) 41(2) UNSW Law
-Journal 355, 364.
+5.52. The Case Summary and Factors for Decision documents were then discussed in a "First Case Review Meeting", with myself, Counsel Assisting and relevant staff of the Inquiry. At that meeting, decisions were made as to which, if any, of the recommendations for further investigation should be implemented. A First Case Review "Outcomes" document was prepared, recording the provisional views reached and the investigative steps which needed to be taken.
 
+5.53. The Inquiry pursued a wide variety of investigative avenues as appropriate to each death. These avenues included: conducting witness conferences, holding private hearings with witnesses and persons of interest, issuing summonses to various courts, agencies and organisations for additional records, reviewing information provided by members of the public via the Inquiry's contact webpage and phone number, media reviews and scene visits.
 
-Special Commission of Inquiry into LGBTIQ hate crimes
+5.54. Having regard to significant advances in science and technology, the Inquiry also issued summonses to the NSWPF for the production of the relevant physical exhibits. Unfortunately, what all too frequently emerged was that exhibits could not be found. Where exhibits had been lost or destroyed, in some instances a statement was sought from a forensic biologist at FASS as to the forensic analysis that could have been pursued if the exhibits had been retained. Where the NSWPF was able to locate and produce exhibits, in appropriate cases, the Inquiry arranged for various forms of modern forensic testing and checking, including for example DNA analysis through FASS and by requesting the assistance of the NSWPF to re-run fingerprints taken from crime scenes against the current national fingerprint database to identify any matches.
 
+5.55. The Inquiry also sought and obtained advice and reports from a wide variety of expert consultants from various specialist fields, including forensic pathology, cardiology, neurosurgery, forensic psychiatry, toxicology, bloodstain pattern analysis, botany, and coastal geomorphology.
 
-210
+5.56. Once the investigative steps had been progressed for a particular case, a second "Factors for Decision" document was prepared, with the outcome of the steps taken to date, any revised assessments or analyses, and any recommendations as to further investigative steps.
 
+5.57. A "Second Case Review Meeting" was then convened to discuss the progress and recommendations made in relation to the case. At that meeting, final decisions were made, firstly as to whether the death was considered to fall within the Terms of Reference or not and, if so, as to any further avenues of inquiry to be pursued. If all investigations were complete, a decision was made as to whether the case should be prepared for a documentary tender. Following that meeting, a Second Case Review "Outcomes" document was prepared to record the decisions made.
 
+### Family Involvement
 
+5.58. The Inquiry also sought to contact family members in relation to each of the deaths considered as possibly falling within Category A. In some cases, families contacted the Inquiry directly in response to publicity about the Inquiry. Such publicity included advertising and public notices in newspapers and regional publications, LGBTIQ publications, on the radio and online, as well as media reporting of the Inquiry's public hearings.
 
-1. The next step was the completion of a separate and more focused document, identifying specific "Factors for Decision". One of those factors was whether I ought to regard a death as solved or unsolved. This document also included recommendations as to what investigative steps should be taken, including any expert opinions to be obtained, and a preliminary assessment as to the possible presence of LGBTIQ bias.
+5.59. The Inquiry also obtained the postal addresses, and in certain cases, mobile telephone numbers for family members via interagency cooperation. Journalists who had reported on certain deaths also assisted the Inquiry in locating families.
 
+5.60. I wrote to all identified family members (or where no family could be identified, a close friend or loved one) explaining the nature and purpose of the Inquiry and inviting them to participate. A text message was also sent to the mobile phone numbers of many family members to ensure all possible efforts were made to contact families. Sadly, many of the family members, partners, friends and loved ones are deceased, in failing health, or no longer able to be found.
 
-Chapter 5: Category A Deaths
+5.61. Family members and loved ones who expressed a willingness to participate in the Inquiry variously provided witness statements and/or copies of their own records, and participated in conferences with staff of the Inquiry. Families were also provided with the opportunity to read the evidentiary bundle prepared in relation to the death of their family member or loved one in advance of the relevant public hearing and could seek leave pursuant to Practice Guideline 1 to appear and be legally represented if they so wished.
 
+## Procedural fairness
 
-5.52. The Case Summary and Factors for Decision documents were then discussed in a
-"First Case Review Meeting", with myself, Counsel Assisting and relevant staff of
-the Inquiry. At that meeting, decisions were made as to which, if any, of the
-recommendations for further investigation should be implemented. A First Case
-Review "Outcomes" document was prepared, recording the provisional views
-reached and the investigative steps which needed to be taken.
+5.62. In Chapter 1 of this Report, I considered the principles of procedural fairness. I now turn to the Inquiry's contact with OICs, and persons suspected of having had involvement in a death under consideration by the Inquiry.
 
+### Contact with OICs
 
-5.53. The Inquiry pursued a wide variety of investigative avenues as appropriate to each
-death. These avenues included: conducting witness conferences, holding private
-hearings with witnesses and persons of interest, issuing summonses to various
-courts, agencies and organisations for additional records, reviewing information
-provided by members of the public via the Inquiry's contact webpage and phone
-number, media reviews and scene visits.
+5.63. A common theme which emerged from the submissions of the NSWPF in relation to the public documentary tender of the Category A and B deaths is that it was unjust to make criticisms of historical criminal investigations when the OICs of those investigations had not been called to give evidence. Moreover, the NSWPF advised that it would not act for any of those officers before the Inquiry.
 
+5.64. I am not persuaded by the NSWPF's submission that any criticism of historical investigations would be unjust without hearing from the OICs, given the nature of my inquiries and the focus for the most part on investigative practices rather than on whether individuals should be criticised. Nevertheless, out of abundant caution, this Inquiry has sought to identify and contact almost every living OIC from those investigations it has been able to identify. To this end, from 13 June 2023 the Inquiry made attempts to contact over 40 living OICs. Very few wished to be heard. Many indicated they did not wish to make submissions, and many more did not reply at all. Several were deceased, and some could not be safely contacted (or further contacted) due to significant trauma.
 
-5.54. Having regard to significant advances in science and technology, the Inquiry also
-issued summonses to the NSWPF for the production of the relevant physical
-exhibits. Unfortunately, what all too frequently emerged was that exhibits could
-not be found. Where exhibits had been lost or destroyed, in some instances a
-statement was sought from a forensic biologist at FASS as to the forensic analysis
-that could have been pursued if the exhibits had been retained. Where the NSWPF
-was able to locate and produce exhibits, in appropriate cases, the Inquiry arranged
-for various forms of modern forensic testing and checking, including for example
-DNA analysis through FASS and by requesting the assistance of the NSWPF to
-re-run fingerprints taken from crime scenes against the current national fingerprint
-database to identify any matches.
+5.65. Notwithstanding that approach, it is appropriate to make the following comment. In some cases, I have considered it appropriate to discuss the specific conduct of named officers in conducting historical investigations. However, most of my adverse comments are in the nature of general critiques as to the manner in which an investigation was conducted. They should not, for that reason alone, be understood as specific adverse comment on the officer or officers in charge of that investigation.
 
+5.66. It is not always possible, particularly given incomplete records, to assign specific conduct to specific officers. Some investigations are "products of their time", in terms of cultural attitudes to the LGBTIQ community and approaches to policing, and no single officer can appropriately bear the weight of that criticism. I do not intend every critique of a previous investigation to indicate a moral or professional shortfall of the relevant OIC, or other officers involved, that sets them apart from their colleagues in that period.
 
-5.55. The Inquiry also sought and obtained advice and reports from a wide variety of
-expert consultants from various specialist fields, including forensic pathology,
-cardiology, neurosurgery, forensic psychiatry, toxicology, bloodstain pattern
-analysis, botany, and coastal geomorphology.
+5.67. That does not mean that those investigations cannot and should not be critiqued in a general sense, regardless of whether the Inquiry has heard from each OIC or each individual officer involved. To take that view would be to promulgate the myth that historical failures of policing can be explained by a few "bad apples" who must personally answer for any shortcoming. It would also unfairly shield historical policing practices and systemic deficiencies from criticism unless the Inquiry were to embark on a task that was near impossible with the time assigned to it (and certainly in the timeframes originally assigned to it prior to the extensions granted).
 
 
-5.56. Once the investigative steps had been progressed for a particular case, a second
-"Factors for Decision" document was prepared, with the outcome of the steps
-taken to date, any revised assessments or analyses, and any recommendations as to
-further investigative steps.
+5.68. Accordingly, while this Inquiry has taken as cautious an approach as possible with respect to seeking the views of OICs in the time available to it, that should not be understood as accepting the various NSWPF submissions that the Inquiry's criticisms of those investigations are necessarily "adverse findings" with respect to each of those officers, or that a duty of procedural fairness was in fact owed to every such officer under the principles set out above.
 
+### Notification of potential adverse comment
 
-5.57. A "Second Case Review Meeting" was then convened to discuss the progress and
-recommendations made in relation to the case. At that meeting, final decisions
-were made, firstly as to whether the death was considered to fall within the Terms
-of Reference or not and, if so, as to any further avenues of inquiry to be pursued.
-If all investigations were complete, a decision was made as to whether the case
-should be prepared for a documentary tender. Following that meeting, a Second
-Case Review "Outcomes" document was prepared to record the decisions made.
+5.69. Where Counsel Assisting made a submission, or intended to make a submission, in respect of persons of interest suspected of having had involvement in a death under consideration by the Inquiry, that person—or any close family members if that person was now deceased—was contacted by the Inquiry and invited to make a submission.
 
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-211
-
-
-
-
-Chapter 5: Category A Deaths
-
-
-Family Involvement
-
-
-1. The Inquiry also sought to contact family members in relation to each of the deaths considered as possibly falling within Category A. In some cases, families contacted the Inquiry directly in response to publicity about the Inquiry. Such publicity included advertising and public notices in newspapers and regional publications, LGBTIQ publications, on the radio and online, as well as media reporting of the Inquiry's public hearings.
-
-
-5.59. The Inquiry also obtained the postal addresses, and in certain cases, mobile
-telephone numbers for family members via interagency cooperation. Journalists
-who had reported on certain deaths also assisted the Inquiry in locating families.
-
-
-5.60. I wrote to all identified family members (or where no family could be identified, a
-close friend or loved one) explaining the nature and purpose of the Inquiry and
-inviting them to participate. A text message was also sent to the mobile phone
-numbers of many family members to ensure all possible efforts were made to
-contact families. Sadly, many of the family members, partners, friends and loved
-ones are deceased, in failing health, or no longer able to be found.
-
-
-5.61. Family members and loved ones who expressed a willingness to participate in the
-Inquiry variously provided witness statements and/or copies of their own records,
-and participated in conferences with staff of the Inquiry. Families were also
-provided with the opportunity to read the evidentiary bundle prepared in relation
-to the death of their family member or loved one in advance of the relevant public
-hearing and could seek leave pursuant to Practice Guideline 1 to appear and be
-legally represented if they so wished.
-
-
-# Procedural fairness
-
-
-5.62. In Chapter 1 of this Report, I considered the principles of procedural fairness. I
-now turn to the Inquiry's contact with OICs, and persons suspected of having had
-involvement in a death under consideration by the Inquiry.
-
-
-Contact with OICs
-5.63. A common theme which emerged from the submissions of the NSWPF in relation
-to the public documentary tender of the Category A and B deaths is that it was
-unjust to make criticisms of historical criminal investigations when the OICs of
-those investigations had not been called to give evidence. Moreover, the NSWPF
-advised that it would not act for any of those officers before the Inquiry.
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-212
-
-
-
-
-1. I am not persuaded by the NSWPF's submission that any criticism of historical investigations would be unjust without hearing from the OICs, given the nature of my inquiries and the focus for the most part on investigative practices rather than on whether individuals should be criticised. Nevertheless, out of abundant caution, this Inquiry has sought to identify and contact almost every living OIC from those investigations it has been able to identify. To this end, from 13 June 2023 the Inquiry made attempts to contact over 40 living OICs. Very few wished to be heard. Many indicated they did not wish to make submissions, and many more did not reply at all. Several were deceased, and some could not be safely contacted (or further contacted) due to significant trauma.
-
-
-Chapter 5: Category A Deaths
-
-
-5.65. Notwithstanding that approach, it is appropriate to make the following comment.
-In some cases, I have considered it appropriate to discuss the specific conduct of
-named officers in conducting historical investigations. However, most of my
-adverse comments are in the nature of general critiques as to the manner in which
-an investigation was conducted. They should not, for that reason alone, be
-understood as specific adverse comment on the officer or officers in charge of that
-investigation.
-
-
-5.66. It is not always possible, particularly given incomplete records, to assign specific
-conduct to specific officers. Some investigations are "products of their time", in
-terms of cultural attitudes to the LGBTIQ community and approaches to policing,
-and no single officer can appropriately bear the weight of that criticism. I do not
-intend every critique of a previous investigation to indicate a moral or professional
-shortfall of the relevant OIC, or other officers involved, that sets them apart from
-their colleagues in that period.
-
-
-5.67. That does not mean that those investigations cannot and should not be critiqued
-in a general sense, regardless of whether the Inquiry has heard from each OIC or
-each individual officer involved. To take that view would be to promulgate the
-myth that historical failures of policing can be explained by a few "bad apples"
-who must personally answer for any shortcoming. It would also unfairly shield
-historical policing practices and systemic deficiencies from criticism unless the
-Inquiry were to embark on a task that was near impossible with the time assigned
-to it (and certainly in the timeframes originally assigned to it prior to the extensions
-granted).
-
-
-5.68. Accordingly, while this Inquiry has taken as cautious an approach as possible with
-respect to seeking the views of OICs in the time available to it, that should not be
-understood as accepting the various NSWPF submissions that the Inquiry's
-criticisms of those investigations are necessarily "adverse findings" with respect to
-each of those officers, or that a duty of procedural fairness was in fact owed to
-every such officer under the principles set out above.
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-213
-
-
-
-
-Chapter 5: Category A Deaths
-
-
-<table>
- <tr>
-  <th>Notification of potential adverse comment</th>
- </tr>
- <tr>
-  <th>5.69. Where Counsel made a submission, or intended to make a submission,</th>
- </tr>
- <tr>
-  <th>in of of interest of had involvement in a death</th>
- </tr>
- <tr>
-  <th>under consideration the that close members if</th>
- </tr>
- <tr>
-  <th>that was now deceased-was contacted the and invited to make</th>
- </tr>
-</table>
-
-
-1.  respect persons suspected having by Inquiry, person-or any family person by Inquiry a submission.
-
-
-5.70. In relevant instances, the Inquiry, through interagency cooperation obtained the
-postal address for the person of interest (or their next of kin). A letter was then
-sent notifying the person of interest (or their next of kin) that the Inquiry was in
-receipt of information which suggested that they (or their relative) may have been
-involved in the particular death within the Inquiry's Terms of Reference, and that
-Counsel Assisting may submit that I should reach such a conclusion. That letter
-also informed the person of interest (or their next of kin) of the date of the public
-hearing and provided a timeframe for them to contact the Inquiry to provide
-information and/or make submissions.
-
+5.70. In relevant instances, the Inquiry, through interagency cooperation obtained the postal address for the person of interest (or their next of kin). A letter was then sent notifying the person of interest (or their next of kin) that the Inquiry was in receipt of information which suggested that they (or their relative) may have been involved in the particular death within the Inquiry's Terms of Reference, and that Counsel Assisting may submit that I should reach such a conclusion. That letter also informed the person of interest (or their next of kin) of the date of the public hearing and provided a timeframe for them to contact the Inquiry to provide information and/or make submissions.
 
 # Documentary Tenders
 
+5.71. Public hearings by way of documentary tender were conducted in relation to Category A and B deaths on 22 separate days between February and August 2023 in respect of 32 individual deaths. As discussed above, public hearings did not take place in relation to the deaths of Cyril Olsen and Michael Swaczak.
 
-5.71. Public hearings by way of documentary tender were conducted in relation to
-Category A and B deaths on 22 separate days between February and August 2023
-in respect of 32 individual deaths. As discussed above, public hearings did not take
-place in relation to the deaths of Cyril Olsen and Michael Swaczak.
-
-
-5.72. From the totality of the material obtained by the Inquiry with respect to each death
-within the Terms of Reference, the Inquiry marshalled and selected those
-documents which needed to be tendered in evidence. For each death a tender
-bundle of such documents was compiled and tendered in a public hearing. Such
-tender bundles typically included:
-
+5.72. From the totality of the material obtained by the Inquiry with respect to each death within the Terms of Reference, the Inquiry marshalled and selected those documents which needed to be tendered in evidence. For each death a tender bundle of such documents was compiled and tendered in a public hearing. Such tender bundles typically included:
 
 1. Documents relating to the circumstances of the death itself;
-
 2. Documents relating to previous investigations of that death, whether by the police or the Coroner. The nature and extent of material derived from past police investigations of each death varied significantly from case to case, depending on the nature and extent of those investigations;
-
 3. Documents relating to the various steps taken by this Inquiry in relation to that death, and the results and conclusions flowing from those steps; and
-
 4. Statements made by family members and loved ones, outlining their memories and the impact that the death has had on their lives, if they had been provided.
 
 
-# 5.73. At those public hearings, Counsel Assisting also provided me with written submissions and made oral submissions.
+5.73. At those public hearings, Counsel Assisting also provided me with written submissions and made oral submissions.
+
+5.74. Counsel Assisting's submissions addressed, inter alia, both the manner and cause of death, and the question of whether the death involved LGBTIQ bias. Further, Counsel Assisting made submissions as to whether I should make any recommendations in connection with the death.
+
+5.75. In the course of their submissions, Counsel Assisting in some instances made observations on matters such as police investigative practices. While these, for the most part, did not give rise to recommendations being suggested in respect of individual cases, I have taken such observations into account in my consideration of recommendations that I consider are appropriate more broadly concerning police investigatory practices. So too have I taken into account any responsive submissions made on behalf of interested parties that concern investigative practices. Those are addressed in Chapter 8 of this Report.
+
+5.76. In the majority of deaths, parties granted authorisation to appear in individual matters (principally, the NSWPF and some family members), chose to reserve their position at the public hearings of those matters, and later provided written submissions in accordance with Practice Guideline 3.
+
+## Steps after documentary tender
+
+5.77. Following the written and oral submissions of Counsel Assisting, and receipt of submissions from interested parties, in some deaths I considered that additional investigative steps should be taken. In such cases, I gave instructions for further inquiries to be made, including obtaining additional expert reports, contacting additional witnesses and issuing further summonses for records.
+
+5.78. Where additional information was obtained in a case, Counsel Assisting supplemented the tender bundle for that case by tendering additional documents in chambers and preparing supplementary written submissions where appropriate. The additional evidence and supplementary submissions were then served on the interested parties, who were invited to provide further submissions in reply.
 
 
-5.74. Counsel Assisting's submissions addressed, inter alia, both the manner and cause
-of death, and the question of whether the death involved LGBTIQ bias. Further,
-Counsel Assisting made submissions as to whether I should make any
-recommendations in connection with the death.
+## Findings
+
+5.79. An overview of my findings as to manner and/or cause (where appropriate) in each of the Category A deaths appears in my consideration of the individual deaths in this Chapter. I have also included my views as to whether or not there is objectively reason to suspect that LGBTIQ bias was a factor in the relevant death. Of the 30 deaths I considered pursuant to Category A, I ultimately formed the view that there was objectively reason to suspect that LGBTIQ bias was a factor in 21 deaths.
+
+5.80. I outlined the approach I have taken in relation to the standard of proof at Chapter 1 of this Report.
+
+### Divergence from coronial findings
+
+5.81. In relation to some deaths, I have made findings or conclusions as to manner and cause which diverge from earlier findings made by a Coroner. This divergence varies in degree and is in most instances attributable to the existence of fresh evidence derived using the evidence-gathering powers provided for by the SCOI Act. That fresh evidence was unavailable to the Coroner at the time of the initial inquest and has shed light on matters including the timing, cause and manner of deaths being considered by the Inquiry.
+
+5.82. On 14 July 2023, I convened a meeting with the State Coroner, Magistrate Teresa O'Sullivan, to discuss the potential implications of any findings I make as to manner and cause of death on the coronial jurisdiction more broadly.
+
+5.83. In my view, it is generally undesirable for there to be a divergence between earlier coronial findings and any findings I make as to manner and cause of death. With a view to providing a pathway to reach consistency on the record, in some matters I have recommended that the Commissioner of the NSWPF or a serving NSWPF officer apply for a fresh inquest.
+
+### Applications for a fresh inquest
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
+5.84. At common law, it is well established that once an inquest has been held, a coroner is functus officio, such that there is no power to hold a fresh inquest unless permitted by a specific legislative provision or until the first finding has been set aside by a Court.22 This common law principle is also reflected in various provisions under the Coroners Act.
 
-
-214
-
-
-
-
-Chapter 5: Category A Deaths
-
-
-5.75. In the course of their submissions, Counsel Assisting in some instances made
-observations on matters such as police investigative practices. While these, for the
-most part, did not give rise to recommendations being suggested in respect of
-individual cases, I have taken such observations into account in my consideration
-of recommendations that I consider are appropriate more broadly concerning
-police investigatory practices. So too have I taken into account any responsive
-submissions made on behalf of interested parties that concern investigative
-practices. Those are addressed in Chapter 8 of this Report.
-
-
-5.76. In the majority of deaths, parties granted authorisation to appear in individual
-matters (principally, the NSWPF and some family members), chose to reserve their
-position at the public hearings of those matters, and later provided written
-submissions in accordance with Practice Guideline 3.
-
-
-Steps after documentary tender
-
-
-1. Following the written and oral submissions of Counsel Assisting, and receipt of submissions from interested parties, in some deaths I considered that additional investigative steps should be taken. In such cases, I gave instructions for further inquiries to be made, including obtaining additional expert reports, contacting additional witnesses and issuing further summonses for records.
-
-
-5.78. Where additional information was obtained in a case, Counsel Assisting
-supplemented the tender bundle for that case by tendering additional documents
-in chambers and preparing supplementary written submissions where appropriate.
-The additional evidence and supplementary submissions were then served on the
-interested parties, who were invited to provide further submissions in reply.
-
-
-# Findings
-
-
-5.79. An overview of my findings as to manner and/or cause (where appropriate) in
-each of the Category A deaths appears in my consideration of the individual deaths
-in this Chapter. I have also included my views as to whether or not there is
-objectively reason to suspect that LGBTIQ bias was a factor in the relevant death.
-Of the 30 deaths I considered pursuant to Category A, I ultimately formed the
-view that there was objectively reason to suspect that LGBTIQ bias was a factor
-in 21 deaths.
-
-
-5.80. I outlined the approach I have taken in relation to the standard of proof at
-Chapter 1 of this Report.
-
-
-Divergence from coronial findings
-
-
-5.81. In relation to some deaths, I have made findings or conclusions as to manner and
-cause which diverge from earlier findings made by a Coroner. This divergence
-varies in degree and is in most instances attributable to the existence of fresh
-evidence derived using the evidence-gathering powers provided for by the SCOI
-Act. That fresh evidence was unavailable to the Coroner at the time of the initial
-inquest and has shed light on matters including the timing, cause and manner of
-deaths being considered by the Inquiry.
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-215
-
-
-
-
-Chapter 5: Category A Deaths
-
-
-5.82. On 14 July 2023, I convened a meeting with the State Coroner, Magistrate Teresa
-O'Sullivan, to discuss the potential implications of any findings I make as to
-manner and cause of death on the coronial jurisdiction more broadly.
-
-
-5.83. In my view, it is generally undesirable for there to be a divergence between earlier
-coronial findings and any findings I make as to manner and cause of death. With
-a view to providing a pathway to reach consistency on the record, in some matters
-I have recommended that the Commissioner of the NSWPF or a serving NSWPF
-officer apply for a fresh inquest.
-
-
-Applications for a fresh inquest
-
-
-1. At common law, it is well established that once an inquest has been held, a coroner is functus officio, such that there is no power to hold a fresh inquest unless permitted by a specific legislative provision or until the first finding has been set aside by a Court.22 This common law principle is also reflected in various provisions under the Coroners Act.
-
-
-5.85. The statutory duty to hold a fresh inquest or inquiry is enshrined in s. 83(4) of the
-Coroners Act, which is in the following terms:23
+5.85. The statutory duty to hold a fresh inquest or inquiry is enshrined in s. 83(4) of the Coroners Act, which is in the following terms:23
 
 
 (4) A fresh inquest or inquiry must be held if:
 
-
 (a) an application for a fresh inquest or inquiry is made under
 this section, and
-
-
 (b) on the basis of the application, the State Coroner is of the
-
 
 opinion that the discovery of new evidence or facts makes it
 necessary or desirable in the interests of justice to hold a fresh
 inquest or inquiry.
 
+5.86. The term "fresh inquest" is a reference to a new inquest concerning the death or suspected death of a person.
 
-5.86. The term "fresh inquest" is a reference to a new inquest concerning the death or
-suspected death of a person.
+5.87. The mandatory duty to hold a fresh inquest or inquiry is conditional upon the State Coroner forming the opinion set out in s. 83(4)(b) of the Coroners Act. This opinion amounts to a subjective jurisdictional fact.24 To be validly held, the opinion formed by the State Coroner must, amongst other things, be such that it can be formed "by a reasonable [person] who correctly understands the meaning of the law under which [the person] acts".25
 
-
-5.87. The mandatory duty to hold a fresh inquest or inquiry is conditional upon the State
-Coroner forming the opinion set out in s. 83(4)(b) of the Coroners Act. This opinion
-amounts to a subjective jurisdictional fact.24 To be validly held, the opinion formed
-by the State Coroner must, amongst other things, be such that it can be formed
-"by a reasonable [person] who correctly understands the meaning of the law under
-which [the person] acts".25
+5.88. Pursuant to s. 83(5) of the Coroners Act, an application for a fresh inquest or inquiry may only be made by a police officer or a person who has been granted leave to appear or be represented at a previous inquest or inquiry. Accordingly, limited persons have standing to make an application under s. 83 of the Coroners Act.
 
 
-5.88. Pursuant to s. 83(5) of the Coroners Act, an application for a fresh inquest or inquiry
-may only be made by a police officer or a person who has been granted leave to
-appear or be represented at a previous inquest or inquiry. Accordingly, limited
-persons have standing to make an application under s. 83 of the Coroners Act.
-
-
-22 R v West Yorkshire Coroner; Ex parte Smith [1983] QB 335 at 359, [1982] 3 All ER 1098 at 1108, CA per Donaldson LJ.
-23 The requirement to hold a fresh inquest may also arise by way of an order of the Supreme Court pursuant to Chapter 7 of the Coroners
-Act. I further note that a discretionary power to hold a fresh inquest, in certain proscribed circumstances, is enshrined in ss. 83(2)-(3) of
-the Coroners Act.
-24 Minister for Multicultural and Indigenous Affairs v SGLB (2004) 207 ALR 12 at 20.
-25 R v Connell; Ex parte Hetton Bellbird Collieries Ltd (1944) 69 CLR 407 at 430.
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-216
-
-
-
-
-Chapter 5: Category A Deaths
 
 
 5.89. Whilst the term "police officer" is not defined in the Coroners Act, it is defined in
@@ -1288,11 +380,8 @@ the findings and conclusions I have reached as to manner and cause of death:
 
 
 1. Scott Miller;
-
 2. Paul Rath;
-
 3. Richard Slater;
-
 4. Carl Stockton.
 
 
@@ -1310,123 +399,45 @@ Registrar has the power to correct the Register to bring an entry about a partic
 registrable event into conformity with the most reliable information available to
 the Registrar of the registrable event.
 
-
-26 See Police Act 1990 (NSW), ss. 6(2)(a) and (4).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-217
-
-
-
-
-Chapter 5: Category A Deaths
-
-
 # Common themes raised by the NSWPF
 
+5.94. In the course of considering the submissions on behalf of the NSWPF, I identified a number of common themes. Several of these themes relate to the absence or loss of records and the investigative practices of the NSWPF. In particular, these themes include: historical vs modern day investigative standards; improvements in forensics and technology; and changes to exhibit management and archiving standards. As noted above, these matters are addressed in detail in Chapter 8.
 
-5.94. In the course of considering the submissions on behalf of the NSWPF, I identified
-a number of common themes. Several of these themes relate to the absence or loss
-of records and the investigative practices of the NSWPF. In particular, these
-themes include: historical vs modern day investigative standards; improvements in
-forensics and technology; and changes to exhibit management and archiving
-standards. As noted above, these matters are addressed in detail in Chapter 8.
+5.95. Against that background, I now turn to my consideration of the Category A deaths.
 
 
-# 5.95. Against that background, I now turn to my consideration of the Category A deaths.
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-218
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
 
 
 # IN THE MATTER OF MARK STEWART
 
-
 ## Factual background
 
+### Date and location of death
 
-Date and location of death
+5.96. Mark Stewart (formerly Mark Spanswick) died on 10 or 11 May 1976 at a headland near Shelly Beach in Manly.
 
+5.97. The headland at which Mr Stewart died was sometimes referred to as "the Fairy Bower headland", and this name is used in this Report.27
 
-1. Mark Stewart (formerly Mark Spanswick) died on 10 or 11 May 1976 at a headland near Shelly Beach in Manly.
+### Circumstances of death
 
+5.98. At around 10:00 am on 11 May 1976, Mr Stewart's body was discovered lying on the rocks at the base of a cliff about 250 metres south of the Fairy Bower headland.28 He had last been seen at 9:30pm on 9 May 1976 at the Hilton Hotel on George Street in the Sydney Central Business District (CBD), where he had booked a hotel room for two nights.29
 
-5.97. The headland at which Mr Stewart died was sometimes referred to as "the Fairy
-Bower headland", and this name is used in this Report.27
-
-
-Circumstances of death
-5.98. At around 10:00 am on 11 May 1976, Mr Stewart's body was discovered lying on
-the rocks at the base of a cliff about 250 metres south of the Fairy Bower
-headland.28 He had last been seen at 9:30pm on 9 May 1976 at the Hilton Hotel
-on George Street in the Sydney Central Business District (CBD), where he had
-booked a hotel room for two nights.29
+5.99. Mr Stewart was 18 years old at the time of his death.
 
 
-## 5.99. Mr Stewart was 18 years old at the time of his death.
+### Previous investigations
 
+#### Original police investigation
 
-## Previous investigations
+5.100. The original police investigation into Mr Stewart's death was overseen by Manly Police. Senior Constable Keith Thoms was the OIC of the investigation.
 
+5.101. At 11:00am on 11 May 1976, Senior Constable Thoms and Constable Ronald Fyson of Manly Police attended the Fairy Bower headland and were taken to the location of the body by Colin McGuire (the local fisherman who had found Mr Stewart's body earlier that morning).30
 
-Original police investigation
+5.102. A third officer, Constable Christopher Ure, appears to have arrived shortly after these two officers "in company with other police from the Manly detectives office".31
 
+5.103. Senior Constable Thoms, Constable Fyson and Constable Ure made statements concerning their attendance at the scene. The statements record that Mr Stewart's body was located on rocks about 250 metres south of either "Fairy Bower headland" or "Fairy Bower", and that Mr Stewart was lying face down on rocks about 20 feet from the cliff face.32
 
-1. The original police investigation into Mr Stewart's death was overseen by Manly Police. Senior Constable Keith Thoms was the OIC of the investigation.
-
-
-5.101. At 11:00am on 11 May 1976, Senior Constable Thoms and Constable Ronald
-Fyson of Manly Police attended the Fairy Bower headland and were taken to the
-location of the body by Colin McGuire (the local fisherman who had found
-Mr Stewart's body earlier that morning).30
-
-
-5.102. A third officer, Constable Christopher Ure, appears to have arrived shortly after
-these two officers "in company with other police from the Manly detectives
-office".31
-
-
-27 As outlined in Counsel Assisting's submissions, the headland was referred to as the "Fairy Bower headland" in much of the material
-relating to Mr Stewart's death despite the fact that the headland is much closer to Shelly Beach in Manly, than to Fairy Bower beach, which
-is some distance away and further west.
-28 Exhibit 19, Tab 8, Statement of Colin Richard McGuire, undated (SCOI.02724.00018).
-29 Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976(SCOI.02724.00012).
-30 Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019); Exhibit 19, Tab 14, Statement of
-Constable Ronald Fyson, Undated 1 (SCOI.02724.00017).
-31 Exhibit 19, Tab 15, Statement of Constable Christopher John Ure, 4 July 1976 (SCOI.O2724.00016).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-219
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
-
-
-5.103. Senior Constable Thoms, Constable Fyson and Constable Ure made statements
-concerning their attendance at the scene. The statements record that Mr Stewart's
-body was located on rocks about 250 metres south of either "Fairy Bower
-headland" or "Fairy Bower", and that Mr Stewart was lying face down on rocks
-about 20 feet from the cliff face.32
-
-
-# 5.104. In Senior Constable Thoms' view, "[i]t was apparent that the body had fallen from the cliff top".33
-
+5.104. In Senior Constable Thoms' view, "[i]t was apparent that the body had fallen from the cliff top".33
 
 5.105. According to Constable Ure:34
 We then made an extensive search of the headland near to where it would
@@ -1444,28 +455,11 @@ persons [sic] prior presence was found. I then returned to the bottom of the
 cliff where I viewed the body of the deceased...
 
 
-5.106. The only property found on Mr Stewart's body was a small piece of notepaper
-with the name and telephone number of a hotel on one corner. According to the
-statement of the OIC, the hotel name on the notepaper was the "Chevron Hotel,
-Sydney". The notation "7.20 11.5.76" was written in biro on the paper.35
+5.106. The only property found on Mr Stewart's body was a small piece of notepaper with the name and telephone number of a hotel on one corner. According to the statement of the OIC, the hotel name on the notepaper was the "Chevron Hotel, Sydney". The notation "7.20 11.5.76" was written in biro on the paper.[^35]
+
+5.107. Other physical evidence found near Mr Stewart's body included a piece of Banksia tree, which was similar to the trees growing at the top of the cliff about 150 feet above.[^36] A men's Seiko wristwatch was also recovered about 21 feet further east of the body. The watch had stopped at "8.02 TUE 11".[^37]
 
 
-5.107. Other physical evidence found near Mr Stewart's body included a piece of Banksia
-tree, which was similar to the trees growing at the top of the cliff about 150 feet
-above.36 A men's Seiko wristwatch was also recovered about 21 feet further east
-of the body. The watch had stopped at "8.02 TUE 11".37
-
-
-32 Exhibit 19, Tab 12, Statement of Senior
-Constable Ronald Fyson, undated
-1976(SCOI.O2724.00016).
-33 Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019).
-34 Exhibit 19, Tab 15, Statement of Constable Christopher John Ure, 4 July 1976, 1 (SCOI.O2724.00016).
-35 Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019).
-36 Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019); Exhibit 19, Tab 14,
-Constable Ronald Fyson, undated (SCOI.02724.00017).
-37 Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019); Exhibit 19, Tab 14,
-Constable Ronald Fyson, undated (SCOI.02724.00017).
 
 
 Constable Keith Thoms, undated(SCOI.02724.00019); Exhibit 19, Tab 14, Statement of
@@ -1478,19 +472,8 @@ Statement of
 Statement of
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
 
-
-220
-
-
-
-
-1. Although not mentioned in any police statement, the Report of Death to Coroner dated 13 May 1976 refers to the clothing worn by Mr Stewart as pale green slacks, a bone-coloured belt, bright green sneakers, a cream body shirt, blue denim jacket, white cotton singlet and blue floral briefs.38 His shoes were off but still laced and were in close proximity to the body.39 The report also mentions a cigarette lighter, stainless-steel comb and $15.27 as property that was found with Mr Stewart's body.40 A description of the clothing in similar terms appears in a local newspaper article published on 14 May 1976, adding the detail that the bright green sneakers had yellow stripes and describing the shirt as fawn coloured.41
-
-
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
-
+5.108. Although not mentioned in any police statement, the Report of Death to Coroner dated 13 May 1976 refers to the clothing worn by Mr Stewart as pale green slacks, a bone-coloured belt, bright green sneakers, a cream body shirt, blue denim jacket, white cotton singlet and blue floral briefs.38 His shoes were off but still laced and were in close proximity to the body.39 The report also mentions a cigarette lighter, stainless-steel comb and $15.27 as property that was found with Mr Stewart's body.40 A description of the clothing in similar terms appears in a local newspaper article published on 14 May 1976, adding the detail that the bright green sneakers had yellow stripes and describing the shirt as fawn coloured.41
 
 5.109. There was no evidence before the Inquiry that there was ever any forensic testing
 of these items. The present location of the items, including the notepaper, was not
@@ -1522,26 +505,8 @@ identified by Constable Fyson, Patricia Cupitt (the Hilton Hotel receptionist wh
 checked Mr Stewart in on 9 May 1976) and Mr Stewart's father John Spanswick.48
 
 
-38 Exhibit 19, Tab 2, Report of Death to Coroner, 13 May 1976, 1 (SCOI.82449).
-39 Exhibit 19, Tab 2, Report of Death to Coroner, 13 May 1976, 1 (SCOI.82449).
-40 Exhibit 19, Tab 2, Report of Death to Coroner, 13 May 1976, 1 (SCOI.82449).
-41 Exhibit 19, Tab 27, 'No clue to dead youth', The Manly Daily, 14 May 1976 (SCOI.82452).
-42 Exhibit 19, Tab 23B, Statement of Detective Sergeant Neil Sheldon, 16 March 2023, [10] (SCOI.82812).
-43 Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019).
-44 Exhibit 19, Tab 13, Letter from Senior Constable Keith Thoms to Coroner, 29 May 1976 (SCOI.02724.00011).
-45 Exhibit 19, Tab 23, NSWPF Report of Occurrence, 'Further information re unidentified male person found on rocks at Fairy Bower
-on 11.5.76', 12 May 1976, 2 (SCOI.82810)
-46 Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019).
-47 Exhibit 19, Tab 2, Report of death to Coroner, 13 May 1976, 1-2 (SCOI.82449).
-48 Exhibit 19, Tab 14, Statement of Constable Ronald Fyson, undated (SCOI.02724.00017); Exhibit 19, Tab 9, Statement of Patricia Cupitt,
-7 July 1976, 1 (SCOI.02724.00012); Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 2(SCOI.02724.00015); Exhibit 19, Tab
-15, Statement of Constable Christopher John Ure, 4 July 1976(SCOI.O2724.00016).
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-221
 
 
 
@@ -1590,36 +555,16 @@ house in Brisbane, where Mr Stewart lived until 6 May 1976 just a few days befor
 he died.56
 
 
-Persons of interest
+### Persons of interest
 
 
 5.119. No persons of interest in relation to the death were identified at the time of
 Mr Stewart's death, nor subsequently.
 
 
-49 Exhibit 19, Tab 16, Personal effects of Mark Stewart - Room 3117, undated (SCOI.02724.00020).
-50 Exhibit 19, Tab 14, Statement of Constable Ronald Fyson, undated (SCOI.02724.00017).).
-51 See Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012); Exhibit 19, Tab 10, Statement of William Eugene
-Muirhead, 7 July 1976 (SCOI.02724.00013); Exhibit 19, Tab 11, Statement of David John Ford, 7 July 1976 (SCOI.02724.00014).
-52 See Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 29176 (SCOI.02724.00015).
-53 Exhibit 19, Tab 18, Special Crime Squad synopsis extract, 24 May 1976 (SCOI.47557).
-54 Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012).
-55 Exhibit 19, Tab 13, Letter from Senior Constable Keith Thoms to Coroner, 29 May 1976 [2] (SCOI.02724.00011).
-56 Exhibit 19, Tab 17, Special Crime Squad synopsis extract, 21 May 1976 (SCOI.47558).
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-222
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
-
-
-Post-mortem examination
+### Post-mortem examination
 
 
 1. Forensic pathologist Dr Thomas Oettle conducted a post-mortem examination at 11:00am on 14 May 1976. In a post-mortem report dated 3 June 1976, Dr Oettle recorded the direct cause of death as "multiple injuries" and estimated that death had taken place three to four days prior to the post-mortem (i.e., 10 or 11 May 1976).57
@@ -1643,7 +588,7 @@ of free blood present in the abdomen, 450ml present in the left chest cavity and
 100ml in the right chest cavity.59
 
 
-# 5.123. Toxicology testing was limited to testing for the presence of alcohol. No alcohol was found in Mr Stewart's blood.60
+5.123. Toxicology testing was limited to testing for the presence of alcohol. No alcohol was found in Mr Stewart's blood.60
 
 
 Findings at inquest
@@ -1665,26 +610,8 @@ intended by the [deceased] I am not able to determine on the evidence, I
 will make an open finding as to that.
 
 
-57 Exhibit 19, Tab 4, Post-mortem report of Dr Thomas Oettle, 3 June 1976, 1 (SCOI.02724.00009).
-58 Exhibit 19, Tab 4, Post-mortem report of Dr Thomas Oettle, 3 June 1976, 1 (SCOI.02724.00009).
-59 Exhibit 19, Tab 4, Post-mortem report of Dr Thomas Oettle, 3 June 1976, 1-2 (SCOI.02724.00009).
-60 Exhibit 19, Tab 3, Toxicology report, 20 May 1976, 1 (SCOI.02724.00010).
-61 Exhibit 19, Tab 5, Findings of City Coroner John Brian Goldrick, 16 July 1976 (SCOI.02724.00001).
-62 Exhibit 19, Tab 36, Extract of transcript of Coronial Inquest into the death of Mark Stewart, undated
 
 
-(SCOI.02724.00007).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-223
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
 
 
 # Strike Force Parrabell
@@ -1723,25 +650,6 @@ the same is that Strike Force Parrabell officers did not turn their minds to the
 possibility that Mr Stewart may have attended the Chevron Hotel, the bar of which
 was known as a popular venue for gay men, at some time proximate to his death.68
 
-
-63 Exhibit 19, Tab 19, Strike Force Parrabell Bias Crimes Indicators Review Form - Mark Stewart, Undated 4, 6-7, 9-15
-(NPL.0115.0002.3655).
-64 Exhibit 19, Tab 19, Strike Force Parrabell Bias Crimes Indicators Review Form - Mark Stewart, Undated 5, 6, 16 (NPL.0115.0002.3655).
-65 Exhibit 19, Tab 19, Strike Force Parrabell Bias Crimes Indicators Review Form - Mark Stewart, Undated 6 (NPL.0115.0002.3655).
-66 Exhibit 19, Tab 19, Strike Force Parrabell Bias Crimes Indicators Review Form - Mark Stewart, Undated 16 (NPL.0115.0002.3655).
-67 Exhibit 19, Tab 19, Strike Force Parrabell Bias Crimes Indicators Review Form - Mark Stewart, Undated 1, 16 (NPL.0115.0002.3655).
-68 Exhibit 2, Tab 1, Statement of Garry Wotherspoon, 14 November 2022, [45] (SCOI.77300).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-224
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
 
 
 # 5.132. The "Summary of Findings" categorises the case overall as "Insufficient Information", and concludes that:69
@@ -1819,10 +727,6 @@ February 2023 (SCOI.82450).
 (SCOI.82810).
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-225
 
 
 
@@ -1871,18 +775,7 @@ from the New Zealand Defence Force relating to Mr Stewart's naval service, which
 are relevantly summarised below.
 
 
-76 Exhibit 19, Tab 29A, Summons to Department of Forensic Medicine (DOFM1), 22 August 2022 (SCOI.82536).
-77 See Exhibit 19, Tab 6, Death Certificate for Mark Stewart, 21 July 1976 (SCOI.73994).
-78 Exhibit 19, Tab 30A, Summons to Hilton Sydney Hotel (HSH1), 10 October 2022 (SCOI.82453).
-79 Exhibit 19, Tab 31, Email from Amelia Benjamin to Caitlin Healey-Nash, 11 October 2022 (SCOI.82438).
-80 Exhibit 19, Tab 32A, Summons to Queensland Police Service (QLDPS3), 20 December 2022 (SCOI.82463).
-81 Exhibit 19, Tab 33, Letter from Queensland Police Service to Caitlin Healey-Nash, 11 January 2023 (SCOI.82456.00001).
 
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-226
 
 
 
@@ -1890,7 +783,7 @@ Special Commission of Inquiry into LGBTIQ hate crimes
 Chapter 5: Category A Deaths ― In the matter of Mark Stewart
 
 
-Family members
+### Family members
 
 
 5.147. Efforts were made to contact surviving family members of Mr Stewart. The
@@ -1939,34 +832,11 @@ report that made review of Mr Stewart's death challenging. These included:90
 a. The lack of detailed description of external injuries;
 
 
-82 See Exhibit 19, Tab 43, Statement of Caitlin Healey-Nash, 21 March 2023, [4]-[7] (SCOI.82814).
-83 Exhibit 19, Tab 20A, Summons to NSWPF (NSWPF22), 28 September 2022 (SCOI.82448).
-84 Exhibit 19, Tab 21, Email from Patrick Hodgetts to Caitlin Healey-Nash 11 October 2022 (SCOI.82446).
-85 Exhibit 19, Tab 23A, Letter from Caitlin Healey-Nash to Patrick Hodgetts, 3 March 2023 (SCOI.82813).
-86 Exhibit 19, Tab 23B, Statement of Detective Sergeant Neil Sheldon, 16 March 2023, [9] (SCOI.82812).
-87 Exhibit 19, Tab 23B, Statement of Detective Sergeant Neil Sheldon, 16 March 2023, [10] (SCOI.82812).
-88 Exhibit 19, Tab 38A, Letter of instruction from Caitlin Healey-Nash to Dr Linda Iles, 5 October 2022 (SCOI.82462).
-89 Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022 (SCOI.82457).
-90 Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 4 (SCOI.82457).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-227
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
 
 
 1. No comment on the presence or absence of injury to the aorta, larynx, ribs, sternal and lumbar areas;
-
 2. No description of the presence of anogenital injuries or pathology;
-
 3. Toxicology analysis being limited to testing for alcohol only; and
-
 4. No photo documentation of external features.
 
 
@@ -2013,26 +883,6 @@ was found nearby. His recollection is that he was able to identify the body as
 Mr Stewart through the "jeweller's mark" in the Seiko wristwatch.99
 
 
-91 Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 5 (SCOI.82457).
-92 Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 6 (SCOI.82457).
-93 Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 4 (SCOI.82457).
-94 Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 4, 6 (SCOI.82457).
-95 Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 5 (SCOI.82457).
-96 Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 4 (SCOI.82457).
-97 Exhibit 19, Tab 39, Further statement of Senior Constable Keith Thoms, 28 February 2023 (SCOI.82809).
-98 Exhibit 19, Tab 39, Further statement of Senior Constable Keith Thoms, 28 February 2023, [6] (SCOI.82809).
-99 Exhibit 19, Tab 39, Further statement of Senior Constable Keith Thoms, 28 February 2023, [9 ]-[11] (SCOI.82809).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-228
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
 
 
 5.159. Mr Thoms did not have an independent recollection of the name of the hotel that
@@ -2075,32 +925,14 @@ Fairy Bower headland.104
 # 5.162. The Inquiry also sought and obtained weather data from the BOM for 10 and 11 May 1976.
 
 
-100 Exhibit 19, Tab 39, Further statement of Senior Constable Keith Thoms, 28 February 2023, [9] (SCOI.82809).
-101 Exhibit 19, Tab 39, Further statement of Senior Constable Keith Thoms, 28 February 2023, [9]-[12] (SCOI.82809). Mr Thoms suggests
-that the Hotel contacted police after a period of two weeks, whereas this contact appears to have occurred after only two day s.
-102 Exhibit 66, Tabs 76-77, Letters to Keith Thoms, 23 August 2023 and 20 September 2023 (SCOI.86333; SCOI.86334).
-103 Exhibit 19, Tab 25, 'Body found', Sydney Morning Herald, 12 May 1976, 14 (SCOI.82455).
-104 Exhibit 19, Tab 24, 'Mystery boy dies in cliff plunge', The Manly Daily, 12 May 1976, 1 (SCOI.82459).
-105 Exhibit 19, Tab 26, 'Body not identified', The Manly Daily, 13 May 1976(SCOI.82458).
-106 Exhibit 19, Tab 27, 'No clue to dead youth', The Manly Daily, 14 May 1976 (SCOI.82452).
-107 Exhibit 19, Tab 28, 'Cliff body identified', The Manly Daily, 18 May 1976 (SCOI.82454).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-229
 
 
 
 
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
+## Consideration of the evidence
 
 
-# Consideration of the evidence
-
-
-Mark Stewart's background
+### Mark Stewart's background
 
 
 1. Mr Stewart was born on 18 July 1957 in Port Moresby, Papua New Guinea. He was the second of three children.108
@@ -2172,17 +1004,6 @@ September 1974 (SCOI.84778).
 (SCOI.84785).
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-230
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
-
-
 sea fishing trip, hikes through the bush or even a lengthy stay at some of
 our resort hotels, to assist in breaking his constant association with,
 frankly, the louts of the town.
@@ -2225,29 +1046,6 @@ him thereafter.120
 Christmas 1975 until 6 May 1976, just a few days before he died.121 This
 information came from the operator of the boarding house, who was interviewed
 by Brisbane detectives once Mr Stewart's identity had been established.122
-
-
-114 Exhibit 13, Tab 46, Letter from John Spanswick to The Commanding Officer, HMNZS Waikato, 6 October 1974 (SCOI.84785).
-115 Exhibit 13, Tab 47, Letter from PL Spanswick to The Commanding Officer, HMNZS Waikato, 12 November 1974, 1 (SCOI.84783).
-116 Exhibit 13, Tab 47, Letter from PL Spanswick to The Commanding Officer, HMNZS Waikato, 12 November 1974, 1 (SCOI.84783).
-117 Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 1 (SCOI.02724.00015).
-118 Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 1-2 (SCOI.02724.00015).
-119 Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 2 (SCOI.02724.00015).
-120 Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 1-2 (SCOI.02724.00015).
-121 Exhibit 19, Tab 17, Special Crime Squad synopsis extract, 21 May 1976 (SCOI.47558).
-122 Exhibit 19, Tab 17, Special Crime Squad synopsis extract, 21 May 1976 (SCOI.47558).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-231
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
-
 
 5.175. Some time prior to his death, Mr Stewart changed his name by deed poll from
 Mark Spanswick to Mark Stewart. There is conflicting evidence as to whether this
@@ -2297,29 +1095,8 @@ Bower and that he loved "climbing the rocks and going for walks".132 Whether by
 "Fairy Bower" Mr Spanswick meant to refer to the headland or not is unclear.
 
 
-123 The extract suggested that this had occurred through the Supreme Court of Queensland, via a firm of solicitors: Exhibit 19, Tab 17,
-Special Crime Squad synopsis extract, 21 May 1976 (SCOI.47558).
-124 Exhibit 19, Tab 13, Letter from Senior Constable Keith Thoms to Coroner, 29 May 1976 (SCOI.02724.00011).
-125 Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 2 (SCOI.02724.00015).
-126 Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012).
-127 Described as "old" in a property inventory from a search of Mr Stewart's room on 13 May 1976: Exhibit 19, Tab 16, List of personal
-effects from room 3117, Undated 1 (SCOI.02724.00020).
-128 Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012).
-129 Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012).
-130 Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012).
-131 Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 2 (SCOI.02724.00015).
-132 Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 2 (SCOI.02724.00015).
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-232
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Mark Stewart
 
 
 5.182. Similarly, Mr Stewart's younger sister stated that Mr Stewart enjoyed the Shelly
@@ -76682,37 +75459,17 @@ Mr Cawsey's body;
 
 
 1. The limited probative value of sighting of Mr Kellie in proximity to the crime scene, given that he was known to be homeless and living in Centennial Park at the time;
-
 2. The "fraught" nature of relying on inconsistencies or omissions in Mr Kellie's account to police as lies as consciousness of guilt;
-
 3. The difficulties in relying upon Mr Kellie's interview with police on 17 January 2010 as an admission; and
-
 4. The lack of reliability or specificity in respect of Mr Kellie's admission to his sister.
-
 5. Counsel Assisting further submitted that the evidence as to Mr Kellie's involvement in other offending in and around the Centennial Park area would not be admissible as tendency and coincidence evidence. I agree with this, for the reasons I have provided above. I do not have regard to this evidence in assessing whether Mr Kellie was involved in Mr Cawsey's death.
 
 
-# 6.1007. The NSWPF agreed with the submissions of Counsel Assisting that the person who inflicted the stab wound is unknown.
+6.1007. The NSWPF agreed with the submissions of Counsel Assisting that the person who inflicted the stab wound is unknown.
 
+6.1008. I accept Counsel Assisting's analysis of the evidence, which is reflected in my consideration of the evidence above. Having regard to the standard of proof identified in Chapter 1, although the evidence gives rise to a real suspicion against Mr Kellie, I do not regard the evidence as going further.
 
-6.1008. I accept Counsel Assisting's analysis of the evidence, which is reflected in my
-consideration of the evidence above. Having regard to the standard of proof
-identified in Chapter 1, although the evidence gives rise to a real suspicion against
-Mr Kellie, I do not regard the evidence as going further.
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1328
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
-
-
-# 6.1009. Counsel Assisting submitted that a finding by the Inquiry in the following terms is open:5981
+6.1009. Counsel Assisting submitted that a finding by the Inquiry in the following terms is open:5981
 
 
 Anthony Cawsey died on 26 September 2009 at Centennial Park,
@@ -76760,68 +75517,29 @@ doing so by any offender. Counsel Assisting submitted that this gives rise to a
 distinct possibility that Mr Cawsey was the target of an attack on the basis of the
 expression of his sexuality.
 
+6.1014. Despite this realistic possibility, Counsel Assisting submitted that while the identity of Mr Cawsey's killer remains unknown, there is no sufficient basis for a definitive conclusion as to whether or not his murder involved LGBTIQ bias.
 
-6.1014. Despite this realistic possibility, Counsel Assisting submitted that while the identity
-of Mr Cawsey's killer remains unknown, there is no sufficient basis for a definitive
-conclusion as to whether or not his murder involved LGBTIQ bias.
+6.1015. The NSWPF agreed with these submissions. I accept Counsel Assisting's analysis. 
 
+6.1016. Counsel Assisting considered the question of bias on the hypothesis that Mr Kellie killed Mr Cawsey following an encounter in which Mr Cawsey was perceived to have propositioned him for sex.
 
-6.1015. The NSWPF agreed with these submissions. I accept Counsel Assisting's analysis.
-Counsel Assisting considered the question of bias on the hypothesis that Mr Kellie
-killed Mr Cawsey following an encounter in which Mr Cawsey was perceived to
-have propositioned him for sex.
-
-
-6.1017. As Counsel Assisting submitted, this excessive hostility is open to being
-interpreted as anger motivated by prejudice against LGBTIQ people. However,
-interpretation of Mr Kellie's version of events is significantly complicated by his
-psychotic illness and traumatic experiences, and there is insufficient information
-to reliably determine the motivation for his behaviour.
-
-
-5981 Submissions of Counsel Assisting the
-5982 Submissions of Counsel Assisting the
-
-
-Inquiry, 26 June 2023, [292] (SCOI.84134).
-Inquiry, 26 June 2023, [288] (SCOI.84134).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1329
+6.1017. As Counsel Assisting submitted, this excessive hostility is open to being interpreted as anger motivated by prejudice against LGBTIQ people. However, interpretation of Mr Kellie's version of events is significantly complicated by his psychotic illness and traumatic experiences, and there is insufficient information to reliably determine the motivation for his behaviour.
 
 
 
 
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
 
+6.1018. I further accept that, even if it was assumed that Mr Kellie killed Mr Cawsey after an encounter consistent with that contained in his interview with police on 17 January 2010, there would remain real doubt about whether the death was the result of LGBTIQ bias.
 
-6.1018. I further accept that, even if it was assumed that Mr Kellie killed Mr Cawsey after
-an encounter consistent with that contained in his interview with police on
-17 January 2010, there would remain real doubt about whether the death was the
-result of LGBTIQ bias.
-
-
-6.1019. However, the fact that I am unable to reach a conclusion about whether a death
-was motivated by LGBTIQ bias does not mean that there is no reason to suspect
-that LGBTIQ bias was a factor in a death.
-
+6.1019. However, the fact that I am unable to reach a conclusion about whether a death was motivated by LGBTIQ bias does not mean that there is no reason to suspect that LGBTIQ bias was a factor in a death.
 
 # Conclusions and Recommendations
 
+6.1020. I find that Anthony Cawsey died on 26 September 2009 at Centennial Park, Sydney, NSW of haemopericardium as a result of a stab wound to his left chest. The person who inflicted the stab wound is unknown.
 
-6.1020. I find that Anthony Cawsey died on 26 September 2009 at Centennial Park,
-Sydney, NSW of haemopericardium as a result of a stab wound to his left chest.
-The person who inflicted the stab wound is unknown.
+6.1021. In my view, on the evidence available to the Inquiry, there is objectively reason to suspect that LGBTIQ bias was a factor in Mr Cawsey's death.
 
-
-6.1021. In my view, on the evidence available to the Inquiry, there is objectively reason to
-suspect that LGBTIQ bias was a factor in Mr Cawsey's death.
-
-
-# 6.1022. Consistent with the submissions of Counsel Assisting, and supported by the NSWPF, I make the following recommendations.
+6.1022. Consistent with the submissions of Counsel Assisting, and supported by the NSWPF, I make the following recommendations.
 
 
 <table>
@@ -76852,20 +75570,138 @@ suspect that LGBTIQ bias was a factor in Mr Cawsey's death.
 </table>
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1330
-
 
 
 
 Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
 
 
-1331
+## Footnotes
+
+[^1]: Exhibit 6, Tab 56A, Document from Sue Thompson titled 'Brief: Likely NSW Gay Hate Murders from Late 70s to Late 90s', undated (SCOI.77314).
+[^2]: Exhibit 1, Tab 2, NSW Police Force, Strike Force Parrabell Final Report, 23, 69 (Report, June 2018) (SCOI.02632).
+[^3]: Exhibit 6, Tab 49, Strike Force Parrabell Case Summaries, undated, 2 (SCOI.76961.00014).
+[^4]: Exhibit 12, Tab 6, Death Certificate for David Lloyd-Williams, 9 November 1978 (SCOI.74028).
+[^5]: Incorrectly identified as "Gerard Leslie Cuthbert" in the Strike Force Parrabell Report: see Exhibit 1, Tab 2, NSW Police Force, Strike Force Parrabell Final Report, 7 (Report, June 2018) (SCOI.02632).
+[^6]: Exhibit 1, Tab 1, ACON, In Pursuit of Truth and Justice: Documenting Gay and Transgender Prejudice Killings in NSW in the Late 20th Century, 6 (Report, 26 May 2018) (SCOI.03667).
+[^7]: Exhibit 6, Tab 67A, ACON Gay Hate Murders List, 18 July 2016
+[^8]: Exhibit 6, Tab 85, Email from Craig Middleton to Jacqueline Braw re: ACON Gay Hate Murders List, 9 February 2017 (SCOI.74437).
+[^9]: AAP, 'Manslaughter verdict in stabbing case', The Sydney Morning Herald (online, 30 August 2008) <https://www.smh.com.au/national/manslaughter-verdict-in-stabbing-case-20080830-gdsswu.html>.
+[^10]: Exhibit 6, Tab 223, Rick Feneley, 'The Gay Hate Decades', SBS (online) <https://www.sbs.com.au/gayhatedecades/> (SCOI.82033).
+[^11]: Exhibit 1, Tab 1, ACON, In Pursuit of Truth and Justice: Documenting Gay and Transgender Prejudice Killings in NSW in the Late 20th Century, 4-5, 31 (Report, 26 May 2018) (SCOI.03667).
+[^12]: Judgment of the Inquiry, 18 July 2023, [74]-[114] (ORD.00012).
+[^13]: See Stephanie Jowett, Belinda Carpenter and Gordon Tait, ‘Determining a Suicide under Australian Law’ (2018) 41(2) UNSW Law Journal 355, 363.
+[^14]: See Stephanie Jowett, Belinda Carpenter and Gordon Tait, ‘Determining a Suicide under Australian Law’ (2018) 41(2) UNSW Law Journal 355, 360ff.
+[^15]: American Home Assurance Company v King [2001] NSWCA 201, [10]–[13] (Stein JA, Handley JA and Beazley JA agreeing); Australian Associated Motor Insurers Ltd v Elmore Haulage Pty Ltd (2013) 39 VR 365, [55]. For an overview of English authorities on suicide see Breganza v BP Shipping Ltd [2015] UKSC 17, [33]–[36] (Lady Hale, Lord Kerr agreeing), [61]–[62] (Lord Hodge, Lord Kerr agreeing).
+[^16]: Briginshaw v Briginshaw (1938) 60 CLR 336, 361-2 (Dixon J).
+[^17]: Stephanie Jowett, Belinda Carpenter and Gordon Tait, ‘Determining a Suicide under Australian Law’ (2018) 41(2) UNSW Law Journal 355, 364.
+[^18]: Clark v NZI Life Ltd (1991) 2 Qd R 11, 16. 
+[^19]: Stephanie Jowett, Belinda Carpenter and Gordon Tait, ‘Determining a Suicide under Australian Law’ (2018) 41(2) UNSW Law Journal 355, 370-373; Senate Community Affairs References Committee, Parliament of Australia, The Hidden Toll: Suicide in Australia (2010) 26.
+[^20]: Findings of Coate J, Inquest into the Death of Tyler Jordan Cassidy, 11 November 2011, 52 [244].
+[^21]: See Stephanie Jowett, Belinda Carpenter and Gordon Tait, 'Determining a Suicide under Australian Law' (2018) 41(2) UNSW Law Journal 355, 364.
+[^22]: R v West Yorkshire Coroner; Ex parte Smith [1983] QB 335 at 359, [1982] 3 All ER 1098 at 1108, CA per Donaldson LJ.
+[^23]: The requirement to hold a fresh inquest may also arise by way of an order of the Supreme Court pursuant to Chapter 7 of the Coroners Act. I further note that a discretionary power to hold a fresh inquest, in certain proscribed circumstances, is enshrined in ss. 83(2)-(3) of the Coroners Act.
+[^24]: Minister for Multicultural and Indigenous Affairs v SGLB (2004) 207 ALR 12 at 20.
+[^25]: R v Connell; Ex parte Hetton Bellbird Collieries Ltd (1944) 69 CLR 407 at 430.
+[^26]: See Police Act 1990 (NSW), ss. 6(2)(a) and (4).
+[^27]: As outlined in Counsel Assisting's submissions, the headland was referred to as the "Fairy Bower headland" in much of the material relating to Mr Stewart's death despite the fact that the headland is much closer to Shelly Beach in Manly, than to Fairy Bower beach, which is some distance away and further west.
+[^28]: Exhibit 19, Tab 8, Statement of Colin Richard McGuire, undated (SCOI.02724.00018).
+[^29]: Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976(SCOI.02724.00012).
+[^30]: Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019); Exhibit 19, Tab 14, Statement of Constable Ronald Fyson, Undated 1 (SCOI.02724.00017).
+[^31]: Exhibit 19, Tab 15, Statement of Constable Christopher John Ure, 4 July 1976 (SCOI.O2724.00016).
+[^32]: Exhibit 19, Tab 12, Statement of Senior Constable Ronald Fyson, undated 1976(SCOI.O2724.00016).
+[^33]: Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019).
+[^34]: Exhibit 19, Tab 15, Statement of Constable Christopher John Ure, 4 July 1976, 1 (SCOI.O2724.00016).
+[^35]: Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019).
+[^36]: Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019); Exhibit 19, Tab 14, Constable Ronald Fyson, undated (SCOI.02724.00017).
+[^37]: Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019); Exhibit 19, Tab 14, Constable Ronald Fyson, undated (SCOI.02724.00017).
+[^38]: Exhibit 19, Tab 2, Report of Death to Coroner, 13 May 1976, 1 (SCOI.82449).
+[^39]: Exhibit 19, Tab 2, Report of Death to Coroner, 13 May 1976, 1 (SCOI.82449).
+[^40]: Exhibit 19, Tab 2, Report of Death to Coroner, 13 May 1976, 1 (SCOI.82449).
+[^41]: Exhibit 19, Tab 27, 'No clue to dead youth', The Manly Daily, 14 May 1976 (SCOI.82452).
+[^42]: Exhibit 19, Tab 23B, Statement of Detective Sergeant Neil Sheldon, 16 March 2023, [10] (SCOI.82812).
+[^43]: Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019).
+[^44]: Exhibit 19, Tab 13, Letter from Senior Constable Keith Thoms to Coroner, 29 May 1976 (SCOI.02724.00011).
+[^45]: Exhibit 19, Tab 23, NSWPF Report of Occurrence, 'Further information re unidentified male person found on rocks at Fairy Bower on 11.5.76', 12 May 1976, 2 (SCOI.82810)
+[^46]: Exhibit 19, Tab 12, Statement of Senior Constable Keith Thoms, undated (SCOI.02724.00019).
+[^47]: Exhibit 19, Tab 2, Report of death to Coroner, 13 May 1976, 1-2 (SCOI.82449).
+[^48]: Exhibit 19, Tab 14, Statement of Constable Ronald Fyson, undated (SCOI.02724.00017); Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976, 1 (SCOI.02724.00012); Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 2(SCOI.02724.00015); Exhibit 19, Tab 15, Statement of Constable Christopher John Ure, 4 July 1976(SCOI.O2724.00016).
+[^49]: Exhibit 19, Tab 16, Personal effects of Mark Stewart - Room 3117, undated (SCOI.02724.00020).
+[^50]: Exhibit 19, Tab 14, Statement of Constable Ronald Fyson, undated (SCOI.02724.00017).).
+[^51]: See Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012); Exhibit 19, Tab 10, Statement of William Eugene Muirhead, 7 July 1976 (SCOI.02724.00013); Exhibit 19, Tab 11, Statement of David John Ford, 7 July 1976 (SCOI.02724.00014).
+[^52]: See Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 29176 (SCOI.02724.00015).
+[^53]: Exhibit 19, Tab 18, Special Crime Squad synopsis extract, 24 May 1976 (SCOI.47557).
+[^54]: Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012).
+[^55]: Exhibit 19, Tab 13, Letter from Senior Constable Keith Thoms to Coroner, 29 May 1976 [2] (SCOI.02724.00011).
+[^56]: Exhibit 19, Tab 17, Special Crime Squad synopsis extract, 21 May 1976 (SCOI.47558).
+[^57]: Exhibit 19, Tab 4, Post-mortem report of Dr Thomas Oettle, 3 June 1976, 1 (SCOI.02724.00009).
+[^58]: Exhibit 19, Tab 4, Post-mortem report of Dr Thomas Oettle, 3 June 1976, 1 (SCOI.02724.00009).
+[^59]: Exhibit 19, Tab 4, Post-mortem report of Dr Thomas Oettle, 3 June 1976, 1-2 (SCOI.02724.00009).
+[^60]: Exhibit 19, Tab 3, Toxicology report, 20 May 1976, 1 (SCOI.02724.00010).
+[^61]: Exhibit 19, Tab 5, Findings of City Coroner John Brian Goldrick, 16 July 1976 (SCOI.02724.00001).
+[^62]: Exhibit 19, Tab 36, Extract of transcript of Coronial Inquest into the death of Mark Stewart, undated
+[^63]: Exhibit 19, Tab 19, Strike Force Parrabell Bias Crimes Indicators Review Form - Mark Stewart, Undated 4, 6-7, 9-15 (NPL.0115.0002.3655).
+[^64]: Exhibit 19, Tab 19, Strike Force Parrabell Bias Crimes Indicators Review Form - Mark Stewart, Undated 5, 6, 16 (NPL.0115.0002.3655).
+[^65]: Exhibit 19, Tab 19, Strike Force Parrabell Bias Crimes Indicators Review Form - Mark Stewart, Undated 6 (NPL.0115.0002.3655).
+[^66]: Exhibit 19, Tab 19, Strike Force Parrabell Bias Crimes Indicators Review Form - Mark Stewart, Undated 16 (NPL.0115.0002.3655).
+[^67]: Exhibit 19, Tab 19, Strike Force Parrabell Bias Crimes Indicators Review Form - Mark Stewart, Undated 1, 16 (NPL.0115.0002.3655).
+[^68]: Exhibit 2, Tab 1, Statement of Garry Wotherspoon, 14 November 2022, [45] (SCOI.77300).
+[^76]: Exhibit 19, Tab 29A, Summons to Department of Forensic Medicine (DOFM1), 22 August 2022 (SCOI.82536).
+[^77]: See Exhibit 19, Tab 6, Death Certificate for Mark Stewart, 21 July 1976 (SCOI.73994).
+[^78]: Exhibit 19, Tab 30A, Summons to Hilton Sydney Hotel (HSH1), 10 October 2022 (SCOI.82453).
+[^79]: Exhibit 19, Tab 31, Email from Amelia Benjamin to Caitlin Healey-Nash, 11 October 2022 (SCOI.82438).
+[^80]: Exhibit 19, Tab 32A, Summons to Queensland Police Service (QLDPS3), 20 December 2022 (SCOI.82463).
+[^81]: Exhibit 19, Tab 33, Letter from Queensland Police Service to Caitlin Healey-Nash, 11 January 2023 (SCOI.82456.00001).
+[^82]: See Exhibit 19, Tab 43, Statement of Caitlin Healey-Nash, 21 March 2023, [4]-[7] (SCOI.82814).
+[^83]: Exhibit 19, Tab 20A, Summons to NSWPF (NSWPF22), 28 September 2022 (SCOI.82448).
+[^84]: Exhibit 19, Tab 21, Email from Patrick Hodgetts to Caitlin Healey-Nash 11 October 2022 (SCOI.82446).
+[^85]: Exhibit 19, Tab 23A, Letter from Caitlin Healey-Nash to Patrick Hodgetts, 3 March 2023 (SCOI.82813).
+[^86]: Exhibit 19, Tab 23B, Statement of Detective Sergeant Neil Sheldon, 16 March 2023, [9] (SCOI.82812).
+[^87]: Exhibit 19, Tab 23B, Statement of Detective Sergeant Neil Sheldon, 16 March 2023, [10] (SCOI.82812).
+[^88]: Exhibit 19, Tab 38A, Letter of instruction from Caitlin Healey-Nash to Dr Linda Iles, 5 October 2022 (SCOI.82462).
+[^89]: Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022 (SCOI.82457).
+[^90]: Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 4 (SCOI.82457).
+[^91]: Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 5 (SCOI.82457).
+[^92]: Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 6 (SCOI.82457).
+[^93]: Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 4 (SCOI.82457).
+[^94]: Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 4, 6 (SCOI.82457).
+[^95]: Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 5 (SCOI.82457).
+[^96]: Exhibit 19, Tab 38, Expert report of Dr Linda Iles, 15 December 2022, 4 (SCOI.82457).
+[^97]: Exhibit 19, Tab 39, Further statement of Senior Constable Keith Thoms, 28 February 2023 (SCOI.82809).
+[^98]: Exhibit 19, Tab 39, Further statement of Senior Constable Keith Thoms, 28 February 2023, [6] (SCOI.82809).
+[^99]: Exhibit 19, Tab 39, Further statement of Senior Constable Keith Thoms, 28 February 2023, [9 ]-[11] (SCOI.82809).
+[^100]: Exhibit 19, Tab 39, Further statement of Senior Constable Keith Thoms, 28 February 2023, [9] (SCOI.82809).
+[^101]: Exhibit 19, Tab 39, Further statement of Senior Constable Keith Thoms, 28 February 2023, [9]-[12] (SCOI.82809). Mr Thoms suggests that the Hotel contacted police after a period of two weeks, whereas this contact appears to have occurred after only two day s.
+[^102]: Exhibit 66, Tabs 76-77, Letters to Keith Thoms, 23 August 2023 and 20 September 2023 (SCOI.86333; SCOI.86334).
+[^103]: Exhibit 19, Tab 25, 'Body found', Sydney Morning Herald, 12 May 1976, 14 (SCOI.82455).
+[^104]: Exhibit 19, Tab 24, 'Mystery boy dies in cliff plunge', The Manly Daily, 12 May 1976, 1 (SCOI.82459).
+[^105]: Exhibit 19, Tab 26, 'Body not identified', The Manly Daily, 13 May 1976(SCOI.82458).
+[^106]: Exhibit 19, Tab 27, 'No clue to dead youth', The Manly Daily, 14 May 1976 (SCOI.82452).
+[^107]: Exhibit 19, Tab 28, 'Cliff body identified', The Manly Daily, 18 May 1976 (SCOI.82454).
+[^114]: Exhibit 13, Tab 46, Letter from John Spanswick to The Commanding Officer, HMNZS Waikato, 6 October 1974 (SCOI.84785).
+[^115]: Exhibit 13, Tab 47, Letter from PL Spanswick to The Commanding Officer, HMNZS Waikato, 12 November 1974, 1 (SCOI.84783).
+[^116]: Exhibit 13, Tab 47, Letter from PL Spanswick to The Commanding Officer, HMNZS Waikato, 12 November 1974, 1 (SCOI.84783).
+[^117]: Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 1 (SCOI.02724.00015).
+[^118]: Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 1-2 (SCOI.02724.00015).
+[^119]: Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 2 (SCOI.02724.00015).
+[^120]: Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 1-2 (SCOI.02724.00015).
+[^121]: Exhibit 19, Tab 17, Special Crime Squad synopsis extract, 21 May 1976 (SCOI.47558).
+[^122]: Exhibit 19, Tab 17, Special Crime Squad synopsis extract, 21 May 1976 (SCOI.47558).
+[^123]: The extract suggested that this had occurred through the Supreme Court of Queensland, via a firm of solicitors: Exhibit 19, Tab 17, Special Crime Squad synopsis extract, 21 May 1976 (SCOI.47558).
+[^124]: Exhibit 19, Tab 13, Letter from Senior Constable Keith Thoms to Coroner, 29 May 1976 (SCOI.02724.00011).
+[^125]: Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 2 (SCOI.02724.00015).
+[^126]: Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012).
+[^127]: Described as "old" in a property inventory from a search of Mr Stewart's room on 13 May 1976: Exhibit 19, Tab 16, List of personal effects from room 3117, Undated 1 (SCOI.02724.00020).
+[^128]: Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012).
+[^129]: Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012).
+[^130]: Exhibit 19, Tab 9, Statement of Patricia Cupitt, 7 July 1976 (SCOI.02724.00012).
+[^131]: Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 2 (SCOI.02724.00015).
+[^132]: Exhibit 19, Tab 7, Statement of John Spanswick, 28 May 1976, 2 (SCOI.02724.00015).
 
 
+
+
+5981 Submissions of Counsel Assisting the Inquiry, 26 June 2023, [292] (SCOI.84134).
+5982 Submissions of Counsel Assisting the Inquiry, 26 June 2023, [288] (SCOI.84134).

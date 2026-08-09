@@ -11,619 +11,204 @@
     sackar-atlas-id: acon-phg-2018-in-pursuit-of-truth-and-justice
     PDF: sources/pdf/In-Pursuit-of-Truth-and-Justice-Report-FINAL-220518.pdf
 -->
-
-
-
-
-ACON | 414 ELIZABETH STREET, SURRY HILLS NSW 2010 | 02 9206 2000
-WWW.ACON.ORG.AU
-ISBN-13: 978-0-646-98876-4
-
-
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-SECTION 1
-Acknowlegements
-Foreword
-Executive summary
-
-
-SECTION 2
-Methodology
-
-
-SECTION 3 | HISTORICAL AND SOCIAL CONTEXT
-
-
-1. Political, religious and social context
-
-
-3.2 Growth of the 'gay movement' in Sydney
-
-
-1. Decriminalisation of sex between consenting males
-
-
-3.4 Progress of human rights for gay, lesbian and transgender people
-
-
-SECTION 4 | FINDINGS AND THEMES
-
-
-1. Key findings
-
-
-4.2 Geographical incidence
-
-
-1. Findings related to location and methods of violence 4.3.1 Victims' homes 4.3.2 Beats 4.3.3 Gay social and other spaces
-
-
-4.4 Findings related to motive
-4.4.1 Homophobia and transphobia
-4.4.2 Peer and pack mentality
-4.4.3 HIV and AIDS
-4.4.4 Robbery
-4.4.5 Alcohol and drugs
-4.4.6 Conflating homosexuality with paedophilia
-
-
-1. Findings related to victims and assailants
-
-
-4.6 Findings related to criminal justice system responses
-4.6.1 Policing in NSW and its relationship with the
-LGBTI community
-4.6.2 Lawyers and the judiciary
-
-
-SECTION 5 | CONCLUSIONS + RECOMMENDATIONS
-Endnotes
-Appendix 1: "Gay Hate Crimes in New South Wales from the 1970s", Garry Wotherspoon
-
-
-02
-03
-05
-
-
-07
-
-
-11
-11
-11
-12
-
-
-13
-13
-14
-14
-15
-16
-16
-16
-17
-18
-18
-18
-18
-19
-20
-
-
-20
-21
-
-
-23
-
-
-29
-31
-
-
-
-
-1
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-2
-
-
-## SECTION ONE | ACKNOWLEDGEMENTS
-
-
-• The Historical Murder and Justice Project
-Committee who advised on the project and
-included representatives from:
-
-
-This Report is the result of a community-led review
-(the Review) and builds on the work of dedicated
-advocates who have provided leadership in
-bringing attention to past fatal violence, and in
-facilitating justice for families, loved ones and the
-LGBTI community, in particular:
-
-
-o Dowson Turco Lawyers
-o HIV/AIDS Legal Centre
-o Individual member, Garry
-Historian
-
-
-• Mr Steve Page, former NSW Police Force
-Detective, Instigator of Operation Taradale
-
-
-Wotherspoon,
-
-
-o Inner City Legal Centre
-o NSW Gay & Lesbian Rights Lobby
-o Sydney Gay & Lesbian Business
-Association
-
-
-• Ms Sue Thompson, former Police Gay/Lesbian
-Client Consultant (ie Co-ordinator of Police Gay
-Lesbian Liaison & Violence Reduction Policies,
-Programs, Strategies including GLLO Program &
-Training) 1990-2002
-
-
-o Sydney Gay and Lesbian Mardi Gras
-o Sydney's Pride History Group
-ACON staff and volunteers, past and present,
-involved with this project, most notably Michael
-Atkinson, project lead and lead author; Bryan
-Do, legal intern on secondment from Dowson
-Turco Lawyers; Shannon Wright; and Dermot
-Ryan.
-
-
+<!-- MarkdownTOC -->
+
+- Section one
+    - Acknowledgements
+        - Support &amp; counselling
+    - Foreword
+- Executive summary
+- Section two
+    - Methodology
+        - 2.1 Purpose
+        - 2.2 Method
+        - 2.3 Exclusions and limitations
+        - 2.4 Family contact and involvement
+        - Bondi Memorial Project
+- Section three
+    - Historical and social context
+        - 3.1 POLITICAL, RELIGIOUS AND SOCIAL CONTEXT
+        - 3.2 Growth of the 'gay movement' in sydney
+    - 3.3 Decriminalisation of sex between consenting males
+        - 3.4 PROGRESS OF HUMAN RIGHTS FOR GAY, LESBIAN AND TRANSGENDER PEOPLE
+- Section four
+    - Findings and themes
+        - 4.1 Key findings
+            - Key findings in relation to the alleged homophobic and related homicides
+        - 4.2 Geographical incidence
+        - 4.3 Findings related to location and method of violence
+            - 4.3.1 Victims' homes
+            - 4.3.2 Beats
+            - 4.3.3 Gay social and other spaces
+        - 4.4 Findings related to motive
+            - 4.4.1 Homophobia and transphobia
+- 4.4.2 Peer or pack mentality
+            - 4.4.3 HIV and AIDS
+            - 4.4.4 Robbery
+            - 4.4.5 Alcohol and drugs
+            - 4.4.6 Conflating homosexuality with paedophilia
+        - 4.5 FINDINGS RELATED TO VICTIMS AND ASSAILANTS
+        - 4.6 Findings related to criminal justice system responses
+            - 4.6.1 Policing in NSW and its relationship with thE LGBTI community
+            - 4.6.2 Lawyers and the judiciary
+- SECTION FIVE
+    - Conclusions and recommendations
+        - Conclusion 1: Deepening understanding of the past to improve the future
+            - Recommendations
+        - Conclusion 2: Publicly acknowledging victims and survivors
+            - Recommendations
+        - Conclusion 3: Healing the legacy of violence
+            - Recommendations
+        - Conclusion 4: Enhancing criminal justice system responses
+            - Recommendations
+        - Conclusion 5: Understanding and minimising bias in current responses to LGBTI hate crimes
+            - Recommendations
+        - Conclusion 6: Securing ongoing efforts in prevention violence
+            - Recommendations
+- Section five |
+    - Endnotes
+- SECTION FIVE |
+    - APPENDIX 1
+        - "Gay Hate Crimes in New South Wales from the 1970s"
+            - The political, religious and social context
+            - The growth of the 'gay movement' in sydney
+            - Decriminalisation
+            - Homophobia and its roots
+            - Human rights - Progress of gay, lesbian and transgender rights
+            - POLICING IN NSW AND ITS RELATIONSHIP WITH THE LGBTI COMMUNITY
+            - Looking back - and forward
+
+<!-- /MarkdownTOC -->
+
+
+## Section one
+
+### Acknowledgements
+
+This Report is the result of a community-led review (the Review) and builds on the work of dedicated advocates who have provided leadership in bringing attention to past fatal violence, and in facilitating justice for families, loved ones and the LGBTI community, in particular:
+
+- Mr Steve Page, former NSW Police Force Detective, Instigator of Operation Taradale
+- Ms Sue Thompson, former Police Gay/Lesbian Client Consultant (ie Co-ordinator of Police Gay Lesbian Liaison & Violence Reduction Policies, Programs, Strategies including GLLO Program & Training) 1990-2002
 - Professor Stephen Tomsen, Professor of Criminology, Western Sydney University
-
-- Rick Feneley, Journalist • • Duncan McNab, Author, former NSW Police Force Detective
-
+- Rick Feneley, Journalist 
+- Duncan McNab, Author, former NSW Police Force Detective
 - Greg Callaghan, Journalist and True Crime Author
+- Daniel Glick, Journalist and Private Investigator
 
+This Report also builds on the work of many LGBTI community and ally organisations who have led the response to homophobic and transphobic violence through development of prevention and support programs. This includes Dykes on Bikes, NSW Gay and Lesbian Rights Lobby, The Gender Centre, Inner City Legal Centre, Dowson Turco Lawyers, Twenty10, City of Sydney, Marrickville Council, Australian Transsexual Association, and Transgender Liberation Coalition.
 
-ACON recognised the need to ensure legal
-and ethical rigour in this Review. Dowson
-Turco Lawyers provided pro bono legal advice
-in relation to matters relating to aspects of
-confidentiality, privacy and criminal law. Letts
-Consulting provided professional ethical advice
-and editorial services.
+This Report would not be possible without the following people and organisations:
 
+- Garry Wotherspoon, historian, was commissioned by ACON to produce background material related to this Review. Section 3 - Historical and Social Context is his writing, and quotes from his submitted work appear throughout this Report.
+- Dowson Turco Lawyers provided strategic input and resources to the project including a legal intern via secondment and pro bono legal advice.
+- The Historical Murder and Justice Project Committee who advised on the project and included representatives from:
+-- Dowson Turco Lawyers
+-- HIV/AIDS Legal Centre
+-- Individual member, Garry Wotherspoon, Historian
+-- Inner City Legal Centre
+-- NSW Gay & Lesbian Rights Lobby
+-- Sydney Gay & Lesbian Business Association
+-- Sydney Gay and Lesbian Mardi Gras
+-- Sydney's Pride History Group
+- ACON staff and volunteers, past and present, involved with this project, most notably Michael Atkinson, project lead and lead author; Bryan Do, legal intern on secondment from Dowson Turco Lawyers; Shannon Wright; and Dermot Ryan.
 
-<table>
- <tr>
-  <th>SUPPORT &amp; COUNSELLING</th>
- </tr>
- <tr>
-  <td>support to</td>
- </tr>
- <tr>
-  <td></td>
- </tr>
- <tr>
-  <td>ACON COUNSELLING<br/>02 9206 2000<br/>Q LIFE<br/>1800 184 527<br/>LIFELINE<br/>13 11 14</td>
- </tr>
-</table>
+ACON recognised the need to ensure legal and ethical rigour in this Review. Dowson Turco Lawyers provided pro bono legal advice in relation to matters relating to aspects of confidentiality, privacy and criminal law. Letts Consulting provided professional ethical advice and editorial services.
 
+#### Support &amp; counselling
 
-• Daniel Glick, Journalist and Private Investigator
+For support to deal with the impact of violence, contact:
 
+- ACON COUNSELLING: 02 9206 2000
+- Q LIFE: 1800 184 527
+- LIFELINE: 13 11 14
 
-This Report also builds on the work of many LGBTI
-community and ally organisations who have led
-the response to homophobic and transphobic
-violence through development of prevention and
-support programs. This includes Dykes on Bikes,
-NSW Gay and Lesbian Rights Lobby, The Gender
-Centre, Inner City Legal Centre, Dowson Turco
-Lawyers, Twenty10, City of Sydney, Marrickville
-Council, Australian Transsexual Association, and
-Transgender Liberation Coalition.
+### Foreword
 
+In a dark period of New South Wales' history from the 1970s to 2000, numerous gay men were documented to have disappeared in suspicious circumstances, or were known to have been killed in New South Wales. Smaller numbers of transgender women were documented to have also been killed.
 
-This Report would not be possible without the
-following people and organisations:
+In response, a list of 88 suspected anti-gay homicides was compiled between 1990 through to 2015 largely by the NSW Police Force Gay and Lesbian Liaison Officer Program Coordinator, Sue Thompson, and NSW based Criminologist, Professor Stephen Tomsen, who conducted vast research into gay hate crimesi. More information about the formation of this list is included in the methodology section of this Report.
 
+These killings are the subject of this report. Many were brutal, including stabbings, strangulation, bludgeoning, shooting, sexual assaults and frenzied attacks. Some were crimes shaped by prejudice, targeted towards people based on their perceived homosexuality, and in some cases fuelled by HIV stigma. Almost 30 of these cases remain unsolved.
 
-• Garry Wotherspoon, historian, was
-commissioned by ACON to produce
-background material related to this Review.
-Section 3 - Historical and Social Context is his
-writing, and quotes from his submitted work
-appear throughout this Report.
 
+While the incidence of physical violence against lesbian, gay, bisexual, transgender and intersex (LGBTI) communities has reduced since this time, the overarching story of these deaths is devastating, and the many survivors of violence and harassment within our community will not be surprised by what is presented here. The scope and intensity of the violence is shocking and unsettling.
 
-• Dowson Turco Lawyers provided strategic input
-and resources to the project including a legal
-intern via secondment and pro bono legal
-advice.
+> We remember the loved ones, family, friends and community members lost, and we aim to shine a light on our history, hoping that healing and justice will follow.
 
+ACON has collated substantial documentation through extensive research into publicly available information. The key themes from this process are contained within this Report.
 
+The deaths and disappearances of gay men and transgender women and the epidemic of violence during these decades have left a legacy. Hate crimes hurt both physically and emotionally, individually and communally and have - for some - resulted in isolation, vulnerability and internalised stigma.
 
+These cases speak to the risks for LGBTI people associated with visibility and with occupying public space. They warn us that cultural attitudes of homophobia and transphobia facilitate violence and create an environment of impunity for perpetrators. They illustrate the barriers that stigma creates to ensuring protection, redress and accountability for crimes such as these.
 
-3
+In some cases, these deaths were attributed to improbable "accidents" and unlikely "suicides". Some of these deaths have been re-evaluated by Coronial inquests and ruled to be homicides, accompanied by critique of inadequate police responses to some of these murders.
 
+We acknowledge that the list of killings is by no means comprehensive, and that this report does not address the hundreds if not thousands of violent assaults that did not result in death. Many have suffered for decades after these brutal assaults, both from the physical and psychological trauma as well as from the sense of helplessness from a lack of institutional response to these crimes. To all these victims, alive and dead, we dedicate this Report.
 
-IN PURSUIT OF TRUTH & JUSTICE
+Further, the very place that victims' families and loved ones turned to, hoping for justice - the criminal justice system - was often influenced by commonly held homophobic and transphobic attitudes that affected their practice.
 
+The material within this Report may be triggering for some readers. We encourage our communities to speak with and support each other, and seek counselling support if needed.
 
-## SECTION ONE | FOREWORD
+Collating the information to enable writing this Report has been undertaken with heavy hearts and a desire to honour the lives of those taken.
 
+The process of re-visiting these cases is but one step in a long path towards justice, but this step is not sufficient on its own. As we look back on this period, what remains is intergenerational grief and residual trauma that is still shouldered today.
 
-In a dark period of New South Wales' history
-from the 1970s to 2000, numerous gay men
-were documented to have disappeared in
-suspicious circumstances, or were known
-to have been killed in New South Wales.
-Smaller numbers of transgender women were
-documented to have also been killed.
 
+In compiling a report such as this, a few people or institutions may question or even dispute some elements or issues of detail. It is true that ACON has not been privy to the full brief of evidence for each individual case that criminal justice agencies have on these matters. However, we stand by the overarching consistency of the concern that exists about the totality of the prevailing attitudes, the manner in which these influenced too many investigative processes, the evidence we have reviewed, and ultimately, the recorded experience of violence and injustice by our communities. This report serves to highlight how understanding, attitudes and equality before the law are fundamental to LGBTI people's lived experience - including their experience of justice, both historically, and very much still today.
 
-In response, a list of 88 suspected anti-gay
-homicides was compiled between 1990 through
-to 2015 largely by the NSW Police Force Gay
-and Lesbian Liaison Officer Program Coordinator,
-Sue Thompson, and NSW based Criminologist,
-Professor Stephen Tomsen, who conducted vast
-research into gay hate crimesi. More information
-about the formation of this list is included in the
-methodology section of this Report.
 
+We hope that in releasing this Report that further cultural change is sparked in our criminal justice institutions, as well as in broader community attitudes. We remember the loved ones, family, friends and community members lost, and we aim to shine a light on our history, hoping that healing and justice will follow. We acknowledge the ongoing efforts of NSW Police to improve relationships with LGBTI communities. Importantly, we also look towards the future, towards building on partnerships and accountability processes that mean LGBTI people can feel safe, be protected, and access justice.
 
-These killings are the subject of this report. Many
-were brutal, including stabbings, strangulation,
-bludgeoning, shooting, sexual assaults and
-frenzied attacks. Some were crimes shaped by
-prejudice, targeted towards people based on
-their perceived homosexuality, and in some cases
-fuelled by HIV stigma. Almost 30 of these cases
-remain unsolved.
 
+- Justin Koonin, ACON President
+- Nicolas Parkhill, ACON Chief Executive Officer
 
-While the incidence of physical violence against
-lesbian, gay, bisexual, transgender and intersex
-(LGBTI) communities has reduced since this
-time, the overarching story of these deaths is
-devastating, and the many survivors of violence
-and harassment within our community will not be
-surprised by what
-presented here. The
-unsettling.
+## Executive summary
 
+Australia has a long history of violence towards people from sexual and gender minorities, stretching from colonisation to the present day. This Report looks at what has been a tragic and shameful episode in Sydney's history.
 
-<table>
- <tr>
-  <th>is scope</th>
- </tr>
- <tr>
-  <td>and intensity of the violence is shocking and</td>
- </tr>
-</table>
 
+_"It is now known that from the 1970s through to the 1990s, hundreds of members of Sydney's LGBTI communities experienced extremely violent assaults. Some of the bashings ended in hospitalisation, and there were also disappearances and deaths for gay men or men who were perceived to be gay, and for trans women. For some, the difference between assault and murder was often slender - good or bad luck. Many of these assaults occurred in and around the 'ghetto' area of Oxford Street or in the nearby suburbs, although some even happened in the person's home. As well, many of these assaults on men were at suburban beats._
 
-ACON has collated substantial documentation
-through extensive research into publicly available
-information. The key themes from this process are
-contained within this Report.
 
+_"Given prevailing social attitudes to dissident sexualities at the time - and even after male homosexual acts were decriminalised in early 1984 - many of these crimes were inadequately dealt with by police, often being classified after desultory investigations as suicides, misadventure or accidents. Many remain unsolved to this day." (Wotherspoon 2017)__
 
-The deaths and disappearances of gay men and
-transgender women and the epidemic of violence
-during these decades have left a legacy. Hate
-crimes hurt both physically and emotionally,
-individually and communally and have - for
-some - resulted in isolation, vulnerability and
-internalised stigma.
+ACON, in conjunction with key partners, has undertaken a review of the initial list of 88 homicide cases that occurred during this period. Reported and unreported case judgments, Coronial documents, journal articles, newspaper items and archives have been reviewed. ACON has also undertaken a thematic analysis of the collated case data to draw out key themes of violence surrounding deaths, and to enable broader reflection on the lessons learnt about the culture of violence against LGBTI communities. These deaths were also accompanied by violence more broadly inflicted on the community - assaults, violence, harassment and abuse.
 
+This Review has occurred in the context of previous and current responses to these crimes. These include NSW Police Operation Taradale in 2005 which exposed significant deficiencies in the investigation of a number of these murders; Operation Parrabell
 
-These cases speak to the risks for LGBTI people
-associated with visibility and with occupying
 
+which is ongoing and may shed light on the degree to which these cases were motivated by "bias"; as well as several Coronial investigations such as the Scott Johnson inquest. In addition, the media has directed attention at these crimes, including the work of many journalists (notably Rick Feneley) and investigators, for example resulting in the recent high-profile documentary and SBS drama series, Deep Water.
 
-We remember the loved
-ones, family, friends and
-community members
-lost, and we aim to shine
-a light on our history,
-hoping that healing and
-justice will follow.
 
-
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-4
-
-
-public space. They warn us that cultural attitudes
-of homophobia and transphobia facilitate
-violence and create an environment of impunity
-for perpetrators. They illustrate the barriers that
-stigma creates to ensuring protection, redress and
-accountability for crimes such as these.
-
-
-In some cases, these deaths were attributed to
-improbable "accidents" and unlikely "suicides".
-Some of these deaths have been re-evaluated
-by Coronial inquests and ruled to be homicides,
-accompanied by critique of inadequate police
-responses to some of these murders.
-
-
-We acknowledge that the list of killings is by
-no means comprehensive, and that this report
-does not address the hundreds if not thousands
-of violent assaults that did not result in death.
-Many have suffered for decades after these brutal
-assaults, both from the physical and psychological
-trauma as well as from the sense of helplessness
-from a lack of institutional response to these
-crimes. To all these victims, alive and dead, we
-dedicate this Report.
-
-
-Further, the very place that victims' families and
-loved ones turned to, hoping for justice - the
-criminal justice system - was often influenced
-by commonly held homophobic and transphobic
-attitudes that affected their practice.
-
-
-The material within this Report may be triggering
-for some readers. We encourage our communities
-to speak with and support each other, and seek
-counselling support if needed.
-
-
-Collating the information to enable writing this
-Report has been undertaken with heavy hearts
-and a desire to honour the lives of those taken.
-
-
-The process of re-visiting these cases is but one
-step in a long path towards justice, but this step is
-not sufficient on its own. As we look back on this
-period, what remains is intergenerational grief
-and residual trauma that is still shouldered today.
-
-
-In compiling a report such as this, a few people
-or institutions may question or even dispute
-some elements or issues of detail. It is true that
-ACON has not been privy to the full brief of
-evidence for each individual case that criminal
-justice agencies have on these matters. However,
-we stand by the overarching consistency of
-the concern that exists about the totality of the
-prevailing attitudes, the manner in which these
-influenced too many investigative processes, the
-evidence we have reviewed, and ultimately, the
-recorded experience of violence and injustice by
-our communities. This report serves to highlight
-how understanding, attitudes and equality before
-the law are fundamental to LGBTI people's lived
-experience - including their experience of justice,
-both historically, and very much still today.
-
-
-We hope that in releasing this Report that further
-cultural change is sparked in our criminal justice
-institutions, as well as in broader community
-attitudes. We remember the loved ones, family,
-friends and community members lost, and we
-aim to shine a light on our history, hoping that
-healing and justice will follow. We acknowledge
-the ongoing efforts of NSW Police to improve
-relationships with LGBTI communities. Importantly,
-we also look towards the future, towards building
-on partnerships and accountability processes that
-mean LGBTI people can feel safe, be protected,
-and access justice.
-
-
-Justin Koonin
-ACON President
-
-
-Nicolas Parkhill
-ACON Chief Executive Officer
-
-
-
-
-5
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-## SECTION ONE | EXECUTIVE SUMMARY
-
-
-Australia has a long history of violence towards
-people from sexual and gender minorities, stretching
-from colonisation to the present day. This Report
-looks at what has been a tragic and shameful
-episode in Sydney's history.
-
-
-"It is now known that from the 1970s through
-to the 1990s, hundreds of members of Sydney's
-LGBTI communities experienced extremely
-violent assaults. Some of the bashings ended
-in hospitalisation, and there were also
-disappearances and deaths for gay men or men
-who were perceived to be gay, and for trans
-women. For some, the difference between assault
-and murder was often slender - good or bad luck.
-Many of these assaults occurred in and around
-the 'ghetto' area of Oxford Street or in the nearby
-suburbs, although some even happened in the
-person's home. As well, many of these assaults on
-men were at suburban beats.
-
-
-"Given prevailing social attitudes to dissident
-sexualities at the time - and even after male
-homosexual acts were decriminalised in early
-1984 - many of these crimes were inadequately
-dealt with by police, often being classified after
-desultory investigations as suicides, misadventure
-or accidents. Many remain unsolved to this day."
-(Wotherspoon 2017)
-
-
-ACON, in conjunction with key partners, has
-undertaken
-review of the initial list of 88
-homicide
-that occurred during this period.
-Reported and unreported case judgments, Coronial
-documents, journal articles, newspaper items and
-archives have been reviewed. ACON has also
-undertaken a thematic analysis of the collated case
-data to draw out key themes of violence surrounding
-deaths, and to enable broader reflection on the
-lessons learnt about the culture of violence against
-LGBTI communities. These deaths were also
-accompanied by violence more broadly inflicted on
-the community - assaults, violence, harassment and
-abuse.
-
-
-<table>
- <tr>
-  <th>a</th>
- </tr>
- <tr>
-  <th>cases</th>
- </tr>
-</table>
-
-
-This Review has occurred in the context of previous
-and current responses to these crimes. These include
-NSW Police Operation Taradale in 2005 which
-exposed significant deficiencies in the investigation
-of a number of these murders; Operation Parrabell
-
-
-which is ongoing and may shed light on the degree
-to which these cases were motivated by "bias"; as
-well as several Coronial investigations such as the
-Scott Johnson inquest. In addition, the media has
-directed attention at these crimes, including the
-work of many journalists (notably Rick Feneley) and
-investigators, for example resulting in the recent
-high-profile documentary and SBS drama series,
-Deep Water.
+> Violence is a major contributor to premature death, injury and disability and has consequences for people who experience it, and those who perpetrate it. In addition, there are significant mental health and wellbeing- related morbidities related to violence. ACON is committed to ameliorating these health impacts.
 
 
 The key findings from this review include:
 
 
 1. Homicides occurred in three main spaces, with majority of victims being killed in their own homes, followed by beats, and other locations which mostly include gay and other social spaces.
-
 2. In general, there was little or no pre-existing relationship between assailants and their victims.
-
 3. Where killings happened in the victim's house, the victim was more likely to be known to the assailant, albeit in a minor way, whereas there was generally no existing relationship between the victim and assailant where the killing occurred at the beat or gay social spaces.
+4. Generally, spaces where people were murdered were private, secluded or isolated, which meant the assailant was less likely to be interrupted, and this impacted the victim's ability to call out for help.
+5.  The scenarios in all the spaces were commonly sexualised, or where people could be disinhibited by the consumption of alcohol and other drugs.
+6.  Assailants employed a variety of killing methods and, in general, inflicted several forms of violence upon their victims. The type of attack and the weapons used varied according to the location where the killings was carried out, whether in the victim's home, at a beat or in gay social areas.
+7.  There is evidence of serial killings by gangs of young men as well as lone assailants.
+8.  From available information, it appears groups of assailants tended to kill their victims at beats or social spaces whereas individual assailants killed their victims in private residences.
+9.  There is information to indicate homophobia was likely involved in approximately 50% of listed cases; however the two cases involving transgender women do not appear to have been motivated by transphobia.
+10. Of the initial 88 cases on the original list, approximately 30 remain unsolved.
 
 
-Violence is a major contributor
-to premature death, injury and
-disability and has consequences
-for people who experience it,
-and those who perpetrate it. In
-addition, there are significant
-mental health and wellbeing-
-related morbidities related to
-violence. ACON is committed to
-ameliorating these health impacts.
+That a range of serious consequences and impacts follow from experiences of violence is undisputed.
 
 
+Violence is a major contributor to premature death, injury and disabilityii and has consequences for people who experience it, and those who perpetrate it. In addition, there are significant mental health and wellbeing-related morbidities related to violence. ACON is committed to ameliorating these health impacts. Hate-related violence continues to have a disproportionate impact on LGBTI communities to this day; members of the community still under-report assaults, and there is a collective minority stress that is part legacy of these crimes, and part ongoing fear of being targeted, and/or being disbelieved or dismissed by authorities.
 
 
-IN PURSUIT OF TRUTH & JUSTICE
+This Review has been conducted with a cultural and community lens; one aimed at healing and justice. Telling these stories again, and interrogating them for individual or institutional homophobia is a critical
 
 
-6
-
-
-4. Generally, spaces where people were murdered
-were private, secluded or isolated, which meant
-the assailant was less likely to be interrupted, and
-this impacted the victim's ability to call out for
-
-
-help.
-
-
-1. The scenarios in all the spaces were commonly sexualised, or where people could be disinhibited by the consumption of alcohol and other drugs.
-
-2. Assailants employed a variety of killing methods and, in general, inflicted several forms of violence upon their victims. The type of attack and the weapons used varied according to the location where the killings was carried out, whether in the victim's home, at a beat or in gay social areas.
-
-3. There is evidence of serial killings by gangs of young men as well as lone assailants.
-
-4. From available information, it appears groups of assailants tended to kill their victims at beats or social spaces whereas individual assailants killed their victims in private residences.
-
-5. There is information to indicate homophobia was likely involved in approximately 50% of listed cases; however the two cases involving transgender women do not appear to have been motivated by transphobia.
-
-6. Of the initial 88 cases on the original list, approximately 30 remain unsolved.
-
-
-That a range of serious consequences and impacts
-follow from experiences of violence is undisputed.
-
-
-Violence is a major contributor to premature death,
-injury and disabilityii and has consequences for
-people who experience it, and those who perpetrate
-it. In addition, there are significant mental health
-and wellbeing-related morbidities related to
-violence. ACON is committed to ameliorating these
-health impacts. Hate-related violence continues
-to have a disproportionate impact on LGBTI
-communities to this day; members of the community
-still under-report assaults, and there is a collective
-minority stress that is part legacy of these crimes,
-and part ongoing fear of being targeted, and/or
-being disbelieved or dismissed by authorities.
-
-
-This Review has been conducted with a cultural and
-community lens; one aimed at healing and justice.
-Telling these stories again, and interrogating them
-for individual or institutional homophobia is a critical
-
-
-step, but not an end in itself. ACON has therefore
-developed a series of conclusions and 18 related
-recommendations. These recommendations fall under
-the following themes:
+step, but not an end in itself. ACON has therefore developed a series of conclusions and 18 related recommendations. These recommendations fall under the following themes:
 
 
 - Deepening understanding of the past to improve the present - including establishment of an inquiry to comprehensively explore historical violence and its impact experienced by the community.
@@ -639,673 +224,250 @@ the following themes:
 - Securing ongoing efforts in violence prevention - including collaborative, evidence based prevention programs, as well as innovative intelligence gathering between LGBTI community and Police that supports police enforcement approaches to hate crimes.
 
 
-It is ACON's sincere hope that this Report, in
-conjunction with other initiatives such as the
-Bondi Memorial Project, and implementing the
-recommendations outlined within, can help lead
-to healing for the victims involved. But further,
-that it will be a catalyst for new understanding
-and improvement in attitudes and practices within
-the criminal justice and other government service
-systems.
+It is ACON's sincere hope that this Report, in conjunction with other initiatives such as the Bondi Memorial Project, and implementing the recommendations outlined within, can help lead to healing for the victims involved. But further, that it will be a catalyst for new understanding and improvement in attitudes and practices within the criminal justice and other government service systems.
 
 
+## Section two
 
 
-7
+### Methodology
 
 
-IN PURSUIT OF TRUTH & JUSTICE
+#### 2.1 Purpose
 
 
-## SECTION TWO | METHODOLOGY
-
-
-## 2.1 PURPOSE
-
-
-## 2.2 METHOD
-
-
-This Review entailed a community-led appraisal of
-the original list of 88 suspected homicide cases to
-ensure cultural issues and community needs were
-considered. This review was conducted by ACON
-between 2016 and 2017 and independently from
-other Police and Coronial inquiries.
+This Review entailed a community-led appraisal of the original list of 88 suspected homicide cases to ensure cultural issues and community needs were considered. This review was conducted by ACON between 2016 and 2017 and independently from other Police and Coronial inquiries.
 
 
 The Review had the following objectives:
 
-
 - Truth - to seek clarity as to the extent that homophobia and transphobia played in motivating the murders and influencing the performance of police and the judiciary.
-
 - Justice - to contribute to ongoing efforts to provide justice for affected families and other loved ones.
-
 - Healing - to provide opportunity for healing in families, friends and as a community who hold memories of the loss and fear.
-
 - Vigilance - to prevent history repeating itself.
-
 - Advocacy - to achieve systemic improvements to improve future justice-related processes.
-
 - Policy - to establish protocols for responding to suspected anti-LGBTI crimes.
-
 - Awareness - to promote safety for the community.
-
 - Relationship building - to enable more collaboration between the LGBTI community, NSW Police, justice system and other stakeholders.
 
 
-ACON led this review in consultation with key
-community organisations and individuals.
+#### 2.2 Method
+
+ACON led this review in consultation with key community organisations and individuals.
 
 
-A list of suspected anti-gay and related homicides
-was compiled between 1990 through to 2015.
-The original sources for this were the monitoring
-initiated in the early 1990s by Sue Thompson
-within the NSW Police Force Gay and Lesbian
-Liaison Office, research begun by Stephen Tomsen
-in 1994/1995, and recording and activism
-carried out by the Sydney-based Anti-Violence
-Project.
+A list of suspected anti-gay and related homicides was compiled between 1990 through to 2015. The original sources for this were the monitoring initiated in the early 1990s by Sue Thompson within the NSW Police Force Gay and Lesbian Liaison Office, research begun by Stephen Tomsen in 1994/1995, and recording and activism carried out by the Sydney-based Anti-Violence Project.
 
 
 A further impetus for this was the attention
 
 
-generated by the NSW Attorney-General's
-Working Party (1996) reporting on the use of the
-'Homosexual Advance Defence" in NSW Courts.
-The list was initially compiled in response to
-teenage boys bashing and killing gay men but,
-as time passed, efforts were increased by various
-government agencies to monitor and understand
-these killings, especially those that continued to
-occur at beats.
+generated by the NSW Attorney-General's Working Party (1996) reporting on the use of the 'Homosexual Advance Defence" in NSW Courts. The list was initially compiled in response to teenage boys bashing and killing gay men but, as time passed, efforts were increased by various government agencies to monitor and understand these killings, especially those that continued to occur at beats.
 
 
-ACON became engaged in these early discussions
-of violence and in the early 2000s the Lesbian
-and Gay Anti-Violence Project was itself absorbed
-within ACON. In more recent years, ACON staff
-participated in a community expert panel that
-had a series of meetings to further review details
-regarding the original list of 88 deaths that was
-finalised and available for use in this Review.
+ACON became engaged in these early discussions of violence and in the early 2000s the Lesbian and Gay Anti-Violence Project was itself absorbed within ACON. In more recent years, ACON staff participated in a community expert panel that had a series of meetings to further review details regarding the original list of 88 deaths that was finalised and available for use in this Review.
 
 
-ACON gathered information about these deaths
-into individual case 'dossiers' using material from
-publicly available sources. Thematic analysis
-across cases was then undertaken.
+ACON gathered information about these deaths into individual case 'dossiers' using material from publicly available sources. Thematic analysis across cases was then undertaken.
 
 
-The following information sources were accessed
-with legal assistance.
+The following information sources were accessed with legal assistance.
 
 
 - Judgments for the cases - reported and unreported
-
 - Coronial documents - including police statements, Coroner's reports, autopsy reports
-
 - Journal articles and research reports, notably by Stephen Tomsen and Sue Thompson
-
 - Various newspaper articles and archives
-
 - Library databases
 
 
-The NSW State Library's database and e-resource
-were used to search for materials about the various
-crimes. Within timeframes available for this
-project, 57 articles were obtained and integrated
-within the dossiers to provide background
-information.
+The NSW State Library's database and e-resource were used to search for materials about the various crimes. Within timeframes available for this project, 57 articles were obtained and integrated within the dossiers to provide background information.
 
 
-In addition to these searches, ACON also sought
-additional information from the Supreme Court of
-NSW and was provided with seven unreported
-judgments as a non-party to those proceedings
-deemed to have sufficient public interest to access
-the records.
+In addition to these searches, ACON also sought additional information from the Supreme Court of NSW and was provided with seven unreported judgments as a non-party to those proceedings deemed to have sufficient public interest to access the records.
+
+#### 2.3 Exclusions and limitations
 
 
+On legal advice, ACON excluded cases involving minors and sexual assault.
 
 
-### 2.3 EXCLUSIONS AND LIMITATIONS
+It is important to acknowledge that the initial list of 88 cases is not exhaustive. The incidence and impact of anti-LGBTI violence in general and beyond these cases was not part of this Review. Further work could be done to determine the full extent of violence experienced by our communities.
 
 
-On legal advice, ACON excluded cases involving
-minors and sexual assault.
+ACON was keen to explore the extent to which prejudice influenced the motive for killing in these documented cases. However, it is neither possible, nor appropriate for ACON to make definitive determinations because the completeness of available information for each dossier was variable and this is not an area of expertise for ACON. In relation to Section Four: Findings and Themes, ACON only included cases in this analysis that had some evidence of prejudice to ensure relevance.
 
 
-It is important to acknowledge that the initial
-list of 88 cases is not exhaustive. The incidence
-and impact of anti-LGBTI violence in general and
-beyond these cases was not part of this Review.
-Further work could be done to determine the full
-extent of violence experienced by our communities.
+ACON considered whether the individual case dossiers should be published in their entirety, albeit that much of this information is available in the public domain. The decision not to present the individual dossiers, including identifiable forensic details about each victim's death, was made with ethical advice, intending to respect the dignity of the people who died, and in close consultation with a range of community partners. This Report instead uses case data to draw out key themes of violence surrounding these deaths and to enable broader reflection on the lessons learnt about the culture of violence against our communities.
 
 
-ACON was keen to explore the extent to which
-prejudice influenced the motive for killing in
-these documented cases. However, it is neither
-possible, nor appropriate for ACON to make
-definitive determinations because the completeness
-of available information for each dossier was
-variable and this is not an area of expertise for
-ACON. In relation to Section Four: Findings
-and Themes, ACON only included cases in this
-analysis that had some evidence of prejudice to
-ensure relevance.
+#### 2.4 Family contact and involvement
 
 
-ACON considered whether the individual case
-dossiers should be published in their entirety, albeit
-that much of this information is available in the
-public domain. The decision not to present the
-individual dossiers, including identifiable forensic
-details about each victim's death, was made with
-ethical advice, intending to respect the dignity of
-the people who died, and in close consultation
-with a range of community partners. This Report
-instead uses case data to draw out key themes of
-violence surrounding these deaths and to enable
-broader reflection on the lessons learnt about the
-culture of violence against our communities.
+Through ACON's liaison with key informants including police, journalists, academics, film makers, researchers and others, it became clear that significant contact had been made with victims' partners and families over the years, and most no longer wanted to be contacted. ACON respected this feedback and only contacted the few families who had indicated readiness.
 
 
-## 2.4 FAMILY CONTACT AND INVOLVEMENT
+#### Bondi Memorial Project
 
 
-Through ACON's liaison with key informants
-including police, journalists, academics, film
-makers, researchers and others, it became clear
-that significant contact had been made with
-victims' partners and families over the years, and
-most no longer wanted to be contacted. ACON
-respected this feedback and only contacted the few
-families who had indicated readiness.
+In May 2016 Waverley Council passed a motion to allow ACON to fund and develop a public artwork in Bondi to remember survivors and people lost to historical prejudice-related violence. The memorial aims to help heal the trauma these terrible events have caused for the families and friends of the victims as well as the LGBTI community. The memorial will also serve as a reminder of the importance of valuing and celebrating diversity in our community.
 
 
+Significant research has gone into the development of the Bondi Memorial Project including a series of key informant interviews being conducted with survivors of violence, family members of victims, academics, journalists, ex-police detectives, media producers, 78'ers and other community figures. While these interviews are not directly referenced in this Report, they have shaped its development as they point to the importance of addressing the broader context surrounding the killings that occurred then and today.
 
 
-### BONDI MEMORIAL PROJECT
+At the time of writing this Report, the Bondi Memorial Project is in its early stages but there is a strong commitment from ACON and Waverley Council to make the memorial a reality. The project would not be possible without community and political support. ACON is undertaking fundraising activities for the development, construction, dedication and maintenance of the memorial and we welcome all forms of financial support including grants and donations.
 
 
-In May 2016 Waverley Council passed a motion to allow ACON to fund and develop a public artwork
-in Bondi to remember survivors and people lost to historical prejudice-related violence. The memorial
-aims to help heal the trauma these terrible events have caused for the families and friends of the victims
-as well as the LGBTI community. The memorial will also serve as a reminder of the importance of
-valuing and celebrating diversity in our community.
-
-
-Significant research has gone into the development of the Bondi Memorial Project including a series
-of key informant interviews being conducted with survivors of violence, family members of victims,
-academics, journalists, ex-police detectives, media producers, 78'ers and other community figures.
-While these interviews are not directly referenced in this Report, they have shaped its development as
-they point to the importance of addressing the broader context surrounding the killings that occurred
-then and today.
-
-
-At the time of writing this Report, the Bondi Memorial Project is in its early stages but there is a strong
-commitment from ACON and Waverley Council to make the memorial a reality. The project would not
-be possible without community and political support. ACON is undertaking fundraising activities for the
-development, construction, dedication and maintenance of the memorial and we welcome all forms of
-financial support including grants and donations.
-
-
-ACON has worked closely with Waverley Council to develop the project and we remain grateful for
-their ongoing support.
+ACON has worked closely with Waverley Council to develop the project and we remain grateful for their ongoing support.
 
 
 FOR MORE INFORMATION: WWW.BONDIMEMORIAL.COM.AU
 
 
+## Section three
+
+### Historical and social context
 
 
+The following section provides the broader context in which these crimes occurred. Prevailing prejudice, discriminatory institutional practices, legal frameworks, and other societal attitudes including sweeping social change, all influenced how these crimes came to pass and the responses to them.
 
 
-11
+This section is an extract from Gay Hate Crimes in New South Wales from the 1970s, Garry Wotherspoon (May 2017).
 
 
-IN PURSUIT OF TRUTH & JUSTICE
+Wotherspoon's full background commentary is included as Appendix 1 and sections have also been quoted throughout this Report for clarity and emphasis.
 
 
-## SECTION THREE | HISTORICAL AND SOCIAL CONTEXT
+#### 3.1 POLITICAL, RELIGIOUS AND SOCIAL CONTEXT
 
 
-The following section provides the broader
-context in which these crimes occurred. Prevailing
-prejudice, discriminatory institutional practices, legal
-frameworks, and other societal attitudes including
-sweeping social change, all influenced how these
-crimes came to pass and the responses to them.
-
-
-This section is an extract from Gay Hate Crimes in New
-South Wales from the 1970s, Garry Wotherspoon
-(May 2017).
-
-
-Wotherspoon's full background commentary is included
-as Appendix 1 and sections have also been quoted
-throughout this Report for clarity and emphasis.
-
-
-## 3.1 POLITICAL, RELIGIOUS AND SOCIAL CONTEXT
-
-
-Homosexuality was long seen as a 'problem' by
-the authorities in Australia, and it was classed as
-a crime in all Australian states until well into the
-latter half of the 20th century.iii Since the churches
-traditionally classed it as a sin, there was not only
-little compassion for homo-erotically inclined men, but
-the more conservative churches were in the forefront
-of those denying even the legitimacy of homosexuals
-as human beings, as with the Roman Catholic
-Church, which tried to stop homosexuals from even
-appearing before a Royal Commission into Human
-Relationships, set up by the Federal government in
+Homosexuality was long seen as a 'problem' by the authorities in Australia, and it was classed as a crime in all Australian states until well into the latter half of the 20th century.iii Since the churches traditionally classed it as a sin, there was not only little compassion for homo-erotically inclined men, but the more conservative churches were in the forefront of those denying even the legitimacy of homosexuals as human beings, as with the Roman Catholic Church, which tried to stop homosexuals from even appearing before a Royal Commission into Human Relationships, set up by the Federal government in
 1974. And the medical profession allowed such
 barbarities as aversion therapy and psychosurgery.
 
 
-And the police, as enforcers of the law and reflecting
-prevailing social attitudes, had little toleration for what
-they saw as perverts, degenerates, effeminates, and
-paedophiles. Over the decades, they had even acted
-as agents provocateurs to entrap homo-erotically
-inclined men in suspect situations, and it would seem
-that they were given unofficial blessing for this when
-the Roman Catholic Superintendent of Police in
-Sydney and later Police Commissioner, Colin Delaney,
-declared in the late 1950s that homosexuality was 'the
-greatest social menace facing Australia'.iv
+And the police, as enforcers of the law and reflecting prevailing social attitudes, had little toleration for what they saw as perverts, degenerates, effeminates, and paedophiles. Over the decades, they had even acted as agents provocateurs to entrap homo-erotically inclined men in suspect situations, and it would seem that they were given unofficial blessing for this when the Roman Catholic Superintendent of Police in Sydney and later Police Commissioner, Colin Delaney, declared in the late 1950s that homosexuality was 'the greatest social menace facing Australia'.iv
 
 
-Things did begin to change in the later decades of
-the 20th century. Baby boomers came of age in the
-1960s and chose different paths, and that decade
-passed into history as 'the swinging sixties', when
-young people were willing to experiment, as the
-cliché went, in 'sex and drugs and rock and roll',
-and they also questioned many of the traditional
+Things did begin to change in the later decades of the 20th century. Baby boomers came of age in the 1960s and chose different paths, and that decade passed into history as 'the swinging sixties', when young people were willing to experiment, as the cliché went, in 'sex and drugs and rock and roll', and they also questioned many of the traditional
 
 
-truisms of the past, and took to the streets to
-demonstrate for a better world.
+truisms of the past, and took to the streets to demonstrate for a better world.
 
 
-It was into this changing world that the gay movement
-emerged here in Sydney.
+It was into this changing world that the gay movement emerged here in Sydney.
 
 
-## 3.2 GROWTH OF THE 'GAY MOVEMENT' IN SYDNEY
+#### 3.2 Growth of the 'gay movement' in sydney
 
 
-Sydney had long had a flourishing 'camp' life,v
-although it was little involved in political activism.
-Following the Stonewall Riots in New York in late
-June 1969 - when patrons of a gay bar fought back
-against police over three nights, with ever increasing
-support - a new group, the cleverly named
-Campaign Against Moral Persecution [CAMP] was
-set up in Sydney in 1970. Its main objectives were
-getting the law changed, taking on the medical
-profession over aversion therapy and psychosurgery,
-and making Australians aware that homosexuals
-were actually 'just like everybody else', except for
-what they might do in bed or who they might love.
+Sydney had long had a flourishing 'camp' life,v although it was little involved in political activism. Following the Stonewall Riots in New York in late June 1969 - when patrons of a gay bar fought back against police over three nights, with ever increasing support - a new group, the cleverly named Campaign Against Moral Persecution [CAMP] was set up in Sydney in 1970. Its main objectives were getting the law changed, taking on the medical profession over aversion therapy and psychosurgery, and making Australians aware that homosexuals were actually 'just like everybody else', except for what they might do in bed or who they might love.
 
 
-At around the same time, a commercial gay scene was
-emerging in Sydney, located around Oxford Street.
+At around the same time, a commercial gay scene was emerging in Sydney, located around Oxford Street.
 
 
-Another factor leading to a higher profile of Sydney's
-gay communities was the process of gentrification; as
-more and more gay men moved into the traditionally
-blue-collar suburbs around Oxford Street, it became
-seen as the gay precinct. Known as the 'ghetto'
-or 'the golden mile', it saw more and more bars
-and services moving into the area. A gay media
-emerged, with papers like The Star Observer,
-Campaign, and OutRage, as well as numerous
-newsletters and smaller publications catering for
-individual groups. All of this contributed to a sense of
-a gay identity and the growth of a gay community.
+Another factor leading to a higher profile of Sydney's gay communities was the process of gentrification; as more and more gay men moved into the traditionally blue-collar suburbs around Oxford Street, it became seen as the gay precinct. Known as the 'ghetto' or 'the golden mile', it saw more and more bars and services moving into the area. A gay media emerged, with papers like The Star Observer, Campaign, and OutRage, as well as numerous newsletters and smaller publications catering for individual groups. All of this contributed to a sense of a gay identity and the growth of a gay community.
 
 
-This incredible concentration of activity within
-a relatively short space of time, in a discrete
-geographic area, all occurred in a city where male
-homosexual activity was still illegal.
+This incredible concentration of activity within a relatively short space of time, in a discrete geographic area, all occurred in a city where male homosexual activity was still illegal.
 
 
-## 3.3 DECRIMINALISATION OF SEX BETWEEN CONSENTING MALES
+### 3.3 Decriminalisation of sex between consenting males
 
 
-There had long been a push to change the law that
-criminalised love and sex between consenting male
-adults, and this push intensified after a similar law was
-changed in Britain in 1967. Increasing support for
-law change also came from a wide range of experts -
-academics, criminologists, civil libertarian lawyers, and
+There had long been a push to change the law that criminalised love and sex between consenting male adults, and this push intensified after a similar law was changed in Britain in 1967. Increasing support for law change also came from a wide range of experts - academics, criminologists, civil libertarian lawyers, and
 
+even growing numbers of the medical profession - who all argued that homosexuality no longer deserved a criminal status, and that law reform was overdue. The lawmakers themselves were reluctant to act.
 
 
+During that decade, there were ongoing demonstrations in Sydney focussing on what needed to be changed to give homosexuals equal civil rights with their heterosexual counterparts. One of the catchcries of the time was 'stop police attacks, on gays, women and blacks'. And this catchcry highlights an important fact: that the police were seen as the enemy by many of these emerging social movements. As for gays, the police had never been sympathetic to their parading through Sydney's streets. And this antipathy culminated in the notorious first Mardi Gras, on the night of Saturday 24 June 1978; it started out as a peaceful march down Oxford Street from Taylor's Square to Hyde Park, and ended in Kings Cross with police wading into the marchers with their batons, leading to 53 arrests.
 
-IN PURSUIT OF TRUTH & JUSTICE
 
+It was only early in 1984, after prolonged pressure on politicians that a private members Bill was passed on a conscience vote, albeit with an unequal age of consent.
 
-12
 
+Decriminalisation should have been the marker for a new period of tolerance for homosexuals, leading to gradual acceptance. However, overlapping with the final push for law reform, a new tragedy occurred, one which would turn the clock back as far as acceptance was concerned - the appearance of what was at first called GRID [Gay Related Immune Deficiency], then later, AIDS. The advent of AIDS brought with it an increase in hate violence towards the community.
 
-even growing numbers of the medical profession - who
-all argued that homosexuality no longer deserved a
-criminal status, and that law reform was overdue. The
-lawmakers themselves were reluctant to act.
-
 
-During that decade, there were ongoing
-demonstrations in Sydney focussing on what needed
-to be changed to give homosexuals equal civil
-rights with their heterosexual counterparts. One of
-the catchcries of the time was 'stop police attacks,
-on gays, women and blacks'. And this catchcry
-highlights an important fact: that the police were
-seen as the enemy by many of these emerging social
-movements. As for gays, the police had never been
-sympathetic to their parading through Sydney's
-streets. And this antipathy culminated in the notorious
-first Mardi Gras, on the night of Saturday 24 June
-1978; it started out as a peaceful march down
-Oxford Street from Taylor's Square to Hyde Park, and
-ended in Kings Cross with police wading into the
-marchers with their batons, leading to 53 arrests.
-
-
-It was only early in 1984, after prolonged pressure on
-politicians that a private members Bill was passed on a
-conscience vote, albeit with an unequal age of consent.
-
+Despite HIV being an infection contractible by anyone, irrespective of age, gender, ethnicity or sexuality, due to it being first diagnosed in the gay community, it was a disaster for progress on LGBTIQ acceptance, not to mention people's health, well- being and dignity. Homophobia became rife, and was given 'legitimation' by a sensationalising media. Homophobia found its expression in more than just words ... Homophobia took on a physical form.vi
 
-Decriminalisation should have been the marker for a
-new period of tolerance for homosexuals, leading to
-gradual acceptance. However, overlapping with the
-final push for law reform, a new tragedy occurred, one
-which would turn the clock back as far as acceptance
-was concerned - the appearance of what was at first
-called GRID [Gay Related Immune Deficiency], then
-later, AIDS. The advent of AIDS brought with it an
-increase in hate violence towards the community.
-
-
-Despite HIV being an infection contractible by
-anyone, irrespective of age, gender, ethnicity or
-sexuality, due to it being first diagnosed in the gay
-community, it was a disaster for progress on LGBTIQ
-acceptance, not to mention people's health, well-
-being and dignity. Homophobia became rife, and
-was given 'legitimation' by a sensationalising media.
-Homophobia found its expression in more than just
-words ... Homophobia took on a physical form.vi
-
-
-.... It was not until the violent murder of Richard
-Johnson at the Alexandria Park beat in January 1990
-that the mainstream media began to take a growing
-interest. It is only now, well into the second decade
-of the twenty-first century, that the magnitude of what
-occurred is starting to surface and be acknowledged
-and addressed.
-
-
-## 3.4 PROGRESS OF HUMAN RIGHTS FOR GAY, LESBIAN AND TRANSGENDER PEOPLE
-
-
-While decriminalisation was a major step forward,
-there were other battles to be fought, and there were
-some successes. A range of issues started to find
-resolution in the following decades.
-
-
-In 1993 Clover Moore's Homosexual Anti-Vilification
-Bill was eventually passed in state parliament. The
-City of Sydney set up its Relationships Declaration
-Program in July 2004, and the state government
-launched the NSW Relationships Register in 2010.
-
-
-On the other hand, it was only in May 2003 that
-the state government equalised the age of consent to
-sixteen, nineteen years after decriminalisation.
-
-
-Aside from the above, lesbians and gay men in
-NSW can now foster and adopt children, and be out
-at most workplaces. And there is now widespread
-and increasing social acceptance of same-sex
-relationships. Perhaps most significantly, when a
-major public figure dies, their same-sex partner
-can now be openly acknowledged in the bereaved
-party at their funeral. The recent marriage survey
-[and subsequent amendment to the Commonwealth
-Marriage Act to enable same-sex marriage] also
-demonstrates the acceptability across Australia of
-same-sex relationships and marriage.
-State laws are not the only laws that affect the LGBTI
-communities; there are federal laws that also have
-an impact. By 2010, the federal government had
-amended over 70 pieces of legislation to remove
-ongoing discrimination, and lesbian and gay couples
-are treated like heterosexual couples for purposes of
-welfare and taxation. And anti-discrimination laws to
-protect LGBTI people have been passed in most states
-and at federal level. So there have been significant
-improvements in four decades in the civil sphere, but
-there are some areas that still need to be addressed.
-
-
-Similarly, law reform for transgender and intersex
-people has been slow with anti-discrimination
-protections on the grounds of gender identity and
-intersex status only introduced under Federal Anti-
-Discrimination law in 2013. A number of structural
-and legal hurdles remain, particularly in relation to the
-requirement of sterilising surgical procedures for people
-with an intersex variation and compulsory divorce for
-the legal recognition of sex in NSW for trans people.
-
-
-
-
-13
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-## SECTION FOUR | FINDINGS AND THEMES
-
-
-## 4.1 KEY FINDINGS
-
-
-The victims who are the subjects of this Report
-experienced deliberate and brutal attacks.
-Evidence from crime scenes indicates that many
-significant struggles
-stay
-In
-were defenceless,
-off
-expecting
-attacked
-last moments, undoubtedly,
-involved terror and confusion.
 
+.... It was not until the violent murder of Richard Johnson at the Alexandria Park beat in January 1990 that the mainstream media began to take a growing interest. It is only now, well into the second decade of the twenty-first century, that the magnitude of what occurred is starting to surface and be acknowledged and addressed.
 
-<table>
- <tr>
-  <th>victims engaged in</th>
-  <td></td>
-  <td></td>
-  <td>to protect</td>
-  <td></td>
- </tr>
- <tr>
-  <th>themselves attempting</th>
-  <td>to</td>
-  <td>alive.</td>
-  <td>many</td>
-  <td></td>
- </tr>
- <tr>
-  <th>cases, the victims</th>
-  <td></td>
-  <td></td>
-  <td>caught</td>
-  <td>in main spaces majority</td>
- </tr>
- <tr>
-  <th>guard and not</th>
-  <td>to</td>
-  <td>be</td>
-  <td>with</td>
-  <td>victims in own</td>
- </tr>
- <tr>
-  <th>such extremity. Their</th>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
- <tr>
-  <th></th>
-  <td></td>
-  <td></td>
-  <td></td>
-  <td></td>
- </tr>
-</table>
 
+#### 3.4 PROGRESS OF HUMAN RIGHTS FOR GAY, LESBIAN AND TRANSGENDER PEOPLE
 
-The following sections present a thematic analysis
-with information surrounding locations, weapons,
-methods of violence, as well as demographic
-features about the victims and their assailants.
-In addition, findings are discussed about how
-institutional homophobia or bias was evident
-in the way that cases were investigated and
-prosecuted.
 
+While decriminalisation was a major step forward, there were other battles to be fought, and there were some successes. A range of issues started to find resolution in the following decades.
 
-## Key findings in relation to the alleged
 
+In 1993 Clover Moore's Homosexual Anti-Vilification Bill was eventually passed in state parliament. The City of Sydney set up its Relationships Declaration Program in July 2004, and the state government launched the NSW Relationships Register in 2010.
 
-## homophobic and related homicides
 
+On the other hand, it was only in May 2003 that the state government equalised the age of consent to sixteen, nineteen years after decriminalisation.
 
-These findings are elaborated throughout the
-remainder of this section.
 
+Aside from the above, lesbians and gay men in NSW can now foster and adopt children, and be out at most workplaces. And there is now widespread and increasing social acceptance of same-sex relationships. Perhaps most significantly, when a major public figure dies, their same-sex partner can now be openly acknowledged in the bereaved party at their funeral. The recent marriage survey [and subsequent amendment to the Commonwealth Marriage Act to enable same-sex marriage] also demonstrates the acceptability across Australia of same-sex relationships and marriage. State laws are not the only laws that affect the LGBTI communities; there are federal laws that also have an impact. By 2010, the federal government had amended over 70 pieces of legislation to remove ongoing discrimination, and lesbian and gay couples are treated like heterosexual couples for purposes of welfare and taxation. And anti-discrimination laws to protect LGBTI people have been passed in most states and at federal level. So there have been significant improvements in four decades in the civil sphere, but there are some areas that still need to be addressed.
 
-1. In general, there was little or no pre-existing relationship between assailants and their victims.
 
-2. Where killings happened in the victim's house, the victim was more likely to be known to the assailant, albeit in a minor way, whereas there was no existing relationship between the victim and assailant where the killings occurred at the beat or gay social spaces.
+Similarly, law reform for transgender and intersex people has been slow with anti-discrimination protections on the grounds of gender identity and intersex status only introduced under Federal Anti- Discrimination law in 2013. A number of structural and legal hurdles remain, particularly in relation to the requirement of sterilising surgical procedures for people with an intersex variation and compulsory divorce for the legal recognition of sex in NSW for trans people.
 
-3. Generally, spaces where victims were killed were private, secluded or isolated which meant the assailant was less likely to be interrupted and impacted the victim's ability to call out for help.
+## Section four
 
-4. The scenarios in all the spaces were commonly sexualised, or where people could be disinhibited due to the consumption of alcohol and other drugs.
+### Findings and themes
 
-5. Assailants employed a variety of killing methods and, in general, inflicted several forms of violence upon their victims. The type of attack and the weapons used varied according to the location where the killing was carried out, whether in the victim's home, at a beat or in gay social areas.
+#### 4.1 Key findings
 
-6. There is evidence of serial killings by gangs of young men as well as lone assailants.
+The victims who are the subjects of this Report experienced deliberate and brutal attacks. Evidence from crime scenes indicates that many victims engaged in significant struggles to protect themselves attempting to stay alive. In many cases, the victims were defenceless, caught off guard and not expecting to be attacked with such extremity. Their last moments, undoubtedly, involved terror and confusion.
 
-7. From available information, it appears groups of assailants tended to kill their victims at beats or social spaces, whereas individual assailants killed their victims in private residences.
+The following sections present a thematic analysis with information surrounding locations, weapons, methods of violence, as well as demographic features about the victims and their assailants. In addition, findings are discussed about how institutional homophobia or bias was evident in the way that cases were investigated and prosecuted.
 
-8. There is information to indicate homophobia was likely involved in approximately 50% of listed cases; however the two cases involving transgender women do not appear to have been motivated by transphobia.
 
-9. Of the initial 88 cases on the original list, approximately 30 remain unsolved.
+##### Key findings in relation to the alleged homophobic and related homicides
 
+These findings are elaborated throughout the remainder of this section.
 
+1. Killings occurred in three main spaces with majority of victims being killed in their own homes, followed by beats, and other locations which mostly includes gay and other social spaces.
+2. In general, there was little or no pre-existing relationship between assailants and their victims.
+3. Where killings happened in the victim's house, the victim was more likely to be known to the assailant, albeit in a minor way, whereas there was no existing relationship between the victim and assailant where the killings occurred at the beat or gay social spaces.
+4. Generally, spaces where victims were killed were private, secluded or isolated which meant the assailant was less likely to be interrupted and impacted the victim's ability to call out for help.
+5. The scenarios in all the spaces were commonly sexualised, or where people could be disinhibited due to the consumption of alcohol and other drugs.
+6. Assailants employed a variety of killing methods and, in general, inflicted several forms of violence upon their victims. The type of attack and the weapons used varied according to the location where the killing was carried out, whether in the victim's home, at a beat or in gay social areas.
+7. There is evidence of serial killings by gangs of young men as well as lone assailants.
+8. From available information, it appears groups of assailants tended to kill their victims at beats or social spaces, whereas individual assailants killed their victims in private residences.
+9. There is information to indicate homophobia was likely involved in approximately 50% of listed cases; however the two cases involving transgender women do not appear to have been motivated by transphobia.
+10. Of the initial 88 cases on the original list, approximately 30 remain unsolved.
 
+#### 4.2 Geographical incidence
 
-IN PURSUIT OF TRUTH & JUSTICE
 
+Most victims were killed in, or near their place of residence.
 
-14
 
+Killings took place in locations across NSW, however there were clear hotspots. Most killings took place in, or nearby suburbs where gay men commonly lived. Most commonly this was in the Eastern and Inner West Sydney region including Alexandria, Ashfield, Darling Point, Darlinghurst, Elizabeth Bay, Glebe, Kensington, Kings Cross, Newtown, Paddington, Potts Point, Randwick, Rushcutters Bay, Sydney, Surry Hills and Woolloomooloo. Some also occurred in greater Western Sydney.
 
-## 4.2 GEOGRAPHICAL INCIDENCE
 
+A considerable number of victims were also killed in coastal areas, the Northern Beaches region of Sydney, Bondi and Coogee, Wollongong and Newcastle. These were locations where gay men were commonly known to live, or where popular beats were located. While most attended beats nearby their place of residence, victims also travelled to attend beats, such as Marks Park and the Northern Beaches area, including Manly. Many gay men who went missing were last seen at well- known beats, such as Marks Park.
 
-Most victims were killed in, or near their place of
-residence.
 
+#### 4.3 Findings related to location and method of violence
 
-Killings took place in locations across NSW,
-however there were clear hotspots. Most killings
-took place in, or nearby suburbs where gay
-men commonly lived. Most commonly this was
-in the Eastern and Inner West Sydney region
-including Alexandria, Ashfield, Darling Point,
-Darlinghurst, Elizabeth Bay, Glebe, Kensington,
-Kings Cross, Newtown, Paddington, Potts Point,
-Randwick, Rushcutters Bay, Sydney, Surry Hills and
-Woolloomooloo. Some also occurred in greater
-Western Sydney.
 
+##### 4.3.1 Victims' homes
 
-A considerable number of victims were also killed
-in coastal areas, the Northern Beaches region
-of Sydney, Bondi and Coogee, Wollongong and
-Newcastle. These were locations where gay men
-were commonly known to live, or where popular
-beats were located. While most attended beats
-nearby their place of residence, victims also
-travelled to attend beats, such as Marks Park and
-the Northern Beaches area, including Manly. Many
-gay men who went missing were last seen at well-
-known beats, such as Marks Park.
 
+Killings that occurred in private residences were generally perpetrated by an individual in response to a sexual advance. In some cases, there were pre-existing acquaintances, such as neighbourly relations and even long-held relationships which had drug and/or intimacy related dynamics.
 
-## 4.3 FINDINGS RELATED TO LOCATION AND METHOD OF VIOLENCE
 
+Where victims were killed in the home, the most common method of violence involved the use of a blunt object which was often obtained inside the victim's homes. The blunt weapon was then used to repeatedly beat the victim over the head. Weapons included bricks, lamps, a saucepan, a stone-mason's mallet, a concrete object, fire extinguisher and a bowling pin.
 
-## 4.3.1 VICTIMS' HOMES
 
+The attacks were often frenzied and vicious. Numerous victims were attacked with the intent to kill, rather than maim or distract. The confines of the home provided time and sound barriers and, as
 
-Killings that occurred in private residences were
-generally perpetrated by an individual in response
-to a sexual advance. In some cases, there were
-pre-existing acquaintances, such as neighbourly
-relations and even long-held relationships which had
-drug and/or intimacy related dynamics.
 
-
-Where victims were killed in the home, the most
-common method of violence involved the use of a blunt
-object which was often obtained inside the victim's
-homes. The blunt weapon was then used to repeatedly
-beat the victim over the head. Weapons included
-bricks, lamps, a saucepan, a stone-mason's mallet, a
-concrete object, fire extinguisher and a bowling pin.
-
-
-The attacks were often frenzied and vicious.
-Numerous victims were attacked with the intent to
-kill, rather than maim or distract. The confines of
-the home provided time and sound barriers and, as
-
-
-such, murders that took place in these conditions
-were often prolonged, frenzied and brutal.
+such, murders that took place in these conditions were often prolonged, frenzied and brutal.
 
 
 - One assailant, in response to a sexual advance, bashed his victim over the head with a fire extinguisher, and then stabbed him. The victim had offered him a place to sleep in his nearby unit. During the trial, the judge referred to the victim's sexual advance as "grossly offensive". There was no existing relationship when they met that night.
@@ -1317,137 +479,46 @@ were often prolonged, frenzied and brutal.
 - One victim was bashed over the head with a bowling pin and was then partially dismembered whereby his chest cavity was cut open, his body partially disembowelled, multiple cut and stab wounds inflicted to his trunk, and his left testis amputated and found in the kitchen sink.
 
 
-Other attacks were equally gruesome with victims'
-bodies being mutilated or dismembered. This
-included severed hands, deep incisions inflicted
-from the sternum to the abdomen, and the shaft of a
-hammer inserted through the anus.
+Other attacks were equally gruesome with victims' bodies being mutilated or dismembered. This included severed hands, deep incisions inflicted from the sternum to the abdomen, and the shaft of a hammer inserted through the anus.
 
 
 In some cases, the assailant claimed self-defence
 - the so-called "homosexual advance" or "gay
-panic" defence - in response to the victim's sexual
-advance. This was despite knowing that the
-victim was gay or there having been prior sexual
-advances from the victim.
+panic" defence - in response to the victim's sexual advance. This was despite knowing that the victim was gay or there having been prior sexual advances from the victim.
 
 
-The 'gay panic defense' was a common-law legal
-right that allowed a heterosexual defendant to a
-murder charge (where the victim is a gay man)
-to argue that non-violent same-sex advances by a
-gay male victim are offensive or frightening to the
-heterosexual man that bring about an autonomous
-rage, allowing the heterosexual defendant's conduct
-to be reduced to manslaughter.
+The 'gay panic defense' was a common-law legal right that allowed a heterosexual defendant to a murder charge (where the victim is a gay man) to argue that non-violent same-sex advances by a gay male victim are offensive or frightening to the heterosexual man that bring about an autonomous rage, allowing the heterosexual defendant's conduct to be reduced to manslaughter.
+
+One assailant with an existing social relationship with the victim and having had prior sexual advances from the victim, entered the victim's house, became intoxicated and, upon experiencing another sexual advance, grabbed a nearby brick and repeatedly bludgeoned the victim until he died. Despite prior violence-related offences, the judge ruled the assailant feared he was going to be raped and reduced the sentence to manslaughter.
 
 
+Some victims lived near gay social areas and met potential sex partners in or around saunas, bars and other locations, to then subsequently go to their homes with the expectation of having sex. Others met potential sex partners via classifieds or telephone chat lines and organised to meet in their homes, or at a beat to engage in sex. With this mode of connection, there was no guaranteed way of screening or vetting to ensure safety.
 
 
-15
+The only incident involving a group attack in a victim's home involved three assailants invading the victim's home, waking the victim and shooting him point blank in the head then shooting the victim's dog as the assailants left. The assailants claimed to have been there to burgle the house, but available evidence points also toward a prejudice motive. For example, these assailants were experienced at burglaries, yet they only took a small amount of money, despite travelling a long distance to the victim's house. The victim was a prominent figure in the gay community and the assailants were known to many people as being homophobic. One of the assailants confessed to murdering the victim because he was gay but later recanted his statement.
 
 
-IN PURSUIT OF TRUTH & JUSTICE
+##### 4.3.2 Beats
 
 
-One assailant with an existing social relationship
-with the victim and having had prior sexual advances
-from the victim, entered the victim's house, became
-intoxicated and, upon experiencing another sexual
-advance, grabbed a nearby brick and repeatedly
-bludgeoned the victim until he died. Despite prior
-violence-related offences, the judge ruled the assailant
-feared he was going to be raped and reduced the
-sentence to manslaughter.
-
-
-Some victims lived near gay social areas and met
-potential sex partners in or around saunas, bars
-and other locations, to then subsequently go to their
-homes with the expectation of having sex. Others met
-potential sex partners via classifieds or telephone chat
-lines and organised to meet in their homes, or at a
-beat to engage in sex. With this mode of connection,
-there was no guaranteed way of screening or vetting
-to ensure safety.
-
-
-The only incident involving a group attack in a victim's
-home involved three assailants invading the victim's
-home, waking the victim and shooting him point
-blank in the head then shooting the victim's dog as the
-assailants left. The assailants claimed to have been
-there to burgle the house, but available evidence
-points also toward a prejudice motive. For example,
-these assailants were experienced at burglaries, yet
-they only took a small amount of money, despite
-travelling a long distance to the victim's house. The
-victim was a prominent figure in the gay community
-and the assailants were known to many people as
-being homophobic. One of the assailants confessed
-to murdering the victim because he was gay but later
-recanted his statement.
-
-
-## 4.3.2 BEATS
-
-
-The term 'beat' is used in Australia to describe a
-public outdoor or indoor area where "men go to
-have consensual, non-commercial casual sex with
-other men. [These] activities can be seen as either
-a scandal, or a kind of liberation." (Wotherspoon
+The term 'beat' is used in Australia to describe a public outdoor or indoor area where "men go to have consensual, non-commercial casual sex with other men. [These] activities can be seen as either a scandal, or a kind of liberation." (Wotherspoon
 2017) In some regards, they were an ideal setting for
-violence as they are isolated from public view, dark,
-and men could be lured by the promise of sex. Beats
-therefore became known to assailants as a place to
-target homosexuals. For example, North Head at
-Manly is a secluded location situated some kilometres
-away from residential settings. There are several
+violence as they are isolated from public view, dark, and men could be lured by the promise of sex. Beats therefore became known to assailants as a place to target homosexuals. For example, North Head at Manly is a secluded location situated some kilometres away from residential settings. There are several
 
 
-well-known cruising places as it is surrounded by bush
-providing opportunity for men to go further into the
-park away from the cruising places.
+well-known cruising places as it is surrounded by bush providing opportunity for men to go further into the park away from the cruising places.
 
 
-Murder weapons such as screwdrivers, knives,
-hammers and other blunt objects were brought
-to beats by assailants indicating a further level of
-premeditation. In one instance a shotgun was used
-to murder the victim. However, the most common
-weapon were the assailants' fists and feet which were
-used to punch, suffocate and stomp the victims' heads,
-necks and chests.
+Murder weapons such as screwdrivers, knives, hammers and other blunt objects were brought to beats by assailants indicating a further level of premeditation. In one instance a shotgun was used to murder the victim. However, the most common weapon were the assailants' fists and feet which were used to punch, suffocate and stomp the victims' heads, necks and chests.
 
 
-When the murder took place at a beat, the assailant
-typically had no relationship or knowledge of the victim
-and the victim was often assumed to be homosexual by
-their presence at, or near, the beat.
+When the murder took place at a beat, the assailant typically had no relationship or knowledge of the victim and the victim was often assumed to be homosexual by their presence at, or near, the beat.
 
 
-Sometimes groups of assailants used sex to lure the
-victim at beats. These kinds of attacks were typically
-planned as part of a group 'social activity'. Several
-cases involved the assailants obtaining the victim's
-phone number from a public toilet wall and calling them
-to arrange a time to engage in sex at the beat. There
-is also evidence to suggest gangs conducted repeat
-attacks at the same beat.
+Sometimes groups of assailants used sex to lure the victim at beats. These kinds of attacks were typically planned as part of a group 'social activity'. Several cases involved the assailants obtaining the victim's phone number from a public toilet wall and calling them to arrange a time to engage in sex at the beat. There is also evidence to suggest gangs conducted repeat attacks at the same beat.
 
 
-Once at the beat, the group would sometimes choose
-the 'best looking' male who, in some cases, would
-commence having sex with the victim. Sexual activity
-worked to divert the victim's attention or bring them into
-a squatted or other vulnerable position, making it easy
-for the group to attack the victim. In some cases, 'the
-lure' and the victim would commence sex in the main
-part of the beat and the victim would be lured into more
-isolated parts of the beat to continue having sex where
-they would be set upon by a group of waiting men
-who, in some cases, were armed with weapons.
+Once at the beat, the group would sometimes choose the 'best looking' male who, in some cases, would commence having sex with the victim. Sexual activity worked to divert the victim's attention or bring them into a squatted or other vulnerable position, making it easy for the group to attack the victim. In some cases, 'the lure' and the victim would commence sex in the main part of the beat and the victim would be lured into more isolated parts of the beat to continue having sex where they would be set upon by a group of waiting men who, in some cases, were armed with weapons.
 
 
 - In one such case, a group of eight young men planned their attack over an afternoon by obtaining a telephone number from a toilet block and waiting for a lengthy period for the victim to arrive at the beat. When the victim arrived, the group ran at him and attacked without warning.
@@ -1455,18 +526,7 @@ who, in some cases, were armed with weapons.
 - In another case at a well-known beat in Penrith, two assailants were outraged to see a man parked in his car at the beat. They drove to their house, obtained a shotgun and returned to the park and proceeded to attack the victim. Several witnesses saw the two assailants chase the victim along the riverbank as
 
 
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-16
-
-
-he begged for his life before being shot dead in the
-back several times. Despite clear premeditation and
-a murder charge, both assailants received a reduced
-manslaughter sentence.
+he begged for his life before being shot dead in the back several times. Despite clear premeditation and a murder charge, both assailants received a reduced manslaughter sentence.
 
 
 - In another case, a gay man who was murdered at Rushcutters Bay was set upon by three young men, one of whom specifically went out with a knife to kill someone. The assailant claimed the victim "licked his lips like a faggot" so he fatally stabbed him in the chest and face, then stole his wallet.
@@ -1474,13 +534,10 @@ manslaughter sentence.
 - Several cases involved men being found at the base of cliffs located at known beats, such as North Head, Fairy Bower and Marks Park, Bondi. These victims either slipped while trying to escape, or were pushed. While victims sustained injuries associated with the fall, in some cases there was also evidence of injuries associated with being bashed prior to the fall. One such attack was witnessed by a man who was also attacked the same night but managed to escape. The three assailants drove the victim closer and closer to the edge of the cliff as they were beating him. During the investigation, blood was found on the edge of the cliff.
 
 
-## 4.3.3 GAY SOCIAL AND OTHER SPACES
+##### 4.3.3 Gay social and other spaces
 
 
-Assailants often targeted popular gay social precincts,
-including Oxford Street and Kings Cross where alcohol
-was consumed and where sex-on-premises venues
-provided sexualised settings to meet or isolate victims.
+Assailants often targeted popular gay social precincts, including Oxford Street and Kings Cross where alcohol was consumed and where sex-on-premises venues provided sexualised settings to meet or isolate victims.
 
 
 - One assailant who killed a gay man on the streets of Darlinghurst confessed to going to the Oxford Street area with the intention of assaulting someone. The assailant was with four friends, all under the age of 18, and they set upon three gay men from behind, calling out homophobic slurs as they punched them.
@@ -1490,11 +547,7 @@ provided sexualised settings to meet or isolate victims.
 - One victim was found dead with 64 stab wounds in his friend's Paddington unit. There were no signs of forced entry which suggests the victim knew the
 
 
-assailant. The post-mortem examination showed
-the victim had engaged in sexual intercourse
-before his death. It was likely the assailant and
-victim met in a gay social space then moved to
-that apartment for sex.
+assailant. The post-mortem examination showed the victim had engaged in sexual intercourse before his death. It was likely the assailant and victim met in a gay social space then moved to that apartment for sex.
 
 
 - Sometimes, it appears assailants would target saunas or sex shops to find their victims.
@@ -1502,260 +555,79 @@ that apartment for sex.
 - And sometimes it was random chance. One victim had been on a night out, left a local pub and walked past a community hall where he was invited by the assailant into a party. The assailant offered the victim a joint and upon going outside, he claimed the victim attacked him, so he responded by bludgeoning him with more than 22 blows to the body and head. This level of frenzied attack is not consistent with other male on male assaults in the general community. Yet, there was insufficient evidence to establish that the assailant was motivated by homophobia.
 
 
-## 4.4 FINDINGS RELATED TO MOTIVE
-
+#### 4.4 Findings related to motive
 
-## 4.4.1 HOMOPHOBIA AND TRANSPHOBIA
 
-
-While social attitudes towards homosexuality have
-changed significantly since the 1980s and 1990s,
-murdering someone in response to a sexual advance
-is, and always has been a grossly disproportionate
-response and strongly indicative of homophobia.
-During those decades, the prevalence of institutionalised
-homophobia was evident. "Australian social institutions
-still perpetuated homophobic attitudes; for the legal
-and medical professions and some churches, gays
-were either "illegal, sick, or sinful", if not all three."
-(Wotherspoon 2017) Underscoring this institutionalised
-homophobia were traditional notions of Australian
-masculinity.
-
-
-"Homophobic violence is violence in which the
-sexuality of the victim can be reasonably judged
-as having been a likely significant factor, and in a
-country where masculinity was such an important
-element in the national identity, personified by
-the 'Aussie bloke', there was little sympathy for
-those men who did not conform; they were mostly
-despised. Indeed, there are clear links between
-homophobia to various aspects of masculinity, such
-as heterosexism and ideas about 'male honour',
-aspects that in themselves existed in the wider
-Australian community." (Wotherspoon, 2017)
+##### 4.4.1 Homophobia and transphobia
 
 
+While social attitudes towards homosexuality have changed significantly since the 1980s and 1990s, murdering someone in response to a sexual advance is, and always has been a grossly disproportionate response and strongly indicative of homophobia. During those decades, the prevalence of institutionalised homophobia was evident. "Australian social institutions still perpetuated homophobic attitudes; for the legal and medical professions and some churches, gays were either "illegal, sick, or sinful", if not all three." (Wotherspoon 2017) Underscoring this institutionalised homophobia were traditional notions of Australian masculinity.
 
 
-17
+"Homophobic violence is violence in which the sexuality of the victim can be reasonably judged as having been a likely significant factor, and in a country where masculinity was such an important element in the national identity, personified by the 'Aussie bloke', there was little sympathy for those men who did not conform; they were mostly despised. Indeed, there are clear links between homophobia to various aspects of masculinity, such as heterosexism and ideas about 'male honour', aspects that in themselves existed in the wider Australian community." (Wotherspoon, 2017)
 
 
-IN PURSUIT OF TRUTH & JUSTICE
+Based on available evidence, it appeared that for some assailants there was a level of interest in, or fascination with, homosexuality. This was demonstrated by assailants associating with known gay men, or continuing to associate with people who had previously made a sexual advance. In a few cases there is evidence the victim and assailant engaged in seemingly consensual sex prior to the killing suggesting the assailant was either homosexual, bisexual or a "heterosexual" male who engaged in same-sex activity. In a few cases, it was also possible that the motive to kill was linked to some internalised homophobia and the ferocity of the attack was fuelled by that. Some assailants only needed to be 'provoked' by public displays of affection to unleash violence.
 
 
-Based on available evidence, it appeared that
-for some assailants there was a level of interest
-in, or fascination with, homosexuality. This was
-demonstrated by assailants associating with known
-gay men, or continuing to associate with people
-who had previously made a sexual advance. In a
-few cases there is evidence the victim and assailant
-engaged in seemingly consensual sex prior to the
-killing suggesting the assailant was either homosexual,
-bisexual or a "heterosexual" male who engaged in
-same-sex activity. In a few cases, it was also possible
-that the motive to kill was linked to some internalised
-homophobia and the ferocity of the attack was fuelled
-by that. Some assailants only needed to be 'provoked'
-by public displays of affection to unleash violence.
+In some cases, the victim's sexuality was known to the assailant and they willingly entered social situations with these men, while at the same time reporting being shocked or disgusted by the advance. Despite this open engagement, some assailants received lighter sentences by calling on the 'Homosexual Advance Defence'.
 
 
-In some cases, the victim's sexuality was known to the
-assailant and they willingly entered social situations
-with these men, while at the same time reporting
-being shocked or disgusted by the advance. Despite
-this open engagement, some assailants received
-lighter sentences by calling on the 'Homosexual
-Advance Defence'.
+During this period, transgender women were a prominent part of the community actively engaged in social spaces and beats. While there were only two cases of transgender women on the list of Dossiers in this Review, it is acknowledged that transgender people also experienced high degrees of hate-related physical and verbal assaults, and were also exposed to structural discrimination, during this period.
 
+## 4.4.2 Peer or pack mentality
 
-During this period, transgender women were a
-prominent part of the community actively engaged in
-social spaces and beats. While there were only two
-cases of transgender women on the list of Dossiers
-in this Review, it is acknowledged that transgender
-people also experienced high degrees of hate-related
-physical and verbal assaults, and were also exposed
 
+Homophobic attitudes were exacerbated in group situations where a pack mentality prevailed. Findings reveal a considerable number of the murders in public spaces were carried out by multiple assailants. Group attacks appear to have predominantly involved younger men and, on some occasions, included young women. Group members tended to be known to each other with relationships based on kinship, schooling or friendship.
 
-<table>
- <tr>
-  <th></th>
- </tr>
- <tr>
-  <th>to structural discrimination, during this period.</th>
- </tr>
-</table>
 
+Groups tended to target certain or preferred locations, conducting numerous attacks in common locations which were most likely at beats, or in the street. Members from different gangs also often knew each other and were known to communicate about the attacks.
 
-## 4.4.2 PEER OR PACK MENTALITY
 
+> Homophobic attitudes were exacerbated in group situations where a pack mentality prevailed. Findings reveal a considerable number of the murders in public spaces were carried out by multiple assailants.
 
-Homophobic attitudes were exacerbated in group
-situations where a pack mentality prevailed. Findings
-reveal a considerable number of the murders in
-public spaces were carried out by multiple assailants.
-Group attacks appear to have predominantly
-involved younger men and, on some occasions,
-included young women. Group members tended to
-be known to each other with relationships based on
-kinship, schooling or friendship.
 
 
-Groups tended to target certain or preferred
-locations, conducting numerous attacks in common
-locations which were most likely at beats, or in the
-street. Members from different gangs also often knew
-each other and were known to communicate about
-the attacks.
+Group attacks were planned, marked by high- level brutality where members spurred each other on in what could be described as cowardly acts of 'blood sport'. It appears assailants were inspired by an element of entertainment and derived enjoyment and satisfaction from killing victims that were gay or assumed to be gay.
 
 
-Homophobic attitudes
-were exacerbated
-in group situations
-where a pack mentality
-prevailed. Findings reveal
-a considerable number
-of the murders in public
-spaces were carried out by
-multiple assailants.
+There is also the likelihood that some young men, particularly in groups, wanted to prove their heterosexuality and/or masculinity to each other. In the absence of other ways to assert these attributes, it is possible they set out to disprove they were gay or effeminate as a counter-point.
 
 
+"As to how many 'gangs' were involved in these bashings and murders is open to conjecture. But evidence suggests that at least three operated south of the harbour and an unknown number north of the harbour. There was the 'Bondi Boys' responsible for bashings and murders at the Marks Park beat; there was the 'Alexandria Eight', centred on students at the Cleveland Street High School; the 'North Narra Boys'; the 'Tamarama Three'; and - reputedly - an eastern suburbs gang who specialised in baseball bat attacks. Some members of these different groups knew each other."vii (Wotherspoon 2017)
 
 
-IN PURSUIT OF TRUTH & JUSTICE
+In one case, all eight assailants were apprehended and convicted. During the trial the presiding judge noted the gravity and seriousness of the case distinguished by the cowardly nature of the gang attack with eight men against one; the degree of premeditation involved with obtaining of the telephone number with the intention of luring the victim to the scene; and the sheer savagery with which the attack was pressed home.
 
 
-18
+##### 4.4.3 HIV and AIDS
 
 
-Group attacks were planned, marked by high-
-level brutality where members spurred each
-other on in what could be described as cowardly
-acts of 'blood sport'. It appears assailants were
-inspired by an element of entertainment and
-derived enjoyment and satisfaction from killing
-victims that were gay or assumed to be gay.
+Half of the 88 deaths took place between 1987 and 1993 when AIDS was hitting its peak in terms of an irrational public "moral panic". There were cases where AIDS was documented to have played a role in motivating the assailant, or even adversely impacted police investigations, such as washing down crime scenes to avoid infection thereby tampering with forensic evidence.
 
 
-There is also the likelihood that some young
-men, particularly in groups, wanted to prove
-their heterosexuality and/or masculinity to each
-other. In the absence of other ways to assert these
-attributes, it is possible they set out to disprove
-they were gay or effeminate as a counter-point.
+> "While the onset of HIV/AIDS has been seen as a motivating factor for some of the violence, the start of the violence predates that. A report by the NSW Anti-Discrimination Board in 1982 already highlighted the issue, and over that decade, there was ongoing and increasing violence. In 1990 the Surry Hills police noted a 34% increase in reports of street bashings during that year alone."viii (Wotherspoon 2017)
 
+While fear associated with the Grim Reaper Campaign may have been intended to prevent new infections, it inadvertently fuelled stigma, discrimination and possibly homophobic violence.
 
-"As to how many 'gangs' were involved in these
-bashings and murders is open to conjecture. But
-evidence suggests that at least three operated
-south of the harbour and an unknown number
-north of the harbour. There was the 'Bondi
-Boys' responsible for bashings and murders at
-the Marks Park beat; there was the 'Alexandria
-Eight', centred on students at the Cleveland
-Street High School; the 'North Narra Boys'; the
-'Tamarama Three'; and - reputedly - an eastern
-suburbs gang who specialised in baseball bat
-attacks. Some members of these different groups
-knew each other."vii (Wotherspoon 2017)
 
+##### 4.4.4 Robbery
 
-In one case, all eight assailants were apprehended
-and convicted. During the trial the presiding judge
-noted the gravity and seriousness of the case
-distinguished by the cowardly nature of the gang
-attack with eight men against one; the degree
-of premeditation involved with obtaining of the
-telephone number with the intention of luring the
-victim to the scene; and the sheer savagery with
-which the attack was pressed home.
+There was evidence of robbery in some cases, such as a victim's pockets being turned out, their wallet, car or house keys stolen, or their car or house ransacked. Lack of evidence or witnesses made it difficult to verify if robbery was the primary motive for the crime or a secondary motive and a further means of victim humiliation.
 
 
-## 4.4.3 HIV AND AIDS
+##### 4.4.5 Alcohol and drugs
 
 
-Half of the 88 deaths took place between 1987
-and 1993 when AIDS was hitting its peak in
-terms of an irrational public "moral panic". There
-were cases where AIDS was documented to have
-played a role in motivating the assailant, or even
-adversely impacted police investigations, such
-as washing down crime scenes to avoid infection
-thereby tampering with forensic evidence.
+Use of alcohol and other drugs by both assailants and victims was commonly associated with these murders. In cases where the assailants were caught, evidence indicates they were sometimes under the influence of alcohol or marijuana. The assailant's state of intoxication was sometimes considered during the hearing as potentially affecting their interpretation and intensity of reaction to the sexual advance.
 
 
-"While the onset of HIV/AIDS has been seen
+##### 4.4.6 Conflating homosexuality with paedophilia
 
 
-as a motivating factor for some of the violence,
-the start of the violence predates that. A report
-by the NSW Anti-Discrimination Board in 1982
-already highlighted the issue, and over that
-decade, there was ongoing and increasing
-violence. In 1990 the Surry Hills police noted
-a 34% increase in reports of street bashings
-during that year alone."viii (Wotherspoon 2017)
+Paedophilia and the hate it engenders was raised in several cases. The prevailing myth that gay men are more likely to be paedophiles was asserted by some assailants as a reason why they targeted gay men in general. This suggests that multiple motives may have been at play in those cases, however, it must be acknowledged that conflating paedophilia and gayness is a form of homophobia and must therefore be considered as a form of bias.
 
-
-While fear associated with the Grim Reaper
-Campaign may have been intended to prevent
-new infections, it inadvertently fuelled stigma,
-discrimination and possibly homophobic violence.
-
-
-## 4.4.4 ROBBERY
-
-
-There was evidence of robbery in some cases,
-such as a victim's pockets being turned out, their
-wallet, car or house keys stolen, or their car or
-house ransacked. Lack of evidence or witnesses
-made it difficult to verify if robbery was the
-primary motive for the crime or a secondary
-motive and a further means of victim humiliation.
-
-
-## 4.4.5 ALCOHOL AND DRUGS
-
-
-Use of alcohol and other drugs by both assailants
-and victims was commonly associated with these
-murders. In cases where the assailants were
-caught, evidence indicates they were sometimes
-under the influence of alcohol or marijuana. The
-assailant's state of intoxication was sometimes
-considered during the hearing as potentially
-affecting their interpretation and intensity of
-reaction to the sexual advance.
-
-
-## 4.4.6 CONFLATING HOMOSEXUALITY WITH PAEDOPHILIA
-
-
-Paedophilia and the hate it engenders was
-raised in several cases. The prevailing myth that
-gay men are more likely to be paedophiles was
-asserted by some assailants as a reason why they
-targeted gay men in general. This suggests that
-multiple motives may have been at play in those
-cases, however, it must be acknowledged that
-conflating paedophilia and gayness is a form of
-homophobia and must therefore be considered as
-a form of bias.
-
-
-
-
-19
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-## 4.5 FINDINGS RELATED TO VICTIMS AND ASSAILANTS
+#### 4.5 FINDINGS RELATED TO VICTIMS AND ASSAILANTS
 
 
 Table 2. provides a high-level summary of the original list of 88 victims and assailants in these cases.
@@ -1764,583 +636,170 @@ Table 2. provides a high-level summary of the original list of 88 victims and as
 TABLE 2. DEMOGRAPHIC DETAILS ABOUT ASSAILANTS AND VICTIMS
 
 
-<table>
- <tr>
-  <th>DEMOGRAPHIC VARIABLE</th>
-  <th>ASSAILANTS</th>
-  <th>VICTIMS</th>
- </tr>
- <tr>
-  <td>Age</td>
-  <td>&lt; 30 years<br/>Many in early 20s<br/>Some teenage school children</td>
-  <td>Average age 42<br/>(older than for other homicidesix)</td>
- </tr>
- <tr>
-  <td>Culture/ethnicity/socioeconomic</td>
-  <td>Most from socially<br/>disadvantaged areas</td>
-  <td>Majority Anglo-Saxon<br/>Several non-Anglo-Saxon<br/>men identified (though as a racial motive) hatred not</td>
- </tr>
- <tr>
-  <td>Employment</td>
-  <td>More likely to be unemployed<br/>than the average NSW assailant</td>
-  <td>Most were employed in either<br/>blue or white-collar jobs<br/>Some retired or unemployed</td>
- </tr>
- <tr>
-  <td>Sexuality and Gender</td>
-  <td>Majority heterosexual<br/>Some had covert homosexual<br/>inclinations or curiosity about<br/>homoerotic encounter<br/>Some had sex with other men<br/>and/or the victim prior to the<br/>assault<br/>Young females were sometimes<br/>involved in group incidents</td>
-  <td>Almost all gay men<br/>Some presumed by assailants<br/>to be homosexual (sometimes<br/>inaccurately)<br/>Men who have sex with men<br/>Transgender women</td>
- </tr>
- <tr>
-  <td>Other factors</td>
-  <td>Illicit drugs and alcohol often<br/>involved in the incident<br/>Some had prior criminal records,<br/>including murder charges<br/>Some had mental health issues</td>
-  <td>Illicit drugs and alcohol often<br/>involved in the incident<br/>Some were of small physical build<br/>(a common gay stereotype at that<br/>time and/or were more able to<br/>be overpowered)<br/>Some had existing mental<br/>health issues</td>
- </tr>
-</table>
+<table> <tr> <th>DEMOGRAPHIC VARIABLE</th> <th>ASSAILANTS</th> <th>VICTIMS</th> </tr> <tr> <td>Age</td> <td>&lt; 30 years<br/>Many in early 20s<br/>Some teenage school children</td> <td>Average age 42<br/>(older than for other homicidesix)</td> </tr> <tr> <td>Culture/ethnicity/socioeconomic</td> <td>Most from socially<br/>disadvantaged areas</td> <td>Majority Anglo-Saxon<br/>Several non-Anglo-Saxon<br/>men identified (though as a racial motive) hatred not</td> </tr> <tr> <td>Employment</td> <td>More likely to be unemployed<br/>than the average NSW assailant</td> <td>Most were employed in either<br/>blue or white-collar jobs<br/>Some retired or unemployed</td> </tr> <tr> <td>Sexuality and Gender</td> <td>Majority heterosexual<br/>Some had covert homosexual<br/>inclinations or curiosity about<br/>homoerotic encounter<br/>Some had sex with other men<br/>and/or the victim prior to the<br/>assault<br/>Young females were sometimes<br/>involved in group incidents</td> <td>Almost all gay men<br/>Some presumed by assailants<br/>to be homosexual (sometimes<br/>inaccurately)<br/>Men who have sex with men<br/>Transgender women</td> </tr> <tr> <td>Other factors</td> <td>Illicit drugs and alcohol often<br/>involved in the incident<br/>Some had prior criminal records,<br/>including murder charges<br/>Some had mental health issues</td> <td>Illicit drugs and alcohol often<br/>involved in the incident<br/>Some were of small physical build<br/>(a common gay stereotype at that<br/>time and/or were more able to<br/>be overpowered)<br/>Some had existing mental<br/>health issues</td> </tr> </table>
 
 
+The above table suggests a confluence of socio- economic, geographical and psychological factors had aligned.
 
 
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-20
+> "Why would some young males be more prone to express these aspects in acts of extreme violence? Most, but not all, of the perpetrators of violence against gays were young men and boys from socially disadvantaged backgrounds.x The movement of openly gay men into areas such as Surry Hills, Redfern, Waterloo and Alexandria - suburbs with cultures less than empathetic to these newcomers - might also have played a role, although other perpetrators came from respectable middle-class suburbs. Some, but not all, had serious psychological problems;xi in the latter case, this could include those who do not wish to acknowledge their own same-sex attraction, and responded by violence against those who were open about it." (Wotherspoon 2017)
 
 
-The above table suggests a confluence of socio-
-economic, geographical and psychological factors
-had aligned.
-
-
-"Why would some young males be more prone
-to express these aspects in acts of extreme
-violence? Most, but not all, of the perpetrators of
-violence against gays were young men and boys
-from socially disadvantaged backgrounds.x The
-movement of openly gay men into areas such as
-Surry Hills, Redfern, Waterloo and Alexandria
-- suburbs with cultures less than empathetic to
-these newcomers - might also have played a role,
-although other perpetrators came from respectable
-middle-class suburbs. Some, but not all, had
-serious psychological problems;xi in the latter
-case, this could include those who do not wish to
-acknowledge their own same-sex attraction, and
-responded by violence against those who were
-open about it." (Wotherspoon 2017)
+#### 4.6 Findings related to criminal justice system responses
 
 
-## 4.6 FINDINGS RELATED TO CRIMINAL JUSTICE SYSTEM RESPONSES
+Prevailing societal attitudes about homosexuality and systemic homophobia across public institutions were also noted in police and legal professions. This impacted on if, and how, gay hate crimes were identified, investigated, prosecuted and sentenced.
 
 
-Prevailing societal attitudes about homosexuality
-and systemic homophobia across public institutions
-were also noted in police and legal professions.
-This impacted on if, and how, gay hate crimes were
-identified, investigated, prosecuted and sentenced.
+##### 4.6.1 Policing in NSW and its relationship with thE LGBTI community
 
 
-## 4.6.1 POLICING IN NSW AND ITS RELATIONSHIP WITH THE LGBTI COMMUNITY
+Of the 88 cases reviewed, approximately 30 remain unsolved.
 
-
-Of the 88 cases reviewed, approximately 30 remain
-unsolved.
 
+It is clear from the available information that both police and the judiciary were affected to some extent by prevailing homophobic attitudes. At a systemic level, homophobia shaped the development and enforcement of laws that had violent and lasting impacts on the community.
 
-It is clear from the available information that both
-police and the judiciary were affected to some extent
-by prevailing homophobic attitudes. At a systemic
-level, homophobia shaped the development and
-enforcement of laws that had violent and lasting
-impacts on the community.
-
-
-Homosexual acts were only decriminalised in NSW in
-1984, and until such time, police were familiar with
-implementing 'entrapment' powers which involved
-forceful policing behaviours where police would pose
-as homosexual men at beats to incite an arrest.
-
-
-Further, 'Homosexual Advance Defence' laws which
-were only repealed in NSW in 2014 resulted
-
-
-in varying levels of justice for gay male victims of
-homicide. These laws were used in several cases which
-directly and indirectly resulted in a reduced sentence to
-manslaughter, despite evidence of premeditation.
-
-
-At a procedural level, according to available police
-and court records, there were various attempts to make
-victims out to be promiscuous sexual predators or
-perverts, which impacted decisions to investigate and
-rulings made.
-
-
-"Parts of the police force did respond to the
-escalating epidemic of violence that was
-occurring; a Police-Gay Liaison Group was set up
-in 1985, and a Police Gay Liaison Officer was
-appointed in 1988. In the early 1990s, in the face
-of the still escalating violence and the resulting
-public outcry, the police set up a special taskforce
-to address violence occurring in the Oxford and
-Flinders Street areas.
-
 
-To some members of the community, these responses
-seemed inadequate....[leading] to the community
-setting up its own specialised group to monitor
-violence, [those being] the Lesbian and Gay Anti-
-Violence Project, and Dykes on Bikes [who] ran
-street patrols in the Oxford Street area.xii
+Homosexual acts were only decriminalised in NSW in 1984, and until such time, police were familiar with implementing 'entrapment' powers which involved forceful policing behaviours where police would pose as homosexual men at beats to incite an arrest.
 
 
-And it was probably true that the response of police
-to gay concerns was somewhat of a lottery, very
-much dependent on the individual officer, and while
-Surry Hills station was probably the most supportive,
-others, like those suburban ones in whose areas the
-beats were, were much less so.
-
-
-Indeed, a legitimate question to ask is "was it
-homophobia that existed in the police responses
-to anti-gay violence, to those deaths on the beats,
-was it a general pattern of official disinterest, or
-just incompetence?" In 2005, then Deputy State
-Coroner Jacqueline Milledge condemned police
-for their "lacklustre" and "shameful" investigations
-into missing television newsreader Ross Warren
-and barman John Russell, who both died on the
-Bondi-Tamarama cliffs in 1989.xiii Police originally
-dismissed their deaths as accidental falls, but
-Milledge - armed with Operation Taradale, a three-
-year investigation into possible gay-hate crimes
-led by then homicide detective Steve Page - found
-they were murdered amid a spate of attacks on
-homosexual men." (Wotherspoon 2017)
-
-
-
-
-21
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-While the findings in this Review showed some
-cases received thorough police investigation,
-this was certainly not the case for a number of
-other cases. For example, a prejudice motive was
-considered by police only for some investigations
-but not routinely. This is not solely attributable to
-homophobic attitudes within the NSW Police Force,
-but it did mean evidence was not uncovered in
-some cases and/or cases never progressed to the
-courts.
+Further, 'Homosexual Advance Defence' laws which were only repealed in NSW in 2014 resulted
 
 
-For example, in December 2017, in the third
-Coronial Inquest into the death of Scott Johnson,
-then State Coroner, Magistrate Michael Barnes
-concluded "Mr Johnson fell from the cliff top
-as a result of actual or threatened violence by
-unidentified persons who attacked him because
-they perceived him to be homosexual". This ruling
-came 29 years after Mr Johnson's death and
-two prior Coronial Inquests. Significant evidence
-relating to poor police process was presented to the
-second and third inquests drawing critical remarks
-indicating this played a role in stymying justice.
+in varying levels of justice for gay male victims of homicide. These laws were used in several cases which directly and indirectly resulted in a reduced sentence to manslaughter, despite evidence of premeditation.
 
 
-NSW Police processes and cultures shifted with
-the advent of the Gay and Lesbian Liaison Officer
-(GLLO) program over 25 years ago and the
-development of policies for police working with
-LGBTI communities. Indeed, the NSW Police Force
-was named a Gold Employer in the Australian
-Workplace Equality Index in 2017.
+At a procedural level, according to available police and court records, there were various attempts to make victims out to be promiscuous sexual predators or perverts, which impacted decisions to investigate and rulings made.
 
 
-"The 'GLLO' program - Gay and Lesbian
-Liaison Officers, located in many police stations
-across NSW - provides support for members
-of sexuality, gender diverse and intersex
-communities, continuing the work of the original
-Police Gay Liaison Officer first appointed
-nearly three decades ago, and a contingent
-of police officers are cheered by many as they
-now march in the annual Sydney Gay and
-Lesbian Mardi Gras parade, a far cry from the
-brutal confrontations of nearly forty years ago."
-(Wotherspoon 2017)
+> "Parts of the police force did respond to the escalating epidemic of violence that was occurring; a Police-Gay Liaison Group was set up in 1985, and a Police Gay Liaison Officer was appointed in 1988. In the early 1990s, in the face of the still escalating violence and the resulting public outcry, the police set up a special taskforce to address violence occurring in the Oxford and Flinders Street areas.
 
+> To some members of the community, these responses seemed inadequate....[leading] to the community setting up its own specialised group to monitor violence, [those being] the Lesbian and Gay Anti- Violence Project, and Dykes on Bikes [who] ran street patrols in the Oxford Street area.xii
 
-This momentum must translate to improved
-experiences for LGBTI people. This remains the
-challenge ahead.
+> And it was probably true that the response of police to gay concerns was somewhat of a lottery, very much dependent on the individual officer, and while Surry Hills station was probably the most supportive, others, like those suburban ones in whose areas the beats were, were much less so.
 
+> Indeed, a legitimate question to ask is "was it homophobia that existed in the police responses to anti-gay violence, to those deaths on the beats, was it a general pattern of official disinterest, or just incompetence?" In 2005, then Deputy State Coroner Jacqueline Milledge condemned police for their "lacklustre" and "shameful" investigations into missing television newsreader Ross Warren and barman John Russell, who both died on the Bondi-Tamarama cliffs in 1989.xiii Police originally dismissed their deaths as accidental falls, but Milledge - armed with Operation Taradale, a three- year investigation into possible gay-hate crimes led by then homicide detective Steve Page - found they were murdered amid a spate of attacks on homosexual men." (Wotherspoon 2017)
 
-## 4.6.2 LAWYERS AND THE JUDICIARY
+While the findings in this Review showed some cases received thorough police investigation, this was certainly not the case for a number of other cases. For example, a prejudice motive was considered by police only for some investigations but not routinely. This is not solely attributable to homophobic attitudes within the NSW Police Force, but it did mean evidence was not uncovered in some cases and/or cases never progressed to the courts.
 
 
-As part of this Review a variety of publicly available
-judicial and coronial documents pertaining to some
-of the alleged gay and trans hate crimes were
-analysed for evidence of bias.
+For example, in December 2017, in the third Coronial Inquest into the death of Scott Johnson, then State Coroner, Magistrate Michael Barnes concluded "Mr Johnson fell from the cliff top as a result of actual or threatened violence by unidentified persons who attacked him because they perceived him to be homosexual". This ruling came 29 years after Mr Johnson's death and two prior Coronial Inquests. Significant evidence relating to poor police process was presented to the second and third inquests drawing critical remarks indicating this played a role in stymying justice.
 
 
-The findings show that, consistent with much of the
-population at that time, a proportion of judges were
-homophobic, and sometimes societal homophobic
-attitudes came through in statements and rulings.
-For example, one judge in 1996, referring to an
-assailant being approached to have sex, stated,
-"Although it is no longer a crime, anal intercourse
-is to many members of the community both revolting
-and degrading".
+NSW Police processes and cultures shifted with the advent of the Gay and Lesbian Liaison Officer (GLLO) program over 25 years ago and the development of policies for police working with LGBTI communities. Indeed, the NSW Police Force was named a Gold Employer in the Australian Workplace Equality Index in 2017.
 
 
-In another case, the judge referred to the sexual
-advance as "grossly offensive". And in another,
-a victim was portrayed as a "predator of straight
-boys" who "would do anything for sex". This judge's
-remarks at sentencing pejoratively suggested that the
-victim had pursued the assailant "presumably with
-a view to persuading a heterosexual man to have
-sex with him", thus stigmatising his homosexuality,
-potentially overshadowing the culpability of the
-assailant, and prejudicing the case.
+> "The 'GLLO' program - Gay and Lesbian Liaison Officers, located in many police stations across NSW - provides support for members of sexuality, gender diverse and intersex communities, continuing the work of the original Police Gay Liaison Officer first appointed nearly three decades ago, and a contingent of police officers are cheered by many as they now march in the annual Sydney Gay and Lesbian Mardi Gras parade, a far cry from the brutal confrontations of nearly forty years ago." (Wotherspoon 2017)
 
 
-"Even within the legal system, homophobia could
-be said to exist. Defence lawyers could argue that
-sexual abuse as a child might be the reason for
-their client's violence against gay men, and it wasn't
-until early 2014, thirty years after male homosexual
-acts were decriminalised in NSW, that the so-called
-'gay panic' defence law was repealed - a welcome
-end to what had been called the 'most homophobic
-legal defence on the state's statute books'."xiv
-(Wotherspoon, 2017)
+This momentum must translate to improved experiences for LGBTI people. This remains the challenge ahead.
 
 
+##### 4.6.2 Lawyers and the judiciary
 
 
+As part of this Review a variety of publicly available judicial and coronial documents pertaining to some of the alleged gay and trans hate crimes were analysed for evidence of bias.
 
 
-23
+The findings show that, consistent with much of the population at that time, a proportion of judges were homophobic, and sometimes societal homophobic attitudes came through in statements and rulings. For example, one judge in 1996, referring to an assailant being approached to have sex, stated, "Although it is no longer a crime, anal intercourse is to many members of the community both revolting and degrading".
 
 
-IN PURSUIT OF TRUTH & JUSTICE
+In another case, the judge referred to the sexual advance as "grossly offensive". And in another, a victim was portrayed as a "predator of straight boys" who "would do anything for sex". This judge's remarks at sentencing pejoratively suggested that the victim had pursued the assailant "presumably with a view to persuading a heterosexual man to have sex with him", thus stigmatising his homosexuality, potentially overshadowing the culpability of the assailant, and prejudicing the case.
 
 
-## SECTION FIVE | CONCLUSIONS AND RECOMMENDATIONS
+> "Even within the legal system, homophobia could be said to exist. Defence lawyers could argue that sexual abuse as a child might be the reason for their client's violence against gay men, and it wasn't until early 2014, thirty years after male homosexual acts were decriminalised in NSW, that the so-called 'gay panic' defence law was repealed - a welcome end to what had been called the 'most homophobic legal defence on the state's statute books'."xiv (Wotherspoon, 2017)
 
+## SECTION FIVE
 
-The following conclusions have emerged in reviewing the available information. ACON has developed 18
-related recommendations to address key issues and concerns highlighted through this review process.
+### Conclusions and recommendations
 
+The following conclusions have emerged in reviewing the available information. ACON has developed 18 related recommendations to address key issues and concerns highlighted through this review process.
 
-## CONCLUSION 1
+#### Conclusion 1: Deepening understanding of the past to improve the future
 
+Between 1970 and 2000, violence was commonly experienced by LGBTI people - it was something to be expected, feared and avoided where possible. The 88 deaths investigated as part of this Review are a small sample of the violence experienced by the LGBTI community during this time. Many community members remain traumatised by their experiences. Prejudice-related violence continues to this day, however, the LGBTI community is still known to under-report violent crimes. Better prevention and support, in part, depends on better understanding of the extent of previous, as well as ongoing, violence against the community.
 
-DEEPENING UNDERSTANDING OF THE PAST
+##### Recommendations
 
+1.1. ACON recommends a Roundtable be supported and attended by key stakeholders including NSW Police Force, Victim Services, Attorney General's Office, and relevant community and legal services to explore issues relevant to historical violence including those contained in this report.
 
-TO IMPROVE THE FUTURE
 
+1.2 ACON recommends the NSW Government, in partnership with community, undertake a process to comprehensively explore, understand and document the extent of historical violence experienced by the LGBTI community.
 
-Between 1970 and 2000, violence was commonly
-experienced by LGBTI people - it was something to
-be expected, feared and avoided where possible.
-The 88 deaths investigated as part of this Review
-are a small sample of the violence experienced
-by the LGBTI community during this time. Many
-community members remain traumatised by their
-experiences. Prejudice-related violence continues to
-this day, however, the LGBTI community is still known
-to under-report violent crimes. Better prevention and
-support, in part, depends on better understanding of
-the extent of previous, as well as ongoing, violence
-against the community.
 
+1.3 ACON recommends development of academic and/or community-led research that i) examines the impact of historical violence on the health and wellbeing of the LGBTI community, and ii) explores approaches for restorative justice and care and support programs.
 
-## RECOMMENDATIONS
 
+#### Conclusion 2: Publicly acknowledging victims and survivors
 
-1. ACON recommends a Roundtable be supported and attended by key stakeholders including NSW Police Force, Victim Services, Attorney General's Office, and relevant community and legal services to explore issues relevant to historical violence including those contained in this report.
+To this day, there has not been adequate acknowledgement or recognition of the extent and severity of past hate crimes inflicted upon the LGBTI community in NSW. The killings detailed in this Report were gruesome. Victims' lives ended abruptly without warning or dignity. The ramifications are still being felt. ACON will be working with the community to capture their experiences of historical violence to inform the development of the Bondi Memorial Project; this process will be greatly assisted by formal public acknowledgment from key figures in the criminal justice and related systems.
 
+##### Recommendations
 
-1.2 ACON recommends the NSW Government,
-in partnership with community, undertake
-a process to comprehensively explore,
-understand and document the extent of
-historical violence experienced by the LGBTI
-community.
+2.1. ACON seeks acknowledgement or a formal apology by the NSW Parliament and/or the NSW Police Force to the LGBTI community for the inadequate or slow responses to violence throughout this period.
 
+2.2. ACON recommends that state and local government authorities consider formal opportunities to acknowledge and honour the lives of victims and survivors of LGBTI violence, for example through participation in or contribution to the Bondi Memorial project, or similar.
 
-1.3 ACON recommends development of academic
-and/or community-led research that i)
-examines the impact of historical violence
-on the health and wellbeing of the LGBTI
-community, and ii) explores approaches
-for restorative justice and care and support
-programs.
 
+#### Conclusion 3: Healing the legacy of violence
 
-## CONCLUSION 2
+The unexpected loss of a loved one due to violent homicide is a traumatic event that can result in complicated grief responses and even Post Traumatic Stress Disorder for survivors. This may be compounded where the victim is gay or transgender, especially if the victim was not out to their family, or other loved ones, as was more often the case in the 1980s and 1990s. Shame, denial, anger and guilt can linger, impacting the grieving process and recovery. In addition, there has been a lasting impact of violence for LGBTI people living during this period, where repeated exposure to the scourge of violence posed both a direct threat to people's lives, and a contributor to collective stress as a minority group.
 
+##### Recommendations
 
-PUBLICLY ACKNOWLEDGING VICTIMS
+3.1. ACON recommends funding be provided by Victim Services or a similar organisation for LGBTI counselling and other psychosocial support for people who were exposed to violence during the 1970s through 1990s. There are currently no funded LGBTI violence- specific counselling services. In particular, ACON recommends funding be provided to develop peer-led survivor support programs.
 
+#### Conclusion 4: Enhancing criminal justice system responses
 
-AND SURVIVORS
+When reflecting on the original list of 88 cases, patterns of bias within the criminal justice system emerge. Some decisions and actions, and indeed at times lack of action, taken by police and the courts appear to have been shaped by prejudice. The NSW criminal justice system was very slow to respond to the systematic attacks being carried out on the gay community and other related violence. This resulted in missed opportunities to protect lives. The extent of violence at beats was well known, but there was little or no response by government authorities. The full stories of how victims lost their lives or went missing are not known. Many facts pertaining to unsolved killings remain secrets locked in the minds of perpetrators who either remain free, were imprisoned for other crimes, or have since died. For some victims, the opportunity for justice has been lost forever.
 
+##### Recommendations
 
-To this day, there has not been adequate
-acknowledgement or recognition of the extent and
-severity of past hate crimes inflicted upon the LGBTI
-community in NSW. The killings detailed in this
-Report were gruesome. Victims' lives ended abruptly
-without warning or dignity. The ramifications are
-still being felt. ACON will be working with the
-community to capture their experiences of historical
-violence to inform the development of the Bondi
-Memorial Project; this process will be greatly assisted
-by formal public acknowledgment from key figures in
-the criminal justice and related systems.
+4.1. ACON recommends an independent investigation into the actions of the various arms of the criminal justice system to fully understand the impediments to justice during this period in history, their relevance to current practices, and to identify opportunities to finalise unsolved cases.
 
+4.2 ACON recommends establishment of a police taskforce or similar formal process to support and encourage survivors of violence and other community members with evidence relating to historical crimes to make an approach to the NSW Police Force to have their experiences recorded and investigated.
 
-## RECOMMENDATIONS
+4.3. ACON supports ongoing and new strategies to further strengthen the reporting of hate crimes and the examination of formalised third party reporting models similar to those used in other international jurisdictions.
 
+4.4 At present, very little data is collected on LGBTI populations in NSW Government agencies' data collection systems. ACON recommends the introduction of appropriate sexuality and gender indicators in health and justice data collection systems relating to LGBTI violence related crimes.
 
-1. ACON seeks acknowledgement or a formal apology by the NSW Parliament and/or the NSW Police Force to the LGBTI community for the inadequate or slow responses to violence throughout this period.
+4.5 ACON recommends continued diversity training for NSW Police Officers, developed in conjunction with the LGBTI community.
 
-2. ACON recommends that state and local government authorities consider formal opportunities to acknowledge and honour the lives of victims and survivors of LGBTI violence, for example through participation in or contribution to the Bondi Memorial project, or similar.
+#### Conclusion 5: Understanding and minimising bias in current responses to LGBTI hate crimes
 
+While there is evidence that bias was considered during some police investigations, bias was not consistently considered as a motive therefore hindering the justice process. The NSW Government should review and optimise existing legislation and policies, such as anti-vilification laws and bias assessment tools, as well as better monitor crime- related trends to protect vulnerable communities.
 
+##### Recommendations
 
+5.1. ACON recommends strengthening the Bias Crimes Unit's capacity to appropriately respond to the needs of LGBTI communities, and resources be dedicated to actively building a relationship between the unit and LGBTI community organsations.
 
-### CONCLUSION 3
+5.2 ACON recommends the development of a sexuality and gender identity prejudice assessment tool for use by police.
 
+5.3. ACON recommends sexuality and gender identity prejudice is routinely considered as a motive in homicides and that appropriate measures are explored to support this.
 
-HEALING THE LEGACY OF VIOLENCE
+5.4. ACON recommends the establishment of a working group to review existing legislation and policy to enhance protections for LGBTI communities and improve avenues for redress of violence and other related crimes.
 
+#### Conclusion 6: Securing ongoing efforts in prevention violence
 
-The unexpected loss of a loved one due to violent
-homicide is a traumatic event that can result
-in complicated grief responses and even Post
-Traumatic Stress Disorder for survivors. This may be
-compounded where the victim is gay or transgender,
-especially if the victim was not out to their family,
-or other loved ones, as was more often the case in
-the 1980s and 1990s. Shame, denial, anger and
-guilt can linger, impacting the grieving process and
-recovery. In addition, there has been a lasting impact
-of violence for LGBTI people living during this period,
-where repeated exposure to the scourge of violence
-posed both a direct threat to people's lives, and a
-contributor to collective stress as a minority group.
+Whilst killings and physical violence against gay men have reduced since the period of this investigation, anti-gay killings and violence still occur in NSW. Furthermore, LGBTI people continue to experience violence at higher rates than heterosexual populations, in particular, there has been a disturbing trend of increased physical and sexual violence against transgender people in recent times in NSW.
 
+Patterns of violence have also changed considerably in recent years with violence now occurring in new and more subtle forms which have significant mental health and other impacts on LGBTI community members. For example, the evolution of modern communication channels has seen increased reports of bullying, harassment, extortion and other crimes against members of the community.
 
-## RECOMMENDATIONS
+New and emerging forms of systemic violence have also been identified which require immediate attention in particular violence and harassment being experienced at alarming rates by LGBTI people in private and public housing settings.
 
+##### Recommendations
 
-1. ACON recommends funding be provided by Victim Services or a similar organisation for LGBTI counselling and other psychosocial support for people who were exposed to violence during the 1970s through 1990s. There are currently no funded LGBTI violence- specific counselling services. In particular, ACON recommends funding be provided to develop peer-led survivor support programs.
+6.1. ACON recommends the NSW Government continues to support LGBTI safety and inclusion education programs including those aimed at de-escalating violence experienced by LGBTI people as well as building resilience in LGBTI communities.
 
+6.2 ACON recommends the exploration of innovative programs that aim to identify potential offenders, settings and circcumstances where LGBTI hate crimes may occur.
 
 
+6.3. ACON recommends the development of collaborative and community-led violence prevention and support programs specifically for transgender communities.
 
-25
 
+## Section five |
 
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-## CONCLUSION 4
-
-
-ENHANCING CRIMINAL JUSTICE
-
-
-SYSTEM RESPONSES
-
-
-When reflecting on the original list of 88 cases,
-patterns of bias within the criminal justice system
-emerge. Some decisions and actions, and indeed at
-times lack of action, taken by police and the courts
-appear to have been shaped by prejudice. The NSW
-criminal justice system was very slow to respond to
-the systematic attacks being carried out on the gay
-community and other related violence. This resulted
-in missed opportunities to protect lives. The extent
-of violence at beats was well known, but there was
-little or no response by government authorities. The
-full stories of how victims lost their lives or went
-missing are not known. Many facts pertaining to
-unsolved killings remain secrets locked in the minds of
-perpetrators who either remain free, were imprisoned
-for other crimes, or have since died. For some victims,
-the opportunity for justice has been lost forever.
-
-
-## RECOMMENDATIONS
-
-
-1. ACON recommends an independent investigation into the actions of the various arms of the criminal justice system to fully understand the impediments to justice during this period in history, their relevance to current practices, and to identify opportunities to finalise unsolved cases.
-
-
-4.2 ACON recommends establishment of a police
-taskforce or similar formal process to support
-and encourage survivors of violence and other
-community members with evidence relating to
-historical crimes to make an approach to the
-NSW Police Force to have their experiences
-recorded and investigated.
-
-
-1. ACON supports ongoing and new strategies to further strengthen the reporting of hate crimes and the examination of formalised third party reporting models similar to those used in other international jurisdictions.
-
-
-4.4 At present, very little data is collected on LGBTI
-populations in NSW Government agencies'
-data collection systems. ACON recommends
-the introduction of appropriate sexuality and
-gender indicators in health and justice data
-collection systems relating to LGBTI violence
-related crimes.
-
-
-4.5 ACON recommends continued diversity
-training for NSW Police Officers, developed in
-conjunction with the LGBTI community.
-
-
-
-
-### CONCLUSION 5
-
-
-UNDERSTANDING AND MINIMISING BIAS IN
-
-
-CURRENT RESPONSES TO LGBTI HATE CRIMES
-
-
-While there is evidence that bias was considered
-during some police investigations, bias was not
-consistently considered as a motive therefore
-hindering the justice process. The NSW Government
-should review and optimise existing legislation
-and policies, such as anti-vilification laws and bias
-assessment tools, as well as better monitor crime-
-related trends to protect vulnerable communities.
-
-
-## RECOMMENDATIONS
-
-
-1. ACON recommends strengthening the Bias Crimes Unit's capacity to appropriately respond to the needs of LGBTI communities, and resources be dedicated to actively building a relationship between the unit and LGBTI community organsations.
-
-
-5.2 ACON recommends the development of
-a sexuality and gender identity prejudice
-assessment tool for use by police.
-
-
-1. ACON recommends sexuality and gender identity prejudice is routinely considered as a motive in homicides and that appropriate measures are explored to support this.
-
-2. ACON recommends the establishment of a working group to review existing legislation and policy to enhance protections for LGBTI communities and improve avenues for redress of violence and other related crimes.
-
-
-
-
-27
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-## CONCLUSION 6
-
-
-SECURING
-
-
-ONGOING EFFORTS IN
-PREVENTION
-
-
-VIOLENCE
-
-
-Whilst killings and physical violence against
-gay men have reduced since the period of this
-investigation, anti-gay killings and violence still occur
-in NSW. Furthermore, LGBTI people continue to
-experience violence at higher rates than heterosexual
-populations, in particular, there has been a disturbing
-trend of increased physical and sexual violence
-against transgender people in recent times in NSW.
-
-
-Patterns of violence have also changed considerably
-in recent years with violence now occurring in new
-and more subtle forms which have significant mental
-health and other impacts on LGBTI community
-members. For example, the evolution of modern
-communication channels has seen increased reports
-of bullying, harassment, extortion and other crimes
-against members of the community.
-
-
-New and emerging forms of systemic violence
-have also been identified which require immediate
-attention in particular violence and harassment being
-experienced at alarming rates by LGBTI people in
-private and public housing settings.
-
-
-## RECOMMENDATIONS
-
-
-1. ACON recommends the NSW Government continues to support LGBTI safety and inclusion education programs including those aimed at de-escalating violence experienced by LGBTI people as well as building resilience in LGBTI communities.
-
-
-6.2 ACON recommends the exploration
-of innovative programs that aim to
-identify potential offenders, settings and
-circcumstances where LGBTI hate crimes may
-occur.
-
-
-1. ACON recommends the development of collaborative and community-led violence prevention and support programs specifically for transgender communities.
-
-
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-28
-
-
-
-
-29
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-## SECTION FIVE | ENDNOTES
-
+### Endnotes
 
 i A relevant example of Professor Stephen Tomsen's work:
 
@@ -2351,68 +810,40 @@ S. Tomsen, 2009 Violence, Prejudice and Sexuality,
 Routledge, New York/London
 
 
-ii Violence and health: the ultimate public health challenge.
-Gordon Macdonald. Health Promotion International,
-Volume 17, Issue 4, 1 December 2002, Pages 293-295,
-https://doi.org/10.1093/heapro/17.4.293.
+ii Violence and health: the ultimate public health challenge. Gordon Macdonald. Health Promotion International, Volume 17, Issue 4, 1 December 2002, Pages 293-295, https://doi.org/10.1093/heapro/17.4.293.
 
 
-iii All the following material on gay life and its development
-in Sydney is from G Wotherspoon, Gay Sydney: A
-History, NewSouth Publishing, Sydney, 2016.
+iii All the following material on gay life and its development in Sydney is from G Wotherspoon, Gay Sydney: A History, NewSouth Publishing, Sydney, 2016.
 
 
-iv G Wotherspoon, '"The Greatest Menace Facing
-Australia": homosexuality and the State in NSW during
-the Cold War', Labour History, No 56 (May 1989),
-pp15-28.
+iv G Wotherspoon, '"The Greatest Menace Facing Australia": homosexuality and the State in NSW during the Cold War', Labour History, No 56 (May 1989), pp15-28.
 
 
-v 'Camp' was the word that sexual dissidents used to
-describe themselves and their world in pre-gay liberation
-days.
+v 'Camp' was the word that sexual dissidents used to describe themselves and their world in pre-gay liberation days.
 
 
-vi This was similar to what was occurring in the USA, where
-AIDS often seemed to be a contributing factor.
+vi This was similar to what was occurring in the USA, where AIDS often seemed to be a contributing factor.
 
 
-vii Duncan McNab, Getting away with MURDER, Vintage
-Books, Sydney, 2017, p151.
+vii Duncan McNab, Getting away with MURDER, Vintage Books, Sydney, 2017, p151.
 
 
-viii Martin Goddard, 'Breaking the silence', OutRage, June
-1991, pp18-22.
+viii Martin Goddard, 'Breaking the silence', OutRage, June 1991, pp18-22.
 
 
-ix J. Mouzos and S. Thompson (2000), Gay-Hate Related
-Homicides: An Overview of Major Findings in New South
-Wales. Australian Institute of Criminology Trends and
-Issues in Crime and Criminal Justice.
+ix J. Mouzos and S. Thompson (2000), Gay-Hate Related Homicides: An Overview of Major Findings in New South Wales. Australian Institute of Criminology Trends and Issues in Crime and Criminal Justice.
 
 
-x Martyn Goddard, 'Bashing back', OutRage, January
-1991, p18.
+x Martyn Goddard, 'Bashing back', OutRage, January 1991, p18.
 
 
-xi For a detailed study of this, see Stephen Tomsen, Hatred,
-Murder and Male Honour: Anti-homosexual Homicides
-in New South Wales, 1980-2000, Australian Institute of
-Criminology, Canberra, 2002.
+xi For a detailed study of this, see Stephen Tomsen, Hatred, Murder and Male Honour: Anti-homosexual Homicides in New South Wales, 1980-2000, Australian Institute of Criminology, Canberra, 2002.
 
 
-xii See Sydney Star Observer, 5 April 1991, p4.
-xiii For details, see http://www.sbs.com.au/news/thefeed/
-article/2016/08/31/police-admit-blunders-gay-hate-
-murder-hunt.
+xii See Sydney Star Observer, 5 April 1991, p4. xiii For details, see http://www.sbs.com.au/news/thefeed/ article/2016/08/31/police-admit-blunders-gay-hate- murder-hunt.
 
 
-xiv The 'gay panic defense' was a common-law legal defense
-that allowed the defendant to argue that the non-violent
-same-sex advances of the perpetrator were so offensive
-or frightening that they brought on a psychotic state
-characterized by unusual violence; it allowed a charge of
-murder to be downgraded to manslaughter.
+xiv The 'gay panic defense' was a common-law legal defense that allowed the defendant to argue that the non-violent same-sex advances of the perpetrator were so offensive or frightening that they brought on a psychotic state characterized by unusual violence; it allowed a charge of murder to be downgraded to manslaughter.
 
 
 
@@ -2431,93 +862,40 @@ IN PURSUIT OF TRUTH & JUSTICE
 IN PURSUIT OF TRUTH & JUSTICE
 
 
-## SECTION FIVE | APPENDIX 1
+## SECTION FIVE |
 
 
-## "Gay Hate Crimes in New South Wales from the 1970s"
+### APPENDIX 1
 
 
-## Garry Wotherspoon, May 2017
+#### "Gay Hate Crimes in New South Wales from the 1970s"
 
 
-'Our blood runs in the streets and in the parks and in casualty and in the morgue....
-'Our own blood, the blood of our brothers and sisters, has been spilt too often....
-'Our blood runs because in this country our political, educational, legal and
-religious systems actively encourage violence against us...
-'We are gay men and lesbians.'
-From the 'One in Seven' Manifesto, Sydney Star Observer, 5 April 1991
+**Garry Wotherspoon, May 2017**
 
 
-It is now known that from the 1970s through to the
-1990s, hundreds of members of Sydney's LGBTIQ
-communities experienced extremely violent assaults.
-Some of the bashings ended in hospitalization, and
-there were also disappearances and deaths for gay
-men or men who were perceived to be gay, and
-for trans* women; for some, the difference between
-assault and murder was often slender - good or
-bad luck. Many of these assaults occurred in and
-around the 'ghetto' area of Oxford Street or in the
-nearby suburbs, although some even happened in
-the person's home. As well, many of these assaults
-on men were at suburban beats.
+'Our blood runs in the streets and in the parks and in casualty and in the morgue.... 'Our own blood, the blood of our brothers and sisters, has been spilt too often.... 'Our blood runs because in this country our political, educational, legal and religious systems actively encourage violence against us... 'We are gay men and lesbians.' From the 'One in Seven' Manifesto, Sydney Star Observer, 5 April 1991
 
 
-Given prevailing social attitudes to dissident
-sexualities at the time - and even after male
-homosexual acts were decriminalised in early
-1984 - many of these crimes were inadequately
-dealt with by police, often being classified after
-desultory investigations as suicides, misadventure or
-accidents.
+It is now known that from the 1970s through to the 1990s, hundreds of members of Sydney's LGBTIQ communities experienced extremely violent assaults. Some of the bashings ended in hospitalization, and there were also disappearances and deaths for gay men or men who were perceived to be gay, and for trans* women; for some, the difference between assault and murder was often slender - good or bad luck. Many of these assaults occurred in and around the 'ghetto' area of Oxford Street or in the nearby suburbs, although some even happened in the person's home. As well, many of these assaults on men were at suburban beats.
 
 
-Many remain unsolved to this day, and several recent
-inquests have led to some cases being reopened,
-with a clear indication that, in the past, these cases
-were dealt with without 'due diligence' by the police.
+Given prevailing social attitudes to dissident sexualities at the time - and even after male homosexual acts were decriminalised in early 1984 - many of these crimes were inadequately dealt with by police, often being classified after desultory investigations as suicides, misadventure or accidents.
 
 
-This Report looks at what has been a tragic and
-shameful episode in Sydney's history; its revelations
-may hopefully lead to both a revisiting of that past
-with a view to closure for the many involved, and
-to a new way forward, especially for the wider
-Australian communities.
+Many remain unsolved to this day, and several recent inquests have led to some cases being reopened, with a clear indication that, in the past, these cases were dealt with without 'due diligence' by the police.
 
 
-## THE POLITICAL, RELIGIOUS AND SOCIAL CONTEXT
+This Report looks at what has been a tragic and shameful episode in Sydney's history; its revelations may hopefully lead to both a revisiting of that past with a view to closure for the many involved, and to a new way forward, especially for the wider Australian communities.
 
 
-Homosexuality was long seen as a 'problem' by
-the authorities in Australia, and it was classed as
-a crime in all Australian states until well into the
-latter half of the 20th century. Since the churches
-traditionally classed it as a sin, there was not only
-little compassion for homo-erotically inclined men,
-but the more conservative churches were in the
-forefront of those denying even the legitimacy of
-homosexuals as human beings, as with the Roman
-Catholic Church, which tried to stop homosexuals
-from even appearing before a Royal Commission
-into Human Relationships, set up by the Federal
-government in 1974. And the medical profession
-allowed such barbarities as aversion therapy and
-psychosurgery.
+##### The political, religious and social context
 
 
-And the police, as enforcers of the law and
-reflecting prevailing social attitudes, had
-little toleration for what they saw as perverts,
-degenerates, effeminates, and paedophiles. Over
-the decades, they had even acted as agents
-provocateurs to entrap homo-erotically inclined
-men in suspect situations, and it would seem that
-they were given unofficial blessing for this when the
-Roman Catholic Superintendent of Police in Sydney
-and later Police Commissioner, Colin Delaney,
-declared in the late 1950s that homosexuality was
-'the greatest social menace facing Australia'.
+Homosexuality was long seen as a 'problem' by the authorities in Australia, and it was classed as a crime in all Australian states until well into the latter half of the 20th century. Since the churches traditionally classed it as a sin, there was not only little compassion for homo-erotically inclined men, but the more conservative churches were in the forefront of those denying even the legitimacy of homosexuals as human beings, as with the Roman Catholic Church, which tried to stop homosexuals from even appearing before a Royal Commission into Human Relationships, set up by the Federal government in 1974. And the medical profession allowed such barbarities as aversion therapy and psychosurgery.
+
+
+And the police, as enforcers of the law and reflecting prevailing social attitudes, had little toleration for what they saw as perverts, degenerates, effeminates, and paedophiles. Over the decades, they had even acted as agents provocateurs to entrap homo-erotically inclined men in suspect situations, and it would seem that they were given unofficial blessing for this when the Roman Catholic Superintendent of Police in Sydney and later Police Commissioner, Colin Delaney, declared in the late 1950s that homosexuality was 'the greatest social menace facing Australia'.
 
 
 Things did begin to change in the later decades of
@@ -2525,554 +903,160 @@ Things did begin to change in the later decades of
 
 
 
-It is now known that
-from the 1970s through
-to the 1990s, hundreds
-of members of Sydney's
-LGBTIQ communities
-experienced extremely
-violent assaults.
+It is now known that from the 1970s through to the 1990s, hundreds of members of Sydney's LGBTIQ communities experienced extremely violent assaults.
 
 
-IN PURSUIT OF TRUTH & JUSTICE
 
 
-32
+the 20th century. Baby boomers came of age in the 1960s and chose different paths, and that decade passed into history as 'the swinging sixties', when young people were willing to experiment, as the cliché went, in 'sex and drugs and rock and roll', and they also questioned many of the traditional truisms of the past, and took to the streets to demonstrate for a better world.
 
 
-the 20th century. Baby boomers came of age in the
-1960s and chose different paths, and that decade
-passed into history as 'the swinging sixties', when
-young people were willing to experiment, as the
-cliché went, in 'sex and drugs and rock and roll',
-and they also questioned many of the traditional
-truisms of the past, and took to the streets to
-demonstrate for a better world.
+It was into this changing world that the gay movement emerged here in Sydney.
 
 
-It was into this changing world that the gay
-movement emerged here in Sydney.
+##### The growth of the 'gay movement' in sydney
 
 
-## THE GROWTH OF THE 'GAY MOVEMENT' IN SYDNEY
+Sydney had long had a flourishing 'camp' life, although it was little involved in political activism. Following the Stonewall Riots in New York in late June 1969 - when patrons of a gay bar fought back against police over three nights, with ever increasing support - a new group, the cleverly named Campaign Against Moral Persecution [CAMP] was set up in Sydney in 1970. Its main objectives were getting the law changed, taking on the medical profession over aversion therapy and psychosurgery, and making Australians aware that homosexuals were actually 'just like everybody else', except for what they might do in bed or who they might love.
 
 
-Sydney had long had a flourishing 'camp' life,
-although it was little involved in political activism.
-Following the Stonewall Riots in New York in late
-June 1969 - when patrons of a gay bar fought
-back against police over three nights, with ever
-increasing support - a new group, the cleverly
-named Campaign Against Moral Persecution
-[CAMP] was set up in Sydney in 1970. Its main
-objectives were getting the law changed, taking
-on the medical profession over aversion therapy
-and psychosurgery, and making Australians aware
-that homosexuals were actually 'just like everybody
-else', except for what they might do in bed or who
-they might love.
-
-
-At around the same time, a commercial gay scene
-was emerging in Sydney, located around Oxford
-Street. It was close to Kings Cross and the long-
-existing 'camp' nightlife there which had become
-fairly unpleasant place with the influx of American
-soldiers on R & R leave from the war in Vietnam.
-Drugs, sex for sale and drunken soldiers created
-an unattractive atmosphere for Sydney's gay
-community. Also, since rents were far cheaper in
-Oxford Street than in Kings Cross, new bars began
-to open there over the following decade - like
-Ivy's Birdcage and Capriccio's, then Flo's Palace,
-Patches, Tropicana, the Ox, Pete's Bar, and Palms,
-to name but a few.
-
-
-<table>
- <tr>
-  <th>a</th>
- </tr>
- <tr>
-  <td></td>
- </tr>
-</table>
-
-
-Another factor leading to a higher profile of
-Sydney's gay communities was the process of
-gentrification; as more and more gay men moved
-into the traditionally blue-collar suburbs around
-Oxford Street, it became seen as the gay precinct.
-Known as the 'ghetto' or 'the golden mile', it saw
+At around the same time, a commercial gay scene was emerging in Sydney, located around Oxford Street. It was close to Kings Cross and the long- existing 'camp' nightlife there which had become fairly unpleasant place with the influx of American soldiers on R & R leave from the war in Vietnam. Drugs, sex for sale and drunken soldiers created an unattractive atmosphere for Sydney's gay community. Also, since rents were far cheaper in Oxford Street than in Kings Cross, new bars began to open there over the following decade - like Ivy's Birdcage and Capriccio's, then Flo's Palace, Patches, Tropicana, the Ox, Pete's Bar, and Palms, to name but a few.
 
 
+<table> <tr> <th>a</th> </tr> <tr> <td></td> </tr> </table>
 
 
-33
+Another factor leading to a higher profile of Sydney's gay communities was the process of gentrification; as more and more gay men moved into the traditionally blue-collar suburbs around Oxford Street, it became seen as the gay precinct. Known as the 'ghetto' or 'the golden mile', it saw
 
 
-IN PURSUIT OF TRUTH & JUSTICE
+more and more bars and services moving into the area. A gay media emerged, with papers like The Star Observer, Campaign, and OutRage, as well as numerous newsletters and smaller publications catering for individual groups. All of this contributed to a sense of a gay identity and the growth of a gay community.
 
 
-more and more bars and services moving into the
-area. A gay media emerged, with papers like The
-Star Observer, Campaign, and OutRage, as well
-as numerous newsletters and smaller publications
-catering for individual groups. All of this contributed
-to a sense of a gay identity and the growth of a gay
-community.
+This incredible concentration of activity within a relatively short space of time, in a discrete geographic area, all occurred in a city where male homosexual activity was still illegal.
 
 
-This incredible concentration of activity within
-a relatively short space of time, in a discrete
-geographic area, all occurred in a city where male
-homosexual activity was still illegal.
-
-
-## DECRIMINALISATION
-
-
-There had long been a push to change the law that
-criminalised love and sex between consenting male
-adults, and this push intensified after a similar law
-was changed in Britain in 1967. This had been one
-of CAMP's main objectives, as it was of many of the
-Gay Liberation groups that formed over the 1970s.
-Increasing support for law change also came from a
-wide range of experts
-academics, criminologists,
-of the medical profession - who all argued that
-homosexuality no longer deserved a criminal status,
-and that law reform was overdue. The lawmakers
-themselves were reluctant to act.
-
-
-<table>
- <tr>
-  <th>-</th>
- </tr>
- <tr>
-  <td>civil libertarian lawyers, and even growing numbers</td>
- </tr>
-</table>
-
-
-During that decade, there were ongoing
-demonstrations in Sydney focussing on what needed
-to be changed to give homosexuals equal civil
-rights with their heterosexual counterparts. One of
-the catchcries of the time was 'stop police attacks,
-on gays, women and blacks'. And this catchcry
-highlights an important fact: that the police were
-seen as the enemy by many of these emerging
-social movements. As for gays, the police had
-never been sympathetic to their parading through
-Sydney's streets. And this antipathy culminated
-in the notorious first Mardi Gras, on the night of
-Saturday 24 June 1978; it started out as a peaceful
-march down Oxford Street from Taylor's Square to
-Hyde Park, and ended in Kings Cross with police
-wading into the marchers with their batons, leading
-to 53 arrests.
-
-
-On the following Monday, at Central Court where
-the cases of those arrested were to be heard, the
-police blocked entry into the courtroom, ignoring
-the presiding magistrate's orders. Such was the
-
-
-Homophobic violence
-is violence in which the
-sexuality of the victim
-can be reasonably judged
-as having been a likely
-significant factor, and in a
-country where masculinity
-was such an important
-element in the national
-identity, personified by
-the 'Aussie bloke', there
-was little sympathy for
-those men who did not
-conform; they were mostly
-despised.
-
-
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-34
-
-
-outcry over this police intimidation that groups such
-the Council of Civil Liberties, numerous lawyers,
-and even politicians condemned the police heavy-
-handedness. The outcome was that within a year
-the Summary Offences Act, which gave police
-the powers they had abused, was repealed and
-replaced by the Offences in Public Places Act.
-
-
-It was only early in 1984, after prolonged
-pressure on politicians that a private members Bill,
-introduced by the Labor Premier Neville Wran and
-seconded by the Liberal Leader of the Opposition
-Nick Greiner, was passed on a conscience vote,
-albeit with an unequal age of consent.
-
-
-Decriminalisation should have been the marker for a
-new period of tolerance for homosexuals, leading to
-gradual acceptance. However, overlapping with the
-final push for law reform, a new tragedy occurred,
-one which would turn the clock back as far as
-acceptance was concerned - the appearance of
-what was at first called GRID [Gay Related Immune
-Deficiency], then later, AIDS. The advent of AIDS
-brought with it an increase in hate violence towards
-the community.
-
-
-Despite HIV being an infection contractible by
-anyone, irrespective of age, gender, ethnicity or
-sexuality, due to it being first diagnosed in the
-gay community, it was a disaster for progress on
-LGBTIQ acceptance, not to mention people's health,
-well-being and dignity. Homophobia became rife,
-and was given 'legitimation' by a sensationalising
-media. Homophobia found its expression in more
-than just words. There were constant reports in both
-the gay press and the mainstream media about
-increasing discrimination against homosexuals
-and they noted the increase in violence against
-gay men, transgender women and lesbians;
-homophobia took on a physical form.
-
-
-## HOMOPHOBIA AND ITS ROOTS
-
-
-It is clear that decades, centuries even, of negative
-stereotypes of homosexually-inclined men fostered
-attitudes of contempt, leaving them vulnerable to
-verbal and, in many instances, physical abuse.xiv
-
-
-It is also probable that the more open manifestations
-of violent homophobia - as with these cases -
-developed in conjunction with the growth of a
-
-
-modern open homosexual identity in the second
-half of the nineteenth century. As gays emerged into
-public consciousness, it was also a time when, to
-various extents, some Australian social institutions
-still perpetuated homophobic attitudes; for the legal
-and medical professions and some churches, gays
-were either "illegal, sick, or sinful", if not all three.
-
-
-Homophobic violence is violence in which the
-sexuality of the victim can be reasonably judged
-as having been a likely significant factor, and in a
-country where masculinity was such an important
-element in the national identity, personified by
-the 'Aussie bloke', there was little sympathy for
-those men who did not conform; they were mostly
-despised. Indeed, there are clear links between
-homophobia to various aspects of masculinity, such
-as heterosexism and ideas about 'male honour',
-aspects that in themselves existed in the wider
-Australian community.
-
-
-Why would some young males be more prone to
-express these aspects in acts of extreme violence?
-Most, but not all, of the perpetrators of violence
-against gays were young men and boys from
-socially disadvantaged backgrounds. The movement
-of openly gay men into areas such as Surry Hills,
-Redfern, Waterloo and Alexandria - suburbs with
-cultures less than empathetic to these newcomers
+##### Decriminalisation
+
+
+There had long been a push to change the law that criminalised love and sex between consenting male adults, and this push intensified after a similar law was changed in Britain in 1967. This had been one of CAMP's main objectives, as it was of many of the Gay Liberation groups that formed over the 1970s. Increasing support for law change also came from a wide range of experts academics, criminologists, of the medical profession - who all argued that homosexuality no longer deserved a criminal status, and that law reform was overdue. The lawmakers themselves were reluctant to act.
+
+
+<table> <tr> <th>-</th> </tr> <tr> <td>civil libertarian lawyers, and even growing numbers</td> </tr> </table>
+
+
+During that decade, there were ongoing demonstrations in Sydney focussing on what needed to be changed to give homosexuals equal civil rights with their heterosexual counterparts. One of the catchcries of the time was 'stop police attacks, on gays, women and blacks'. And this catchcry highlights an important fact: that the police were seen as the enemy by many of these emerging social movements. As for gays, the police had never been sympathetic to their parading through Sydney's streets. And this antipathy culminated in the notorious first Mardi Gras, on the night of Saturday 24 June 1978; it started out as a peaceful march down Oxford Street from Taylor's Square to Hyde Park, and ended in Kings Cross with police wading into the marchers with their batons, leading to 53 arrests.
+
+
+On the following Monday, at Central Court where the cases of those arrested were to be heard, the police blocked entry into the courtroom, ignoring the presiding magistrate's orders. Such was the
+
+
+Homophobic violence is violence in which the sexuality of the victim can be reasonably judged as having been a likely significant factor, and in a country where masculinity was such an important element in the national identity, personified by the 'Aussie bloke', there was little sympathy for those men who did not conform; they were mostly despised.
+
+
+outcry over this police intimidation that groups such the Council of Civil Liberties, numerous lawyers, and even politicians condemned the police heavy- handedness. The outcome was that within a year the Summary Offences Act, which gave police the powers they had abused, was repealed and replaced by the Offences in Public Places Act.
+
+
+It was only early in 1984, after prolonged pressure on politicians that a private members Bill, introduced by the Labor Premier Neville Wran and seconded by the Liberal Leader of the Opposition Nick Greiner, was passed on a conscience vote, albeit with an unequal age of consent.
+
+
+Decriminalisation should have been the marker for a new period of tolerance for homosexuals, leading to gradual acceptance. However, overlapping with the final push for law reform, a new tragedy occurred, one which would turn the clock back as far as acceptance was concerned - the appearance of what was at first called GRID [Gay Related Immune Deficiency], then later, AIDS. The advent of AIDS brought with it an increase in hate violence towards the community.
+
+
+Despite HIV being an infection contractible by anyone, irrespective of age, gender, ethnicity or sexuality, due to it being first diagnosed in the gay community, it was a disaster for progress on LGBTIQ acceptance, not to mention people's health, well-being and dignity. Homophobia became rife, and was given 'legitimation' by a sensationalising media. Homophobia found its expression in more than just words. There were constant reports in both the gay press and the mainstream media about increasing discrimination against homosexuals and they noted the increase in violence against gay men, transgender women and lesbians; homophobia took on a physical form.
+
+
+##### Homophobia and its roots
+
+
+It is clear that decades, centuries even, of negative stereotypes of homosexually-inclined men fostered attitudes of contempt, leaving them vulnerable to verbal and, in many instances, physical abuse.xiv
+
+
+It is also probable that the more open manifestations of violent homophobia - as with these cases - developed in conjunction with the growth of a
+
+
+modern open homosexual identity in the second half of the nineteenth century. As gays emerged into public consciousness, it was also a time when, to various extents, some Australian social institutions still perpetuated homophobic attitudes; for the legal and medical professions and some churches, gays were either "illegal, sick, or sinful", if not all three.
+
+
+Homophobic violence is violence in which the sexuality of the victim can be reasonably judged as having been a likely significant factor, and in a country where masculinity was such an important element in the national identity, personified by the 'Aussie bloke', there was little sympathy for those men who did not conform; they were mostly despised. Indeed, there are clear links between homophobia to various aspects of masculinity, such as heterosexism and ideas about 'male honour', aspects that in themselves existed in the wider Australian community.
+
+
+Why would some young males be more prone to express these aspects in acts of extreme violence? Most, but not all, of the perpetrators of violence against gays were young men and boys from socially disadvantaged backgrounds. The movement of openly gay men into areas such as Surry Hills, Redfern, Waterloo and Alexandria - suburbs with cultures less than empathetic to these newcomers
 - might also have played a role, although other
-perpetrators came from respectable middle-
-class suburbs. Some, but not all, had serious
-psychological problems; in the latter case, this could
-include those who do not wish to acknowledge their
-own same-sex attraction, and responded by violence
-against those who were open about it.
+perpetrators came from respectable middle- class suburbs. Some, but not all, had serious psychological problems; in the latter case, this could include those who do not wish to acknowledge their own same-sex attraction, and responded by violence against those who were open about it.
 
 
-The scale of what was occurring was
-unprecedented. While it is impossible to know the
-exact number of murders that might have occurred in
-this period from the late 1970s through to the early
-1990s, reputable sources - including The Sydney
-Morning Herald, a newspaper of record - suggest
-that over eighty men died or disappeared in NSW
-during an epidemic of gay hate crimes.
+The scale of what was occurring was unprecedented. While it is impossible to know the exact number of murders that might have occurred in this period from the late 1970s through to the early 1990s, reputable sources - including The Sydney Morning Herald, a newspaper of record - suggest that over eighty men died or disappeared in NSW during an epidemic of gay hate crimes.
 
 
-And many of these attacks, some of the most brutal,
-occurred at gay beats, a place where men go to
-have consensual, non-commercial casual sex with
-other men, and activities that can be seen as either
-a scandal or a kind of liberation.
+And many of these attacks, some of the most brutal, occurred at gay beats, a place where men go to have consensual, non-commercial casual sex with other men, and activities that can be seen as either a scandal or a kind of liberation.
 
+As to how many 'gangs' were involved in these bashings and murders, this is open to conjecture. But evidence suggests at least three south of the harbour and an unknown number north of the harbour. There was the 'Bondi Boys' responsible for bashings and murders at the Marks Park beat; there was the 'Alexandria Eight', centred on students at the Cleveland Street High School; the 'North Narra Boys'; the 'Tamarama Three'; and - reputedly - an eastern suburbs gang who specialised in baseball bat attacks. Some of the members of these different groups knew each other.
 
 
+While the onset of HIV/AIDS has been seen as a motivating factor for some of the violence, the start of the violence predates that. A report by the NSW Anti-Discrimination Board in 1982 already highlighted the issue, and over that decade, there was ongoing and increasing violence. In 1990 the Surry Hills police noted a 34% increase in reports of street bashings during that year alone.
 
-35
 
+Even within the legal system, homophobia could be said to exist. Defence lawyers could argue that sexual abuse as a child might be the reason for their client's violence against gay men, and it wasn't until early 2014, thirty years after male homosexual acts were decriminalised in NSW, that the so-called 'gay panic' defence law was repealed, a welcome end to what had been called the 'most homophobic legal defence on the state's statute books'.
 
-IN PURSUIT OF TRUTH & JUSTICE
 
+It was not until the violent murder of Richard Johnson at the Alexandria Park beat in January 1990 that the mainstream media began to take a growing interest, it is only now, well into the second decade of the twenty-first century that the magnitude of what occurred is starting to surface and be acknowledged and addressed.
 
-As to how many 'gangs' were involved in these
-bashings and murders, this is open to conjecture.
-But evidence suggests at least three south of the
-harbour and an unknown number north of the
-harbour. There was the 'Bondi Boys' responsible for
-bashings and murders at the Marks Park beat; there
-was the 'Alexandria Eight', centred on students at
-the Cleveland Street High School; the 'North Narra
-Boys'; the 'Tamarama Three'; and - reputedly - an
-eastern suburbs gang who specialised in baseball
-bat attacks. Some of the members of these different
-groups knew each other.
 
+##### Human rights - Progress of gay, lesbian and transgender rights
 
-While the onset of HIV/AIDS has been seen as
-a motivating factor for some of the violence, the
-start of the violence predates that. A report by the
-NSW Anti-Discrimination Board in 1982 already
-highlighted the issue, and over that decade, there
-was ongoing and increasing violence. In 1990 the
-Surry Hills police noted a 34% increase in reports of
-street bashings during that year alone.
 
+While decriminalisation was a major step forward, there were other battles to be fought, and there were some successes. A range of issues started to find resolution in the following decades.
 
-Even within the legal system, homophobia could
-be said to exist. Defence lawyers could argue that
-sexual abuse as a child might be the reason for their
-client's violence against gay men, and it wasn't until
-early 2014, thirty years after male homosexual acts
-were decriminalised in NSW, that the so-called 'gay
-panic' defence law was repealed, a welcome end
-to what had been called the 'most homophobic legal
-defence on the state's statute books'.
 
+In 1993 Clover Moore's Homosexual Anti-Vilification Bill was eventually passed in state parliament. The City of Sydney set up its Relationships Declaration
 
-It was not until the violent murder of Richard Johnson
-at the Alexandria Park beat in January 1990 that
-the mainstream media began to take a growing
-interest, it is only now, well into the second decade
-of the twenty-first century that the magnitude of what
-occurred is starting to surface and be acknowledged
-and addressed.
 
+Program in July 2004, and the state government launched the NSW Relationships Register in 2010.
 
-## HUMAN RIGHTS - PROGRESS OF GAY, LESBIAN AND TRANSGENDER RIGHTS
 
+On the other hand, it was only in May 2003 that the state government equalised the age of consent to sixteen, nineteen years after decriminalisation.
 
-While decriminalisation was a major step forward,
-there were other battles to be fought, and there were
-some successes. A range of issues started to find
-resolution in the following decades.
 
+Aside from the above, lesbians and gays in NSW can now foster and adopt children, and be out at most workplaces. And there is now widespread and increasing social acceptance of same-sex relationships. Perhaps most significantly, when a major public figure dies, their same-sex partner can now be openly acknowledged in the bereaved party at their funeral. The recent marriage survey also demonstrates the acceptability across Australia of same sex relationships and marriage.
 
-In 1993 Clover Moore's Homosexual Anti-Vilification
-Bill was eventually passed in state parliament. The
-City of Sydney set up its Relationships Declaration
 
+State laws are not the only laws that affect the LGBTIQ communities; there are federal laws that also have an impact. By 2010, the federal government had amended over 70 pieces of legislation to remove ongoing discrimination, and gay couples are treated like heterosexual couples for purposes of welfare and taxation. And anti- discrimination laws to protect us have been passed in most states and at federal level. So there have been significant improvements in four decades in the civil sphere, but there are some areas that still need to be addressed.
 
-Program in July 2004, and the state government
-launched the NSW Relationships Register in 2010.
 
+Similarly, law reform for transgender and intersex people has been slow with anti-discrimination protections on the grounds of gender identity and intersex status only introduced under Federal Anti- Discrimination law in 2013. A number of structural and legal hurdles remain, particularly in relation to the requirement of sterilising surgical procedures for people with an intersex variation and compulsory divorce for the legal recognition of sex in NSW for trans people.
 
-On the other hand, it was only in May 2003 that
-the state government equalised the age of consent
-to sixteen, nineteen years after decriminalisation.
 
+##### POLICING IN NSW AND ITS RELATIONSHIP WITH THE LGBTI COMMUNITY
 
-Aside from the above, lesbians and gays in NSW
-can now foster and adopt children, and be out at
-most workplaces. And there is now widespread
-and increasing social acceptance of same-sex
-relationships. Perhaps most significantly, when a
-major public figure dies, their same-sex partner
-can now be openly acknowledged in the bereaved
-party at their funeral. The recent marriage survey
-also demonstrates the acceptability across Australia
-of same sex relationships and marriage.
-
-
-State laws are not the only laws that affect the
-LGBTIQ communities; there are federal laws
-that also have an impact. By 2010, the federal
-government had amended over 70 pieces of
-legislation to remove ongoing discrimination, and
-gay couples are treated like heterosexual couples
-for purposes of welfare and taxation. And anti-
-discrimination laws to protect us have been passed
-in most states and at federal level. So there have
-been significant improvements in four decades in
-the civil sphere, but there are some areas that still
-need to be addressed.
-
-
-Similarly, law reform for transgender and intersex
-people has been slow with anti-discrimination
-protections on the grounds of gender identity and
-intersex status only introduced under Federal Anti-
-Discrimination law in 2013. A number of structural
-and legal hurdles remain, particularly in relation to
-the requirement of sterilising surgical procedures for
-people with an intersex variation and compulsory
-divorce for the legal recognition of sex in NSW for
-trans people.
-
-
-## POLICING IN NSW AND ITS RELATIONSHIP WITH THE LGBTI COMMUNITY
-
-
-The police and homosexuals in NSW have never
-had an easy relationship. Evidence from over the
-last century - of the use of agents provocateurs,
-of entrapments, of the most senior police officer
-declaring homosexuals to be Australia's 'greatest
-social menace', to the battles of the first Mardi
-
-
-
-
-IN PURSUIT OF TRUTH & JUSTICE
-
-
-36
-
-
-Gras - through to the more recent incident at the
-2013 Mardi Gras, involving a handcuffed 18-year-
-old being thrown to the ground by police, all are
-examples of what generated, over time, a 'lack of
-trust' between the gay community and the NSW
-police.
-
-
-Parts of the police force did respond to the
-escalating epidemic of violence that was occurring;
-a Police-Gay Liaison Group was set up in 1985,
-and a Police Gay Liaison Officer was appointed
-in 1988. In the early 1990s, in the face of the still
-escalating violence and the resulting public outcry,
-the police set up a special taskforce to address
-violence occurring in the Oxford and Flinders Street
-areas.
+The police and homosexuals in NSW have never had an easy relationship. Evidence from over the last century - of the use of agents provocateurs, of entrapments, of the most senior police officer declaring homosexuals to be Australia's 'greatest social menace', to the battles of the first Mardi
 
+Gras - through to the more recent incident at the 2013 Mardi Gras, involving a handcuffed 18-year- old being thrown to the ground by police, all are examples of what generated, over time, a 'lack of trust' between the gay community and the NSW police.
 
-To some members of the community, these responses
-seemed inadequate. The Gay and Lesbian Rights
-Lobby had published The Streetwatch Report in
-April 1990, and this led in June 1991 to the
-community setting up its own specialised group to
-monitor violence, the Lesbian and Gay Anti-Violence
-Project; and Dykes on Bikes ran street patrols in the
-Oxford Street area.
 
+Parts of the police force did respond to the escalating epidemic of violence that was occurring; a Police-Gay Liaison Group was set up in 1985, and a Police Gay Liaison Officer was appointed in 1988. In the early 1990s, in the face of the still escalating violence and the resulting public outcry, the police set up a special taskforce to address violence occurring in the Oxford and Flinders Street areas.
 
-Such was the concern about the way police were
-perceived as failing to adequately handle gay hate
-crimes that some members of the gay community
-even set up a vigilante group, called One in Seven.
-One evening in late 1990, a banner was hoisted
-on light poles outside the Darlinghurst Court House;
-its message was 'THIS SUMMER, FIGHT BACK.
-BASH THE BASHERS'. It lasted for only three hours
-before police took it down, but it certainly reflected
-the growing mood of concern about apparent
-police indifference to the violence against gay men,
-lesbians and trans women.
 
+To some members of the community, these responses seemed inadequate. The Gay and Lesbian Rights Lobby had published The Streetwatch Report in April 1990, and this led in June 1991 to the community setting up its own specialised group to monitor violence, the Lesbian and Gay Anti-Violence Project; and Dykes on Bikes ran street patrols in the Oxford Street area.
 
-And it was probably true that the response of police
-to gay concerns was somewhat of a lottery, very
-much dependent on the individual officer, and while
-Surry Hills station was probably the most supportive,
-others, like those suburban ones in whose areas the
-beats were, were much less so.
 
+Such was the concern about the way police were perceived as failing to adequately handle gay hate crimes that some members of the gay community even set up a vigilante group, called One in Seven. One evening in late 1990, a banner was hoisted on light poles outside the Darlinghurst Court House; its message was 'THIS SUMMER, FIGHT BACK. BASH THE BASHERS'. It lasted for only three hours before police took it down, but it certainly reflected the growing mood of concern about apparent police indifference to the violence against gay men, lesbians and trans women.
 
-Indeed, a legitimate question to ask is "was it
-homophobia that existed in the police responses
-to anti-gay violence, to those deaths on the beats,
-was it a general pattern of official disinterest, or
-just incompetence?" In 2005, then Deputy State
 
+And it was probably true that the response of police to gay concerns was somewhat of a lottery, very much dependent on the individual officer, and while Surry Hills station was probably the most supportive, others, like those suburban ones in whose areas the beats were, were much less so.
 
-Coroner Jacqueline Milledge condemned police
-for their "lacklustre" and "shameful" investigations
-into missing television newsreader Ross Warren
-and barman John Russell, who both died on the
-Bondi-Tamarama cliffs in 1989. Police originally
-dismissed their deaths as accidental falls, but
-Milledge - armed with Operation Taradale, a three-
-year investigation into possible gay-hate crimes
-led by then homicide detective Steve Page - found
-they were murdered amid a spate of attacks on
-homosexual men.
 
+Indeed, a legitimate question to ask is "was it homophobia that existed in the police responses to anti-gay violence, to those deaths on the beats, was it a general pattern of official disinterest, or just incompetence?" In 2005, then Deputy State
 
-Beneficial change within the police force is
-ongoing. The 'GLLO' program - Gay and Lesbian
-Liaison Officers, located in many police stations
-across NSW - provides support for members of
-sexuality, gender diverse and intersex communities,
-continuing the work of the original Police Gay
-Liaison Officer first appointed nearly three decades
-ago, and a contingent of police officers are cheered
-by many as they now march in the annual Sydney
-Gay and Lesbian Mardi Gras parade, a far cry
-from the brutal confrontations of nearly forty years
-ago.
 
+Coroner Jacqueline Milledge condemned police for their "lacklustre" and "shameful" investigations into missing television newsreader Ross Warren and barman John Russell, who both died on the Bondi-Tamarama cliffs in 1989. Police originally dismissed their deaths as accidental falls, but Milledge - armed with Operation Taradale, a three- year investigation into possible gay-hate crimes led by then homicide detective Steve Page - found they were murdered amid a spate of attacks on homosexual men.
 
-The work of individuals within the police force,
-who pursued the truth about the deaths of gay men
-and trans* women with commendable fortitude,
-often in the face of official indifference, should
-also be acknowledged. There were officers like
-Steve McCann and Steve Page, whose tireless
-and diligent work led to various cases being
-reinvestigated and sent to new Coroner's hearings.
 
+Beneficial change within the police force is ongoing. The 'GLLO' program - Gay and Lesbian Liaison Officers, located in many police stations across NSW - provides support for members of sexuality, gender diverse and intersex communities, continuing the work of the original Police Gay Liaison Officer first appointed nearly three decades ago, and a contingent of police officers are cheered by many as they now march in the annual Sydney Gay and Lesbian Mardi Gras parade, a far cry from the brutal confrontations of nearly forty years ago.
 
-## LOOKING BACK - AND FORWARD
 
+The work of individuals within the police force, who pursued the truth about the deaths of gay men and trans* women with commendable fortitude, often in the face of official indifference, should also be acknowledged. There were officers like Steve McCann and Steve Page, whose tireless and diligent work led to various cases being reinvestigated and sent to new Coroner's hearings.
 
-We should always acknowledge our past, but we
-should never be captive to it. That is why this Report
-is important, in that it brings to light part of our city's
-shameful history, giving us all a chance to reflect on
-this, and seek out a new way to move forward.
 
+##### Looking back - and forward
 
-
-
-
-
-
-
-ACON | 414 ELIZABETH STREET, SURRY HILLS NSW 2010 | 02 9206 2000
-WWW.ACON.ORG.AU
-ISBN-13: 978-0-646-98876-4
-
-
-
-
-
-
+We should always acknowledge our past, but we should never be captive to it. That is why this Report is important, in that it brings to light part of our city's shameful history, giving us all a chance to reflect on this, and seek out a new way to move forward.
