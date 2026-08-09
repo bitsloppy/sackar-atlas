@@ -30,6 +30,7 @@ Zotero's item types map automatically to the site's `source_type` values:
 | Book Section       | book-chapter         |
 | Journal Article    | academic-article     |
 | Conference Paper   | academic-article     |
+| **Artwork**        | **photograph**       |
 
 If the automatic mapping is wrong, override it with `source_type:` in the Extra field (see below).
 
@@ -104,6 +105,68 @@ All other tags are plain and appear in the site's tag list. During migration, ex
   (e.g. Alan Rosendale; David McMahon; Det. Sgt. Page; family testimony at inquest)
 - **`secondary`** (default) — journalism, documentary, commentary about the events
 - **`tertiary`** — overview, aggregation, background context
+
+---
+
+## Photographs and archival images
+
+Use the **Artwork** item type in Zotero for photographs, press photos, and archival images.
+This maps automatically to `source_type: photograph` on the site.
+
+### Standard Zotero fields to fill in
+
+| Zotero field | What to put there |
+|---|---|
+| Title | Descriptive title for the image (e.g. "1978 Mardi Gras march, Oxford Street") |
+| Artist | Photographer or creator credit (family name, given name) |
+| Archive | Holding repository (e.g. "State Library of NSW", "Trove / NLA") |
+| Archive Location | Folder, box, series, or call number within the archive |
+| Rights | Rights statement (e.g. "Public domain", "CC BY 4.0", "© Fairfax Media") |
+| Date | Date the image was taken or published (ISO 8601 or year) |
+| URL | Direct URL to the archival record if available |
+
+### Required Extra fields
+
+```
+sackar_atlas_id: trove-1978-mardi-gras-photo
+source_type: photograph
+significance: primary-source-quality
+related_events: mardi-gras-1978
+```
+
+Use namespaced tags for cross-references (same as all other source types):
+```
+event:mardi-gras-1978
+case:mark-stewart
+```
+
+### Linking an image to an event
+
+Once the Zotero item is added, tell Web Ninja:
+- The **event slug** (e.g. `mardi-gras-1978`)
+- The **sackar_atlas_id** from the Extra field (e.g. `trove-1978-mardi-gras-photo`)
+
+Web Ninja will:
+1. Create `site/public/images/events/{slug}/`
+2. Add the `image:` block to the event YAML:
+   ```yaml
+   image:
+     path: events/mardi-gras-1978/hero.jpg
+     source_id: trove-1978-mardi-gras-photo
+     alt: "Crowd of protesters march along Oxford Street at night, police visible at edges"
+   ```
+3. Tell you where to drop the file
+
+The attribution line on the page (artist, archive, rights) is rendered automatically
+from the Zotero record — you do not need to duplicate it in the YAML.
+
+### Image file guidelines
+
+- Location: `site/public/images/events/{event-slug}/hero.jpg`
+- Max ~1200px on longest edge, <300KB, JPEG quality ~85
+- Prefer originals from Trove, State Library NSW, NAA, or other open archives
+- Check rights carefully before committing — most archival press photos are not public domain
+- See `site/public/images/events/README.md` for the full workflow
 
 ---
 

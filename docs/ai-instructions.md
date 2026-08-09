@@ -89,6 +89,11 @@ date:                   # ISO 8601 or year only
 related_cases:          # list of slugs
 related_people:         # list of slugs
 related_locations:      # list of slugs
+image:                  # optional — see "Images" section below
+  path: events/{slug}/hero.jpg
+  source_id: <zotero-sackar-atlas-id>   # must be a photograph-type Zotero item
+  alt: "Descriptive alt text"
+  caption: "Optional override — if omitted, rendered from Zotero record"
 ```
 
 ### People
@@ -101,6 +106,37 @@ sexuality:
   confidence:           # confirmed | probable | possible | unknown
   source:               # what the confidence is based on
 ```
+
+### Images
+
+Images for event pages (and eventually other collections) are stored in
+`site/public/images/` and committed to the repo. Attribution comes from a linked
+Zotero source record — there is no separate attribution field in the YAML.
+
+**File location convention:**
+```
+site/public/images/
+  events/{event-slug}/hero.jpg
+```
+
+**To add an image for an event:**
+1. Add an **Artwork** item to Zotero (group 6623153). Required Extra fields:
+   ```
+   sackar_atlas_id: your-slug-here
+   source_type: photograph
+   ```
+   Standard fields: Title, Artist, Archive, Archive Location, Rights, Date.
+2. Tell Web Ninja: event slug + sackar_atlas_id.
+3. Web Ninja creates the folder and adds the `image:` YAML block.
+4. Drop the optimised file (max ~1200px, <300KB JPEG) into the folder.
+
+**Attribution at build time:** `getEntry('sources', image.source_id)` fetches the
+Zotero record. The rendered caption = source title + artist + rights statement.
+Do not duplicate attribution fields in the event YAML.
+
+See `docs/zotero-sources.md` — "Photographs and archival images" section — for full detail.
+
+---
 
 ### Sources (Zotero)
 
@@ -218,4 +254,4 @@ The following sections will be added before public launch:
 ---
 
 *This document is a living reference. Updated as the schema evolves.*
-*Last updated: 2026-08-06*
+*Last updated: 2026-08-09*

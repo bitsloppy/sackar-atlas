@@ -1336,6 +1336,34 @@ const events = defineCollection({
     content_warnings: z.array(ContentWarning).default([]),
     tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
 
+    // --- Hero image ---------------------------------------------------------
+    //
+    // One optional hero image per event. The image file lives in
+    // site/public/images/events/{event-slug}/ and is committed to the repo.
+    // Attribution is sourced from the linked sources/ record (a Zotero
+    // 'artwork' item) — do not duplicate attribution fields here.
+    //
+    // Workflow:
+    //   1. Add image to Zotero as an 'artwork' item (set sackar_atlas_id in Extra).
+    //   2. Download the high-res image file.
+    //   3. Tell Web Ninja: event slug + Zotero sackar_atlas_id.
+    //   4. Web Ninja creates site/public/images/events/{slug}/ and adds this field.
+    //   5. Drop the image file into that folder.
+
+    image: z.object({
+      /** File path relative to site/public/images/ — e.g. "events/mardi-gras-1978/hero.jpg". */
+      path: z.string(),
+      /** sackar_atlas_id of the Zotero 'artwork' source record — drives attribution. */
+      source_id: z.string(),
+      /** Alt text for accessibility. Describe the image content, not the event title. */
+      alt: z.string(),
+      /**
+       * Optional caption override.
+       * If omitted, caption is rendered from source metadata (title + artist + rights).
+       */
+      caption: z.string().nullable().optional(),
+    }).nullable().optional(),
+
     /** True when this is a stub record — placeholder for future research. */
     stub: z.boolean().default(false),
 
@@ -2185,6 +2213,7 @@ const sources = defineCollection({
       'book',              // whole book
       'book-chapter',      // specific chapter in a book
       'academic-article',  // journal article or academic commentary
+      'photograph',        // archival photograph, press photo, or documentary image
     ]),
 
     // --- Publication info (articles) ----------------------------------------
@@ -2285,6 +2314,49 @@ const sources = defineCollection({
 
     /** Other source records closely related to this one (e.g. ABC articles linked from The Conversation piece). */
     related_sources: z.array(z.string()).default([]),
+
+    // --- Image / photograph fields ------------------------------------------
+    // Populated from Zotero artwork item fields. Null for non-image source types.
+    // Use Extra: rights to set a rights statement on any source type.
+
+    /**
+     * Artist or photographer credit — family name + initials.
+     * Populated automatically from the Zotero 'artist' creator type.
+     * e.g. "Hanson P" for a press photograph by Peter Hanson.
+     * null for non-photograph sources.
+     */
+    artist: z.string().nullable().optional(),
+
+    /**
+     * Archive or repository holding the original.
+     * e.g. "State Library of NSW", "National Archives of Australia", "Trove".
+     */
+    archive: z.string().nullable().optional(),
+
+    /**
+     * Call number or catalog reference within the archive.
+     * e.g. "ON 388/Box 65/Item 12", "NAA: A12111, 2/1978/17/25".
+     */
+    call_number: z.string().nullable().optional(),
+
+    /**
+     * Location within the archive — folder, box, series.
+     * Complements call_number for complex archival items.
+     */
+    archive_location: z.string().nullable().optional(),
+
+    /**
+     * Medium or format of the original item.
+     * e.g. "gelatin silver print", "colour transparency", "digital photograph".
+     */
+    medium: z.string().nullable().optional(),
+
+    /**
+     * Rights statement — drives the attribution line rendered on the site.
+     * e.g. "Public domain", "CC BY 4.0", "© Fairfax Media — all rights reserved".
+     * Set via Zotero Rights field (artwork) or Extra: rights (any type).
+     */
+    rights: z.string().nullable().optional(),
 
     tags: z.array(z.union([z.string(), z.number()]).transform(String)).default([]),
 

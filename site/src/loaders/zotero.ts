@@ -64,12 +64,14 @@ const ITEM_TYPE_MAP: Record<string, string> = {
   report:           'online-news',      // fallback; override with Extra: source_type
   thesis:           'academic-article',
   presentation:     'online-news',
+  artwork:          'photograph',       // photographs, illustrations, archival images
 };
 
 const VALID_SOURCE_TYPES = new Set([
   'online-news', 'newspaper', 'community-press', 'magazine-feature',
   'podcast-episode', 'radio-segment', 'documentary', 'tv-segment',
   'book', 'book-chapter', 'academic-article',
+  'photograph',     // archival and documentary images; artwork Zotero type
 ]);
 
 const SKIP_TYPES = new Set(['attachment', 'note']);
@@ -102,6 +104,7 @@ function formatCreator(c: { name?: string; firstName?: string; lastName?: string
 const PRIMARY_CREATOR_TYPES = new Set([
   'author', 'director', 'creator', 'journalist', 'presenter',
   'podcaster', 'performer', 'producer',
+  'artist', 'photographer',  // artwork / photograph items
 ]);
 
 function primaryCreator(creators: any[] = []): string | null {
@@ -289,6 +292,16 @@ function transformItem(item: any): Record<string, unknown> {
     related_sources:         splitList(x.related_sources), // keep in Extra — no tag equivalent
 
     tags: plainTags,
+
+    // --- Image / photograph fields (artwork items) -------------------------
+    // Populated from standard Zotero artwork fields; null for non-image items.
+    // rights may also be set via Extra: rights for any source type.
+    artist:           d.itemType === 'artwork' ? primaryCreator(d.creators) : null,
+    archive:          d.archive          ?? null,
+    call_number:      d.callNumber        ?? null,
+    archive_location: d.archiveLocation   ?? null,
+    medium:           d.medium            ?? null,
+    rights:           d.rights            ?? x.rights ?? null,
 
     // Stable human-readable slug — used as the content collection ID
     sackar_atlas_id: x.sackar_atlas_id ?? null,
