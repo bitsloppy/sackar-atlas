@@ -1,18 +1,22 @@
 # Sackar Atlas — WA Redesign Brief
 
-_For a new session picking up the rebuild. Last updated: 2026-07-24._
+_For a new session picking up the rebuild. Last updated: 2026-08-09._
 
 ---
 
 ## What this project is
 
-**Sackar Atlas** is a public data project making the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023) navigable. It documents 30 hate crime deaths in Sydney — the people, places, institutions, and failures — and makes the connections between them visible in a way a PDF cannot.
+**Sackar Atlas** is an online reference book — a human-verified, machine-readable corpus of primary source documents about LGBTIQ hate crime deaths in NSW. It makes the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023) and its surrounding record navigable for researchers, journalists, community, and historians.
 
-It is a research project by Anna Roberts. All data is drawn from public records (SCOI report, Hansard, coronials, Trove). It is not a community heritage project; it is a cartographer's project.
+It documents 30+ deaths — the people, places, institutions, and failures — and makes the connections between them visible in a way a PDF cannot. It is a journalism and research project by Anna Roberts, built on public records (SCOI, Hansard, coronials, Trove, Parrabell). It is not a community heritage project; it is a cartographer's project.
 
 - **Repo:** `~/code/sackar-atlas` → https://github.com/bitsloppy/sackar-atlas
 - **Live site:** https://sackar-atlas.soft-hill-5225.workers.dev
 - **Git identity:** Bit Sloppy / hello@bitsloppy.com
+
+### Current dataset state (as of 2026-08-09)
+
+11 cases published, 107 pages, 0 errors.
 
 ---
 
@@ -64,10 +68,10 @@ All data lives in `~/code/sackar-atlas/data/` (flat structure). The Astro conten
 
 | Collection | Path | Count |
 |---|---|---|
-| Cases | `data/cases/` | 7 files (5 published, 1 held, 1 excluded) |
-| Locations | `data/locations/` | 21 files |
+| Cases | `data/cases/` | 11 files (10 published, 1 held, 1 excluded) |
+| Locations | `data/locations/` | 27 files |
 | Events | `data/events/` | 6 files |
-| People | `data/people/` | ~42 files |
+| People | `data/people/` | ~57 files |
 | Sources | `data/sources/`, `data/source-collections/` | several |
 | Recommendations | `data/recommendations/` | stub |
 | Testimonies | `data/testimonies/` | 3 |
@@ -95,6 +99,16 @@ The old content config is at `site-v1/src/content/config.ts` — copy and adapt 
 | People index | `/people/` | List of people |
 | Person detail | `/people/[slug]/` | Person record |
 | Map | `/map/` | Leaflet map (this is custom, not a WA component) |
+
+### New pages — added 2026-08-09
+
+These three pages are required for the project's journalistic credibility. Build them as part of the initial launch, not as an afterthought. See full content briefs in `docs/site-pages-about.md`.
+
+| Page | Route | Notes |
+|---|---|---|
+| About the data | `/about/` | What the corpus is; how sources are prepared; how to use the data; audience: researchers, journalists, community |
+| AI use policy | `/about/ai/` | Project-level statement on how AI tools were used and what human oversight applies |
+| Corrections | `/corrections/` | How to submit a correction; what happens next; displayed corrections register (initially empty) |
 
 ### Key components from v1 to rebuild
 
