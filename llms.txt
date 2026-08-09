@@ -5,7 +5,7 @@ derived from the 2023 NSW Special Commission of Inquiry into LGBTIQ Hate Crimes.
 
 - Repo: https://github.com/bitsloppy/sackar-atlas
 - Licence: CC-BY 4.0 (data)
-- Citation: Roberts A (2026) *Queer Heritage: Historical LGBTIQ Hate Crimes in Sydney* [data set], GitHub
+- Citation: Roberts A (2026) *Sackar Atlas* [data set], GitHub, https://github.com/bitsloppy/sackar-atlas
 
 ## Collections
 

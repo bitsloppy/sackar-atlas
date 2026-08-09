@@ -17,8 +17,7 @@ Hate Crimes (the SCOI, Commissioner: Justice John Sackar AO KC).
 - **Repo:** https://github.com/bitsloppy/sackar-atlas
 - **Live site:** https://sackar-atlas.soft-hill-5225.workers.dev
 - **Licence:** CC-BY 4.0 (data), see `LICENSE-data`
-- **Citation:** Roberts A (2026) *Queer Heritage: Historical LGBTIQ Hate Crimes in Sydney*
-  [data set], GitHub, https://github.com/bitsloppy/sackar-atlas
+- **Citation:** Roberts A (2026) *Sackar Atlas* [data set], GitHub, https://github.com/bitsloppy/sackar-atlas
 
 The primary source for every case is the SCOI report. Secondary sources are managed in
 a Zotero group library; the RIS export lives at `data/sources/zotero-export/sackar-atlas-sources.ris`.

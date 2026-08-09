@@ -22,28 +22,28 @@ All citations use the Australian Government Style Manual (AGSM) author–date sy
 
 ### The dataset
 
-Roberts A (2026) *Queer Heritage: Historical LGBTIQ Hate Crimes in Sydney* [data set],
-GitHub, https://github.com/bitsloppy/queer-heritage, accessed [Day Month Year].
+Roberts A (2026) *Sackar Atlas* [data set],
+GitHub, https://github.com/bitsloppy/sackar-atlas, accessed [Day Month Year].
 
 ### An individual record
 
-Roberts A (2026) '[Record title]', *Queer Heritage* [data set record],
-https://github.com/bitsloppy/queer-heritage/blob/main/data/sydney/[collection]/[slug].md,
+Roberts A (2026) '[Record title]', *Sackar Atlas* [data set record],
+https://github.com/bitsloppy/sackar-atlas/blob/main/data/[collection]/[slug].md,
 accessed [Day Month Year].
 
 **Example:**
-Roberts A (2026) 'Mark Stewart', *Queer Heritage* [data set record],
-https://github.com/bitsloppy/queer-heritage/blob/main/data/sydney/cases/mark-stewart.md,
+Roberts A (2026) 'Mark Stewart', *Sackar Atlas* [data set record],
+https://github.com/bitsloppy/sackar-atlas/blob/main/data/cases/mark-stewart.md,
 accessed 18 July 2026.
 
 ### Original journalism
 
-Roberts A ([Day Month Year]) '[Article title]', *Queer Heritage*,
+Roberts A ([Day Month Year]) '[Article title]', *Sackar Atlas*,
 https://[domain]/journalism/[slug], accessed [Day Month Year].
 
 ### Licence
 
-All data under `data/sydney/` is published under **CC-BY 4.0**. Attribution is a
+All data under `data/` is published under **CC-BY 4.0**. Attribution is a
 licence condition. A machine-readable `CITATION.cff` is included in the repository
 root. At v1.0, a DOI will be minted via [Zenodo](https://zenodo.org).
 
