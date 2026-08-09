@@ -30,21 +30,16 @@ import Layout from '../../layouts/Layout.astro';
       <div class="wa-stack wa-gap-m">
         <h2>What this is</h2>
         <p>
-          Sackar Atlas is a curated, human-verified corpus of primary source documents about
-          LGBTIQ hate crime deaths in NSW, built around the 2023 Special Commission of Inquiry
-          into LGBTIQ Hate Crimes (Commissioner: Justice John Sackar AO KC).
+          Sackar Atlas is a curated, human-verified corpus of source documents about LGBTIQ hate crime deaths in NSW. It is built around the report published by the <a href="https://www.nsw.gov.au/departments-and-agencies/cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes">2023 Special Commission of Inquiry into LGBTIQ Hate Crimes</a> (Commissioner: Justice John Sackar AO KC).
         </p>
         <p>
-          It is an online reference book — designed to make a dense government inquiry
-          accessible to researchers, journalists, community members, and historians. The SCOI
-          report is a PDF. This project takes the public record and makes its connections
-          legible: real people, real places, an interconnected institutional system, all drawn
-          from primary sources. It is also machine-readable, designed to be usable by AI tools
-          as well as humans.
+          It is an online reference book. Key documents surrounding these events — the SCOI report, the ACON report, police Strikeforce documents – are presented together as clean and referenced markdown files. </p>
+
+          <p> The project aims to make the findings of a dense government inquiry accessible to researchers, journalists, community members, and historians. It is also machine-readable, designed to be usable by AI tools as well as humans.
         </p>
+      
         <p>
-          This is a journalism and research project by Anna Roberts. It is not a community
-          heritage project. The infrastructure is built to support that work by others.
+          This is a journalism and research project by Anna Roberts. While it is not a community heritage project, it hopes to provide an infrastructure that can support that work by others.
         </p>
       </div>
 
@@ -52,9 +47,7 @@ import Layout from '../../layouts/Layout.astro';
       <div class="wa-stack wa-gap-m">
         <h2>The primary sources</h2>
         <p>
-          The project draws on seven primary source documents. All are publicly available.
-          All are committed to the repository as clean Markdown files. PDFs are available via
-          the download links below.
+          The project draws on seven primary source documents. All are publicly available. All are committed to the repository as clean Markdown files. PDFs are available via the download links below.
         </p>
 
         <table class="sources-table">
@@ -95,13 +88,13 @@ import Layout from '../../layouts/Layout.astro';
               <td>Strike Force Parrabell Final Report</td>
               <td>NSW Police Force</td>
               <td>2018</td>
-              <td>Obtained via GIPA — not publicly available</td>
+              <td><a href="https://www.police.nsw.gov.au/safety_and_prevention/your_community/working_with_lgbtqia/strike_force_parrabell" target="_blank" rel="noopener">NSW Police ↗</a></td>
             </tr>
             <tr>
-              <td>In Pursuit of Truth & Justice</td>
-              <td>ACON / Pride History Group</td>
+              <td>In Pursuit of Truth and Justice: Documenting Gay and Transgender Prejudice Killings in NSW in the Late 20th Century</td>
+              <td>ACON</td>
               <td>2018</td>
-              <td><a href="https://www.pridehistory.org.au/" target="_blank" rel="noopener">Pride History Group ↗</a></td>
+              <td><a href="https://www.aconhealth.org.au/report_into_historic_gay_hate_murders_calls_for_justice_and_healing" target="_blank" rel="noopener">ACON website ↗</a></td>
             </tr>
             <tr>
               <td>Report No. 58 — Gay and Transgender Hate Crimes 1970–2010</td>
@@ -127,7 +120,7 @@ import Layout from '../../layouts/Layout.astro';
             inline in <code>sources/EDITORIAL-DECISIONS.md</code>.
           </li>
           <li>
-            Scripts are used only for cleanup and adding reference IDs — not for content.
+            <a href="https://github.com/bitsloppy/sackar-atlas/tree/main/scripts" target="_blank" rel="noopener">Scripts</a> are used only for cleanup and adding reference IDs — not for content.
           </li>
           <li>
             The source files are the source of truth. The structured data YAML is derived
