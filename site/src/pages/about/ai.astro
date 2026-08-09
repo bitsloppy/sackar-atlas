@@ -8,16 +8,16 @@ import Layout from '../../layouts/Layout.astro';
 >
 
   <div class="page-prose section">
-    <wa-stack gap="xl">
+    <div class="wa-stack wa-gap-xl">
 
       <!-- Page header -->
-      <wa-stack gap="xs">
+      <div class="wa-stack wa-gap-xs">
         <p class="breadcrumb"><a href="/about/">About the data</a> /</p>
         <h1>AI use</h1>
         <p class="subtitle">
           How AI tools were used in building this project, and what human oversight applies.
         </p>
-      </wa-stack>
+      </div>
 
       <!-- The short version -->
       <wa-callout variant="neutral" open>
@@ -28,38 +28,38 @@ import Layout from '../../layouts/Layout.astro';
       </wa-callout>
 
       <!-- What AI did -->
-      <wa-stack gap="m">
+      <div class="wa-stack wa-gap-m">
         <h2>What AI did</h2>
 
-        <wa-stack gap="s">
+        <div class="wa-stack wa-gap-s">
           <h3>Infrastructure</h3>
           <p>
             Schema design, site build, data pipeline scripts. Built collaboratively with AI
             assistance; these are not user-facing content. The code is open source and
             inspectable on <a href="https://github.com/bitsloppy/sackar-atlas">GitHub</a>.
           </p>
-        </wa-stack>
+        </div>
 
-        <wa-stack gap="s">
+        <div class="wa-stack wa-gap-s">
           <h3>Research assistance</h3>
           <p>
             Scanning source documents, extracting structured data, suggesting cross-references
             between records. AI proposes; Anna verifies from the primary source before anything
             is committed to the data.
           </p>
-        </wa-stack>
+        </div>
 
-        <wa-stack gap="s">
+        <div class="wa-stack wa-gap-s">
           <h3>Prose drafting</h3>
           <p>
             Case narratives and analysis were drafted with AI assistance working directly from
             the source documents, then reviewed and edited by Anna Roberts before publication.
           </p>
-        </wa-stack>
-      </wa-stack>
+        </div>
+      </div>
 
       <!-- What AI did not do -->
-      <wa-stack gap="m">
+      <div class="wa-stack wa-gap-m">
         <h2>What AI did not do</h2>
         <ul>
           <li>
@@ -72,10 +72,10 @@ import Layout from '../../layouts/Layout.astro';
             AI did not access sources other than the documents provided to it.
           </li>
         </ul>
-      </wa-stack>
+      </div>
 
       <!-- Uncertainty ladder -->
-      <wa-stack gap="m">
+      <div class="wa-stack wa-gap-m">
         <h2>How we distinguish AI contribution from primary source</h2>
         <p>
           The data schema uses an explicit uncertainty ladder:
@@ -110,7 +110,7 @@ import Layout from '../../layouts/Layout.astro';
           Fields labelled <code>AI inference</code> are not findings. They are working notes,
           clearly marked, pending human review.
         </p>
-      </wa-stack>
+      </div>
 
       <!-- Corrections -->
       <wa-callout variant="warning" open>
@@ -124,7 +124,7 @@ import Layout from '../../layouts/Layout.astro';
         <a href="/about/">← About the data</a>
       </p>
 
-    </wa-stack>
+    </div>
   </div>
 
 </Layout>

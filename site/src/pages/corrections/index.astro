@@ -17,16 +17,16 @@ const entries = rawMd
 <Layout title="Corrections" description="How to submit a correction to the Sackar Atlas data. Corrections register.">
 
   <div class="page-prose section">
-    <wa-stack gap="xl">
+    <div class="wa-stack wa-gap-xl">
 
       <!-- Page header -->
-      <wa-stack gap="xs">
+      <div class="wa-stack wa-gap-xs">
         <h1>Corrections</h1>
         <p class="subtitle">How to submit a correction to the Sackar Atlas data.</p>
-      </wa-stack>
+      </div>
 
       <!-- How to submit -->
-      <wa-stack gap="m">
+      <div class="wa-stack wa-gap-m">
         <h2>How to submit a correction</h2>
         <p>
           Email <a href="mailto:corrections@bitsloppy.com">corrections@bitsloppy.com</a> with:
@@ -41,10 +41,10 @@ const entries = rawMd
           All submissions are reviewed by Anna Roberts. Corrections that are confirmed are applied
           to the data files and noted in the register below with a date.
         </p>
-      </wa-stack>
+      </div>
 
       <!-- What counts -->
-      <wa-stack gap="m">
+      <div class="wa-stack wa-gap-m">
         <h2>What counts as a correction</h2>
         <ul>
           <li>Factual errors — wrong name, wrong date, wrong location</li>
@@ -63,10 +63,10 @@ const entries = rawMd
             and explain your situation.
           </li>
         </ul>
-      </wa-stack>
+      </div>
 
       <!-- Corrections register -->
-      <wa-stack gap="m">
+      <div class="wa-stack wa-gap-m">
         <h2>Corrections register</h2>
         {entries.length === 0 ? (
           <wa-callout variant="neutral" open>
@@ -80,14 +80,14 @@ const entries = rawMd
             ))}
           </ul>
         )}
-      </wa-stack>
+      </div>
 
       <!-- Footer nav -->
       <p class="back-link">
         <a href="/">← Back to Sackar Atlas</a>
       </p>
 
-    </wa-stack>
+    </div>
   </div>
 
 </Layout>

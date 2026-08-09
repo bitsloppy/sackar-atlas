@@ -8,15 +8,15 @@ import Layout from '../../layouts/Layout.astro';
 >
 
   <div class="page-prose section">
-    <wa-stack gap="xl">
+    <div class="wa-stack wa-gap-xl">
 
       <!-- Page header -->
-      <wa-stack gap="xs">
+      <div class="wa-stack wa-gap-xs">
         <h1>About the data</h1>
         <p class="subtitle">
           What this corpus is, how the sources are prepared, and how to cite or reuse the data.
         </p>
-      </wa-stack>
+      </div>
 
       <!-- GitHub callout -->
       <wa-callout variant="neutral" open>
@@ -27,7 +27,7 @@ import Layout from '../../layouts/Layout.astro';
       </wa-callout>
 
       <!-- What this is -->
-      <wa-stack gap="m">
+      <div class="wa-stack wa-gap-m">
         <h2>What this is</h2>
         <p>
           Sackar Atlas is a curated, human-verified corpus of primary source documents about
@@ -46,10 +46,10 @@ import Layout from '../../layouts/Layout.astro';
           This is a journalism and research project by Anna Roberts. It is not a community
           heritage project. The infrastructure is built to support that work by others.
         </p>
-      </wa-stack>
+      </div>
 
       <!-- The sources -->
-      <wa-stack gap="m">
+      <div class="wa-stack wa-gap-m">
         <h2>The primary sources</h2>
         <p>
           The project draws on seven primary source documents. All are publicly available.
@@ -111,10 +111,10 @@ import Layout from '../../layouts/Layout.astro';
             </tr>
           </tbody>
         </table>
-      </wa-stack>
+      </div>
 
       <!-- How sources are prepared -->
-      <wa-stack gap="m">
+      <div class="wa-stack wa-gap-m">
         <h2>How the source documents are prepared</h2>
         <ul>
           <li>PDFs are converted to Markdown and manually reviewed against the original.</li>
@@ -134,29 +134,29 @@ import Layout from '../../layouts/Layout.astro';
             from them, not the reverse.
           </li>
         </ul>
-      </wa-stack>
+      </div>
 
       <!-- How to use -->
-      <wa-stack gap="m">
+      <div class="wa-stack wa-gap-m">
         <h2>How to use the data</h2>
 
-        <wa-stack gap="s">
+        <div class="wa-stack wa-gap-s">
           <h3>Source documents</h3>
           <p>
             The cleaned Markdown source files are in the <code>sources/</code> directory of
             the <a href="https://github.com/bitsloppy/sackar-atlas">GitHub repository</a>.
           </p>
-        </wa-stack>
+        </div>
 
-        <wa-stack gap="s">
+        <div class="wa-stack wa-gap-s">
           <h3>Paragraph references</h3>
           <p>
             Use the format <code>SCOI-V2.5.551</code> for paragraph-level citations.
             In-text: <code>(Sackar J 2023, SCOI-V2.5.551)</code>.
           </p>
-        </wa-stack>
+        </div>
 
-        <wa-stack gap="s">
+        <div class="wa-stack wa-gap-s">
           <h3>Data schema</h3>
           <p>
             The data schema — collections, fields, uncertainty ladder — is described in
@@ -165,9 +165,9 @@ import Layout from '../../layouts/Layout.astro';
             <a href="https://github.com/bitsloppy/sackar-atlas/blob/main/llms.txt"><code>llms.txt</code> ↗</a>
             in the repository.
           </p>
-        </wa-stack>
+        </div>
 
-        <wa-stack gap="s">
+        <div class="wa-stack wa-gap-s">
           <h3>Licence</h3>
           <p>
             Structured data under <code>data/</code> is published under
@@ -176,11 +176,11 @@ import Layout from '../../layouts/Layout.astro';
             See <a href="https://github.com/bitsloppy/sackar-atlas/blob/main/LICENSING.md">LICENSING.md ↗</a>
             for full detail.
           </p>
-        </wa-stack>
-      </wa-stack>
+        </div>
+      </div>
 
       <!-- Citation -->
-      <wa-stack gap="m">
+      <div class="wa-stack wa-gap-m">
         <h2>Citing this project</h2>
         <p>Suggested citation (AGSM author–date):</p>
         <blockquote>
@@ -191,7 +191,7 @@ import Layout from '../../layouts/Layout.astro';
           For individual records, cite the specific page URL and the primary source paragraph
           it draws on.
         </p>
-      </wa-stack>
+      </div>
 
       <!-- Corrections CTA -->
       <p class="corrections-link">
@@ -199,15 +199,15 @@ import Layout from '../../layouts/Layout.astro';
       </p>
 
       <!-- Sub-pages -->
-      <wa-stack gap="s">
+      <div class="wa-stack wa-gap-s">
         <h2>Also in this section</h2>
         <a href="/about/ai/" class="sub-page-link">
           <wa-icon name="robot"></wa-icon>
           AI use — how AI tools were used in building this project
         </a>
-      </wa-stack>
+      </div>
 
-    </wa-stack>
+    </div>
   </div>
 
 </Layout>
