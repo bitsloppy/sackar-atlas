@@ -19,11 +19,9 @@ cald: null
 
 sexuality:
   identity: "gay"
-  confidence: "confirmed"
   source: "Scott Johnson had a partner at the time of his death, who gave evidence to coronial proceedings. State Coroner Barnes (third inquest, 2017) found that Johnson was attacked 'because they perceived him to be homosexual'. A manslaughter conviction was obtained in 2023 against Scott White for his death."
   perceived_as: "homosexual"
   historical_record_language: null
-  display_note: "Scott Johnson was gay and had a partner at the time of his death. State Coroner Barnes found the fatal assault occurred because unidentified persons perceived him to be homosexual. This is the most directly confirmed sexuality finding in the project dataset — embedded in the coronial finding of manner of death."
 
 case_outcome: "death"
 
@@ -73,7 +71,6 @@ manner_findings:
       court: "NSW Coroners Court"
   parrabell_finding: "not-assessed"
   inquiry_finding: "confirmed-homicide"
-  site_status: "confirmed-homicide"
   conviction:
     person_id: "scott-white"
     offence: "manslaughter"
@@ -89,15 +86,6 @@ source_lists: []
 
 scoi_finding: "The Inquiry accepted the finding of State Coroner Barnes (third inquest, 30 November 2017) that Scott Johnson fell from the cliff top at Blue Fish Point, North Head, as a result of actual or threatened violence by unidentified persons who attacked him because they perceived him to be homosexual. The Inquiry examined the case primarily through Chapter 11 (Vol. 3), which concerned Strike Force Macnamir — the Unsolved Homicide Team investigation between 2013 and 2017. Sackar J found that Strike Force Macnamir, and in particular Detective Chief Inspector Pamela Young, exhibited institutional resistance to a finding of homicide and viewed such a finding as a 'defeat' for the NSWPF. This resistance was found to be 'remarkable and unfortunate.' The Sackar Inquiry notes that the death of Scott Johnson may have been a homicide consistent with the pattern of gay hate killings at beats examined across the report."
 
-motive_bias_assessment: "confirmed-bias"
-motive_factors:
-  - "homophobia"
-
-killing_location_context: "beat"
-
-group_attack: true
-estimated_perpetrator_count: null
-perpetrator_groups: []
 perpetrators:
   - person_id: "scott-white"
     status: "convicted"
@@ -143,10 +131,6 @@ police_investigations:
     outcome: "convicted"
     notes: "Established in 2018 following State Coroner Barnes' finding of homicide, led under a new Homicide Commander and Commissioner. Identified and arrested Scott White on 12 May 2020 (charged with murder). White pleaded guilty to manslaughter in February 2023 and was sentenced June 2023 (R v White [2023] NSWSC 611)."
 
-police_misconduct_level: "bias-affected"
-police_misconduct_summary: "The original 1989 investigation at Manly Police was inadequate — police did not investigate the beat context and failed to properly examine the possibility of a gay hate killing. Strike Force Macnamir (2013–2017), however, exhibited institutional bias: Detective Chief Inspector Pamela Young harboured and communicated a strong personal view that Johnson's death was a suicide, and framed the prospect of a homicide finding as a 'defeat' for NSWPF. Sackar J found this resistance 'remarkable and unfortunate' and consistent with the institutional defensiveness documented throughout the report. The attitude did not prevent a thorough investigation, but shaped the coronial statement in ways that unmistakably favoured the suicide explanation."
-
-accountability_status: "convicted"
 coronial_update_post_scoi: "not-applicable"
 nswpf_apology_to_family: null
 nswpf_apology_notes: null

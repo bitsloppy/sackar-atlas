@@ -37,6 +37,31 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { zoteroGroupLoader } from './loaders/zotero';
 
+// ---------------------------------------------------------------------------
+// SCHEMA BOUNDARY — Sackar Atlas dataset
+// ---------------------------------------------------------------------------
+//
+// This schema defines what CAN be captured about these cases.
+//
+// The Sackar Atlas dataset populates only VERIFIABLE LOOKUP FIELDS: values
+// that can be traced directly to a named primary source — an SCOI finding,
+// coronial record, court judgment, or named inquiry. No field may be
+// populated from analytical judgment applied by this project.
+//
+// INTERPRETIVE AND ANALYTICAL FIELDS — those requiring judgment beyond what
+// any single primary source directly states — are outside scope for this
+// dataset. They have been removed from the active schema below.
+//
+// Other researchers and institutions building on this foundation may extend
+// the schema to add interpretive layers, provided they have independently
+// verified the data and can attribute it to a named source. The schema is
+// designed to support that extension.
+//
+// For the full methodology, see:
+//   docs/workflow-source-documents.md
+//   sources/PARA-ID-REGISTRY.md
+// ---------------------------------------------------------------------------
+
 const DATA_DIR = fileURLToPath(new URL('../../data', import.meta.url));
 
 // ---------------------------------------------------------------------------
@@ -160,20 +185,6 @@ const MannerFindings = z.object({
   ]).optional(),
 
   /**
-   * Working site status — drives map pin colour and filter UI.
-   * Set to the most current authoritative understanding.
-   */
-  site_status: z.enum([
-    'confirmed-homicide',
-    'probable',
-    'possible',
-    'open',
-    'undetermined',
-    'missing',           // person disappeared; no body found; case never reached coronial finding
-    'excluded',          // Inquiry examined; no LGBTIQ bias found; death not connected to sexual identity
-  ]),
-
-  /**
    * Criminal conviction arising from this death, if any.
    * null = no conviction (the common case for these cold cases).
    */
@@ -239,18 +250,7 @@ const SexualityRecord = z.object({
   identity: z.string().nullable().default(null),
 
   /**
-   * Confidence level for this information.
-   * Most victims' sexualities are unknown or uncertain — record honestly.
-   */
-  confidence: z.enum([
-    'confirmed',  // explicitly stated by the person, or confirmed by close family/community
-    'probable',   // strong circumstantial evidence (attended known gay venues, beats)
-    'possible',   // some evidence but genuinely uncertain
-    'unknown',    // no information available
-  ]).default('unknown'),
-
-  /**
-   * Basis for the confidence determination.
+   * Basis for the identity information.
    * e.g. "family evidence at inquest", "frequented known gay venues",
    * "attending police-identified beat", "own testimony"
    */
@@ -272,11 +272,7 @@ const SexualityRecord = z.object({
    */
   historical_record_language: z.string().nullable().default(null),
 
-  /**
-   * Contextual note for public display.
-   * Use to explain uncertainty, note contested evidence, or provide nuance.
-   */
-  display_note: z.string().nullable().default(null),
+
 });
 
 // ---------------------------------------------------------------------------
@@ -592,87 +588,6 @@ const cases = defineCollection({
 
     // Inquest data is now captured in manner_findings.inquests[] above.
 
-    // --- Motive and attack characterisation --------------------------------
-    //
-    // These fields support the analytical questions at the heart of the project:
-    //   - Was bias the motive? (ACON: ~50% of 88 cases had evidence of homophobia)
-    //   - What factors were at play? (homophobia, HIV stigma, pack mentality, robbery)
-    //   - Where did the attack happen? (home/beat/social space — ACON's typology)
-    //   - Solo or group? (shapes both the crime and the accountability picture)
-    //
-    // ACON: "In Pursuit of Truth & Justice" (2018), pp 13–19.
-    // Report 58: NSW Legislative Council Standing Committee on Social Issues (2021), pp 11–19.
-
-    /**
-     * Confidence that bias (homophobia/transphobia) was the motive.
-     *
-     * ACON found homophobia was 'likely involved in approximately 50%' of cases.
-     * Distinct from police_misconduct_level (institutional behaviour)
-     * and sexuality.confidence (victim's identity).
-     */
-    motive_bias_assessment: z.enum([
-      'confirmed-bias',            // unequivocally established (e.g. perpetrator confession, testimony)
-      'probable-bias',             // strong circumstantial evidence
-      'possible-bias',             // some evidence but genuinely uncertain
-      'bias-not-apparent',         // evidence suggests non-bias motive predominant
-      'insufficient-information',  // not enough information to assess
-      'not-assessed',              // not yet reviewed for this project
-    ]).optional(),
-
-    /**
-     * Motive factors documented for this case.
-     * Multiple factors can apply — e.g. homophobia + pack-mentality + alcohol.
-     * Based on available evidence from coronial records, court judgments, ACON, SCOI.
-     */
-    motive_factors: z.array(z.enum([
-      'homophobia',
-      'transphobia',
-      'hiv-aids-stigma',          // HIV/AIDS stigma documented as contributing factor
-      'robbery',                  // robbery as primary or co-motive
-      'pack-mentality',           // gang/group dynamic as amplifier
-      'internalised-homophobia',  // perpetrator's own repressed sexuality implicated
-      'sexual-advance',           // victim made sexual advance; perpetrator responded violently
-      'opportunistic',            // random; victim incidentally perceived as gay
-      'unknown',
-    ])).default([]),
-
-    /**
-     * ACON's threefold location typology for the attack.
-     * Denormalised from location_id for direct filtering without joining.
-     *
-     * ACON found this typology analytically significant:
-     *   - Private home: individual attacker; often 'gay panic' defense used
-     *   - Beat: group attacks; premeditation; luring tactics
-     *   - Gay social space: targeted gay precincts, bars, saunas
-     */
-    killing_location_context: z.enum([
-      'private-home',
-      'beat',
-      'gay-social-space',  // pub, club, sauna, street in gay precinct
-      'public-space',      // non-gay-identified public area
-      'unknown',
-    ]).optional(),
-
-    /** True when more than one perpetrator was involved in the attack. */
-    group_attack: z.boolean().nullable().default(null),
-
-    /**
-     * Approximate number of perpetrators where documented.
-     * ACON: group attacks (typically beats/social spaces) vs individual attacks (homes).
-     */
-    estimated_perpetrator_count: z.number().nullable().default(null),
-
-    /**
-     * Named perpetrator groups (gangs) linked to this case.
-     * ACON names: Bondi Boys, Alexandria Eight, North Narra Boys, Tamarama Three,
-     * eastern suburbs baseball bat gang. Multiple cases share perpetrator groups.
-     */
-    perpetrator_groups: z.array(z.object({
-      /** Name as documented in court records, ACON report, or SCOI. */
-      name: z.string(),
-      notes: z.string().nullable().optional(),
-    })).default([]),
-
     // --- Rewards ------------------------------------------------------------
     //
     // Police rewards signal cases where information is actively sought.
@@ -758,49 +673,6 @@ const cases = defineCollection({
       ]).optional(),
       notes: z.string().nullable().optional(),
     })).default([]),
-
-    /**
-     * Granular police misconduct level — replaces the former boolean.
-     *
-     * Mapped to SCOI findings:
-     *   'none'                    no misconduct finding
-     *   'inadequate-investigation' fell short of standards; no individual
-     *                             criticism — systemic/era failure
-     *                             (e.g. Mark Stewart 1976)
-     *   'bias-affected'           conscious or unconscious bias found by Inquiry
-     *   'active-misconduct'       specific identified officer conduct
-     *                             (e.g. Scott Johnson — Young's Lateline interview;
-     *                              Willing found to be an "unreliable historian")
-     *   'institutional-misconduct' coordinated institutional bad faith;
-     *                             Sackar's "intellectually dishonest" finding
-     *                             (e.g. Neiwand — secret reports overturning
-     *                              coronial findings, families never told)
-     */
-    police_misconduct_level: z.enum([
-      'none',
-      'inadequate-investigation',
-      'bias-affected',
-      'active-misconduct',
-      'institutional-misconduct',
-    ]).nullable().default(null),
-
-    /** Case-specific summary of the misconduct finding for display. */
-    police_misconduct_summary: z.string().nullable().optional(),
-
-    /**
-     * Current accountability status — enables the site to surface
-     * "how many cases have no accountability at all?"
-     * That number is the figure that matters most to Sackar's framing.
-     */
-    accountability_status: z.enum([
-      'no-accountability',          // no outcome, no charges, no conviction
-      'scoi-examined',              // SCOI examined; no further criminal action
-      'recommendation-pending',     // SCOI recommendation applies; not yet actioned
-      'active-investigation',       // currently being investigated post-SCOI
-      'inquest-outstanding',        // coronial matter unresolved
-      'charges-laid',               // criminal charges before courts
-      'convicted',                  // conviction obtained — see manner_findings.conviction
-    ]).nullable().default(null),
 
     /**
      * Tracks Recommendation 17 compliance for cases where Strike Force Neiwand

@@ -16,11 +16,9 @@ cald_notes: null
 
 sexuality:
   identity: "gay"
-  confidence: "confirmed"
   source: "His parents and siblings were aware he was gay. His employer at WIN4 Television was aware. His close friend Craig Ellis was aware that he sometimes used the Marks Park beat — Ellis had himself met Warren there in 1988. In 1985, Warren had been arrested at a beat and convicted of gross indecency, for which he was placed on two years' probation."
   perceived_as: null
   historical_record_language: null
-  display_note: "Ross Warren was openly gay with family, friends, and at work. Multiple witnesses confirmed his sexuality directly to the Inquiry. His use of Marks Park as a beat was known to his close friends."
 
 case_outcome: "missing"
 missing_since: "1989-07-22"
@@ -59,7 +57,6 @@ manner_findings:
       court: "NSW Coroners Court"
   parrabell_finding: "not-assessed"
   inquiry_finding: "probable-hate-crime"
-  site_status: "probable"
   conviction: null
 
 scoi_category: "A"
@@ -68,15 +65,6 @@ source_lists:
 
 scoi_finding: "I find that Ross Bradley Warren died in Sydney on or about 22 July 1989. Whilst the cause and manner of death are unknown, I am satisfied that the deceased was a victim of homicide perpetrated by person or persons unknown. In my view, on the evidence available to the Inquiry, there is objectively reason to suspect that LGBTIQ bias was a factor in the death."
 
-motive_bias_assessment: "probable-bias"
-motive_factors:
-  - "homophobia"
-
-killing_location_context: "beat"
-
-group_attack: null
-estimated_perpetrator_count: null
-perpetrator_groups: []
 perpetrators: []
 
 reward_offered: true
@@ -120,10 +108,6 @@ police_investigations:
     outcome: "no-further-action"
     notes: "The Inquiry examined the three Taradale deaths together (Chapter 5, Vol. 2). Sackar J upheld Coroner Milledge's 2005 finding of homicide and found objectively reason to suspect LGBTIQ bias was a factor in Warren's death. The institutional failures of the 1989 Paddington Police investigation and the subsequent years of inaction were found to be emblematic of the systemic failures documented throughout the Inquiry."
 
-police_misconduct_level: "active-misconduct"
-police_misconduct_summary: "DS Bowditch's conduct at Paddington Police in 1989 was found to constitute active misconduct: he made multiple specific false claims about investigative steps he stated he had taken (including submitting a Coroner's brief, taking formal statements, involving Air Wing and Water Police) that were contradicted by every available witness and document. He effectively closed any inquiry within four days. Coroner Milledge described the so-called investigation as 'grossly inadequate and shameful.' The NSWPF itself accepted in submissions that Bowditch's 'apparently false assertions' were 'extraordinary.' The case was never reported to the Coroner as required."
-
-accountability_status: "no-accountability"
 coronial_update_post_scoi: "pending"
 nswpf_apology_to_family: null
 nswpf_apology_notes: null

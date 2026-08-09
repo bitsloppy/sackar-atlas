@@ -20,11 +20,9 @@ cald_notes: null
 
 sexuality:
   identity: "gay"
-  confidence: "confirmed"
   source: "His brother Peter Russell knew he was gay. Strike Force Parrabell's case summary records 'Mr Russell identified as gay'. Peter Russell told Operation Taradale (2001) that John had referred to Marks Park as 'The Beat' and had been there 'on a couple of occasions to meet other men'."
   perceived_as: null
   historical_record_language: null
-  display_note: "John Russell was gay, known to his brother and close friends. He had visited the Marks Park beat on occasion. His best friend I403 did not think he was 'into using beats' — but Peter Russell's account of John's own words about Marks Park indicates he had been there."
 
 case_outcome: "death"
 
@@ -68,7 +66,6 @@ manner_findings:
       court: "NSW Coroners Court"
   parrabell_finding: "suspected-bias"
   inquiry_finding: "confirmed-homicide"
-  site_status: "confirmed-homicide"
   conviction: null
 
 scoi_category: "A"
@@ -77,15 +74,6 @@ source_lists:
 
 scoi_finding: "I find that John Alan Russell died at Marks Park near Bondi between 22 and 23 November 1989. The cause of death is multiple injuries sustained when he was thrown from the cliff onto rocks by a person or persons unknown. In my view, on the evidence available to the Inquiry, there is objectively reason to suspect that LGBTIQ bias was a factor in the death."
 
-motive_bias_assessment: "probable-bias"
-motive_factors:
-  - "homophobia"
-
-killing_location_context: "beat"
-
-group_attack: null
-estimated_perpetrator_count: null
-perpetrator_groups: []
 perpetrators: []
 
 reward_offered: true
@@ -129,10 +117,6 @@ police_investigations:
     outcome: "no-further-action"
     notes: "Examined in Chapter 5, Vol. 2. Sackar J upheld the Milledge homicide finding and found objectively reason to suspect LGBTIQ bias. Criticised the evidence contamination from the original investigation (hairs lost; clothing washed). Commissioner of Police agreed 'the Inquiry could properly conclude that Mr Russell's death was a gay hate crime.'"
 
-police_misconduct_level: "inadequate-investigation"
-police_misconduct_summary: "The original Bondi Police investigation was conducted on the assumption of misadventure due to intoxication and did not seriously investigate foul play. Human hairs on Russell's left hand — likely from an assailant — were lost before the first inquest. His clothing was washed by police before being used in a public appeal, destroying potential evidence. No forensic testing of clothing, cigarette packet, or lighter was conducted. The OIC (Constable Dunbar, later Johnston) failed to identify any persons of interest. The Sackar Inquiry found these failures fell short of policing standards. Strike Force Neiwand's subsequent internal reversal of the Milledge homicide finding, without notifying the family, was found to be 'intellectually dishonest.'"
-
-accountability_status: "no-accountability"
 coronial_update_post_scoi: "pending"
 nswpf_apology_to_family: null
 nswpf_apology_notes: null

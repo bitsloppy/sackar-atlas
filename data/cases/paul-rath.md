@@ -15,11 +15,9 @@ cald: null
 
 sexuality:
   identity: "gay"
-  confidence: "probable"
   source: "His brother Gregory Rath told the Inquiry (2023 statement) that Paul told him he was gay, approximately a year before his death. Gregory also noted a possible reference by Paul to sexual activity with a male friend. Sackar J treated this evidence with appropriate caution given the 46-year gap."
   perceived_as: null
   historical_record_language: null
-  display_note: "Paul Rath told his brother Gregory that he was gay, in a conversation approximately a year before his death. Gregory's 2023 statement to the Inquiry records this directly. Sackar J noted this 'raises the possibility that Mr Rath had been involved in a romantic and/or sexual relationship with a man' — cautious framing given the passage of time, but grounded in Paul's own words relayed by family."
 
 case_outcome: "death"
 
@@ -57,7 +55,6 @@ manner_findings:
       court: "NSW Coroners Court"
   parrabell_finding: "insufficient-information"
   inquiry_finding: "possible-hate-crime"
-  site_status: "possible"
   conviction: null
 
 scoi_category: "A"
@@ -66,15 +63,6 @@ source_lists:
 
 scoi_finding: "Mr Rath died on 15 or 16 June 1977 as a result of spinal injuries sustained in a fall from a height at North Head, the cause of which cannot be determined. On the evidence available to the Inquiry, there is objectively reason to suspect both that the death of Mr Rath was a homicide and that LGBTIQ bias was a factor in Mr Rath's death."
 
-motive_bias_assessment: "possible-bias"
-motive_factors:
-  - "homophobia"
-
-killing_location_context: "beat"
-
-group_attack: null
-estimated_perpetrator_count: null
-perpetrator_groups: []
 perpetrators: []
 
 reward_offered: false
@@ -103,10 +91,6 @@ police_investigations:
     outcome: "no-further-action"
     notes: "Inquiry commissioned expert reports from Dr Linda Iles (forensic pathologist, two reports) and Jae Gerhard (forensic scientist). Dr Iles found clothing staining — if blood — could not be accounted for by blood from Paul's nose following the fall, and could accommodate a scenario where injury occurred prior to the fall. Conducted conference with five siblings; separate meetings with Helen Colman and Gregory Rath. Made Recommendation 1 (fresh inquest)."
 
-police_misconduct_level: "inadequate-investigation"
-police_misconduct_summary: "Sackar J found the original investigation prematurely concluded 'no suspicious circumstances' before swab results were in or post-mortem conducted; failed to interview the last known witness (Helen Colman); failed to canvas local residents or church; allowed clothing to be destroyed before forensic examination. Separately, Strike Force Parrabell's classificatory error (all 10 BCIF indicators = 'Insufficient Information' but overall = 'No Evidence of Bias Crime') and its failure to pursue the I266 lead it had known about since 2013/2015 were identified as serious failures. No individual officers were criticised — findings attributed to era-level systemic attitudes."
-
-accountability_status: "recommendation-pending"
 coronial_update_post_scoi: "not-applicable"
 nswpf_apology_to_family: null
 

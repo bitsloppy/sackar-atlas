@@ -25,7 +25,6 @@ location_suburb: "Manly"
 location_id: "north-head"
 location_lat: -33.8069
 location_lng: 151.2916
-killing_location_context: "public-space"
 
 first_nations: false
 
@@ -43,7 +42,6 @@ cald_notes: "Born in Barnhurst, England. Had been living in Australia for approx
 
 sexuality:
   identity: null
-  confidence: "unknown"
   perceived_as: null
   historical_record_language: null
 
@@ -59,7 +57,6 @@ manner_findings:
       court: "NSW Coroners Court"
   parrabell_finding: "not-assessed"
   inquiry_finding: "excluded"
-  site_status: "excluded"
   conviction: null
 
 # --- Source classification ---------------------------------------------------
@@ -75,12 +72,6 @@ scoi_finding: "Mr Lloyd-Williams died on 24 August 1978 of multiple injuries aft
 # death location not in the beat area; "objectively no reason to suspect
 # that LGBTIQ bias was a factor."
 
-motive_bias_assessment: "bias-not-apparent"
-motive_factors: []
-
-group_attack: false
-estimated_perpetrator_count: null
-perpetrator_groups: []
 
 judicial_bias_noted: false
 judicial_bias_notes: null
@@ -102,12 +93,10 @@ police_investigations:
     outcome: "insufficient-information"
     notes: "Parrabell incorrectly treated 'Lloyd' as a middle name, searching under 'David Williams' and 'David Lloyd WILLIAMS'. Searches of COPS, Ryerson Index, media archives, GRR, coronial records, Police and State Archives all returned no result. Justice Sackar found Parrabell's treatment 'not adequate or satisfactory': available leads (Sue Thompson's source 'Dave Davies', DCI Pamela Young's statement in the Scott Johnson matter which also referenced a 'David Davies', and Manly Daily press articles) were not followed up."
 
-police_misconduct_level: "inadequate-investigation"
 police_misconduct_notes: "Criticism directed primarily at Strike Force Parrabell's failure to follow up available leads, including Sue Thompson's source 'Dave Davies' (subsequently identified by the Inquiry as Justice David Davies of the NSW Supreme Court) and contemporaneous Manly Daily press articles. No finding of bias in the original 1978 investigation, which was conducted as a non-suspicious death. Loss of the original police file is regrettable but was not attributed to individual misconduct."
 
 # --- Accountability ----------------------------------------------------------
 
-accountability_status: "scoi-examined"
 coronial_update_post_scoi: "not-applicable"
 nswpf_apology_to_family: null
 related_recommendations: []

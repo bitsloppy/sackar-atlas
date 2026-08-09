@@ -20,11 +20,9 @@ cald_notes: "English-speaking background. Born in Port Moresby to a British fami
 
 sexuality:
   identity: null
-  confidence: "unknown"
   source: null
   perceived_as: null
   historical_record_language: null
-  display_note: "The Inquiry found it was not possible to determine whether Mr Stewart was a member of the LGBTIQ community. His death at the site of a known beat, a possible connection to the Chevron Hotel (whose Quarter Deck Bar was a well-known gay venue in the 1970s), and the notation on the handwritten notepaper suggesting a possible rendezvous are noted by Sackar J as factors supporting the possibility of an LGBTIQ connection — but they do not establish it. His desertion from the Navy and estrangement from his family are also noted as potentially consistent with a young man coming to terms with his sexuality in a difficult era, though this is acknowledged as speculative."
 
 case_outcome: "death"
 
@@ -59,7 +57,6 @@ manner_findings:
       court: "NSW Coroners Court"
   parrabell_finding: "insufficient-information"
   inquiry_finding: "possible-hate-crime"
-  site_status: "possible"
   conviction: null
 
 scoi_category: "A"
@@ -68,15 +65,6 @@ source_lists:
 
 scoi_finding: "Mr Stewart died on 10 or 11 May 1976 as a result of multiple injuries sustained in a fall from a height, the cause of which cannot be determined. There is objectively reason to suspect that LGBTIQ bias was a factor in his death."
 
-motive_bias_assessment: "insufficient-information"
-motive_factors:
-  - "unknown"
-
-killing_location_context: "beat"
-
-group_attack: null
-estimated_perpetrator_count: null
-perpetrator_groups: []
 perpetrators: []
 
 reward_offered: false
@@ -105,10 +93,6 @@ police_investigations:
     outcome: "no-further-action"
     notes: "Inquiry reviewed all surviving documentary material; commissioned an independent forensic expert opinion from Dr Linda Iles (December 2022); obtained records from the Royal New Zealand Navy and Queensland Police Service; made contact with the surviving younger sister; and undertook manual newspaper searches (Manly Daily, SMH, Daily Telegraph, Daily Mirror, Sun, May 1976). Issued summonses to NSWPF, DOFM, BDM, Hilton Sydney Hotel, and Queensland Police Service. Found investigation fell short of policing standards of the day. No recommendations arising specifically from this case."
 
-police_misconduct_level: "inadequate-investigation"
-police_misconduct_summary: "Sackar J found the original police investigation prematurely ruled out foul play; failed to photograph the body or personal effects (failure acknowledged by NSWPF to fall short of 1970s standards); failed to canvas witnesses about Mr Stewart's last movements or whether he had been seen with anyone; and failed to consider the significance of the nearby beat or the possibility of a connection to the Chevron Hotel. No individual officers were criticised — the failure was attributed to the social environment and policing practices of the era. Separate criticism was made of the loss of all physical exhibits with no record of disposal. Strike Force Parrabell's conflation of two distinct hotels was also identified as a serious failing that narrowed the review's analytical scope."
-
-accountability_status: "scoi-examined"
 coronial_update_post_scoi: "not-applicable"
 nswpf_apology_to_family: null
 nswpf_apology_notes: "No apology known to have been made. Contact with family was limited to inquiry processes — the surviving younger sister provided a statement to the Inquiry via counsel."

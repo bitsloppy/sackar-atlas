@@ -5,11 +5,9 @@ gender_identity: null
 
 sexuality:
   identity: "gay"
-  confidence: "confirmed"
   source: "Ernest Head had previously been in a three-year relationship and lived with a man (referred to as I454 in SCOI). He had disclosed his sexuality to his brother Arthur. A diary found in his flat contained contact details of a number of men with whom he appeared to have had previous sexual contact. The SCOI states: 'Mr Head was a gay man.' (para 6.147)"
   perceived_as: null
   historical_record_language: "Investigating detectives referred to Mr Head's likely sexual activity prior to his death as consistent with 'what we have been told about the nefarious activities of the deceased' (letter to Superintendent in Charge of Criminal Investigation Branch)."
-  display_note: "Ernest Head was a gay man. He had been in a long-term relationship, disclosed his sexuality to his brother, and his diary documented a number of male sexual contacts. Note: Mr Head died in 1976, before the decriminalisation of homosexual acts in NSW."
 
 also_known_as:
   - name: "Ernest Allan Head"
@@ -63,7 +61,6 @@ manner_findings:
       court: "Glebe Coroners Court"
   parrabell_finding: "not-assessed"
   inquiry_finding: "possible-hate-crime"
-  site_status: "possible"
   conviction: null
 
 scoi_category: "B"
@@ -79,19 +76,6 @@ historical_misgendering_note: null
 judicial_bias_noted: false
 judicial_bias_notes: null
 
-motive_bias_assessment: "possible-bias"
-
-motive_factors:
-  - "homophobia"
-  - "robbery"
-
-killing_location_context: "private-home"
-
-group_attack: null
-estimated_perpetrator_count: null
-
-perpetrator_groups: []
-
 reward_offered: true
 reward_amount: "$10,000"
 reward_notes: "A $10,000 reward for information was proclaimed in August 1977 during the original investigation."
@@ -100,9 +84,6 @@ perpetrators:
   - person_id: "engin-simsek"
     status: "named-uncharged"
     notes: "A palm print in blood, found on the kitchen wall above Mr Head's body, was matched in 2023 to Engin Simsek via the V11 NAFIS algorithm. Simsek had been in police records since 1980 but earlier fingerprint matching technology was insufficient to make the match. Simsek departed Australia in August 1994 and died by suicide in Türkiye on 6 May 1999. No criminal proceedings are possible."
-
-police_misconduct_level: "inadequate-investigation"
-police_misconduct_summary: "The original investigation was described by Sackar as 'extensive and thorough' with no evidence that bias impacted its quality or extent. However, the loss of almost all physical exhibits (retained only three cigarette butts and a match out of 60+ items seized) was found 'not consistent with proper police practice.' The loss of exhibits — including semen-stained material and blood samples — has seriously impaired the full reinvestigation of Head's death. Two detectives also used language about Head's likely sexual activity ('nefarious activities of the deceased') that indicates negative police attitudes, though Sackar accepted these did not impact investigative quality."
 
 police_investigations:
   - name: "Ashfield Police Station — original investigation"
@@ -127,8 +108,6 @@ police_investigations:
     years: "2022–2023"
     outcome: "no-further-action"
     notes: "Full examination including palm print re-analysis using V11 NAFIS technology. In May 2023, FASS identified the bloody palm print as belonging to Engin Simsek. Simsek's record fingerprints had been in police files since 1980 but the earlier matching algorithm had not identified him. No criminal proceedings are possible as Simsek died in 1999."
-
-accountability_status: "scoi-examined"
 
 coronial_update_post_scoi: "not-applicable"
 

@@ -5,11 +5,9 @@ gender_identity: null
 
 sexuality:
   identity: null
-  confidence: "unknown"
   source: null
   perceived_as: "perceived as gay by perpetrators; police alleged the murder was based on a false perception of Keam's sexual orientation"
   historical_record_language: null
-  display_note: "Raymond Keam's sexual orientation was not established by the inquiry or in criminal proceedings. Police alleged that Stanley Early targeted Keam based on a false perception that he was gay. Keam was a married man with a son."
 
 also_known_as: []
 
@@ -52,7 +50,6 @@ manner_findings:
   inquests: []
   parrabell_finding: "insufficient-information"
   inquiry_finding: "not-individually-examined"
-  site_status: "confirmed-homicide"
   conviction:
     person_id: "stanley-early"
     offence: "murder"
@@ -78,19 +75,6 @@ historical_misgendering_note: null
 judicial_bias_noted: false
 judicial_bias_notes: null
 
-motive_bias_assessment: "confirmed-bias"
-
-motive_factors:
-  - "homophobia"
-  - "pack-mentality"
-
-killing_location_context: "beat"
-
-group_attack: true
-estimated_perpetrator_count: null
-
-perpetrator_groups: []
-
 reward_offered: false
 reward_amount: null
 reward_notes: null
@@ -99,9 +83,6 @@ perpetrators:
   - person_id: "stanley-early"
     status: "convicted"
     notes: "Convicted of murder June 2023; sentenced 22 years maximum October 2023. At time of murder went by name Stanley 'Spider' Sutton. Evidence at trial: Early had been part of a group who 'set upon' men in Alison Park late at night because they believed them to be gay."
-
-police_misconduct_level: null
-police_misconduct_summary: null
 
 police_investigations:
   - name: "Randwick Police — original investigation"
@@ -120,8 +101,6 @@ police_investigations:
     years: "2021–2023"
     outcome: "convicted"
     notes: "Stanley Early arrested August 2021. Convicted of murder 7 June 2023. Sentenced 22 years maximum by Justice Dina Yehia, NSW Supreme Court, 20 October 2023."
-
-accountability_status: "convicted"
 
 coronial_update_post_scoi: "not-applicable"
 

@@ -20,11 +20,9 @@ cald_notes: "French national. Met his long-term partner Jacques Musy in Paris in
 
 sexuality:
   identity: "gay"
-  confidence: "confirmed"
   source: "Mattaini was in a seven-year same-sex relationship with Jacques Musy at the time of his disappearance. Strike Force Parrabell's case summary records 'Mr Mattaini identified as gay'. Sackar J referred to him directly as 'a gay man'. Musy and friends described Mattaini as shy and private and did not consider him a beat user, but his relationship was openly acknowledged."
   perceived_as: null
   historical_record_language: null
-  display_note: "Gilles Mattaini was gay, in a long-term relationship with Jacques Musy since 1978. He was not known to use the Marks Park beat. His sexuality was known to his friends and colleagues."
 
 case_outcome: "missing"
 missing_since: "1985-09-15"
@@ -63,7 +61,6 @@ manner_findings:
       court: "NSW Coroners Court"
   parrabell_finding: "insufficient-information"
   inquiry_finding: "probable-hate-crime"
-  site_status: "probable"
   conviction: null
 
 scoi_category: "A"
@@ -72,15 +69,6 @@ source_lists:
 
 scoi_finding: "I find that Gilles Jacques Mattaini died on or about 15 September 1985 in Sydney. The cause and manner of his death remain undetermined. In my view, on the evidence available to the Inquiry, there is objectively reason to suspect both that the death of Mr Mattaini was a homicide, and that LGBTIQ bias was a factor in the death."
 
-motive_bias_assessment: "possible-bias"
-motive_factors:
-  - "homophobia"
-
-killing_location_context: "beat"
-
-group_attack: null
-estimated_perpetrator_count: null
-perpetrator_groups: []
 perpetrators: []
 
 reward_offered: true
@@ -131,10 +119,6 @@ police_investigations:
     outcome: "no-further-action"
     notes: "Examined in Chapter 5, Vol. 2. The Inquiry interviewed or sought contact with Musy, Wyszynski (friend), and family. Attempts to obtain a DNA sample from Mattaini's mother had failed in 2011 and 2016; she died in 2017. Sackar J found objectively reason to suspect both that Mattaini's death was a homicide and that LGBTIQ bias was a factor — while acknowledging that cause and manner remain undetermined."
 
-police_misconduct_level: "inadequate-investigation"
-police_misconduct_summary: "There was no police investigation at all in 1985. Mattaini's disappearance was never reported to police — a fact that itself reflects the climate of the era, in which gay men and their communities did not trust police to respond appropriately. The complete absence of a 1985 investigation means no contemporaneous forensic evidence, no crime scene examination, no witness statements taken while memories were fresh, and no body search. This failure cannot be attributed to named individuals in the same way as Bowditch's conduct in the Warren case — but it represents the systemic inadequacy that the SCOI was established to examine. The Sackar Inquiry found this absence of investigation was consistent with the pattern across multiple cases in this period."
-
-accountability_status: "no-accountability"
 coronial_update_post_scoi: "pending"
 nswpf_apology_to_family: null
 nswpf_apology_notes: null

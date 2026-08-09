@@ -5,11 +5,9 @@ gender_identity: null
 
 sexuality:
   identity: null
-  confidence: "possible"
   source: "Strike Force Parrabell case summary noted Dye 'most likely identified as bisexual, although his close friends believed him to be gay'. Sackar did not individually assess his sexuality beyond noting the Parrabell characterisation."
   perceived_as: null
   historical_record_language: null
-  display_note: "Crispin Dye's sexuality is uncertain. The Strike Force Parrabell case summary described him as 'most likely bisexual', with close friends believing him to be gay. He was drinking in and around Oxford Street — a known gay social precinct — on the night he was attacked."
 
 also_known_as: []
 
@@ -58,7 +56,6 @@ manner_findings:
       court: "NSW Coroners Court"
   parrabell_finding: "insufficient-information"
   inquiry_finding: "possible-hate-crime"
-  site_status: "possible"
   conviction: null
 
 scoi_category: "A"
@@ -74,27 +71,11 @@ historical_misgendering_note: null
 judicial_bias_noted: false
 judicial_bias_notes: null
 
-motive_bias_assessment: "possible-bias"
-
-motive_factors:
-  - "homophobia"
-  - "robbery"
-
-killing_location_context: "gay-social-space"
-
-group_attack: null
-estimated_perpetrator_count: null
-
-perpetrator_groups: []
-
 reward_offered: true
 reward_amount: "$100,000"
 reward_notes: "A $100,000 reward for information was issued by the NSWPF in August 2014."
 
 perpetrators: []
-
-police_misconduct_level: "inadequate-investigation"
-police_misconduct_summary: "Strike Force Parrabell adopted a binary robbery-or-bias approach that Sackar found unconvincing and that resisted the BCU's clarifications about partial motivation. The UHT 2005 review made seven recommendations — none were acted upon except for re-issuing the reward in 2014. A 2019 UHT triage recommended a full review; no such review followed. Sackar found no record whatsoever of the recommended steps being taken, and rejected the NSWPF's suggestion that the steps might have been taken but not recorded."
 
 police_investigations:
   - name: "City of Sydney CIB / Strike Force Barcoo"
@@ -126,8 +107,6 @@ police_investigations:
     years: "2022–2023"
     outcome: "no-further-action"
     notes: "Full examination including forensic re-testing of exhibits. 2023 forensic work discovered two pieces of paper in Dye's shirt (previously unexamined) and a DNA profile — 'Unknown Male B' — from a hair found on his shirt. The DNA profile has not been matched to any known person."
-
-accountability_status: "scoi-examined"
 
 coronial_update_post_scoi: "not-applicable"
 

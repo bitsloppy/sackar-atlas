@@ -20,11 +20,9 @@ cald_notes: null
 
 sexuality:
   identity: "gay"
-  confidence: "confirmed"
   source: "Bill Rooney was living with his de facto partner Wayne Davis at the time of his death. Davis attended Wollongong Police Station on the day Bill was found and confirmed their relationship. The police occurrence pad recorded them as 'practising Homosexuals'. Strike Force Parrabell's Case Summary recorded 'Mr Rooney identified as gay'. Friends and witnesses confirmed he was known to be gay."
   perceived_as: null
   historical_record_language: "practising Homosexuals"
-  display_note: "Bill Rooney was an openly gay man living with his de facto partner Wayne Davis. His sexuality was known to friends and was recorded in police documents at the time."
 
 case_outcome: "death"
 
@@ -63,7 +61,6 @@ manner_findings:
       court: "NSW Coroners Court (Wollongong)"
   parrabell_finding: "insufficient-information"
   inquiry_finding: "possible-hate-crime"
-  site_status: "possible"
   conviction: null
 
 scoi_category: "A"
@@ -72,15 +69,6 @@ source_lists:
 
 scoi_finding: "I find that Mr Rooney died on 20 February 1986 as a result of blunt head injuries sustained on 14 February 1986. However, the evidence available to the Inquiry is insufficient to establish whether these injuries were the result of an assault or an accidental fall. I note that this finding is consistent with the previous coronial findings. In my view, on the evidence available to the Inquiry, there is objectively reason to suspect that LGBTIQ bias was a factor in the death of Mr Rooney."
 
-motive_bias_assessment: "possible-bias"
-motive_factors:
-  - "homophobia"
-
-killing_location_context: "public-space"
-
-group_attack: null
-estimated_perpetrator_count: null
-perpetrator_groups: []
 perpetrators: []
 
 reward_offered: false
@@ -131,10 +119,6 @@ police_investigations:
     outcome: "no-further-action"
     notes: "The Inquiry commissioned expert forensic pathology opinions from Dr Linda Iles and Professor David Ranson; issued summonses to NSWPF, ODPP, CSNSW, the Supreme Court, and the Coroners Court; obtained police files from Wollongong Police Station (originally withheld); obtained the WIN Television video footage of Rooney in Crown Lane; and questioned Scerri in a private hearing. Dr Iles found both assault and accidental fall could not be excluded on available evidence. Sackar J found the original investigation inadequate in multiple respects and confirmed that objectively there is reason to suspect LGBTIQ bias was a factor. No recommendations were made arising from this case."
 
-police_misconduct_level: "bias-affected"
-police_misconduct_summary: "Sackar J framed his criticism of the original investigation at a systematic level, not directed at any individual officer. However, the pattern of conduct — recording suspicious circumstances on 14 February 1986, then pivoting (without documented reasoning) to treating Rooney's death as an accidental fall after learning he was gay — is consistent with bias-affected investigation. McNab's account (accepted by Sackar as reliably reflecting the perspective of Wayne Davis) describes police discomfort when Davis revealed Rooney was gay and that he was his partner. The failure to secure the scene, collect exhibits, or request a sexual assault examination despite the state in which Rooney was found (pants lowered, missing shoe, possible neck marks) all compounded the bias-affected baseline. The NSWPF conceded in submissions that the investigation was inadequate in several specific respects."
-
-accountability_status: "no-accountability"
 coronial_update_post_scoi: "not-applicable"
 nswpf_apology_to_family: null
 nswpf_apology_notes: null
