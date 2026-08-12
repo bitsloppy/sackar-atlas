@@ -178,8 +178,8 @@ const footerText = siteSettings?.data.footer_text
       }
 
       /* Align acknowledgement text with the right-side credit block */
-      footer[slot='footer'] > p {
-        padding-block-start: var(--wa-space-s);
+      .footer-ack {
+        padding-block-start: var(--wa-space-m);
       }
 
       .footer-credit {
@@ -256,7 +256,7 @@ const footerText = siteSettings?.data.footer_text
 
       <!-- ── Footer: two direct <p> children; WA flex+space-between does the split ── -->
       <footer slot="footer">
-        <p>
+        <p class="footer-ack">
           Sackar Atlas acknowledges the Gadigal, Bidjigal, Gayamaygal, and all peoples of Country
           across the places documented here. <strong>Sovereignty was never ceded.</strong>
         </p>
