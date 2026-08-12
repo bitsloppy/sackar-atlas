@@ -1,7 +1,9 @@
 name = "sackar-atlas"
-compatibility_date = "2025-07-19"
+compatibility_date = "2026-04-15"
 compatibility_flags = ["nodejs_compat"]
-main = "./site/dist/_worker.js"
+main = "./site/dist/server/entry.mjs"
+no_bundle = true
 
 [assets]
-directory = "./site/dist"
+directory = "./site/dist/client"
+binding = "ASSETS"
