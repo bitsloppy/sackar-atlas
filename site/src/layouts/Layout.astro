@@ -172,6 +172,16 @@ const footerText = siteSettings?.data.footer_text
         max-width: 44ch;
       }
 
+      /* Dot separators in the links row */
+      .footer-sep {
+        padding-inline: 0.35em;
+      }
+
+      /* Align acknowledgement text with the right-side credit block */
+      footer[slot='footer'] > p {
+        padding-block-start: var(--wa-space-s);
+      }
+
       .footer-credit {
         text-align: right;
       }
@@ -254,11 +264,11 @@ const footerText = siteSettings?.data.footer_text
           <p>{footerText}</p>
           <p>
             <a href="/about/">About the data</a>
-            &middot;
+            <span class="footer-sep">&middot;</span>
             <a href="/about/ai/">AI use</a>
-            &middot;
+            <span class="footer-sep">&middot;</span>
             <a href="/corrections/">Corrections</a>
-            &middot;
+            <span class="footer-sep">&middot;</span>
             <a href="https://github.com/bitsloppy/sackar-atlas" target="_blank" rel="noopener">GitHub ↗</a>
           </p>
         </div>
