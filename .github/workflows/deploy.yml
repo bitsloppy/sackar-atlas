@@ -37,4 +37,13 @@ jobs:
           # (conflicts with the wrangler.json in dist/server/)
           rm -rf site/.wrangler/
           cd site/dist/server
+          # Strip the SESSION KV binding — we don't use Astro sessions and
+          # the API token doesn't need KV permissions.
+          node -e "
+            const fs = require('fs');
+            const c = JSON.parse(fs.readFileSync('wrangler.json'));
+            c.kv_namespaces = [];
+            if (c.previews) c.previews.kv_namespaces = [];
+            fs.writeFileSync('wrangler.json', JSON.stringify(c));
+          "
           npx wrangler deploy --name sackar-atlas --compatibility-flags nodejs_compat
