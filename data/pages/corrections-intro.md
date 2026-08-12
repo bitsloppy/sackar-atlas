@@ -1,0 +1,25 @@
+---
+corrections_email: corrections@bitsloppy.com
+---
+
+## How to submit a correction
+
+Email [corrections@bitsloppy.com](mailto:corrections@bitsloppy.com) with:
+
+- The URL of the page with the error
+- What it currently says
+- What it should say
+- Your source — document, page or paragraph number if available
+
+All submissions are reviewed by Anna Roberts. Corrections that are confirmed are applied to the data files and noted in the register below with a date.
+
+## What counts as a correction
+
+- Factual errors — wrong name, wrong date, wrong location
+- Misquotation of a source document
+- Misidentification of a person
+
+### What doesn't
+
+- Disagreement with SCOI findings or coronial conclusions — those are the primary source. The data reflects what the inquiry found, not what is definitively true.
+- Requests to remove information. If you have a privacy concern, email the same address and explain your situation.

@@ -1,4 +1,5 @@
 ---
+import { getEntry } from 'astro:content';
 
 interface Props {
   title: string;
@@ -11,6 +12,11 @@ const {
 } = Astro.props;
 
 const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas`;
+
+// Site settings — editable via Keystatic
+const siteSettings = await getEntry('pages', 'site-settings');
+const footerText = siteSettings?.data.footer_text
+  ?? 'A public data project by Anna Roberts, drawing on the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023).'
 ---
 
 <!doctype html>
@@ -245,7 +251,7 @@ const pageTitle = title === 'Home' ? 'Sackar Atlas' : `${title} — Sackar Atlas
           across the places documented here. <strong>Sovereignty was never ceded.</strong>
         </p>
         <div class="footer-credit wa-stack wa-gap-s">
-          <p>A public data project by Anna Roberts, drawing on the <a href="https://www.nsw.gov.au/departments-and-agencies/cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes">NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar J, 2023)</a>.</p>
+          <p>{footerText}</p>
           <p>
             <a href="/about/">About the data</a>
             &middot;

@@ -75,6 +75,44 @@ export default config({
         }),
       },
     }),
+
+    'corrections-intro': singleton({
+      label: 'Corrections page',
+      path: 'data/pages/corrections-intro',
+      format: { contentField: 'content' },
+      schema: {
+        corrections_email: fields.text({
+          label: 'Corrections email address',
+          description: 'The email address shown on the corrections page.',
+          validation: { isRequired: true },
+        }),
+        content: fields.markdoc({
+          label: 'Policy prose',
+          description: 'How to submit / What counts / What does not count. The corrections register is managed separately in data/corrections.md.',
+        }),
+      },
+    }),
+
+    'site-settings': singleton({
+      label: 'Site settings',
+      path: 'data/pages/site-settings',
+      format: { contentField: 'content' },
+      schema: {
+        strapline: fields.text({
+          label: 'Site strapline',
+          description: 'One-line description shown under "Sackar Atlas" on the home page.',
+          validation: { isRequired: true },
+        }),
+        footer_text: fields.text({
+          label: 'Footer attribution text',
+          description: 'The descriptive line in the site footer. Does not include the links.',
+          multiline: true,
+          validation: { isRequired: true },
+        }),
+        // Dummy content field so Keystatic writes a .md file (required for pages collection)
+        content: fields.markdoc({ label: 'Notes (unused)', description: 'Not displayed on the site.' }),
+      },
+    }),
   },
 
   collections: {

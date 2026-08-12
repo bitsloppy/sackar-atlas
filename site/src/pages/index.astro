@@ -10,6 +10,10 @@ const caseCount = allCases.length;
 // Hero body text — editable via Keystatic
 const homePage = await getEntry('pages', 'home');
 const { Content: HeroContent } = homePage ? await render(homePage) : { Content: () => null };
+
+// Site settings (strapline, footer text) — editable via Keystatic
+const siteSettings = await getEntry('pages', 'site-settings');
+const strapline = siteSettings?.data.strapline ?? 'Making the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes navigable.';
 ---
 
 <Layout title="Home">
@@ -18,7 +22,7 @@ const { Content: HeroContent } = homePage ? await render(homePage) : { Content: 
     <div class="hero-inner wa-stack wa-gap-l">
       <h1 class="display-title">Sackar Atlas</h1>
       <p class="hero-strapline">
-        Making the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes navigable.
+        {strapline}
       </p>
       <div class="hero-body">
         <HeroContent />

@@ -2244,8 +2244,14 @@ const sources = defineCollection({
 const pages = defineCollection({
   loader: glob({ pattern: ['**/*.{md,mdoc}'], base: `${DATA_DIR}/pages` }),
   schema: z.object({
-    // Minimal schema — these files are mostly just a markdown body
+    // Most page files are just a markdown body. The optional fields below
+    // are used by specific singletons (corrections-intro, site-settings).
     title: z.string().optional(),
+    // corrections-intro
+    corrections_email: z.string().optional(),
+    // site-settings
+    strapline: z.string().optional(),
+    footer_text: z.string().optional(),
   }),
 });
 
