@@ -1,12 +1,8 @@
 ---
+export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
-import fs from 'node:fs';
-import { fileURLToPath } from 'node:url';
-
-// Load the corrections register from data/corrections.md
-// import.meta.url = site/src/pages/corrections/index.astro → ../../../../data/corrections.md
-const correctionsPath = fileURLToPath(new URL('../../../../data/corrections.md', import.meta.url));
-const rawMd = fs.readFileSync(correctionsPath, 'utf-8');
+// Vite resolves this at build time — no runtime fs access needed
+import rawMd from '../../../../data/corrections.md?raw';
 
 // Extract entries: lines that start with [YYYY-MM-DD]
 const entries = rawMd

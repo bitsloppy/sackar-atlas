@@ -312,7 +312,7 @@ const PhysicalMarker = z.object({
 // ---------------------------------------------------------------------------
 
 const cases = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: `${DATA_DIR}/cases` }),
+  loader: glob({ pattern: ['**/*.{md,mdoc}', '!README.md', '!*/README.md'], base: `${DATA_DIR}/cases` }),
   schema: z.object({
 
     // --- Identity -----------------------------------------------------------
@@ -824,7 +824,7 @@ const cases = defineCollection({
 // ---------------------------------------------------------------------------
 
 const locations = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: `${DATA_DIR}/locations` }),
+  loader: glob({ pattern: ['**/*.{md,mdoc}', '!README.md', '!*/README.md'], base: `${DATA_DIR}/locations` }),
   schema: z.object({
 
     name: z.string(),
@@ -1154,7 +1154,7 @@ const locations = defineCollection({
 // ---------------------------------------------------------------------------
 
 const events = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: `${DATA_DIR}/events` }),
+  loader: glob({ pattern: ['**/*.{md,mdoc}', '!README.md', '!*/README.md'], base: `${DATA_DIR}/events` }),
   schema: z.object({
 
     title: z.string(),
@@ -1248,7 +1248,7 @@ const events = defineCollection({
 // ---------------------------------------------------------------------------
 
 const people = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: `${DATA_DIR}/people` }),
+  loader: glob({ pattern: ['**/*.{md,mdoc}', '!README.md', '!*/README.md'], base: `${DATA_DIR}/people` }),
   schema: z.object({
 
     name: z.string(),
@@ -1450,7 +1450,7 @@ const people = defineCollection({
 // ---------------------------------------------------------------------------
 
 const media = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: `${DATA_DIR}/media` }),
+  loader: glob({ pattern: ['**/*.{md,mdoc}', '!README.md', '!*/README.md'], base: `${DATA_DIR}/media` }),
   schema: z.object({
 
     type: z.enum(['video', 'photo', 'audio', 'document']),
@@ -1540,7 +1540,7 @@ const media = defineCollection({
 // ---------------------------------------------------------------------------
 
 const testimonies = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: `${DATA_DIR}/testimonies` }),
+  loader: glob({ pattern: ['**/*.{md,mdoc}', '!README.md', '!*/README.md'], base: `${DATA_DIR}/testimonies` }),
   schema: z.object({
 
     // --- Identity -----------------------------------------------------------
@@ -1840,7 +1840,7 @@ const testimonies = defineCollection({
 // ---------------------------------------------------------------------------
 
 const recommendations = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: `${DATA_DIR}/recommendations` }),
+  loader: glob({ pattern: ['**/*.{md,mdoc}', '!README.md', '!*/README.md'], base: `${DATA_DIR}/recommendations` }),
   schema: z.object({
 
     /** Formal recommendation number (1–19). null for the heritage call. */
@@ -1937,7 +1937,7 @@ const recommendations = defineCollection({
  * Referenced from: OralHistorySource.collection_id, ArchiveSource.collection_id
  */
 const source_collections = defineCollection({
-  loader: glob({ pattern: ['**/*.md', '!README.md', '!*/README.md'], base: `${DATA_DIR}/source-collections` }),
+  loader: glob({ pattern: ['**/*.{md,mdoc}', '!README.md', '!*/README.md'], base: `${DATA_DIR}/source-collections` }),
   schema: z.object({
 
     /** Full institutional name. */
@@ -2235,6 +2235,11 @@ const sources = defineCollection({
   }),
 });
 
+// ---------------------------------------------------------------------------
+// Notion prose content
+// Keyed by "{type}/{slug}" — e.g. "cases/scott-johnson"
+// Only records with status=Live are fetched at build time.
+// ---------------------------------------------------------------------------
 export const collections = {
   cases,
   locations,
