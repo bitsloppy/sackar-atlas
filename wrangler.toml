@@ -1,9 +1,9 @@
+# Deployment is handled by GitHub Actions — see .github/workflows/deploy.yml
+# The actual deploy runs from site/dist/server/ using the adapter-generated wrangler.json
+# with: npx wrangler deploy --name sackar-atlas --compatibility-flags nodejs_compat
+#
+# This file is kept for local wrangler dev / reference only.
+
 name = "sackar-atlas"
 compatibility_date = "2026-04-15"
 compatibility_flags = ["nodejs_compat"]
-main = "./site/dist/server/entry.mjs"
-no_bundle = true
-
-[assets]
-directory = "./site/dist/client"
-binding = "ASSETS"
