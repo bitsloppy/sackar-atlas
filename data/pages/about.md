@@ -1,0 +1,35 @@
+## What this is
+
+Sackar Atlas is a curated, human-verified corpus of source documents about LGBTIQ hate crime deaths in NSW. It is built around the report published by the [2023 Special Commission of Inquiry into LGBTIQ Hate Crimes](https://www.nsw.gov.au/departments-and-agencies/cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes) (Commissioner: Justice John Sackar AO KC).
+
+It is an online reference book. Key documents surrounding these events — the SCOI report, the ACON report, police Strikeforce documents — are presented together as clean and referenced markdown files.
+
+The project aims to make the findings of a dense government inquiry accessible to researchers, journalists, community members, and historians. It is also machine-readable, designed to be usable by AI tools as well as humans.
+
+This is a journalism and research project by Anna Roberts. While it is not a community heritage project, it hopes to provide an infrastructure that can support that work by others.
+
+## How the source documents are prepared
+
+- PDFs are converted to Markdown and manually reviewed against the original.
+- Paragraph IDs are added to enable precise cross-referencing, using the format `SCOI-V2.5.551` (volume, chapter, paragraph).
+- Editorial decisions — formatting choices, corrections, omissions — are documented inline in `sources/EDITORIAL-DECISIONS.md`.
+- [Scripts](https://github.com/bitsloppy/sackar-atlas/tree/main/scripts) are used only for cleanup and adding reference IDs — not for content.
+- The source files are the source of truth. The structured data YAML is derived from them, not the reverse.
+
+## How to use the data
+
+### Source documents
+
+The cleaned Markdown source files are in the `sources/` directory of the [GitHub repository](https://github.com/bitsloppy/sackar-atlas).
+
+### Paragraph references
+
+Use the format `SCOI-V2.5.551` for paragraph-level citations. In-text: `(Sackar J 2023, SCOI-V2.5.551)`.
+
+### Data schema
+
+The data schema — collections, fields, uncertainty ladder — is described in [`docs/ai-instructions.md` ↗](https://github.com/bitsloppy/sackar-atlas/blob/main/docs/ai-instructions.md) and [`llms.txt` ↗](https://github.com/bitsloppy/sackar-atlas/blob/main/llms.txt) in the repository.
+
+### Licence
+
+Structured data under `data/` is published under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/). Original journalism is © Anna Roberts. Code is MIT. See [LICENSING.md ↗](https://github.com/bitsloppy/sackar-atlas/blob/main/LICENSING.md) for full detail.

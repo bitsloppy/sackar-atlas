@@ -1,11 +1,15 @@
 ---
 export const prerender = true;
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry, render } from 'astro:content';
 
 // Count published cases for the stats banner
 const allCases = await getCollection('cases', ({ data }) => data.published === true);
 const caseCount = allCases.length;
+
+// Hero body text — editable via Keystatic
+const homePage = await getEntry('pages', 'home');
+const { Content: HeroContent } = homePage ? await render(homePage) : { Content: () => null };
 ---
 
 <Layout title="Home">
@@ -16,12 +20,9 @@ const caseCount = allCases.length;
       <p class="hero-strapline">
         Making the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes navigable.
       </p>
-      <p class="hero-body">
-        Between 1970 and 2010, at least 30 gay and transgender people were killed in Sydney —
-        pushed from cliffs, bashed at beats, murdered in their homes. The Sackar Inquiry (2023)
-        examined their deaths. This atlas maps what it found: the people, the places, the
-        failures, and the connections that a 3,000-page PDF cannot show.
-      </p>
+      <div class="hero-body">
+        <HeroContent />
+      </div>
       <div class="wa-cluster wa-gap-s">
         <a href="/cases/" class="cta-primary">Browse the cases</a>
         <a href="/map/" class="cta-secondary">Open the map</a>
@@ -216,6 +217,12 @@ const caseCount = allCases.length;
     margin: 0;
     line-height: 1.65;
     max-width: 60ch;
+  }
+  .hero-body :global(p) {
+    font-size: inherit;
+    color: inherit;
+    margin: 0;
+    line-height: inherit;
   }
 
   /* CTA buttons — inverted for dark hero background */

@@ -1,0 +1,32 @@
+## What AI did
+
+### Infrastructure
+
+Schema design, site build, and data pipeline scripts. Built collaboratively with AI assistance; these are not user-facing content. The code is open source and inspectable on [GitHub](https://github.com/bitsloppy/sackar-atlas).
+
+### Research assistance
+
+Scanning source documents, extracting structured data, suggesting cross-references between records. AI proposes; Anna verifies from the primary source before anything is committed to the data.
+
+### Prose drafting
+
+Case narratives and analysis were drafted with AI assistance working directly from the source documents, then reviewed and edited by Anna Roberts before publication.
+
+## What AI did not do
+
+- AI did not make editorial judgments that appear unchecked on the site.
+- AI did not generate facts. Every factual claim is sourced to a primary document.
+- AI did not access sources other than the documents provided to it.
+
+## How we distinguish AI contribution from primary source
+
+The data schema uses an explicit uncertainty ladder:
+
+| Label | What it means |
+|---|---|
+| `SCOI confirms` | Directly stated in the Special Commission of Inquiry findings |
+| `probable` | Strongly supported by primary sources; human-verified |
+| `possible` | Plausible on the available evidence; not confirmed |
+| `AI inference` | An interpretive suggestion from AI, explicitly flagged as unverified |
+
+Fields labelled `AI inference` are not findings. They are working notes, clearly marked, pending human review.

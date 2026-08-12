@@ -1,6 +1,10 @@
 ---
 export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
+import { getEntry, render } from 'astro:content';
+
+const page = await getEntry('pages', 'about');
+const { Content } = page ? await render(page) : { Content: () => null };
 ---
 
 <Layout
@@ -27,21 +31,9 @@ import Layout from '../../layouts/Layout.astro';
         Data is published under CC-BY 4.0.
       </wa-callout>
 
-      <!-- What this is -->
-      <div class="wa-stack wa-gap-m">
-        <h2>What this is</h2>
-        <p>
-          Sackar Atlas is a curated, human-verified corpus of source documents about LGBTIQ hate crime deaths in NSW. It is built around the report published by the <a href="https://www.nsw.gov.au/departments-and-agencies/cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes">2023 Special Commission of Inquiry into LGBTIQ Hate Crimes</a> (Commissioner: Justice John Sackar AO KC).
-        </p>
-        <p>
-          It is an online reference book. Key documents surrounding these events — the SCOI report, the ACON report, police Strikeforce documents – are presented together as clean and referenced markdown files. </p>
-
-          <p> The project aims to make the findings of a dense government inquiry accessible to researchers, journalists, community members, and historians. It is also machine-readable, designed to be usable by AI tools as well as humans.
-        </p>
-      
-        <p>
-          This is a journalism and research project by Anna Roberts. While it is not a community heritage project, it hopes to provide an infrastructure that can support that work by others.
-        </p>
+      <!-- Keystatic-managed prose: What this is / How prepared / How to use -->
+      <div class="prose-body">
+        <Content />
       </div>
 
       <!-- The sources -->
@@ -107,71 +99,7 @@ import Layout from '../../layouts/Layout.astro';
         </table>
       </div>
 
-      <!-- How sources are prepared -->
-      <div class="wa-stack wa-gap-m">
-        <h2>How the source documents are prepared</h2>
-        <ul>
-          <li>PDFs are converted to Markdown and manually reviewed against the original.</li>
-          <li>
-            Paragraph IDs are added to enable precise cross-referencing, using the format
-            <code>SCOI-V2.5.551</code> (volume, chapter, paragraph).
-          </li>
-          <li>
-            Editorial decisions — formatting choices, corrections, omissions — are documented
-            inline in <code>sources/EDITORIAL-DECISIONS.md</code>.
-          </li>
-          <li>
-            <a href="https://github.com/bitsloppy/sackar-atlas/tree/main/scripts" target="_blank" rel="noopener">Scripts</a> are used only for cleanup and adding reference IDs — not for content.
-          </li>
-          <li>
-            The source files are the source of truth. The structured data YAML is derived
-            from them, not the reverse.
-          </li>
-        </ul>
-      </div>
 
-      <!-- How to use -->
-      <div class="wa-stack wa-gap-m">
-        <h2>How to use the data</h2>
-
-        <div class="wa-stack wa-gap-s">
-          <h3>Source documents</h3>
-          <p>
-            The cleaned Markdown source files are in the <code>sources/</code> directory of
-            the <a href="https://github.com/bitsloppy/sackar-atlas">GitHub repository</a>.
-          </p>
-        </div>
-
-        <div class="wa-stack wa-gap-s">
-          <h3>Paragraph references</h3>
-          <p>
-            Use the format <code>SCOI-V2.5.551</code> for paragraph-level citations.
-            In-text: <code>(Sackar J 2023, SCOI-V2.5.551)</code>.
-          </p>
-        </div>
-
-        <div class="wa-stack wa-gap-s">
-          <h3>Data schema</h3>
-          <p>
-            The data schema — collections, fields, uncertainty ladder — is described in
-            <a href="https://github.com/bitsloppy/sackar-atlas/blob/main/docs/ai-instructions.md"><code>docs/ai-instructions.md</code> ↗</a>
-            and
-            <a href="https://github.com/bitsloppy/sackar-atlas/blob/main/llms.txt"><code>llms.txt</code> ↗</a>
-            in the repository.
-          </p>
-        </div>
-
-        <div class="wa-stack wa-gap-s">
-          <h3>Licence</h3>
-          <p>
-            Structured data under <code>data/</code> is published under
-            <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC-BY 4.0</a>.
-            Original journalism is © Anna Roberts. Code is MIT.
-            See <a href="https://github.com/bitsloppy/sackar-atlas/blob/main/LICENSING.md">LICENSING.md ↗</a>
-            for full detail.
-          </p>
-        </div>
-      </div>
 
       <!-- Citation -->
       <div class="wa-stack wa-gap-m">
@@ -328,4 +256,27 @@ import Layout from '../../layouts/Layout.astro';
   .sub-page-link:hover {
     background-color: var(--wa-color-neutral-95);
   }
+
+  /* Keystatic prose content vertical rhythm */
+  .prose-body :global(h2) {
+    font-size: var(--wa-font-size-l);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    margin: 0;
+    margin-block-start: var(--wa-space-xl);
+  }
+  .prose-body :global(h2:first-child) { margin-block-start: 0; }
+  .prose-body :global(h3) {
+    font-size: var(--wa-font-size-m);
+    font-weight: 600;
+    color: var(--wa-color-text-normal);
+    margin: 0;
+    margin-block-start: var(--wa-space-m);
+  }
+  .prose-body :global(p) { margin: 0; margin-block-start: var(--wa-space-s); }
+  .prose-body :global(h2 + p),
+  .prose-body :global(h3 + p) { margin-block-start: var(--wa-space-2xs); }
+  .prose-body :global(ul) { margin: 0; padding-inline-start: 1.4em; margin-block-start: var(--wa-space-s); }
+  .prose-body :global(li + li) { margin-block-start: var(--wa-space-xs); }
+  .prose-body :global(a) { color: var(--site-brand); }
 </style>

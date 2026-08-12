@@ -20,7 +20,7 @@
  *   are best edited directly in the YAML for now.
  */
 
-import { config, fields, collection } from '@keystatic/core';
+import { config, fields, collection, singleton } from '@keystatic/core';
 
 export default config({
   storage: {
@@ -32,6 +32,49 @@ export default config({
     brand: {
       name: 'Sackar Atlas',
     },
+  },
+
+  // ---------------------------------------------------------------------------
+  // Singletons — one-off site pages managed via Keystatic
+  // Each writes a markdown file in data/pages/ which Astro reads via the
+  // 'pages' content collection.
+  // ---------------------------------------------------------------------------
+  singletons: {
+    home: singleton({
+      label: 'Home page',
+      path: 'data/pages/home',
+      format: { contentField: 'content' },
+      schema: {
+        content: fields.markdoc({
+          label: 'Hero body text',
+          description: 'The introductory paragraph below the strapline on the home page.',
+        }),
+      },
+    }),
+
+    about: singleton({
+      label: 'About the data',
+      path: 'data/pages/about',
+      format: { contentField: 'content' },
+      schema: {
+        content: fields.markdoc({
+          label: 'Page content',
+          description: 'Prose sections: What this is / How sources are prepared / How to use. The sources table and citation block are in the page template.',
+        }),
+      },
+    }),
+
+    'about-ai': singleton({
+      label: 'AI use page',
+      path: 'data/pages/about-ai',
+      format: { contentField: 'content' },
+      schema: {
+        content: fields.markdoc({
+          label: 'Page content',
+          description: 'Prose sections: What AI did / What AI did not do / How we distinguish. The intro callout and corrections callout are in the page template.',
+        }),
+      },
+    }),
   },
 
   collections: {

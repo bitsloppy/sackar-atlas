@@ -2236,15 +2236,25 @@ const sources = defineCollection({
 });
 
 // ---------------------------------------------------------------------------
-// Notion prose content
-// Keyed by "{type}/{slug}" — e.g. "cases/scott-johnson"
-// Only records with status=Live are fetched at build time.
+// Site pages prose content
+// Editable via Keystatic singletons — stored in data/pages/
+// Keyed by filename slug: 'home', 'about', 'about-ai'
 // ---------------------------------------------------------------------------
+
+const pages = defineCollection({
+  loader: glob({ pattern: ['**/*.{md,mdoc}'], base: `${DATA_DIR}/pages` }),
+  schema: z.object({
+    // Minimal schema — these files are mostly just a markdown body
+    title: z.string().optional(),
+  }),
+});
+
 export const collections = {
   cases,
   locations,
   events,
   people,
+  pages,
   media,
   testimonies,
   recommendations,
