@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import { fileURLToPath } from 'url';
 import react from '@astrojs/react';
 import markdoc from '@astrojs/markdoc';
 import keystatic from '@keystatic/astro';
@@ -38,9 +39,26 @@ export default defineConfig({
       },
     },
     resolve: {
-      alias: process.env.NODE_ENV === 'production'
-        ? { 'react-dom/server': 'react-dom/server.edge' }
-        : {},
+      alias: [
+        // @astrojs/markdoc/* is imported by .mdoc files processed outside the
+        // Vite root (data/pages/*.mdoc). Rolldown can't walk up to site/node_modules
+        // from there, so we pin the whole package to its absolute node_modules path.
+        {
+          find: '@astrojs/markdoc/components',
+          replacement: fileURLToPath(new URL('./node_modules/@astrojs/markdoc/components/index.ts', import.meta.url)),
+        },
+        {
+          find: '@astrojs/markdoc/runtime',
+          replacement: fileURLToPath(new URL('./node_modules/@astrojs/markdoc/dist/runtime.js', import.meta.url)),
+        },
+        {
+          find: '@astrojs/markdoc/runtime-assets-config',
+          replacement: fileURLToPath(new URL('./node_modules/@astrojs/markdoc/dist/runtime-assets-config.js', import.meta.url)),
+        },
+        ...(process.env.NODE_ENV === 'production'
+          ? [{ find: 'react-dom/server', replacement: 'react-dom/server.edge' }]
+          : []),
+      ],
     },
   },
 });
