@@ -425,6 +425,12 @@ const strapline = siteSettings?.data.strapline ?? 'Making the NSW Special Commis
     color: var(--wa-color-text-link);
   }
 
+  .about-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--wa-space-m);
+  }
+
   .about-body :global(p) {
     font-size: var(--wa-font-size-s);
     color: var(--wa-color-text-quiet);
