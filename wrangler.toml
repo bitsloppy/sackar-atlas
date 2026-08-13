@@ -7,3 +7,7 @@
 name = "sackar-atlas"
 compatibility_date = "2026-04-15"
 compatibility_flags = ["nodejs_compat"]
+
+[vars]
+PUBLIC_KEYSTATIC_GITHUB_APP_SLUG = "sackar-atlas-cms"
+KEYSTATIC_GITHUB_CLIENT_ID = "Iv23liEzLlXB3JL9B5wN"
