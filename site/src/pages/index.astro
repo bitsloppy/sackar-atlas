@@ -425,7 +425,8 @@ const strapline = siteSettings?.data.strapline ?? 'Making the NSW Special Commis
     color: var(--wa-color-text-link);
   }
 
-  .about-body {
+  /* Astro wraps rendered content entries in <article>; use that as the flex parent */
+  .about-body :global(article) {
     display: flex;
     flex-direction: column;
     gap: var(--wa-space-m);
