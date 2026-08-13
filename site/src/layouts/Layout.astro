@@ -254,11 +254,12 @@ const footerText = siteSettings?.data.footer_text
 
       <!-- ── Footer: two direct <p> children; WA flex+space-between does the split ── -->
       <footer slot="footer">
-        <div style="align-self: flex-start; padding-block-start: var(--wa-space-m); max-width: 44ch;">
-          <p>
+        <div style="align-self: flex-start; padding-top: 1.25rem; max-width: 44ch; display: flex; flex-direction: column; gap: 0.4em;">
+          <p style="margin: 0;">
             Sackar Atlas acknowledges the Gadigal, Bidjigal, Gayamaygal, and all peoples of Country
-            across the places documented here. <strong>Sovereignty was never ceded.</strong>
+            across the places documented here.
           </p>
+          <p style="margin: 0;"><strong>Sovereignty was never ceded.</strong></p>
         </div>
         <div class="footer-credit wa-stack wa-gap-s">
           <p>{footerText}</p>
