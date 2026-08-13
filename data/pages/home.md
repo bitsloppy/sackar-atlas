@@ -1,1 +1,0 @@
-Between 1970 and 2010, at least 30 gay and transgender people were killed in Sydney — pushed from cliffs, bashed at beats, murdered in their homes. The Sackar Inquiry (2023) examined their deaths. This atlas maps what it found: the people, the places, the failures, and the connections that a 3,000-page PDF cannot show.

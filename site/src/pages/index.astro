@@ -11,6 +11,10 @@ const caseCount = allCases.length;
 const homePage = await getEntry('pages', 'home');
 const { Content: HeroContent } = homePage ? await render(homePage) : { Content: () => null };
 
+// About section — editable via Keystatic
+const homeAbout = await getEntry('pages', 'home-about');
+const { Content: AboutContent } = homeAbout ? await render(homeAbout) : { Content: () => null };
+
 // Site settings (strapline, footer text) — editable via Keystatic
 const siteSettings = await getEntry('pages', 'site-settings');
 const strapline = siteSettings?.data.strapline ?? 'Making the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes navigable.';
@@ -151,16 +155,9 @@ const strapline = siteSettings?.data.strapline ?? 'Making the NSW Special Commis
   <section class="about-section section">
     <div class="about-inner wa-stack wa-gap-l">
       <h2>About this project</h2>
-      <p>
-        Sackar Atlas is a public data project by Anna Roberts. 
-      </p>
-      <p>
-        It uses AI tools to synthesise data from public records — the <a href="https://www.nsw.gov.au/departments-and-agencies/cabinet-office/resources/special-commissions-of-inquiry/lgbtiq-hate-crimes">Special Commission of Inquiry into LGBTIQ hate crimes report</a>, <a href="https://data.nsw.gov.au/data/dataset/?tags=Police+Department">police data</a> — with information from press archives (<a href="https://trove.nla.gov.au/">Trove</a>) and <a href="https://en.wikipedia.org/wiki/Main_Page">Wikipedia</a>. The aim is to make the connections between cases, locations, institutions, and people visible in a way a 3,000-page PDF cannot.
-      </p>
-      <p>
-        The site is designed for community organisations, journalists, researchers, and the
-        general public to use freely. <a href="https://github.com/bitsloppy/sackar-atlas">Source code on GitHub</a>
-     </p>
+      <div class="about-body">
+        <AboutContent />
+      </div>
     </div>
   </section>
 </Layout>
@@ -425,6 +422,17 @@ const strapline = siteSettings?.data.strapline ?? 'Making the NSW Special Commis
   }
 
   .about-inner a {
+    color: var(--wa-color-text-link);
+  }
+
+  .about-body :global(p) {
+    font-size: var(--wa-font-size-s);
+    color: var(--wa-color-text-quiet);
+    margin: 0;
+    line-height: 1.65;
+  }
+
+  .about-body :global(a) {
     color: var(--wa-color-text-link);
   }
 </style>

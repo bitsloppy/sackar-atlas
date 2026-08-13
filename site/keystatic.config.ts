@@ -41,13 +41,25 @@ export default config({
   // ---------------------------------------------------------------------------
   singletons: {
     home: singleton({
-      label: 'Home page',
+      label: 'Home page — hero text',
       path: 'data/pages/home',
       format: { contentField: 'content' },
       schema: {
         content: fields.markdoc({
           label: 'Hero body text',
           description: 'The introductory paragraph below the strapline on the home page.',
+        }),
+      },
+    }),
+
+    'home-about': singleton({
+      label: 'Home page — About this project',
+      path: 'data/pages/home-about',
+      format: { contentField: 'content' },
+      schema: {
+        content: fields.markdoc({
+          label: 'About section body',
+          description: 'The "About this project" prose section below the nav cards on the home page.',
         }),
       },
     }),
