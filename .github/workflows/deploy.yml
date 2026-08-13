@@ -44,6 +44,12 @@ jobs:
             const c = JSON.parse(fs.readFileSync('wrangler.json'));
             c.kv_namespaces = [];
             if (c.previews) c.previews.kv_namespaces = [];
+            c.vars = {
+              PUBLIC_KEYSTATIC_GITHUB_APP_SLUG: 'sackar-atlas-cms',
+              KEYSTATIC_GITHUB_CLIENT_ID: 'Iv23liEzLlXB3JL9B5wN',
+            };
             fs.writeFileSync('wrangler.json', JSON.stringify(c));
           "
           npx wrangler deploy --name sackar-atlas --compatibility-flags nodejs_compat
+          echo "${{ secrets.KEYSTATIC_GITHUB_CLIENT_SECRET }}" | npx wrangler secret put KEYSTATIC_GITHUB_CLIENT_SECRET --name sackar-atlas
+          echo "${{ secrets.KEYSTATIC_SECRET }}" | npx wrangler secret put KEYSTATIC_SECRET --name sackar-atlas
