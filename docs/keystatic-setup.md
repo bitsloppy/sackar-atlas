@@ -132,3 +132,32 @@ The `PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` env var isn't set. Check `site/.env` and 
 
 **Build error: "Cannot find module @keystatic/core"**
 Run `npm install` in the `site/` directory.
+
+---
+
+## At launch — switching to sackar-atlas.bitsloppy.com
+
+When the site moves to its permanent domain, do these two things:
+
+### 1. Add the prod callback URL to the GitHub App
+
+Go to **GitHub → Settings → Developer settings → GitHub Apps → sackar-atlas-cms → General**.
+
+Under **Callback URL**, add a second entry:
+```
+https://sackar-atlas.bitsloppy.com/api/keystatic/github/oauth/callback
+```
+
+(Keep the workers.dev URL too — it won't hurt anything.)
+
+### 2. Make sure the Cloudflare env vars are on the new deployment
+
+The Cloudflare Pages project already has the four Keystatic vars set. If `bitsloppy.com` is just a custom domain pointing at the same Pages project, you're done — the vars carry over automatically.
+
+If it's a new/separate Pages project or Worker, add the same four vars:
+- `KEYSTATIC_GITHUB_CLIENT_ID` → Variable
+- `KEYSTATIC_GITHUB_CLIENT_SECRET` → Secret
+- `KEYSTATIC_SECRET` → Secret
+- `PUBLIC_KEYSTATIC_GITHUB_APP_SLUG` → Variable
+
+That's it. The Client ID, secrets, and app slug don't change.
