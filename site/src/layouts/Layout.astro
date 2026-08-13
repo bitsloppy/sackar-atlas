@@ -177,20 +177,8 @@ const footerText = siteSettings?.data.footer_text
         padding-inline: 0.35em;
       }
 
-      /* Align acknowledgement text with the right-side credit block.
-         Using a div wrapper so we can set align-self independently of the p tag.
-         WA footer is flex — padding on a p flex-item has no effect when
-         align-items is center/stretch; align-self: flex-start pins it to top. */
-      .footer-ack {
-        align-self: flex-start;
-        padding-block-start: var(--wa-space-m);
-        max-width: 44ch;
-      }
-      .footer-ack p {
-        margin: 0;
-        font-size: var(--wa-font-size-s);
-        color: var(--wa-color-text-quiet);
-      }
+      /* Footer ack div uses inline style — Astro scoped CSS does not reach
+         slotted custom element content (no data-astro-cid injected there). */
 
       .footer-credit {
         text-align: right;
@@ -266,7 +254,7 @@ const footerText = siteSettings?.data.footer_text
 
       <!-- ── Footer: two direct <p> children; WA flex+space-between does the split ── -->
       <footer slot="footer">
-        <div class="footer-ack">
+        <div style="align-self: flex-start; padding-block-start: var(--wa-space-m); max-width: 44ch;">
           <p>
             Sackar Atlas acknowledges the Gadigal, Bidjigal, Gayamaygal, and all peoples of Country
             across the places documented here. <strong>Sovereignty was never ceded.</strong>
