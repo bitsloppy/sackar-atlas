@@ -11,22 +11,15 @@ import type { APIContext } from 'astro';
 import { makeHandler } from '@keystatic/astro/api';
 // @ts-ignore — virtual module resolved by the Keystatic Vite plugin
 import config from 'virtual:keystatic-config';
+// @ts-ignore — cloudflare:workers is available in the deployed Worker bundle
+import { env as cfEnvStatic } from 'cloudflare:workers';
 
 export const prerender = false;
 
 const handler = makeHandler({ config });
 
 export const ALL = async (context: APIContext) => {
-  // Read Cloudflare env vars from the Workers runtime module.
-  // Falls back to an empty object in non-Cloudflare environments.
-  let cfEnv: Record<string, string | undefined> = {};
-  try {
-    // @ts-ignore — cloudflare:workers is available in the deployed Worker
-    const m = await import('cloudflare:workers');
-    cfEnv = m.env as Record<string, string | undefined>;
-  } catch {
-    // Local dev or non-Cloudflare environment
-  }
+  const cfEnv = cfEnvStatic as Record<string, string | undefined>;
 
   // Proxy the context so that context.locals.runtime.env returns cfEnv
   // instead of throwing. Keystatic reads clientId/clientSecret/secret from here.
