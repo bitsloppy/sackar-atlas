@@ -1,16 +1,22 @@
 # Sackar Atlas
 
-A navigable public record of the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar Inquiry, December 2023) — connecting cases, places, people, and institutions from the public record.
+Making the findings of the 2023 NSW Special Commission of Inquiry into LGBTIQ Hate Crimes navigable to a general audience — cases, locations, people, and events, cross-referenced from the public record.
+
+**Live site:** https://sackar-atlas.bitsloppy.com
 
 ---
 
-## What this is
+## Why this exists
 
-A public data project making a dense government inquiry accessible to anyone. The SCOI report is a PDF — a formal, correct, important document that makes all its connections invisible. This project takes the public record and makes those connections legible: real people, real places, an interconnected institutional system, all drawn from primary sources.
+Between 1976 and 2000, at least 30 people were killed in New South Wales in circumstances the Inquiry found were consistent with anti-LGBTIQ bias. The Inquiry — led by Justice John Sackar AO KC — is the definitive public examination of those deaths: what happened, who was responsible, and what the NSW Police failed to do.
 
-**Scope:** Individual cases examined by the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar Inquiry, December 2023), plus the broader historical context: activism, legal milestones, cultural events, and significant places, from the 1960s to the present.
+Its findings fill three volumes and over 3,000 pages of PDF.
 
-**Framing:** Public interest data journalism. Built on primary sources — the SCOI report, Hansard, coronial records, police annual reports, Trove press archives — synthesised and made navigable. Oral history and community memory are beyond this project's scope; the infrastructure is built to support that work by others.
+What a PDF cannot show is that two deaths happened at the same clifftop thirteen months apart. Or that the same Strike Force investigated — and failed to prosecute — cases across three suburbs over a decade. Or that the same investigative failures appear, case after case, across thirty years.
+
+A relational dataset can. That's what this project is.
+
+**Framing:** Public interest research, not community heritage. Built on primary sources — the SCOI report, Hansard, coronial records, police annual reports, Trove press archives — synthesised and made navigable. Oral history and community memory are beyond this project's scope; the infrastructure is built to support that work by others.
 
 ---
 
@@ -45,12 +51,10 @@ A `CITATION.cff` file is included — GitHub renders this as a **Cite this repos
 
 ### An individual record
 
-> Roberts A (2026) '[Record title]', *Sackar Atlas* [data set record], https://github.com/bitsloppy/sackar-atlas/blob/main/data/[collection]/[slug].md, accessed [Day Month Year].
+> Roberts A (2026) '[Record title]', *Sackar Atlas*, https://sackar-atlas.bitsloppy.com/cases/[slug]/, accessed [Day Month Year].
 
 Example:
-> Roberts A (2026) 'Mark Stewart', *Sackar Atlas* [data set record], https://github.com/bitsloppy/sackar-atlas/blob/main/data/cases/mark-stewart.md, accessed 17 July 2026.
-
-Once the site is live on a domain, use the site URL instead of the GitHub file path. Each record page will include a pre-formatted citation string.
+> Roberts A (2026) 'Mark Stewart', *Sackar Atlas*, https://sackar-atlas.bitsloppy.com/cases/mark-stewart/, accessed 19 August 2026.
 
 ### Licence requirement
 
@@ -65,7 +69,7 @@ All data under `data/` is published under **CC-BY 4.0**. Attribution is a licenc
 
 This site targets **WCAG 2.1 Level AA** compliance. The subject matter documents the lives of people failed by institutions — the site should not itself be exclusionary.
 
-**Current status (2026-07-25):** AA compliant on all published pages.
+**Current status (2026-08-19):** AA compliant on all published pages.
 
 **Standing commitments:**
 - Text contrast ≥ 4.5:1 on all backgrounds (3:1 for large text / UI components)
@@ -74,7 +78,6 @@ This site targets **WCAG 2.1 Level AA** compliance. The subject matter documents
 - Skip-to-content link on every page
 - Decorative SVGs / icons marked `aria-hidden="true"`; meaningful images have `alt` text
 - Colour is never the sole differentiator — icons, labels, or patterns accompany colour coding
-- Map is an enhancement, not the only path to information — every pin links to a full text page
 
 **For contributors:** run a contrast check before merging any new colour. The WCAG AA threshold is 4.5:1 for body text.
 
@@ -82,12 +85,12 @@ This site targets **WCAG 2.1 Level AA** compliance. The subject matter documents
 
 ## Status
 
-🟢 Active development — 5 cases published, full interactivity layer live, WCAG AA compliant.
+🟢 Active development — 11 cases published, live at https://sackar-atlas.bitsloppy.com.
 
 ---
 
 ## Acknowledgements
 
-This project draws on the work of the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar Inquiry, 2023). It is an independent journalistic and open research project.
+This project draws on the work of the NSW Special Commission of Inquiry into LGBTIQ Hate Crimes (Sackar Inquiry, 2023). It is an independent research and public interest project.
 
 Data and project by [Anna Roberts](https://github.com/bitsloppy).
