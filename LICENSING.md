@@ -28,7 +28,7 @@ Everything in `data/` is published under CC-BY 4.0.
 You can use it, remix it, republish it, build on it — including commercially — as long as you credit the source. If you build something with this data, please link back to this project.
 
 **Attribution format:**
-> Queer Heritage / Anna Roberts, [queer-heritage](https://github.com/bitsloppy/queer-heritage), CC-BY 4.0
+> Roberts A (2026) *Sackar Atlas*, https://sackar-atlas.bitsloppy.com, CC-BY 4.0
 
 → [Full CC-BY 4.0 licence summary](LICENSE-data)  
 → [Official CC-BY 4.0 legal text](https://creativecommons.org/licenses/by/4.0/legalcode)
@@ -41,7 +41,7 @@ Everything in `journalism/` is copyright © Anna Roberts. All rights reserved.
 
 You may link to and quote briefly under fair dealing provisions, but reproduction, republication, or derivative works require explicit written permission.
 
-Contact: annavsculture@gmail.com
+Contact: hello@bitsloppy.com
 
 → [Full notice](LICENSE-journalism)
 
@@ -49,4 +49,4 @@ Contact: annavsculture@gmail.com
 
 ## Subrepositories / data splits
 
-If data content is split into a separate repository in the future (e.g. `queer-heritage-data-sydney`), that repository will carry its own `LICENSE` file under CC-BY 4.0. The licence terms will remain consistent regardless of how the content is distributed.
+If data content is split into a separate repository in the future, that repository will carry its own `LICENSE` file under CC-BY 4.0. The licence terms will remain consistent regardless of how the content is distributed.
