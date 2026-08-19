@@ -316,7 +316,7 @@ committed an indictable offence and that there was a reasonable prospect that a
 jury would convict him of that offence.5768
 
 
-# 6.764. On suspension of the inquest, Deputy State Coroner Russell made the following findings:5769
+6.764. On suspension of the inquest, Deputy State Coroner Russell made the following findings:5769
 
 
 Anthony Cawsey died at Centennial Park, Sydney, New South Wales on
@@ -349,7 +349,7 @@ reviewed deaths between 1976 and 2000.
 # Review by the Inquiry
 
 
-# 6.769. The Inquiry took the following steps in the course of examining the matter.
+6.769. The Inquiry took the following steps in the course of examining the matter.
 
 
 Summonses
@@ -411,14 +411,14 @@ obtain the coronial file in relation to the death of Mr Cawsey. The Coroners Cou
 produced material to the Inquiry on 7 July 2022.
 
 
-Family members
+## Family members
 
 
 6.774. The Inquiry made contact with Mr Cawsey's sisters, Christine and Kerry Cawsey,
 who provided a family statement.5772
 
 
-Further forensic examinations
+## Further forensic examinations
 
 
 1. On 30 January 2023, the Inquiry conducted a conference with FASS in relation to the potential for further forensic testing in Mr Cawsey's matter. Several exhibits were identified as having the potential for further forensic testing.
@@ -429,7 +429,7 @@ Examination Request (P377) forms held by FASS in relation to the exhibits in Mr
 Cawsey's matter. These were received by the Inquiry on 16 February 2023.
 
 
-# 6.777. On 30 March 2023, the Inquiry wrote to FASS requesting that further forensic analysis be conducted on eight exhibits.
+6.777. On 30 March 2023, the Inquiry wrote to FASS requesting that further forensic analysis be conducted on eight exhibits.
 
 
 6.778. On 23 June 2023, 26 July and 4 October 2023 the Inquiry received expert
@@ -522,25 +522,6 @@ submissions to that effect, the Inquiry wrote to Mr Kellie's sisters, including
 I357.5779 The Inquiry did not receive a response.
 
 
-5775 Exhibit 39, Tab 78, Expert Report of Dr Kerri Eagle, 17 February 2023, [82.1.1] (SCOI.83375).
-5776 Exhibit 39, Tab 90, Letter from Solicitor Assisting the Inquiry to Melanie Staples, 25 August 2023 (SCOI.86015).
-5777 Submissions of Detective Senior Constable Melanie Staples, 14 September 2023, 1 (SCOI.86015).
-5778 Exhibit 66, Tab 20, Letter to Stewart Leggat, 25 August 2023 (SCOI.86285); Exhibit 66, Tab 20A, Letter from Wotton + Kearney, 31
-August 2023 (SCOI.86674); Exhibit 66, Tab 20B, Letter to Wotton + Kearney, 20 September 2023 (SCOI.86668).
-5779 Exhibit 68, Tabs 3 to 4, Letters from Inquiry to next of kin, 8 and 14 June 2023 (SCOI.86644; SCOI.86646).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1283
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
-
-
 # Consideration of the evidence
 
 
@@ -559,7 +540,7 @@ LSD, cocaine and cannabis. His drug use did not appear to prevent him from
 maintaining regular employment and functional relationships.5782
 
 
-Movements prior to death
+## Movements prior to death
 
 
 6.789. At 4:24am on 26 September 2009, Mr Cawsey left his apartment in Redfern and
@@ -568,7 +549,7 @@ an unplanned trip, and he did not have a pre-arranged meeting with any
 individual.5784
 
 
-# 6.790. At 4:44am, while walking to Centennial Park, Mr Cawsey connected to a gay chat line, Mediatel Services.5785
+6.790. At 4:44am, while walking to Centennial Park, Mr Cawsey connected to a gay chat line, Mediatel Services.5785
 
 
 6.791. Mediatel Services and Manhunt allow callers to dial in to an access number. They
@@ -809,7 +790,7 @@ Mr Cawsey. None of Mr Cawsey's property was ever found on Mr Kellie or at any
 of his campsites.5807
 
 
-# 6.808. The evidence comprising the case against Mr Kellie is discussed below.
+6.808. The evidence comprising the case against Mr Kellie is discussed below.
 
 
 # Sightings of Mr Kellie in proximity to the crime scene
@@ -1021,10 +1002,10 @@ due to a consciousness that "the truth would convict him".5825 It is necessary t
 consider other reasonable explanations for any lie told by Mr Kellie.
 
 
-# 6.827. The three lies relied upon by police are considered in turn.
+6.827. The three lies relied upon by police are considered in turn.
 
 
-"LIES" ABOUT THE LOCATION OF HIS CAMPSITE
+### "LIES" ABOUT THE LOCATION OF HIS CAMPSITE
 
 
 6.828. The "lie" alleged against Mr Kellie was his omission to reveal the location of two
@@ -1180,7 +1161,7 @@ CCTV, the angles of each camera and quality of the footage are such that Mr
 Kellie's account of walking to UNSW cannot be definitively excluded.
 
 
-CONCLUSIONS AS TO LIES
+## CONCLUSIONS AS TO LIES
 
 
 1. The omissions or inconsistencies in Mr Kellie's accounts are capable of being construed as lies amounting to admissions, and can be considered as one element of the circumstantial case against Mr Kellie. However, the purported "lies" may not have been deliberately false, or alternatively may not have been told out of a consciousness of guilt.5836
@@ -1202,24 +1183,8 @@ that it would be improbably coincidental, having regard to the similarities betw
 the offences, that a person other than Mr Kellie committed Mr Cawsey's murder.
 
 
-# 6.845. The police case was put as follows:5837
+6.845. The police case was put as follows:5837
 
-
-5834 Exhibit 39, Tab 10, Facts Sheet, 14 (SCOI.83380).
-5835 Exhibit 39, Tab 46, Transcript of video walk-through, 17 October 2009, 6-7 (SCOI.10468.00088).
-5836 Edwards v The Queen (1993) 178 CLR 193; R v Lane [2011] NSWCCA 157.
-5837 Exhibit 39, Tab 10, Facts Sheet, 2 (SCOI.83380).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1293
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
 
 
 The common features of these offences were: unprovoked violent attacks; no
@@ -1231,10 +1196,10 @@ and the murder of [Mr Cawsey] reveal patterns of behaviour in relation to
 [Mr Kellie].
 
 
-# 6.846. Each offence relied upon as tendency or coincidence evidence is set out below.
+6.846. Each offence relied upon as tendency or coincidence evidence is set out below.
 
 
-ASSAULT OF I361 (A PSEUDONYM), 23 SEPTEMBER 2009
+## ASSAULT OF I361 (A PSEUDONYM), 23 SEPTEMBER 2009
 
 
 1. It was the police case that Mr Kellie was responsible for an assault on I361 on 23 September 2009.5838 Mr Kellie was never charged in relation to this alleged conduct.
@@ -1258,7 +1223,7 @@ hadn't seen anything in the hands of the man, such that it is unknown whether th
 incident involved "the use of knives or bladed weapons."
 
 
-# 6.851. In his first statement, dated 23 September 2009 but unsigned, I361 described the offender as follows:5841
+6.851. In his first statement, dated 23 September 2009 but unsigned, I361 described the offender as follows:5841
 
 
 I would describe this male as African, in his early 20's, about 175 to 180
@@ -1266,7 +1231,7 @@ centimetres tall, of a medium build, with a shaved head, wearing a grey
 coloured jacket and long dark pants.
 
 
-# 6.852. In a later statement, made some seven years later on 30 May 2016, I361 added the following:5842
+6.852. In a later statement, made some seven years later on 30 May 2016, I361 added the following:5842
 
 
 The man spoke in English with a dense accent. From his accent and his
@@ -1275,31 +1240,11 @@ colonies in west Africa such as Ghana or a nearby country. He was a dark
 skinned African. The man also had a very rounded face. When I say he
 had a shaved head, the man had black hair which was short as in shaved
 like a number 1 or number 2. I would say the man was of medium or
-
-
-5838 Exhibit 39, Tab 13, Statement of Detective Senior Constable Melanie Staples, 9 December 2016, [147] (SCOI.10464.00009).
-5839 Exhibit 39, Tab 51, Statement of I361, 30 May 2016, [9] (SCOI.10470.00033).
-5840 Exhibit 39, Tab 51, Statement of I361, 30 May 2016, [11]-[12], [16] (SCOI.10470.00033).
-5841 Exhibit 39, Tab 50, Statement of I361, 23 September 2009, [4] (SCOI.10471.00029).
-5842 Exhibit 39, Tab 51, Statement of I361, 30 May 2016, [13] (SCOI.10470.00033).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1294
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
-
-
 average built. I am 183 tall (6 feet) and the man was definitely shorter
 than me, I'd say about 5 feet 9 to 5 feet 10 inches tall.
 
 
-# 6.853. I361 was not asked to participate in a photo identification procedure in relation to the offender.
+6.853. I361 was not asked to participate in a photo identification procedure in relation to the offender.
 
 
 6.854. I361's description is broadly consistent with Mr Kellie, who was of black African
@@ -1340,28 +1285,7 @@ interview with police, Mr Kellie denied carrying a knife, or using any weapon to
 cause injuries to I359.5850
 
 
-5843 Exhibit 39, Tab 13, Statement of Detective Senior Constable Melanie Staples, 9 December 2016, [150] (SCOI.10464.00009).
-5844 Exhibit 39, Tab 49, Bail Report of Moses Kellie, 1 December 2016, 3 (SCOI.83357).
-5845 Exhibit 39, Tab 52, Statement of agreed facts, 7 October 2010, [2] -[3] (SCOI.83362).
-5846 Exhibit 39, Tab 52, Statement of agreed facts, 7 October 2010, [4] , [7] (SCOI.83362).
-5847 Exhibit 39, Tab 52, Statement of agreed facts, 7 October 2010, [5] (SCOI.83362).
-5848 Exhibit 39, Tab 55, Statement of Hayley Reynolds, 11 October 2009, [12]-[14] (SCOI.83376).
-5849 Exhibit 59, Tab 52, Statement of agreed facts, 7 October 2010, [6] (SCOI.83362).
-5850 Exhibit 59, Tab 47A, NSWPF Record of Interview, 'Interview with Moses Kellie', 17 January 2010, Q198-Q217 (SCOI.10469.00004).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1295
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
-
-
-ASSAULT OF I360, 16 OCTOBER 2009
+## ASSAULT OF I360, 16 OCTOBER 2009
 
 
 1. Mr Kellie was convicted after a summary hearing of an assault occasioning actual bodily harm in relation to a woman, I360, on Lang Road near the Fox Studios Complex, and a related charge of possession of a knife in a public place. Mr Kellie was sentenced to 12 months imprisonment, with a non-parole period of 9 months.5851
@@ -1399,33 +1323,13 @@ knife with a brown handle and a silver serrated blade, of which Mr Kellie ultima
 admitted to ownership and possession.5856
 
 
-AVAILABILITY OF COINCIDENCE AND TENDENCY REASONING
+## AVAILABILITY OF COINCIDENCE AND TENDENCY REASONING
 6.867. Section 9(3) of the SCOI Act provides that the Commissioner shall only receive as
 evidence matters which are, in the opinion of the Commissioner, likely to be
 admissible in evidence in civil proceedings. It through this lens that I now turn to
 consider the likely admissibility of the evidence as coincidence and tendency
 evidence in turn.
 
-
-5851 Exhibit 39, Tab 49, Bail Report of Moses Kellie, 1 December 2016, 1 (SCOI.83357).
-5852 Exhibit 39, Tab 57, Statement of I360, 16 October 2009, [3]-[4] (SCOI.83373); Exhibit 39, Tab 58, Statement of I360, 21 October
-2009, [4]-[5] (SCOI.83368).
-5853 Exhibit 39, Tab 57, Statement of I360, 16 October 2009, [4]-[6] (SCOI.83373); Exhibit 39, Tab 58, Statement of I360, 21 October
-2009 (SCOI.83368).
-5854 Exhibit 39, Tab 58, Statement of I360, 21 October 2009, [5]-[6] (SCOI.83368).
-5855 Exhibit 39, Tab 57, Statement of I360, 16 October 2009, [6]-[7] (SCOI.83373).
-5856 Exhibit 39, Tab 10, Facts Sheet, 11 (SCOI.83358).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1296
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
 
 
 6.868. Section 98 of the Evidence Act restricts the circumstances in which evidence that
@@ -1474,25 +1378,6 @@ death of Mr Cawsey, for the following reasons:
 2. Secondly, there is no evidence that Mr Cawsey had any property stolen from him, distinguishing the circumstances of his death from the circumstances of I359's robbery (and the assault of I361 if it is accepted that Mr Kellie lunged at his bag with the intention of stealing it); and
 
 
-5857 Hughes v The Queen (2017) 263 CLR 338, [40].
-5858 Hughes v The Queen (2017) 263 CLR 338, [81], [86], [215].
-5859 Selby v The Queen [2017] NSWCCA 40, [24].
-5860 Exhibit 39, Tab 47A, NSWPF Record of Interview, 'Interview with
-
-
-Moses Kellie', 17 January 2010, Q200-201 (SCOI.10469.00004).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1297
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
-
 
 1. Finally, and most significantly, the sexual component to Mr Cawsey's death, inferred from the positioning of his clothing and his stated intentions for coming to Centennial Park, is suggestive that the killing of Mr Cawsey occurred in a significantly different context from the offending against I359, I360 or I361.
 
@@ -1535,24 +1420,6 @@ when tendency evidence is relied upon to prove the identity of an offender for a
 known offence, rather than where the fact in issue is the occurrence of the
 offence.5863
 
-
-5861 Hughes v The Queen (2017) 263 CLR 338, [41].
-5862 TL v The Queen (2022) 405 ALR 578, [29].
-5863 Hughes v The Queen (2017) 263 CLR 338, [39]; TL v The King
-
-
-(2022) 405 ALR 578, [30].
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1298
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
 
 
 6.879. Here, tendency is not the only evidence as to identity, and the probative value of
@@ -1599,26 +1466,6 @@ Alleged admissions by Mr Kellie in his interview regarding the I359 robbery
 with wounding against I359, described above.5869
 
 
-5864 Evidence Act, s. 101(2).
-5865 Evidence Act, s. 101(1).
-5866 Evidence Act, s. 135(a)).
-5867 R v Droudis (No 13) [2016] NSWSC 1350, [78]-[95].
-5868 I am able to, and do, receive the evidence for other purposes, including as evidence relevant to understanding the progressio n of Mr
-Cawsey's case through the criminal courts and coronial system. The use of the evidence for this purpose does not permit it s use for a
-tendency or coincidence purpose: Evidence Act, s. 95(1).
-5869 Exhibit 39, Tab 47A, NSWPF Record of Interview, 'Interview with Moses Kellie', 17 January 2010 (SCOI.10469.00004).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1299
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
-
 
 6.885. During that interview, Mr Kellie described an incident that police considered was
 more consistent with the known circumstances of Mr Cawsey's death than the
@@ -1627,7 +1474,7 @@ to the robbery of I359 as "tantamount to an admission of being involved in a dir
 physical altercation" with Mr Cawsey.5870
 
 
-# 6.886. The police characterised this interview as "significant evidence" implicating Mr Kellie in the murder of Mr Cawsey.5871
+6.886. The police characterised this interview as "significant evidence" implicating Mr Kellie in the murder of Mr Cawsey.5871
 
 
 6.887. It is necessary to set out, in some detail, portions of the transcript of this interview.
@@ -1748,7 +1595,7 @@ A Yeah.
 [...]
 
 
-# 6.889. At this point, Mr Kellie marked the café that he was describing on a map with an asterisk.5874
+6.889. At this point, Mr Kellie marked the café that he was describing on a map with an asterisk.5874
 
 
 6.890. The asterisk appears to mark the location of the restaurant and café near the corner
@@ -1902,7 +1749,7 @@ Yeah, 'cause I saw him first when I was come out, when I was,
 when I was coming into the park.
 
 
-# 6.894. The interviewing officer attempted to clarify various aspects of this account. The interview continued (emphasis added):5878
+6.894. The interviewing officer attempted to clarify various aspects of this account. The interview continued (emphasis added):5878
 
 
 Q175 All right. Well what I don't understand about your, the
@@ -2270,7 +2117,7 @@ claimed that he intended to return the phone, and denied putting his sim card in
 it.5881
 
 
-# 6.898. The interviewing officer redirected the interview to the confrontation (emphasis added):5882
+6.898. The interviewing officer redirected the interview to the confrontation (emphasis added):5882
 
 
 [...]
@@ -2754,7 +2601,7 @@ interpretation favoured by the original investigating police as well as, later, 
 Coroner.5902
 
 
-# 6.920. However, Mr Kellie's interview is open to a number of other, reasonable interpretations, including:
+6.920. However, Mr Kellie's interview is open to a number of other, reasonable interpretations, including:
 
 
 1. That he was describing a distorted perception of his interactions with I359;
@@ -2945,7 +2792,7 @@ words were used by Mr Kellie. It is at odds with Mr Cawsey's phone being left in
 his shirt pocket.
 
 
-# 6.927. In the letter from the Coroner referring the matter to the ODPP, the Coroner observed the following:5910
+6.927. In the letter from the Coroner referring the matter to the ODPP, the Coroner observed the following:5910
 
 
 [I357]'s oral evidence at the inquest raised serious concerns regarding the
@@ -3038,37 +2885,7 @@ jury beyond reasonable doubt that Mr Kellie had committed an indictable offence
 not available at the time of the 2015-2016 prosecution of Mr Kellie. The new
 evidence is considered and assessed below.
 
-
-Detective Senior Constable Melanie Staples, 9 December 2016, [181] (SCOI.10464.00009).
-Detective Senior Constable Melanie Staples, 9 December 2016, [182] (SCOI.10464.00009).
-Detective Senior Constable Melanie Staples, 9 December 2016, [184] (SCOI.10464.00009).
-Deputy Director of Public Prosecutions Kara Shead to Detective Chief Inspector Jason Dickinson,
-
-
-5911 Exhibit 39, Tab 13, Statement of
-5912 Exhibit 39, Tab 13 Statement of
-5913 Exhibit 39, Tab 13, Statement of
-5914 Exhibit 39, Tab 11, Letter from
-13 September 2016 (SCOI.83377).
-5915
-(SCOI.10483.00054).
-
-
-Exhibit 39, Tab 8, Letter from Deputy State Coroner Magistrate Paula Russell to Mr Lloyd Babb SC, 7 March 2018, [2]
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1314
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
-
-
-New evidence as to Mr Kellie's mental health
+## New evidence as to Mr Kellie's mental health
 
 
 6.936. At the coronial hearing, the nature and extent of Mr Kellie's mental health
@@ -3078,7 +2895,7 @@ illness, and if so whether it affected his cognition, or his ability to answer q
 responsively, truthfully, or reliably.
 
 
-# 6.937. It is necessary to set out and comment upon each of the expert reports in relation to Mr Kellie.
+6.937. It is necessary to set out and comment upon each of the expert reports in relation to Mr Kellie.
 
 
 PSYCHOLOGICAL ASSESSMENT REPORT OF DR JOHN JACMON, 8 NOVEMBER 2010:
@@ -3450,25 +3267,7 @@ relation to the limitations, Dr Duflou commented:5945
 6. In relation to five of the six knives, Dr Duflou stated that while it was reasonably possible that they could have caused the injury, it was also entirely possible for another knife with similar dimensions to have caused the stab wound. He added that it was also reasonably possible for a knife which has "different appearances altogether" from the six that he examined to have been used to inflict the fatal stab wound.5946
 
 
-# 6.972. This evidence is neutral as to Mr Kellie's possible involvement in the stabbing of Mr Kellie.
-
-
-5942 Exhibit 39, Tab 4, Certificate of analysis of Lisa-Ann Wedervang, 18 April 2016c, 2-4, 13-14, 16 (SCOI.10465.00005).
-5943 Exhibit 39, Tab 5, Pathology report of Dr Johan Duflou, 1 November 2017 (SCOI.10488.00020).
-5944 Exhibit 39, Tab 5, Pathology report of Dr Johan Duflou, 1 November 2017, [14] (SCOI.10488.00020).
-5945 Exhibit 39, Tab 5, Pathology report of Dr Johan Duflou, 1 November 2017, [14]-[16] (SCOI.10488.00020).
-5946 Exhibit 39, Tab 5, Pathology report of Dr Johan Duflou, 1 November 2017, [18] (SCOI.10488.00020).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1320
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
+6.972. This evidence is neutral as to Mr Kellie's possible involvement in the stabbing of Mr Kellie.
 
 
 2018: The ODPP declines to prosecute Mr Kellie following the coronial referral
@@ -3523,34 +3322,7 @@ illness, symptoms of psychosis could have impaired his judgment and resulted in
 a misinterpretation of Mr Cawsey's behaviour, contributing to the violence. This
 would "complicate the interpretation of this offence as a hate crime."5951
 
-
-5947 Exhibit 39, Tab 12, Letter from Deputy
-2018 (SCOI.10483.00062).
-5948 Exhibit 39, Tab 12, Letter from Deputy Director of Public Prosecutions Peter
-2018 (SCOI.10483.00062).
-5949 Exhibit 39, Tab 77, Letter of Instruction to Dr Kerri Eagle, 21 December 2022, 4-5 (SCOI.83372).
-5950 Exhibit 39, Tab 78, Expert Report of Dr Kerri Eagle, 17 February 2023, [82.2.3]-[82.2.4] (SCOI.83375).
-5951 Exhibit 39, Tab 78, Expert Report of Dr Kerri Eagle, 17 February 2023, [82.2.1], [82.3.2] (SCOI.83375).
-
-
-Director of Public Prosecutions Peter McGrath SC to Magistrate Paula Russell, 16 November
-
-
-McGrath SC to Magistrate Paula Russell, 16 November
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1321
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
-
-
-# 6.978. Possible motivations for Mr Kellie's response to Mr Cawsey's alleged advances include:5952
+6.978. Possible motivations for Mr Kellie's response to Mr Cawsey's alleged advances include:5952
 
 
 1. "[A] reactive albeit excessive response to a persecutory misinterpretation of Mr Cawsey's intentions",
@@ -3595,23 +3367,7 @@ Detective Senior Constable Staples provided the opinion that Mr Cawsey's death
 3. Thirdly, there are no police or internet records indicating that LGBTIQ bias crimes were occurring in the Centennial Park area during 2009.
 
 
-## 6.983. Each of these factors is considered below.
-
-
-5952 Exhibit 39, Tab 78, Expert Report of Dr Kerri Eagle, 17 February 2023, [82.2.3]-[82.2.4] (SCOI.83375)
-5953 Transcript of the Inquiry, 2 November 2022, T138.22-139.14 (TRA.00003.00001).
-5954 Exhibit 39, Tab 13, Statement of Detective Senior Constable Melanie Staples, 9 December 2016, [130] (SCOI.10464.00009).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1322
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
+6.983. Each of these factors is considered below.
 
 
 6.984. In relation to the first factor, that the "murder itself is not indicative of it being
@@ -3657,31 +3413,7 @@ areas were indicated with the letter "B" in the map marked by park ranger Colin
 Cheshire on 24 June 2015.5961
 
 
-# 6.989. This was corroborated by information on a website accessed by Detective Senior Constable Staples and quoted in her statement.5962
-
-
-5955 Exhibit 39, Tab 63, Email from Kimberly Ora to Detective Senior Constable Melanie Staples, 17 February 2015, 1 (SCOI.10472.00151).
-5956 Exhibit 39, Tab 63, Email from Kimberly Ora to Detective Senior Constable Melanie Staples, 17 February 2015 (SCOI.10472.00151).
-5957 Exhibit 39, Tab 63, Email from Kimberly Ora to Detective Senior Constable Melanie Staples, 17 February 2015, 2 (SCOI.10472.00151).
-5958 Exhibit 39, Tab 78, Expert report of Dr Kerri Eagle, 17 February 2023, [46]-[47] (SCOI.83375).
-5959 Exhibit 39, Tab 78, Expert report of Dr Kerri Eagle, 17 February 2023, [82.3.3] (SCOI.83375).
-5960 Exhibit 39, Tab 35, Statement of Colin Cheshire, 24 June 2015, [33]-[35] (SCOI.83386); Exhibit 39, Tab 36, Statement of Lee Doull,
-4 November 2015, [8] (SCOI.10467.00125); Exhibit 39, Tab 37, Statement of David Nelson, 20 November 2015, [8] (SCOI.10467.00133);
-Exhibit 39, Tab 40, Statement of Juliet Johnson, 2 February 2016, [9] -[10], [13] (SCOI.10467.00127).
-5961 Exhibit 39, Tab 35A, Annexure to Statement of Colin Cheshire, 24 June 2015 (SCOI.83386).
-5962 Exhibit 39, Tab 13, Statement of Detective Senior Constable Melanie Staples, 9 December 2016, [123] (SCOI.10464.00009).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1323
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Anthony Cawsey
-
+6.989. This was corroborated by information on a website accessed by Detective Senior Constable Staples and quoted in her statement.5962
 
 6.990. Accepting this information to be true reduces the likelihood of a planned LGBTIQ
 bias attack in the location of Busby's Pond. However, it does not exclude the
@@ -4008,10 +3740,6 @@ expression of his sexuality.
 6.1016. Counsel Assisting considered the question of bias on the hypothesis that Mr Kellie killed Mr Cawsey following an encounter in which Mr Cawsey was perceived to have propositioned him for sex.
 
 6.1017. As Counsel Assisting submitted, this excessive hostility is open to being interpreted as anger motivated by prejudice against LGBTIQ people. However, interpretation of Mr Kellie's version of events is significantly complicated by his psychotic illness and traumatic experiences, and there is insufficient information to reliably determine the motivation for his behaviour.
-
-
-
-
 
 6.1018. I further accept that, even if it was assumed that Mr Kellie killed Mr Cawsey after an encounter consistent with that contained in his interview with police on 17 January 2010, there would remain real doubt about whether the death was the result of LGBTIQ bias.
 

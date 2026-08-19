@@ -7,7 +7,7 @@
 ## Factual background
 
 
-Date and location of death
+### Date and location of death
 
 
 6.73. On 22 June 1976, Ernest Allan Head was found deceased in his apartment on
@@ -16,7 +16,7 @@ Thursday, 17 June 1976, and likely died that evening or early the following
 morning.5110
 
 
-Circumstances of death
+### Circumstances of death
 
 
 1. Mr Head was 44 years old at the time of his death. He was born in Malaysia and had emigrated to Australia in 1960.5111 He was a gay man, and had previously been in a three year relationship and lived with I454 (a pseudonym), who remained one of his close friends.5112
@@ -28,29 +28,6 @@ enquire after his welfare.5113 His body was naked and lying face down in the kit
 covered in blood. He had been stabbed 35 times to the face, chest, abdomen, back,
 buttocks and limbs.5114 The nature of Mr Head's injuries leaves no doubt that he
 was the victim of a homicide.
-
-
-5110 Exhibit 64, Tab 5, Findings of Coroner Nash, Inquest into the death of Ernest Head, 16 December 1977 (SCOI.11039.00008); Exhibit
-64, Tab 2, Post-Mortem Report, 17 August 1976 (SCOI.85765); Exhibit 64, Tab 7, Statement of I454, 23 June 1976, [4]
-(SCOI.11039.00117); Exhibit 64, Tab 8, Statement of Sydney Moore, 23 June 1976 (SCOI.11039.00101).
-5111 Exhibit 64, Tab 32, NSWPF Report of Occurrence, Bundle of Report of Occurrence records, 4 July 1976, 37-38 (SCOI.85764);
-Exhibit 64, Tab 6, Statement of Arthur Head, 24 June 1976, 1 (SCOI.11039.00115).
-5112 Exhibit 64, Tab 6, Statement of Arthur Head, 24 June 1976, 1 (SCOI.11039.00115); Exhibit 64, Tab 7, Statement of I454, 23 Jun e
-1976, [1] (SCOI.11039.00117).
-5113 Exhibit 64, Tab 8, Statement of Sydney Moore, 23 June 1976, [7]-[8] (SCOI.11039.00101); Exhibit 64, Tab 7, Statement of I454, 23
-June 1976, [7] (SCOI.11039.00117).
-5114 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [3], [14] (SCOI.11039.00099).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1162
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
 
 
 6.76. There were blood splashes, smears and drops in the kitchen, loungeroom, dining
@@ -83,7 +60,7 @@ Mr Simsek had not previously been connected to Mr Head's death.
 of suicide on 6 May 1999 in Türkiye.5123
 
 
-Identification of this case by the Inquiry
+### Identification of this case by the Inquiry
 
 
 1. On 6 June 2022, the Inquiry obtained a copy of the UHT Tracking File, as outlined in the introduction to this Chapter.
@@ -100,35 +77,10 @@ death in order to form a view as to whether the case in fact fell within Categor
 The steps taken by the Inquiry are discussed below.
 
 
-5115 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976 (SCOI.11039.00099).
-5116 Exhibit 64, Tab 4, Expert Certificate of Paul Connellan, 17 September 1976, 4 (SCOI.11039.00036).
-5117 Exhibit 64, Tab 18, Statement of Detective Sergeant Albert McDonald, 14 November 1977, [2] (SCOI.11039.00021).
-5118 Exhibit 64, Tab 34, Special Circular No 76/22, 'Alleged Murder and Theft of Property', 1 July 1976 (SCOI.11039.00023); Exhibit 64,
-Tab 18, Statement of Detective Sergeant Albert McDonald, 14 November 1977, [8] (SCOI.11039.00021).
-5119 Exhibit 64, Tab 10, Statement of Donald Humphreys, 23 June 1976 (SCOI.11039.00105).
-5120 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976 (SCOI.11039.00099); Exhibit 64, Tab 57, Fi rst
-Expert Certificate of Kate Reid, Senior Crime Scene Officer - Fingerprint Expert, 30 May 2023, 2 (SCOI.85121).
-5121 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [33]-[34] (SCOI.85769).
-5122 Exhibit 64, Tab 74, Extract of Movement Records of Engin Simsek, Undated (SCOI.85766).
-5123 Exhibit 64, Tab 61A, Letter from Katherine Garaty to Enzo Camporeale, 6 October 2023 (SCOI.86038); Exhibit 64, Tab 75,
-Newspaper article re death of Engin Simsek and certified translation, 8 May 1999-28 August 2023 (SCOI.85752).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1163
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
-
 # Previous investigations
 
 
-Original police investigation
+### Original police investigation
 
 
 1. The original police investigation was conducted by officers from the Ashfield Police Station, with the assistance of the Special Crime Squad. The investigation was thorough. Police pursued multiple lines of inquiry and interviewed over a hundred people in relation to Mr Head's death.5124 Their investigations included, among other things:5125
@@ -169,22 +121,6 @@ distributing flyers in the local area;
 4. Canvassing local distributors of the types of cigarettes found in the ashtray at Mr Head's home; and
 
 
-5124 Exhibit 64, Tab 18, Statement of Detective Sergeant Albert McDonald, 14 November 1977 (SCOI.11039.00021).
-5125 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [10] (SCOI.85769).
-5126 Exhibit 64, Tab 32, NSWPF Report of Occurrence, Bundle of Report of Occurrence records, 9 July 1976, 24-25 (SCOI.85764).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1164
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
-
 o. Proclaiming a $10,000 reward for information.5127
 
 
@@ -222,32 +158,7 @@ alcohol content of 0.040g/100mL.5133 It is unclear if that figure was adjusted t
 account for the decomposition of Mr Head's body.
 
 
-# 6.92. Penile and anal swabs were taken for biological examination.5134
-
-
-5127 Exhibit 64, Tab 18, Statement of Detective Sergeant Albert McDonald, 14 November 1977, [9] (SCOI.11039.00021); Exhibit 64, Ta b
-33, Proclamation of $10,000 reward, 6 August 1977 (SCOI.11039.00027).
-5128 Exhibit 64, Tab 20, Statement of Sergeant Robert William Stone, 16 November 1977 (SCOI.11039.00111); Exhibit 64, Tab 32, NSWPF
-Report of Occurrence, Bundle of Report of Occurrence records, 4 July 1976, 17-18 (SCOI.85764).
-5129 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [7] -[33] (SCOI.11039.00099); Exhibit 64, Tab
-4, Expert Certificate of Paul Connellan, 17 September 1976 (SCOI.11039.00036); Exhibit 64, Tab 49A, Extract of Receipt Book r e Death
-of Ernest Head, Various (NPL.0145.0001.0007).
-5130 Exhibit 64, Tab 2, Post-Mortem Report, 17 August 1976 (SCOI.85765).
-5131 Exhibit 64, Tab 2, Post-Mortem Report, 17 August 1976, 1 (SCOI.85765).
-5132 Exhibit 64, Tab 2, Post-Mortem Report, 17 August 1976, 3 (SCOI.85765).
-5133 Exhibit 64, Tab 3, DAL certificate, 13 July 1976 (SCOI.11039.00034).
-5134 Exhibit 64, Tab 2, Post-Mortem Report, 17 August 1976, 3 (SCOI.85765).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1165
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
+6.92. Penile and anal swabs were taken for biological examination.5134
 
 
 6.93. Dr Oettle advised police that the murder weapon could be a very sharp knife,
@@ -268,17 +179,17 @@ of the chest and abdomen wilfully inflicted by a person or persons unknown" at
 his home in Summer Hill on 17 June 1976.5137
 
 
-Criminal proceedings
+### Criminal proceedings
 
 
 6.95. No criminal proceedings were ever instituted against any person in relation to Mr
 Head's death.
 
 
-# 6.96. In light of Mr Simsek's death in Türkiye, no future criminal proceedings are anticipated in this matter.
+6.96. In light of Mr Simsek's death in Türkiye, no future criminal proceedings are anticipated in this matter.
 
 
-Subsequent police investigation
+### Subsequent police investigation
 
 
 1. The Inquiry has been provided with documents which indicate various actions or reviews taken in relation to Mr Head's case by the UHT.
@@ -298,26 +209,6 @@ eliminated to Mr Head, which in fact had been known from the time of the origina
 investigation.5140 It is unclear from the documents available to the Inquiry if the
 prints were searched on NAFIS at this time.
 
-
-5135 Exhibit 64, Tab 32, NSWPF Report of Occurrence, Bundle of Report of Occurrence records, 25 June 1976, 12 (SCOI.85764).
-5136 This was the subject of expert evidence at the inquest of Mr Anthony Cawsey, another death examined by this Inquiry: see Exhibit 39,
-Tab 5, Pathology Report of Dr Johan Duflou, 1 November 2017 (SCOI.10488.00020).
-5137 Exhibit 64, Tab 5, Findings of Coroner Nash, Inquest into the death of Ernest Head, 16 December 1977 (SCOI.11039.00008).
-5138 Exhibit 64, Tab 37, Request by Strike Force Palace for further examination of latent fingerprints, 15 March 2002 (SCOI.60864).
-5139 Exhibit 64, Tab 59, Second Expert Certificate of Kate Reid, 20 June 2023, [10] (SCOI.85263).
-5140 Exhibit 64, Tab 20, Statement of Sergeant Robert William Stone, 16 November 1977 (SCOI.11039.00111); Exhibit 64, Tab 59, Second
-Expert Certificate of Kate Reid, 20 June 2023, [10] (SCOI.85263).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1166
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
 
 
 6.100. An Investigators Note dated 29 July 2005 records that, on 20 July 2005, Detective
@@ -343,29 +234,6 @@ is blank.5143 In that Case Screening Form:
 
 4. Detective Inspector Jarrett concluded that "no further investigative inquiries can reasonably be made without the fingerprint or possible DNA evidence being linked to a particular person."5149
 
-
-5141 Exhibit 64, Tab 42, NSWPF Investigators Note, 'HEAD - exhibits located', 13 June 2007 (SCOI.60860).
-5142 Exhibit 64, Tab 44, Unsolved Homicide Team Review Form, 30 August 2005 (SCOI.02836).
-5143 Exhibit 64, Tab 44, Unsolved Homicide Team Review Form, 30 August 2005, 10 (SCOI.02836).
-5144 Exhibit 64, Tab 44, Unsolved Homicide Team Review Form, 30 August 2005, 10 (SCOI.02836).
-5145 Exhibit 64, Tab 44, Unsolved Homicide Team Review Form, 30 August 2005, 5 (SCOI.02836); see also Exhibit 64, Tab 42, NSWPF
-Investigators Note, 'HEAD - exhibits located', 13 June 2007 (SCOI.60860).
-5146 Exhibit 64, Tab 44, Unsolved Homicide Team Review Form, 30 August 2005, 5 (SCOI.02836).
-5147 Exhibit 64, Tab 44, Unsolved Homicide Team Review Form, 30 August 2005, 5 (SCOI.02836).
-5148 Exhibit 64, Tab 44, Unsolved Homicide Team Review Form, 30 August 2005, 6, 12 (SCOI.02836).
-5149 Exhibit 64, Tab 44, Unsolved Homicide Team Review Form, 30 August 2005, 12 (SCOI.02836); see also Exhibit 64, Tab 40, NSWPF
-Investigators Note, 'Fingerprint review - Ernest Alan Head', 30 August 2005 (SCOI.60861).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1167
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
 
 
 6.102. On 29 September 2005, following the completion of the Case Screening Form,
@@ -394,7 +262,7 @@ for forensic testing.5154 The uncertain provenance of the match is discussed fur
 below.
 
 
-# 6.105. Mr Head's death was not reviewed by Strike Force Parrabell.
+6.105. Mr Head's death was not reviewed by Strike Force Parrabell.
 
 
 # Review by the Inquiry
@@ -461,7 +329,7 @@ by the supplementary written submissions of Counsel Assisting dated 31 October
 2023.5167
 
 
-Summonses
+### Summonses
 
 
 6.109. A summons was issued to the NSWPF on 21 July 2022 for all documents relating
@@ -474,36 +342,13 @@ were also issued seeking information in relation to key witnesses identified aft
 review of the original investigative file.5169
 
 
-5160 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [29]-[32] (SCOI.85769).
-5161 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [29]-[32] (SCOI.85769).
-5162 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [33]-[38] (SCOI.85769).
-5163 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [39]-[43] (SCOI.85769).
-5164 Transcript of the Inquiry, 10 October 2023, T6880.12-20 (TRA.00099.00001).
-5165 Submissions of Counsel Assisting, 9 October 2023 (SCOI.86054).
-5166 Submissions of NSWPF, 24 October 2023 (SCOI.86371).
-5167 Supplementary Submissions of Counsel Assisting, 31 October 2023 (SCOI.86429).
-5168 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [6] -[9] (SCOI.85769).
-5169 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [20], [39], [42] (SCOI.85769).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1169
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
-
 6.110. On 16 May 2023, the Inquiry issued a summons to the Supreme Court seeking the
 Letters of Administration and Grant of Probate to identify the beneficiaries of
 Mr Head's estate (SC05).5170 On 22 May 2023, the Supreme Court produced the
 documents, which revealed that I454 was the beneficiary of Mr Head's estate.5171
 
 
-Interagency cooperation
+### Interagency cooperation
 6.111. On 22 July 2022, the Inquiry issued a written request to the Coroners Court to
 obtain the coronial file in relation to the death of Mr Head.5172 The Coroners Court
 answered the request and provided the coronial file on 26 August 2022.5173
@@ -514,7 +359,7 @@ Sergeant Geoffrey William Fagan, the OIC of the original investigation, is now
 deceased.
 
 
-Family members
+### Family members
 6.113. The Inquiry issued summonses and utilised interagency cooperation in order to try
 to locate Mr Head's family. Arthur Head, the brother of Mr Head, was confirmed
 to be deceased. A number of other relatives were identified as residing overseas,
@@ -527,10 +372,10 @@ Mr Head was located in Western Australia. The Inquiry wrote to this person on
 14 June 2023 and again on 26 September 2023. No response was received.5175
 
 
-# 6.115. Unfortunately, attempts to locate or contact other family members of Mr Head were unsuccessful.
+6.115. Unfortunately, attempts to locate or contact other family members of Mr Head were unsuccessful.
 
 
-Searches for exhibits
+### Searches for exhibits
 
 
 6.116. On 14 March 2023, a summons was issued to the NSWPF in relation to the
@@ -543,43 +388,6 @@ searches undertaken by the NSWPF. This included: searches on EFIMS; a review
 of all NSWPF investigative holdings; a search for and review of relevant exhibit
 books; searches of the long-term exhibit repository (the MEPC); and enquiries
 with FASS, FETS and DOFM.5177
-
-
-Supreme Court (SC05), 16 May 2023 (SCOI.85119).
-Francesca Lilly, 10 October 2023, [21] (SCOI.85769); see also
-dates, 34 (SCOI.85764).
-Statement of Francesca Lilly, 10 October 2023, [4] (SCOI.85769).
-Statement of Francesca Lilly, 10 October 2023, [4] -[5] (SCOI.85769).
-Statement of Francesca Lilly, 10 October 2023, [11]-[13] (SCOI.85769).
-Statement of Francesca Lilly, 10 October 2023, [15] (SCOI.85769).
-Summons to NSWPF (NSWPF69), 14 March 2023 (SCOI.85856).
-Statement of Detective Inspector Nigel Warren, 29 March 2023 (NPL.0145.0001.0014).
-
-
-5170 Exhibit 64, Tab 45, Summons to
-5171 Exhibit 64, Tab 77, Statement of
-of Occurrence records, various
-5172 Exhibit 64, Tab 77,
-5173 Exhibit 64, Tab 77,
-5174 Exhibit 64, Tab 77,
-5175 Exhibit 64, Tab 77,
-5176 Exhibit 64, Tab 48,
-5177 Exhibit 64, Tab 49,
-
-
-Exhibit 64, Tab 32, Bundle of Report
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1170
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
 
 6.117. The NSWPF advised that the only exhibits that were located were three cigarette
 butts.5178 Accordingly, it would appear that the majority of the physical exhibits in
@@ -599,10 +407,10 @@ further testing on the cigarette butts was carried out by FASS, the match was
 located.5182
 
 
-Further forensic examinations
+### Further forensic examinations
 
 
-Request to FASS
+### Request to FASS
 
 
 1. On 30 March 2023, the Inquiry requested that FASS retrieve its case file in relation to Mr Head. On 3 May 2023, the Inquiry conferenced with FASS to discuss the possibility of further testing of the exhibits available, and what testing may have been able to be conducted had the original exhibits all been properly retained.5183
@@ -617,28 +425,6 @@ had disintegrated, reducing the prospects of obtaining a useful result.5184
 
 6.121. On 12 May 2023, the Inquiry wrote to FASS to request that further testing be
 carried out on the cigarette butts.5185 The results of that testing is discussed below.
-
-
-5178 Exhibit 64, Tab 49, Statement of Detective Inspector Nigel Warren, 29 March 2023, [9] (NPL.0145.0001.0014).
-5179 Exhibit 64, Tab 50, Letter from Enzo Camporeale to Patrick Hodgetts, 12 May 2023 (SCOI.85857).
-5180 Exhibit 64, Tab 50, Letter from Enzo Camporeale to Patrick Hodgetts, 12 May 2023 (SCOI.85857); Exhibit 64, Tab 49C, DAL
-Database Report, 20 January 2008 (NPL.0145.0001.0006).
-5181 Exhibit 64, Tab 51, Email from Patrick Hodgetts to Francesca Lilly, 17 May 2023 (SCOI.85858).
-5182 Exhibit 64, Tab 54, Statement of Dr David Bruce, 25 September 2023, 2 (SCOI.85768).
-5183 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [29] (SCOI.85769).
-5184 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [30] (SCOI.85769).
-5185 Exhibit 64, Tab 52, Letter from Francesca Lilly to Clint Cochrane, 12 May 2023 (SCOI.85122).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1171
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
 
 
 6.122. In the letter of 12 May 2023, the Inquiry also requested that all Specimen/Exhibit
@@ -736,53 +522,12 @@ was asked to address topics including:5202
 5. Any other matters to raise within Dr Sullivan's expertise that may be of assistance to the Inquiry.
 
 
-# 6.130. Dr Sullivan provided his report on 15 May 2023.5203
-
-
-5196 Exhibit 64, Tab 78, Letter from Enzo
-5197 Exhibit 64, Tab 79, Letter from
-5198 Exhibit 64, Tab 80, Fourth
-(NPL.9000.0039.0001).
-5199 Exhibit 64, Tab 80, Fourth Expert Certificate of
-(NPL.9000.0039.0001).
-5200 Exhibit 64, Tab 81, Statement of Penelope Smith, 31
-5201 Exhibit 64, Tab 47A, Letter of Instruction to Dr Danny
-5202 Exhibit 64, Tab 47A, Letter of Instruction to Dr Danny
-5203 Exhibit 64, Tab 47, Expert Report of Dr Danny Sullivan, 15 May 2023
-
-
-Camporeale to Patrick Hodgetts, 11 October 2023 (SCOI.86390).
-Patrick Hodgetts to Enzo Camporeale, 16 October 2023 (SCOI.86392).
-Expert Certificate of Kate Reid, Senior Crime Scene Officer - Fingerprint
-
-
-Expert, 18 October 2023
-
-
-Kate Reid, Senior Crime Scene Officer - Fingerprint Expert, 18 October 2023
-
-
-October 2023, [8] (SCOI.86391).
-Sullivan, 24 April 2023 (SCOI.86037).
-Sullivan, 24 April 2023, 3 (SCOI.86037).
-(SCOI.85123).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1173
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
+6.130. Dr Sullivan provided his report on 15 May 2023.5203
 
 # Person of interest
 
 
-Inquiries into Engin Simsek and his family
+### Inquiries into Engin Simsek and his family
 
 
 1. On 1 June 2023, following the match of the palm print to Mr Simsek, the Inquiry issued Summons NSWPF116 seeking records in relation to Mr Simsek.5204 Material was produced by the NSWPF in two tranches, the first on 5 June 2023 and the second on 6 June 2023. This material included a Bail Report and a CNI Profile for Mr Simsek.5205
@@ -821,37 +566,12 @@ was summoned to a private hearing of the Inquiry on 5 July 2023,5214 and on 3
 October 2023 provided a voluntary statement as to his knowledge of Mr Simsek.5215
 
 
-5204 Exhibit 64, Tab 64, Summons to NSWPF (NSWPF116), 1 June 2023 (SCOI.85749).
-5205 Exhibit 64, Tab 65, Bail Report of Engin Simsek, 2 June 2023, 1 (NPL.0175.0001.0001).
-5206 Exhibit 64, Tab 66, Summons to CSNSW (CSNSW19), 1 June 2023 (SCOI.85751).
-5207 Exhibit 64, Tab 70, Pre-Release Report, 29 May 1986, 4 (SCOI.12138.00053); Exhibit 64, Tab 71, Case History Data Sheet, 9 July 1986
-(SCOI.12138.00004).
-5208 Exhibit 64, Tab 74A, Arrival card of Engin Simsek, 20 May 1972 (SCOI.85976); Exhibit 64, Tab 77, Statement of Francesca Lilly , 10
-October 2023, [41] (SCOI.85769).
-5209 Exhibit 64, Tab 67, Notes from Interviews with Engin Simsek, 19 March 1986-22 April 1986 (SCOI.12138.00059).
-5210 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [44] (SCOI.85769).
-5211 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [44] (SCOI.85769).
-5212 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [45] (SCOI.85769).
-5213 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [45] (SCOI.85769).
-5214 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [46] (SCOI.85769).
-5215 Exhibit 64, Tab 76, Statement of I450, 3 October 2023 (SCOI.85771).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1174
-
-
 
 
 1. Among other things, that relative informed the Inquiry that Mr Simsek had returned to Türkiye in the 1990s and had subsequently died in Türkiye.5216 He also told the Inquiry that other family members of Mr Simsek's generation, who were likely to have more information about Mr Simsek, were now deceased.5217
 
 
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
-
-Death certificate of Engin Simsek
+### Death certificate of Engin Simsek
 
 
 1. On 30 June 2023, the Inquiry wrote to the Australian Embassy in Ankara seeking assistance in locating Mr Simsek.5218 On 4 July 2023, the Embassy advised that it was not able to assist unless a formal request for mutual legal assistance was made via the Attorney-General's Department.5219
@@ -889,36 +609,8 @@ authorities had confirmed, via Interpol, that Mr Simsek passed away on
 6 May 1999.5228
 
 
-5216 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [46] (SCOI.85769).
-5217 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [46] (SCOI.85769).
-5218 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [48] (SCOI.85769).
-5219 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [48] (SCOI.85769).
-5220 Exhibit 64, Tab 74, Extract of Movement Records of Engin Simsek, Undated (SCOI.85766).
-5221 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [49] (SCOI.85769).
-5222 Exhibit 64, Tab 60, Letter from Enzo Camporeale to Patrick Hodgetts, 15 August 2023 (SCOI.85261).
-5223 Exhibit 64, Tab 61, Letter from Katherine Garaty to Enzo Camporeale, 22 August 2023 (SCOI.85262).
-5224 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [53] (SCOI.85769).
-5225 Exhibit 64, Tab 75, Newspaper article re death of Engin Simsek and certified translation, 8 May 1999-28 August 2023
-5226 Exhibit 64, Tab 76, Statement of I450, 3 October 2023, [15] (SCOI.85771).
-5227 Exhibit 64, Tab 77, Statement of Francesca Lilly, 10 October 2023, [54] (SCOI.85769).
-5228 Exhibit 64, Tab 61A, Letter from Katherine Garaty to Enzo Camporeale, 6 October 2023 (SCOI.86038).
 
-
-(SCOI.85752).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1175
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
-
-Contact with Mr Simsek's next of kin
+### Contact with Mr Simsek's next of kin
 
 
 6.144. In light of the evidence before the Inquiry as to the potential involvement of
@@ -931,7 +623,7 @@ forthcoming public hearing and the proposed submissions. I450 subsequently
 provided the Inquiry with a statement outlining his knowledge of Mr Simsek.5229
 
 
-Contact with OIC
+### Contact with OIC
 
 
 6.145. As discussed above, through interagency cooperation, the Inquiry determined that
@@ -941,7 +633,7 @@ the OIC of the original police investigation is now deceased.
 # Consideration of the evidence
 
 
-Mr Head's personal circumstances
+### Mr Head's personal circumstances
 
 
 1. Mr Head was born in Malaysia in 1932.5230 Mr Head was described as a quiet, private and good-natured man, who lived alone and was employed as a clerk with the Corporate Affairs Commission.5231 A colleague and friend said he was "soft hearted, kind, shy", and "took everything that was said to him seriously."5232 He was a neat and tidy person, both in his personal appearance and in his home.5233 He was well-dressed and groomed, with a friend describing him as "always immaculate, shirts pressed, not a hair out of place, always spick and span."5234
@@ -958,33 +650,6 @@ the prejudices against LGBTIQ people during Mr Head's lifetime. For example,
 Margaret McEvoy, a friend and colleague of Mr Head's, said that she was unaware
 of his sexuality.5238
 
-
-5229 Exhibit 64, Tab 76, Statement of I450, 3 October 2023 (SCOI.85771); Exhibit 68, Tabs 10 to 11, Letters from the Inquiry, 18 August
-2023 and 11 September 2023 (SCOI.86620; SCOI.86621).
-5230 Exhibit 64, Tab 6, Statement of Arthur Head, 24 June 1976, 1 (SCOI.11039.00115).
-5231 Exhibit 64, Tab 6, Statement of Arthur Head, 24 June 1976, 1-2 (SCOI.11039.00115); Exhibit 64, Tab 7, Statement of I454, 23 June
-1976, [3] (SCOI.11039.00117); Exhibit 64, Tab 32, NSWPF Report of Occurrence, Bundle of Report of Occurrence records, various dates,
-2-4 (SCOI.85764).
-5232 Exhibit 64, Tab 9, Statement of Margaret McEvoy, 23 June 1976, 1 (SCOI.11039.00038).
-5233 Exhibit 64, Tab 6, Statement of Arthur Head, 24 June 1976, 2 (SCOI.11039.00115); Exhibit 64, Tab 14, Statement of William Strachan,
-24 June 1976, [9] (SCOI.10942.00069).
-5234 Exhibit 64, Tab 8, Statement of Sydney Moore, 23 June 1976, [13] (SCOI.11039.00101).
-5235 Exhibit 64, Tab 6, Statement of Arthur Head, 24 June 1976, 1 (SCOI.11039.00115); Exhibit 64, Tab 7, Statement of I454, 23 Jun e
-1976, [1] (SCOI.11039.00117).
-5236 Exhibit 64, Tab 18, Statement of Detective Sergeant Albert McDonald, 14 November 1977, [7] (SCOI.11039.00021).
-5237 Exhibit 64, Tab 6, Statement of Arthur Head, 24 June 1976, 1 (SCOI.11039.00115).
-5238 Exhibit 64, Tab 9, Statement of Margaret McEvoy, 23 June 1976, 1 (SCOI.11039.00038).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1176
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
 
 
 6.149. Mr Head's criminal history includes two charges of "offensive behaviour", said to
@@ -1020,7 +685,7 @@ times. Despite this, the original investigation found there was no reason to bel
 any person other than Mr Head placed the bets.5245
 
 
-Observations of neighbours
+### Observations of neighbours
 6.154. At around 7:00pm on 17 June 1976, two people in a neighbouring unit, Elaine
 Walsh and Donald Humphreys, overheard Mr Head calling out from his flat,
 saying words to the effect of "Help me" or "Somebody help me", as well as "Don't
@@ -1030,28 +695,6 @@ another male voice, and while he could not make out the conversation it appeared
 that there was an argument going on in the flat. Ms Walsh also heard "something
 being thrown around" prior to the calling out.5246
 
-
-5239 Exhibit 64, Tab 36, Table of Offences of Ernest Head, 17 April 1961-26 October 1964 (SCOI.10949.00025).
-5240 Exhibit 64, Tab 6, Statement of Arthur Head, 24 June 1976, 2 (SCOI.11039.00115).
-5241 Exhibit 64, Tab 32, NSWPF Report of Occurrence, Bundle of Report of Occurrence records, various dates, 22 (SCOI.85764).
-5242 Exhibit 64, Tab 6, Statement of Arthur Head, 24 June 1976 (SCOI.11039.00115); Exhibit 64, Tab 8, Statement of Sydney Moore, 23
-June 1976, [14] (SCOI.11039.00101).
-5243 Exhibit 64, Tab 7, Statement of I454, 23 June 1976, 2 [4] (SCOI.11039.00117).
-5244 Exhibit 64, Tab 18, Statement of Detective Sergeant Albert McDonald, 14 November 1977, [4] -[5] (SCOI.11039.00021).
-5245 Exhibit 64, Tab 18, Statement of Detective Sergeant Albert McDonald, 14 November 1977, [4] -[6] (SCOI.11039.00021).
-5246 Exhibit 64, Tab 10, Statement of Donald Humphreys, 23 June 1976, 1 (SCOI.11039.00105); Exhibit 64, Tab 12, Statement of Elain e
-Walsh, 23 June 1976, 1 (SCOI.11039.00107).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1177
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
 
 
 6.155. Mr Humphreys went onto the balcony and called out to Mr Head. He tapped on
@@ -1099,47 +742,12 @@ that "appeared to be normal." Mr Humphreys assumed that the other person had
 left the flat.5254
 
 
-5247 Exhibit 64, Tab 10, Statement of Donald
-5248 Exhibit 64, Tab 10, Statement of Donald
-5249 Exhibit 64, Tab 10, Statement of Donald
-5250 Exhibit 64, Tab 17, Statement of Lillian
-5251 Exhibit 64, Tab 15, Statement of Galina
-5252 Exhibit 64, Tab 17, Statement of Lillian
-July 1976 (SCOI.10942.00053).
-5253 Exhibit 64, Tab 10, Statement of Donald
-Walsh, 23 June 1976, 1 (SCOI.11039.00107).
-5254 Exhibit 64, Tab 10, Statement of Donald Humphreys, 23 June 1976, 2
-
-
-Humphreys, 23 June 1976 (SCOI.11039.00105).
-Humphreys, 23 June 1976 (SCOI.11039.00105).
-Humphreys, 23 June 1976 (SCOI.11039.00105).
-Dreves, Undated (SCOI.11039.00113).
-Levendis, 3 July 1976 (SCOI.10942.00053).
-Dreves, Undated (SCOI.11039.00113); Exhibit 64, Tab 15,
-
-
-Statement of Galina Levendis , 3
-
-
-Humphreys, 23 June 1976, 2 (SCOI.11039.00105); Exhibit 64, Tab 12, Statement of Elain e
-
-
-(SCOI.11039.00105).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1178
-
-
 
 
 1. At around the same time, Ms Dreves heard a "thump like somebody taking their boots off and dropping them" but was unable to be sure if this came from the unit above her or not.5255
 
 
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
+
 
 
 6.162. Mr Humphreys told Jack McMahon, the secretary of the body corporate, about
@@ -1174,7 +782,7 @@ there being two people in Mr Head's unit at the time of the altercation (in addi
 to Mr Head).
 
 
-Concerns for welfare
+### Concerns for welfare
 
 
 1. On 19 June 1976, Mr Head was due to attend a party with Margaret McEvoy. She called him through the day and knocked on his front door in the afternoon, without response. Ms McEvoy left a note in the door jamb.5259
@@ -1186,26 +794,6 @@ McCann, again went and knocked on Mr Head's unit, but no one answered. The
 note left in the doorjamb was in the same position. 5260
 
 
-5255 Exhibit 64, Tab 17, Statement of Lillian Dreves, Undated (SCOI.11039.00113).
-5256 Exhibit 64, Tab 10, Statement of Donald Humphreys, 23 June 1976, 2 (SCOI.11039.00105); Exhibit 64, Tab 32, NSWPF Report of
-Occurrence, Bundle of Report of Occurrence records, various dates, 19 (SCOI.85764).
-5257 Exhibit 64, Tab 15, Statement of Galina Levendis, 3 July 1976 (SCOI.10942.00053).
-5258 Exhibit 64, Tab 2, Post-Mortem Report, 17 August 1976 (SCOI.85765).
-5259 Exhibit 64, Tab 9, Statement of Margaret McEvoy, 23 June 1976 (SCOI.11039.00038); Exhibit 64, Tab 13, Statement of Cheryn
-McCann, 23 June 1976 (SCOI.10942.00064).
-5260 Exhibit 64, Tab 9, Statement of Margaret McEvoy, 23 June 1976 (SCOI.11039.00038); Exhibit 64, Tab 13, Statement of Cheryn
-McCann, 23 June 1976 (SCOI.10942.00064).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1179
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
 
 
 6.168. Ms McEvoy made contact with I454, who in turn contacted Mr Moore, who said
@@ -1222,7 +810,7 @@ flat. They immediately went to the flat of Mr Head's neighbours, Ms Walsh and
 Mr Humphreys. Mr Humphreys called the Ashfield Police Station.5263
 
 
-The crime scene
+### The crime scene
 6.171. Mr Head's flat was situated on the third floor of an apartment building in Summer
 Hill. It was a large block of units within walking distance of Summer Hill Railway
 Station.5264
@@ -1246,7 +834,7 @@ Mr Head's fingers were resting on the kick plate which was on the floor near the
 kitchen door.5269
 
 
-# Kitchen
+#### Kitchen
 
 
 5261 Exhibit 64, Tab 9, Statement of Margaret McEvoy, 23 June 1976 (SCOI.11039.00038); Exhibit 64, Tab 13, Statement of I454, 23 June
@@ -1280,18 +868,7 @@ undated (SCOI.11039.00087); Exhibit 64, Tab 30, Further crime scene and autopsy 
 5269 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [3] (SCOI.11039.00099).
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1180
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
-
-# 6.175. A pair of men's underpants were on the floor near the deceased's head. They were retained for further examination.5270
+6.175. A pair of men's underpants were on the floor near the deceased's head. They were retained for further examination.5270
 
 
 6.176. There were a large number of blood smears and splashes covering the kitchen
@@ -1309,11 +886,9 @@ these knives appeared to be clean. They were retained for further examination
 purposes.5273
 
 
-## 6.179. Further blood splashes were located on the carpet, closet door and room divider in the loungeroom.5274
+6.179. Further blood splashes were located on the carpet, closet door and room divider in the loungeroom.5274
 
-
-## Loungeroom
-
+#### Loungeroom
 
 6.180. A number of cigarette butts and partly used cigarettes were located on the floor
 and in an ashtray in the loungeroom.5275 The cigarette butts were Benson and
@@ -1327,40 +902,7 @@ ashtray.5278
 and remarked that he did not believe that Mr Head smoked other than on
 occasions at a party.5279
 
-
-5270 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [3], [10] (SCOI.11039.00099).
-5271 Exhibit 64, Tab 22, Statement of Senior Constable Munday, 26 September 1976 (SCOI.11039.00099); Exhibit 64, Tab 23, Crime scene
-photographs taken by Senior Constable Munday, 23 June 1976 (SCOI.85753), Exhibit 64, Tab 24, Photographs of garage, undated
-(SCOI.11039.00089); Exhibit 64, Tab 25, Photographs of tire tracks in garage, undated (SCOI.11039.00091); Exhibit 64, Tab 26,
-Photographs of tire tracks in garage, undated (SCOI.11039.00093); Exhibit 64, Tab 27, Crime scene photographs, undated (SCOI.85767);
-Exhibit 64, Tab 28, Crime scene and autopsy photographs, undated (SCOI.10948.00020); Exhibit 64, Tab 30, Further crime scene and
-autopsy photographs, undated (SCOI.10948.00023). Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September
-1976, [3] (SCOI.11039.00099).
-5272 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [3] (SCOI.11039.00099).
-5273 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [10] (SCOI.11039.00099).
-5274 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [7] (SCOI.11039.00099).
-5275 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [9] (SCOI.11039.00099).
-5276 Exhibit 64, Tab 32, NSWPF Report of Occurrence, Bundle of Report of Occurrence records, various dates, 36, 39 (SCOI.85764);
-Exhibit 64, Tab 39, Specimen/Exhibit Examination Form, 27 July 2005 (NPL.0131.0001.1909); Exhibit 64, Tab 19, Examination of Partly-
-Smoked Cigarettes by Detective Sergeant McDonald, 17 August 1978 (SCOI.10960.00050).
-5277 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [30]-[31] (SCOI.11039.00099); Exhibit 64,
-Tab 32, NSWPF Report of Occurrence, Bundle of Report of Occurrence records, various dates, 26 (SCOI.85764).
-5278 Exhibit 64, Tab 32, NSWPF Report of Occurrence, Bundle of Report of Occurrence records, various dates, 26 (SCOI.85764).
-5279 Exhibit 64, Tab 8, Statement of Sydney Moore, 23 June 1976, [12] (SCOI.10942.00058).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1181
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
-
-# Hallway
+#### Hallway
 
 
 6.188.
@@ -1378,7 +920,7 @@ cigarettes and matches at that location.5281 However, inquiries made of patrons 
 the Mandarin Club did not yield any suspects.
 
 
-Dining room
+#### Dining room
 
 
 1. In the dining room was an HMV gramophone which had a "Decca" long playing record on the turntable. The record was still rotating when police attended the flat, and the stylus had worn a deep groove into the middle track of the record. Blood smears were located on the knobs of the radiogram.5282
@@ -1393,7 +935,7 @@ the body.5283
 the door jamb and the door of the main bedroom.5284
 
 
-Main bedroom
+#### Main bedroom
 
 
 1. Blood splashes were located on the bed sheets and pillows of the double bed situated in the main bedroom. A number of hair fibres were removed from the bed for further comparisons. Blood smearing and blood splashes were also found on the eastern wall and blankets on the floor beside the bed in the main bedroom, and on the carpet underneath the blankets.5285
@@ -1428,10 +970,10 @@ Special Commission of Inquiry into LGBTIQ hate crimes
 Chapter 6: Category B Deaths ― In the matter of Ernest Head
 
 
-# Bathroom
+#### Bathroom
 
 
-# Garage
+#### Garage
 
 
 6.189. Examination of the bathroom revealed diluted blood smearing on the vanity unit,
@@ -1439,10 +981,9 @@ the power point above the vanity unit, and the light switch near the door. Sever
 small blood splashes were also located on the walls inside the shower recess.5288
 
 
-# 6.190. There was a pair of men's trousers hanging on the bathroom door on which blood smears were located.5289
+6.190. There was a pair of men's trousers hanging on the bathroom door on which blood smears were located.5289
 
-
-# 6.191. Human vomit was in the toilet pan in the bathroom, no sample of which was retained.5290
+6.191. Human vomit was in the toilet pan in the bathroom, no sample of which was retained.5290
 
 
 6.192. In the bath was a wet navy-blue long-sleeved men's shirt and a green two-gallon
@@ -1458,7 +999,7 @@ the bath, shower, recess and vanity unit. Police also collected various washers 
 towels as exhibits.5293
 
 
-Second bedroom
+#### Second bedroom
 
 
 1. On 27 June 1976, Senior Constable Munday returned to the unit and collected a plastic bag with some blood spots on it found in the second bedroom.5294 A cigarette butt found on the floor of the second bedroom was taken into evidence.5295
@@ -1469,33 +1010,7 @@ ground floor of the block of units and photographed tyre tracks on the floor of
 the garage.5296 Ms Walsh told police that Mr Head did not have a car.5297
 
 
-5288 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [8] (SCOI.11039.00099).
-5289 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [8] (SCOI.11039.00099).
-5290 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [8] (SCOI.11039.00099).
-5291 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [8] (SCOI.11039.00099).
-5292 Exhibit 64, Tab 6, Statement of Arthur Head, 24 June 1976, 2 (SCOI.11039.00115).
-5293 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [8] (SCOI.11039.00099); Exhibit 64, Tab 32,
-NSWPF Report of Occurrence, Bundle of Report of Occurrence records, various dates, 16 (SCOI.85764).
-5294 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [16] (SCOI.11039.00099).
-5295 Exhibit 64, Tab 22, Statement of Senior Constable Robert Munday, 26 September 1976, [9] (SCOI.11039.00099).
-5296 Exhibit 64, Tab 24, Photograph of garage, undated (SCOI.11039.00089); Exhibit 64, Tab 25, Photograph of tire tracks in garage ,
-undated (SCOI.11039.00091); Exhibit 64, Tab 26, Photograph of tire tracks in garage, undated (SCOI.11039.00093); Exhibit 64, Tab 32,
-NSWPF Report of Occurrence, Bundle of Report of Occurrence records, various dates, 8 (SCOI.85764).
-5297 Exhibit 64, Tab 12, Statement of Elaine Walsh, 23 June 1976, 2 (SCOI.11039.00107).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1183
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
-
-Stolen property
+### Stolen property
 
 
 6.196. Police identified that property had been stolen from the unit, including a watch,
@@ -1504,7 +1019,7 @@ suitcase. A facsimile detailing the stolen property was circulated Australia wid
 none of the property was located.5298
 
 
-Exhibits
+### Exhibits
 
 
 1. As described above, a number of exhibits were seized by police from the crime scene, including:5299
@@ -1552,26 +1067,8 @@ Mr Head's blood type (B, Hp 2-2, PGM 2-1) was only found in approximately 1%
 of the population.5301
 
 
-# 6.202. The two knives from the scene were forensically examined, but blood was not detected.5302
+6.202. The two knives from the scene were forensically examined, but blood was not detected.5302
 
-
-5298 Exhibit 64, Tab 18, Statement of Detective Sergeant Albert McDonald, 14 November 1977, [8] (SCOI.11039.00021); Exhibit 64, Ta b
-34, Special Circular No 76/22, "Alleged Murder and Theft of Property", 1 July 1976 (SCOI.11039.00023).
-5299 Exhibit 64, Tab 49, Statement of Detective Inspector Nigel Warren, 29 March 2023, Schedule 1 (NPL.0145.0001.0014).
-5300 Exhibit 64, Tab 4, Certificate of Paul Connellan, 17 September 1976 (SCOI.11039.00036).
-5301 Exhibit 64, Tab 4, Certificate of Paul Connellan, 17 September 1976, 4 (SCOI.11039.00036).
-5302 Exhibit 64, Tab 4, Certificate of Paul Connellan, 17 September 1976, 4 (SCOI.11039.00036).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1184
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
 
 
 6.203. Semen was found to be present on the penile and anal swabs taken from Mr Head
@@ -1590,10 +1087,10 @@ found on the handkerchief, although not strongly probative of that fact given th
 the group O blood type occurs frequently in the population.
 
 
-# 6.206. The hair samples found in the bedroom and bathroom were not forensically examined.5306
+6.206. The hair samples found in the bedroom and bathroom were not forensically examined.5306
 
 
-Manufacturer of the cigarette butts
+### Manufacturer of the cigarette butts
 
 
 6.207. In addition to the testing by DAL, police arranged for three non-filtered cigarette
@@ -1609,7 +1106,7 @@ Super Virginia cigarettes were sold, although these inquiries ultimately proved
 fruitless.
 
 
-Discovery of a possible murder weapon in 1977
+### Discovery of a possible murder weapon in 1977
 
 
 6.208. Nearly a year after Mr Head's death, on 27 May 1977, Mr Humphreys and
@@ -1621,30 +1118,7 @@ of the knife suggesting that the possible significance of the knife was recognis
 The lack of records as to the whereabouts of that knife raises a concern about
 proper exhibit management.
 
-
-5303 Exhibit 64, Tab 4, Certificate of Paul Connellan, 17 September 1976, 4 (SCOI.11039.00036).
-5304 Exhibit 64, Tab 4, Certificate of Paul Connellan, 17 September 1976, 5 (SCOI.11039.00036).
-5305 Exhibit 64, Tab 4, Certificate of Paul Connellan, 17 September 1976, 5 (SCOI.11039.00036).
-5306 Exhibit 64, Tab 4, Certificate of Paul Connellan, 17 September 1976, 5 (SCOI.11039.00036).
-5307 Exhibit 64, Tab 32, NSWPF Report of Occurrence, Bundle of Report of Occurrence records, various dates, 14-15 (SCOI.85764).
-5308 Exhibit 64, Tab 19, Examination of Partly-Smoked Cigarettes by Detective Sergeant McDonald, 17 August 1978 (SCOI.10960.00050);
-Exhibit 64, Tab 32, NSWPF Report of Occurrence, Bundle of Report of Occurrence records, various dates, 36 (SCOI.85764).
-5309 Exhibit 64, Tab 16, Statement of John McMahon, 28 May 1977 (SCOI.10942.00060); Exhibit 64, Tab 11, Second Statement of Donald
-Humphreys, 27 May 1977 (SCOI.10942.00047).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1185
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
-
-Forensic testing: subsequent reviews by the UHT
+### Forensic testing: subsequent reviews by the UHT
 
 
 1. As noted above, a 2005 review by the UHT located three cigarette butts and a match in sealed envelopes within the hard-copy brief. In 2008, DNA testing was conducted on the three cigarette butts, however they were found to be "unsuitable for DNA analysis".5310 Testing on the match was recorded to be unsuccessful.5311
@@ -1656,7 +1130,7 @@ Forensic testing: subsequent reviews by the UHT
 6.212.
 
 
-Forensic testing: review by the Inquiry
+### Forensic testing: review by the Inquiry
 
 
 1. As noted above, only four physical exhibits collected by the original investigators remain:
@@ -1904,30 +1378,7 @@ that they characterised Mr Simsek as "a gentle and non-violent man whose
 involvement in the offences [they] still found hard to explain." They further
 described that Mr Simsek had "great difficulty in talking about his feelings".5336
 
-
-5329 Exhibit 64, Tab 70, Pre-Release Report, 29 May 1986, 2 (SCOI.12138.00053).
-5330 Exhibit 64, Tab 68, Pre-Release Interview Form, 22 April 1986, 2 (SCOI.12138.00060).
-5331 Exhibit 64, Tab 65, Bail Report of Engin Simsek, 2 June 2023, 1 (NPL.0175.0001.0001).
-5332 Exhibit 64, Tab 65, Bail Report of Engin Simsek, 2 June 2023, 1 (NPL.0175.0001.0001).
-5333 Exhibit 64, Tab 59, Second Expert Certificate of Kate Reid, Senior Crime Scene Officer - Fingerprint Expert, 20 June 2023, [8]
-(SCOI.85263).
-5334 Exhibit 64, Tab 65, Bail Report of Engin Simsek, 2 June 2023, 2 (NPL.0175.0001.0001).
-5335 Exhibit 64, Tab 72, Transfer of Case History, 14 July 1986 (SCOI.12138.00045).
-5336 Exhibit 64, Tab 69, Handwritten Note re Conversation with I451 and I452, 28 May 1986 (SCOI.12138.00055).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1189
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
-
-
-# 6.233. Mr Simsek was reported to be an alcoholic. His alcoholism ultimately caused him to become estranged from his family.5337
+6.233. Mr Simsek was reported to be an alcoholic. His alcoholism ultimately caused him to become estranged from his family.5337
 
 
 6.234. Mr Simsek's sexuality is unknown.5338 The Inquiry has not found evidence of any
@@ -1938,7 +1389,7 @@ prior relationship between Mr Simsek and Mr Head.
 of suicide on 6 May 1999 in Türkiye.5340
 
 
-Mr Simsek's involvement in Mr Head's death
+### Mr Simsek's involvement in Mr Head's death
 
 
 1. The presence of Mr Simsek's palm print, in blood, on the kitchen wall above Mr Head's body, is significant evidence. It provides strong evidence that Mr Simsek was at least involved in the events surrounding Mr Head's death.
@@ -1977,35 +1428,9 @@ with Mr Head being attacked first in the bedroom, with the attack continuing int
 the kitchen where Mr Head's body was ultimately located.
 
 
-5337 Exhibit 64, Tab 76, Statement of I450, 3
-5338 Exhibit 64, Tab 76, Statement of I450, 3
-5339 Exhibit 64, Tab 74, Extract of
-5340 Exhibit 64, Tab 61A, Letter
-Newspaper article re death of
-
-
-October 2023, [9], [11] (SCOI.85771).
-October 2023, [10] (SCOI.85771).
-Movement Records of Engin Simsek, undated (SCOI.85766).
-from Katherine Garaty to Enzo Camporeale, 6 October 2023
-Engin Simsek and certified translation, 8 May 1999-28 August 2023 (SCOI.85752).
-
-
-(SCOI.86038); Exhibit 64, Tab 75,
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1190
-
-
-
 
 1. One possibility, therefore, is that the perpetrator had sexual intercourse with Mr Head in the bedroom before embarking on a frenzied and panicked attack on him. Forensic analysis of the exhibits, including the penile and anal swabs, would have been able to assist in confirming or excluding this theory; however, those exhibits have now been lost.
 
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
 
 
 6.243. Ultimately, while the bloody palm print is consistent with Mr Simsek being
@@ -2049,20 +1474,9 @@ report is demonstrative of the inherent limitations of attempting to assess the
 motivations of an unknown offender.
 
 
-5341 Exhibit 64, Tab 47, Expert report of Dr Danny Sullivan, 15 May 2023, [15] (SCOI.85123).
-5342 Exhibit 64, Tab 47, Expert report of Dr Danny Sullivan, 15 May 2023, [16] (SCOI.85123).
-5343 Exhibit 64, Tab 47, Expert report of Dr Danny Sullivan, 15 May 2023, [17]-[18] (SCOI.85123).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1191
 
 
 
-
-Chapter 6: Category B Deaths ― In the matter of Ernest Head
 
 
 6.249. Although Mr Simsek has been identified as a person likely involved in Mr Head's
@@ -2077,7 +1491,7 @@ advanced significantly.
 # Police investigation
 
 
-Indicators of police bias
+### Indicators of police bias
 
 
 1. There are some indicators of negative police attitudes towards gay men in the original police investigation. In a letter to the Superintendent in Charge of the Criminal Investigation Branch, two detectives refer to Mr Head's likely sexual activity prior to his death as being consistent with "what we have been told about the nefarious activities of the deceased."5344 Mr Head died prior to the decriminalisation of "homosexual acts" in NSW.

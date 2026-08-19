@@ -3,11 +3,9 @@
 
 # IN THE MATTER OF PETER KARL BAUMANN
 
-
 ## Factual background
 
-
-Date and location of disappearance
+### Date and location of disappearance
 
 
 1. Peter Karl Baumann (born 20 April 1957) is recorded in a coronial finding as having died on or sometime after 26 October 1983.5540 Mr Baumann was a German national who arrived in Sydney on 11 December 1981 on a temporary visa that was valid until 11 June 1982.5541
@@ -21,33 +19,9 @@ disappearance. On 4 August 2009, Deputy State Coroner Milovanovich found that
 Mr Baumann was deceased, but was unable to determine a precise date, place, or
 manner and cause of his death.5544
 
+6.528. Mr Baumann's body has never been found and as such a post-mortem examination has never been conducted.
 
-## 6.528. Mr Baumann's body has never been found and as such a post-mortem examination has never been conducted.
-
-
-5540 Exhibit 42, Tab 1, Findings of DSC Milovanovich, Inquest into the death of Peter Baumann, 4 August 2009 (SCOI.10850.00002);
-Exhibit 42, Tab 84, Death Certificate - Peter Baumann, 22 December 2022 (SCOI.82230). Although that finding was consistent with
-material provided to the Coroner, there is some doubt about the date Mr Baumann was last seen.
-5541 Exhibit 42, Tab 78, Request by Senior Constable Gribble to be assigned, 22 November 2016, [3] (SCOI.11010.00007).
-5542 Exhibit 42, Tab 15, Statement of Ruth Binney, 16 November 1993 (SCOI.10850.00024); Exhibit 42, Tab 19, Report to Waverley
-Police Station made by Ruth Binney, 29 November 1982 (SCOI.10850.00106).
-5543 Exhibit 42, Tab 20, Letter from ABC Welfare Officer to Peter Baumann, including file note re contact from Ruth Binney and Sharmalie
-Seneviratne, 7 November 1983, (SCOI.10850.00046).
-5544 Exhibit 42, Tab 1, Findings of DSC Milovanovich, Inquest into the death of Peter Baumann, 4 August 2009 (SCOI.10850.00002).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1236
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Peter Karl Baumann
-
-
-Circumstances of disappearance
+### Circumstances of disappearance
 
 
 1. Mr Baumann's last known contact was either with his ex-partner, Sharmalie Seneviratne (now Sharmalie Kotoga) or with another partner, Allan Smyth.5545 Given that the police investigative file uses the name "Seneviratne", Ms Kotoga will be referred to as Ms Seneviratne in this Report. No disrespect is intended.
@@ -248,13 +222,10 @@ Special Commission of Inquiry into LGBTIQ hate crimes
 Chapter 6: Category B Deaths ― In the matter of Peter Karl Baumann
 
 
-6.550.
 
 
-6.551.
 
-
-# 6.544. On 27 August 1993, the NSWPF received information from Interpol in relation to Mr Baumann.
+6.544. On 27 August 1993, the NSWPF received information from Interpol in relation to Mr Baumann.
 
 
 6.545. On 3 September 1993, the NSWPF submitted a request to the Bavarian State
@@ -280,7 +251,7 @@ Mr "Govey" (presumably referring to "H.A.R Gover" who was the Acting Welfare
 Officer at the ABC at the time of Mr Baumann's disappearance).5571
 
 
-# 6.549. In 1993, "a number of statements were obtained from next of kin and witnesses".5572 These statements included:
+6.549. In 1993, "a number of statements were obtained from next of kin and witnesses".5572 These statements included:
 
 
 1. A statement of Ms Seneviratne dated 26 August 1993;
@@ -298,6 +269,11 @@ According to the recollection of Mr Baumann's family, they were told, either in
 late 1993 or early 1994, that it would assist the NSWPF if a family member could
 meet with the NSWPF in Sydney.5574
 
+
+6.550.
+
+
+6.551.
 
 6.552. On 26 May 1994, the NSWPF spoke with Mr Baumann's brother and sister (Franz
 Baumann and Ms Baumann-Serr) who had arrived in Australia from Germany the
@@ -411,46 +387,12 @@ Chapter 6: Category B Deaths ― In the matter of Peter Karl Baumann
 
 8. Also in May 2008, Detective Sergeant Smith made enquiries within the NSWPF about whether any unidentified persons had been located that matched Mr Baumann's description. Detective Sergeant Smith also made enquiries about the location of two items of property (Mr Baumann's guitar and carving knife) that were apparently handed to Parramatta Police Station on 13 September 1993 by Senior Constable Gribble. No relevant results appear to have been obtained.5593
 
-
-Detective Sergeant Darren Smith, 12 August 2008, [4] (SCOI.34345).
-Detective Sergeant Darren Smith, 12 August 2008, [5] -[6] (SCOI.34345).
-Detective Sergeant Darren Smith, 12 August 2008, [7] (SCOI.34345).
-Detective Sergeant Darren Smith, 12 August 2008, [7] (SCOI.34345).
-Detective Sergeant Darren Smith, 12 August 2008, [13] (SCOI.34345).
-Detective Sergeant Darren Smith, 12 August 2008, [12] (SCOI.34345).
-Senior Constable Simon Field, 15 September 2008, [5] (SCOI.10850.00014).
-Detective Sergeant Darren Smith, 12 August 2008, [14]-[18] (SCOI.34345).
-Detective Sergeant Darren Smith, 12 August 2008, [20]-[21] (SCOI.34345).
-
-
-5585 Exhibit 42, Tab 3, Statement of
-5586 Exhibit 42, Tab 3, Statement of
-5587 Exhibit 42, Tab 3, Statement of
-5588 Exhibit 42, Tab 3, Statement of
-5589 Exhibit 42, Tab 3, Statement of
-5590 Exhibit 42, Tab 3, Statement of
-5591 Exhibit 42, Tab 4, Statement of
-5592 Exhibit 42, Tab 3, Statement of
-5593 Exhibit 42, Tab 3, Statement of
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1242
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Peter Karl Baumann
-
-
 6.559. In 2006, the Eastern Suburbs LAC requested the assistance of the Homicide
 Squad. This request for assistance was denied pending any coronial findings being
 made as to the disappearance of Mr Baumann.5594
 
 
-# 6.560. On 8 March 2007, Strike Force Blissett was formed to investigate the disappearance of Mr Baumann.5595
+6.560. On 8 March 2007, Strike Force Blissett was formed to investigate the disappearance of Mr Baumann.5595
 
 
 6.561. Between 26 May 2008 and 3 June 2008, the investigation into Mr Baumann's
@@ -1139,16 +1081,16 @@ for any further information related to Mr Baumann's disappearance. No relevant
 results were obtained.5645
 
 
-# 6.611. The Inquiry also took certain steps by way of private hearing, which are addressed in Chapter 17.
+6.611. The Inquiry also took certain steps by way of private hearing, which are addressed in Chapter 17.
 
 
-# Consideration of the evidence
+## Consideration of the evidence
 
 
-# Background and disappearance
+### Background and disappearance
 
 
-Arrival in Australia
+#### Arrival in Australia
 
 
 6.612. There is some evidence to suggest that Mr Baumann travelled to Australia for the
@@ -1160,7 +1102,7 @@ Librarian. When he was initially employed by the ABC, Mr Baumann utilised the
 surname "Moltzen".5648
 
 
-Living arrangements
+#### Living arrangements
 
 
 1. Upon his arrival in Australia, it appears that Mr Baumann resided at a property in Bennett Street, Bondi, but there is no record of the NSWPF ever confirming this.5649
@@ -1181,43 +1123,6 @@ Ruth Binney. Mr Baumann was living at this address until he disappeared in aroun
 October 1983.
 
 
-Aleksandra Jez, 24 June 2023 (SCOI.84144).
-Senior Constable Gribble to be assigned, 22 November
-Running Sheet, 21 October 1993, 3 (SCOI.38950); Exhibit 42, Tab 36B,
-investigation, 3 December 1993, 3 (SCOI.38945).
-by Senior Constable Gribble to be assigned, 22 November 2016, [12] (SCOI.11010.00007).
-from Inspector Morton to V Rimodli (ABC) re Peter Baumann, 26 November 1993, 2 (SCOI.38894).
-Request by Senior Constable Gribble to be assigned, 22 November 2016, [4] (SCOI.11010.00007).
-Request by Senior Constable Gribble to be assigned, 22 November 2016, [8] (SCOI.11010.00007).
-Statement of Ruth Binney, 16 November 1993, 1 (SCOI.10850.00024).
-
-
-5645 Exhibit 42, Tab 94, Statement of
-5646 Exhibit 42, Tab 78, Request by
-42, Tab 30, Missing Persons Unit
-John Gribble re missing persons
-5647 Exhibit 42, Tab 78, Request
-5648 Exhibit 42, Tab 34, Letter
-5649 Exhibit 42, Tab 78,
-5650 Exhibit 42, Tab 78,
-5651 Exhibit 42, Tab 15,
-
-
-2016, [2], [69] (SCOI.11010.00007); Exhib it
-Report of Senior Constable
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1252
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Peter Karl Baumann
-
-
 6.616. Ms Binney would collect the rent from Mr Baumann on a fortnightly basis and, in
 accordance with a request from Mr Baumann, Ms Binney provided rent receipts
 in the name of "Peter K.J Ann".5652
@@ -1230,7 +1135,7 @@ the occupant was a Japanese cartoonist whose name was initially believed to be
 record of Mr Hamasaki ever being spoken to by the police.
 
 
-Relationship with Ms Seneviratne
+#### Relationship with Ms Seneviratne
 
 
 1. According to Ms Seneviratne's 1993 statement, Mr Baumann first approached her in around December 1981. Ms Seneviratne stated that she initially refused to go out with him, but in January 1982 they struck up a relationship. He told her that he was a musician at the Conservatorium of Music, and they met for lunch on most days outside the Conservatorium.5654 Their relationship lasted until around July 1982 and she went to his flat at Bennett Street, Bondi, on a number of occasions during that period.5655
@@ -1250,7 +1155,8 @@ in July 1982.5657 They had limited contact after the breakup until just prior to
 Mr Baumann's disappearance in October 1983.
 
 
-Relationship with Mr Smyth
+#### Relationship with Mr Smyth
+
 6.620. Mr Smyth gave a statement to police on 16 November 1993. The copy of this
 statement that has been produced to the Inquiry is not signed, and refers to the
 fact that the signed copy is contained in the official notebook of Senior Constable
@@ -1258,26 +1164,6 @@ Gribble. These notebooks were not produced to the Inquiry and are, presumably,
 missing. The failure by the NSWPF to retain these notebooks, so as to be in a
 position to produce them to the Inquiry, is another material deficiency in the
 NSWPF record-keeping.
-
-
-5652 Exhibit 42, Tab 78, Request by Senior Constable Gribble to be assigned, 22 November 2016, [9] (SCOI.11010.00007).
-5653 Exhibit 42, Tab 78, Request by Senior Constable Gribble to be assigned, 22 November 2016, [10] (SCOI.11010.00007).
-5654 Exhibit 42, Tab 78, Request by Senior Constable Gribble to be assigned, 22 November 2016, 2 (SCOI.11010.00007).
-5655 Exhibit 42, Tab 5, Statement of Sharmalie Seneviratne, 26 August 1993, [3] -[4] (SCOI.10850.00020).
-5656 Exhibit 42, Tab 5, Statement of Sharmalie Seneviratne, 26 August 1993, [3] (SCOI.10850.00020).
-5657 Exhibit 42, Tab 5, Statement of Sharmalie Seneviratne, 26 August 1993, [4] (SCOI.10850.00020).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1253
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Peter Karl Baumann
-
 
 6.621. According to Mr Smyth, he was in a relationship with Mr Baumann that
 commenced in December 1981/January 1982. Mr Smyth met Mr Baumann in
@@ -1397,38 +1283,8 @@ July 1983. She last saw him at around that time after she asked him for their di
 certificate.5667
 
 
-# 6.635. On 29 April 1983, Mr Baumann was granted permanent residency.5668
+6.635. On 29 April 1983, Mr Baumann was granted permanent residency.5668
 
-
-5665 Exhibit 42, Tab 18, Statement of John
-5666 Exhibit 42, Tab 17, Certificate of
-5667 Exhibit 42, Tab 1, P79A Report
-Kim Foster, 14 September 1994, [12]
-5668 Exhibit 42, Tab 67, Review by
-
-
-Pauperis, 11 April 2007, [12] (SCOI.10850.00026).
-Marriage - Cherie Foster, 12 June 1982 (SCOI.38933).
-of Death to Coroner, 25 June 2008 (SCOI.10850.00012);
-(SCOI.10850.00025).
-Coronial Advocate Assisting - Sergeant G Robinson, 11 December 2008, 1
-
-
-Exhibit 42, Tab 16, Statement of Cherie
-
-
-(SCOI.10850.00007).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1255
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Peter Karl Baumann
 
 
 # October 1983
@@ -1854,7 +1710,7 @@ It appears that swimming pool was filled in prior to the sale of the property in
 mid 1980s.
 
 
-# 6.667. In 2007, the NSWPF took the following steps to further the investigation into Mr Baumann's disappearance:
+6.667. In 2007, the NSWPF took the following steps to further the investigation into Mr Baumann's disappearance:
 
 
 1. Police established that Mr Smyth was still living with Mr Keasberry but they had relocated to Western Australia;5698
@@ -1925,35 +1781,7 @@ animosity between Mr Baumann and his family which could explain why he would
 never make contact with his family.5703
 
 
-# 6.672. Although it is highly doubtful that Mr Baumann is still alive, this hypothesis cannot be completely ruled out.
-
-
-Sharmalie Seneviratne, 27 April 2007, [5] (SCOI.10850.00022).
-Senior Constable J P Emery, Missing Persons Unit, 17 June 1994
-by Senior Constable Gribble to be assigned, 22 November 2016, [96]
-John Gribble, 27 September 2023, 1-2 (SCOI.85910).
-
-
-5700 Exhibit 42, Tab 6, Statement of
-5701 Exhibit 42, Tab 38, Report of
-5702 Exhibit 42, Tab 78, Request
-5703 Submissions of William
-
-
-(SCOI.38939).
-(SCOI.11010.00007).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1263
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Peter Karl Baumann
-
+6.672. Although it is highly doubtful that Mr Baumann is still alive, this hypothesis cannot be completely ruled out.
 
 6.673. Secondly, Mr Baumann may have died by way of suicide. This hypothesis was also
 considered likely by Senior Constable Emery in 1994,5704 although unlikely by
@@ -2000,7 +1828,7 @@ Seneviratne
 2. There was no evidence that he had sufficient knowledge of the area to carry out his own death in a location that would have enabled the successful concealment of his body for a period of nearly 40 years.
 
 
-# 6.676. Thirdly, Mr Baumann's death may have been caused by associates of Ms Foster as explained below.
+6.676. Thirdly, Mr Baumann's death may have been caused by associates of Ms Foster as explained below.
 
 
 5704 Exhibit 42, Tab 38, Report of Senior Constable J P Emery, Missing Persons Unit, 17 June 1994 (SCOI.38939).
@@ -2098,13 +1926,13 @@ Keasberry was that he was very jealous that Mr Baumann "intruded into this
 community".5712
 
 
-# 6.685. The evidence available to the Inquiry does not permit any positive conclusion about this theory.
+6.685. The evidence available to the Inquiry does not permit any positive conclusion about this theory.
 
 
-# 6.686. Fifthly, the hypothesis that Mr Baumann was killed in an LGBTIQ bias motivated homicide.
+6.686. Fifthly, the hypothesis that Mr Baumann was killed in an LGBTIQ bias motivated homicide.
 
 
-Failure to conduct an adequate investigation in 1983
+#### Failure to conduct an adequate investigation in 1983
 
 
 6.687. Counsel Assisting submitted that the most concerning aspect of the investigation
@@ -2128,18 +1956,6 @@ that Mr Gover had been unable to find him.5714 Counsel Assisting noted that Ms
 Binney's evidence is also consistent with her notifying the police much earlier in
 November than 29 November 1983.
 
-
-5711 Exhibit 42, Tab 30, Missing Persons Unit Running Sheet, 5 January 1993 - 29 November 1993, 2 (SCOI.38950).
-5712 Exhibit 42, Tab 39, Interpol request to Missing Persons Unit re review of matter, 11 November 1999, 2-3 (SCOI.38957).
-5713 Exhibit 42, Tab 1, P97A Report of Death to Coroner, 25 June 2008, 1 (SCOI.10850.00012).
-5714 Exhibit 42, Tab 20, Letter from ABC Welfare officer to Peter Baumann, including file note re contact with Ruth Binney and Sharmalie
-Seneviratne, 17 November 1983 (SCOI.10850).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1266
 
 
 
@@ -2301,7 +2117,7 @@ there were some reasons to doubt the accuracy of her recollection, namely that:
 2. That there was no mention in several statements provided by other witnesses during the investigation between 1992 and 1994 of the word AIDS appearing on a mirror in Mr Baumann's apartment. This is true but I also consider that Ms Binney as the landlady is the most likely person, of the witnesses from whom statements were taken, to have noticed it and remembered it, even given the passage of time between the relevant events the date at which Ms Binney provided a statement to the NSWPF.
 
 
-Inadequate investigation in 1992-1994
+#### Inadequate investigation in 1992-1994
 
 
 6.703. As Counsel Assisting noted, it was not until between 1992 and 1994 that an
@@ -2311,15 +2127,6 @@ to the MPU. The NSWPF then undertook various investigative steps, but even
 these investigative steps were limited in scope.
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1269
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Peter Karl Baumann
 
 
 6.704. Counsel Assisting ultimately submitted that the failure to properly investigate Mr
@@ -2328,7 +2135,7 @@ difficult, even by 1992, for subsequent investigators and other finders of fact 
 establish the manner and cause of Mr Baumann's death.
 
 
-# 6.705. Mr Gribble submitted that the investigation by the NSWPF cannot be described as satisfactory.5725
+6.705. Mr Gribble submitted that the investigation by the NSWPF cannot be described as satisfactory.5725
 
 
 1. The NSWPF agreed that the lack of available documentation regarding investigative steps taken in 1983 "significantly constrained" the MPU investigation.5726 The NSWPF submitted that any criticism of the MPU Investigation needed to be viewed in this context. However, the NSWPF ultimately accepted Counsel Assisting's submission that the constraint was attributable to the earlier actions of the NSWPF.5727
@@ -2544,38 +2351,16 @@ Inquiry should reflect the evidence about the likely date that Mr Baumann went
 missing, as explained above.
 
 
-5736 Submissions of NSWPF, 10 July 2023, [99]
-5737 R v Warwick (No. 93) [2020] NSWSC 926.
-5738 Submissions of NSWPF, 10 July 2023, [92]
-
-
-(SCOI.84381).
-
-
-(SCOI.84381).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1273
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Peter Karl Baumann
-
-
 6.722. The finding proposed by Counsel Assisting was in the following terms:
 Peter Baumann is deceased. I find that he died some time on or after 27
 October 1983. As to the precise date of death, place of death or manner
 and cause of death from the available evidence I am unable to say.
 
 
-# 6.723. The NSWPF supported the submissions of Counsel Assisting as to the manner and cause of Mr Baumann's death.5739
+6.723. The NSWPF supported the submissions of Counsel Assisting as to the manner and cause of Mr Baumann's death.5739
 
 
-# 6.724. I accept the submissions of Counsel Assisting.
+6.724. I accept the submissions of Counsel Assisting.
 
 
 6.725. Counsel Assisting submitted that Inquiry's ability to assess whether any LGBTIQ
@@ -2655,7 +2440,7 @@ Smyth.5743
 # Conclusions and recommendations
 
 
-# 6.735. I make the following recommendation:
+6.735. I make the following recommendation:
 
 
 <table>

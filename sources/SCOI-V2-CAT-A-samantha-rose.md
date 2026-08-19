@@ -71,7 +71,7 @@ evidence of forced entry.
 # Previous investigations
 
 
-Post-mortem examination
+## Post-mortem examination
 
 
 1. A post-mortem examination was conducted on 22 December 1997 by Dr Christopher Lawrence.4891 Dr Lawrence identified significant injuries to the head including a subdural haematoma, an extradural haematoma, fractures on the left temple region, fractures in the occipital region and bruising on the back of the head. There were further impact sites on the cheeks and at least two to the back of Ms Rose's head. Dr Lawrence also reported bruising on various parts of Ms Rose's body including her arms, shoulder and sacrum. There was no indication of sexual trauma.4892
@@ -81,10 +81,10 @@ Post-mortem examination
 assault."4893 The direct cause of death was recorded as "head injury".4894
 
 
-# 5.5229. Ms Rose's blood was tested. No poisons or alcohol were detected.
+5.5229. Ms Rose's blood was tested. No poisons or alcohol were detected.
 
 
-Original police investigation
+## Original police investigation
 
 
 5.5230. The original police investigation into Ms Rose's death was overseen by Detective
@@ -93,23 +93,7 @@ Detective Senior Constable Michael Thornton assumed the role of OIC of the
 investigation into Ms Rose's death.4895
 
 
-4890 Exhibit 29, Tab 3, Post-mortem report of Dr Christopher Lawrence, 23 December 1997, 4 (SCOI.00041.00016).
-4891 Exhibit 29, Tab 3, Post-mortem report of Dr Christopher Lawrence, 23 December 1997 (SCOI.00041.00016).
-4892 Exhibit 29, Tab 3, Post-mortem report of Dr Christopher Lawrence, 23 December 1997, 2-3 (SCOI.00041.00016).
-4893 Exhibit 29, Tab 3, Post-mortem report of Dr Christopher Lawrence, 23 December 1997, 3 (SCOI.00041.00016).
-4894 Exhibit 29, Tab 3, Post-mortem report of Dr Christopher Lawrence, 23 December 1997, 2 (SCOI.00041.00016).
-4895 Exhibit 29, Tab 7, Statement of Detective Senior Constable Paul Michael Thornton, 23 October 1998, [3] (SCOI.00041.00005).
 
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1105
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Samantha Rose
 
 
 5.5231. At 11:00am on 22 December 1998, officers from Randwick Police Station attended
@@ -2929,18 +2913,8 @@ unsolved cases from the period 1970-2010;
 7. Seeking information from the public and from the families and friends of people whose deaths might possibly fall within the Category.
 
 
-# 6.10. Each of these avenues is outlined in more depth below.
+6.10. Each of these avenues is outlined in more depth below.
 
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1150
-
-
-
-
-Chapter 6: Category B Deaths
 
 
 6.11. The Inquiry requested that the NSWPF identify, from its UHT Tracking File and
@@ -3245,25 +3219,7 @@ obtain further information:
 
 5. Some 43 cases remained which were still considered as having insufficient information (including the three cases for which the NSWPF did not produce any material). The Inquiry subsequently requested and reviewed files and records on these cases from the Coroners Court or relevant Local Court.5109 A further summons was also issued for the complete NSWPF investigative files in relation to four of these cases. Despite the issuing of summonses and requests for information, the Inquiry has not received any documents in relation to several deaths. Following the review of the material available, none of these 43 cases proceeded to the case review process.
 
-
-5109 Specifically, the report of death or
-
-
-suspected death, and the findings or reasons for dispensing with an inquest.
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1155
-
-
-
-
-Chapter 6: Category B Deaths
-
-
-# 6.38. A total of 14 cases from the Long Term Missing Persons Spreadsheet proceeded to the case review process.
+6.38. A total of 14 cases from the Long Term Missing Persons Spreadsheet proceeded to the case review process.
 
 
 National Coronial Information System (NCIS) and the Australian Institute of
@@ -3413,16 +3369,17 @@ records and files from the NSWPF and the Coroners Court for each of these cases.
 Following review of this material, both cases proceeded to the case review process.
 
 
-Coroners Court
+## Coroners Court
+
 6.57. In addition to the potential Category B cases identified through the methods
 discussed above, the Coroners Court also referred one case for consideration,
 which proceeded to the case review process.
 
 
-# Case review process
+## Case review process
 
 
-# 6.58. Overall, the Inquiry reviewed over 1,300 cases, and the following 46 deaths proceeded to the case review process, namely:
+6.58. Overall, the Inquiry reviewed over 1,300 cases, and the following 46 deaths proceeded to the case review process, namely:
 
 
 1. 25 cases from the UHT Tracking File;
@@ -3438,15 +3395,6 @@ which proceeded to the case review process.
 6. 1 case referred from the Coroners Court.
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1158
-
-
-
-
-Chapter 6: Category B Deaths
 
 
 6.59. The case review process that was adopted in respect of these 46 deaths was
@@ -3542,7 +3490,7 @@ relevance.
 B, that LGBTIQ bias was a factor.
 
 
-Cases falling outside Category B
+### Cases falling outside Category B
 
 
 1. Given the volume of matters already before the Inquiry, it has been necessary to, in some instances, make the difficult determination that there is simply not enough positive evidence pointing to LGBTIQ bias being a factor in a death to warrant further investigation of that case theory. It is possible that of the over 1300 deaths the Inquiry reviewed, potential Category B matters were overlooked due to a variety of reasons, including the following:
@@ -3559,15 +3507,7 @@ have had any LGBTIQ-related aspect;
 2. Especially in cases dating from the earlier part of the 40-year period, even where primary records were available, they were often brief or rudimentary, containing little or nothing from which the possible presence of LGBTIQ bias might be discerned or inferred; and
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
 
-
-1160
-
-
-
-
-Chapter 6: Category B Deaths
 
 
 d. The finite time and resources available to the Inquiry.
@@ -3611,11 +3551,12 @@ and the LGBTIQ community generally, have been left grieving and
 devastated.
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
 
+## Footnotes
 
-1161
-
-
-
-
+4890 Exhibit 29, Tab 3, Post-mortem report of Dr Christopher Lawrence, 23 December 1997, 4 (SCOI.00041.00016).
+4891 Exhibit 29, Tab 3, Post-mortem report of Dr Christopher Lawrence, 23 December 1997 (SCOI.00041.00016).
+4892 Exhibit 29, Tab 3, Post-mortem report of Dr Christopher Lawrence, 23 December 1997, 2-3 (SCOI.00041.00016).
+4893 Exhibit 29, Tab 3, Post-mortem report of Dr Christopher Lawrence, 23 December 1997, 3 (SCOI.00041.00016).
+4894 Exhibit 29, Tab 3, Post-mortem report of Dr Christopher Lawrence, 23 December 1997, 2 (SCOI.00041.00016).
+4895 Exhibit 29, Tab 7, Statement of Detective Senior Constable Paul Michael Thornton, 23 October 1998, [3] (SCOI.00041.00005).

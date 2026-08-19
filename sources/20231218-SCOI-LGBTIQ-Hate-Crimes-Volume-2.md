@@ -647,12 +647,9 @@ May 1976.
 
 5.131. One consequence of the assumption in the BCIF that the two hotels were one and
 the same is that Strike Force Parrabell officers did not turn their minds to the
-possibility that Mr Stewart may have attended the Chevron Hotel, the bar of which
-was known as a popular venue for gay men, at some time proximate to his death.68
+possibility that Mr Stewart may have attended the Chevron Hotel, the bar of which was known as a popular venue for gay men, at some time proximate to his death.68
 
-
-
-# 5.132. The "Summary of Findings" categorises the case overall as "Insufficient Information", and concludes that:69
+5.132. The "Summary of Findings" categorises the case overall as "Insufficient Information", and concludes that:69
 
 
 [b]ecause of the lack of evidence in being able to determine how
@@ -668,11 +665,9 @@ Mr Stewart's death was a homicide, a finding by Strike Force Parrabell of
 ## Results of Strike Force Parrabell
 
 
-1. Strike Force Parrabell categorised the case as "Insufficient Information".71
-
+5.134. Strike Force Parrabell categorised the case as "Insufficient Information".71
 
 5.135. The academic review also categorised it as "Insufficient Information".72
-
 
 5.136. The matter was categorised as "unsolved" by Strike Force Parrabell.73
 
@@ -680,10 +675,10 @@ Mr Stewart's death was a homicide, a finding by Strike Force Parrabell of
 ## Review by the Inquiry
 
 
-## 5.137. The Inquiry took the following steps in the course of examining the matter.
+5.137. The Inquiry took the following steps in the course of examining the matter.
 
 
-Summonses
+## Summonses
 
 
 1. A summons to the NSWPF was issued on 18 May 2022 for, relevantly, all documents relating to investigations by the NSWPF of the death of Mr Stewart, including prescribed categories (1)(a) (j) of (NSWPF1). any held or created by the UHT in relation to the death of Mr Stewart. No investigative file was produced for Mr Stewart's matter. Nor were any Report of Occurrence entries produced. However, a number of Special Crime Squad synopsis books were provided to the Inquiry on 23 August 2022 in an archive box labelled "Investigations - Unsolved murders - 1977 - (Box 1)".
@@ -34799,22 +34794,6 @@ determine whether Mr Paynter's fall was a consequence of misadventure, suicide
 or foul play. However, on the evidence available to me, misadventure is the most
 likely explanation for Mr Paynter's fall.
 
-
-2629 Exhibit 8, Tab 20, 'Tathra Cliff Top is to be Fenced Off', Bega District News (Bega, 27 July 1990) (SCOI.10935.00029).
-2630 Submissions of NSWPF, 21 February 2023, [61] (SCOI.82560).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-731
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Graham William Paynter
-
-
 # Bias
 
 
@@ -34824,7 +34803,7 @@ and the positioning of his clothing, it is unlikely that Mr Paynter's death was 
 homicide.
 
 
-# 5.3106. The review conducted by the Inquiry has found no evidence of third-party involvement, nor of LGBTIQ bias.
+5.3106. The review conducted by the Inquiry has found no evidence of third-party involvement, nor of LGBTIQ bias.
 
 
 # Conclusions and Recommendations
@@ -36256,10 +36235,10 @@ the clothes were.2738
 where he found the clothing or asked him to mark the location on a map.2739
 
 
-# 5.3226. The Inquiry also made contact with I181.2740 This did not lead to the Inquiry obtaining any additional relevant information.
+5.3226. The Inquiry also made contact with I181.2740 This did not lead to the Inquiry obtaining any additional relevant information.
 
 
-Contact with OICs
+## Contact with OICs
 
 
 5.3227. On 23 August 2023 and 20 September 2023, the Inquiry wrote to Michael Plotecki
@@ -36268,38 +36247,13 @@ NSWPF in relation to the death of Mr Wark. Mr Plotecki advised that he did not
 wish to participate in the Inquiry by filing submissions in relation to the death of
 Mr Wark.2741
 
-
-2733 Exhibit 23, Tab 66, Expert report of Professor Robert Brander, 23 March 2023, [155] (SCOI.82556).
-2734 Exhibit 23, Tab 68, Second statement of Neil Champion, 9 August 2023 (SCOI.85465).
-2735 See Exhibit 23, Tab 68, Annexure 2 to Second statement of Neil Champion, 9 August 2023 (SCOI.85465); Exhibit 23, Tab 68A,
-Colour versions of Annexures 1 and 2, 9 August 2023 (SCOI.85462).
-2736 Exhibit 23, Tab 68, Second statement of Neil Champion, 9 August 2023, [12] (SCOI.85465).
-2737 Exhibit 23, Tab 68, Second statement of Neil Champion, 9 August 2023, [13] (SCOI.85465).
-2738 Exhibit 23, Tab 68, Second statement of Neil Champion, 9 August 2023, [14] (SCOI.85465).
-2739 Exhibit 23, Tab 68, Second statement of Neil Champion, 9 August 2023, [15] (SCOI.85465).
-2740 Exhibit 23, Tab 67, Statement of Caitlin Healey-Nash, 8 May 2023, [13]-[16] (SCOI.82558).
-2741 Exhibit 23, Tab 67, Statement of Caitlin Healey-Nash, 8 May 2023, [13]-[16] (SCOI.82558); Exhibit 66, Tabs 41-42, Letters to Michael
-Plotecki, 23 August 2023 and 20 September 2023 (SCOI.86299; SCOI.86300).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-753
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Simon Blair Wark
-
-
 5.3228. On 24 August 2023, 11 October 2023 and 16 November 2023, the Inquiry wrote
 to former Constable Lisa Ford enclosing the written submissions made by both
 Counsel Assisting and the NSWPF in relation to the death of Mr Wark.2742 The
 Inquiry did not receive a response.
 
 
-Other
+## Other
 
 
 5.3229. On 7 November 2022, the Inquiry requested information about the weather and
@@ -36316,13 +36270,13 @@ relevant sources.2745 This data, as well as the BOM data, was supplied to Profes
 Brander in connection with the report requested from him.
 
 
-# Consideration of the evidence
+## Consideration of the evidence
 
 
-Blair Wark's background
+### Blair Wark's background
 
 
-1. Mr Wark was born on 15 September 1961 and was 28 years old when he died in 1990.2746 His parents have passed away and he is now survived by two of his four siblings, an older brother and his younger sister Rebecca Wark.
+5.3231. Mr Wark was born on 15 September 1961 and was 28 years old when he died in 1990.2746 His parents have passed away and he is now survived by two of his four siblings, an older brother and his younger sister Rebecca Wark.
 
 
 5.3232. The Wark family home was in Frenchs Forest in Sydney's northern suburbs.
@@ -36335,32 +36289,6 @@ then.2747
 Art Institute in Paddington. After finishing the course, he also worked at the
 Institute, and he was employed in the print-making section at the time of his
 death.2748
-
-
-2742 Exhibit 66, Tabs 88A, 89 and 89A, Letters to Lisa Feet/Keet, 24 August 2023, 11 October 2023, 16 November 2023 (SCOI.86667;
-SCOI.86348; SCOI.86673).
-2743 Exhibit 23, Tab 57, Sea Level Observations at Fort Denison for 1990 (Bureau of Meteorology Data Document CAS-40581-G1G8T9-
-1), 14 November 2022 (SCOI.82501); Exhibit 23, Tab 58, Weather, Synoptic and Rainfall Observations for Watsons Bay area for 1-24
-January 1990 (Bureau of Meteorology Data Document CAS-42702-V4S0D9-4), 21 December 2022 (SCOI.82218).
-2744 Exhibit 23, Tab 62, Excel Spreadsheet of Sydney Offshore Wave Data for 1990, 9 November 2022 (SCOI.82508).
-2745 Exhibit 23, Tabs 59-60, Sunrise, Sunset and Twilight Times for the Gap on 9 and 10 January 1990 (SCOI.82505; SCOI.82500); Exhibit
-23, Tab 63, Dates of Primary Phases of the Moon in 1990, undated (SCOI.82535).
-2746 Exhibit 23, Tab 8, Death Certificate of Simon Blair Wark, 13 August 1990 (SCOI.74040).
-2747 Exhibit 23, Tab 11, Statement of Rebecca Wark, 18 March 1990, [4] (SCOI.00052.00035).
-2748 Exhibit 23, Tab 11, Statement of Rebecca Wark, 18 March 1990, [4] (SCOI.00052.00035); Exhibit 23, Tab 10, Statement of Ian Wark,
-27 January 1990, [5] (SCOI.00052.00027).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-754
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Simon Blair Wark
-
 
 5.3234. Mr Wark was close to his younger sister Rebecca, who lived at the family home
 and whom he would see at least monthly.2749 His family knew that he was gay.2750
@@ -36805,47 +36733,7 @@ would imply either that I181 was not told of the visit or that she was not there
 I181's account asserts).
 
 
-# 5.3271. Most significantly, Ms McLaughlin described Mr Wark at this point as being "highly distressed and agitated".2812
-
-
-2805 Exhibit 23, Tab 10, Second statement of Ian
-1990, [11] (SCOI.00052.00035).
-2806 Exhibit 23, Tab 20, Letter from I181 to Coroner, 12
-2807 Exhibit 23, Tab 20, Letter from I181 to Coroner, 12
-2808 Exhibit 23, Tab 20, Letter from I181 to Coroner, 12
-2809 Exhibit 23, Tab 20, Letter from I181 to Coroner, 12
-2810 Exhibit 23, Tab 40, Letter from Enid Wark and Rebecca
-2811 Exhibit 23, Tab 41, Letter from Constable Ford and Detective
-2812 Exhibit 23, Tab 41, Letter from Constable Ford and Detective
-
-
-Wark, 27 January 1990, [13]; Exhibit 23, Tab 11, Statement of Rebecca Wark, 18 March
-
-
-January 1990, 2 (SCOI.00052.00022).
-January 1990, 2 (SCOI.00052.00022).
-January 1990, 2 (SCOI.00052.00022).
-January 1990, 2 (SCOI.00052.00022).
-Wark to the Coroner, 4 May 1990, 4
-Plotecki to the Coroner, 19 June
-Plotecki to the Coroner, 19 June
-
-
-(SCOI.00052.00011).
-1990, [11] (SCOI.00052.00044).
-1990, [11] (SCOI.00052.00044).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-761
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Simon Blair Wark
-
+5.3271. Most significantly, Ms McLaughlin described Mr Wark at this point as being "highly distressed and agitated".2812
 
 5.3272. Mr Wark's attendance at I181's home address rather than at the MLC Centre
 should not necessarily be regarded as strange. In her letter to the Coroner, I181
@@ -36893,7 +36781,7 @@ Mr Wark two months earlier, along with a single group therapy session on
 26 November 1989.2817
 
 
-# 5.3279. In I181's letter to the Coroner, she expressed her view as follows:2818
+5.3279. In I181's letter to the Coroner, she expressed her view as follows:2818
 
 
 2813 Exhibit 23, Tab 20, Letter from I181 to the Coroner, 12 January 1990, 1-2 (SCOI.00052.00022).
@@ -36907,21 +36795,6 @@ evidence to suggest that he had an ongoing association with Mr Wark: Exhibit 23,
 [14] (SCOI.00052.00030).
 
 
-2815 Exhibit 23, Tab 41, Letter from Constable Ford and Detective Plotecki to the Coroner, 19 June 1990, [12] (SCOI.00052.00044).
-2816 Exhibit 23, Tab 18, Referral letter from Dr Jeff Sleep to I181, 14 November 1989 (SCOI.00052.00023).
-2817 Exhibit 23, Tab 20, Letter from I181 to the Coroner, 12 January 1990, 1-2 (SCOI.00052.00022).
-2818 Exhibit 23, Tab 20, Letter from I181 to the Coroner, 12 January 1990, 1-2 (SCOI.00052.00022).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-762
-
-
-
-
-Chapter 5: Category A Deaths ― In the matter of Simon Blair Wark
 
 
 ...
@@ -37104,18 +36977,7 @@ respect and no conclusion could be reached by the Inquiry as to what did,
 or did not, occur in the course of Constable Ford's visit to the scene.
 
 
-# 5.3297. I do not accept this submission.
-
-
-2829 Submissions of NSWPF, 1 June 2023, [65] (SCOI.83645).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-765
-
-
+5.3297. I do not accept this submission.
 
 
 1. In the first place, prior to the documentary tender in this matter, Inquiry staff held a teleconference with the OIC, Mr Plotecki, who advised that he could not recall any information about Mr Wark's death beyond the contents of his statement.2830 In addition, the Inquiry has subsequently made inquiries of Mr Plotecki, who advised that he did not wish to make any submissions in relation to the death of Mr Wark.2831 The Inquiry has also made multiple attempts to contact Ms Ford, but was unable to successfully reach her. But secondly, I reject any suggestion that I cannot reach a conclusion as to whether there was a visit to the site by Constable Ford, or as to what did or did not occur in the course of any such visit if it occurred in the absence of speaking to Constable Ford.
@@ -38213,7 +38075,7 @@ his death, Mr Wark was affected by a psychotic episode.
 to suspect that LGBTIQ bias was a factor in Mr Wark's death.
 
 
-# 5.3395. I do not propose to make any recommendations arising from the Inquiry's consideration of Mr Wark's death.
+5.3395. I do not propose to make any recommendations arising from the Inquiry's consideration of Mr Wark's death.
 
 
 Special Commission of Inquiry into LGBTIQ hate crimes
@@ -71832,7 +71694,7 @@ committed an indictable offence and that there was a reasonable prospect that a
 jury would convict him of that offence.5768
 
 
-# 6.764. On suspension of the inquest, Deputy State Coroner Russell made the following findings:5769
+6.764. On suspension of the inquest, Deputy State Coroner Russell made the following findings:5769
 
 
 Anthony Cawsey died at Centennial Park, Sydney, New South Wales on
@@ -71865,7 +71727,7 @@ reviewed deaths between 1976 and 2000.
 # Review by the Inquiry
 
 
-# 6.769. The Inquiry took the following steps in the course of examining the matter.
+6.769. The Inquiry took the following steps in the course of examining the matter.
 
 
 Summonses
@@ -71945,7 +71807,7 @@ Examination Request (P377) forms held by FASS in relation to the exhibits in Mr
 Cawsey's matter. These were received by the Inquiry on 16 February 2023.
 
 
-# 6.777. On 30 March 2023, the Inquiry wrote to FASS requesting that further forensic analysis be conducted on eight exhibits.
+6.777. On 30 March 2023, the Inquiry wrote to FASS requesting that further forensic analysis be conducted on eight exhibits.
 
 
 6.778. On 23 June 2023, 26 July and 4 October 2023 the Inquiry received expert

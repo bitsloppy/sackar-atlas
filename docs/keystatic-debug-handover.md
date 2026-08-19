@@ -1,7 +1,31 @@
 # Keystatic Debug Handover
 
-**Date:** 2026-08-13  
-**Situation:** Keystatic CMS is fully integrated and deployed, but the `/keystatic` login flow returns HTTP 500.
+**Date:** 2026-08-13 — **RESOLVED**  
+**Situation:** ~~Keystatic CMS is fully integrated and deployed, but the `/keystatic` login flow returns HTTP 500.~~
+
+**OAuth login is working.** See resolution below.
+
+---
+
+## Resolution (2026-08-13)
+
+**Root cause:** `context.locals.runtime` is defined via `Object.defineProperty` with `configurable: false, writable: false` (non-configurable data property). A JavaScript Proxy **cannot** return a different value for such a property — the engine throws a TypeError invariant violation. That's why the Proxy approach failed.
+
+**Fix:** The runtime shim object at `locals.runtime` has a throwing `env` getter defined in an object literal — those are `configurable: true` by default. So we can patch just the getter:
+
+```typescript
+const runtime = (context.locals as any).runtime;
+if (runtime && typeof runtime === 'object') {
+  Object.defineProperty(runtime, 'env', {
+    get: () => e,  // e = cfEnv from cloudflare:workers
+    configurable: true,
+  });
+}
+```
+
+Also pass `clientId`/`clientSecret`/`secret` directly to `makeHandler` as belt-and-suspenders.
+
+Confirmed working: `GET /api/keystatic/github/login` returns 307 → GitHub OAuth. Full login flow tested.
 
 ---
 

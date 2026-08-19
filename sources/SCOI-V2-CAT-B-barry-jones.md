@@ -7,7 +7,7 @@
 ## Factual background
 
 
-Date and location of death
+### Date and location of death
 
 
 6.299. Barry Jones died from multiple stab wounds on 26 September 1976 at the
@@ -15,7 +15,7 @@ grandstand in Five Dock Park, Five Dock, sometime after 10:00pm. He was 41
 years old at the time of his death.
 
 
-Circumstances of death
+### Circumstances of death
 
 
 1. Mr Jones lived at Walker Avenue, Haberfield with his cousin, Kenneth Grant, and Mr Grant's de facto partner, Carol Grant. He worked as a labourer for Drummoyne Municipal Council.5386 He appears to have spent most of his time outside of work drinking and socialising at pubs and clubs in the Five Dock area, where he was well known by other locals.
@@ -34,24 +34,8 @@ curfew at the Bowling Club and required to leave before 2:00pm.5388 Mr Jones lef
 the Bowling Club at around that time.5389
 
 
-5386 Exhibit 41, Tab 12, Statement of Kenneth Grant, 27 September 1976, 1 (SCOI.10495.00023).
-5387 Exhibit 41, Tab 12, Statement of Kenneth Grant, 27 September 1976, 2 (SCOI.10495.00023).
-5388 Exhibit 41, Tab 6, Statement of Detective Sergeant Donald McCusker, 6 December 1977, [7] (SCOI.10495.00015).
-5389 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 83-85, 141 (SCOI.83626).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1202
-
-
-
-
 1. After leaving the Bowling Club, Mr Jones went to the Western Suburbs Soccer Club (the Soccer Club). Between 3:00pm and 3:30pm, Mr Grant met Mr Jones in the foyer of the Soccer Club. They went to the lounge and sat with Jimmy Briggs, a friend of Mr Jones. Mr Grant stayed with them for about half an hour, before leaving at about 3:30pm.5390
 
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.304. There are very different accounts as to when Mr Jones left the Soccer Club that
@@ -102,28 +86,7 @@ proceeded to conduct its own review and investigations in relation to the death 
 Mr Jones.
 
 
-5390 Exhibit 41, Tab 12, Statement of Kenneth Grant, 27 September 1976, 2 (SCOI.10495.00023).
-5391 Exhibit 41, Tab 8, Statement of Aldo Zajc, 30 September 1976 (SCOI.10495.00020).
-5392 Exhibit 41, Tab 2, Post-mortem Report of Dr William Brighton, 27 September 1976, 1-2 (SCOI.10495.00016).
-5393 Exhibit 41, Tab 7, Memorandum from Detective Sergeant Donald McCusker, 'Inquiries as to knife', 24
-(NPL.2015.0001.1065).
-
-
-September 1976, 1
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1203
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
-
-# 6.312. The evidence obtained by the Inquiry in relation to Mr Jones' sexuality is ambiguous.5394
+6.312. The evidence obtained by the Inquiry in relation to Mr Jones' sexuality is ambiguous.5394
 
 
 6.313. In January 1977, police spoke to I375, a gay man who was said to be a member of
@@ -160,7 +123,7 @@ hate-based motivation for killing Mr Jones.
 ## Previous investigations
 
 
-Post-mortem investigation
+### Post-mortem investigation
 
 
 6.317. On Monday, 27 September 1976, Dr William Brighton examined Mr Jones' body
@@ -170,23 +133,6 @@ mortem examination at the mortuary. He concluded that Mr Jones died as a result
 of haemorrhage and respiratory failure, as a result of multiple stab wounds to the
 chest and abdomen.5398
 
-
-5394 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 6, 28, 58, 76-77, 95, 122, 132, 135 (SCOI.83626).
-5395 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 148 (SCOI.83626).
-5396 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 11 (SCOI.83626).
-5397 Exhibit 41, Tab 2, Post-mortem Report of Dr William Brighton, 27 September 1976, 2 (SCOI.10495.00016).
-5398 Exhibit 41, Tab 2, Post-mortem Report of Dr William Brighton, 27 September 1976, 1-2 (SCOI.10495.00016).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1204
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.318. Dr Brighton noted that it was possible to see the interior of Mr Jones' chest
@@ -202,10 +148,10 @@ throat and the two wounds to the front thoracic area (including the wound in
 which the knife was found).5402
 
 
-# 6.320. Mr Jones had a blood alcohol level of ".350".5403
+6.320. Mr Jones had a blood alcohol level of ".350".5403
 
 
-Original police investigation
+### Original police investigation
 
 
 6.321. The OIC of the original police investigation was Detective Sergeant Donald
@@ -217,7 +163,7 @@ enemies, that he had never been seen to be engaged in fights or arguments, and
 that he had "no known female associates".5404
 
 
-Crime scene and local area
+### Crime scene and local area
 
 
 1. There was a large amount of blood around Mr Jones' feet, and around his shoulders and chest. There was a continuous stream of blood running down the 16 steps of the grandstand. There were blood smears on the wall behind Mr Jones' right foot, at a height of 3'6".5405
@@ -234,31 +180,7 @@ Park, mostly written in chalk. This included the words "I KILLED THE JUY (sic)
 IN THE PARK" written in chalk on the path behind the Bowling Club.5407
 
 
-# 6.325. Police extensively canvassed houses in the area around Five Dock Park.5408
-
-
-5399 Exhibit 41, Tab 2, Post-mortem Report of Dr William Brighton, 27 September 1976, 2 (SCOI.10495.00016).
-5400 Exhibit 41, Tab 2, Post-mortem Report of Dr William Brighton, 27 September 1976, 2 (SCOI.10495.00016).
-5401 Exhibit 41, Tab 2, Post-mortem Report of Dr William Brighton, 27 September 1976, 2 (SCOI.10495.00016).
-5402 Exhibit 41, Tab 2, Post-mortem Report of Dr William Brighton, 27 September 1976, 2 (SCOI.10495.00016).
-5403 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 11 (SCOI.83626).
-5404 Exhibit 41, Tab 6, Statement of Detective Sergeant Donald McCusker, 6 December 1977, [16] (SCOI.10495.00027).
-5405 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 6 (SCOI.83626).
-5406 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 7 (SCOI.83626).
-5407 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 9 (SCOI.83626).
-5408 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 29-53 (SCOI.83626).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1205
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
+6.325. Police extensively canvassed houses in the area around Five Dock Park.5408
 
 6.326. At around 10:20pm on 26 September 1976, Peter Kohlenberg was at home at Park
 Road, Five Dock when he heard a scream. He got up and looked through his
@@ -273,7 +195,7 @@ vehicle was parked in the vicinity of 41 Park Avenue.5409
 scream at about 10:15pm. She looked out the window and saw nothing.5410
 
 
-Canvasses of pubs and clubs
+### Canvasses of pubs and clubs
 
 
 1. Police conducted extensive canvassing of the pubs where Mr Jones drank. The evidence of the patrons provides a detailed, but somewhat conflicting picture of Mr Jones' movements prior to his death.
@@ -298,8 +220,7 @@ that they saw Mr Jones either in or outside the club at times ranging between
 3:00pm and 10:15pm.5413
 
 
-Canvasses of taxi services and evidence in relation to Mr Jones' departure from
-the Soccer Club
+### Canvasses of taxi services and evidence in relation to Mr Jones' departure from the Soccer Club
 
 
 6.332. Police also interviewed various cab drivers who picked up jobs from the Soccer
@@ -310,29 +231,7 @@ Club on the evening of 26 September 1976.
 from the Soccer Club at about 10:30pm on 26 September 1976. He recalled calling
 out to another male, who he thought was also waiting to be picked up. He said
 that he thought this man was Mr Jones, but this man waved his arms as if to
-indicate that he did not want to get into the cab. Mr Fuller remarked that the man
-
-
-5409 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 37, 42 (SCOI.83626).
-5410 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 37 (SCOI.83626).
-5411 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 92-93, 133, 140-144 (SCOI.83626).
-5412 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 94-95, 136-140 (SCOI.83626).
-5413 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 134 (SCOI.83626).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1206
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
-
-seemed "a bit full" and called over the radio that "the fare is an M6" (which was
-code for an unacceptable or drunk passenger).5414
+indicate that he did not want to get into the cab. Mr Fuller remarked that the man seemed "a bit full" and called over the radio that "the fare is an M6" (which was code for an unacceptable or drunk passenger).5414
 
 
 6.334. Yuri Shewchyk was a radio operator at Cumberland Cabs. He worked the evening
@@ -370,25 +269,6 @@ to some extent explained by the account given by Robert Adair Sr., who said that
 he was the person who had booked the cab to share with McColl, and had been
 refused service, which was consistent with Mr Williams' description of the person
 and the records of Cumberland Cabs.5418
-
-
-5414 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 -27 May 1977, 97 (SCOI.83626).
-5415 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 99-100 (SCOI.83626).
-5416 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 98 (SCOI.83626).
-5417 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 99-100 (SCOI.83626).
-5418 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 98, 105 (SCOI.83626).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1207
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
 
 6.338. Trevor Calland was another cab driver at Cumberland Cabs. He recalled two jobs
 being called in on the radio on 26 September 1976 at about 10:30pm from the
@@ -428,7 +308,7 @@ from the location of the possible sighting by Mr Grimes of Mr Jones at 10:16pm
 in Great North Road.
 
 
-Canvasses of co-workers
+### Canvasses of co-workers
 
 
 6.342. Police interviewed Mr Jones' co-workers at Drummoyne Municipal Council. None
@@ -436,24 +316,6 @@ of Mr Jones' co-workers could identify anyone who would have wished him harm.
 He was often referred to with terms such as "harmless" and "inoffensive". He was
 also generally described as spending all his spare time outside of work drinking at
 different establishments and was said to suffer from alcoholism.5423
-
-
-5419 Exhibit 41, Tab 11, Statement of Trevor Calland, 11 October 1976 (SCOI.83625).
-5420 Exhibit 41, Tab 10, Statement of Marjorie Hayman, 2 October 1976 (SCOI.83624).
-5421 Exhibit 41, Tab 9, Statement of Alan Grimes, 27 September 1976 (SCOI.10495.00021).
-5422 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 86 (SCOI.83626).
-5423 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 17-28 (SCOI.83626).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1208
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.343. One co-worker, Reginald Mullins, recalled Mr Jones recounting an incident where
@@ -474,7 +336,7 @@ night.5425 Mr Rowland was later shown the knife and said that it was not the sam
 knife.5426
 
 
-Other investigative steps
+### Other investigative steps
 
 
 1. In his statement dated 6 December 1977, Detective Sergeant McCusker outlined the range of investigative steps that were taken by police. In addition to the broad canvas of hotels and clubs, those steps included:
@@ -507,27 +369,6 @@ lot of use and was between 15 and 25 years old.5428
 6.346.
 
 
-5424 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 28 (SCOI.83626).
-5425 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 63 (SCOI.83626).
-5426 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 68 (SCOI.83626).
-5427 Exhibit 41, Tab 6, Statement of Detective Sergeant Donald McCusker, 6 December 1977, [12]-[18]
-Exhibit 41, Tab 26, Reward for information, 10 October 1977 (NPL.2015.0001.1125).
-5428 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 91 (SCOI.83626).
-
-
-(SCOI.10495.00015). See also
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1209
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
 
 6.347. On 7 October 1976, Mr Angus further stated his firm had imported the knife up
 until 1964 and at that time, it had been the sole importer from the knife
@@ -540,7 +381,7 @@ that used in the assault on Mr Jones. Investigation of those reports did not res
 in police identifying any persons of interest.
 
 
-Exhibits: Availability and testing
+### Exhibits: Availability and testing
 
 
 1. In late 1976, various exhibits were provided to Robert Goetz, microbiologist, for forensic testing:
@@ -588,21 +429,6 @@ be considered significant if the profile is consistent with that of the deceased
 its presence can be a post-mortem phenomenon.5432
 
 
-5429 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 91 (SCOI.83626).
-5430 Exhibit 41, Tab 3, Report of Robert Goetz, 5 November 1976, 2-3 (SCOI.10495.00028).
-5431 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 12-13 (SCOI.83626).
-5432 Exhibit 26, Tab 34, Expert Report of Dr Linda Iles, 26 October 2022, 8 (SCOI.82906).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1210
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.353. Blood was found on a number of the items that were tested. In particular, the torch
@@ -616,7 +442,7 @@ consistent with that of Mr Jones. There is no record that it was tested for
 fingerprints. That matter is discussed further below.
 
 
-Person of interest: Kenneth Grant
+### Person of interest: Kenneth Grant
 
 
 1. Police investigated the possibility that Mr Jones had been killed by his cousin, Mr Grant.
@@ -650,25 +476,10 @@ home when he went to sleep, to his knowledge.5436 When Mr Grant woke up the
 next morning at 6:50am, Mr Jones was not in the house.5437
 
 
-5433 Exhibit 41, Tab 3, Report of Robert Goetz, 5 November 1976, 3 (SCOI.10495.00028).
-5434 Exhibit 41, Tab 6, Statement of Detective Sergeant Donald McCusker, 6 December 1977, [20] -[22] (SCOI.10495.00015).
-5435 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 66 (SCOI.83626).
-5436 Exhibit 41, Tab 12, Statement of Kenneth Grant, 27 September 1976, 2-3 (SCOI.10495.00023).
-5437 Exhibit 41, Tab 12, Statement of Kenneth Grant, 27 September 1976, 3 (SCOI.10495.00023).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1211
-
-
-
-
 1. Ms Grant confirmed Mr Grant's account of events when interviewed separately by police.5438 She also confirmed that Mr Jones had bought her various presents over a period of 18 months: three watches, a zodiac pendant, a travelling watch radio, a pop-up toaster and a couple of pairs of shoes. She said that Mr Jones bought the presents cheaply and that he also bought Mr Grant presents such as cigarettes and lighters. Ms Grant claimed that Mr Jones did not give any reason for buying these presents.5439
 
 
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
+
 
 
 6.361. Ms Grant told police that she and Mr Jones had never had sex and that Mr Jones
@@ -692,7 +503,7 @@ Mr Jones. The frenzied nature of the attack does not appear to be consistent wit
 a motive of greed related to inheritance of Mr Jones' house.
 
 
-Person of interest: NP246
+### Person of interest: NP246
 
 
 1. On 9 October 1976, police separately spoke to I378 (a pseudonym), and her sister I379 (a pseudonym) after receiving information that those individuals may have had knowledge of the persons responsible for the death of Mr Jones.
@@ -711,25 +522,6 @@ knowing who committed the homicide. He claimed that he became aware of the
 death, when on the school bus, from another young person, I389 (a pseudonym).
 Police established that I389's house was one of those that had been canvassed by
 police at an early stage of the investigation, due to its proximity to the park.
-
-
-5438 Exhibit 41, Tab 13, Record of Interview with Carol Grant, 2 October 1976, Q3-A3, Q20-A29 (SCOI.83632).
-5439 Exhibit 41, Tab 13, Record of Interview with Carol Grant, 2 October 1976, Q35-A42 (SCOI.83632).
-5440 Exhibit 41, Tab 13, Record of Interview with Carol Grant, 2 October 1976, Q46-A49 (SCOI.83632).
-5441 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 60 (SCOI.83626); Exhibit 41, Tab 3, Report of Robert
-Goetz, 5 November 1976, 2-3 (SCOI.10495.00028)
-5442 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 123 (SCOI.83626).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1212
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.368. Police questioned NP246 about his whereabouts on the day of Mr Jones' death.
@@ -782,23 +574,6 @@ on the day of the murder.5447 I382 and his mother also confirmed that NP246 had
 been at their home on the day of the murder.5448
 
 
-5443 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 125 (SCOI.83626).
-5444 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 125 (SCOI.83626).
-5445 Submissions of NSWPF, 10 July 2023, [35] (SCOI.84381).
-5446 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 125 (SCOI.83626).
-5447 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 127 (SCOI.83626).
-5448 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 126 (SCOI.83626).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1213
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.374. Subsequently, on 24 November 1976, police received information from a 14 year
@@ -812,7 +587,7 @@ there is no record of such an interview taking place.5449
 been told that NP246 was responsible for Mr Jones' death.
 
 
-Person of interest: NP247
+### Person of interest: NP247
 
 
 1. On 18 March 1977, police received information from a member of the public, Mr Albert Hatfield, about a possible suspect for Mr Jones' death. Mr Hatfield reportedly described the man as someone who suffered from schizophrenia and who was "mad keen" on knives, swords and similar weapons.5450
@@ -845,25 +620,6 @@ recognise. Ms Hatfield confirmed her husband's account of NP247 describing a
 relationship he had had with a man in Canada.5455
 
 
-5449 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 146 (SCOI.83626).
-5450 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 149 (SCOI.83626).
-5451 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 150 (SCOI.83626).
-5452 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 150 (SCOI.83626).
-5453 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 151 (SCOI.83626).
-5454 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 151 (SCOI.83626).
-5455 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 152 (SCOI.83626).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1214
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
 
 6.381. On 24 May 1977, police interviewed Dr Greenway, Deputy Superintendent of
 Broughton Hall Psychiatric Centre, regarding NP247, then an out-patient.
@@ -883,7 +639,7 @@ weeks before his death, when NP247 had noticed two men aged around 35 years
 who were acting strangely. NP247 died in November 2001.5458
 
 
-Findings at inquest
+### Findings at inquest
 
 
 1. An inquest into Mr Jones' death was held on 26 January 1978.
@@ -895,14 +651,14 @@ respiratory failure due to multiple stab wounds to the chest and abdomen inflict
 by a person or persons unknown."5459
 
 
-Criminal proceedings
+### Criminal proceedings
 
 
 6.385. No criminal proceedings were ever instituted against any person in relation to
 Mr Jones' death.
 
 
-Subsequent police investigation
+### Subsequent police investigation
 
 
 1. In August 2005, according to email correspondence before the Inquiry, Inspector Robert Jarrett of the UHT "reviewed the brief", which indicated to him that there were "no real suspects".5460
@@ -916,26 +672,6 @@ might be limited, as there was no indication in the brief that associated the pr
 with the offender (as opposed to them belonging to any person who may have
 attended the grandstand at some time prior to the murder).
 
-
-5456 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 153 (SCOI.83626).
-5457 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 154 (SCOI.83626).
-5458 Exhibit 41, Tab 37, Statement of Tom Allchurch, 26 June 2023, [29]-[31] (SCOI.83979).
-5459 Exhibit 41, Tab 1, Findings of Coroner Parnell, Inquest into the death of Barry Jones, 26 January 1978
-5460 Exhibit 41, Tab 15, Email from Rob Jarrett to Fiona West, 31 August 2005 (SCOI.11028.00002).
-
-
-(SCOI.10495.00002).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1215
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.388. The results of the analysis, provided by email on 23 September 2005, included two
@@ -986,23 +722,6 @@ limited records available to discern what steps the UHT has taken in this case.
 However, the NSWPF pointed to Inspector Jarrett's "review of the brief" and
 request for a review of the fingerprint evidence as indicative of there being, at least,
 some level of review of the matter between 2004 and 2008.5466
-
-
-5461 Exhibit 41, Tab 15, Email from Rob Jarrett to Fiona West, 31 August 2005 (SCOI.11028.00002); Exhibit 41, Tab 16, Email from Fiona
-West to Rob Jarrett, 23 September 2005 (SCOI.11028.00001); Exhibit 41, Tab 17, Major Crime Running Sheet - M/C76/45, 23 September
-2005, 1-2 (SCOI.11027.00003).
-5462 Exhibit 41, Tab 18, NSWPF e@gle.i - Product Details IN2443, 7 July 2010 (SCOI.62865).
-5463 Exhibit 41, Tab 19, CNI Profile - Barry Jones, 1 August 2022, 2 (SCOI.62860).
-5464 Exhibit 41, Tab 20, Review of an unsolved homicide case screening form - Barry Jones, undated (SCOI.62861).
-5465 Transcript of the Inquiry, 7 July 2023, T5241.37-5242.38 (TRA.00075.00001).
-5466 Submissions of NSWPF, 10 October 2023, [307]-[308] (SCOI.86127).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1216
-
 
 
 
@@ -1058,27 +777,6 @@ the blond man put the knife away. Mr Adair described the knife as having "a hand
 shaped like a deer's hoof at the end".5475
 
 
-5467 Exhibit 41, Tab 21, Transcript of 111 Emergency Call, undated (SCOI.62863).
-5468 Exhibit 41, Tab 22, Statement of Allan Adair, 4 February 2018 (SCOI.62862).
-5469 Exhibit 41, Tab 22, Statement of Allan Adair, 4 February 2018, [6]-[14] (SCOI.62862).
-5470 Exhibit 41, Tab 22, Statement of Allan Adair, 4 February 2018, [15]-[16] (SCOI.62862).
-5471 Exhibit 41, Tab 22, Statement of Allan Adair, 4 February 2018, [17]-[18] (SCOI.62862).
-5472 Exhibit 41, Tab 22, Statement of Allan Adair, 4 February 2018, [19]-[22] (SCOI.62862).
-5473 Exhibit 41, Tab 22, Statement of Allan Adair, 4 February 2018, [23]-[25] (SCOI.62862).
-5474 Exhibit 41, Tab 21, Transcript of 111 Emergency Call, 7 (SCOI.62863).
-5475 Exhibit 41, Tab 22, Statement of Allan Adair, 4 February 2018, [26]-[30] (SCOI.62862).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1217
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
 
 6.402. The two men were with the group for "another hour or two", after which Allan
 Adair never saw them again.5476
@@ -1123,26 +821,6 @@ Sergeant Costello concluded: "Adair was coherent, polite, rational and sounded
 sober. He came across as believable."5481
 
 
-5476 Exhibit 41, Tab 22, Statement of Allan Adair, 4 February 2018, [31] (SCOI.62862).
-5477 Exhibit 41, Tab 22, Statement of Allan Adair, 4 February 2018, [36]-[38] (SCOI.62862).
-5478 Exhibit 41, Tab 22, Statement of Allan Adair, 4 February 2018, [39]-[41] (SCOI.62862).
-5479 Exhibit 41, Tab 22, Statement of Allan Adair, 4 February 2018, [32]-[35] (SCOI.62862).
-5480 Exhibit 41, Tab 23, NSWPF Investigator's Note, 'Information of Allan Adair provided via New Zealand Police', 23 May 2018, 1-4
-(NPL.0120.0001.0001).
-5481 Exhibit 41, Tab 23, NSWPF Investigator's Note, 'Information of Allan Adair provided via New Zealand Police', 23 May 2018, 4-5
-(NPL.0120.0001.0001).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1218
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
 
 6.408. Mr Adair was not able to provide any more detailed description of the knife or the
 two men. He could not identify anyone who was alive and could corroborate his
@@ -1165,13 +843,13 @@ being taken.
 # Review by the Inquiry
 
 
-Summonses
+### Summonses
 
 
 # NSWPF
 
 
-# 6.411. The Inquiry took the following steps in the course of examining the matter.
+6.411. The Inquiry took the following steps in the course of examining the matter.
 
 
 6.412. On 21 July 2022, the Inquiry issued a summons to the NSWPF (Summons
@@ -1202,37 +880,9 @@ which had not been produced to the Inquiry, reference number
 REPO/B/2003/17409.5485
 
 
-Investigator's Note, 'Information of Allan Adair provided via New Zealand Police', 23 May 2018, 5-6
 
 
-5482 Exhibit 41, Tab 23, NSWPF
-(NPL.0120.0001.0001).
-5483 Exhibit 41, Tab 37, Statement of
-5484 Exhibit 41, Tab 30, Statement of
-5485 Exhibit 41, Tab 23, NSWPF Investigator's
-(NPL.0120.0001.0001).
-
-
-Tom Allchurch, 26 June 2023, [6]-[8] (SCOI.83979).
-Detective Sergeant Neil Sheldon, 13 January 2023, [10] (SCOI.83072).
-Note, 'Information of Allan Adair provided via New Zealand
-
-
-Police', 23 May 2018, 2
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1219
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
-
-# 6.417. On 21 February 2023, the Inquiry wrote to the NSWPF regarding the absence of that box of material.
+6.417. On 21 February 2023, the Inquiry wrote to the NSWPF regarding the absence of that box of material.
 
 
 6.418. On 22 February 2023, the NSWPF produced that box of material to the Inquiry,
@@ -1248,7 +898,7 @@ Inquiry's review of this matter, and its ability to undertake investigative step
 late February 2023.
 
 
-Interagency cooperation
+### Interagency cooperation
 
 
 6.420. On 15 June 2022, the Inquiry requested the coronial file in relation to Mr Jones
@@ -1256,10 +906,10 @@ from the Coroners Court. On 4 July 2022, the Coroners Court provided the
 coronial file to the Inquiry.5487
 
 
-## 6.421. Inquiries were also made with BDM which confirmed that former Detective Sergeant McCusker, OIC, is now deceased.
+6.421. Inquiries were also made with BDM which confirmed that former Detective Sergeant McCusker, OIC, is now deceased.
 
 
-Records obtained in relation to NP246
+### Records obtained in relation to NP246
 
 
 1. On 9 December 2022, the Inquiry issued a summons to the NSWPF (NSWPF44) for the criminal history and holdings in relation to NP246. On 17 February 2023, the NSWPF produced eight documents relating to NP246.
@@ -1282,24 +932,6 @@ the Inquiry.
 6.426. The coronial file revealed that NP246 died of an overdose of anti-psychotic
 medication at home on 21 December 1983.5490 It also notes his height as 155cm.5491
 
-
-5486 Exhibit 41, Tab 37, Statement of Tom Allchurch, 26 June 2023, [11]-[12] (SCOI.83979).
-5487 Exhibit 41, Tab 37, Statement of Tom Allchurch, 26 June 2023, [4]-[5] (SCOI.83979).
-5488 Exhibit 41, Tab 34, NP246 - Criminal History, 10 June 1976 (NPL.0121.0002.0013).
-5489 Exhibit 41, Tab 34, NP246 - Criminal History, 10 June 1976 (NPL.0121.0002.0013).
-5490 Exhibit 41, Tab 35, NP246 - Coronial File, 23 December 1983 - 19 March 1984, 3, 8 (SCOI.83630).
-5491 Exhibit 41, Tab 35, NP246 - Coronial File, 23 December 1983 - 19 March 1984, 8 (SCOI.83630).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1220
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.427. On 20 December 1983, the day before his death, NP246 had been released from
@@ -1331,7 +963,7 @@ Family members
 6.430. Police concluded in 2010 that Mr Jones has no surviving family members.
 
 
-Searches for exhibits
+### Searches for exhibits
 
 
 1. On 30 January 2023, the Inquiry held a conference with FASS. FASS advised that it would not hold any DNA extracts or samples, as FASS (and its predecessor organisations) did not begin storing samples until 1985. FASS also advised that it did not hold the forensic exhibits for the death of Mr Jones.5494
@@ -1351,23 +983,6 @@ Mr Jones' clothing and the torch from Mr Grant's car would almost certainly be
 possible. That possibility is now foreclosed.
 
 
-5492 Exhibit 41, Tab 35, NP246 - Coronial File, 23 December 1983 - 19 March 1984, 5, 13 (SCOI.83630).
-5493 Exhibit 41, Tab 37, Statement of Tom Allchurch, 26 June 2023, [36]-[37] (SCOI.83979).
-5494 Exhibit 41, Tab 37, Statement of Tom Allchurch, 26 June 2023, [13]-[14] (SCOI.83979).
-5495 Exhibit 41, Tab 33, Statement of Detective Inspector Nigel Warren, 21 February 2023 (SCOI.83075).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1221
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
-
 6.434. The material produced to the Inquiry does not disclose whether, upon the receipt
 of information from Mr Syron in 1998, or during the course of the UHT's
 consideration of the case in 2005, 2010 and/or about 2012, consideration was
@@ -1383,7 +998,7 @@ The NSWPF advanced similar submissions in a number of other cases. I have
 addressed this submission generally in the introduction to this Chapter.
 
 
-Contact with next of kin of NP246
+### Contact with next of kin of NP246
 
 
 6.436. In light of the evidence before the Inquiry as to the potential involvement of
@@ -1392,7 +1007,7 @@ submissions to that effect, the Inquiry wrote to NP246's next of kin. The Inquir
 did not receive a response.5497
 
 
-Other
+### Other
 
 
 6.437. On 3 April 2023, the Inquiry spoke to Allan Adair by telephone. Allan Adair
@@ -1418,23 +1033,6 @@ a. He thought that they were "pretty young" and would have been around 18 or
 
 2. The taller man had blonde hair that was straight and scraggly. It looked like it hadn't been washed in weeks. He was wearing a light blue t-shirt and "jandals"; and
 
-
-5496 Submissions of NSWPF, 10 July 2023, [51] (SCOI.84381).
-5497 Exhibit 68, Tab 12, Letter from Inquiry, 22 June 2023 (SCOI.86622).
-5498 Exhibit 41, Tab 37, Statement of Tom Allchurch, 26 June 2023, [19] (SCOI.83979).
-5499 Exhibit 41, Tab 37, Statement of Tom Allchurch, 26 June 2023, [20] (SCOI.83979).
-5500 Exhibit 41, Tab 37, Statement of Tom Allchurch, 26 June 2023, [21] (SCOI.83979).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1222
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 1. He did not see tattoos on either man. Allan Adair noted that he had tattoos himself and that both men were wearing t-shirts, so he thought he would have noticed any tattoos, including on their arms.
@@ -1470,7 +1068,7 @@ death of Mr Jones.5504
 # Consideration of the evidence
 
 
-Mr Jones' movements after leaving the Soccer Club
+### Mr Jones' movements after leaving the Soccer Club
 
 
 1. The evidence in relation to Mr Jones' departure from the Soccer Club is outlined above.
@@ -1484,26 +1082,8 @@ of David Cashman and "Mrs Mann") suggests that Mr Jones was at the club until
 at least 9:30pm and possibly later still.5506
 
 
-5501 Exhibit 41, Tab 37, Statement of Tom Allchurch, 26 June 2023, [22]-[23] (SCOI.83979).
-5502 Exhibit 41, Tab 37, Statement of Tom Allchurch, 26 June 2023, [40]-[46] (SCOI.83979).
-5503 Exhibit 41, Tab 37, Statement of Tom Allchurch, 26 June 2023, [47]-[49] (SCOI.83979).
-5504 Exhibit 41, Tab 38, Supplementary Statement of Tom Allchurch, 28 July 2023, [21]-[22] (SCOI.84886).
-5505 Exhibit 41, Tab 6, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 134 (SCOI.83626).
-5506 Exhibit 41, Tab 6, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 134 (SCOI.83626).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1223
-
-
-
-
 1. There is conflicting evidence in relation to whether or not Mr Jones was present outside the Soccer Club as late as 10:15pm to 10:30pm, seeking a taxi. On the account of Mr Grimes this was not possible. The potential reliability of Mr Grimes' account, of seeing Mr Jones hitchhiking on Great North Road at around 10.16pm, is supported by the fact that it was given to police less than 48 hours later, his familiarity with Mr Jones, his description of the clothing worn by the person he saw, the good reason he had for being aware of the precise time, and the consistency of Mr Jones' location and actions with his known practice (attempting to hitch a lift home from a location on his likely walking route).
 
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.447. However, there are a number of references in police running sheets to a man by
@@ -1550,18 +1130,12 @@ suggest he did so, including in the extensive checks that were conducted with ta
 companies.
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1224
-
-
 
 
 1. If Mr Jones had taken a taxi, it is likely that he would have made it home. Mr Grant went to bed at 11:00pm and went to sleep at 12:30am-1:00am. To his knowledge, Mr Jones was not home at that time. It is highly unlikely that Mr Jones would have returned home (unnoticed by Mr Grant) and then left again. It seems likely then that Mr Jones left the Soccer Club on foot.
 
 
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
+
 
 
 6.454. Just how Mr Jones came to be at Five Dock Park remains a mystery. It was not on
@@ -1602,7 +1176,7 @@ have been seeking a sexual encounter. None of these possibilities can be
 confirmed.
 
 
-The accounts of Allan Adair and Robert Adair Junior
+### The accounts of Allan Adair and Robert Adair Junior
 
 
 6.460. On balance, and allowing for some uncertainty as to just when the relevant event
@@ -1614,10 +1188,6 @@ same distinctive features as the weapon used to attack Mr Jones, and that they
 made disparaging remarks about Mr Jones and his presumed sexuality.
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1225
 
 
 
@@ -1625,7 +1195,7 @@ Special Commission of Inquiry into LGBTIQ hate crimes
 1. There is nothing to suggest that either of the Adair brothers had any reason to fabricate their accounts, particularly considering that Allan Adair contacted authorities in New Zealand unprompted and voluntarily. Detective Sergeant Costello formed the view that Allan Adair was credible. Both men came across as believable in their dealings with the Inquiry. Albeit at a level of generality, Robert Adair Junior corroborated his brother's account.
 
 
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
+
 
 
 6.462. One curiosity about their account is the question of why it was not reported to the
@@ -1675,22 +1245,6 @@ sober. He came across as believable".5508 Further, Robert Adair Junior generally
 corroborated his brother's recollection.
 
 
-5507 Submissions of NSWPF, 10 July 2023, [59] (SCOI.84381).
-5508 Exhibit 41, Tab 23, Investigator's Note - Information of Allan Adair provided via New Zealand Police, 23 May 2018, 4-5
-(NPL.0120.0001.0001).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1226
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
-
 6.469. Allan Adair's account is compellingly specific in certain respects, including the
 distinctive nature of the knife, the fact that Mr Jones was known to frequent the
 Five Dock Hotel, and the alignment between the evidence of Mr Jones' sexuality
@@ -1707,7 +1261,7 @@ the Five Dock Hotel were subsequently involved in Mr Jones' death;
 2. The attack may therefore have been premeditated over a period of some time.
 
 
-NP246
+### NP246
 
 
 6.471. Several different sources suggested that NP246 may have been involved in the
@@ -1732,7 +1286,7 @@ have had an association with the two men, although such a possibility is merely
 speculative.
 
 
-Other possible suspects
+### Other possible suspects
 6.474. Neither NP247 nor Kenneth Grant matches the descriptions of the two men
 provided by Allan Adair, both being considerably older.
 
@@ -1742,15 +1296,6 @@ Grant, who stood to inherit Mr Jones' house, the gruesome nature of the death is
 not in keeping with such a motive.
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1227
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 # Police investigation
@@ -1764,7 +1309,7 @@ particularly in view of the information subsequently received from the Adair
 brothers, it is not considered that NP247 should be regarded as a likely perpetrator.
 
 
-Exhibits and forensic testing
+### Exhibits and forensic testing
 6.477. The death of Mr Jones is one of the earliest deaths falling within the Inquiry's
 Terms of Reference. The records of the original investigation reflect that fact.
 Information is often recorded by running sheet rather than by a formal statement,
@@ -1806,21 +1351,6 @@ made by investigating police and that, given the matter was an unsolved homicide
 transpired in relation to, the exhibits (particularly the knife)".5512
 
 
-5509 Exhibit 41, Tab 6, Statement of Detective Sergeant Donald McCusker, 6 December 1977, [10] (SCOI.10495.00015).
-5510 Submissions of NSWPF, 10 July 2023, [37] (SCOI.84381).
-5511 Submissions of NSWPF, 10 July 2023, [38] (SCOI.84381).
-5512 Submissions of NSWPF, 10 July 2023, [39] (SCOI.84381).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1228
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.483. In oral evidence given at the Investigative Practices Hearing, Assistant
@@ -1868,31 +1398,6 @@ circumstances of Mr Jones' death "are matters of speculation".5521
 
 6.488. The NSWPF advanced similar submissions in a number of other cases, and they
 have been addressed separately in Chapter 8 of this Report.
-
-
-5513 Exhibit 51, Tab 2D, Instruction No. 24 - Exhibits, 1962 (NPL.9000.0003.1471).
-5514 Transcript of the Inquiry, 4 July 2023, T4850.45-T4851.27 (TRA.00072.00001).
-5515 Transcript of the Inquiry, 4 July 2023, T4850.27-28 (TRA.00072.00001); T4851.10-11
-5516 Transcript of the Inquiry, 4 July 2023, T4850.37 (TRA.00072.00001).
-5517 Submissions of NSWPF, 10 October 2023, [305] (SCOI.86127).
-5518 Submissions of NSWPF, 10 July 2023, [40] (SCOI.84381).
-5519 Exhibit 41, Tab 3, Report of Robert Goetz, 5 November 1976 (SCOI.10495.00028).
-5520 Submissions of NSWPF, 10 July 2023, [41] (SCOI.84381).
-5521 Submissions of NSWPF, 10 July 2023, [42] (SCOI.84381).
-
-
-(TRA.00072.00001).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1229
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.489. The NSWPF noted that in two statements provided to the Inquiry, dated 2 May
@@ -2017,29 +1522,13 @@ possibility that his footprint or thong print had been left at the scene is caus
 concern about the level of thoroughness with which police approached the
 possibility that NP247 may have been involved.
 
-
-5530 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 149-154 (SCOI.83626
-5531 Exhibit 41, Tab 5, Relevant Running Sheets, 27 September 1976 - 27 May 1977, 154 (SCOI.83626).
+6.500. The NSWPF did not make any submissions in relation to the apparent failure to investigate NP247 more thoroughly.
 
 
-Special Commission of Inquiry into LGBTIQ hate crimes
+6.501. NP247 is now deceased and any opportunity to pursue this possibility further has now been lost.
 
 
-1231
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
-
-# 6.500. The NSWPF did not make any submissions in relation to the apparent failure to investigate NP247 more thoroughly.
-
-
-## 6.501. NP247 is now deceased and any opportunity to pursue this possibility further has now been lost.
-
-
-Investigation of NP246
+### Investigation of NP246
 
 
 1. NP246 was interviewed by police on 10 October 1976, after a report had been made of him boasting that he knew who had killed Mr Jones. Subsequently, on 24 November 1976, police received a report alleging that a young person named I395 had said that NP246 was responsible for the murder, and a note was made that NP246 was to be further interviewed. There is no record that such an interview took place. Nor is there any record indicating that police sought to interview I395 in order to obtain details of the source of his understanding.
@@ -2074,7 +1563,7 @@ under the supervision of the Child Welfare Department and was not supposed to
 be out at night after 8:00pm.
 
 
-1998: further report relating to NP246
+### 1998: further report relating to NP246
 
 
 6.507. On 5 May 1998, Patrick Syron attended Five Dock Police Station. He said that he
@@ -2082,23 +1571,6 @@ had been talking to an acquaintance, I392 (a pseudonym), at the Drummoyne RSL
 Club. I392 reportedly claimed that NP246 was responsible for the death of
 Mr Jones and that he had subsequently died as a result of jumping out of a hospital
 window.5532
-
-
-5532 Exhibit 41, Tab 14, COPS Event
-
-
-E499934, 8 May 1998, 1 (SCOI.11032.00002).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1232
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.508. The materials produced to the Inquiry by the NSWPF do not record whether
@@ -2138,7 +1610,7 @@ and that the evidence does not permit the Inquiry to identify the person or pers
 who killed Mr Jones.
 
 
-# 6.514. The NSWPF supported those submissions of Counsel Assisting, which I accept.
+6.514. The NSWPF supported those submissions of Counsel Assisting, which I accept.
 
 
 6.515. Counsel Assisting submitted that, notwithstanding that the perpetrator of
@@ -2154,26 +1626,6 @@ LGBTIQ bias was a factor, however, submitted that Counsel Assisting's
 assessment that it is probable was "surprising", given the paucity of evidence relating
 to the identity of the offender/s or the motivations driving the murder of
 Mr Jones.5536
-
-
-5533 Exhibit 41, Tab 14, COPS Event E499934, 8 May 1998, 1 (SCOI.11032.00002).
-5534 Submissions of NSWPF, 10 July 2023, [49] (SCOI.84381).
-5535 Exhibit 41, Tab 1, Findings of Coroner Parnell, Inquest into the death of Barry Jones, 26
-5536 Submissions of NSWPF, 10 July 2023, [57]-[58] (SCOI.84381).
-
-
-January 1978 (SCOI.10495.00002).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1233
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
 
 
 6.517. The NSWPF accepted that the fact that the Five Dock Park had been a beat or a
@@ -2235,26 +1687,6 @@ answer to the question is plainly "yes".
 Mr Jones died on 26 September 1976 in the grandstand of Five Dock
 Park, Park Road, Five Dock from haemorrhage and respiratory failure
 
-
-5537 Submissions of NSWPF, 10 July 2023, [57], [60] (SCOI.84381).
-5538 Submissions of NSWPF, 10 July 2023, [61] (SCOI.84381).
-5539 Exhibit 41, Tab 1, Findings of Coroner Parnell, Inquest into the death of Barry Jones, 26 January 1978
-
-
-(SCOI.10495.00002).
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1234
-
-
-
-
-Chapter 6: Category B Deaths ― In the matter of Barry Jones
-
-
 due to multiple stab wounds to the chest and abdomen inflicted by a person
 or persons unknown.
 
@@ -2267,14 +1699,6 @@ person or persons who attacked Mr Jones.
 suspect that LGBTIQ bias was a factor in Mr Jones' death.
 
 
-# 6.525. I do not propose to make any recommendations arising from the Inquiry's consideration of Mr Jones' death.
-
-
-Special Commission of Inquiry into LGBTIQ hate crimes
-
-
-1235
-
-
+6.525. I do not propose to make any recommendations arising from the Inquiry's consideration of Mr Jones' death.
 
 
