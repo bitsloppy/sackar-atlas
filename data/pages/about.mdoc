@@ -14,3 +14,44 @@ Sackar Atlas is a research and public interest project by Anna Roberts. It struc
 This is not a community heritage project. Anna Roberts is not a member of the LGBTIQ community and this project does not claim that standing. It is a civic research project: a cartographer's work, not a community voice. The infrastructure is designed so that community organisations can build on it — layering oral history, personal testimony, and community memory on top of the public record.
 
 First Nations custodianship is the primary identity of every location documented here. Country is not an add-on.
+
+## Who it's for
+
+Sackar Atlas is designed for anyone who wants to understand what the Inquiry found without reading 3,000 pages of PDF:
+
+- **Researchers and journalists** following up on specific cases, locations, people, or patterns
+- **Community organisations** building on the Inquiry's findings for advocacy or heritage work
+- **Historians** tracing connections across cases, institutions, and decades
+- **The general public** with an interest in this history
+
+The structured data is also machine-readable and available for AI-assisted research workflows.
+
+## How the source documents are prepared
+
+- PDFs are converted to Markdown and manually reviewed against the original.
+- Paragraph IDs are added to enable precise cross-referencing, using the format `SCOI-V2.5.551` (volume, chapter, paragraph).
+- Editorial decisions — formatting choices, corrections, omissions — are documented inline in `sources/EDITORIAL-DECISIONS.md`.
+- [Scripts](https://github.com/bitsloppy/sackar-atlas/tree/main/scripts) are used only for cleanup and adding reference IDs — not for content.
+- The source files are the source of truth. The structured data is derived from them, not the reverse.
+
+## How to use the data
+
+### Source documents
+
+The cleaned Markdown source files are in the `sources/` directory of the [GitHub repository](https://github.com/bitsloppy/sackar-atlas).
+
+### Paragraph references
+
+Use the format `SCOI-V2.5.551` for paragraph-level citations. In-text: `(Sackar J 2023, SCOI-V2.5.551)`.
+
+### Data schema
+
+The data schema — collections, fields, uncertainty ladder — is described in `docs/ai-instructions.md` ↗ and `llms.txt` ↗ in the repository.
+
+### Licence
+
+Structured data under `data/` is published under [CC-BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+
+Original journalism is © Anna Roberts. Code is MIT.
+
+See [LICENSING.md ↗](https://github.com/bitsloppy/sackar-atlas/blob/main/LICENSING.md) for full detail.
