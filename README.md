@@ -85,7 +85,7 @@ This site targets **WCAG 2.1 Level AA** compliance. The subject matter documents
 
 ## Status
 
-🟢 Active development — 11 cases published, live at https://sackar-atlas.bitsloppy.com.
+🟢 Active development — live at https://sackar-atlas.bitsloppy.com.
 
 ---
 
