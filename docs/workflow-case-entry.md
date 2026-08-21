@@ -1,5 +1,13 @@
 # Case Entry Workflow
 
+> **⚠️ Superseded — 2026-08-21**
+> This document describes the old manual case entry workflow (pre-corpus-first approach).
+> The new workflow uses AI extraction from the corpus with field-level citations.
+> See `docs/workflow-corpus-extraction.md` (to be written) and `docs/ai-instructions.md`
+> for the current approach. This file is kept for historical reference.
+
+---
+
 The single pipeline for adding a victim to the project — from source material
 to committed data, with a QA gate before anything is published to GitHub.
 
