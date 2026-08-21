@@ -101,8 +101,8 @@ published: true
 
 # Finding fields — ref required
 date_of_death:
-  value: 1976-05-11
-  ref: SCOI-V2-CAT-A-mark-stewart#5.95
+  value: 1976-05-10
+  ref: SCOI-V2-CAT-A-mark-stewart#5.96
 
 location_id:
   value: shelley-headland
