@@ -2,9 +2,8 @@
 
 How to work with this dataset. Modular — delete any section you don't need.
 
-> **Status: bare bones (pre-launch).** This document covers schema and cross-referencing.
-> Sections on editorial standards, use cases, and responsible AI use will be built out
-> before public launch. Do not treat placeholder headings as guidance.
+> **Status: live.** Schema, cross-referencing, and source hierarchy covered.
+> Editorial standards, use cases, and responsible AI sections are pending.
 
 ---
 
@@ -15,7 +14,7 @@ in Sydney, derived primarily from the 2023 NSW Special Commission of Inquiry int
 Hate Crimes (the SCOI, Commissioner: Justice John Sackar AO KC).
 
 - **Repo:** https://github.com/bitsloppy/sackar-atlas
-- **Live site:** https://sackar-atlas.soft-hill-5225.workers.dev
+- **Live site:** https://sackar-atlas.bitsloppy.com
 - **Licence:** CC-BY 4.0 (data), see `LICENSE-data`
 - **Citation:** Roberts A (2026) *Sackar Atlas* [data set], GitHub, https://github.com/bitsloppy/sackar-atlas
 
@@ -254,4 +253,29 @@ The following sections will be added before public launch:
 ---
 
 *This document is a living reference. Updated as the schema evolves.*
-*Last updated: 2026-08-09*
+---
+
+## Content management
+
+The site uses two parallel systems:
+
+| Layer | Source of truth | Edited via |
+|---|---|---|
+| Structured data (dates, slugs, relationships, findings) | `data/*.md` YAML frontmatter | VS Code / GitHub |
+| Narrative prose (case narratives, location context, site pages) | `data/*.md` body + Keystatic | Keystatic CMS (`/keystatic`) |
+
+**Keystatic** is the prose editing interface. It lets Anna review and publish narrative prose
+for case pages, location pages, and static site pages (About, AI use, Corrections) without
+touching code.
+
+- Dev: `npm run dev` → http://localhost:4321/keystatic
+- Live: https://sackar-atlas.bitsloppy.com/keystatic (GitHub login)
+- Setup guide: `docs/keystatic-setup.md`
+- OAuth is resolved and working (as of 2026-08-13)
+
+Notion was evaluated as a content system but not adopted. Use Keystatic for all prose editing.
+
+---
+
+*This document is a living reference. Updated as the schema evolves.*
+*Last updated: 2026-08-21*
