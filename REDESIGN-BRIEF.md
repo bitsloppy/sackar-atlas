@@ -1,5 +1,11 @@
 # Sackar Atlas — WA Redesign Brief
 
+> **⚠️ Superseded — 2026-08-21**
+> The WA redesign described here is complete. The site now runs on Astro 7 + Web Awesome 3.10
+> at `site/`. This brief is kept for historical reference.
+> For the current project plan and architecture, see `_plan.md` in the Obsidian vault
+> and `docs/ai-instructions.md` in the repo.
+
 _For a new session picking up the rebuild. Last updated: 2026-08-09._
 
 ---
