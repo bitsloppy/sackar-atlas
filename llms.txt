@@ -64,7 +64,10 @@ Secondary sources (newspaper articles, academic papers) are managed in a Zotero 
 
 ## Full instructions
 
-For AI agent instructions including schema detail, cross-referencing, source hierarchy,
-and uncertainty labelling:
+For external researchers, analysts, and developers using this data:
 
 → `docs/ai-instructions.md`
+
+For AI agents building or maintaining this project (phase gate, agent roles, build plan):
+
+→ `AGENTS.md` (repo root)

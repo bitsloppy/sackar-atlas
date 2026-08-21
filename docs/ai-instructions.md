@@ -1,9 +1,9 @@
 # Sackar Atlas — AI Instructions
 
-How to work with this dataset. Modular — delete any section you don't need.
+How to work with this dataset as an external researcher, analyst, or developer.
+Covers schema, cross-referencing, source hierarchy, editorial standards, and responsible use.
 
-> **Status: live.** Schema, cross-referencing, and source hierarchy covered.
-> Editorial standards, use cases, and responsible AI sections are pending.
+If you are an AI agent building or maintaining this project, read `AGENTS.md` at the repo root first.
 
 ---
 
@@ -356,44 +356,125 @@ See `docs/workflow-source-documents.md` for how source documents are processed a
 
 ---
 
-## Pre-launch sections (not yet written)
+## Editorial standards
 
-The following sections will be added before public launch:
+### Victims are people, not data points
 
-- **Editorial standards** — victims are people, accuracy as care, living persons policy,
-  LGBTQIA+ terminology, First Nations Country custodianship
-- **Use cases** — case research, cross-referencing, journalism, data analysis, building
-  a new project on top of this data
-- **What not to do** — fabricate sources, collapse uncertainty levels, out living persons,
-  treat AI inference as confirmed fact
-- **Responsible AI use** — how to apply these instructions to your own tool or workflow
+Every record documents a person's death. Write and structure data accordingly.
+Use full names on first reference. Do not reduce individuals to case numbers or categories.
+If a person's name is uncertain or contested, say so explicitly rather than eliding it.
+
+### Accuracy as a form of care
+
+Getting the facts right is not just methodological rigour — it is respect for the people
+documented here and for the communities affected. When evidence is uncertain, say so.
+When the inquiry could not determine something, record it as undetermined. Do not fill
+gaps with inference and present it as fact.
+
+### Living persons policy
+
+Do not name living persons unless they are:
+- Convicted of an offence related to a case in this dataset, **or**
+- Named in a public official record (SCOI report, coronial finding, Hansard, court judgment)
+
+If in doubt, omit the name and describe the role.
+
+### LGBTIQ+ terminology
+
+Use contemporary respectful language in narrative prose, regardless of how source documents
+describe individuals. In direct quotation or paraphrase of historical records, contextualise
+period language rather than sanitising it.
+
+- HIV/AIDS: "person living with HIV", not "AIDS victim"
+- Use the sexuality/identity fields with the confidence levels provided (`confirmed` | `probable` | `possible` | `unknown`)
+- Do not out living persons or assign identity labels not supported by evidence
+
+### First Nations Country
+
+Custodianship is the primary geographic identity of every location.
+`first_nations_country` is a required field on all location records.
+Always acknowledge Country in location context — this is not optional.
+
+Key Countries:
+- **Gadigal** — CBD, Oxford Street, inner east
+- **Bidjigal** — Bondi, Marks Park, eastern suburbs
+- **Gayamaygal** — Manly, North Head, northern harbour
 
 ---
 
-*This document is a living reference. Updated as the schema evolves.*
+## Use cases
+
+### Case research and journalism
+
+Start from a case slug. Cross-reference to locations, people, and events.
+Follow the `ref` fields to the corpus paragraphs where findings originate.
+Use `grep -n "[name]" sources/[slug].md` to find relevant paragraphs quickly.
+
+### Cross-referencing patterns
+
+The dataset is designed to surface connections:
+- **Shared location** — cases at the same location across different years
+- **Shared investigators** — cases linked to the same strike force or detective
+- **Shared event** — cases that fell under the same inquiry or investigation
+- **Category patterns** — filtering by `scoi_category` (A/B) and verdict
+
+### Journalism and research
+
+All data is CC-BY 4.0. You may reproduce, adapt, and build on it with attribution.
+Citation format: Roberts A (2026) *Sackar Atlas* [data set], GitHub, https://github.com/bitsloppy/sackar-atlas
+Full AGSM citation details: see `REFERENCES.md`.
+
+### Building on top of this data
+
+The dataset is flat YAML + Markdown — no database required. Collections:
+- `data/cases/` — one file per victim
+- `data/locations/` — physical places
+- `data/events/` — strike forces, inquiries, milestones
+- `data/people/` — individuals (victims, perpetrators, investigators, officials)
+
+Every record has a stable slug used for cross-references. Slugs are permanent once published.
+The corpus is served at `/sources/[slug]/` — paragraph IDs are stable HTML anchors.
+
 ---
 
-## Content management
+## What not to do
 
-The site uses two parallel systems:
-
-| Layer | Source of truth | Edited via |
-|---|---|---|
-| Structured data (dates, slugs, relationships, findings) | `data/*.md` YAML frontmatter | VS Code / GitHub |
-| Narrative prose (case narratives, location context, site pages) | `data/*.md` body + Keystatic | Keystatic CMS (`/keystatic`) |
-
-**Keystatic** is the prose editing interface. It lets Anna review and publish narrative prose
-for case pages, location pages, and static site pages (About, AI use, Corrections) without
-touching code.
-
-- Dev: `npm run dev` → http://localhost:4321/keystatic
-- Live: https://sackar-atlas.bitsloppy.com/keystatic (GitHub login)
-- Setup guide: `docs/keystatic-setup.md`
-- OAuth is resolved and working (as of 2026-08-13)
-
-Notion was evaluated as a content system but not adopted. Use Keystatic for all prose editing.
+- **Do not fabricate or infer sources.** If no `ref` exists for a claim, the claim is not
+  established. Do not generate a plausible-sounding paragraph ID and treat it as real.
+- **Do not collapse uncertainty levels.** An AI inference is not a coronial finding.
+  A probable connection is not a confirmed one. Express the level you actually have.
+- **Do not out living persons.** Sexuality and identity fields with `unknown` confidence
+  should not be filled in by inference.
+- **Do not treat AI-generated prose as the record.** Narrative prose in case files is
+  a synthesis for readability. The corpus paragraphs cited in `ref` fields are the authority.
+- **Do not alter slugs.** They are used in published URLs and cross-references.
+  Changing a slug silently breaks links.
+- **Do not skip the human review gate.** All data is reviewed by a human before publication.
+  Do not commit to `main` or mark records `published: true` without that review.
 
 ---
 
-*This document is a living reference. Updated as the schema evolves.*
-*Last updated: 2026-08-21 (corpus-first architecture added)*
+## Responsible AI use
+
+This dataset was created using AI assistance with a mandatory human review gate on every record.
+The workflow is: AI reads a corpus chunk → generates structured YAML with field-level refs →
+human audits every ref against the source paragraph → approved records are committed.
+
+If you are using AI to work with this data:
+
+1. **Anchor claims to the corpus.** The `ref` field tells you exactly which paragraph a
+   finding comes from. Verify it before relying on it.
+2. **Preserve uncertainty labels.** The source hierarchy (confirmed → probable → possible →
+   AI inference) is load-bearing. Do not flatten it.
+3. **Label AI output as AI output.** If you generate new text about cases in this dataset,
+   make clear it is AI-assisted synthesis, not a finding from the corpus.
+4. **Check `published: true`.** Records not yet published (`published: false`) are drafts
+   pending human review. Do not treat them as confirmed data.
+5. **Cite the dataset, not the AI.** If you use this data in research or journalism,
+   cite the dataset (Roberts A 2026) and the underlying primary sources (SCOI 2023, etc.).
+   The AI is the tool; the corpus is the authority.
+
+---
+
+*This document is a living reference. Updated as the schema and project evolve.*
+*Last updated: 2026-08-21*
